@@ -62,11 +62,31 @@ namespace RM_EM
             {
                 // TODO: maybe use the callbacks?
 
-                // Grabs the mouse button.
-                util.MouseButton mb = manager.mouseTouch.MouseButton0;
+                // OLD
+                // This gives a delayed click.
+                // // Grabs the mouse button.
+                // util.MouseButton mb = manager.mouseTouch.MouseButton0;
+
+                // NEW
+                // Generates a mouse button, and sets both held and last clicked as the hovered object.
+                // This is to make sure the hit is as updated (there was a delay using last clickedb efore).
+
+                // The hit info for the mouse button isn't referenced.
+                util.MouseButton mb = new util.MouseButton();
+
+                // Held
+                mb.held = manager.mouseTouch.mouseHoveredObject;
+                mb.heldHit = manager.mouseTouch.mouseHoveredHit;
+                mb.heldHit2D = manager.mouseTouch.mouseHoveredHit2D;
+
+                // Last Clicked
+                mb.lastClicked = manager.mouseTouch.mouseHoveredObject;
+                mb.lastClickedHit = manager.mouseTouch.mouseHoveredHit;
+                mb.lastClickedHit2D = manager.mouseTouch.mouseHoveredHit2D;
+
 
                 // Checks last clicked.
-                if(mb.lastClicked != null)
+                if (mb.held != null)
                 {
                     puzzle.puzzleRender.CalculateHit(mb);
                 }

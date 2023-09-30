@@ -38,26 +38,31 @@ namespace RM_EM
             offsetPos.x = hitPoint.x - collider.bounds.center.x;
             offsetPos.y = hitPoint.y - collider.bounds.center.z;
 
-            // Debug.Log(offsetPos.ToString());
-
-            // TODO: check that the offset is calculating correctly. It seems to be?
-
             // CALCULATING THE RAY FROM THE RENDER CAMERA'S POSITION
             // Gets the ray's position for the render cmaera.
             Vector3 renderRayPos = renderCamera.transform.position + new Vector3(offsetPos.x, offsetPos.y, 0);
 
+            // // The render ray pos.
+            // Debug.Log("Render Ray Pos: " + renderRayPos.ToString());
+
             // Copied from the mouse touch script.
             Vector3 target; // ray's target
             Ray ray; // ray object
-            RaycastHit hitInfo; // info on hit.
+
+            // Raycast Hits
+            RaycastHit hitInfo; // info on hit (3D)
+            RaycastHit2D hitInfo2D; // info on hit (2D)
+
             bool rayHit; // true if the ray hit.
 
+            // The object that was hit by the replicated ray.
+            GameObject hitObject = null;
 
+
+            // 3D RAYCAST
             // Checks if the camera is perspective or orthographic.
             if (renderCamera.orthographic) // Orthographic
             {
-                Debug.Log("Test");
-
                 // Tries to get a hit. Since it's orthographic, the ray goes straight forward.
                 target = renderCamera.transform.forward; // target is into the screen (z-direction), so camera.forward is used.
 
@@ -69,10 +74,17 @@ namespace RM_EM
 
                 // Cast the ray about as far as the camera can see.
                 rayHit = Physics.Raycast(ray, out hitInfo, maxDist);
+
+                // If the ray hit, mark this as NOT being a 2D hit (it was a 3D hit).
+                if(rayHit)
+                {
+                    hitObject = hitInfo.collider.gameObject;
+                }
             }
             else // Perspective
             {
                 // I don't think it's even going into this function, but I'm leaving it here.
+                // I'm pretty sure this doesn't work though.
 
                 // Gets the render position in pixels.
                 // TODO: this probably doesn't work. 
@@ -99,19 +111,47 @@ namespace RM_EM
 
                 // the max distance
                 rayHit = Physics.Raycast(ray, out hitInfo, maxDist);
+
+                // If the ray hit, get the game object from the collider.
+                if(rayHit)
+                {
+                    hitObject = hitInfo.collider.gameObject;
+                }
             }
             
-            // NOTE: this is working for 3D objects, but not 2D objects. You need to set up a 2D raycast...
-            // For this section for 2D objects to register properly.
 
-            // The object that was hit by the replicated ray.
-            GameObject hitObject = null;
-
-            // If the ray hit an object successfully.
-            if(rayHit)
+            // 2D RAY CAST (ORTHOGRAPHIC ONLY)
+            if(!rayHit)
             {
-                hitObject = hitInfo.collider.gameObject;
+                // If the camera is orthographic, attempt a 2D raycast as well.
+                if (Camera.main.orthographic)
+                {
+                    // setting up the 2D raycast for the orthographic camera.
+                    RaycastHit2D rayHit2D = Physics2D.Raycast(
+                        new Vector2(renderRayPos.x, renderRayPos.y),
+                        new Vector2(target.normalized.x, target.normalized.y),
+                        renderCamera.farClipPlane - renderCamera.nearClipPlane
+                        );
 
+                    // Save to hit info 2D.
+                    hitInfo2D = rayHit2D;
+
+                    // If a collider was hit, then the rayhit was successful.
+                    rayHit = rayHit2D.collider != null;
+
+                    // Checks rayHit value.
+                    if (rayHit)
+                    {
+                        // Grab the hit object from the collider.
+                        hitObject = rayHit2D.collider.gameObject;
+                    }
+                }
+            }
+
+
+            // If the ray hit an object successfully (hitObject should be set by this point)
+            if(rayHit && hitObject != null)
+            {
                 Debug.Log(hitObject.name);
 
                 // TODO: do something with object (get value using script or something...)
