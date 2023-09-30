@@ -141,13 +141,6 @@ namespace RM_CCC
             set
             {
                 useTutorial = value;
-
-                // Searches for the gameplay manager.
-                GameplayManager gm = FindObjectOfType<GameplayManager>();
-
-                // If the gameplay manager exists, tell it to change its tutorial values.
-                if (gm != null)
-                    gm.useTutorial = useTutorial;
             }
         }
 
