@@ -16,6 +16,12 @@ namespace RM_CCC
 
         [Header("Match")]
 
+        // The current time for the match.
+        public float matchTime = 0;
+
+        // Checks if the match is paused.
+        public bool matchPaused = false;
+
         // PLAYERS
         public PlayerMatch p1;
         public Puzzle p1Puzzle;

@@ -11,7 +11,7 @@ namespace RM_CCC
         public float gameTime = 0;
 
         // Pauses the timer if true.
-        public bool paused = false;
+        public bool gamePaused = false;
 
         // Awake is called when the script is being loaded
         protected virtual void Awake()
@@ -36,7 +36,7 @@ namespace RM_CCC
         protected virtual void Update()
         {
             // The game isn't paused.
-            if(!paused)
+            if(!gamePaused)
             {
                 gameTime += Time.fixedDeltaTime;
             }
