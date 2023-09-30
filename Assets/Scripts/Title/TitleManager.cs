@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RM_CCC
+namespace RM_EM
 {
     // The title manager.
     public class TitleManager : MonoBehaviour

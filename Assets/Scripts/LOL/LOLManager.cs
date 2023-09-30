@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RM_CCC
+namespace RM_EM
 {
     // a class for the LOL
     public class LOLManager : MonoBehaviour

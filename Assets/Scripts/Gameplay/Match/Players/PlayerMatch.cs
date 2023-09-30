@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RM_CCC
+namespace RM_EM
 {
     // The script for controlled players in matches.
     public class PlayerMatch : MonoBehaviour
     {
+        // The match manager.
+        public MatchManager manager;
+
+        // If 'true', the player uses mouse touch.
+        public bool useMouseTouch = true;
+
         // The puzzle the player is answering.
         public Puzzle puzzle;
 
@@ -17,9 +23,11 @@ namespace RM_CCC
         public Power power;
 
         // Start is called before the first frame update
-        void Start()
+        protected virtual void Start()
         {
-
+            // Grab the instance.
+            if (manager == null)
+                manager = MatchManager.Instance;
         }
 
 
@@ -46,9 +54,23 @@ namespace RM_CCC
 
 
         // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
+            // If the mouse touch should be used, and the mouse has been clicked.
+            // Maybe split this conditional into 2?
+            if(useMouseTouch && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                // TODO: maybe use the callbacks?
 
+                // Grabs the mouse button.
+                util.MouseButton mb = manager.mouseTouch.MouseButton0;
+
+                // Checks last clicked.
+                if(mb.lastClicked != null)
+                {
+                    puzzle.puzzleRender.CalculateHit(mb);
+                }
+            }
         }
     }
 }

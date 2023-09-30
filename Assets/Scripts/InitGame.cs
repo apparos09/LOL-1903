@@ -10,7 +10,7 @@ using UnityEditor.EditorTools;
 
 // Initializes the LOL content and then enters the title screen.
 // This code was taken from Loader.cs (a file from the LOL template content) and then modified.
-namespace RM_CCC
+namespace RM_EM
 {
     public class InitGame : MonoBehaviour
     {

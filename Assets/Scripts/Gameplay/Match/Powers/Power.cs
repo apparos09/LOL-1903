@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RM_CCC
+namespace RM_EM
 {
     // A power to be used by a palyer.
     public class Power : MonoBehaviour

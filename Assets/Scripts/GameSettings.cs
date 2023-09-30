@@ -7,7 +7,7 @@ using util;
 
 // the settings for the game, which is created in the init scene.
 // the init isn't visited again, so this object will not be recreated.
-namespace RM_CCC
+namespace RM_EM
 {
     public class GameSettings : MonoBehaviour
     {

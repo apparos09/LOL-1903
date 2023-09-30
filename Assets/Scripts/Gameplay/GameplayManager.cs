@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using util;
 
-namespace RM_CCC
+namespace RM_EM
 {
     // A parent class for managing all gameplay.
     public class GameplayManager : MonoBehaviour
@@ -12,6 +13,9 @@ namespace RM_CCC
 
         // Pauses the timer if true.
         public bool gamePaused = false;
+
+        // The mouse touch object.
+        public MouseTouchInput mouseTouch;
 
         // Awake is called when the script is being loaded
         protected virtual void Awake()

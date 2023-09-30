@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RM_CCC
+namespace RM_EM
 {
     // The manager for matches.
     public class MatchManager : GameplayManager
@@ -101,7 +101,7 @@ namespace RM_CCC
         // Update is called once per frame
         protected override void Update()
         {
-            // ...
+            base.Update();
         }
     }
 }

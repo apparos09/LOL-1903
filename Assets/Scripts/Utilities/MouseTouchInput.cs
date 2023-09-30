@@ -15,8 +15,16 @@ namespace util
         // The object being held on by the mouse button.
         public GameObject held;
 
+        // The hit information for the mouse button being held.
+        public RaycastHit heldHit;
+        public RaycastHit2D heldHit2D;
+
         // The object that was last clicked by the mouse button.
         public GameObject lastClicked;
+
+        // The hit information for the mouse button when last clicked.
+        public RaycastHit lastClickedHit;
+        public RaycastHit2D lastClickedHit2D;
 
     }
 
@@ -59,12 +67,9 @@ namespace util
         // The object the mouse is hovering over.
         public GameObject mouseHoveredObject = null;
 
-        // // The object that has been clicked and held on.
-        // // When the mouse button is released, this is set to null. This variable gets set to null when the mouse button is released.
-        // public GameObject mouseHeldObject = null;
-        // 
-        // // The last object that was clicked on. The next time someone clicks on something, this will be set to null.
-        // public GameObject mouseLastClickedObject = null;
+        // The raycast info for the hovered hit (3D and 2D)
+        public RaycastHit mouseHoveredHit = new RaycastHit();
+        public RaycastHit2D mouseHoveredHit2D = new RaycastHit2D();
 
         // The callback for the mouse hover and mouse button.
         public delegate void MouseHoverCallback(GameObject hitObject);
@@ -137,9 +142,17 @@ namespace util
                 // Current mouse key.
                 mouseButtons[i].keyCode = mouseKey;
 
-                // Sets these values to null.
+                // Sets these values to null (or new otherwise)
+                // Held
                 mouseButtons[i].held = null;
+                mouseButtons[i].heldHit = new RaycastHit();
+                mouseButtons[i].heldHit2D = new RaycastHit2D();
+
+                // Last Clicked
                 mouseButtons[i].lastClicked = null;
+                mouseButtons[i].lastClickedHit = new RaycastHit();
+                mouseButtons[i].lastClickedHit2D = new RaycastHit2D();
+
 
                 // Moves onto the next mouse key.
                 if (i + 1 < mouseButtons.Length)
@@ -422,6 +435,8 @@ namespace util
                 if (rayHit)
                 {
                     mouseHoveredObject = hitInfo.collider.gameObject;
+                    mouseHoveredHit = hitInfo;
+                    mouseHoveredHit2D = new RaycastHit2D();
 
                     // Checks what mouse buttons have been pressed.
                     for (int i = 0; i < mouseButtons.Length; i++)
@@ -435,7 +450,12 @@ namespace util
 
                             // Held and Last Clicked
                             mouseButtons[i].held = hitInfo.collider.gameObject;
+                            mouseButtons[i].heldHit = hitInfo;
+                            mouseButtons[i].heldHit2D = new RaycastHit2D();
+
                             mouseButtons[i].lastClicked = hitInfo.collider.gameObject;
+                            mouseButtons[i].lastClickedHit = hitInfo;
+                            mouseButtons[i].lastClickedHit2D = new RaycastHit2D();
                         }
                     }
                 }
@@ -462,6 +482,8 @@ namespace util
 
                             // saves the hovered over object.
                             mouseHoveredObject = rayHit2D.collider.gameObject;
+                            mouseHoveredHit = new RaycastHit();
+                            mouseHoveredHit2D = rayHit2D;
 
 
                             // Checks what mouse buttons have been pressed.
@@ -475,7 +497,12 @@ namespace util
 
                                     // Held and Last Clicked
                                     mouseButtons[i].held = rayHit2D.collider.gameObject;
+                                    mouseButtons[i].heldHit = new RaycastHit();
+                                    mouseButtons[i].heldHit2D = rayHit2D;
+
                                     mouseButtons[i].lastClicked = rayHit2D.collider.gameObject;
+                                    mouseButtons[i].lastClickedHit = new RaycastHit();
+                                    mouseButtons[i].lastClickedHit2D = rayHit2D;
                                 }
                             }
                         }
@@ -485,8 +512,10 @@ namespace util
                     // this means the 3D raycast failed, and the 2D raycast (orthographic only).
                     if (!rayHit)
                     {
-                        // no object beng hovered over.
+                        // no object beIng hovered over, so clear out the hoverd information.
                         mouseHoveredObject = null;
+                        mouseHoveredHit = new RaycastHit();
+                        mouseHoveredHit2D = new RaycastHit2D();
 
                         // Checks all the moues buttons.
                         for (int i = 0; i < mouseButtons.Length; i++)
@@ -494,7 +523,10 @@ namespace util
                             // If the current mouse button is being pressed down, clear the last clicked.
                             if (Input.GetKeyDown(mouseButtons[i].keyCode))
                             {
+                                // Set to null, and clear out hits.
                                 mouseButtons[i].lastClicked = null;
+                                mouseButtons[i].lastClickedHit = new RaycastHit();
+                                mouseButtons[i].lastClickedHit2D = new RaycastHit2D();
                             }
                         }
                     }
@@ -521,8 +553,10 @@ namespace util
                         // Triggers the callback.
                         OnMouseUpCallback(mouseButtons[i].keyCode, mouseButtons[i].held);
 
-                        // Sets the object to null.
+                        // Sets the object to null, and clears out the hit information.
                         mouseButtons[i].held = null;
+                        mouseButtons[i].heldHit = new RaycastHit();
+                        mouseButtons[i].heldHit2D = new RaycastHit2D();
                     }
                 }
                 else // The key is being held down.
@@ -540,8 +574,10 @@ namespace util
             // Checks every mouse button.
             for (int i = 0; i < mouseButtons.Length; i++)
             {
-                // Clears out the last click.
+                // Clears out the last click and the related hits.
                 mouseButtons[i].lastClicked = null;
+                mouseButtons[i].lastClickedHit = new RaycastHit();
+                mouseButtons[i].lastClickedHit2D = new RaycastHit2D();
             }
         }
 
@@ -860,6 +896,8 @@ namespace util
             if (trackTouch)
                 TouchUpdate();
 
+
+            /*
             // // TODO: comment out.
             // // Prints Out Left Mouse Button Information.
             // {
@@ -869,6 +907,7 @@ namespace util
             //     Debug.Log(mb.keyCode.ToString() + " - Mouse Last Click: " + ((mb.lastClicked != null) ? mb.lastClicked.name : ""));
             //     Debug.Log("");
             // }
+            */
         }
     }
 }
