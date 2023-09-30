@@ -492,8 +492,12 @@ namespace util
                                 // If the current mouse button is being pressed down.
                                 if (Input.GetKeyDown(mouseButtons[i].keyCode))
                                 {
+                                    // NOTE: this was causing errors when I was checking hitInfo. I assume it's because...
+                                    // hitInfo is for 3D, but this check is for 2D.
+
                                     // Marks the array for whether or not a pressed call for this button should happen.
-                                    pressedCalls[i] = mouseButtons[i].held != hitInfo.collider.gameObject;
+                                    // pressedCalls[i] = mouseButtons[i].held != hitInfo.collider.gameObject;
+                                    pressedCalls[i] = mouseButtons[i].held != rayHit2D.collider.gameObject;
 
                                     // Held and Last Clicked
                                     mouseButtons[i].held = rayHit2D.collider.gameObject;

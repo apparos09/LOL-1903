@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace RM_EM
 {
@@ -71,10 +72,23 @@ namespace RM_EM
             }
             else // Perspective
             {
-                // TODO: FIX THIS. This needs to not use the main camera.
+                // I don't think it's even going into this function, but I'm leaving it here.
 
-                // the target of the ray.
-                target = util.MouseTouchInput.GetMouseTargetPositionInWorldSpace(renderCamera.gameObject);
+                // Gets the render position in pixels.
+                // TODO: this probably doesn't work. 
+                Vector3 renderRayPosPixels = Camera.main.WorldToScreenPoint(renderRayPos);
+
+                // The render camera's position in world space.
+                Vector3 camWPos;
+
+                // Calculates the world position based on the ray position.
+                if (renderCamera.orthographic)
+                    camWPos = renderCamera.ScreenToWorldPoint(new Vector3(renderRayPosPixels.x, renderRayPosPixels.y, renderCamera.nearClipPlane));
+                else
+                    camWPos = renderCamera.ScreenToWorldPoint(new Vector3(renderRayPosPixels.x, renderRayPosPixels.y, renderCamera.focalLength));
+
+                // target = util.MouseTouchInput.GetMouseTargetPositionInWorldSpace(renderCamera.gameObject);
+                target = camWPos - renderCamera.transform.position;
 
                 // ray object. It offsets so that objects not in the camera's clipping plane will be ignored.
                 ray = new Ray(renderCamera.transform.position + renderCamera.transform.forward * renderCamera.nearClipPlane,
@@ -87,6 +101,9 @@ namespace RM_EM
                 rayHit = Physics.Raycast(ray, out hitInfo, maxDist);
             }
             
+            // NOTE: this is working for 3D objects, but not 2D objects. You need to set up a 2D raycast...
+            // For this section for 2D objects to register properly.
+
             // The object that was hit by the replicated ray.
             GameObject hitObject = null;
 
