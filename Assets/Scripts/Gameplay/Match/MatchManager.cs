@@ -16,6 +16,9 @@ namespace RM_EM
 
         [Header("Match")]
 
+        // The UI for the match.
+        public MatchUI matchUI;
+
         // The current time for the match.
         public float matchTime = 0;
 
@@ -59,7 +62,9 @@ namespace RM_EM
         // Start is called before the first frame update
         protected override void Start()
         {
-            // ...
+            base.Start();
+
+            // matchUI.timeText.text = matchTime.ToString("F2");
         }
 
         // Gets the instance.

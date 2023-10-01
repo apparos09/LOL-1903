@@ -59,6 +59,12 @@ namespace RM_EM
 
             // Generates a equation to start off.
             GenerateEquation();
+
+            // Gets the question, formatted.
+            string formatted = GetEquationQuestionFormatted();
+
+            // TODO: move this in the final game. This is only here for testing purposes.
+            manager.matchUI.p1EquationText.text = formatted;
         }
 
         // Generates an equation to be filled.
