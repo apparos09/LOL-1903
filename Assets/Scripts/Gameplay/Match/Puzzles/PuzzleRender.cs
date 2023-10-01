@@ -158,9 +158,6 @@ namespace RM_EM
             {
                 // TODO: comment out.
                 Debug.Log(hitObject.name);
-
-                // Selects the element.
-                puzzle.SelectElement(hitObject);
             }
 
             // Returns the hit object.

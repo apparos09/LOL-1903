@@ -13,6 +13,15 @@ namespace RM_EM
     // Generates content for a puzzle.
     public class Puzzle : MonoBehaviour
     {
+        // A value space.
+        public struct ValueSpace
+        {
+            // A value and its index.
+            public char value;
+            public int index;
+        }
+
+
         // The manager for the match.
         public MatchManager manager;
 
@@ -39,7 +48,7 @@ namespace RM_EM
         // The values that must be found for the equation.
         // Once this queue is empty, the equation has been solved.
         // This is filled from back to front, hence why it's a stack.
-        public Stack<char> missingValues = new Stack<char>();
+        public Stack<ValueSpace> missingValues = new Stack<ValueSpace>();
 
         // Start is called before the first frame update
         void Start()
@@ -103,7 +112,13 @@ namespace RM_EM
                 string temp = equationQuestion;
 
                 // Pushes the value that's going to be replaced into the missing values stack.
-                missingValues.Push(equationQuestion[replaceIndexes[i]]);
+                // Generates a value space object, giving it the value and the index it belongs to.
+                ValueSpace vs = new ValueSpace();
+                vs.value = equationQuestion[replaceIndexes[i]];
+                vs.index = replaceIndexes[i];
+
+                // Puts it on the stack.
+                missingValues.Push(vs);
 
                 // Removes the value.
                 temp = temp.Remove(replaceIndexes[i], 1);
@@ -137,9 +152,16 @@ namespace RM_EM
 
 
             // Checks if the selected value is correct.
-            if(value.value == missingValues.Peek())
+            if(value.value == missingValues.Peek().value)
             {
                 Debug.Log("Right!");
+
+                // Grabs the value space.
+                ValueSpace vs = missingValues.Pop();
+
+                // Removes the placeholder and replaces it with its proper value.
+                equationQuestion.Remove(vs.index, 1);
+                equationQuestion.Insert(vs.index, vs.value.ToString());
             }
             else
             {
@@ -147,11 +169,11 @@ namespace RM_EM
             }
         }
 
-        // Gets the question as displayed.
-        public string GetDisplayQuestion()
+        // Gets the question with proper formattng.
+        public string GetEquationQuestionFormatted()
         {
 
-            // TODO: you need to make sure you format it properly for exponents.
+            // TODO: you need to make sure you format it properly for exponent notation (superscript).
 
             string result = equationQuestion;
             return result;
