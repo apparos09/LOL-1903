@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  puzzle: {fileID: 788031213}
   renderCamera: {fileID: 1701477951}
   collider: {fileID: 551675599}
 --- !u!1 &584824205
@@ -423,6 +424,7 @@ GameObject:
   - component: {fileID: 584824207}
   - component: {fileID: 584824206}
   - component: {fileID: 584824208}
+  - component: {fileID: 584824209}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -542,6 +544,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &584824209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584824205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 49
 --- !u!1 &714076955
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +568,7 @@ GameObject:
   - component: {fileID: 714076958}
   - component: {fileID: 714076957}
   - component: {fileID: 714076956}
+  - component: {fileID: 714076959}
   m_Layer: 0
   m_Name: Circle 2
   m_TagString: Untagged
@@ -655,13 +671,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714076955}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 18, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 788031212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714076959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714076955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 43
 --- !u!1 &788031211
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +725,7 @@ Transform:
   - {fileID: 1701477952}
   - {fileID: 584824207}
   - {fileID: 902993393}
+  - {fileID: 714076958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &788031213
@@ -712,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   puzzleRender: {fileID: 551675600}
+  player: {fileID: 1039013018}
 --- !u!1 &866358038
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +924,7 @@ GameObject:
   - component: {fileID: 902993396}
   - component: {fileID: 902993395}
   - component: {fileID: 902993394}
+  - component: {fileID: 902993397}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -986,6 +1018,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902993392}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &902993397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902993392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 50
 --- !u!1 &1039013016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,4 +1224,3 @@ SceneRoots:
   - {fileID: 883756868}
   - {fileID: 788031212}
   - {fileID: 866358040}
-  - {fileID: 714076958}

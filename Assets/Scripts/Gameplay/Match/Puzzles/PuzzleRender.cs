@@ -12,6 +12,9 @@ namespace RM_EM
         // The manager.
         public MatchManager manager;
 
+        // The puzzle this render if for.
+        public Puzzle puzzle;
+
         // The render camera for the puzzle render object.
         public Camera renderCamera;
 
@@ -26,7 +29,8 @@ namespace RM_EM
         }
 
         // Calculates the hit given the world hit position on the puzzle render.
-        public void CalculateHit(util.MouseButton mouseButton)
+        // Returns the hit object.
+        public GameObject TryHit(util.MouseButton mouseButton)
         {
             // CALCULATING THE HIT LOCATION ON THE OBJECT.
             // Grabs the hit point of the ray.
@@ -152,10 +156,15 @@ namespace RM_EM
             // If the ray hit an object successfully (hitObject should be set by this point)
             if(rayHit && hitObject != null)
             {
+                // TODO: comment out.
                 Debug.Log(hitObject.name);
 
-                // TODO: do something with object (get value using script or something...)
+                // Selects the element.
+                puzzle.SelectElement(hitObject);
             }
+
+            // Returns the hit object.
+            return hitObject;
         }
 
         // Update is called once per frame

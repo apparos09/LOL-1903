@@ -57,7 +57,7 @@ namespace RM_EM
         protected virtual void Update()
         {
             // If the mouse touch should be used, and the mouse has been clicked.
-            // Maybe split this conditional into 2?
+            // Maybe split this conditional into 2? 
             if(useMouseTouch && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 // TODO: maybe use the callbacks?
@@ -88,7 +88,15 @@ namespace RM_EM
                 // Checks last clicked.
                 if (mb.held != null)
                 {
-                    puzzle.puzzleRender.CalculateHit(mb);
+                    // Grabs the object.
+                    GameObject hit = puzzle.puzzleRender.TryHit(mb);
+
+                    // Something was hit.
+                    if(hit != null)
+                    {
+                        // Select the element.
+                        puzzle.SelectElement(hit);
+                    }
                 }
             }
         }
