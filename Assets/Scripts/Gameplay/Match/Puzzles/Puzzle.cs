@@ -852,8 +852,8 @@ namespace RM_EM
                 ValueSpace vs = missingValues.Pop();
 
                 // Removes the placeholder and replaces it with its proper value.
-                equationQuestion.Remove(vs.index, 1);
-                equationQuestion.Insert(vs.index, vs.value.ToString());
+                equationQuestion = equationQuestion.Remove(vs.index, 1);
+                equationQuestion = equationQuestion.Insert(vs.index, vs.value.ToString());
             }
             else
             {
