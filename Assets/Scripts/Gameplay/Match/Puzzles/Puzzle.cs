@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RM_EM
@@ -16,7 +17,7 @@ namespace RM_EM
      * zero (Zero): a^0 = 1
      * negative (Negative): a^(-1) = 1/(a^n)
      */
-    public enum exponentRule { expo, multSame, expoByExpo, multDiff, zero, negative }
+    public enum exponentRule { none, expo, multSame, expoByExpo, multDiff, zero, negative }
 
     // Generates content for a puzzle.
     public class Puzzle : MonoBehaviour
@@ -33,8 +34,15 @@ namespace RM_EM
         // Since those don't combine exponent terms with the end result.
         public struct PuzzleCalculation
         {
+            // The rule the calculation follows. If it has multiple (or no) rules, set ot none.
+            public exponentRule rule;
+
+            // The question.
             public string question;
+
+            // The answer.
             public string answer;
+            
         }
 
 
@@ -50,22 +58,80 @@ namespace RM_EM
         // The puzzle type.
         public puzzle puzzleType;
 
-        // The types of exponents being coveered.
-        public List<exponentRule> expoRules = new List<exponentRule>();
+        [Header("Exponents")]
+
+        // NOTE: a rate of 0 or less means it will never appear.
+
+        // The exponent rates.
+        public float expoRate = 1.0F;
+
+        // Rate for multiplicaton (same bases) exponents.
+        public float multSameRate = 1.0F;
+
+        // Rate for exponent by exponent exponents.
+        public float expoByExpoRate = 1.0F;
+
+        // Rate for multplication (different bases) exponents.
+        public float multDiffRate = 1.0F;
+
+        // Rate for zero exponents.
+        public float zeroRate = 1.0F;
+        
+        // Rate for negative exponents.
+        public float negativeRate = 1.0F;
 
         [Header("Equation")]
 
         // The question equation
+        [Tooltip("The base/solved equation.")]
         public string equation = "";
 
         // The current state of the equation (has missing values).
+        [Tooltip("The equation question (the one with missing values).")]
         public string equationQuestion = "";
 
         // This symbol is used to represent spaces in the equation to be filled.
         public const string EQUATION_SPACE = "$";
 
-        // The number of values that will be missing from the equation.
-        public int missingValueCount = 1;
+        // The lowest value can equation will use.
+        public int equationLowestValue = 0;
+
+        // The highest value an equation will use.
+        public int equationHighestValue = 9;
+
+        
+        // TERMS //
+        [Header("Equation/Terms")]
+
+        // Minimum equation term.
+        [Tooltip("The minimum number of equation terms.")]
+        public int equationTermsMin = 1;
+
+        // Maximum equation term.
+        [Tooltip("The maximum number of equation terms.")]
+        public int equationTermsMax = 1;
+
+        // The minimum number of terms for the base exponent rule.
+        [Tooltip("The minimum number of terms for the base exponent rule (combined rules only).")]
+        public int baseExponentTermsMin = 1;
+
+        // The maximum number of terms for the base exponent rule.
+        [Tooltip("The maximum number of terms for the base exponent rule (combined rules only).")]
+        public int baseExponentTermsMax = 3;
+
+        
+        // MISSING VALUES //
+        [Header("Equations/Missing Values")]
+
+        // The number of values minimun and maximum. If you don't want it randomized, set it to the same values.
+        // These values must be greater than 0.
+        // Minimum Number of Missing Values
+        [Tooltip("The minimum number of missing values.")]
+        public int missingValueMin = 1;
+
+        // Maximum Number of Missing Values
+        [Tooltip("The maximum number of missing values.")]
+        public int missingValueMax = 1;
 
         // The values that must be found for the equation.
         // Once this queue is empty, the equation has been solved.
@@ -128,6 +194,9 @@ namespace RM_EM
                     {
                         PuzzleCalculation calc = new PuzzleCalculation();
 
+                        // Set the rule.
+                        calc.rule = rule;
+
                         // The number that will have the exponent applied to it.
                         int num = Random.Range(lowestValue, highestValue + 1);
 
@@ -159,6 +228,9 @@ namespace RM_EM
                     for (int n = 1; n <= termCount; n++)
                     {
                         PuzzleCalculation calc = new PuzzleCalculation();
+
+                        // Set the rule.
+                        calc.rule = rule;
 
                         // Expression: (a^n)*(a^m) = a^(n+m)
                         int num1 = Random.Range(lowestValue, highestValue + 1); // a (base)
@@ -192,6 +264,9 @@ namespace RM_EM
                     {
                         PuzzleCalculation calc = new PuzzleCalculation();
 
+                        // Set the rule.
+                        calc.rule = rule;
+
                         // Expression: (a^n)^m = a^(n*m)
                         // Generates numbers 1-3.
                         int num1 = Random.Range(lowestValue, highestValue + 1); // a (base)
@@ -222,6 +297,9 @@ namespace RM_EM
                     for (int n = 1; n <= termCount; n++)
                     {
                         PuzzleCalculation calc = new PuzzleCalculation();
+
+                        // Set the rule.
+                        calc.rule = rule;
 
                         // Expression: (a^n)*(b^n) = (a*b)^n
                         // Generates numbers 1-3.
@@ -261,6 +339,9 @@ namespace RM_EM
                         // Expression: a^0 = 1
                         // Generates a question and answer - the answer is always 1.
                         PuzzleCalculation calc = new PuzzleCalculation();
+                        // Set the rule.
+                        calc.rule = rule;
+
                         calc.question = Random.Range(lowestValue, highestValue + 1).ToString() + "^(0)";
                         calc.answer = "1";
 
@@ -277,10 +358,17 @@ namespace RM_EM
                     {
                         PuzzleCalculation calc = new PuzzleCalculation();
 
+                        // Set the rule.
+                        calc.rule = rule;
+
                         // Expression: a^(-1) = 1/(a^n)
                         // Generates number 1 and number 2.
                         int num1 = Random.Range(lowestValue, highestValue + 1); // a (base)
                         int num2 = Random.Range(lowestValue, highestValue + 1); // b (exponent)
+
+                        // There's no such thing as negative 0, so if num2 becomes 0, it defaults to 1.
+                        if (num2 == 0)
+                            num2 = 1;
 
                         // Empty string to start.
                         calc.question = "";
@@ -299,6 +387,9 @@ namespace RM_EM
                     }
                     break;
             }
+
+            // Set the rule for the resulting calculation.
+            resultCalc.rule = rule;
 
             // Puts all the calculations in the result calculation.
             for(int i = 0; i < subCalcs.Count; i++)
@@ -336,6 +427,46 @@ namespace RM_EM
             // Returns the result.
             return result;
         }
+        
+        // Combines the calculations into 1 string, using the plusRate and minusRate to determine if they're...
+        // Connected by plus signs or minus signs.
+        private string CombineCalculations(List<PuzzleCalculation> calcs)
+        {
+            // TODO: implement controls for plus rate and minus rate.
+
+            // The questions combined.
+            string question = "";
+
+            // The answers combined.
+            string answer = "";
+
+            // The end result.
+            string result = "";
+
+            for(int i = 0; i < calcs.Count; i++)
+            {
+                // Generate the question.
+                question += calcs[i].question;
+                answer += calcs[i].answer;
+
+                // If not on the last index.
+                if(i + 1 < calcs.Count)
+                {
+                    // Generate the symbol.
+                    string symbol = (Random.Range(1, 3) == 1) ? "+" : "-";
+
+                    // Add the symbol.
+                    question += symbol;
+                    answer += symbol;
+                }
+                
+            }
+
+            // Combine all.
+            result = question + "=" + answer;
+
+            return result;
+        }
 
 
         // Generates an equation to be filled.
@@ -344,16 +475,294 @@ namespace RM_EM
             // TODO: do equation calculation here.
             // Don't have spaces.
             
+            // TODO: implement rule combination and value replacement rules.
+
+            // TODO: you'll need to change this so that missing values can be generated properly.
             // equation = "3x^2*3x^(21)=3x^4"; // Test
             equation = GenerateCalculationAsString(exponentRule.expo, 1, 9, 1, 5);
 
-            // Set the equation qustion.
-            equationQuestion = equation;
+            // GENERATE THE EQUATION.
+
+            // The number of terms for the equation.
+            int termCount = 0;
+
+            // If the terms are zero or less, set the term count to 1.
+            if(equationTermsMin <= 0 || equationTermsMax <= 0)
+            {
+                termCount = 1;
+            }
+            else
+            {
+                termCount = Random.Range(equationTermsMin, equationTermsMax + 1);
+            }
+
+
+            // The puzzle calculations
+            List<PuzzleCalculation> calcs = new List<PuzzleCalculation>();
+
+            // The exponent rules.
+            exponentRule[] expoRules = new exponentRule[6]
+            {
+                exponentRule.expo, exponentRule.multSame,
+                exponentRule.expoByExpo, exponentRule.multDiff,
+                exponentRule.zero, exponentRule.negative
+            };
+
+            // The exponent chance rates.
+            float[] expoRates = new float[6];
+            
+
+            // The rate sum;
+            float rateSum = 0.0F;
+
+            // Generates all the exponent rules.
+            expoRates[0] = expoRate;
+            expoRates[1] = expoRates[0] + multSameRate;
+            expoRates[2] = expoRates[1] + expoByExpoRate;
+            expoRates[3] = expoRates[2] + multDiffRate;
+            expoRates[4] = expoRates[3] + zeroRate;
+            expoRates[5] = expoRates[4] + negativeRate;
+
+            // Sums up the rates.
+            foreach(float f in expoRates)
+            {
+                rateSum += f;
+            }
+
+
+            // Adds each term.
+            for(int n = 1; n <= termCount; n++)
+            {
+                // The rule being used.
+                exponentRule rule = exponentRule.none;
+
+                // Random float.
+                float randFloat = 0;
+
+                // Generates a random float.
+                randFloat = Random.Range(0.0F, rateSum);
+
+                // The index of the chosen exponent rule.
+                int index = 0;
+
+                // Goes though all the exponent rates to see which exponent should be chosen.
+                for (int i = 0; i < expoRates.Length; i++)
+                {
+                    // The index has been found, so break it.
+                    if (randFloat <= expoRates[i] && expoRates[i] > 0)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+
+                // Grabs the rule to be used.
+                rule = expoRules[index];
+
+                // Generates a calculation using the rule.
+                PuzzleCalculation calc;
+                
+                // Checks the rule for how to generate the calculation.
+                switch(rule)
+                {
+                    case exponentRule.expo: // Base Exponent
+                        calc = GenerateCalculation(rule,
+                            equationLowestValue, equationHighestValue, baseExponentTermsMin, baseExponentTermsMax);
+
+                        break;
+
+                    default: // Regular
+                        calc = GenerateCalculation(rule,
+                            equationLowestValue, equationHighestValue, 1, 1);
+                        
+                        break;
+                }
+
+                // Adds the calculation to the list.
+                calcs.Add(calc);
+            }
+
+            // NEW (WIP)
 
             // The number of values to replace.
-            int replaceCount = (missingValueCount > 0) ? missingValueCount : 0;
+            //int replaceCount;
 
-            
+            // The usable indexes.
+            //List<int> usableIndexes;
+
+            // The selected indexes for replacement.
+            //List<int> replaceIndexes;
+
+            //// TODO: convert this into a queue so that you can combine them all into one stack.
+            //// Calc mussing values.
+            //List<Stack<ValueSpace>> calcMissings = new List<Stack<ValueSpace>>();
+
+            //// Blanks out values in each calculation.
+            //foreach (PuzzleCalculation calc in calcs)
+            //{
+            //    // Set to 0.
+            //    replaceCount = 0;
+
+            //    // Determines if a '1' should be used, or a random blank out amount.
+            //    replaceCount = (missingValueMin <= 0 || missingValueMax <= 0) ? 
+            //        1 : Random.Range(missingValueMin, missingValueMax + 1);
+
+
+            //    // FINDING THE INDEXES
+            //    // The list of indexes in the equation to choose from.
+            //    usableIndexes = new List<int>();
+
+            //    // The selected indexes.
+            //    replaceIndexes = new List<int>();
+
+            //    // BLACKLISTED VALUES: ^, (, ), =
+
+            //    // TODO: for now, you're only going to erase values either to the left or the right of the equals sign...
+            //    // As that guarantees the question can be answered. You should mix it up with values to the left and right of the equals sign...
+            //    // Later on (make changes later).
+
+            //    // Determines what side of the equals sign to use.
+            //    // 1 = Left, 2 = Right
+            //    int equalsSide = Random.Range(1, 3);
+
+            //    // Grab the expression.
+            //    string expression = (equalsSide == 1) ? calc.question : calc.answer;
+
+            //    // Use this later.
+            //    /*
+            //    switch(calc.rule)
+            //    {
+            //        case exponentRule.none:
+            //        default:
+            //            // Nothing
+            //            break;
+
+            //        case exponentRule.expo:
+            //            break;
+
+            //        case exponentRule.multSame:
+            //            break;
+
+            //        case exponentRule.expoByExpo:
+            //            break;
+
+            //        case exponentRule.multDiff:
+            //            break;
+
+            //        case exponentRule.zero:
+            //            break;
+
+            //        case exponentRule.negative:
+
+            //            break;
+            //    }
+            //    */
+
+
+            //    // Adds each index to the list.
+            //    for (int i = 0; i < expression.Length; i++)
+            //    {
+            //        // If the index is not an exponent symbol, a bracket, or an equals sign.
+            //        if (expression[i] != '^' && expression[i] != '(' && expression[i] != ')' && expression[i] != '=')
+            //            usableIndexes.Add(i);
+            //    }
+
+
+            //    // If the count is not set to 0.
+            //    if(usableIndexes.Count != 0)
+            //    {
+            //        // Finds what values will be replaced.
+            //        for (int i = 0; i < replaceCount; i++)
+            //        {
+            //            // Generate a random index.
+            //            int randIndex = Random.Range(0, usableIndexes.Count);
+
+            //            // Add the index to the replacment list, and remove it from the list of available indexes.
+            //            replaceIndexes.Add(usableIndexes[randIndex]);
+            //            usableIndexes.RemoveAt(randIndex);
+            //        }
+            //    }
+
+
+            //    // Goes from smallest to largest.
+            //    replaceIndexes.Sort();
+
+
+            //    // REPLACING VALUES //
+            //    // Create a missing stack.
+            //    Stack<ValueSpace> missingStack = new Stack<ValueSpace>();
+
+            //    // Replaces each index in the equation question.
+            //    for (int i = replaceIndexes.Count - 1; i >= 0; i--)
+            //    {
+            //        // Remove the value at the index.
+            //        string temp = expression;
+
+            //        // Pushes the value that's going to be replaced into the missing values stack.
+            //        // Generates a value space object, giving it the value and the index it belongs to.
+            //        ValueSpace vs = new ValueSpace();
+            //        vs.value = expression[replaceIndexes[i]];
+            //        vs.index = replaceIndexes[i];
+
+            //        // Puts it on the stack.
+            //        missingStack.Push(vs);
+
+            //        // Removes the value.
+            //        temp = temp.Remove(replaceIndexes[i], 1);
+
+            //        // Insert the placeholder for being filled in.
+            //        temp = temp.Insert(replaceIndexes[i], EQUATION_SPACE);
+
+            //        // Update the question.
+            //        expression = temp;
+            //    }
+
+            //    // Add the stack to the missing calcula
+            //    calcMissings.Add(missingStack);
+            //}
+
+
+            // TODO: this REALLY needs to be simplifed.
+            // Right now, you'd have to go from beginning to end, inverting the value order for each individaul stack...
+            // Then combining them into one stack in the right order. This is because the question goes from left to right...
+            // I'm going to add back in the old version for now for simplicity's sake, but this needs to be addressed.
+
+
+            // OLD
+
+            // Combines the calculations.
+            equation = CombineCalculations(calcs);
+
+            // Set the equation question.
+            equationQuestion = equation;
+
+
+
+            // TODO: implement rules on how missing values are deteremined.
+            // The number of values to replace.
+            int replaceCount = 0;
+
+            // If both are above 0, do it at random. If both values are 0 or less, set it to 1.
+            if (missingValueMin > 0 && missingValueMax > 0)
+            {
+                // If the values are the same, set it as said value. If the values are different, set it randomly.
+                if (missingValueMin == missingValueMax)
+                {
+                    // Set replacement count.
+                    replaceCount = missingValueMin;
+                }
+                else
+                {
+                    // Random replacement count.
+                    replaceCount = Random.Range(missingValueMin, missingValueMax + 1);
+                }
+            }
+            else
+            {
+                replaceCount = 1;
+            }
+
+
             // FINDING THE INDEXES
             // The list of indexes in the equation to choose from.
             List<int> usableIndexes = new List<int>();
@@ -362,7 +771,7 @@ namespace RM_EM
             List<int> replaceIndexes = new List<int>();
 
             // Adds each index to the list.
-            for(int i = 0; i < equation.Length; i++)
+            for (int i = 0; i < equation.Length; i++)
             {
                 // If the index is not an exponent symbol, a bracket, or an equals sign.
                 if (equation[i] != '^' && equation[i] != '(' && equation[i] != ')' && equation[i] != '=')
@@ -370,8 +779,8 @@ namespace RM_EM
             }
 
             // Finds what values will be replaced.
-            for(int i = 0; i < replaceCount && usableIndexes.Count != 0; i++) 
-            { 
+            for (int i = 0; i < replaceCount && usableIndexes.Count != 0; i++)
+            {
                 // Generate a random index.
                 int randIndex = Random.Range(0, usableIndexes.Count);
 
@@ -389,7 +798,7 @@ namespace RM_EM
             missingValues.Clear();
 
             // Replaces each index in the equation question.
-            for(int i = replaceIndexes.Count - 1; i >= 0; i--)
+            for (int i = replaceIndexes.Count - 1; i >= 0; i--)
             {
                 // Remove the value at the index.
                 string temp = equationQuestion;
@@ -457,6 +866,7 @@ namespace RM_EM
         {
 
             // TODO: you need to make sure you format it properly for exponent notation (superscript).
+            // TODO: implement colour?
 
             // The result.
             string result = equationQuestion;
@@ -504,7 +914,10 @@ namespace RM_EM
                     }
                 }
             }
-            
+
+            // Replaces the equation space with the on-screen space.
+            result = result.Replace(EQUATION_SPACE, "[   ]");
+
             // Returns the result.
             return result;
         }
