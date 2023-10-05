@@ -200,22 +200,31 @@ namespace RM_EM
                         // The number that will have the exponent applied to it.
                         int num = Random.Range(lowestValue, highestValue + 1);
 
+                        // Sets the number to 1 if it's set to 0 or less.
+                        // TODO: maybe set it to 2 instead of 1?
+                        if (num <= 0)
+                            num = 1;
+
                         // Clear out the question.
                         calc.question = "";
 
+                        // TODO: should you allow exponents to 1?
+                        // If the terms total is equal to 1, push it up to 2?
+                        int termsTotal = (termCount > 1) ? termCount : 2;
+
                         // Goes through each term generation.
-                        for (int n = 1; n <= termCount; n++)
+                        for (int n = 1; n <= termsTotal; n++)
                         {
                             // Add the number.
                             calc.question += num.ToString();
 
                             // If this isn't the last term, add the multiplication symbol.
-                            if (n < termCount)
+                            if (n < termsTotal)
                                 calc.question += "*";
                         }
 
                         // Gets the answer.
-                        calc.answer = num.ToString() + "^(" + termCount.ToString() + ")";
+                        calc.answer = num.ToString() + "^(" + termsTotal.ToString() + ")";
 
                         // Adds to the sub calculations.
                         subCalcs.Add(calc);
@@ -429,11 +438,9 @@ namespace RM_EM
         }
         
         // Combines the calculations into 1 string, using the plusRate and minusRate to determine if they're...
-        // Connected by plus signs or minus signs.
+        // Connected by plus signs or minus signs (equal chance of both)
         private string CombineCalculations(List<PuzzleCalculation> calcs)
         {
-            // TODO: implement controls for plus rate and minus rate.
-
             // The questions combined.
             string question = "";
 
@@ -584,143 +591,234 @@ namespace RM_EM
 
             // NEW (WIP)
 
+            // Step 1. Erase values from back to start, going from the end of the calcs list to the beginning.
+            // Step 2. Seperate the values between left side and right side of the equals sign.
+            // Step 3. Put the missing values into queues at first. When finished, put them all into the stack.
+
             // The number of values to replace.
-            //int replaceCount;
+            int replaceCount;
 
             // The usable indexes.
-            //List<int> usableIndexes;
+            List<int> usableIndexes;
 
             // The selected indexes for replacement.
-            //List<int> replaceIndexes;
+            List<int> replaceIndexes;
 
-            //// TODO: convert this into a queue so that you can combine them all into one stack.
-            //// Calc mussing values.
-            //List<Stack<ValueSpace>> calcMissings = new List<Stack<ValueSpace>>();
+            // Makes a copy of the calcs list for combining the calculations later.
+            List<PuzzleCalculation> blankCalcs = new List<PuzzleCalculation>(calcs);
 
-            //// Blanks out values in each calculation.
-            //foreach (PuzzleCalculation calc in calcs)
-            //{
-            //    // Set to 0.
-            //    replaceCount = 0;
+            // TODO: convert this into a queue so that you can combine them all into one stack.
+            // The queue for the values left and right of the equals sign.
+            Queue<ValueSpace> leftQueue = new Queue<ValueSpace>();
+            Queue<ValueSpace> rightQueue = new Queue<ValueSpace>();
 
-            //    // Determines if a '1' should be used, or a random blank out amount.
-            //    replaceCount = (missingValueMin <= 0 || missingValueMax <= 0) ? 
-            //        1 : Random.Range(missingValueMin, missingValueMax + 1);
+            
+            // Goes through each calculation to blank out the values.
+            for(int i = calcs.Count - 1; i >= 0; i--)
+            {
+                // Set to 0.
+                replaceCount = 0;
 
-
-            //    // FINDING THE INDEXES
-            //    // The list of indexes in the equation to choose from.
-            //    usableIndexes = new List<int>();
-
-            //    // The selected indexes.
-            //    replaceIndexes = new List<int>();
-
-            //    // BLACKLISTED VALUES: ^, (, ), =
-
-            //    // TODO: for now, you're only going to erase values either to the left or the right of the equals sign...
-            //    // As that guarantees the question can be answered. You should mix it up with values to the left and right of the equals sign...
-            //    // Later on (make changes later).
-
-            //    // Determines what side of the equals sign to use.
-            //    // 1 = Left, 2 = Right
-            //    int equalsSide = Random.Range(1, 3);
-
-            //    // Grab the expression.
-            //    string expression = (equalsSide == 1) ? calc.question : calc.answer;
-
-            //    // Use this later.
-            //    /*
-            //    switch(calc.rule)
-            //    {
-            //        case exponentRule.none:
-            //        default:
-            //            // Nothing
-            //            break;
-
-            //        case exponentRule.expo:
-            //            break;
-
-            //        case exponentRule.multSame:
-            //            break;
-
-            //        case exponentRule.expoByExpo:
-            //            break;
-
-            //        case exponentRule.multDiff:
-            //            break;
-
-            //        case exponentRule.zero:
-            //            break;
-
-            //        case exponentRule.negative:
-
-            //            break;
-            //    }
-            //    */
+                // Determines if a '1' should be used, or a random blank out amount.
+                replaceCount = (missingValueMin <= 0 || missingValueMax <= 0) ? 
+                    1 : Random.Range(missingValueMin, missingValueMax + 1);
 
 
-            //    // Adds each index to the list.
-            //    for (int i = 0; i < expression.Length; i++)
-            //    {
-            //        // If the index is not an exponent symbol, a bracket, or an equals sign.
-            //        if (expression[i] != '^' && expression[i] != '(' && expression[i] != ')' && expression[i] != '=')
-            //            usableIndexes.Add(i);
-            //    }
+                // FINDING THE INDEXES
+                // The list of indexes in the equation to choose from.
+                usableIndexes = new List<int>();
+
+                // The selected indexes.
+                replaceIndexes = new List<int>();
+
+                // BLACKLISTED VALUES: ^, (, ), =
+
+                // TODO: for now, you're only going to erase values either to the left or the right of the equals sign...
+                // As that guarantees the question can be answered. You should mix it up with values to the left and right of the equals sign...
+                // Later on (make changes later).
+
+                // Determines what side of the equals sign to use.
+                // 1 = Left, 2 = Right
+                bool leftEquals = (Random.Range(1, 3) == 1) ? true : false;
+
+                // Grabs the expression.
+                string expression = (leftEquals) ? calcs[i].question : calcs[i].answer;
+
+                // Use this later (or not?)
+                /*
+                switch(calc.rule)
+                {
+                    case exponentRule.none:
+                    default:
+                        // Nothing
+                        break;
+
+                    case exponentRule.expo:
+                        break;
+
+                    case exponentRule.multSame:
+                        break;
+
+                    case exponentRule.expoByExpo:
+                        break;
+
+                    case exponentRule.multDiff:
+                        break;
+
+                    case exponentRule.zero:
+                        break;
+
+                    case exponentRule.negative:
+
+                        break;
+                }
+                */
 
 
-            //    // If the count is not set to 0.
-            //    if(usableIndexes.Count != 0)
-            //    {
-            //        // Finds what values will be replaced.
-            //        for (int i = 0; i < replaceCount; i++)
-            //        {
-            //            // Generate a random index.
-            //            int randIndex = Random.Range(0, usableIndexes.Count);
-
-            //            // Add the index to the replacment list, and remove it from the list of available indexes.
-            //            replaceIndexes.Add(usableIndexes[randIndex]);
-            //            usableIndexes.RemoveAt(randIndex);
-            //        }
-            //    }
+                // Blanks out values in the expression - adds each index to the list.
+                for (int j = 0; j < expression.Length; j++)
+                {
+                    // If the index is not an exponent symbol, a bracket, or an equals sign.
+                    if (expression[j] != '^' && expression[j] != '(' && expression[j] != ')' && expression[j] != '=')
+                        usableIndexes.Add(j);
+                }
 
 
-            //    // Goes from smallest to largest.
-            //    replaceIndexes.Sort();
+                // If the count is not set to 0.
+                if(usableIndexes.Count != 0)
+                {
+                    // Finds what values will be replaced.
+                    for (int j = 0; j < replaceCount; j++)
+                    {
+                        // Generate a random index.
+                        int randIndex = Random.Range(0, usableIndexes.Count);
+
+                        // Add the index to the replacment list, and remove it from the list of available indexes.
+                        replaceIndexes.Add(usableIndexes[randIndex]);
+                        usableIndexes.RemoveAt(randIndex);
+                    }
+                }
 
 
-            //    // REPLACING VALUES //
-            //    // Create a missing stack.
-            //    Stack<ValueSpace> missingStack = new Stack<ValueSpace>();
+                // Make the replacement indexes list go from smallest to largest.
+                replaceIndexes.Sort();
 
-            //    // Replaces each index in the equation question.
-            //    for (int i = replaceIndexes.Count - 1; i >= 0; i--)
-            //    {
-            //        // Remove the value at the index.
-            //        string temp = expression;
 
-            //        // Pushes the value that's going to be replaced into the missing values stack.
-            //        // Generates a value space object, giving it the value and the index it belongs to.
-            //        ValueSpace vs = new ValueSpace();
-            //        vs.value = expression[replaceIndexes[i]];
-            //        vs.index = replaceIndexes[i];
+                // REPLACING VALUES //
+                // Puts the replace values in the queue.
 
-            //        // Puts it on the stack.
-            //        missingStack.Push(vs);
+                // Replaces each index in the equation question, putting it into the blankCalcs list.
+                for (int j = replaceIndexes.Count - 1; j >= 0; j--)
+                {
+                    // Remove the value at the index.
+                    string temp = expression;
 
-            //        // Removes the value.
-            //        temp = temp.Remove(replaceIndexes[i], 1);
+                    // Pushes the value that's going to be replaced into the missing values stack.
+                    // Generates a value space object, giving it the value and the index it belongs to.
+                    ValueSpace vs = new ValueSpace();
+                    vs.value = expression[replaceIndexes[j]];
+                    vs.index = replaceIndexes[j];
 
-            //        // Insert the placeholder for being filled in.
-            //        temp = temp.Insert(replaceIndexes[i], EQUATION_SPACE);
+                    // Puts it into the appropriate queue based on...
+                    // If it's to the left or the right of the equals sign.
+                    if (leftEquals)
+                        leftQueue.Enqueue(vs);
+                    else
+                        rightQueue.Enqueue(vs);
 
-            //        // Update the question.
-            //        expression = temp;
-            //    }
+                    // Removes the value from temp.
+                    temp = temp.Remove(replaceIndexes[j], 1);
 
-            //    // Add the stack to the missing calcula
-            //    calcMissings.Add(missingStack);
-            //}
+                    // Insert the placeholder for being filled in.
+                    temp = temp.Insert(replaceIndexes[j], EQUATION_SPACE);
 
+                    // Update the question.
+                    expression = temp;
+                }
+
+                // Set this as the expression, and put it back in the blank calcs list.
+                if (leftEquals) // Update left of equals.
+                {
+                    PuzzleCalculation calc = blankCalcs[i];
+                    calc.question = expression;
+                    blankCalcs[i] = calc;
+                }
+                else // Update right of equals.
+                {
+                    PuzzleCalculation calc = blankCalcs[i];
+                    calc.answer = expression;
+                    blankCalcs[i] = calc;
+                }
+                    
+            }
+
+
+            // Combines the expressions.
+            {
+                // The questions combined (left side of equals sign).
+                string questionSolved = "";
+                string questionBlank = "";
+
+                // The answers combined (right side of equals sign).
+                string answerSolved = "";
+                string answerBlank = "";
+
+                // The end results.
+                string resultSolved = "";
+                string resultBlank = "";
+
+                // Goes through all the calculations.
+                for (int i = 0; i < calcs.Count; i++)
+                {
+                    // Puts in the questions.
+                    questionSolved += calcs[i].question;
+                    questionBlank += blankCalcs[i].question;
+
+                    // Puts in the answers.
+                    answerSolved += calcs[i].answer;
+                    answerBlank += blankCalcs[i].answer;
+
+                    // If not on the last index.
+                    if (i + 1 < calcs.Count)
+                    {
+                        // Generate the symbol.
+                        string symbol = (Random.Range(1, 3) == 1) ? "+" : "-";
+
+                        // Add the symbol to the questions.
+                        questionSolved += symbol;
+                        questionBlank += symbol;
+
+                        // Add the symbol to the answers.
+                        answerSolved += symbol;
+                        answerBlank += symbol;
+                    }
+
+                }
+
+                // Combine both sides of the equal signs.
+                resultSolved = questionSolved + "=" + answerSolved;
+                resultBlank = questionBlank + "=" + answerBlank;
+
+                // Fill in the missing values.
+                missingValues.Clear();
+
+                // The front of the queue is the last missing value for each side (it goes from end to beginning).
+                // By combining the queues into a stack this way, the values are in the proper order.
+                while (rightQueue.Count != 0) // Right of equals sign (answer)
+                {
+                    missingValues.Push(rightQueue.Dequeue());
+                }
+
+                while (leftQueue.Count != 0) // Left of equals sign (question).
+                {
+                    missingValues.Push(leftQueue.Dequeue());
+                }
+
+                // Set as the equation and equation question.
+                equation = resultSolved;
+                equationQuestion = resultBlank;
+
+            }
 
             // TODO: this REALLY needs to be simplifed.
             // Right now, you'd have to go from beginning to end, inverting the value order for each individaul stack...
@@ -728,99 +826,98 @@ namespace RM_EM
             // I'm going to add back in the old version for now for simplicity's sake, but this needs to be addressed.
 
 
-            // OLD
+            //// OLD
 
-            // Combines the calculations.
-            equation = CombineCalculations(calcs);
+            //// Combines the calculations.
+            //equation = CombineCalculations(calcs);
 
-            // Set the equation question.
-            equationQuestion = equation;
-
-
-
-            // TODO: implement rules on how missing values are deteremined.
-            // The number of values to replace.
-            int replaceCount = 0;
-
-            // If both are above 0, do it at random. If both values are 0 or less, set it to 1.
-            if (missingValueMin > 0 && missingValueMax > 0)
-            {
-                // If the values are the same, set it as said value. If the values are different, set it randomly.
-                if (missingValueMin == missingValueMax)
-                {
-                    // Set replacement count.
-                    replaceCount = missingValueMin;
-                }
-                else
-                {
-                    // Random replacement count.
-                    replaceCount = Random.Range(missingValueMin, missingValueMax + 1);
-                }
-            }
-            else
-            {
-                replaceCount = 1;
-            }
+            //// Set the equation question.
+            //equationQuestion = equation;
 
 
-            // FINDING THE INDEXES
-            // The list of indexes in the equation to choose from.
-            List<int> usableIndexes = new List<int>();
+            //// TODO: implement rules on how missing values are deteremined.
+            //// The number of values to replace.
+            //int replaceCount = 0;
 
-            // The selected indexes.
-            List<int> replaceIndexes = new List<int>();
-
-            // Adds each index to the list.
-            for (int i = 0; i < equation.Length; i++)
-            {
-                // If the index is not an exponent symbol, a bracket, or an equals sign.
-                if (equation[i] != '^' && equation[i] != '(' && equation[i] != ')' && equation[i] != '=')
-                    usableIndexes.Add(i);
-            }
-
-            // Finds what values will be replaced.
-            for (int i = 0; i < replaceCount && usableIndexes.Count != 0; i++)
-            {
-                // Generate a random index.
-                int randIndex = Random.Range(0, usableIndexes.Count);
-
-                // Add the index to the replacmeent list, and remove it from the list of available indexes.
-                replaceIndexes.Add(usableIndexes[randIndex]);
-                usableIndexes.RemoveAt(randIndex);
-            }
-
-            // Goes from smallest to largest.
-            replaceIndexes.Sort();
+            //// If both are above 0, do it at random. If both values are 0 or less, set it to 1.
+            //if (missingValueMin > 0 && missingValueMax > 0)
+            //{
+            //    // If the values are the same, set it as said value. If the values are different, set it randomly.
+            //    if (missingValueMin == missingValueMax)
+            //    {
+            //        // Set replacement count.
+            //        replaceCount = missingValueMin;
+            //    }
+            //    else
+            //    {
+            //        // Random replacement count.
+            //        replaceCount = Random.Range(missingValueMin, missingValueMax + 1);
+            //    }
+            //}
+            //else
+            //{
+            //    replaceCount = 1;
+            //}
 
 
-            // REPLACING VALUES //
-            // Clears out the missing values.
-            missingValues.Clear();
+            //// FINDING THE INDEXES
+            //// The list of indexes in the equation to choose from.
+            //List<int> usableIndexes = new List<int>();
 
-            // Replaces each index in the equation question.
-            for (int i = replaceIndexes.Count - 1; i >= 0; i--)
-            {
-                // Remove the value at the index.
-                string temp = equationQuestion;
+            //// The selected indexes.
+            //List<int> replaceIndexes = new List<int>();
 
-                // Pushes the value that's going to be replaced into the missing values stack.
-                // Generates a value space object, giving it the value and the index it belongs to.
-                ValueSpace vs = new ValueSpace();
-                vs.value = equationQuestion[replaceIndexes[i]];
-                vs.index = replaceIndexes[i];
+            //// Adds each index to the list.
+            //for (int i = 0; i < equation.Length; i++)
+            //{
+            //    // If the index is not an exponent symbol, a bracket, or an equals sign.
+            //    if (equation[i] != '^' && equation[i] != '(' && equation[i] != ')' && equation[i] != '=')
+            //        usableIndexes.Add(i);
+            //}
 
-                // Puts it on the stack.
-                missingValues.Push(vs);
+            //// Finds what values will be replaced.
+            //for (int i = 0; i < replaceCount && usableIndexes.Count != 0; i++)
+            //{
+            //    // Generate a random index.
+            //    int randIndex = Random.Range(0, usableIndexes.Count);
 
-                // Removes the value.
-                temp = temp.Remove(replaceIndexes[i], 1);
+            //    // Add the index to the replacmeent list, and remove it from the list of available indexes.
+            //    replaceIndexes.Add(usableIndexes[randIndex]);
+            //    usableIndexes.RemoveAt(randIndex);
+            //}
 
-                // Insert the placeholder for being filled in.
-                temp = temp.Insert(replaceIndexes[i], EQUATION_SPACE);
+            //// Goes from smallest to largest.
+            //replaceIndexes.Sort();
 
-                // Update the question.
-                equationQuestion = temp;
-            }
+
+            //// REPLACING VALUES //
+            //// Clears out the missing values.
+            //missingValues.Clear();
+
+            //// Replaces each index in the equation question.
+            //for (int i = replaceIndexes.Count - 1; i >= 0; i--)
+            //{
+            //    // Remove the value at the index.
+            //    string temp = equationQuestion;
+
+            //    // Pushes the value that's going to be replaced into the missing values stack.
+            //    // Generates a value space object, giving it the value and the index it belongs to.
+            //    ValueSpace vs = new ValueSpace();
+            //    vs.value = equationQuestion[replaceIndexes[i]];
+            //    vs.index = replaceIndexes[i];
+
+            //    // Puts it on the stack.
+            //    missingValues.Push(vs);
+
+            //    // Removes the value.
+            //    temp = temp.Remove(replaceIndexes[i], 1);
+
+            //    // Insert the placeholder for being filled in.
+            //    temp = temp.Insert(replaceIndexes[i], EQUATION_SPACE);
+
+            //    // Update the question.
+            //    equationQuestion = temp;
+            //}
         }
 
         // Tries to select a puzzle element. Override if a puzzle has custom elements.
