@@ -103,6 +103,19 @@ namespace RM_EM
             }
         }
 
+        // Updates the player 1 display.
+        public void UpdatePlayer1EquationDisplay()
+        {
+            matchUI.UpdatePlayer1EquationDisplay();
+        }
+
+        // Updates the player 2 display.
+        public void UpdatePlayer2EquationDisplay()
+        {
+            matchUI.UpdatePlayer2EquationDisplay();
+        }
+
+
         // Update is called once per frame
         protected override void Update()
         {

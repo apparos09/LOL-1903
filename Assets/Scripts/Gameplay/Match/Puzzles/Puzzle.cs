@@ -152,7 +152,7 @@ namespace RM_EM
             string formatted = GetEquationQuestionFormatted();
 
             // TODO: move this in the final game. This is only here for testing purposes.
-            manager.matchUI.p1EquationText.text = formatted;
+            manager.UpdatePlayer1EquationDisplay();
         }
 
         // Generates and results a calculation.
@@ -549,6 +549,9 @@ namespace RM_EM
                 // Generates a random float.
                 randFloat = Random.Range(0.0F, rateSum);
 
+                // TODO: when you set it to only use zero rule, it ended up giving you base exponent rule too.
+                // Figure out how to fix that.
+
                 // The index of the chosen exponent rule.
                 int index = 0;
 
@@ -680,7 +683,34 @@ namespace RM_EM
                 {
                     // If the index is not an exponent symbol, a bracket, or an equals sign.
                     if (expression[j] != '^' && expression[j] != '(' && expression[j] != ')' && expression[j] != '=')
-                        usableIndexes.Add(j);
+                    {
+                        // Handles custom specifications for usable indexes in current rules.
+                        switch(calcs[i].rule)
+                        {
+                            case exponentRule.zero: // Zero
+                                
+                                // Checks if the exponent symbol exists in the expression(which it always should).
+                                if(expression.Contains("^"))
+                                {
+                                    // Makes sure (j) is greater than, or equal to the index of the exponent.
+                                    // This way the question can always be answered (a^0 = 1).
+                                    if (j >= expression.IndexOf("^"))
+                                    {
+                                        usableIndexes.Add(j);
+                                    }
+                                }
+                                else // No exponent symbol.
+                                {
+                                    usableIndexes.Add(j);
+                                }
+
+                                break;
+                                
+                            default: // Default
+                                usableIndexes.Add(j);
+                                break;
+                        }
+                    }
                 }
 
 
@@ -802,16 +832,40 @@ namespace RM_EM
                 // Fill in the missing values.
                 missingValues.Clear();
 
+                // The index of the current missing character.
+                int currMissIndex = resultBlank.Length;
+
                 // The front of the queue is the last missing value for each side (it goes from end to beginning).
                 // By combining the queues into a stack this way, the values are in the proper order.
-                while (rightQueue.Count != 0) // Right of equals sign (answer)
+                // Relatedly, when combined into one equation, the saved indexes are made wrong...
+                // So they need to be corrected.
+
+                // Right of equals sign (answer)
+                while (rightQueue.Count != 0)
                 {
-                    missingValues.Push(rightQueue.Dequeue());
+                    // Index of the proper equation space, going from the end to the beginning.
+                    currMissIndex = resultBlank.LastIndexOf(EQUATION_SPACE, currMissIndex - 1);
+                    
+                    // Gets the value space, and correct's the index.
+                    ValueSpace vs = rightQueue.Dequeue();
+                    vs.index = currMissIndex;
+
+                    // Puts it in the list.
+                    missingValues.Push(vs);
                 }
 
-                while (leftQueue.Count != 0) // Left of equals sign (question).
+                // Left of equals sign (question).
+                while (leftQueue.Count != 0)
                 {
-                    missingValues.Push(leftQueue.Dequeue());
+                    // Index of the proper equation space, going from the end to the beginning.
+                    currMissIndex = resultBlank.LastIndexOf(EQUATION_SPACE, currMissIndex - 1);
+
+                    // Gets the value space, and correct's the index.
+                    ValueSpace vs = leftQueue.Dequeue();
+                    vs.index = currMissIndex;
+
+                    // Puts it in the list.
+                    missingValues.Push(vs);
                 }
 
                 // Set as the equation and equation question.
@@ -951,6 +1005,9 @@ namespace RM_EM
                 // Removes the placeholder and replaces it with its proper value.
                 equationQuestion = equationQuestion.Remove(vs.index, 1);
                 equationQuestion = equationQuestion.Insert(vs.index, vs.value.ToString());
+
+                // Updates the display.
+                manager.UpdatePlayer1EquationDisplay();
             }
             else
             {
