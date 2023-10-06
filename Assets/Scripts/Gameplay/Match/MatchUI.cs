@@ -15,6 +15,9 @@ namespace RM_EM
         // The time for the match UI.
         public TMP_Text timeText;
 
+        // The UI contnet shown when the match ends.
+        public GameObject matchEnd;
+
         [Header("Player 1")]
         // The player 1 equation.
         public TMP_Text p1EquationText;
@@ -35,7 +38,18 @@ namespace RM_EM
             // Grabs the instance.
             if (manager == null)
                 manager = MatchManager.Instance;
+
+            // Hides the match end.
+            HideMatchEnd();
         }
+
+
+        // Updates the timer displayed.
+        public void UpdateTimeText()
+        {
+            timeText.text = GameplayManager.GetTimeFormatted(manager.matchTime);
+        }
+
 
         // Updates the player 1 equation.
         public void UpdatePlayer1EquationDisplay()
@@ -102,10 +116,18 @@ namespace RM_EM
         }
 
 
-        // Update is called once per frame
-        void Update()
+        // Shows the match end.
+        public void ShowMatchEnd()
         {
-
+            matchEnd.SetActive(true);
         }
+
+        // Hides the match end.
+        public void HideMatchEnd()
+        {
+            matchEnd.SetActive(false);
+        }
+
+        
     }
 }

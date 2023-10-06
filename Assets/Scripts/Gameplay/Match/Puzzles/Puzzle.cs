@@ -172,7 +172,7 @@ namespace RM_EM
             string formatted = GetEquationQuestionFormatted();
 
             // TODO: move this in the final game. This is only here for testing purposes.
-            manager.UpdatePlayer1EquationDisplay();
+            manager.matchUI.UpdatePlayer1EquationDisplay();
         }
 
         // Generates and results a calculation.
@@ -957,9 +957,9 @@ namespace RM_EM
 
                 // Updates the display based on the player.
                 if (player == manager.p1)
-                    manager.UpdatePlayer1EquationDisplay();
+                    manager.matchUI.UpdatePlayer1EquationDisplay();
                 else if (player == manager.p2)
-                    manager.UpdatePlayer2EquationDisplay();
+                    manager.matchUI.UpdatePlayer2EquationDisplay();
 
             }
             else

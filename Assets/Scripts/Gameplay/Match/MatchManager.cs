@@ -112,23 +112,51 @@ namespace RM_EM
             }
         }
 
-        // DISPLAYS //
+        // SETTINGS //
 
-        // Updates the player 1 display.
-        public void UpdatePlayer1EquationDisplay()
+        // Pauses the match.
+        public void PauseMatch()
         {
-            matchUI.UpdatePlayer1EquationDisplay();
+            // Set paused.
+            matchPaused = true;
+
+            // Disable the players.
+            p1.enabled = false;
+            p2.enabled = false;
+
+            // Set time scale to 0.
+            Time.timeScale = 0;
         }
 
-        // Updates the player 2 display.
-        public void UpdatePlayer2EquationDisplay()
+        // Unpauses the match.
+        public void UnpauseMatch()
         {
-            matchUI.UpdatePlayer2EquationDisplay();
+            // Set not paused.
+            matchPaused = false;
+
+            // Enable the players.
+            p1.enabled = true;
+            p2.enabled = true;
+
+            // Set time scale to 1.
+            Time.timeScale = 1;
+        }
+
+        // Toggles the match being paused.
+        public void TogglePausedMatch()
+        {
+            // Checks if the game is paused or not.
+            bool paused = !matchPaused;
+
+            // Calls proper function.
+            if (paused)
+                PauseMatch();
+            else
+                UnpauseMatch();
         }
 
 
-
-        // OTHER
+        // MECHANICS //
 
         // Called when the equation has been answered.
         // player: the player that answered the question.
@@ -157,6 +185,49 @@ namespace RM_EM
                 matchUI.UpdatePlayer2PointsBar();
             }
                 
+            // Checks if the player has won. If so, call the game finished function.
+            if(HasPlayerWon(player))
+            {
+                OnGameFinished();
+            }
+        }
+
+        // Checks if the provided player has won.
+        public bool HasPlayerWon(PlayerMatch player)
+        {
+            bool result = player.points >= pointGoal;
+            return result;
+        }
+
+        // Called when the game is finished.
+        public void OnGameFinished()
+        {
+            // Gets set to 'true' if p1 has one.
+            PlayerMatch winner = null;
+
+            // Checks if p1 has reached the points goal.
+            if(p1.points >= pointGoal)
+            {
+                winner = p1;
+            }
+            // Checks if p2 has reached the points goal.
+            else if(p2.points >= pointGoal)
+            {
+                winner = p2;
+            }
+
+            // The winner couldn't be set.
+            if(winner == null)
+            {
+                Debug.LogWarning("The winner cannot be found.");
+                return;
+            }
+
+            // Pause the match to stop player inputs and AI calculations.
+            PauseMatch();
+
+            // Show the match end content.
+            matchUI.ShowMatchEnd();
         }
 
 
@@ -164,6 +235,12 @@ namespace RM_EM
         protected override void Update()
         {
             base.Update();
+
+            // The match isn't paused.
+            if (!matchPaused)
+            {
+                matchTime += Time.fixedDeltaTime;
+            }
         }
     }
 }

@@ -29,6 +29,19 @@ namespace RM_EM
             // ...
         }
 
+        // Returns the provided time (in seconds), formatted.
+        public static string GetTimeFormatted(float seconds, bool roundUp = true)
+        {
+            // Gets the time and rounds it up to the nearest whole number.
+            float time = (roundUp) ? Mathf.Ceil(seconds) : seconds;
+
+            // Formats the time.
+            string formatted = StringFormatter.FormatTime(time, false, true, false);
+
+            // Returns the formatted time.
+            return formatted;
+        }
+
         // Checks if the game is using the tutorial.
         public bool IsUsingTutorial()
         {
