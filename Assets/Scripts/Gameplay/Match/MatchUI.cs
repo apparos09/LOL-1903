@@ -18,6 +18,8 @@ namespace RM_EM
         // The player 1 equation.
         public TMP_Text p1EquationText;
 
+        // 
+
         [Header("Player 2/Computer")]
         // The player 2 equation.
         public TMP_Text p2EquationText;

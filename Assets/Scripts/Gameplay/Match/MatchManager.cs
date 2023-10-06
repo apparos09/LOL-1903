@@ -103,6 +103,8 @@ namespace RM_EM
             }
         }
 
+        // DISPLAYS //
+
         // Updates the player 1 display.
         public void UpdatePlayer1EquationDisplay()
         {
@@ -113,6 +115,30 @@ namespace RM_EM
         public void UpdatePlayer2EquationDisplay()
         {
             matchUI.UpdatePlayer2EquationDisplay();
+        }
+
+        // OTHER
+
+        // Called when the equation has been answered.
+        // player: the player that answered the question.
+        // equationFilled: the filled in equation.
+        // rulesUsed: the number of rules used for the equation.
+        // missingValuesCountStart: the number of blanks to fill in at the start.
+        public void OnEquationComplete(Puzzle puzzle, PlayerMatch player, string equationFilled, 
+            List<exponentRule> rulesUsed, int missingValuesCountStart)
+        {
+            // TODO: calculate points.
+
+            player.points += 1;
+
+            // Generates a new equation if no one has won yet.
+            puzzle.GenerateEquation();
+
+            // Updates the displays.
+            if (player == p1)
+                matchUI.UpdatePlayer1EquationDisplay();
+            else if (player == p2)
+                matchUI.UpdatePlayer2EquationDisplay();
         }
 
 

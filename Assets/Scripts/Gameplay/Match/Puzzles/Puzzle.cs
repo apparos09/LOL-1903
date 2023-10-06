@@ -58,6 +58,13 @@ namespace RM_EM
         // The puzzle type.
         public puzzle puzzleType;
 
+        // The puzzle values.
+        public List<PuzzleValue> puzzleValues = new List<PuzzleValue>();
+
+        // If set to 'true', the puzzle values are auto-filled.
+        [Tooltip("Autofills the puzzleValues list if it's empty if this is set to 'true'.")]
+        public bool autoFillPuzzleValues = true;
+
         [Header("Exponents")]
 
         // NOTE: a rate of 0 or less means it will never appear.
@@ -92,6 +99,9 @@ namespace RM_EM
 
         // This symbol is used to represent spaces in the equation to be filled.
         public const string EQUATION_SPACE = "$";
+
+        // The rules the current equation is using.
+        public List<exponentRule> rulesUsed = new List<exponentRule>();
 
         // The lowest value can equation will use.
         public int equationLowestValue = 0;
@@ -138,12 +148,22 @@ namespace RM_EM
         // This is filled from back to front, hence why it's a stack.
         public Stack<ValueSpace> missingValues = new Stack<ValueSpace>();
 
+        // The starting number of missing values.
+        private int missingValuesCountStart = 0;
+
         // Start is called before the first frame update
         void Start()
         {
             // Grabs the instance.
             if (manager == null)
                 manager = MatchManager.Instance;
+
+            // If the puzzle values list is empty, try searching for values.
+            if(autoFillPuzzleValues && puzzleValues.Count == 0)
+            {
+                // Puts the values in the list.
+                GetComponentsInChildren<PuzzleValue>(true, puzzleValues);
+            }
 
             // Generates a equation to start off.
             GenerateEquation();
@@ -797,6 +817,9 @@ namespace RM_EM
                 string resultSolved = "";
                 string resultBlank = "";
 
+                // Clears out the number of rules used.
+                rulesUsed.Clear();
+
                 // Goes through all the calculations.
                 for (int i = 0; i < calcs.Count; i++)
                 {
@@ -807,6 +830,11 @@ namespace RM_EM
                     // Puts in the answers.
                     answerSolved += calcs[i].answer;
                     answerBlank += blankCalcs[i].answer;
+
+
+                    // Saves the rule used if it is not already in the list.
+                    if (!rulesUsed.Contains(calcs[i].rule))
+                        rulesUsed.Add(calcs[i].rule);
 
                     // If not on the last index.
                     if (i + 1 < calcs.Count)
@@ -872,122 +900,26 @@ namespace RM_EM
                 equation = resultSolved;
                 equationQuestion = resultBlank;
 
+                // Save the count of missing values.
+                missingValuesCountStart = missingValues.Count;
             }
 
-            // TODO: this REALLY needs to be simplifed.
-            // Right now, you'd have to go from beginning to end, inverting the value order for each individaul stack...
-            // Then combining them into one stack in the right order. This is because the question goes from left to right...
-            // I'm going to add back in the old version for now for simplicity's sake, but this needs to be addressed.
-
-
-            //// OLD
-
-            //// Combines the calculations.
-            //equation = CombineCalculations(calcs);
-
-            //// Set the equation question.
-            //equationQuestion = equation;
-
-
-            //// TODO: implement rules on how missing values are deteremined.
-            //// The number of values to replace.
-            //int replaceCount = 0;
-
-            //// If both are above 0, do it at random. If both values are 0 or less, set it to 1.
-            //if (missingValueMin > 0 && missingValueMax > 0)
-            //{
-            //    // If the values are the same, set it as said value. If the values are different, set it randomly.
-            //    if (missingValueMin == missingValueMax)
-            //    {
-            //        // Set replacement count.
-            //        replaceCount = missingValueMin;
-            //    }
-            //    else
-            //    {
-            //        // Random replacement count.
-            //        replaceCount = Random.Range(missingValueMin, missingValueMax + 1);
-            //    }
-            //}
-            //else
-            //{
-            //    replaceCount = 1;
-            //}
-
-
-            //// FINDING THE INDEXES
-            //// The list of indexes in the equation to choose from.
-            //List<int> usableIndexes = new List<int>();
-
-            //// The selected indexes.
-            //List<int> replaceIndexes = new List<int>();
-
-            //// Adds each index to the list.
-            //for (int i = 0; i < equation.Length; i++)
-            //{
-            //    // If the index is not an exponent symbol, a bracket, or an equals sign.
-            //    if (equation[i] != '^' && equation[i] != '(' && equation[i] != ')' && equation[i] != '=')
-            //        usableIndexes.Add(i);
-            //}
-
-            //// Finds what values will be replaced.
-            //for (int i = 0; i < replaceCount && usableIndexes.Count != 0; i++)
-            //{
-            //    // Generate a random index.
-            //    int randIndex = Random.Range(0, usableIndexes.Count);
-
-            //    // Add the index to the replacmeent list, and remove it from the list of available indexes.
-            //    replaceIndexes.Add(usableIndexes[randIndex]);
-            //    usableIndexes.RemoveAt(randIndex);
-            //}
-
-            //// Goes from smallest to largest.
-            //replaceIndexes.Sort();
-
-
-            //// REPLACING VALUES //
-            //// Clears out the missing values.
-            //missingValues.Clear();
-
-            //// Replaces each index in the equation question.
-            //for (int i = replaceIndexes.Count - 1; i >= 0; i--)
-            //{
-            //    // Remove the value at the index.
-            //    string temp = equationQuestion;
-
-            //    // Pushes the value that's going to be replaced into the missing values stack.
-            //    // Generates a value space object, giving it the value and the index it belongs to.
-            //    ValueSpace vs = new ValueSpace();
-            //    vs.value = equationQuestion[replaceIndexes[i]];
-            //    vs.index = replaceIndexes[i];
-
-            //    // Puts it on the stack.
-            //    missingValues.Push(vs);
-
-            //    // Removes the value.
-            //    temp = temp.Remove(replaceIndexes[i], 1);
-
-            //    // Insert the placeholder for being filled in.
-            //    temp = temp.Insert(replaceIndexes[i], EQUATION_SPACE);
-
-            //    // Update the question.
-            //    equationQuestion = temp;
-            //}
         }
 
         // Tries to select a puzzle element. Override if a puzzle has custom elements.
-        public virtual void SelectElement(GameObject hitObject)
+        public virtual void SelectElement(PlayerMatch player, GameObject hitObject)
         {
             PuzzleValue value;
 
             // If a puzzle value was grabbed from the selected element.
             if(hitObject.TryGetComponent(out value))
             {
-                SelectValue(value);
+                SelectValue(player, value);
             }
         }
 
         // TODO: add select value function.
-        public void SelectValue(PuzzleValue value)
+        public void SelectValue(PlayerMatch player, PuzzleValue value)
         {
             // No mising values.
             if (missingValues.Count == 0)
@@ -1006,12 +938,23 @@ namespace RM_EM
                 equationQuestion = equationQuestion.Remove(vs.index, 1);
                 equationQuestion = equationQuestion.Insert(vs.index, vs.value.ToString());
 
-                // Updates the display.
-                manager.UpdatePlayer1EquationDisplay();
+                // Updates the display based on the player.
+                if (player == manager.p1)
+                    manager.UpdatePlayer1EquationDisplay();
+                else if (player == manager.p2)
+                    manager.UpdatePlayer2EquationDisplay();
+
             }
             else
             {
                 Debug.Log("Wrong!");
+            }
+
+
+            // TODO; maybe move this inside the "right" bracket?
+            if (missingValues.Count == 0)
+            {
+                manager.OnEquationComplete(this, player, equation, rulesUsed, missingValuesCountStart);
             }
         }
 

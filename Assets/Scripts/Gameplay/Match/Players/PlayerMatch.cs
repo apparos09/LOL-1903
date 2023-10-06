@@ -95,7 +95,7 @@ namespace RM_EM
                     if(hit != null)
                     {
                         // Select the element.
-                        puzzle.SelectElement(hit);
+                        puzzle.SelectElement(this, hit);
                     }
                 }
             }

@@ -814,18 +814,21 @@ MonoBehaviour:
   puzzleRender: {fileID: 551675600}
   player: {fileID: 1039013018}
   puzzleType: 0
+  puzzleValues: []
+  autoFillPuzzleValues: 1
   expoRate: 1
-  multSameRate: 1
-  expoByExpoRate: 1
-  multDiffRate: 1
-  zeroRate: 1
-  negativeRate: 1
+  multSameRate: 0
+  expoByExpoRate: 0
+  multDiffRate: 0
+  zeroRate: 0
+  negativeRate: 0
   equation: 
   equationQuestion: 
+  rulesUsed: 
   equationLowestValue: 0
   equationHighestValue: 9
-  equationTermsMin: 2
-  equationTermsMax: 2
+  equationTermsMin: 1
+  equationTermsMax: 1
   baseExponentTermsMin: 1
   baseExponentTermsMax: 3
   missingValueMin: 1
