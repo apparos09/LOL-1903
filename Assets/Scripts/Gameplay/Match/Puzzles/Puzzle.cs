@@ -52,8 +52,8 @@ namespace RM_EM
         // The renderer for the puzzle space.
         public PuzzleRender puzzleRender;
 
-        // The player this puzzle belongs to.
-        public PlayerMatch player;
+        // The player this puzzle belongs to. If no player is set, then any player can interact with it.
+        public PlayerMatch playerMatch;
 
         // The puzzle type.
         public puzzle puzzleType;
@@ -909,6 +909,14 @@ namespace RM_EM
         // Tries to select a puzzle element. Override if a puzzle has custom elements.
         public virtual void SelectElement(PlayerMatch player, GameObject hitObject)
         {
+            // If the player has been set.
+            if(playerMatch != null)
+            {
+                // If the player that selected the element isn't the right player, do nothing.
+                if (playerMatch != player)
+                    return;
+            }
+
             PuzzleValue value;
 
             // If a puzzle value was grabbed from the selected element.
@@ -921,6 +929,15 @@ namespace RM_EM
         // TODO: add select value function.
         public void SelectValue(PlayerMatch player, PuzzleValue value)
         {
+            // If the player has been set.
+            if (playerMatch != null)
+            {
+                // If the player that selected the element isn't the right player, do nothing.
+                if (playerMatch != player)
+                    return;
+            }
+
+
             // No mising values.
             if (missingValues.Count == 0)
                 return;

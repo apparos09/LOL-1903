@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using util;
 
 namespace RM_EM
 {
@@ -18,11 +19,15 @@ namespace RM_EM
         // The player 1 equation.
         public TMP_Text p1EquationText;
 
-        // 
+        // The player 1 points bar.
+        public ProgressBar p1PointsBar;
 
         [Header("Player 2/Computer")]
         // The player 2 equation.
         public TMP_Text p2EquationText;
+
+        // The player 2 points bar.
+        public ProgressBar p2PointsBar;
 
         // Start is called before the first frame update
         void Start()
@@ -45,6 +50,57 @@ namespace RM_EM
             // Gets the equation question formatted.
             p2EquationText.text = manager.p2Puzzle.GetEquationQuestionFormatted();
         }
+
+        // Gets the percentage of the points bar filled.
+        private float GetPointsGoalPercentage(float points)
+        {
+            // The percent to be returned.
+            float percent = 0.0F;
+
+            // Checks if the point goal is set, and if it should even be used at all.
+            if(manager.usePointGoal)
+            {
+                if (manager.pointGoal <= 0)
+                {
+                    percent = 1.0F; // Always set at 100.
+                }
+                else
+                {
+                    // Calculates the percentage and clamps it.
+                    percent = (points) / manager.pointGoal;
+                    percent = Mathf.Clamp01(percent);
+                }
+            }
+            else
+            {
+                // Set to max.
+                percent = 1.0F;
+            }
+            
+
+            return percent;
+        }
+
+        // Updates player 1's points bar.
+        public void UpdatePlayer1PointsBar()
+        {
+            // Percent
+            float percent = GetPointsGoalPercentage(manager.p1.points);
+
+            // Sets the points bar percentage.
+            p1PointsBar.SetValueAsPercentage(percent);
+        }
+
+        // Updates player 2's points bar.
+        public void UpdatePlayer2PointsBar()
+        {
+            // Percent
+            float percent = GetPointsGoalPercentage(manager.p2.points);
+
+            // Sets the points bar percentage.
+            p2PointsBar.SetValueAsPercentage(percent);
+        }
+
 
         // Update is called once per frame
         void Update()

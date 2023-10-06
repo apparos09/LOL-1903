@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace RM_EM
 {
@@ -19,6 +20,12 @@ namespace RM_EM
         // The UI for the match.
         public MatchUI matchUI;
 
+        // The point goal for the game.
+        public int pointGoal = 999;
+
+        // If 'true', the point goal is used.
+        public bool usePointGoal = true;
+
         // The current time for the match.
         public float matchTime = 0;
 
@@ -26,9 +33,11 @@ namespace RM_EM
         public bool matchPaused = false;
 
         // PLAYERS
+        [Header("Player 1")]
         public PlayerMatch p1;
         public Puzzle p1Puzzle;
 
+        [Header("Player 2")]
         public PlayerMatch p2;
         public Puzzle p2Puzzle;
 
@@ -117,6 +126,8 @@ namespace RM_EM
             matchUI.UpdatePlayer2EquationDisplay();
         }
 
+
+
         // OTHER
 
         // Called when the equation has been answered.
@@ -136,9 +147,16 @@ namespace RM_EM
 
             // Updates the displays.
             if (player == p1)
+            {
                 matchUI.UpdatePlayer1EquationDisplay();
+                matchUI.UpdatePlayer1PointsBar();
+            }
             else if (player == p2)
+            {
                 matchUI.UpdatePlayer2EquationDisplay();
+                matchUI.UpdatePlayer2PointsBar();
+            }
+                
         }
 
 
