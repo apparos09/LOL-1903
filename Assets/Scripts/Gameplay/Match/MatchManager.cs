@@ -15,6 +15,9 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private bool instanced = false;
 
+        // Gets set to 'true', when post start has been called.
+        private bool calledPostStart = false;
+
         [Header("Match")]
 
         // The UI for the match.
@@ -74,6 +77,20 @@ namespace RM_EM
             base.Start();
 
             // matchUI.timeText.text = matchTime.ToString("F2");
+        }
+
+        // Post start function.
+        private void PostStart()
+        {
+            // Generates a puzzle and displays the equation.
+            p1Puzzle.GenerateEquation();
+            matchUI.UpdatePlayer1EquationDisplay();
+            
+            // Generates a puzzle and displays the equation.
+            p2Puzzle.GenerateEquation();
+            matchUI.UpdatePlayer2EquationDisplay();
+
+            calledPostStart = true;
         }
 
         // Gets the instance.
@@ -234,6 +251,10 @@ namespace RM_EM
         // Update is called once per frame
         protected override void Update()
         {
+            // Calls post start if it hasn't been called yet.
+            if (!calledPostStart)
+                PostStart();
+
             base.Update();
 
             // The match isn't paused.

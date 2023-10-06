@@ -58,47 +58,51 @@ namespace RM_EM
         {
             // If the mouse touch should be used, and the mouse has been clicked.
             // Maybe split this conditional into 2? 
-            if(useMouseTouch && Input.GetKeyDown(KeyCode.Mouse0))
+            if(useMouseTouch)
             {
-                // TODO: maybe use the callbacks?
-
-                // OLD
-                // This gives a delayed click.
-                // // Grabs the mouse button.
-                // util.MouseButton mb = manager.mouseTouch.MouseButton0;
-
-                // NEW
-                // Generates a mouse button, and sets both held and last clicked as the hovered object.
-                // This is to make sure the hit is as updated (there was a delay using last clickedb efore).
-
-                // The hit info for the mouse button isn't referenced.
-                util.MouseButton mb = new util.MouseButton();
-
-                // Held
-                mb.held = manager.mouseTouch.mouseHoveredObject;
-                mb.heldHit = manager.mouseTouch.mouseHoveredHit;
-                mb.heldHit2D = manager.mouseTouch.mouseHoveredHit2D;
-
-                // Last Clicked
-                mb.lastClicked = manager.mouseTouch.mouseHoveredObject;
-                mb.lastClickedHit = manager.mouseTouch.mouseHoveredHit;
-                mb.lastClickedHit2D = manager.mouseTouch.mouseHoveredHit2D;
-
-
-                // Checks last clicked.
-                if (mb.held != null)
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    // Grabs the object.
-                    GameObject hit = puzzle.puzzleRender.TryHit(mb);
+                    // TODO: maybe use the callbacks?
 
-                    // Something was hit.
-                    if(hit != null)
+                    // OLD
+                    // This gives a delayed click.
+                    // // Grabs the mouse button.
+                    // util.MouseButton mb = manager.mouseTouch.MouseButton0;
+
+                    // NEW
+                    // Generates a mouse button, and sets both held and last clicked as the hovered object.
+                    // This is to make sure the hit is as updated (there was a delay using last clickedb efore).
+
+                    // The hit info for the mouse button isn't referenced.
+                    util.MouseButton mb = new util.MouseButton();
+
+                    // Held
+                    mb.held = manager.mouseTouch.mouseHoveredObject;
+                    mb.heldHit = manager.mouseTouch.mouseHoveredHit;
+                    mb.heldHit2D = manager.mouseTouch.mouseHoveredHit2D;
+
+                    // Last Clicked
+                    mb.lastClicked = manager.mouseTouch.mouseHoveredObject;
+                    mb.lastClickedHit = manager.mouseTouch.mouseHoveredHit;
+                    mb.lastClickedHit2D = manager.mouseTouch.mouseHoveredHit2D;
+
+
+                    // Checks last clicked.
+                    if (mb.held != null)
                     {
-                        // Select the element.
-                        puzzle.SelectElement(this, hit);
+                        // Grabs the object.
+                        GameObject hit = puzzle.puzzleRender.TryHit(mb);
+
+                        // Something was hit.
+                        if (hit != null)
+                        {
+                            // Select the element.
+                            puzzle.SelectElement(this, hit);
+                        }
                     }
                 }
             }
+            
         }
     }
 }
