@@ -49,21 +49,17 @@ namespace RM_EM
         // The manager for the match.
         public MatchManager manager;
 
-        // The renderer for the puzzle space.
-        public PuzzleRender puzzleRender;
-
-        // The player this puzzle belongs to. If no player is set, then any player can interact with it.
-        public PlayerMatch playerMatch;
-
         // The puzzle type.
         public puzzle puzzleType;
 
-        // The puzzle values.
-        public List<PuzzleValue> puzzleValues = new List<PuzzleValue>();
+        // The mechanic of the puzzle.
+        public PuzzleMechanic puzzleMechanic;
 
-        // If set to 'true', the puzzle values are auto-filled.
-        [Tooltip("Autofills the puzzleValues list if it's empty if this is set to 'true'.")]
-        public bool autoFillPuzzleValues = true;
+        // The renderer for the puzzle space.
+        public PuzzleRender puzzleRender;
+        
+        // The player this puzzle belongs to. If no player is set, then any player can interact with it.
+        public PlayerMatch playerMatch;
 
         [Header("Exponents")]
 
@@ -157,13 +153,6 @@ namespace RM_EM
             // Grabs the instance.
             if (manager == null)
                 manager = MatchManager.Instance;
-
-            // If the puzzle values list is empty, try searching for values.
-            if(autoFillPuzzleValues && puzzleValues.Count == 0)
-            {
-                // Puts the values in the list.
-                GetComponentsInChildren<PuzzleValue>(true, puzzleValues);
-            }
 
             // Generates a equation to start off.
             GenerateEquation();
