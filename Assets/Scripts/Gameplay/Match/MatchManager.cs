@@ -37,12 +37,22 @@ namespace RM_EM
 
         // PLAYERS
         [Header("Player 1")]
+        // P1
         public PlayerMatch p1;
+        // P1 Puzzle
         public Puzzle p1Puzzle;
 
+        // An object used to position P1's mechanic and camera off-screen.
+        public GameObject p1MechanicPos;
+
         [Header("Player 2")]
+        // P2
         public PlayerMatch p2;
+        // P2 Puzzle
         public Puzzle p2Puzzle;
+
+        // An object used to position P1's mechanic and camera off-screen.
+        public GameObject p2MechanicPos;
 
         // Constructor
         private MatchManager()
@@ -77,6 +87,17 @@ namespace RM_EM
             base.Start();
 
             // matchUI.timeText.text = matchTime.ToString("F2");
+            MatchInfo info = FindObjectOfType<MatchInfo>();
+
+            // There's a match info object, so set it up. 
+            if(info != null)
+            {
+                // Grabs the instance.
+                PuzzlePrefabs puzzlePrefabs = PuzzlePrefabs.Instance;
+
+                // Generate the puzzles and position them properly.
+
+            }
         }
 
         // Post start function.
