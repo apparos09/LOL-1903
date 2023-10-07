@@ -895,9 +895,10 @@ MonoBehaviour:
   manager: {fileID: 0}
   useMouseTouch: 1
   reticle: {fileID: 1830566265}
-  puzzle: {fileID: 0}
+  puzzle: {fileID: 1159540614}
   points: 0
   power: {fileID: 0}
+  targetValue: {fileID: 0}
   moveSpeed: 0
 --- !u!1 &965560298
 GameObject:
