@@ -92,11 +92,62 @@ namespace RM_EM
             // There's a match info object, so set it up. 
             if(info != null)
             {
+                // PUZZLE //
+                // Set the puzzle type.
+                p1Puzzle.puzzleType = info.puzzleType;
+                p2Puzzle.puzzleType = info.puzzleType;
+
+                // Puzzle Mechanics
                 // Grabs the instance.
                 PuzzlePrefabs puzzlePrefabs = PuzzlePrefabs.Instance;
 
-                // Generate the puzzles and position them properly.
+                // The mechanics for P1 and P2.
+                PuzzleMechanic p1Mech, p2Mech;
 
+                // Checks the puzzle type.
+                switch (info.puzzleType)
+                {
+                    // Generates a keypad by default.
+                    default:
+                    case puzzle.keypad:
+                        p1Mech = Instantiate(puzzlePrefabs.keypad);
+                        p2Mech = Instantiate(puzzlePrefabs.keypad);
+                        break;
+                }
+
+                // Change the names.
+                p1Mech.name += " (P1)";
+                p2Mech.name += " (P2)";
+
+                // Set P1 Puzzle Mechanic Parent and Position
+                p1Mech.transform.parent = p1Puzzle.transform; // Parent
+
+                if (p1MechanicPos != null) // Position
+                    p1Mech.transform.position = p1MechanicPos.transform.position;
+
+
+                // Set P2 Puzzle Mechanic Parent and Position
+                p2Mech.transform.parent = p2Puzzle.transform; // Parent
+
+                if (p2MechanicPos != null) // Position
+                    p2Mech.transform.position = p2MechanicPos.transform.position;
+
+                // Set the managers.
+                p1Mech.manager = this;
+                p2Mech.manager = this;
+
+                // Set the mechanics for the puzzles, and vice versa.
+                // Mechanics
+                p1Puzzle.puzzleMechanic = p1Mech;
+                p2Puzzle.puzzleMechanic = p2Mech;
+
+                // Puzzles
+                p1Mech.puzzle = p1Puzzle;
+                p2Mech.puzzle = p2Puzzle;
+
+                // COMPUTER DIFFICULTY //
+
+                // UI/DESIGN //
             }
         }
 
