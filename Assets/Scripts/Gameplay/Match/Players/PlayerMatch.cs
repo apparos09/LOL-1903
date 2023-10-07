@@ -35,7 +35,6 @@ namespace RM_EM
                 manager = MatchManager.Instance;
         }
 
-
         // Called when the reticle trigger enters a collision with something.
         public virtual void OnReticleTriggerEnter(Collider other)
         {
@@ -79,6 +78,18 @@ namespace RM_EM
             {
                 return -1;
             }
+        }
+
+        // Called when an equation is generated.
+        public virtual void OnEquationGenerated()
+        {
+            // ...
+        }
+
+        // Called when the equation has been completed.
+        public virtual void OnEquationComplete()
+        {
+            // ...
         }
 
 

@@ -12,8 +12,16 @@ namespace RM_EM
         // The target value to be selected.
         public PuzzleValue targetValue;
 
-        [Header("Behavior")]
-        public float moveSpeed;
+        [Header("AI")]
+
+        // The wait timer between movements.
+        public float waitTimer = 0.0F;
+
+        // The max wait time.
+        public float waitTimeMax = 2.5F;
+
+        // The move speed.
+        public float moveSpeed = 5.0F;
 
         // Start is called before the first frame update
         protected override void Start()
@@ -68,10 +76,42 @@ namespace RM_EM
             }
         }
 
+        // Called when an equation is generated.
+        public override void OnEquationGenerated()
+        {
+            base.OnEquationGenerated();
+            waitTimer = waitTimeMax;
+        }
+
+        // Called when the equation has been completed.
+        public override void OnEquationComplete()
+        {
+            base.OnEquationComplete();
+            waitTimer = waitTimeMax;
+        }
+
 
         // Runs the computer AI.
         public void UpdateAI()
         {
+            // Checks if the wait timer is going.
+            if(waitTimer > 0.0F)
+            {
+                // Reduce timer.
+                waitTimer -= Time.deltaTime;
+
+                // The wait timer is negative, so set it to 0.
+                if (waitTimer < 0.0F)
+                {
+                    waitTimer = 0.0F;
+                }
+
+                // Still waiting, so return.
+                return;
+                    
+            }
+
+            // TODO: prioritize closest value.
             // Tries to find the value in the puzzle space so that the reticle can move towards it.
 
             // Gets the value needed.
@@ -98,6 +138,11 @@ namespace RM_EM
                 // Set to null to start off.
                 targetValue = null;
 
+                // TODO: have the computer sometimes get questions wrong?
+
+                // The value options.
+                List<PuzzleValue> valueOptions = new List<PuzzleValue>();
+
                 // Checks the value list.
                 for (int i = 0; i < puzzle.puzzleMechanic.puzzleValues.Count; i++)
                 {
@@ -107,14 +152,67 @@ namespace RM_EM
                         // If this has the correct value.
                         if (puzzle.puzzleMechanic.puzzleValues[i].value == value)
                         {
-                            // Sets the target value.
-                            targetValue = puzzle.puzzleMechanic.puzzleValues[i];
-                            break;
+                            // Checks if the loop should be broken early.
+                            bool breakEarly = false;
+
+                            // Adds to the list of valeu options.
+                            valueOptions.Add(puzzle.puzzleMechanic.puzzleValues[i]);
+
+                            // Checks the puzzle type.
+                            switch (puzzle.puzzleType)
+                            {
+                                // If it's a keypad, there's one of every value, so break early.
+                                case RM_EM.puzzle.keypad:
+                                    breakEarly = true;
+                                    break;
+
+                                default:
+                                    breakEarly = false;
+                                    break;
+                            }
+
+                            // If the loop should be broken early.
+                            if(breakEarly)
+                                break;
                         }
                     }
                 }
+
+
+                // Original
+                // targetValue = puzzle.puzzleMechanic.puzzleValues[i];
+
+                // Checks the number of value options. If tehre's only one, select that value.
+                if (valueOptions.Count == 1)
+                {
+                    // Sets the target value.
+                    targetValue = valueOptions[0];
+                }
+                else // There's multiple values, so check the closet one.
+                {
+                    targetValue = valueOptions[0];
+                    
+                    // Goes through all values.
+                    foreach(PuzzleValue pv in valueOptions)
+                    {
+                        // Gets the current distance and the comparable distance.
+                        float currDist = Vector3.Distance(reticle.transform.position, targetValue.transform.position);
+                        float compDist = Vector3.Distance(reticle.transform.position, pv.transform.position);
+
+                        // If the compared distance is smaller than the current distance, use the compared distance.
+                        if(compDist < currDist)
+                        {
+                            // Set to the target value.
+                            targetValue = pv;
+                        }
+                    }
+                }
+
+                
+
+                
             }
-            
+
 
             // If the target value is still not set, do nothing.
             if (targetValue == null)
@@ -124,7 +222,7 @@ namespace RM_EM
             // The value is projected through a quad, which means it visually won't look right.
             // I won't fix this unless I plan to actually show reticles.
 
-            Vector3 newPos = Vector3.MoveTowards(reticle.transform.position, targetValue.transform.position, 1);
+            Vector3 newPos = Vector3.MoveTowards(reticle.transform.position, targetValue.transform.position, moveSpeed * Time.deltaTime);
             reticle.transform.position = newPos;
 
         }

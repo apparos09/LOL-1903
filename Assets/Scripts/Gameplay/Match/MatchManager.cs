@@ -90,6 +90,10 @@ namespace RM_EM
             p2Puzzle.GenerateEquation();
             matchUI.UpdatePlayer2EquationDisplay();
 
+            // Called when the equations have been generated.
+            p1.OnEquationGenerated();
+            p2.OnEquationGenerated();
+
             calledPostStart = true;
         }
 
@@ -185,10 +189,17 @@ namespace RM_EM
         {
             // TODO: calculate points.
 
+            // Add points.
             player.points += 1;
+
+            // Called when the equation has been completed.
+            player.OnEquationComplete();
 
             // Generates a new equation if no one has won yet.
             puzzle.GenerateEquation();
+
+            // Called when an equation has been generated.
+            player.OnEquationGenerated();
 
             // Updates the displays.
             if (player == p1)
