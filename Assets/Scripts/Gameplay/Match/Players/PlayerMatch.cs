@@ -13,6 +13,11 @@ namespace RM_EM
         // If 'true', the player uses mouse touch.
         public bool useMouseTouch = true;
 
+        // The reticle that's used to select the next value.
+        public PlayerReticle reticle;
+
+        [Header("Match")]
+
         // The puzzle the player is answering.
         public Puzzle puzzle;
 
@@ -30,6 +35,30 @@ namespace RM_EM
                 manager = MatchManager.Instance;
         }
 
+
+        // Called when the reticle trigger enters a collision with something.
+        public virtual void OnReticleTriggerEnter(Collider other)
+        {
+            // ...
+        }
+
+        // Called when the reticle trigger enters a collision with something.
+        public virtual void OnReticleTriggerEnter2D(Collider2D collision)
+        {
+            // ...
+        }
+
+        // Called when the reticle trigger enters a collision with something.
+        public virtual void OnReticleTriggerStay(Collider other)
+        {
+            // ...
+        }
+
+        // Called when the reticle trigger enters a collision with something.
+        public virtual void OnReticleTriggerStay2D(Collider2D collision)
+        {
+            // ...
+        }
 
         // If the player has a power, return true.
         public bool HasPower()
