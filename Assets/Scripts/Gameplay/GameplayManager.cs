@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using util;
 
 namespace RM_EM
@@ -73,6 +74,14 @@ namespace RM_EM
         {
             bool result = GameSettings.Instance.UseTutorial;
             return result;
+        }
+
+        // SCENES //
+        // Go to the title scene.
+        public virtual void ToTitleScene()
+        {
+            // TODO: add loading screen.
+            SceneManager.LoadScene("TitleScene");
         }
 
         // Update is called once per frame

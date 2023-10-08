@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace RM_EM
 {
-    // The World UI
-    public class WorldUI : MonoBehaviour
+    // The UI for the challenger.
+    public class ChallengeUI : MonoBehaviour
     {
-        // The match manager.
+        // The world manager.
         public WorldManager manager;
+
+        // The challenger the challenge is being issued by.
+        public ChallengerWorld challenger;
 
         // Start is called before the first frame update
         void Start()
@@ -17,10 +20,5 @@ namespace RM_EM
                 manager = WorldManager.Instance;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

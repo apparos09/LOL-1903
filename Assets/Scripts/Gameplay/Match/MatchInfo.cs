@@ -33,6 +33,7 @@ namespace RM_EM
         // Rate for negative exponents.
         public float negativeRate = 1.0F;
 
+        // NOTE: you may not even change the defaults.
         [Header("Match/Puzzle Settings")]
         // The point goal for the game.
         public int pointGoal = 999;
@@ -70,8 +71,10 @@ namespace RM_EM
         [Tooltip("The maximum number of missing values.")]
         public int missingValuesMax = 1;
 
+
         [Header("Challenger")]
         // The difficulty of the challenger.
+        // NOTE: if the challenger difficulty is 0 or less, the equation details WON'T be overwritten.
         public int challengerDifficulty = 0;
     }
 }

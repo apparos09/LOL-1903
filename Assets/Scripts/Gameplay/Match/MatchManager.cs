@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace RM_EM
@@ -222,6 +223,10 @@ namespace RM_EM
                 }
 
                 // UI/DESIGN //
+
+                // OTHER //
+                // Destroys the info object.
+                Destroy(info.gameObject);
             }
         }
 
@@ -423,6 +428,26 @@ namespace RM_EM
             matchUI.ShowMatchEnd();
         }
 
+
+        // SCENES //
+
+        // Goes to the world scene.
+        public void ToWorldScene()
+        {
+            // Creates an object and provides the world info.
+            GameObject newObject = new GameObject("World Info");
+            WorldInfo info = newObject.AddComponent<WorldInfo>();
+
+            // Don't destroy the object on load.
+            DontDestroyOnLoad(newObject);
+
+            // TODO: add content.
+            info.gameTime = gameTime;
+
+
+            // TODO: add loading screen.
+            SceneManager.LoadScene("WorldScene");
+        }
 
         // Update is called once per frame
         protected override void Update()

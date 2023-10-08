@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RM_EM
 {
@@ -13,6 +14,10 @@ namespace RM_EM
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
         private bool instanced = false;
+
+        [Header("World")]
+        // The world UI.
+        public WorldUI worldUI;
 
         // Used to pause the world.
         public bool worldPaused = false;
@@ -48,6 +53,23 @@ namespace RM_EM
         protected override void Start()
         {
             base.Start();
+
+            // Hide the challenger UI.
+            worldUI.HideChallengeUI();
+
+            // Searches for the world info.
+            WorldInfo info = FindObjectOfType<WorldInfo>();
+
+            // If the info object was found.
+            if(info != null)
+            {
+                gameTime = info.gameTime;
+
+                // TODO: do more.
+
+                // Destroy the game object.
+                Destroy(info.gameObject);
+            }
         }
 
         // Gets the instance.
@@ -133,6 +155,70 @@ namespace RM_EM
             SetPausedWorld(!worldPaused);
         }
 
+
+        // CHALLENGE //
+        // Accept the challenge.
+        public void AcceptChallenge(ChallengerWorld challenger)
+        {
+            // Sets the provided challenger.
+            worldUI.challengeUI.challenger = challenger;
+
+            // Goes to the match scene.
+            ToMatchScene();
+        }
+
+        // Accept the challenge.
+        public void AcceptChallenge()
+        {
+            AcceptChallenge(worldUI.challengeUI.challenger);
+        }
+
+        // Decline the challenge.
+        public void DeclineChallenge()
+        {
+            worldUI.HideChallengeUI();
+        }
+
+        // SCENE TRANSITIONS
+        // Goes to the match scene. Call AcceptChallenge() if a match info object should be created.
+        public void ToMatchScene()
+        {
+            // Creates an object and provides the match info.
+            GameObject newObject = new GameObject("Match Info");
+            MatchInfo info = newObject.AddComponent<MatchInfo>();
+
+            // Don't destroy the object on load.
+            DontDestroyOnLoad(newObject);
+
+            // TODO: add content.
+            // Grabs the chalelnger.
+            ChallengerWorld challenger = worldUI.challengeUI.challenger;
+
+            info.gameTime = gameTime;
+
+            // PUZZLE/CHALLENGE INFO
+            // Sets the puzzle type.
+            info.puzzleType = challenger.puzzleType;
+
+            // Exponents
+            // Base, Mult Same, Expo By Expo
+            info.baseExpoRate = challenger.baseExpoRate;
+            info.multSameRate = challenger.multSameRate; 
+            info.expoByExpoRate = challenger.expoByExpoRate;
+
+            // Mult Diff, Zero, Negative
+            info.multDiffRate = challenger.multDiffRate;
+            info.zeroRate = challenger.zeroRate;
+            info.negativeRate = challenger.negativeRate;
+
+
+            // CHALLENGER
+            info.challengerDifficulty = challenger.difficulty;
+
+
+            // TODO: add loading screen.
+            SceneManager.LoadScene("MatchScene");
+        }
 
 
         // Update is called once per frame

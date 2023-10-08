@@ -14,6 +14,10 @@ namespace RM_EM
         // The difficulty of the challenger.
         public int difficulty = 0;
 
+        [Header("Puzzle")]
+        // The puzzle type.
+        public puzzle puzzleType;
+
         [Header("Exponents")]
         // The exponent rates.
         public float baseExpoRate = 1.0F;
@@ -41,10 +45,20 @@ namespace RM_EM
                 manager = WorldManager.Instance;
         }
 
-        // Update is called once per frame
-        void Update()
+        // MouseDown
+        private void OnMouseDown()
         {
-
+            // If the challenger UI isn't open, open the UI and set this as the challenger.
+            if(!manager.worldUI.IsChallengerUIActive())
+            {
+                manager.worldUI.ShowChallengeUI(this);
+            }
         }
+
+        //// Update is called once per frame
+        //void Update()
+        //{
+
+        //}
     }
 }
