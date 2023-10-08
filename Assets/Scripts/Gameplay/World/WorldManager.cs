@@ -14,6 +14,9 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private bool instanced = false;
 
+        // Used to pause the world.
+        public bool worldPaused = false;
+
         // Constructor
         private WorldManager()
         {
@@ -44,7 +47,7 @@ namespace RM_EM
         // Start is called before the first frame update
         protected override void Start()
         {
-            // ...
+            base.Start();
         }
 
         // Gets the instance.
@@ -82,6 +85,55 @@ namespace RM_EM
                 return instanced;
             }
         }
+
+        // SETTINGS //
+
+        // PAUSING
+        // Pauses the game, and the match overall.
+        public override void SetPausedGame(bool paused)
+        {
+            base.SetPausedGame(paused);
+            SetPausedWorld(paused);
+        }
+
+        // Pauses the match, and only the match.
+        public void SetPausedWorld(bool paused)
+        {
+            // Set paused.
+            worldPaused = paused;
+
+            // Checks if paused or not.
+            if (paused)
+            {
+                // ...
+            }
+            else
+            {
+                // ...
+            }
+
+
+        }
+
+        // Pauses the world.
+        public void PauseWorld()
+        {
+            SetPausedWorld(true);
+        }
+
+        // Unpauses the world.
+        public void UnpauseWorld()
+        {
+            SetPausedWorld(false);
+        }
+
+        // Toggles the world being paused.
+        public void TogglePausedWorld()
+        {
+            SetPausedWorld(!worldPaused);
+        }
+
+
 
         // Update is called once per frame
         protected override void Update()

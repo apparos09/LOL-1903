@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using util;
 
@@ -41,6 +42,31 @@ namespace RM_EM
             // Returns the formatted time.
             return formatted;
         }
+
+        // Sets if the game should be paused.
+        public virtual void SetPausedGame(bool paused)
+        {
+            gamePaused = paused;
+        }
+
+        // Pauses the game.
+        public virtual void PauseGame()
+        {
+            SetPausedGame(true);
+        }
+
+        // Unpauses the game.
+        public virtual void UnpauseGame()
+        {
+            SetPausedGame(false);
+        }
+
+        // Toggles if the game is paused or not.
+        public virtual void TogglePausedGame()
+        {
+            SetPausedGame(!gamePaused);
+        }
+
 
         // Checks if the game is using the tutorial.
         public bool IsUsingTutorial()

@@ -92,6 +92,8 @@ namespace RM_EM
             // There's a match info object, so set it up. 
             if(info != null)
             {
+                gameTime = info.gameTime;
+
                 // PUZZLE //
                 // Set the puzzle type.
                 p1Puzzle.puzzleType = info.puzzleType;
@@ -145,28 +147,82 @@ namespace RM_EM
                 p1Mech.puzzle = p1Puzzle;
                 p2Mech.puzzle = p2Puzzle;
 
-                // COMPUTER DIFFICULTY //
+
+                // EXPONENTS //
+                // Base
+                p1Puzzle.baseExpoRate = info.baseExpoRate;
+                p2Puzzle.baseExpoRate = info.baseExpoRate;
+
+                // Mult Same
+                p1Puzzle.multSameRate = info.multSameRate;
+                p2Puzzle.multSameRate = info.multSameRate;
+
+                // Expo By Expo
+                p1Puzzle.expoByExpoRate = info.expoByExpoRate;
+                p2Puzzle.expoByExpoRate = info.expoByExpoRate;
+
+                // Mult Diff
+                p1Puzzle.multDiffRate = info.multDiffRate;
+                p2Puzzle.multDiffRate = info.multDiffRate;
+
+                // Zero
+                p1Puzzle.zeroRate = info.zeroRate;
+                p2Puzzle.zeroRate = info.zeroRate;
+
+                // Negative
+                p1Puzzle.negativeRate = info.negativeRate;
+                p2Puzzle.negativeRate = info.negativeRate;
+
+
+                // MATCH SETTINGS //
+                pointGoal = info.pointGoal;
+                usePointGoal = info.usePointGoal;
+
+                // Lowest equation values
+                p1Puzzle.equationLowestValue = info.equationLowestValue;
+                p2Puzzle.equationLowestValue = info.equationLowestValue;
+
+                // Highest equation values
+                p1Puzzle.equationHighestValue = info.equationHighestValue;
+                p2Puzzle.equationHighestValue = info.equationHighestValue;
+
+                // Equation terms (minimum)
+                p1Puzzle.equationTermsMin = info.equationTermsMin;
+                p2Puzzle.equationTermsMin = info.equationTermsMin;
+
+                // Equation terms (maximum)
+                p1Puzzle.equationTermsMax = info.equationTermsMax;
+                p2Puzzle.equationTermsMax = info.equationTermsMax;
+
+                // Base exponent terms (minimum)
+                p1Puzzle.baseExponentTermsMin = info.baseExponentTermsMin;
+                p2Puzzle.baseExponentTermsMin = info.baseExponentTermsMin;
+
+                // Base exponent terms (maximum)
+                p1Puzzle.baseExponentTermsMax = info.baseExponentTermsMax;
+                p2Puzzle.baseExponentTermsMax = info.baseExponentTermsMax;
+
+                // Missing values (minimum)
+                p1Puzzle.missingValuesMin = info.missingValuesMin;
+                p2Puzzle.missingValuesMin = info.missingValuesMin;
+
+                // Missing values (maximum)
+                p1Puzzle.missingValuesMax = info.missingValuesMax;
+                p2Puzzle.missingValuesMax = info.missingValuesMax;
+
+
+                // COMPUTER/AI
+                ComputerMatch cpu;
+
+                // Gets the computer player.
+                if(p2.TryGetComponent<ComputerMatch>(out cpu))
+                {
+                    // Sets difficulty.
+                    cpu.difficulty = info.challengerDifficulty;
+                }
 
                 // UI/DESIGN //
             }
-        }
-
-        // Post start function.
-        private void PostStart()
-        {
-            // Generates a puzzle and displays the equation.
-            p1Puzzle.GenerateEquation();
-            matchUI.UpdatePlayer1EquationDisplay();
-            
-            // Generates a puzzle and displays the equation.
-            p2Puzzle.GenerateEquation();
-            matchUI.UpdatePlayer2EquationDisplay();
-
-            // Called when the equations have been generated.
-            p1.OnEquationGenerated();
-            p2.OnEquationGenerated();
-
-            calledPostStart = true;
         }
 
         // Gets the instance.
@@ -205,47 +261,84 @@ namespace RM_EM
             }
         }
 
+
+        // Post start function.
+        private void PostStart()
+        {
+            // Generates a puzzle and displays the equation.
+            p1Puzzle.GenerateEquation();
+            matchUI.UpdatePlayer1EquationDisplay();
+            
+            // Generates a puzzle and displays the equation.
+            p2Puzzle.GenerateEquation();
+            matchUI.UpdatePlayer2EquationDisplay();
+
+            // Called when the equations have been generated.
+            p1.OnEquationGenerated();
+            p2.OnEquationGenerated();
+
+            calledPostStart = true;
+        }
+
+
         // SETTINGS //
+
+        // PAUSING
+        // Pauses the game, and the match overall.
+        public override void SetPausedGame(bool paused)
+        {
+            base.SetPausedGame(paused);
+            SetPausedMatch(paused);
+        }
+
+        // Pauses the match, and only the match.
+        public void SetPausedMatch(bool paused)
+        {
+            // Set paused.
+            matchPaused = paused;
+
+            // Checks if paused or not.
+            if(paused)
+            {
+                // Disable the players.
+                p1.enabled = false;
+                p2.enabled = false;
+
+                // Set time scale to 0.
+                Time.timeScale = 0;
+            }
+            else
+            {
+                // Set not paused.
+                matchPaused = false;
+
+                // Enable the players.
+                p1.enabled = true;
+                p2.enabled = true;
+
+                // Set time scale to 1.
+                Time.timeScale = 1;
+            }
+
+            
+        }
 
         // Pauses the match.
         public void PauseMatch()
         {
-            // Set paused.
-            matchPaused = true;
-
-            // Disable the players.
-            p1.enabled = false;
-            p2.enabled = false;
-
-            // Set time scale to 0.
-            Time.timeScale = 0;
+            SetPausedMatch(true);
         }
 
         // Unpauses the match.
         public void UnpauseMatch()
         {
-            // Set not paused.
-            matchPaused = false;
-
-            // Enable the players.
-            p1.enabled = true;
-            p2.enabled = true;
-
-            // Set time scale to 1.
-            Time.timeScale = 1;
+            SetPausedMatch(false);
         }
 
         // Toggles the match being paused.
         public void TogglePausedMatch()
         {
-            // Checks if the game is paused or not.
-            bool paused = !matchPaused;
-
-            // Calls proper function.
-            if (paused)
-                PauseMatch();
-            else
-                UnpauseMatch();
+            SetPausedMatch(!matchPaused);
         }
 
 

@@ -66,7 +66,7 @@ namespace RM_EM
         // NOTE: a rate of 0 or less means it will never appear.
 
         // The exponent rates.
-        public float expoRate = 1.0F;
+        public float baseExpoRate = 1.0F;
 
         // Rate for multiplicaton (same bases) exponents.
         public float multSameRate = 1.0F;
@@ -133,11 +133,11 @@ namespace RM_EM
         // These values must be greater than 0.
         // Minimum Number of Missing Values
         [Tooltip("The minimum number of missing values.")]
-        public int missingValueMin = 1;
+        public int missingValuesMin = 1;
 
         // Maximum Number of Missing Values
         [Tooltip("The maximum number of missing values.")]
-        public int missingValueMax = 1;
+        public int missingValuesMax = 1;
 
         // The values that must be found for the equation.
         // Once this queue is empty, the equation has been solved.
@@ -526,7 +526,7 @@ namespace RM_EM
             float rateSum = 0.0F;
 
             // Generates all the exponent rules.
-            expoRates[0] = expoRate;
+            expoRates[0] = baseExpoRate;
             expoRates[1] = expoRates[0] + multSameRate;
             expoRates[2] = expoRates[1] + expoByExpoRate;
             expoRates[3] = expoRates[2] + multDiffRate;
@@ -626,8 +626,8 @@ namespace RM_EM
                 replaceCount = 0;
 
                 // Determines if a '1' should be used, or a random blank out amount.
-                replaceCount = (missingValueMin <= 0 || missingValueMax <= 0) ? 
-                    1 : Random.Range(missingValueMin, missingValueMax + 1);
+                replaceCount = (missingValuesMin <= 0 || missingValuesMax <= 0) ? 
+                    1 : Random.Range(missingValuesMin, missingValuesMax + 1);
 
 
                 // FINDING THE INDEXES

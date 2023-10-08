@@ -9,6 +9,9 @@ namespace RM_EM
     {
         [Header("Computer")]
 
+        // The difficulty of the computer.
+        public int difficulty = 0;
+
         // The target value to be selected.
         public PuzzleValue targetValue;
 
@@ -31,6 +34,15 @@ namespace RM_EM
             // The computer does not use moue touch, so don't check for that.
             useMouseTouch = false;
         }
+
+        // Sets the difficulty of the computer.
+        public void SetDifficulty(int difficulty)
+        {
+            this.difficulty = difficulty;
+
+            // TODO: implement difficulty changes.
+        }
+
 
         // RETICLE COLLISION CALLS
 
