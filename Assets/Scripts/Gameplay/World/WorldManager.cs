@@ -19,8 +19,21 @@ namespace RM_EM
         // The world UI.
         public WorldUI worldUI;
 
+        // The camera the world uses.
+        public WorldCamera worldCamera;
+
         // Used to pause the world.
         public bool worldPaused = false;
+
+        // The manager for world events.
+        public EventManager worldEvents;
+
+        [Header("Areas, Challengers")]
+        // The areas in the world.
+        public List<Area> areas = new List<Area>();
+
+        // THe current area index.
+        public int currAreaIndex = 0;
 
         // Constructor
         private WorldManager()
@@ -153,6 +166,59 @@ namespace RM_EM
         public void TogglePausedWorld()
         {
             SetPausedWorld(!worldPaused);
+        }
+
+        // AREAS //
+        // Sets the area.
+        public void SetArea(int newIndex)
+        {
+            // Bounds check to see if the new index is valid.
+            if(newIndex >= 0 && newIndex < areas.Count)
+            {
+                currAreaIndex = newIndex;
+            }
+            else
+            {
+                return;
+            }
+
+            // Grabs the new area.
+            Area newArea = areas[currAreaIndex];
+
+            // Transition the camera.
+            if(newArea.cameraPos != null)
+            {
+                // Move the camera.
+                worldCamera.Move(newArea.cameraPos);
+            }
+        }
+
+        // Go to the next area.
+        public void NextArea()
+        {
+            // Reduce index.
+            int index = currAreaIndex + 1;
+
+            // Bounds check.
+            if(index >= areas.Count)
+                index = 0;
+
+            // Set the area index.
+            SetArea(index);
+        }
+        
+        // Go to the previous area.
+        public void PreviousArea()
+        {
+            // Reduce index.
+            int index = currAreaIndex - 1;
+
+            // Bounds check.
+            if (index < 0)
+                index = areas.Count - 1;
+
+            // Set the area index.
+            SetArea(index);
         }
 
 
