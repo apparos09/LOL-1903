@@ -21,9 +21,6 @@ namespace RM_EM
         // Becomes 'true' when the game has been initialized.
         public bool initGame = false;
 
-        // The text for the game initialization.
-        public TMP_Text initText;
-
         // LOL //
         // Relative to Assets /StreamingAssets/
         private const string languageJSONFilePath = "language.json";
@@ -72,7 +69,7 @@ namespace RM_EM
 #endif
 
             // Initialize the object, passing in the WebGL
-            LOLSDK.Init(sdk, "com.legends-of-learning.battle-bot-training-simulation");
+            LOLSDK.Init(sdk, "com.legends-of-learning.exponent-monsters");
 
             // Register event handlers
             LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(HandleStartGame);
