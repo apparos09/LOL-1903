@@ -5,7 +5,7 @@ using UnityEngine;
 namespace RM_EM
 {
     // An event for a scene.
-    public abstract class Event : MonoBehaviour
+    public abstract class GameEvent : MonoBehaviour
     {
         // The name of the event.
         public string eventName = "";
@@ -16,14 +16,17 @@ namespace RM_EM
         // A tag used to mark the event.
         public string eventTag = "";
 
+        // Set this to 'true' to show that the event is cleared.
+        public bool cleared = false;
+
         // Initializes the event.
         public abstract void InitalizeEvent();
 
-        // Checks if the event has been cleared yet.
-        public abstract bool CheckEvent();
+        // Updates an event, checking if the event has been cleared yet.
+        public abstract bool UpdateEvent();
 
         // Called when the event is completed.
-        public abstract void OnEventCompleted();
+        public abstract void OnEventComplete();
 
     }
 }

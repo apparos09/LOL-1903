@@ -26,7 +26,7 @@ namespace RM_EM
         public bool worldPaused = false;
 
         // The manager for world events.
-        public EventManager worldEvents;
+        public GameEventManager worldEvents;
 
         [Header("Areas, Challengers")]
         // The areas in the world.
