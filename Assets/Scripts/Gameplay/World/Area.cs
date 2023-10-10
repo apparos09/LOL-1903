@@ -24,6 +24,11 @@ namespace RM_EM
         // If 'true', the challengers are auto-added if the list is empty, and they're children of the area.
         public bool autoAddChallengers = true;
 
+        [Header("Events")]
+
+        // The event for the area.
+        public AreaSwitchEvent areaEvent;
+
         // Start is called before the first frame update
         void Start()
         {

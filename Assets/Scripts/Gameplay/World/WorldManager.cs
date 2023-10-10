@@ -191,6 +191,39 @@ namespace RM_EM
                 // Move the camera.
                 worldCamera.Move(newArea.cameraPos);
             }
+
+
+            // Enable the buttons by default (will be disabled if unsable in event update).
+            worldUI.prevAreaButton.interactable = true;
+            worldUI.nextAreaButton.interactable = true;
+
+            // If the area index is set to 0, disable the back button.
+            if (currAreaIndex == 0)
+            {
+                worldUI.prevAreaButton.interactable = false;
+            }
+
+            // If the area index is at its max, disable the forward button.
+            if(currAreaIndex == areas.Count - 1)
+            {
+                worldUI.nextAreaButton.interactable = false;
+            }
+
+            // If the next button is interactable, check if the area has been cleared.
+            if(worldUI.nextAreaButton.interactable)
+            {
+                // If the area event is set.
+                if(newArea.areaEvent != null)
+                {
+                    // If the area has not been cleared, disable the next button.
+                    if(!newArea.areaEvent.cleared)
+                    {
+                        worldUI.nextAreaButton.interactable = false;
+
+                    }
+                }
+            }
+
         }
 
         // Go to the next area.

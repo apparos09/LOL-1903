@@ -16,10 +16,10 @@ namespace RM_EM
 
         [Header("Rooms")]
         // Button for left room.
-        public Button leftButton;
+        public Button prevAreaButton;
 
         // Button for going to right room.
-        public Button rightButton;
+        public Button nextAreaButton;
 
         // Start is called before the first frame update
         void Start()
