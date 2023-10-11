@@ -432,6 +432,7 @@ MonoBehaviour:
   collider: {fileID: 616700690}
   spriteRenderer: {fileID: 888863626}
   difficulty: 0
+  available: 1
   defeated: 0
   puzzleType: 0
   baseExpoRate: 1
@@ -1016,6 +1017,7 @@ MonoBehaviour:
   cameraPos: {fileID: 1357639155}
   challengers: []
   autoAddChallengers: 1
+  areaEvent: {fileID: 0}
 --- !u!1 &1150969022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,8 +1416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   challengeUI: {fileID: 1620257225}
-  leftButton: {fileID: 1319003835}
-  rightButton: {fileID: 1854869385}
+  prevAreaButton: {fileID: 1319003835}
+  nextAreaButton: {fileID: 1854869385}
 --- !u!1 &1502855965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1468,7 @@ MonoBehaviour:
   cameraPos: {fileID: 267809511}
   challengers: []
   autoAddChallengers: 1
+  areaEvent: {fileID: 0}
 --- !u!1 &1547001936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1520,7 @@ MonoBehaviour:
   collider: {fileID: 1547001939}
   spriteRenderer: {fileID: 1312580242}
   difficulty: 0
+  available: 1
   defeated: 0
   puzzleType: 0
   baseExpoRate: 1
@@ -1935,6 +1939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
+  - {fileID: 1707077278}
   - {fileID: 616700693}
   callEventInits: 1
   callEventCompletes: 1
@@ -2000,6 +2005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1707077276}
   - component: {fileID: 1707077277}
+  - component: {fileID: 1707077278}
   m_Layer: 0
   m_Name: Area 1 (Start)
   m_TagString: Untagged
@@ -2038,8 +2044,29 @@ MonoBehaviour:
   manager: {fileID: 0}
   areaNumber: 0
   cameraPos: {fileID: 1150969022}
-  challengers: []
+  challengers:
+  - {fileID: 1547001938}
+  - {fileID: 616700689}
   autoAddChallengers: 1
+  areaEvent: {fileID: 1707077278}
+--- !u!114 &1707077278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707077275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978e2a5748897f54dba2a55f3ceb3ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: 
+  eventId: 0
+  eventTag: 
+  cleared: 0
+  manager: {fileID: 0}
+  area: {fileID: 1707077277}
 --- !u!1 &1854869383
 GameObject:
   m_ObjectHideFlags: 0

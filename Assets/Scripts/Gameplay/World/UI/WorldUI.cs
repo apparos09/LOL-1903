@@ -14,7 +14,7 @@ namespace RM_EM
         // The challenge window.
         public ChallengeUI challengeUI;
 
-        [Header("Rooms")]
+        [Header("Area")]
         // Button for left room.
         public Button prevAreaButton;
 

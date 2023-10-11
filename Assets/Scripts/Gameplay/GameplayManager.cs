@@ -68,12 +68,25 @@ namespace RM_EM
             SetPausedGame(!gamePaused);
         }
 
+        // TUTORIAL //
 
         // Checks if the game is using the tutorial.
         public bool IsUsingTutorial()
         {
             bool result = GameSettings.Instance.UseTutorial;
             return result;
+        }
+
+        // Called when a tutorial is started.
+        public virtual void OnTutorialStart()
+        {
+            // Start...
+        }
+
+        // Called when a tutorial is ended.
+        public virtual void OnTutorialEnd()
+        {
+            // End...
         }
 
         // SCENES //

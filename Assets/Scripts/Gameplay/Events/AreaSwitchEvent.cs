@@ -7,6 +7,8 @@ namespace RM_EM
     // An area switch event.
     public class AreaSwitchEvent : GameEvent
     {
+        [Header("Area Switch")]
+
         // Checks for the manager.
         public WorldManager manager;
 
@@ -38,7 +40,7 @@ namespace RM_EM
         public override bool UpdateEvent()
         {
             // Checks if the area is finished.
-            bool finished = false;
+            bool finished = true;
 
             // Checks if there are challengers saved to this area.
             if(area.challengers.Count > 0)
