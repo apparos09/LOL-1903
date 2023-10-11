@@ -12,7 +12,7 @@ namespace RM_EM
         [Header("Match")]
 
         // The match manager.
-        public MatchManager manager;
+        public MatchManager matchManager;
 
         // The time for the match UI.
         public TMP_Text timeText;
@@ -40,8 +40,8 @@ namespace RM_EM
             base.Start();
 
             // Grabs the instance.
-            if (manager == null)
-                manager = MatchManager.Instance;
+            if (matchManager == null)
+                matchManager = MatchManager.Instance;
 
             // Hides the match end.
             HideMatchEnd();
@@ -51,7 +51,7 @@ namespace RM_EM
         // Updates the timer displayed.
         public void UpdateTimeText()
         {
-            timeText.text = GameplayManager.GetTimeFormatted(manager.matchTime);
+            timeText.text = GameplayManager.GetTimeFormatted(matchManager.matchTime);
         }
 
 
@@ -59,14 +59,14 @@ namespace RM_EM
         public void UpdatePlayer1EquationDisplay()
         {
             // Gets the equation question formatted.
-            p1EquationText.text = manager.p1Puzzle.GetEquationQuestionFormatted();
+            p1EquationText.text = matchManager.p1Puzzle.GetEquationQuestionFormatted();
         }
 
         // Updates the player 2 equation.
         public void UpdatePlayer2EquationDisplay()
         {
             // Gets the equation question formatted.
-            p2EquationText.text = manager.p2Puzzle.GetEquationQuestionFormatted();
+            p2EquationText.text = matchManager.p2Puzzle.GetEquationQuestionFormatted();
         }
 
         // Gets the percentage of the points bar filled.
@@ -76,16 +76,16 @@ namespace RM_EM
             float percent = 0.0F;
 
             // Checks if the point goal is set, and if it should even be used at all.
-            if(manager.usePointGoal)
+            if(matchManager.usePointGoal)
             {
-                if (manager.pointGoal <= 0)
+                if (matchManager.pointGoal <= 0)
                 {
                     percent = 1.0F; // Always set at 100.
                 }
                 else
                 {
                     // Calculates the percentage and clamps it.
-                    percent = (points) / manager.pointGoal;
+                    percent = (points) / matchManager.pointGoal;
                     percent = Mathf.Clamp01(percent);
                 }
             }
@@ -103,7 +103,7 @@ namespace RM_EM
         public void UpdatePlayer1PointsBar()
         {
             // Percent
-            float percent = GetPointsGoalPercentage(manager.p1.points);
+            float percent = GetPointsGoalPercentage(matchManager.p1.points);
 
             // Sets the points bar percentage.
             p1PointsBar.SetValueAsPercentage(percent);
@@ -113,7 +113,7 @@ namespace RM_EM
         public void UpdatePlayer2PointsBar()
         {
             // Percent
-            float percent = GetPointsGoalPercentage(manager.p2.points);
+            float percent = GetPointsGoalPercentage(matchManager.p2.points);
 
             // Sets the points bar percentage.
             p2PointsBar.SetValueAsPercentage(percent);

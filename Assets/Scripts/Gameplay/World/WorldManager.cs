@@ -94,6 +94,8 @@ namespace RM_EM
                 // Load the world info.
                 gameInfo.LoadWorldInfo(this);
             }
+
+            // StartTutorial(tutorial.GetTestPages());
         }
 
         // Gets the instance.

@@ -11,7 +11,7 @@ namespace RM_EM
         [Header("World")]
 
         // The match manager.
-        public WorldManager manager;
+        public WorldManager worldManager;
 
         // The challenge window.
         public ChallengeUI challengeUI;
@@ -28,8 +28,8 @@ namespace RM_EM
         {
             base.Start();
 
-            if (manager == null)
-                manager = WorldManager.Instance;
+            if (worldManager == null)
+                worldManager = WorldManager.Instance;
         }
 
         // CHALLENGE UI //
