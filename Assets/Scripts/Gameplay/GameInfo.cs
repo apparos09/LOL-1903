@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace RM_EM
 {
-    // The match tutorials.
-    public class MatchTutorial : Tutorial
+    // This script is used for game info that's shared between all scenes.
+    public class GameInfo : MonoBehaviour
     {
         // The singleton instance.
-        private static MatchTutorial instance;
+        private static GameInfo instance;
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
         private static bool instanced = false;
 
-        [Header("Match")]
-        // The match manager.
-        public MatchManager manager;
+        [Header("Shared Game Info")]
+        // The game time.
+        public float gameTime = 0.0F;
 
         // Constructor
-        private MatchTutorial()
+        private GameInfo()
         {
             // ...
         }
@@ -46,17 +46,14 @@ namespace RM_EM
         }
 
         // Start is called before the first frame update
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
-
-            // Gets the match manager.
-            if (manager == null)
-                manager = MatchManager.Instance;
+            // Don't destroy this game object on load.
+            DontDestroyOnLoad(gameObject);
         }
 
         // Gets the instance.
-        public static MatchTutorial Instance
+        public static GameInfo Instance
         {
             get
             {
@@ -64,15 +61,15 @@ namespace RM_EM
                 if (instance == null)
                 {
                     // Tries to find the instance.
-                    instance = FindObjectOfType<MatchTutorial>(true);
+                    instance = FindObjectOfType<GameInfo>(true);
 
 
                     // The instance doesn't already exist.
                     if (instance == null)
                     {
                         // Generate the instance.
-                        GameObject go = new GameObject("Match Tutorial (singleton)");
-                        instance = go.AddComponent<MatchTutorial>();
+                        GameObject go = new GameObject("Game Info (singleton)");
+                        instance = go.AddComponent<GameInfo>();
                     }
 
                 }
@@ -89,12 +86,6 @@ namespace RM_EM
             {
                 return instanced;
             }
-        }
-
-        // Update is called once per frame
-        protected override void Update()
-        {
-            base.Update();
         }
 
         // This function is called when the MonoBehaviour will be destroyed.

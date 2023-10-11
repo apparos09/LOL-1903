@@ -13,6 +13,10 @@ namespace RM_EM
         // The instance of the text-to-speech.
         private static TextToSpeech instance;
 
+        // Gets set to 'true' when the singleton has been instanced.
+        // This isn't needed, but it helps with the clarity.
+        private static bool instanced = false;
+
         // The audio source for the text-to-speech.
         public AudioSource ttsAudioSource;
 
@@ -42,51 +46,61 @@ namespace RM_EM
             //     ReadLine("This is a test");
             // }
 
-            // Checks for the instance.
+            // If the instance hasn't been set, set it to this object.
             if (instance == null)
             {
                 instance = this;
             }
-
-            // checks if the SDK has been initialized.
-            if (!LOLSDK.Instance.IsInitialized)
-                Debug.LogError("The SDK has not been initialized.");
-
-            // if the audio source has not been set, then add an audio source component.
-            if (ttsAudioSource == null)
+            // If the instance isn't this, destroy the game object.
+            else if (instance != this)
             {
-                // Creates a new audio source object.
-                // This will be a child of the text-to-speech object so that it can have its own tag.
-
-                // Creates the object, and parents it to this script's object.
-                GameObject newObject = new GameObject("Audio Source");
-                newObject.transform.parent = gameObject.transform;
-
-                // Gives it the tag.
-                newObject.tag = GameSettings.TTS_TAG;
-
-                // Adds the audio source to the new object.
-                ttsAudioSource = newObject.AddComponent<AudioSource>();
+                Destroy(gameObject);
             }
 
-            // The audio soruce control.
-            AudioSourceControl asc = null;
-
-            // Tries to get the audio source control.
-            if(!ttsAudioSource.TryGetComponent<AudioSourceControl>(out asc))
+            // Run code for initialization.
+            if (!instanced)
             {
-                // Adds the audio source control.
-                asc = ttsAudioSource.gameObject.AddComponent<AudioSourceControl>();
+                instanced = true;
+
+                // checks if the SDK has been initialized.
+                if (!LOLSDK.Instance.IsInitialized)
+                    Debug.LogError("The SDK has not been initialized.");
+
+                // if the audio source has not been set, then add an audio source component.
+                if (ttsAudioSource == null)
+                {
+                    // Creates a new audio source object.
+                    // This will be a child of the text-to-speech object so that it can have its own tag.
+
+                    // Creates the object, and parents it to this script's object.
+                    GameObject newObject = new GameObject("Audio Source");
+                    newObject.transform.parent = gameObject.transform;
+
+                    // Gives it the tag.
+                    newObject.tag = GameSettings.TTS_TAG;
+
+                    // Adds the audio source to the new object.
+                    ttsAudioSource = newObject.AddComponent<AudioSource>();
+                }
+
+                // The audio soruce control.
+                AudioSourceControl asc = null;
+
+                // Tries to get the audio source control.
+                if (!ttsAudioSource.TryGetComponent<AudioSourceControl>(out asc))
+                {
+                    // Adds the audio source control.
+                    asc = ttsAudioSource.gameObject.AddComponent<AudioSourceControl>();
+                }
+
+                // Sets the audio source.
+                if (asc.audioSource == null)
+                    asc.audioSource = ttsAudioSource;
+
+                // Checks for the proper tag on the audio source control object.
+                if (!asc.gameObject.CompareTag(GameSettings.TTS_TAG))
+                    asc.gameObject.tag = GameSettings.TTS_TAG;
             }
-
-            // Sets the audio source.
-            if (asc.audioSource == null)
-                asc.audioSource = ttsAudioSource;
-
-            // Checks for the proper tag on the audio source control object.
-            if (!asc.gameObject.CompareTag(GameSettings.TTS_TAG))
-                asc.gameObject.tag = GameSettings.TTS_TAG;
-            
 
         }
 
@@ -114,6 +128,15 @@ namespace RM_EM
 
                 // returns the instance.
                 return instance;
+            }
+        }
+
+        // Returns 'true' if the object has been initialized.
+        public static bool Instantiated
+        {
+            get
+            {
+                return instanced;
             }
         }
 
@@ -201,6 +224,16 @@ namespace RM_EM
                 currentSpeakKey = "";
             }
 
+        }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
+            }
         }
     }
 }

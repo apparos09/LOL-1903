@@ -13,7 +13,7 @@ namespace RM_EM
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
-        private bool instanced = false;
+        private static bool instanced = false;
 
         [Header("World")]
         // The world UI.
@@ -70,18 +70,23 @@ namespace RM_EM
             // Hide the challenger UI.
             worldUI.HideChallengeUI();
 
+            // The game info.
+            GameInfo gameInfo = GameInfo.Instance;
+
+            // Set the game time.
+            gameTime = gameInfo.gameTime;
+
             // Searches for the world info.
-            WorldInfo info = FindObjectOfType<WorldInfo>();
+            WorldInfo worldInfo = FindObjectOfType<WorldInfo>();
 
             // If the info object was found.
-            if(info != null)
+            if(worldInfo != null)
             {
-                gameTime = info.gameTime;
 
                 // TODO: do more.
 
                 // Destroy the game object.
-                Destroy(info.gameObject);
+                Destroy(worldInfo.gameObject);
             }
         }
 
@@ -113,7 +118,7 @@ namespace RM_EM
         }
 
         // Returns 'true' if the object has been initialized.
-        public bool Instantiated
+        public static bool Instantiated
         {
             get
             {
@@ -297,9 +302,12 @@ namespace RM_EM
         // Goes to the match scene. Call AcceptChallenge() if a match info object should be created.
         public void ToMatchScene()
         {
+            // Gets the game info.
+            GameInfo gameInfo = GameInfo.Instance;
+
             // Creates an object and provides the match info.
             GameObject newObject = new GameObject("Match Info");
-            MatchInfo info = newObject.AddComponent<MatchInfo>();
+            MatchInfo matchInfo = newObject.AddComponent<MatchInfo>();
 
             // Don't destroy the object on load.
             DontDestroyOnLoad(newObject);
@@ -308,26 +316,27 @@ namespace RM_EM
             // Grabs the chalelnger.
             ChallengerWorld challenger = worldUI.challengeUI.challenger;
 
-            info.gameTime = gameTime;
+            // Save the game time.
+            gameInfo.gameTime = gameTime;
 
             // PUZZLE/CHALLENGE INFO
             // Sets the puzzle type.
-            info.puzzleType = challenger.puzzleType;
+            matchInfo.puzzleType = challenger.puzzleType;
 
             // Exponents
             // Base, Mult Same, Expo By Expo
-            info.baseExpoRate = challenger.baseExpoRate;
-            info.multSameRate = challenger.multSameRate; 
-            info.expoByExpoRate = challenger.expoByExpoRate;
+            matchInfo.baseExpoRate = challenger.baseExpoRate;
+            matchInfo.multSameRate = challenger.multSameRate; 
+            matchInfo.expoByExpoRate = challenger.expoByExpoRate;
 
             // Mult Diff, Zero, Negative
-            info.multDiffRate = challenger.multDiffRate;
-            info.zeroRate = challenger.zeroRate;
-            info.negativeRate = challenger.negativeRate;
+            matchInfo.multDiffRate = challenger.multDiffRate;
+            matchInfo.zeroRate = challenger.zeroRate;
+            matchInfo.negativeRate = challenger.negativeRate;
 
 
             // CHALLENGER
-            info.challengerDifficulty = challenger.difficulty;
+            matchInfo.challengerDifficulty = challenger.difficulty;
 
 
             // TODO: add loading screen.
@@ -339,6 +348,16 @@ namespace RM_EM
         protected override void Update()
         {
             base.Update();
+        }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace RM_EM
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
-        private bool instanced = false;
+        private static bool instanced = false;
 
         // Gets set to 'true', when post start has been called.
         private bool calledPostStart = false;
@@ -88,17 +88,19 @@ namespace RM_EM
             base.Start();
 
             // matchUI.timeText.text = matchTime.ToString("F2");
-            MatchInfo info = FindObjectOfType<MatchInfo>();
+            // The game info and the match info.
+            GameInfo gameInfo = GameInfo.Instance;
+            MatchInfo matchInfo = FindObjectOfType<MatchInfo>();
 
             // There's a match info object, so set it up. 
-            if(info != null)
+            if(matchInfo != null)
             {
-                gameTime = info.gameTime;
+                gameTime = gameInfo.gameTime;
 
                 // PUZZLE //
                 // Set the puzzle type.
-                p1Puzzle.puzzleType = info.puzzleType;
-                p2Puzzle.puzzleType = info.puzzleType;
+                p1Puzzle.puzzleType = matchInfo.puzzleType;
+                p2Puzzle.puzzleType = matchInfo.puzzleType;
 
                 // Puzzle Mechanics
                 // Grabs the instance.
@@ -108,7 +110,7 @@ namespace RM_EM
                 PuzzleMechanic p1Mech, p2Mech;
 
                 // Checks the puzzle type.
-                switch (info.puzzleType)
+                switch (matchInfo.puzzleType)
                 {
                     // Generates a keypad by default.
                     default:
@@ -151,65 +153,65 @@ namespace RM_EM
 
                 // EXPONENTS //
                 // Base
-                p1Puzzle.baseExpoRate = info.baseExpoRate;
-                p2Puzzle.baseExpoRate = info.baseExpoRate;
+                p1Puzzle.baseExpoRate = matchInfo.baseExpoRate;
+                p2Puzzle.baseExpoRate = matchInfo.baseExpoRate;
 
                 // Mult Same
-                p1Puzzle.multSameRate = info.multSameRate;
-                p2Puzzle.multSameRate = info.multSameRate;
+                p1Puzzle.multSameRate = matchInfo.multSameRate;
+                p2Puzzle.multSameRate = matchInfo.multSameRate;
 
                 // Expo By Expo
-                p1Puzzle.expoByExpoRate = info.expoByExpoRate;
-                p2Puzzle.expoByExpoRate = info.expoByExpoRate;
+                p1Puzzle.expoByExpoRate = matchInfo.expoByExpoRate;
+                p2Puzzle.expoByExpoRate = matchInfo.expoByExpoRate;
 
                 // Mult Diff
-                p1Puzzle.multDiffRate = info.multDiffRate;
-                p2Puzzle.multDiffRate = info.multDiffRate;
+                p1Puzzle.multDiffRate = matchInfo.multDiffRate;
+                p2Puzzle.multDiffRate = matchInfo.multDiffRate;
 
                 // Zero
-                p1Puzzle.zeroRate = info.zeroRate;
-                p2Puzzle.zeroRate = info.zeroRate;
+                p1Puzzle.zeroRate = matchInfo.zeroRate;
+                p2Puzzle.zeroRate = matchInfo.zeroRate;
 
                 // Negative
-                p1Puzzle.negativeRate = info.negativeRate;
-                p2Puzzle.negativeRate = info.negativeRate;
+                p1Puzzle.negativeRate = matchInfo.negativeRate;
+                p2Puzzle.negativeRate = matchInfo.negativeRate;
 
 
                 // MATCH SETTINGS //
-                pointGoal = info.pointGoal;
-                usePointGoal = info.usePointGoal;
+                pointGoal = matchInfo.pointGoal;
+                usePointGoal = matchInfo.usePointGoal;
 
                 // Lowest equation values
-                p1Puzzle.equationLowestValue = info.equationLowestValue;
-                p2Puzzle.equationLowestValue = info.equationLowestValue;
+                p1Puzzle.equationLowestValue = matchInfo.equationLowestValue;
+                p2Puzzle.equationLowestValue = matchInfo.equationLowestValue;
 
                 // Highest equation values
-                p1Puzzle.equationHighestValue = info.equationHighestValue;
-                p2Puzzle.equationHighestValue = info.equationHighestValue;
+                p1Puzzle.equationHighestValue = matchInfo.equationHighestValue;
+                p2Puzzle.equationHighestValue = matchInfo.equationHighestValue;
 
                 // Equation terms (minimum)
-                p1Puzzle.equationTermsMin = info.equationTermsMin;
-                p2Puzzle.equationTermsMin = info.equationTermsMin;
+                p1Puzzle.equationTermsMin = matchInfo.equationTermsMin;
+                p2Puzzle.equationTermsMin = matchInfo.equationTermsMin;
 
                 // Equation terms (maximum)
-                p1Puzzle.equationTermsMax = info.equationTermsMax;
-                p2Puzzle.equationTermsMax = info.equationTermsMax;
+                p1Puzzle.equationTermsMax = matchInfo.equationTermsMax;
+                p2Puzzle.equationTermsMax = matchInfo.equationTermsMax;
 
                 // Base exponent terms (minimum)
-                p1Puzzle.baseExponentTermsMin = info.baseExponentTermsMin;
-                p2Puzzle.baseExponentTermsMin = info.baseExponentTermsMin;
+                p1Puzzle.baseExponentTermsMin = matchInfo.baseExponentTermsMin;
+                p2Puzzle.baseExponentTermsMin = matchInfo.baseExponentTermsMin;
 
                 // Base exponent terms (maximum)
-                p1Puzzle.baseExponentTermsMax = info.baseExponentTermsMax;
-                p2Puzzle.baseExponentTermsMax = info.baseExponentTermsMax;
+                p1Puzzle.baseExponentTermsMax = matchInfo.baseExponentTermsMax;
+                p2Puzzle.baseExponentTermsMax = matchInfo.baseExponentTermsMax;
 
                 // Missing values (minimum)
-                p1Puzzle.missingValuesMin = info.missingValuesMin;
-                p2Puzzle.missingValuesMin = info.missingValuesMin;
+                p1Puzzle.missingValuesMin = matchInfo.missingValuesMin;
+                p2Puzzle.missingValuesMin = matchInfo.missingValuesMin;
 
                 // Missing values (maximum)
-                p1Puzzle.missingValuesMax = info.missingValuesMax;
-                p2Puzzle.missingValuesMax = info.missingValuesMax;
+                p1Puzzle.missingValuesMax = matchInfo.missingValuesMax;
+                p2Puzzle.missingValuesMax = matchInfo.missingValuesMax;
 
 
                 // COMPUTER/AI
@@ -219,14 +221,14 @@ namespace RM_EM
                 if(p2.TryGetComponent<ComputerMatch>(out cpu))
                 {
                     // Sets difficulty.
-                    cpu.difficulty = info.challengerDifficulty;
+                    cpu.difficulty = matchInfo.challengerDifficulty;
                 }
 
                 // UI/DESIGN //
 
                 // OTHER //
                 // Destroys the info object.
-                Destroy(info.gameObject);
+                Destroy(matchInfo.gameObject);
             }
         }
 
@@ -258,7 +260,7 @@ namespace RM_EM
         }
 
         // Returns 'true' if the object has been initialized.
-        public bool Instantiated
+        public static bool Instantiated
         {
             get
             {
@@ -448,15 +450,18 @@ namespace RM_EM
         // Goes to the world scene.
         public void ToWorldScene()
         {
+            // Gets the game info instance.
+            GameInfo gameInfo = GameInfo.Instance;
+
             // Creates an object and provides the world info.
             GameObject newObject = new GameObject("World Info");
-            WorldInfo info = newObject.AddComponent<WorldInfo>();
+            WorldInfo worldInfo = newObject.AddComponent<WorldInfo>();
 
             // Don't destroy the object on load.
             DontDestroyOnLoad(newObject);
 
             // TODO: add content.
-            info.gameTime = gameTime;
+            gameInfo.gameTime = gameTime;
 
 
             // TODO: add loading screen.
@@ -476,6 +481,16 @@ namespace RM_EM
             if (!matchPaused)
             {
                 matchTime += Time.fixedDeltaTime;
+            }
+        }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
             }
         }
     }

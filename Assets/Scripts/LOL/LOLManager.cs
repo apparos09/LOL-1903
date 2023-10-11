@@ -12,6 +12,10 @@ namespace RM_EM
         // the instance of the LOL manager.
         private static LOLManager instance;
 
+        // Gets set to 'true' when the singleton has been instanced.
+        // This isn't needed, but it helps with the clarity.
+        private static bool instanced = false;
+
         // Language definition for translation.
         private JSONNode defs;
         
@@ -34,39 +38,54 @@ namespace RM_EM
         // Awake is called when the script instance is being loaded
         private void Awake()
         {
-            // This is the instance.
+            // If the instance hasn't been set, set it to this object.
             if (instance == null)
+            {
                 instance = this;
-
-            // This object should not be destroyed.
-            DontDestroyOnLoad(this);
-
-            // The LOLSDK version is the one you use.
-            // It is automatically being used already, but I wanted to make a note of this...
-            // Since you didn't realize you had to do it this way at the time.
-            // LOLSDK.DontDestroyOnLoad(this);
-
-            // If the text-to-speech component is not set, try to get it.
-            if (textToSpeech == null)
+            }
+            // If the instance isn't this, destroy the game object.
+            else if (instance != this)
             {
-                // Tries to get the component.
-                if(!TryGetComponent<TextToSpeech>(out textToSpeech))
-                {
-                    // Adds the text-to-speech component.
-                    textToSpeech = gameObject.AddComponent<TextToSpeech>();
-                }
+                Destroy(gameObject);
             }
 
-            // If the save system speech component is not set, try to get it.
-            if (saveSystem == null)
+
+            // Run code for initialization.
+            if (!instanced)
             {
-                // Tries to get a component.
-                if (!TryGetComponent<SaveSystem>(out saveSystem))
+                instanced = true;
+
+                // This object should not be destroyed.
+                DontDestroyOnLoad(this);
+
+                // The LOLSDK version is the one you use.
+                // It is automatically being used already, but I wanted to make a note of this...
+                // Since you didn't realize you had to do it this way at the time.
+                // LOLSDK.DontDestroyOnLoad(this);
+
+                // If the text-to-speech component is not set, try to get it.
+                if (textToSpeech == null)
                 {
-                    // Adds the component.
-                    saveSystem = gameObject.AddComponent<SaveSystem>();
+                    // Tries to get the component.
+                    if (!TryGetComponent<TextToSpeech>(out textToSpeech))
+                    {
+                        // Adds the text-to-speech component.
+                        textToSpeech = gameObject.AddComponent<TextToSpeech>();
+                    }
+                }
+
+                // If the save system speech component is not set, try to get it.
+                if (saveSystem == null)
+                {
+                    // Tries to get a component.
+                    if (!TryGetComponent<SaveSystem>(out saveSystem))
+                    {
+                        // Adds the component.
+                        saveSystem = gameObject.AddComponent<SaveSystem>();
+                    }
                 }
             }
+       
         }
 
         // // Start is called before the first frame update
@@ -92,6 +111,15 @@ namespace RM_EM
 
                 // returns the instance.
                 return instance;
+            }
+        }
+
+        // Returns 'true' if the object has been initialized.
+        public static bool Instantiated
+        {
+            get
+            {
+                return instanced;
             }
         }
 
@@ -133,6 +161,16 @@ namespace RM_EM
         {
             // Submits the final score.
            SubmitProgress(score, MAX_PROGRESS);
+        }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace RM_EM
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
-        private bool instanced = false;
+        private static bool instanced = false;
 
         // The results UI.
         public ResultsUI resultsUI;
@@ -80,7 +80,7 @@ namespace RM_EM
         }
 
         // Returns 'true' if the object has been initialized.
-        public bool Instantiated
+        public static bool Instantiated
         {
             get
             {
@@ -121,6 +121,16 @@ namespace RM_EM
         void Update()
         {
 
+        }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
+            }
         }
     }
 }

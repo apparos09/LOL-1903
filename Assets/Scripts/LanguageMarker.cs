@@ -12,6 +12,10 @@ namespace RM_EM
         // the instance of the language marker.
         private static LanguageMarker instance;
 
+        // Gets set to 'true' when the singleton has been instanced.
+        // This isn't needed, but it helps with the clarity.
+        private static bool instanced = false;
+
         // The color used for marking text that wasn't repalced with language file content. 
         [HideInInspector]
         public Color noLoadColor = Color.red;
@@ -28,15 +32,21 @@ namespace RM_EM
         // Awake is called when the script is loaded.
         private void Awake()
         {
-            // Instance saving.
+            // If the instance hasn't been set, set it to this object.
             if (instance == null)
             {
                 instance = this;
             }
-            else
+            // If the instance isn't this, destroy the game object.
+            else if (instance != this)
             {
-                Destroy(this);
-                return;
+                Destroy(gameObject);
+            }
+
+            // Run code for initialization.
+            if (!instanced)
+            {
+                instanced = true;
             }
         }
 
@@ -57,6 +67,15 @@ namespace RM_EM
 
                 // returns the instance.
                 return instance;
+            }
+        }
+
+        // Returns 'true' if the object has been initialized.
+        public static bool Instantiated
+        {
+            get
+            {
+                return instanced;
             }
         }
 
@@ -87,6 +106,16 @@ namespace RM_EM
                 return false;
             }
 
+        }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
+            }
         }
     }
 }

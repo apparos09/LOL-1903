@@ -14,6 +14,10 @@ namespace RM_EM
         // the instance of the game settings.
         private static GameSettings instance;
 
+        // Gets set to 'true' when the singleton has been instanced.
+        // This isn't needed, but it helps with the clarity.
+        private static bool instanced = false;
+
         [Header("Settings")]
 
         // Use the text-to-speech options.
@@ -61,8 +65,14 @@ namespace RM_EM
                 return;
             }
 
-            // This object should not be destroyed.
-            DontDestroyOnLoad(this);
+            // Run code for initialization.
+            if (!instanced)
+            {
+                instanced = true;
+
+                // This object should not be destroyed.
+                DontDestroyOnLoad(this);
+            }
         }
 
         // Start is called before the first frame update
@@ -109,6 +119,17 @@ namespace RM_EM
                 return instance;
             }
         }
+
+        // Returns 'true' if the object has been initialized.
+        public static bool Instantiated
+        {
+            get
+            {
+                return instanced;
+            }
+        }
+
+
 
         // the LOL SDK has been initialized.
         public bool InitializedLOLSDK
@@ -343,6 +364,16 @@ namespace RM_EM
         //     // adjusts the audio levels.
         //     AdjustAudioLevels(bgmVolume, sfxVolume);
         // }
+
+        // This function is called when the MonoBehaviour will be destroyed.
+        private void OnDestroy()
+        {
+            // If the saved instance is being deleted, set 'instanced' to false.
+            if (instance == this)
+            {
+                instanced = false;
+            }
+        }
 
     }
 }

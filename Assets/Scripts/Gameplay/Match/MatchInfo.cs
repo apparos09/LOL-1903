@@ -7,9 +7,6 @@ namespace RM_EM
     // The information used to create the match when coming from the world scene.
     public class MatchInfo : MonoBehaviour
     {
-        // The current time in teh game.
-        public float gameTime = 0.0F;
-
         // The puzzle type.
         public puzzle puzzleType = puzzle.keypad;
 
