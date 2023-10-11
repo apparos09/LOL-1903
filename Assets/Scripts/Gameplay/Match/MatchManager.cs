@@ -88,10 +88,10 @@ namespace RM_EM
             base.Start();
 
             // Checks if the info has been instantiated.
-            if(GameInfo.Instantiated)
+            if(GameplayInfo.Instantiated)
             {
                 // Gets the instance.
-                GameInfo gameInfo = GameInfo.Instance;
+                GameplayInfo gameInfo = GameplayInfo.Instance;
 
                 // Load the match info.
                 gameInfo.LoadMatchInfo(this);
@@ -317,7 +317,7 @@ namespace RM_EM
         public void ToWorldScene()
         {
             // Gets the game info instance.
-            GameInfo gameInfo = GameInfo.Instance;
+            GameplayInfo gameInfo = GameplayInfo.Instance;
 
             // Save the world info changes from the match.
             gameInfo.SaveWorldInfo(this);

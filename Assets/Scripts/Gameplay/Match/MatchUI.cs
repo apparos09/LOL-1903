@@ -7,8 +7,10 @@ using util;
 namespace RM_EM
 {
     // The UI for matches.
-    public class MatchUI : MonoBehaviour
+    public class MatchUI : GameplayUI
     {
+        [Header("Match")]
+
         // The match manager.
         public MatchManager manager;
 
@@ -18,14 +20,14 @@ namespace RM_EM
         // The UI contnet shown when the match ends.
         public GameObject matchEnd;
 
-        [Header("Player 1")]
+        [Header("Match/Player 1")]
         // The player 1 equation.
         public TMP_Text p1EquationText;
 
         // The player 1 points bar.
         public ProgressBar p1PointsBar;
 
-        [Header("Player 2/Computer")]
+        [Header("Match/Player 2/Computer")]
         // The player 2 equation.
         public TMP_Text p2EquationText;
 
@@ -33,8 +35,10 @@ namespace RM_EM
         public ProgressBar p2PointsBar;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             // Grabs the instance.
             if (manager == null)
                 manager = MatchManager.Instance;

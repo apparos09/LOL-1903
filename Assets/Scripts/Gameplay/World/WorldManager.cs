@@ -86,10 +86,10 @@ namespace RM_EM
             SetArea(currAreaIndex);
 
             // Checks if the info object has been instantiated.
-            if (GameInfo.Instantiated)
+            if (GameplayInfo.Instantiated)
             {
                 // Gets the instance.
-                GameInfo gameInfo = GameInfo.Instance;
+                GameplayInfo gameInfo = GameplayInfo.Instance;
 
                 // Load the world info.
                 gameInfo.LoadWorldInfo(this);
@@ -309,7 +309,7 @@ namespace RM_EM
         public void ToMatchScene()
         {
             // Gets the game info.
-            GameInfo gameInfo = GameInfo.Instance;
+            GameplayInfo gameInfo = GameplayInfo.Instance;
 
             // Save the match info to the game info instance.
             gameInfo.SaveMatchInfo(this);

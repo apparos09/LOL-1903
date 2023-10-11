@@ -6,15 +6,17 @@ using UnityEngine.UI;
 namespace RM_EM
 {
     // The World UI
-    public class WorldUI : MonoBehaviour
+    public class WorldUI : GameplayUI
     {
+        [Header("World")]
+
         // The match manager.
         public WorldManager manager;
 
         // The challenge window.
         public ChallengeUI challengeUI;
 
-        [Header("Area")]
+        [Header("World/Area")]
         // Button for left room.
         public Button prevAreaButton;
 
@@ -22,8 +24,10 @@ namespace RM_EM
         public Button nextAreaButton;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             if (manager == null)
                 manager = WorldManager.Instance;
         }

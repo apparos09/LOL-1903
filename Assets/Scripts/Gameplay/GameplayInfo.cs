@@ -5,10 +5,10 @@ using UnityEngine;
 namespace RM_EM
 {
     // This script is used for game info that's shared between all scenes.
-    public class GameInfo : MonoBehaviour
+    public class GameplayInfo : MonoBehaviour
     {
         // The singleton instance.
-        private static GameInfo instance;
+        private static GameplayInfo instance;
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
@@ -98,7 +98,7 @@ namespace RM_EM
         public int challengerDifficulty = 0;
 
         // Constructor
-        private GameInfo()
+        private GameplayInfo()
         {
             // ...
         }
@@ -132,7 +132,7 @@ namespace RM_EM
         }
 
         // Gets the instance.
-        public static GameInfo Instance
+        public static GameplayInfo Instance
         {
             get
             {
@@ -140,7 +140,7 @@ namespace RM_EM
                 if (instance == null)
                 {
                     // Tries to find the instance.
-                    instance = FindObjectOfType<GameInfo>(true);
+                    instance = FindObjectOfType<GameplayInfo>(true);
 
 
                     // The instance doesn't already exist.
@@ -148,7 +148,7 @@ namespace RM_EM
                     {
                         // Generate the instance.
                         GameObject go = new GameObject("Game Info (singleton)");
-                        instance = go.AddComponent<GameInfo>();
+                        instance = go.AddComponent<GameplayInfo>();
                     }
 
                 }

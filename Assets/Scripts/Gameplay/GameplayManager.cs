@@ -10,6 +10,9 @@ namespace RM_EM
     // A parent class for managing all gameplay.
     public class GameplayManager : MonoBehaviour
     {
+        // The game UI.
+        public GameplayUI gameUI;
+
         // The timer for the game.
         public float gameTime = 0;
 
@@ -18,6 +21,9 @@ namespace RM_EM
 
         // The mouse touch object.
         public MouseTouchInput mouseTouch;
+
+        // The tutorial.
+        public Tutorial tutorial;
 
         // Awake is called when the script is being loaded
         protected virtual void Awake()
@@ -28,7 +34,21 @@ namespace RM_EM
         // Start is called before the first frame update
         protected virtual void Start()
         {
-            // ...
+            // Grabs the tutorial instance.
+            if (tutorial == null)
+                tutorial = Tutorial.Instance;
+
+            // If the gameUI is set, check for the tutorial text box.
+            if(gameUI != null)
+            {
+                // If the tutorial text box is set...
+                if(gameUI.tutorialTextBox != null)
+                {
+                    // Adds the callbakcs from the tutorial text box.
+                    // I don't think I need to remove them.
+                    gameUI.AddTutorialTextBoxCallbacks(this);
+                }
+            }
         }
 
         // Returns the provided time (in seconds), formatted.
@@ -75,6 +95,15 @@ namespace RM_EM
         {
             bool result = GameSettings.Instance.UseTutorial;
             return result;
+        }
+
+        // Starts a tutorial using the provided pages.
+        public void StartTutorial(List<Page> pages)
+        {
+            // Sets the pages and opens the text box.
+            gameUI.tutorialTextBox.pages = pages;
+            gameUI.tutorialTextBox.CurrentPageIndex = 0;
+            gameUI.tutorialTextBox.Open();
         }
 
         // Called when a tutorial is started.

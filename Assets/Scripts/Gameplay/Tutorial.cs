@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace RM_EM
 {
-    // The match tutorials.
-    public class MatchTutorial : Tutorial
+    // The tutorial class. This is a singleton that gets gets consulted for tutorial text.
+    public class Tutorial : MonoBehaviour
     {
         // The singleton instance.
-        private static MatchTutorial instance;
+        private static Tutorial instance;
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
         private static bool instanced = false;
 
-        [Header("Match")]
-        // The match manager.
-        public MatchManager manager;
-
         // Constructor
-        private MatchTutorial()
+        private Tutorial()
         {
             // ...
         }
@@ -46,17 +43,14 @@ namespace RM_EM
         }
 
         // Start is called before the first frame update
-        protected override void Start()
+        void Start()
         {
-            base.Start();
-
-            // Gets the match manager.
-            if (manager == null)
-                manager = MatchManager.Instance;
+            // Don't destroy this game object on load.
+            DontDestroyOnLoad(gameObject);
         }
 
         // Gets the instance.
-        public static MatchTutorial Instance
+        public static Tutorial Instance
         {
             get
             {
@@ -64,15 +58,15 @@ namespace RM_EM
                 if (instance == null)
                 {
                     // Tries to find the instance.
-                    instance = FindObjectOfType<MatchTutorial>(true);
+                    instance = FindObjectOfType<Tutorial>(true);
 
 
                     // The instance doesn't already exist.
                     if (instance == null)
                     {
                         // Generate the instance.
-                        GameObject go = new GameObject("Match Tutorial (singleton)");
-                        instance = go.AddComponent<MatchTutorial>();
+                        GameObject go = new GameObject("Tutorial (singleton)");
+                        instance = go.AddComponent<Tutorial>();
                     }
 
                 }
@@ -91,10 +85,18 @@ namespace RM_EM
             }
         }
 
-        // Update is called once per frame
-        protected override void Update()
+        // Gets the test pages.
+        public List<Page> GetTestPages()
         {
-            base.Update();
+            // The test pages.
+            List<Page> pages = new List<Page>()
+            {
+                new Page("This is a test."),
+                new Page("This is only a test.")
+            };
+
+            // Returns the pages.
+            return pages;
         }
 
         // This function is called when the MonoBehaviour will be destroyed.

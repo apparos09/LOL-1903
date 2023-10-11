@@ -1306,7 +1306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1412461663}
-  - component: {fileID: 1412461662}
+  - component: {fileID: 1412461664}
   m_Layer: 0
   m_Name: Tutorial
   m_TagString: Untagged
@@ -1314,20 +1314,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1412461662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412461661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c815146cbfb916e43a02776f63551a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1875531180}
-  manager: {fileID: 0}
 --- !u!4 &1412461663
 Transform:
   m_ObjectHideFlags: 0
@@ -1343,6 +1329,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1412461664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412461661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ba217ac6c62ba4c8e7b514adb27f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1432786160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2a3f7f17415f44f8d0f8f19f2a9ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsUI: {fileID: 0}
+  tutorialTextBox: {fileID: 0}
   manager: {fileID: 0}
   challengeUI: {fileID: 1620257225}
   prevAreaButton: {fileID: 1319003835}
@@ -1946,9 +1946,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8089a827cfb1cb9409e20913f7360642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameUI: {fileID: 1432786165}
   gameTime: 0
   gamePaused: 0
   mouseTouch: {fileID: 0}
+  tutorial: {fileID: 0}
   worldUI: {fileID: 1432786165}
   worldCamera: {fileID: 322652622}
   worldPaused: 0
@@ -1958,6 +1960,7 @@ MonoBehaviour:
   - {fileID: 1502855967}
   - {fileID: 1139977220}
   currAreaIndex: 0
+  challengers: []
 --- !u!4 &1601187950
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,17 +2255,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5097176362592497835, guid: 667fcd8df2884f04ca5e50fdfc5a8914, type: 3}
   m_PrefabInstance: {fileID: 5278463946730209077}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1875531180 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5179028290898785361, guid: 667fcd8df2884f04ca5e50fdfc5a8914, type: 3}
-  m_PrefabInstance: {fileID: 5278463946730209077}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b6dd306a54b0846bffb62077fbe07b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1922765156
 GameObject:
   m_ObjectHideFlags: 0
