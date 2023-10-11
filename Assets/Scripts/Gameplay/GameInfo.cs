@@ -23,6 +23,9 @@ namespace RM_EM
         // The index of the current world area.
         public int currAreaIndex = 0;
 
+        // A list that stores what challengers have and have not been defeated.
+        public List<bool> challengersDefeated;
+
 
         // MATCH
         [Header("Match Info")]
@@ -184,6 +187,16 @@ namespace RM_EM
 
             // Save the index.
             currAreaIndex = manager.currAreaIndex;
+
+            // Clears out the list.
+            challengersDefeated.Clear();
+
+            // Goes through all challengers.
+            for(int i = 0; i < manager.challengers.Count; i++)
+            {
+                // Saves the defeated challengers.
+                challengersDefeated.Add(manager.challengers[i].defeated);
+            }
         }
 
         // Saves world info from the match manager.
@@ -199,6 +212,13 @@ namespace RM_EM
         {
             // Set the area.
             manager.SetArea(currAreaIndex);
+
+            // Goes through all challengers and sets if they're defeated or not.
+            for (int i = 0; i < manager.challengers.Count && i < challengersDefeated.Count; i++)
+            {
+                // Set if the challenger's been defeated.
+                manager.challengers[i].defeated = challengersDefeated[i];
+            }
         }
 
 

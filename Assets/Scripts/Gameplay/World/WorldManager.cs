@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,9 @@ namespace RM_EM
         // THe current area index.
         public int currAreaIndex = 0;
 
+        // A list of all challengers in the game.
+        public List<ChallengerWorld> challengers;
+
         // Constructor
         private WorldManager()
         {
@@ -67,8 +71,19 @@ namespace RM_EM
         {
             base.Start();
 
+            // If the challenger list isn't set, find all challengers.
+            if(challengers.Count == 0)
+            {
+                // Gets the array.
+                ChallengerWorld[] arr = FindObjectsOfType<ChallengerWorld>(true);
+                challengers = new List<ChallengerWorld>(arr);
+            }
+
             // Hide the challenger UI.
             worldUI.HideChallengeUI();
+
+            // Sets the current area.
+            SetArea(currAreaIndex);
 
             // Checks if the info object has been instantiated.
             if (GameInfo.Instantiated)
