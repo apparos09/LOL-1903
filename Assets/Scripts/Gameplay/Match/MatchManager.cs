@@ -87,148 +87,14 @@ namespace RM_EM
         {
             base.Start();
 
-            // matchUI.timeText.text = matchTime.ToString("F2");
-            // The game info and the match info.
-            GameInfo gameInfo = GameInfo.Instance;
-            MatchInfo matchInfo = FindObjectOfType<MatchInfo>();
-
-            // There's a match info object, so set it up. 
-            if(matchInfo != null)
+            // Checks if the info has been instantiated.
+            if(GameInfo.Instantiated)
             {
-                gameTime = gameInfo.gameTime;
+                // Gets the instance.
+                GameInfo gameInfo = GameInfo.Instance;
 
-                // PUZZLE //
-                // Set the puzzle type.
-                p1Puzzle.puzzleType = matchInfo.puzzleType;
-                p2Puzzle.puzzleType = matchInfo.puzzleType;
-
-                // Puzzle Mechanics
-                // Grabs the instance.
-                PuzzlePrefabs puzzlePrefabs = PuzzlePrefabs.Instance;
-
-                // The mechanics for P1 and P2.
-                PuzzleMechanic p1Mech, p2Mech;
-
-                // Checks the puzzle type.
-                switch (matchInfo.puzzleType)
-                {
-                    // Generates a keypad by default.
-                    default:
-                    case puzzle.keypad:
-                        p1Mech = Instantiate(puzzlePrefabs.keypad);
-                        p2Mech = Instantiate(puzzlePrefabs.keypad);
-                        break;
-                }
-
-                // Change the names.
-                p1Mech.name += " (P1)";
-                p2Mech.name += " (P2)";
-
-                // Set P1 Puzzle Mechanic Parent and Position
-                p1Mech.transform.parent = p1Puzzle.transform; // Parent
-
-                if (p1MechanicPos != null) // Position
-                    p1Mech.transform.position = p1MechanicPos.transform.position;
-
-
-                // Set P2 Puzzle Mechanic Parent and Position
-                p2Mech.transform.parent = p2Puzzle.transform; // Parent
-
-                if (p2MechanicPos != null) // Position
-                    p2Mech.transform.position = p2MechanicPos.transform.position;
-
-                // Set the managers.
-                p1Mech.manager = this;
-                p2Mech.manager = this;
-
-                // Set the mechanics for the puzzles, and vice versa.
-                // Mechanics
-                p1Puzzle.puzzleMechanic = p1Mech;
-                p2Puzzle.puzzleMechanic = p2Mech;
-
-                // Puzzles
-                p1Mech.puzzle = p1Puzzle;
-                p2Mech.puzzle = p2Puzzle;
-
-
-                // EXPONENTS //
-                // Base
-                p1Puzzle.baseExpoRate = matchInfo.baseExpoRate;
-                p2Puzzle.baseExpoRate = matchInfo.baseExpoRate;
-
-                // Mult Same
-                p1Puzzle.multSameRate = matchInfo.multSameRate;
-                p2Puzzle.multSameRate = matchInfo.multSameRate;
-
-                // Expo By Expo
-                p1Puzzle.expoByExpoRate = matchInfo.expoByExpoRate;
-                p2Puzzle.expoByExpoRate = matchInfo.expoByExpoRate;
-
-                // Mult Diff
-                p1Puzzle.multDiffRate = matchInfo.multDiffRate;
-                p2Puzzle.multDiffRate = matchInfo.multDiffRate;
-
-                // Zero
-                p1Puzzle.zeroRate = matchInfo.zeroRate;
-                p2Puzzle.zeroRate = matchInfo.zeroRate;
-
-                // Negative
-                p1Puzzle.negativeRate = matchInfo.negativeRate;
-                p2Puzzle.negativeRate = matchInfo.negativeRate;
-
-
-                // MATCH SETTINGS //
-                pointGoal = matchInfo.pointGoal;
-                usePointGoal = matchInfo.usePointGoal;
-
-                // Lowest equation values
-                p1Puzzle.equationLowestValue = matchInfo.equationLowestValue;
-                p2Puzzle.equationLowestValue = matchInfo.equationLowestValue;
-
-                // Highest equation values
-                p1Puzzle.equationHighestValue = matchInfo.equationHighestValue;
-                p2Puzzle.equationHighestValue = matchInfo.equationHighestValue;
-
-                // Equation terms (minimum)
-                p1Puzzle.equationTermsMin = matchInfo.equationTermsMin;
-                p2Puzzle.equationTermsMin = matchInfo.equationTermsMin;
-
-                // Equation terms (maximum)
-                p1Puzzle.equationTermsMax = matchInfo.equationTermsMax;
-                p2Puzzle.equationTermsMax = matchInfo.equationTermsMax;
-
-                // Base exponent terms (minimum)
-                p1Puzzle.baseExponentTermsMin = matchInfo.baseExponentTermsMin;
-                p2Puzzle.baseExponentTermsMin = matchInfo.baseExponentTermsMin;
-
-                // Base exponent terms (maximum)
-                p1Puzzle.baseExponentTermsMax = matchInfo.baseExponentTermsMax;
-                p2Puzzle.baseExponentTermsMax = matchInfo.baseExponentTermsMax;
-
-                // Missing values (minimum)
-                p1Puzzle.missingValuesMin = matchInfo.missingValuesMin;
-                p2Puzzle.missingValuesMin = matchInfo.missingValuesMin;
-
-                // Missing values (maximum)
-                p1Puzzle.missingValuesMax = matchInfo.missingValuesMax;
-                p2Puzzle.missingValuesMax = matchInfo.missingValuesMax;
-
-
-                // COMPUTER/AI
-                ComputerMatch cpu;
-
-                // Gets the computer player.
-                if(p2.TryGetComponent<ComputerMatch>(out cpu))
-                {
-                    // Sets difficulty.
-                    cpu.difficulty = matchInfo.challengerDifficulty;
-                }
-
-                // UI/DESIGN //
-
-                // OTHER //
-                // Destroys the info object.
-                Destroy(matchInfo.gameObject);
+                // Load the match info.
+                gameInfo.LoadMatchInfo(this);
             }
         }
 
@@ -453,15 +319,8 @@ namespace RM_EM
             // Gets the game info instance.
             GameInfo gameInfo = GameInfo.Instance;
 
-            // Creates an object and provides the world info.
-            GameObject newObject = new GameObject("World Info");
-            WorldInfo worldInfo = newObject.AddComponent<WorldInfo>();
-
-            // Don't destroy the object on load.
-            DontDestroyOnLoad(newObject);
-
-            // TODO: add content.
-            gameInfo.gameTime = gameTime;
+            // Save the world info changes from the match.
+            gameInfo.SaveWorldInfo(this);
 
 
             // TODO: add loading screen.

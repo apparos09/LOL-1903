@@ -70,23 +70,14 @@ namespace RM_EM
             // Hide the challenger UI.
             worldUI.HideChallengeUI();
 
-            // The game info.
-            GameInfo gameInfo = GameInfo.Instance;
-
-            // Set the game time.
-            gameTime = gameInfo.gameTime;
-
-            // Searches for the world info.
-            WorldInfo worldInfo = FindObjectOfType<WorldInfo>();
-
-            // If the info object was found.
-            if(worldInfo != null)
+            // Checks if the info object has been instantiated.
+            if (GameInfo.Instantiated)
             {
+                // Gets the instance.
+                GameInfo gameInfo = GameInfo.Instance;
 
-                // TODO: do more.
-
-                // Destroy the game object.
-                Destroy(worldInfo.gameObject);
+                // Load the world info.
+                gameInfo.LoadWorldInfo(this);
             }
         }
 
@@ -305,39 +296,8 @@ namespace RM_EM
             // Gets the game info.
             GameInfo gameInfo = GameInfo.Instance;
 
-            // Creates an object and provides the match info.
-            GameObject newObject = new GameObject("Match Info");
-            MatchInfo matchInfo = newObject.AddComponent<MatchInfo>();
-
-            // Don't destroy the object on load.
-            DontDestroyOnLoad(newObject);
-
-            // TODO: add content.
-            // Grabs the chalelnger.
-            ChallengerWorld challenger = worldUI.challengeUI.challenger;
-
-            // Save the game time.
-            gameInfo.gameTime = gameTime;
-
-            // PUZZLE/CHALLENGE INFO
-            // Sets the puzzle type.
-            matchInfo.puzzleType = challenger.puzzleType;
-
-            // Exponents
-            // Base, Mult Same, Expo By Expo
-            matchInfo.baseExpoRate = challenger.baseExpoRate;
-            matchInfo.multSameRate = challenger.multSameRate; 
-            matchInfo.expoByExpoRate = challenger.expoByExpoRate;
-
-            // Mult Diff, Zero, Negative
-            matchInfo.multDiffRate = challenger.multDiffRate;
-            matchInfo.zeroRate = challenger.zeroRate;
-            matchInfo.negativeRate = challenger.negativeRate;
-
-
-            // CHALLENGER
-            matchInfo.challengerDifficulty = challenger.difficulty;
-
+            // Save the match info to the game info instance.
+            gameInfo.SaveMatchInfo(this);
 
             // TODO: add loading screen.
             SceneManager.LoadScene("MatchScene");

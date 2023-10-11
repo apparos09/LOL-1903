@@ -14,9 +14,85 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private static bool instanced = false;
 
-        [Header("Shared Game Info")]
         // The game time.
         public float gameTime = 0.0F;
+
+        // WORLD
+        [Header("World Info")]
+
+        // The index of the current world area.
+        public int currAreaIndex = 0;
+
+
+        // MATCH
+        [Header("Match Info")]
+
+        // The puzzle type.
+        public puzzle puzzleType = puzzle.keypad;
+
+        [Header("Match Info/Exponents")]
+
+        // The exponent rates.
+        public float baseExpoRate = 1.0F;
+
+        // Rate for multiplicaton (same bases) exponents.
+        public float multSameRate = 1.0F;
+
+        // Rate for exponent by exponent exponents.
+        public float expoByExpoRate = 1.0F;
+
+        // Rate for multplication (different bases) exponents.
+        public float multDiffRate = 1.0F;
+
+        // Rate for zero exponents.
+        public float zeroRate = 1.0F;
+
+        // Rate for negative exponents.
+        public float negativeRate = 1.0F;
+
+        // NOTE: you may not even change the defaults.
+        [Header("Match Info/Puzzle Settings")]
+        // The point goal for the game.
+        public int pointGoal = 999;
+
+        // If 'true', the point goal is used.
+        public bool usePointGoal = true;
+
+        // The lowest value can equation will use.
+        public int equationLowestValue = 0;
+
+        // The highest value an equation will use.
+        public int equationHighestValue = 9;
+
+        // Minimum equation term.
+        [Tooltip("The minimum number of equation terms.")]
+        public int equationTermsMin = 1;
+
+        // Maximum equation term.
+        [Tooltip("The maximum number of equation terms.")]
+        public int equationTermsMax = 1;
+
+        // The minimum number of terms for the base exponent rule.
+        [Tooltip("The minimum number of terms for the base exponent rule (combined rules only).")]
+        public int baseExponentTermsMin = 1;
+
+        // The maximum number of terms for the base exponent rule.
+        [Tooltip("The maximum number of terms for the base exponent rule (combined rules only).")]
+        public int baseExponentTermsMax = 3;
+
+        // The minimum number of missing values.
+        [Tooltip("The minimum number of missing values.")]
+        public int missingValuesMin = 1;
+
+        // The maximum number of missing values.
+        [Tooltip("The maximum number of missing values.")]
+        public int missingValuesMax = 1;
+
+
+        [Header("Match Info/Challenger")]
+        // The difficulty of the challenger.
+        // NOTE: if the challenger difficulty is 0 or less, the equation details WON'T be overwritten.
+        public int challengerDifficulty = 0;
 
         // Constructor
         private GameInfo()
@@ -85,6 +161,217 @@ namespace RM_EM
             get
             {
                 return instanced;
+            }
+        }
+
+        // Saves general game info.
+        protected void SaveGameInfo(GameplayManager manager)
+        {
+            gameTime = manager.gameTime;
+        }
+
+        // Loads general game info.
+        protected void LoadGameInfo(GameplayManager manager)
+        {
+            manager.gameTime = gameTime;
+        }
+
+        // WORLD //
+        // Saves world info from the world manager.
+        public void SaveWorldInfo(WorldManager manager)
+        {
+            SaveGameInfo(manager);
+
+            // Save the index.
+            currAreaIndex = manager.currAreaIndex;
+        }
+
+        // Saves world info from the match manager.
+        public void SaveWorldInfo(MatchManager manager)
+        {
+            SaveGameInfo(manager);
+
+            // TODO: add content.
+        }
+
+        // Loads world info into manager.
+        public void LoadWorldInfo(WorldManager manager)
+        {
+            // Set the area.
+            manager.SetArea(currAreaIndex);
+        }
+
+
+
+        // MATCH//
+        // Save the match info from the match manager.
+        public void SaveMatchInfo(MatchManager manager)
+        {
+            SaveGameInfo(manager);
+
+            // TODO: add content.
+        }
+
+        // Stores the match info from the world manager to be used in the match info.
+        public void SaveMatchInfo(WorldManager manager)
+        {
+            // TODO: add content.
+            // Grabs the chalelnger.
+            ChallengerWorld challenger = manager.worldUI.challengeUI.challenger;
+
+            // Save the game time.
+            gameTime = manager.gameTime;
+
+            // PUZZLE/CHALLENGE INFO
+            // Sets the puzzle type.
+            puzzleType = challenger.puzzleType;
+
+            // Exponents
+            // Base, Mult Same, Expo By Expo
+            baseExpoRate = challenger.baseExpoRate;
+            multSameRate = challenger.multSameRate;
+            expoByExpoRate = challenger.expoByExpoRate;
+
+            // Mult Diff, Zero, Negative
+            multDiffRate = challenger.multDiffRate;
+            zeroRate = challenger.zeroRate;
+            negativeRate = challenger.negativeRate;
+
+
+            // CHALLENGER
+            challengerDifficulty = challenger.difficulty;
+        }
+
+        // Loads match info into the manager.
+        public void LoadMatchInfo(MatchManager manager)
+        {
+            LoadGameInfo(manager);
+
+            // PUZZLE //
+            // Set the puzzle type.
+            manager.p1Puzzle.puzzleType = puzzleType;
+            manager.p2Puzzle.puzzleType = puzzleType;
+
+            // Puzzle Mechanics
+            // Grabs the instance.
+            PuzzlePrefabs puzzlePrefabs = PuzzlePrefabs.Instance;
+
+            // The mechanics for P1 and P2.
+            PuzzleMechanic p1Mech, p2Mech;
+
+            // Checks the puzzle type.
+            switch (puzzleType)
+            {
+                // Generates a keypad by default.
+                default:
+                case puzzle.keypad:
+                    p1Mech = Instantiate(puzzlePrefabs.keypad);
+                    p2Mech = Instantiate(puzzlePrefabs.keypad);
+                    break;
+            }
+
+            // Change the names.
+            p1Mech.name += " (P1)";
+            p2Mech.name += " (P2)";
+
+            // Set P1 Puzzle Mechanic Parent and Position
+            p1Mech.transform.parent = manager.p1Puzzle.transform; // Parent
+
+            if (manager.p1MechanicPos != null) // Position
+                p1Mech.transform.position = manager.p1MechanicPos.transform.position;
+
+
+            // Set P2 Puzzle Mechanic Parent and Position
+            p2Mech.transform.parent = manager.p2Puzzle.transform; // Parent
+
+            if (manager.p2MechanicPos != null) // Position
+                p2Mech.transform.position = manager.p2MechanicPos.transform.position;
+
+            // Set the managers.
+            p1Mech.manager = manager;
+            p2Mech.manager = manager;
+
+            // Set the mechanics for the puzzles, and vice versa.
+            // Mechanics
+            manager.p1Puzzle.puzzleMechanic = p1Mech;
+            manager.p2Puzzle.puzzleMechanic = p2Mech;
+
+            // Puzzles
+            p1Mech.puzzle = manager.p1Puzzle;
+            p2Mech.puzzle = manager.p2Puzzle;
+
+
+            // EXPONENTS //
+            // Base
+            manager.p1Puzzle.baseExpoRate = baseExpoRate;
+            manager.p2Puzzle.baseExpoRate = baseExpoRate;
+
+            // Mult Same
+            manager.p1Puzzle.multSameRate = multSameRate;
+            manager.p2Puzzle.multSameRate = multSameRate;
+
+            // Expo By Expo
+            manager.p1Puzzle.expoByExpoRate = expoByExpoRate;
+            manager.p2Puzzle.expoByExpoRate = expoByExpoRate;
+
+            // Mult Diff
+            manager.p1Puzzle.multDiffRate = multDiffRate;
+            manager.p2Puzzle.multDiffRate = multDiffRate;
+
+            // Zero
+            manager.p1Puzzle.zeroRate = zeroRate;
+            manager.p2Puzzle.zeroRate = zeroRate;
+
+            // Negative
+            manager.p1Puzzle.negativeRate = negativeRate;
+            manager.p2Puzzle.negativeRate = negativeRate;
+
+
+            // MATCH SETTINGS //
+            manager.pointGoal = pointGoal;
+            manager.usePointGoal = usePointGoal;
+
+            // Lowest equation values
+            manager.p1Puzzle.equationLowestValue = equationLowestValue;
+            manager.p2Puzzle.equationLowestValue = equationLowestValue;
+
+            // Highest equation values
+            manager.p1Puzzle.equationHighestValue = equationHighestValue;
+            manager.p2Puzzle.equationHighestValue = equationHighestValue;
+
+            // Equation terms (minimum)
+            manager.p1Puzzle.equationTermsMin = equationTermsMin;
+            manager.p2Puzzle.equationTermsMin = equationTermsMin;
+
+            // Equation terms (maximum)
+            manager.p1Puzzle.equationTermsMax = equationTermsMax;
+            manager.p2Puzzle.equationTermsMax = equationTermsMax;
+
+            // Base exponent terms (minimum)
+            manager.p1Puzzle.baseExponentTermsMin = baseExponentTermsMin;
+            manager.p2Puzzle.baseExponentTermsMin = baseExponentTermsMin;
+
+            // Base exponent terms (maximum)
+            manager.p1Puzzle.baseExponentTermsMax = baseExponentTermsMax;
+            manager.p2Puzzle.baseExponentTermsMax = baseExponentTermsMax;
+
+            // Missing values (minimum)
+            manager.p1Puzzle.missingValuesMin = missingValuesMin;
+            manager.p2Puzzle.missingValuesMin = missingValuesMin;
+
+            // Missing values (maximum)
+            manager.p1Puzzle.missingValuesMax = missingValuesMax;
+            manager.p2Puzzle.missingValuesMax = missingValuesMax;
+
+
+            // COMPUTER/AI
+            ComputerMatch cpu;
+
+            // Gets the computer player.
+            if (manager.p2.TryGetComponent<ComputerMatch>(out cpu))
+            {
+                // Sets difficulty.
+                cpu.difficulty = challengerDifficulty;
             }
         }
 
