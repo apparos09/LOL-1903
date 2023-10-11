@@ -14,6 +14,7 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private bool instanced = false;
 
+        [Header("World")]
         // The world manager for the tutorial.
         public WorldManager manager;
 

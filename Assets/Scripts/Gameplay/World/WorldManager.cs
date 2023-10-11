@@ -168,6 +168,21 @@ namespace RM_EM
             SetPausedWorld(!worldPaused);
         }
 
+
+        // TUTORIAL //
+        // Called when a tutorial is started.
+        public override void OnTutorialStart()
+        {
+            PauseWorld();
+        }
+
+        // Called when a tutorial is ended.
+        public override void OnTutorialEnd()
+        {
+            UnpauseWorld();
+        }
+
+
         // AREAS //
         // Sets the area.
         public void SetArea(int newIndex)

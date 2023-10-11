@@ -347,6 +347,20 @@ namespace RM_EM
         }
 
 
+        // TUTORIAL //
+        // Called when a tutorial is started.
+        public override void OnTutorialStart()
+        {
+            PauseMatch();
+        }
+
+        // Called when a tutorial is ended.
+        public override void OnTutorialEnd()
+        {
+            UnpauseMatch();
+        }
+
+
         // MECHANICS //
 
         // Called when the equation has been answered.

@@ -14,7 +14,8 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private bool instanced = false;
 
-        // THe match manager.
+        [Header("Match")]
+        // The match manager.
         public MatchManager manager;
 
         // Constructor
