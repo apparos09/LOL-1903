@@ -24,7 +24,7 @@ namespace RM_EM
         public WorldCamera worldCamera;
 
         // Used to pause the world.
-        public bool worldPaused = false;
+        protected bool worldPaused = false;
 
         // The manager for world events.
         public GameEventManager worldEvents;
@@ -161,6 +161,15 @@ namespace RM_EM
             }
 
 
+        }
+
+        // Checks if the world is paused.
+        public bool WorldPaused
+        {
+            get
+            {
+                return worldPaused;
+            }
         }
 
         // Pauses the world.

@@ -34,7 +34,7 @@ namespace RM_EM
         public float matchTime = 0;
 
         // Checks if the match is paused.
-        public bool matchPaused = false;
+        protected bool matchPaused = false;
 
         // PLAYERS
         [Header("Player 1")]
@@ -196,6 +196,15 @@ namespace RM_EM
             
         }
 
+        // Checks if the match is paused.
+        public bool MatchPaused
+        {
+            get
+            {
+                return matchPaused;
+            }
+        }
+
         // Pauses the match.
         public void PauseMatch()
         {
@@ -231,18 +240,63 @@ namespace RM_EM
 
         // MECHANICS //
 
+        // Updates the match UI for the provided player.
+        public bool UpdatePlayerUI(PlayerMatch player)
+        {
+            // The variable that checks the update.
+            bool updated = false;
+
+            // Updates the displays.
+            if (player == p1)
+            {
+                matchUI.UpdatePlayer1EquationDisplay();
+                matchUI.UpdatePlayer1PointsBar();
+                updated = true;
+            }
+            else if (player == p2)
+            {
+                matchUI.UpdatePlayer2EquationDisplay();
+                matchUI.UpdatePlayer2PointsBar();
+                updated = true;
+            }
+
+            return updated;
+        }
+
+        // Called when a power is used.
+        public void OnPowerUsed(Puzzle puzzle, PlayerMatch player, Power power)
+        {
+            // ...
+        }
+
+        // Called when an equation is skipped.
+        public void OnEquationSkipped(Puzzle puzzle, PlayerMatch player)
+        {
+            // ...
+        }
+
         // Called when the equation has been answered.
         // player: the player that answered the question.
         // equationFilled: the filled in equation.
         // rulesUsed: the number of rules used for the equation.
         // missingValuesCountStart: the number of blanks to fill in at the start.
         public void OnEquationComplete(Puzzle puzzle, PlayerMatch player, string equationFilled, 
-            List<exponentRule> rulesUsed, int missingValuesCountStart)
+            List<exponentRule> rulesUsed, int missingValuesCountStart, float answerTime)
         {
-            // TODO: calculate points.
+            // CALCULATING POINTS
+            // Base points gained.
+            int points = 10;
+
+            // Increase poitns by number of rules used.
+            points += 5 * rulesUsed.Count;
+
+            // Add points based on the number of missing values.
+            points += 10 * missingValuesCountStart;
+
+            // TODO: properly implement system for providing poitns based on how long the answer took.
 
             // Add points.
-            player.points += 1;
+            player.points += points;
 
             // Called when the equation has been completed.
             player.OnEquationComplete();
@@ -253,20 +307,11 @@ namespace RM_EM
             // Called when an equation has been generated.
             player.OnEquationGenerated();
 
-            // Updates the displays.
-            if (player == p1)
-            {
-                matchUI.UpdatePlayer1EquationDisplay();
-                matchUI.UpdatePlayer1PointsBar();
-            }
-            else if (player == p2)
-            {
-                matchUI.UpdatePlayer2EquationDisplay();
-                matchUI.UpdatePlayer2PointsBar();
-            }
-                
+            // Updates the UI.
+            UpdatePlayerUI(player);
+
             // Checks if the player has won. If so, call the game finished function.
-            if(HasPlayerWon(player))
+            if (HasPlayerWon(player))
             {
                 OnGameFinished();
             }

@@ -43,7 +43,7 @@ namespace RM_EM
         protected virtual void Update()
         {
             // Updates the mechanic if the game isn't paused.
-            if(!manager.matchPaused)
+            if(!manager.MatchPaused)
             {
                 UpdateMechanic();
             }

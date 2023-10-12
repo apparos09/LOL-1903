@@ -17,7 +17,7 @@ namespace RM_EM
         public float gameTime = 0;
 
         // Pauses the timer if true.
-        public bool gamePaused = false;
+        protected bool gamePaused = false;
 
         // The mouse touch object.
         public MouseTouchInput mouseTouch;
@@ -68,6 +68,15 @@ namespace RM_EM
         public virtual void SetPausedGame(bool paused)
         {
             gamePaused = paused;
+        }
+
+        // Checks if the game is paused.
+        public bool GamePaused
+        {
+            get
+            {
+                return gamePaused;
+            }
         }
 
         // Pauses the game.

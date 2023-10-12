@@ -61,6 +61,10 @@ namespace RM_EM
         // The player this puzzle belongs to. If no player is set, then any player can interact with it.
         public PlayerMatch playerMatch;
 
+        // The amount of time it took to give an answer.
+        [Tooltip("The elapsed time for how long it took to correctly answer the question.")]
+        public float answerTime = 0.0F;
+
         [Header("Exponents")]
 
         // NOTE: a rate of 0 or less means it will never appear.
@@ -926,6 +930,7 @@ namespace RM_EM
                 return;
 
 
+            // TODO: remove log calls.
             // Checks if the selected value is correct.
             if(value.value == missingValues.Peek().value)
             {
@@ -954,8 +959,28 @@ namespace RM_EM
             // TODO; maybe move this inside the "right" bracket?
             if (missingValues.Count == 0)
             {
-                manager.OnEquationComplete(this, player, equation, rulesUsed, missingValuesCountStart);
+                // Call the manager to say that the equation has been completed.
+                manager.OnEquationComplete(
+                    this, player, equation, rulesUsed, missingValuesCountStart, answerTime);
+
+                // Sets the answer time to 0.
+                answerTime = 0.0F;
             }
+        }
+
+        // Call this function to use the power on the puzzle.
+        public void UsePower()
+        {
+            // TODO: implement.
+            manager.OnPowerUsed(this, playerMatch, playerMatch.power);
+        }
+
+        // Skips the current equation.
+        public void SkipEquation()
+        {
+            answerTime = 0.0f;
+            GenerateEquation();
+            manager.OnEquationSkipped(this, playerMatch);
         }
 
         // Gets the question with proper formattng.
@@ -1022,7 +1047,12 @@ namespace RM_EM
         // Update is called once per frame
         void Update()
         {
-
+            // If the match isn't paused.
+            if(!manager.MatchPaused)
+            {
+                // Add to answer time.
+                answerTime += Time.deltaTime;
+            }
         }
     }
 }
