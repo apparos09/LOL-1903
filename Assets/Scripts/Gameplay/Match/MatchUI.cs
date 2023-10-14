@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using util;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 
 namespace RM_EM
 {
-    // The UI for matches.
+    // The UI for matches. All UI elements that call functions should use this script.
     public class MatchUI : GameplayUI
     {
         [Header("Match")]
@@ -35,6 +34,12 @@ namespace RM_EM
         // The fill image for the player 1 power bar.
         public Image p1PowerBarFill;
 
+        // The power button for player 2.
+        public Button p1PowerButton;
+
+        // The skip button for player 1.
+        public Button p1SkipButton;
+        
         [Header("Match/Player 2/Computer")]
         // The player 2 equation.
         public TMP_Text p2EquationText;
@@ -47,6 +52,13 @@ namespace RM_EM
 
         // The fill image for the player 2 power bar.
         public Image p2PowerBarFill;
+
+        // TODO: hide the AI if a computer is using them.
+        // The power button for player 2.
+        public Button p2PowerButton;
+       
+        // The skip button for player 2.
+        public Button p2SkipButton;
 
         [Header("Other")]
         // The power bar color when the player has a power.
@@ -64,10 +76,25 @@ namespace RM_EM
             if (matchManager == null)
                 matchManager = MatchManager.Instance;
 
+            // If player 2 is set.
+            if(matchManager.p2 != null)
+            {
+                // If player 2 is a computer player.
+                if(matchManager.p2 is ComputerMatch)
+                {
+                    p2PowerButton.interactable = false;
+                    p2PowerButton.gameObject.SetActive(false);
+
+                    p2SkipButton.interactable = false;
+                    p2SkipButton.gameObject.SetActive(false);
+                }
+            }
+
             // Hides the match end.
             HideMatchEnd();
         }
 
+        // INTERFACE UPDATES //
 
         // Updates the timer displayed.
         public void UpdateTimeText()
@@ -76,7 +103,7 @@ namespace RM_EM
         }
 
         // Updates all player displays.
-        public void UpdateAllPlayerDisplays()
+        public void UpdateAllPlayerUI()
         {
             // Seperate into different functions.
 
@@ -91,6 +118,31 @@ namespace RM_EM
             UpdatePlayer2PointsBar();
             UpdatePlayer2PowerBarFill();
             UpdatePlayer2PowerBarColor();
+        }
+
+        // Updates UI that changes when an equation is compelted.
+        public bool UpdateOnEquationCompleteUI(PlayerMatch player)
+        {
+            // The variable that checks the update.
+            bool updated = false;
+
+            // Updates the displays.
+            if (player == matchManager.p1)
+            {
+                UpdatePlayer1EquationDisplay();
+                UpdatePlayer1PointsBar();
+                UpdatePlayer1PowerBarFill();
+                updated = true;
+            }
+            else if (player == matchManager.p2)
+            {
+                UpdatePlayer2EquationDisplay();
+                UpdatePlayer2PointsBar();
+                UpdatePlayer2PowerBarFill();
+                updated = true;
+            }
+
+            return updated;
         }
 
         // EQUATION DISPLAYS
@@ -193,6 +245,20 @@ namespace RM_EM
             bar.SetValueAsPercentage(percent);
         }
 
+        // Updates the power bar fill of the provided player.
+        public void UpdatePlayerPowerBarFill(PlayerMatch player)
+        {
+            // Checks match manager to see which player iti s.
+            if(player == matchManager.p1)
+            {
+                UpdatePlayer1PowerBarFill();
+            }
+            else if(player == matchManager.p2)
+            {
+                UpdatePlayer2PowerBarFill();
+            }
+        }
+
         // Updates player 1's power bar.
         public void UpdatePlayer1PowerBarFill()
         {
@@ -231,6 +297,7 @@ namespace RM_EM
             UpdatePlayerPowerBarColor(matchManager.p2, p2PowerBar, p2PowerBarFill);
         }
 
+        // WINDOWS //
 
         // Shows the match end.
         public void ShowMatchEnd()
@@ -244,6 +311,31 @@ namespace RM_EM
             matchEnd.SetActive(false);
         }
 
+        // OPERATIONS //
+        // Use player 1's power.
+        public void UsePlayer1Power()
+        {
+            matchManager.p1.UsePower();
+        }
+
+        // Use player 2's power.
+        public void UsePlayer2Power()
+        {
+            matchManager.p2.UsePower();
+        }
+
+        // Skips
+        // Player 1 Skip
+        public void UsePlayer1EquationSkip()
+        {
+            matchManager.p1.SkipEquation();
+        }
+
+        // Player 2 Skip
+        public void UsePlayer2EquationSkip()
+        {
+            matchManager.p2.SkipEquation();
+        }
         
     }
 }

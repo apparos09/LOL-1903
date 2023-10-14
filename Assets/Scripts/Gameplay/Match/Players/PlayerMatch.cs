@@ -59,10 +59,15 @@ namespace RM_EM
             // ...
         }
 
+        // EQUATION //
+
+        // POWER //
         // If the player has a power, return true.
         public bool HasPower()
         {
+            // Checks if a power is set.
             bool result = power != null;
+
             return result;
         }
 
@@ -89,6 +94,27 @@ namespace RM_EM
             }
         }
 
+        // Call to use the power.
+        public void UsePower()
+        {
+            // Checks if the player has a power.
+            if(HasPower())
+            {
+                // Checks if the power is active.
+                if (!IsPowerActive()) // Not active.
+                {
+                    // If the power is usable, use it.
+                    if(power.IsPowerUsable())
+                    {
+                        power.UsePower();
+                    }
+
+                }
+
+            }
+
+        }
+
         // Checks if the player's power is active.
         public bool IsPowerActive()
         {
@@ -103,7 +129,18 @@ namespace RM_EM
             }
         }
 
+        // TODO: should this be moved?
+        // SKIP
+        // Skips the equation.
+        public void SkipEquation()
+        {
+            // TODO: implement checks to prevent the player from skipping every time.
 
+            puzzle.SkipEquation();
+        }
+
+
+        // EQUATION //
         // Called when an equation is generated.
         public virtual void OnEquationGenerated()
         {

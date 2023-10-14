@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace RM_EM
 {
-    // The World UI
+    // The World UI. All UI elements in the world that call functions should do so through this script.
     public class WorldUI : GameplayUI
     {
         [Header("World")]

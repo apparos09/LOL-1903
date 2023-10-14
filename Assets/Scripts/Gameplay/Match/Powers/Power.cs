@@ -5,13 +5,24 @@ using UnityEngine;
 namespace RM_EM
 {
     // A power to be used by a player.
-    public class Power : MonoBehaviour
+    public abstract class Power : MonoBehaviour
     {
         // The power type.
         public enum powerType { none, temp }
 
+        // The match manager.
+        public MatchManager manager;
+
+        // The player the power is for.
+        public PlayerMatch playerMatch;
+
+        [Header("Power")]
+
         // The power type.
-        public powerType power  = Power.powerType.none;
+        public powerType power = powerType.none;
+
+        // The name of the power.
+        public string powerName = string.Empty;
 
         // The energy for the power (0-1.0).
         public float energy = 0;
@@ -19,16 +30,47 @@ namespace RM_EM
         // The maximum amount of energy for the power.
         public float energyMax = 100.0F;
 
-        // The rate at which the power decays when used.
-        public float depletionRate = 1.0F;
-
         // Gets set to 'true' when the power is active.
         public bool powerActive = false;
 
-        // Start is called before the first frame update
-        void Start()
-        {
+        [Header("Power/Speed")]
+        // The increment for power filling.
+        [Tooltip("The increment for power filling.")]
+        public float powerFillInc = 10.0F;
 
+        // The rate that the power fills that.
+        [Tooltip("The rate for power filling.")]
+        public float powerFillRate = 1.0F;
+
+        // The decrement at which the power decays when used.
+        [Tooltip("The decrement for power depletion.")]
+        public float depletionDec = 1.0F;
+
+        // The rate at which the power decays when used.
+        [Tooltip("The rate for power depletion.")]
+        public float depletionRate = 1.0F;
+      
+
+        // Start is called before the first frame update
+        protected virtual void Start()
+        {
+            // The match manager.
+            if (manager == null)
+                manager = MatchManager.Instance;
+        }
+
+        // Checks if the power is usable.
+        public bool IsPowerUsable()
+        {
+            bool result = energy >= energyMax;
+            return result;
+        }
+
+        // Uses the power.
+        public void UsePower()
+        {
+            powerActive = true;
+            manager.OnPowerUsed(this);
         }
 
         // Gets the power fill percentage.
@@ -53,14 +95,42 @@ namespace RM_EM
         // Increases the power energy by a set amount.
         public void IncreasePowerEnergy()
         {
-            energy += 10.0F;
+            energy += powerFillInc * powerFillRate;
             energy = Mathf.Clamp(energy, 0, energyMax);
         }
 
-        // Update is called once per frame
-        void Update()
-        {
+        // Called to update the power when it's active. 
+        public abstract void UpdatePower();
 
+        // Update is called once per frame
+        protected virtual void Update()
+        {
+            // If the match isn't paused.
+            if(!manager.MatchPaused)
+            {
+                // If the power is active.
+                if (powerActive)
+                {
+                    // TODO: should I change the order here?
+                    // Called while the power is active.
+                    manager.OnPowerActive(this);
+
+                    // Update the power.
+                    UpdatePower();
+
+                    // Reduce the energy.
+                    energy -= depletionDec * depletionRate * Time.deltaTime;
+
+                    // If the energy is less than or equal to 0, stop the power.
+                    if (energy <= 0)
+                    {
+                        energy = 0;
+                        powerActive = false;
+                        manager.OnPowerFinished(this);
+                    }
+                }
+            }
+            
         }
     }
 }

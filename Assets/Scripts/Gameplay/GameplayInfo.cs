@@ -393,14 +393,64 @@ namespace RM_EM
 
 
             // PLAYERS //
-            // Player 1
-            // Power
-            manager.p1.SetPower(p1Power);
 
-            // Player 2/Computer
-            // Power
-            manager.p2.SetPower(p2Power);
+            // TODO: comment this out when testing specific powers, or just enter the match with no data.
+            // Powers
+            // Generate the powers prefabs.
+            PowerPrefabs powerPrefabs = PowerPrefabs.Instance;
+        
+            // Goes through both players.
+            for(int n = 1; n <= 2; n++)
+            {
+                // The generated power, thep layer, and the power.
+                Power genPower;
+                PlayerMatch player;
+                Power.powerType power = Power.powerType.none;
 
+                // Checks what player to use.
+                switch(n)
+                {
+                    case 1: // P1
+                        player = manager.p1;
+                        power = p1Power;
+                        break;
+
+                    case 2: // P2
+                        player = manager.p2;
+                        power = p2Power;
+                        break;
+
+                    default: // None
+                        continue;
+                }
+
+                // Checks the power type.
+                switch (power)
+                {
+                    // Generates the power for the player.
+                    default:
+                    case Power.powerType.none:
+                        // TODO: set to null instead of using the nothing power.
+                        genPower = Instantiate(powerPrefabs.nothing);
+                        break;
+                }
+
+                // Set power.
+                player.SetPower(genPower);
+
+                // If the power isn't null.
+                if(genPower != null)
+                {
+                    // Set the player and the power's parent.
+                    genPower.playerMatch = player;
+                    genPower.transform.parent = player.transform;
+                }
+            }
+
+            // Player 1 (Other)
+            // ...
+
+            // Player 2/Computer (Other)
             ComputerMatch cpu;
 
             // Gets the computer player.

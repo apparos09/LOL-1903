@@ -968,19 +968,20 @@ namespace RM_EM
             }
         }
 
-        // Call this function to use the power on the puzzle.
-        public void UsePower()
-        {
-            // TODO: implement.
-            manager.OnPowerUsed(this, playerMatch, playerMatch.power);
-        }
+        // TODO: not needed?
+        //// Call this function to use the power on the puzzle.
+        //public void ApplyPower(Power power)
+        //{
+        //    // Applies the effect of the provided power.
+        //    // TODO: implement.
+        //}
 
         // Skips the current equation.
         public void SkipEquation()
         {
             answerTime = 0.0f;
             GenerateEquation();
-            manager.OnEquationSkipped(this, playerMatch);
+            manager.OnEquationSkipped(this);
         }
 
         // Gets the question with proper formattng.

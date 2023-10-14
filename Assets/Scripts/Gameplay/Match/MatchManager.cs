@@ -143,7 +143,7 @@ namespace RM_EM
             p2Puzzle.GenerateEquation();
 
             // Updates all the player displays.
-            matchUI.UpdateAllPlayerDisplays();
+            matchUI.UpdateAllPlayerUI();
 
             // Called when the equations have been generated.
             p1.OnEquationGenerated();
@@ -239,42 +239,66 @@ namespace RM_EM
 
         // MECHANICS //
 
-        // Updates the match UI for the provided player.
-        public bool UpdatePlayerUI(PlayerMatch player)
+        // POWER
+        // Called when a power is used.
+        public void OnPowerUsed(Power power)
         {
-            // The variable that checks the update.
-            bool updated = false;
+            // ...
+            // power.playerMatch.puzzle.ApplyPower(power);
 
-            // TODO: move this.
-            // Updates the displays.
-            if (player == p1)
+            // Checks which player the puzzle belongs to.
+            if (power.playerMatch == p1) // P1
+            {
+                // Nothing
+            }
+            else if (power.playerMatch == p2) // P2
+            {
+                // Nothing
+            }
+        }
+
+        // Called when a power is active.
+        public void OnPowerActive(Power power)
+        {
+            // Checks which player the puzzle belongs to.
+            if (power.playerMatch == p1) // P1
+            {
+                matchUI.UpdatePlayer1PowerBarFill();
+            }
+            else if (power.playerMatch == p2) // P2
+            {
+                matchUI.UpdatePlayer2PowerBarFill();
+            }
+        }
+
+        // Called when a power is finished.
+        public void OnPowerFinished(Power power)
+        {
+            // Checks which player the puzzle belongs to.
+            if (power.playerMatch == p1) // P1
+            {
+                matchUI.UpdatePlayer1PowerBarFill();
+            }
+            else if (power.playerMatch == p2) // P2
+            {
+                matchUI.UpdatePlayer2PowerBarFill();
+            }
+        }
+
+
+        // SKIPPING
+        // Called when an equation is skipped.
+        public void OnEquationSkipped(Puzzle puzzle)
+        {
+            // Checks which player the puzzle belongs to.
+            if (puzzle.playerMatch == p1) // P1
             {
                 matchUI.UpdatePlayer1EquationDisplay();
-                matchUI.UpdatePlayer1PointsBar();
-                matchUI.UpdatePlayer1PowerBarFill();
-                updated = true;
             }
-            else if (player == p2)
+            else if(puzzle.playerMatch == p2) // P2
             {
                 matchUI.UpdatePlayer2EquationDisplay();
-                matchUI.UpdatePlayer2PointsBar();
-                matchUI.UpdatePlayer2PowerBarFill();
-                updated = true;
             }
-
-            return updated;
-        }
-
-        // Called when a power is used.
-        public void OnPowerUsed(Puzzle puzzle, PlayerMatch player, Power power)
-        {
-            // ...
-        }
-
-        // Called when an equation is skipped.
-        public void OnEquationSkipped(Puzzle puzzle, PlayerMatch player)
-        {
-            // ...
         }
 
         // Called when the equation has been answered.
@@ -320,8 +344,8 @@ namespace RM_EM
             // Called when an equation has been generated.
             player.OnEquationGenerated();
 
-            // Updates the UI.
-            UpdatePlayerUI(player);
+            // Updates the UI that changes when an equation is completed.
+            matchUI.UpdateOnEquationCompleteUI(player);
 
             // Checks if the player has won. If so, call the game finished function.
             if (HasPlayerWon(player))

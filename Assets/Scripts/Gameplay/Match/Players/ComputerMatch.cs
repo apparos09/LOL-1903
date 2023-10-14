@@ -237,6 +237,7 @@ namespace RM_EM
             Vector3 newPos = Vector3.MoveTowards(reticle.transform.position, targetValue.transform.position, moveSpeed * Time.deltaTime);
             reticle.transform.position = newPos;
 
+            // TODO: set something to use powers and skips.
         }
 
         // Update is called once per frame
