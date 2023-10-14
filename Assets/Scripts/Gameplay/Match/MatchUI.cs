@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using util;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UI;
 
 namespace RM_EM
 {
@@ -24,15 +26,34 @@ namespace RM_EM
         // The player 1 equation.
         public TMP_Text p1EquationText;
 
-        // The player 1 points bar.
+        // The player 1 match points bar.
         public ProgressBar p1PointsBar;
+
+        // The player 2 power bar.
+        public ProgressBar p1PowerBar;
+
+        // The fill image for the player 1 power bar.
+        public Image p1PowerBarFill;
 
         [Header("Match/Player 2/Computer")]
         // The player 2 equation.
         public TMP_Text p2EquationText;
 
-        // The player 2 points bar.
+        // The player 2 match points bar.
         public ProgressBar p2PointsBar;
+
+        // The player 2 power bar.
+        public ProgressBar p2PowerBar;
+
+        // The fill image for the player 2 power bar.
+        public Image p2PowerBarFill;
+
+        [Header("Other")]
+        // The power bar color when the player has a power.
+        public Color hasPowerColor = Color.red;
+
+        // The power bar color when the player has no power.
+        public Color noPowerBarColor = Color.grey;
 
         // Start is called before the first frame update
         protected override void Start()
@@ -54,7 +75,25 @@ namespace RM_EM
             timeText.text = GameplayManager.GetTimeFormatted(matchManager.matchTime);
         }
 
+        // Updates all player displays.
+        public void UpdateAllPlayerDisplays()
+        {
+            // Seperate into different functions.
 
+            // Player 1
+            UpdatePlayer1EquationDisplay();
+            UpdatePlayer1PointsBar();
+            UpdatePlayer1PowerBarFill();
+            UpdatePlayer1PowerBarColor();
+
+            // Player 2
+            UpdatePlayer2EquationDisplay();
+            UpdatePlayer2PointsBar();
+            UpdatePlayer2PowerBarFill();
+            UpdatePlayer2PowerBarColor();
+        }
+
+        // EQUATION DISPLAYS
         // Updates the player 1 equation.
         public void UpdatePlayer1EquationDisplay()
         {
@@ -69,6 +108,9 @@ namespace RM_EM
             p2EquationText.text = matchManager.p2Puzzle.GetEquationQuestionFormatted();
         }
 
+
+        // PROGRESS BARS //
+        // POINTS BARS
         // Gets the percentage of the points bar filled.
         private float GetPointsGoalPercentage(float points)
         {
@@ -99,24 +141,94 @@ namespace RM_EM
             return percent;
         }
 
+        // Updates the player points bar.
+        private void UpdatePlayerPointsBar(PlayerMatch player, ProgressBar bar)
+        {
+            // Percent
+            float percent = GetPointsGoalPercentage(player.points);
+
+            // Sets the points bar percentage.
+            bar.SetValueAsPercentage(percent);
+        }
+
         // Updates player 1's points bar.
         public void UpdatePlayer1PointsBar()
         {
-            // Percent
-            float percent = GetPointsGoalPercentage(matchManager.p1.points);
-
-            // Sets the points bar percentage.
-            p1PointsBar.SetValueAsPercentage(percent);
+            // Updates P1's points bar using this function.
+            UpdatePlayerPointsBar(matchManager.p1, p1PointsBar);
         }
 
         // Updates player 2's points bar.
         public void UpdatePlayer2PointsBar()
         {
+            // Updates P2's points bar using this function.
+            UpdatePlayerPointsBar(matchManager.p2, p2PointsBar);
+        }
+
+        // POWERS //
+
+        // Updates the player's power bar.
+        public void UpdatePlayerPowerBarFill(PlayerMatch player, ProgressBar bar)
+        {
+            // Checks if a player has a power.
+            bool hasPower;
+
             // Percent
-            float percent = GetPointsGoalPercentage(matchManager.p2.points);
+            float percent;
+
+            // Sees if the player has a power.
+            hasPower = player.HasPower();
+
+            // Does the player have a power?
+            if (hasPower) // Get percentage.
+            {
+                percent = player.power.GetPowerFillPercentage();
+            }
+            else // Set to full (bar should be greyed out).
+            {
+                percent = 1.0F;
+            }
 
             // Sets the points bar percentage.
-            p2PointsBar.SetValueAsPercentage(percent);
+            bar.SetValueAsPercentage(percent);
+        }
+
+        // Updates player 1's power bar.
+        public void UpdatePlayer1PowerBarFill()
+        {
+            UpdatePlayerPowerBarFill(matchManager.p1, p1PowerBar);
+        }
+
+        // Update's player 2's power bar.
+        public void UpdatePlayer2PowerBarFill()
+        {
+            UpdatePlayerPowerBarFill(matchManager.p2, p2PowerBar);
+        }
+
+        // Updates the player power bar color.
+        private void UpdatePlayerPowerBarColor(PlayerMatch player, ProgressBar bar, Image fillImage)
+        {
+            // Checks if the player has a power.
+            bool hasPower = player.HasPower();
+
+            // Fills the image.
+            fillImage.color = (hasPower) ? hasPowerColor : noPowerBarColor;
+
+            // If the player has no power, set the bar to be full. 
+            if (!hasPower)
+                bar.SetValueAsPercentage(1.0F, false);
+        }
+
+        // Updates player 1's power bar color.
+        public void UpdatePlayer1PowerBarColor()
+        {
+            UpdatePlayerPowerBarColor(matchManager.p1, p1PowerBar, p1PowerBarFill);
+        }
+
+        // Updates player 2's power bar color.
+        public void UpdatePlayer2PowerBarColor()
+        {
+            UpdatePlayerPowerBarColor(matchManager.p2, p2PowerBar, p2PowerBarFill);
         }
 
 

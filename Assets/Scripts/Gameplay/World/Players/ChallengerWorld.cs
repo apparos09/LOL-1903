@@ -29,7 +29,7 @@ namespace RM_EM
 
         [Header("Puzzle")]
         // The puzzle type.
-        public puzzle puzzleType;
+        public Puzzle.puzzleType puzzle;
 
         [Header("Exponents")]
         // The exponent rates.

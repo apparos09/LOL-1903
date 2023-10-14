@@ -5,9 +5,6 @@ using UnityEngine;
 
 namespace RM_EM
 {
-    // The puzzle types.
-    public enum puzzle { keypad, slider, bubble, pinball }
-
     // The exponent rules.
     /*
      * expo (Base Exponent Rule): a^n
@@ -22,6 +19,9 @@ namespace RM_EM
     // Generates content for a puzzle.
     public class Puzzle : MonoBehaviour
     {
+        // The puzzle types.
+        public enum puzzleType { keypad, slider, bubble, pinball }
+
         // A value space.
         public struct ValueSpace
         {
@@ -50,7 +50,7 @@ namespace RM_EM
         public MatchManager manager;
 
         // The puzzle type.
-        public puzzle puzzleType;
+        public puzzleType puzzle;
 
         // The mechanic of the puzzle.
         public PuzzleMechanic puzzleMechanic;
@@ -1042,6 +1042,66 @@ namespace RM_EM
 
             // Returns the result.
             return result;
+        }
+        
+        // Calculates the amount of points for the answer pseed.
+        public int GetPointsForAnswerSpeed(int minPoints, int maxPoints)
+        {
+            // TODO: this should scale with the puzzle type.
+            // The par time.
+            float parTime = 0.0F;
+            
+            // A multiple for the par time.
+            float mult = 1.0F;
+
+            // Checks the puzzle type to help see how much extra time there is per value.
+            switch(puzzle)
+            {
+                case puzzleType.keypad:
+                    mult = 1.0F;
+                    break;
+
+                case puzzleType.slider:
+                    mult = 1.25F;
+                    break;
+
+                case puzzleType.bubble:
+                    mult = 1.4F;
+                    break;
+
+                case puzzleType.pinball:
+                    mult = 1.5F;
+                    break;
+            }
+
+            // Calculates the par time using the missing values, the base time, and the mechanic modifier.
+            // By default, each value fill is 5 seconds at the least. The par time is at least 1 second.
+            parTime = 1.0F + missingValuesCountStart * 4.0F * mult;
+
+            // Calculates how close the answer time is to the partime.
+            float percent = 0.0F;
+
+            // If the answer time is overtime, or less than 0, set the percent to 0.
+            if(answerTime > parTime || answerTime < 0.0F)
+            {
+                percent = 0.0F;
+            }
+            else // Calculates the percentage of time left for points calculation.
+            {
+                percent = 1.0F - answerTime / parTime;
+            }
+
+            // Clamps the percentage.
+            percent = Mathf.Clamp01(percent);
+
+            // Calculates points as float.
+            float pointsFlt = Mathf.Lerp(minPoints, maxPoints, percent);
+
+            // Calculates points as int (round to whole number).
+            int pointsInt = Mathf.CeilToInt(pointsFlt);
+
+            // Return the result.
+            return pointsInt;
         }
 
         // Update is called once per frame

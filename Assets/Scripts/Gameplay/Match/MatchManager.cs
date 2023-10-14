@@ -138,13 +138,12 @@ namespace RM_EM
         // Post start function.
         private void PostStart()
         {
-            // Generates a puzzle and displays the equation.
+            // Generates the equations.
             p1Puzzle.GenerateEquation();
-            matchUI.UpdatePlayer1EquationDisplay();
-            
-            // Generates a puzzle and displays the equation.
             p2Puzzle.GenerateEquation();
-            matchUI.UpdatePlayer2EquationDisplay();
+
+            // Updates all the player displays.
+            matchUI.UpdateAllPlayerDisplays();
 
             // Called when the equations have been generated.
             p1.OnEquationGenerated();
@@ -246,17 +245,20 @@ namespace RM_EM
             // The variable that checks the update.
             bool updated = false;
 
+            // TODO: move this.
             // Updates the displays.
             if (player == p1)
             {
                 matchUI.UpdatePlayer1EquationDisplay();
                 matchUI.UpdatePlayer1PointsBar();
+                matchUI.UpdatePlayer1PowerBarFill();
                 updated = true;
             }
             else if (player == p2)
             {
                 matchUI.UpdatePlayer2EquationDisplay();
                 matchUI.UpdatePlayer2PointsBar();
+                matchUI.UpdatePlayer2PowerBarFill();
                 updated = true;
             }
 
@@ -280,12 +282,13 @@ namespace RM_EM
         // equationFilled: the filled in equation.
         // rulesUsed: the number of rules used for the equation.
         // missingValuesCountStart: the number of blanks to fill in at the start.
+        // answerTime: the time it took to answer the question.
         public void OnEquationComplete(Puzzle puzzle, PlayerMatch player, string equationFilled, 
             List<exponentRule> rulesUsed, int missingValuesCountStart, float answerTime)
         {
-            // CALCULATING POINTS
+            // CALCULATING PLAYER POINTS //
             // Base points gained.
-            int points = 10;
+            int points = 5;
 
             // Increase poitns by number of rules used.
             points += 5 * rulesUsed.Count;
@@ -293,10 +296,20 @@ namespace RM_EM
             // Add points based on the number of missing values.
             points += 10 * missingValuesCountStart;
 
-            // TODO: properly implement system for providing poitns based on how long the answer took.
+            // Points for answer speed.
+            points += puzzle.GetPointsForAnswerSpeed(1, 15);
 
             // Add points.
             player.points += points;
+
+            // CALCULATING POWER ENERGY INCREASE //
+            // TODO: check if the player has a power.
+            if(player.HasPower() && !player.IsPowerActive())
+            {
+                // Increases the power energy by a set amount.
+                player.power.IncreasePowerEnergy();
+            }
+
 
             // Called when the equation has been completed.
             player.OnEquationComplete();

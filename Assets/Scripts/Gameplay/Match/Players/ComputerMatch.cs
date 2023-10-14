@@ -171,10 +171,10 @@ namespace RM_EM
                             valueOptions.Add(puzzle.puzzleMechanic.puzzleValues[i]);
 
                             // Checks the puzzle type.
-                            switch (puzzle.puzzleType)
+                            switch (puzzle.puzzle)
                             {
                                 // If it's a keypad, there's one of every value, so break early.
-                                case RM_EM.puzzle.keypad:
+                                case Puzzle.puzzleType.keypad:
                                     breakEarly = true;
                                     break;
 

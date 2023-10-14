@@ -31,7 +31,7 @@ namespace RM_EM
         [Header("Match Info")]
 
         // The puzzle type.
-        public puzzle puzzleType = puzzle.keypad;
+        public Puzzle.puzzleType puzzle = Puzzle.puzzleType.keypad; 
 
         [Header("Match Info/Exponents")]
 
@@ -92,7 +92,14 @@ namespace RM_EM
         public int missingValuesMax = 1;
 
 
-        [Header("Match Info/Challenger")]
+        [Header("Match Info/Players")]
+
+        // Player 1's power type.
+        public Power.powerType p1Power = Power.powerType.none;
+
+        // Player 2's power type.
+        public Power.powerType p2Power = Power.powerType.none;
+
         // The difficulty of the challenger.
         // NOTE: if the challenger difficulty is 0 or less, the equation details WON'T be overwritten.
         public int challengerDifficulty = 0;
@@ -244,7 +251,7 @@ namespace RM_EM
 
             // PUZZLE/CHALLENGE INFO
             // Sets the puzzle type.
-            puzzleType = challenger.puzzleType;
+            puzzle = challenger.puzzle;
 
             // Exponents
             // Base, Mult Same, Expo By Expo
@@ -269,8 +276,8 @@ namespace RM_EM
 
             // PUZZLE //
             // Set the puzzle type.
-            manager.p1Puzzle.puzzleType = puzzleType;
-            manager.p2Puzzle.puzzleType = puzzleType;
+            manager.p1Puzzle.puzzle = puzzle;
+            manager.p2Puzzle.puzzle = puzzle;
 
             // Puzzle Mechanics
             // Grabs the instance.
@@ -279,12 +286,13 @@ namespace RM_EM
             // The mechanics for P1 and P2.
             PuzzleMechanic p1Mech, p2Mech;
 
+            // TODO: add other puzzle types and prefabs.
             // Checks the puzzle type.
-            switch (puzzleType)
+            switch (puzzle)
             {
                 // Generates a keypad by default.
                 default:
-                case puzzle.keypad:
+                case Puzzle.puzzleType.keypad:
                     p1Mech = Instantiate(puzzlePrefabs.keypad);
                     p2Mech = Instantiate(puzzlePrefabs.keypad);
                     break;
@@ -384,7 +392,15 @@ namespace RM_EM
             manager.p2Puzzle.missingValuesMax = missingValuesMax;
 
 
-            // COMPUTER/AI
+            // PLAYERS //
+            // Player 1
+            // Power
+            manager.p1.SetPower(p1Power);
+
+            // Player 2/Computer
+            // Power
+            manager.p2.SetPower(p2Power);
+
             ComputerMatch cpu;
 
             // Gets the computer player.

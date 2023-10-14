@@ -21,7 +21,7 @@ namespace RM_EM
         // The puzzle the player is answering.
         public Puzzle puzzle;
 
-        // The amount of points the player has.
+        // The amount of match points the player has.
         public float points;
 
         // The power the player has.
@@ -66,19 +66,43 @@ namespace RM_EM
             return result;
         }
 
-        // Gets the current amount of energy built up for the power.
-        public float GetPowerEnergy()
+        // Sets the power to the provided power.
+        public void SetPower(Power newPower)
         {
-            // Checks if the player has a power.
-            if(HasPower())
+            power = newPower;
+        }
+
+        // Sets the power using the provided type.
+        public void SetPower(Power.powerType type)
+        {
+            // Generates a power based on the type.
+            switch(type)
             {
-                return power.energy;
-            }
-            else
-            {
-                return -1;
+                default:
+                case Power.powerType.none:
+                    power = null;
+                    break;
+
+                case Power.powerType.temp:
+                    // TODO: implement.
+                    break;
             }
         }
+
+        // Checks if the player's power is active.
+        public bool IsPowerActive()
+        {
+            // Checks if a power is equipped.
+            if(power != null)
+            {
+                return power.powerActive;
+            }
+            else // Not equipped, so always false.
+            {
+                return false;
+            }
+        }
+
 
         // Called when an equation is generated.
         public virtual void OnEquationGenerated()
