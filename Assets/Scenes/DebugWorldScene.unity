@@ -434,7 +434,7 @@ MonoBehaviour:
   difficulty: 0
   available: 1
   defeated: 0
-  puzzleType: 0
+  puzzle: 0
   baseExpoRate: 1
   multSameRate: 1
   expoByExpoRate: 1
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   difficulty: 0
   available: 1
   defeated: 0
-  puzzleType: 0
+  puzzle: 0
   baseExpoRate: 1
   multSameRate: 1
   expoByExpoRate: 1
@@ -1955,12 +1955,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUI: {fileID: 1432786165}
   gameTime: 0
-  gamePaused: 0
   mouseTouch: {fileID: 0}
   tutorial: {fileID: 0}
   worldUI: {fileID: 1432786165}
   worldCamera: {fileID: 322652622}
-  worldPaused: 0
   worldEvents: {fileID: 1601187951}
   areas:
   - {fileID: 1707077277}
