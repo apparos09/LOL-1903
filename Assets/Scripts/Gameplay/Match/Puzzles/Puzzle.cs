@@ -444,6 +444,7 @@ namespace RM_EM
             return result;
         }
         
+        // TODO: remove this.
         // Combines the calculations into 1 string, using the plusRate and minusRate to determine if they're...
         // Connected by plus signs or minus signs (equal chance of both)
         private string CombineCalculations(List<PuzzleCalculation> calcs)
@@ -891,6 +892,83 @@ namespace RM_EM
                 missingValuesCountStart = missingValues.Count;
             }
 
+        }
+
+        // Returns a random value.
+        public char GetRandomPuzzleValue()
+        {
+            // TODO: have this limit the value based on what's needed for the actual question.
+            // The value to be returned.
+            char value;
+
+            // Generate a random value.
+            int randInt = Random.Range(0, 14);
+
+            // Checks the random int.
+            switch(randInt)
+            {
+                case 0: // 0
+                    value = '0';
+                    break;
+
+                case 1: // 1
+                    value = '1';
+                    break;
+
+                case 2: // 2
+                    value = '2';
+                    break;
+
+                case 3: // 3
+                    value = '3';
+                    break;
+
+                case 4: // 4
+                    value = '4';
+                    break;
+
+                case 5: // 5
+                    value = '5';
+                    break;
+
+                case 6: // 6
+                    value = '6';
+                    break;
+
+                case 7: // 7
+                    value = '7';
+                    break;
+
+                case 8: // 8
+                    value = '8';
+                    break;
+
+                case 9: // 9
+                    value = '9';
+                    break;
+
+                case 10: // Add
+                    value = '+';
+                    break;
+
+                case 11: // Minus
+                    value = '-';
+                    break;
+
+                case 12: // Multiply
+                    value = '*';
+                    break;
+
+                case 13: // Divide
+                    value = '/';
+                    break;
+
+                default: // Exponent
+                    value = '^';
+                    break;
+            }
+
+            return value;
         }
 
         // Tries to select a puzzle element. Override if a puzzle has custom elements.

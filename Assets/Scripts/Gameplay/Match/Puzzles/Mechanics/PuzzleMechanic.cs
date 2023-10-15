@@ -13,7 +13,7 @@ namespace RM_EM
         // The puzzle this mechanic belongs too.
         public Puzzle puzzle;
 
-        // The puzzle values.
+        // The list of puzzle values in the mechanic.
         public List<PuzzleValue> puzzleValues = new List<PuzzleValue>();
 
         // If set to 'true', the puzzle values are auto-filled.
