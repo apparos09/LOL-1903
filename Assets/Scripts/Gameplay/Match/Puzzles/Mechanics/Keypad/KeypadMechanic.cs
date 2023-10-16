@@ -31,6 +31,9 @@ namespace RM_EM
         protected override void Start()
         {
             base.Start();
+
+            // Set the puzzle type.
+            puzzle.puzzle = Puzzle.puzzleType.keypad;
         }
 
         // Updates the mechanic.

@@ -47,6 +47,9 @@ namespace RM_EM
         {
             base.Start();
 
+            // Set the puzzle type.
+            puzzle.puzzle = Puzzle.puzzleType.sliding;
+
             // Add a count for each segment.
             for (int i = 0; i < segments; i++)
                 segmentPieceCounts.Add(0);

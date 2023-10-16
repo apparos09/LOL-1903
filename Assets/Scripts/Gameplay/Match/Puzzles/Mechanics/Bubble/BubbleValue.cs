@@ -45,7 +45,6 @@ namespace RM_EM
             {
                 rigidbody = GetComponent<Rigidbody2D>();
             }
-                
 
             // If the puzzle value isn't set, try to grab it.
             if (puzzleValue == null)

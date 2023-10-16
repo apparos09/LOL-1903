@@ -13,11 +13,14 @@ namespace RM_EM
         // The bubble value's rigidbody.
         public new Rigidbody2D rigidbody;
 
-        // The weight of the ball.
-        public float weight = 1;
+        // The puzzle value for this bubble.
+        public PuzzleValue puzzleValue;
 
         // The balls this ball is touching.
         public List<BallValue> touchingBalls;
+
+        // The weight of the ball.
+        public float weight = 1;
 
         // Start is called before the first frame update
         void Start()
@@ -53,6 +56,13 @@ namespace RM_EM
             }
         }
 
+        // Returns the weight of the ball.
+        public float GetWeight()
+        {
+            // return rigidbody.mass;
+            return weight;
+        }
+
         // Gets the ball's weight multiplied by it's scale.
         public float GetWeightScaled()
         {
@@ -60,7 +70,7 @@ namespace RM_EM
             float avgScale = (transform.localScale.x + transform.localScale.y) / 2.0F;
 
             // Gets the scaled weight.
-            float weightScaled = weight * avgScale;
+            float weightScaled = GetWeight() * avgScale;
 
             // Returns the scaled weight.
             return weightScaled;
@@ -80,6 +90,17 @@ namespace RM_EM
             // Checks if it's in the list.
             if(touchingBalls.Contains(ballValue))
                 touchingBalls.Remove(ballValue);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            // If the ball is in the death zone.
+            if(mechanic.BallInDeathZone(this))
+            {
+                // Return the ball.
+                mechanic.ReturnBall(this);
+            }
         }
     }
 }

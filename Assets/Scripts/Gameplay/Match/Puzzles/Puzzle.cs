@@ -20,7 +20,7 @@ namespace RM_EM
     public class Puzzle : MonoBehaviour
     {
         // The puzzle types.
-        public enum puzzleType { keypad, slider, bubble, pinball }
+        public enum puzzleType { unknown, keypad, sliding, bubble, pinball }
 
         // A value space.
         public struct ValueSpace
@@ -1140,7 +1140,7 @@ namespace RM_EM
                     mult = 1.0F;
                     break;
 
-                case puzzleType.slider:
+                case puzzleType.sliding:
                     mult = 1.25F;
                     break;
 
