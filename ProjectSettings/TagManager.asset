@@ -7,6 +7,7 @@ TagManager:
   - BGM
   - SFX
   - TTS
+  - Puzzle Value
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4196758696294030970}
   - component: {fileID: 6698981036129833607}
   m_Layer: 0
-  m_Name: Value
+  m_Name: Value Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5041536939201776997}
   m_Layer: 0
   m_Name: Keypad Button
-  m_TagString: Untagged
+  m_TagString: Puzzle Value
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 94
+  valueRenderer: {fileID: 4196758696294030970}
 --- !u!1 &4148708873465944014
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ GameObject:
   - component: {fileID: 2577898436191919559}
   - component: {fileID: 5146748544315929435}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Key Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

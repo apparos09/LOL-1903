@@ -17,7 +17,7 @@ namespace RM_EM
         public int segment = -1;
 
         // The movement direction.
-        public Vector3 moveDirec = new Vector3(0, 1, 0);
+        public Vector3 moveDirec = new Vector3(0, -1, 0);
 
         // The move speed.
         public float moveSpeed = 1.0F;
