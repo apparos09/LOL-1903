@@ -11,11 +11,28 @@ namespace RM_EM
         // 0-9, +, -, *, /
         public char value = '\0';
 
+        // The sprite renderer.
+        public SpriteRenderer valueRenderer;
+
         //// Start is called before the first frame update
         //void Start()
         //{
 
         //}
+
+        // Sets the sprite using the set value.
+        public void SetSpriteByValue(PuzzleValueSprites sprites)
+        {
+            // Grabs the value from the provided script.
+            valueRenderer.sprite = sprites.GetSpriteByValue(value);
+        }
+
+        // Sets the new value, and sprite using said value.
+        public void SetValueAndSprite(char newValue, PuzzleValueSprites sprites)
+        {
+            value = newValue;
+            SetSpriteByValue(sprites);
+        }
 
         // Called when the puzzle value is hit.
         // If 'destroy' is true, the value object is destroyed upon the value being returned.

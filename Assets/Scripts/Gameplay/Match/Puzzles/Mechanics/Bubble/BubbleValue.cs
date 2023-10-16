@@ -13,21 +13,79 @@ namespace RM_EM
         // The bubble value's rigidbody.
         public new Rigidbody2D rigidbody;
 
+        // The puzzle value for this bubble.
+        public PuzzleValue puzzleValue;
+
+
+        [Header("Life")]
         // How long the bubble is alive for.
         public float lifeTimer = 10.0F;
+
+        // The life timer max.
+        public float lifeTimerMax = 10.0F;
+
+        [Header("Movement")]
+
+        // The force applied to the bubble when it's not moving.
+        public float moveForce = 1;
+
+        // The force direction of the bubble.
+        // TODO: maybe change this if the bubble hits something?
+        public Vector2 forceDirec = Vector2.right;
+
+        // Scales the force if set to true. Bigger bubbles move slower, small bubbles move faster.
+        [Tooltip("Scales the movement force based on the bubble's scale. The smaller the scale, the stronger the force.")]
+        public bool scaleForce = false;
 
         // Start is called before the first frame update
         void Start()
         {
             // Grabs the rigidbody.
             if(rigidbody == null)
+            {
                 rigidbody = GetComponent<Rigidbody2D>();
+            }
+                
+
+            // If the puzzle value isn't set, try to grab it.
+            if (puzzleValue == null)
+            {
+                puzzleValue = GetComponent<PuzzleValue>();
+            }
+        }
+
+        // LIFE TIMER
+        // Sets the life timer to the max.
+        public void SetLifeTimerToMax()
+        {
+            lifeTimer = lifeTimerMax;
+        }
+
+        // FORCE
+        // Adds force to the bubble.
+        public void AddForceToBubble()
+        {
+            // Calculates the force.
+            Vector2 force = forceDirec * moveForce;
+
+            // If the force should be scaled.
+            if (scaleForce)
+            {
+                // Averages out the scale.
+                float avgScale = (transform.localScale.x + transform.localScale.y) / 2.0F;
+                
+                // Apply the scale.
+                force *= Mathf.Pow(avgScale, -1);
+            }
+                
+            // Add to the rigidbody.
+            rigidbody.AddForce(force, ForceMode2D.Impulse);
         }
 
         // Kills the bubble.
         public void Kill()
         {
-            mechanic.OnBubbleKill();
+            mechanic.ReturnBubble(this);
         }
 
         // Update is called once per frame
@@ -36,6 +94,13 @@ namespace RM_EM
             // If the match isn't paused.
             if(!mechanic.manager.MatchPaused)
             {
+                // MOVEMENT
+                // Moves the bubble if its stationary.
+                if (rigidbody.velocity == Vector2.zero)
+                    AddForceToBubble();
+
+
+                // TIMER
                 // Reduce timer.
                 lifeTimer -= Time.deltaTime;
 

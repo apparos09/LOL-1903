@@ -8,7 +8,7 @@ using UnityEngine;
 namespace RM_EM
 {
     // The mechanic for the sliding puzzle.
-    public class SlidingMechanic : PuzzleMechanic
+    public class SlidingMechanic : SpawnMechanic
     {
         [Header("Sliding")]
 
@@ -25,25 +25,16 @@ namespace RM_EM
         [Tooltip("The number of pieces for each segment. The segment numbering starts at 0.")]
         public List<int> segmentPieceCounts = new List<int>();
 
-        [Header("Sliding/Piece Management")]
-
-        // The total number of pieces active at a given time.
-        [Tooltip("The total number of pieces allowed to be active at a given time.")]
-        public int activePieceCountMax = 10;
-
-        // The timer for spawning a piece.
-        public float spawnTimer = 0.0F;
-
-        // The max time it takes to spawn another piece.
-        public float spawnTimeMax = 2.0F;
-
-        [Header("Sliding/Piece Creation")]
+        [Header("Sliding/Pieces")]
 
         // The pool of chips for the puzzle mechanic.
         public Queue<SlidingPiece> piecePool;
 
-        // Prefabs for the sliding mechanic puzzle.
-        public PuzzleValuePrefabs valuePrefabs;
+        // The prefab of the piece to be instanted.
+        public SlidingPiece piecePrefab;
+
+        // Sprites for the sliding mechanic puzzle.
+        public PuzzleValueSprites valueSprites;
 
         // The piece movement direction.
         public Vector3 pieceDirec = new Vector3(0, 1, 0);
@@ -73,14 +64,7 @@ namespace RM_EM
             // Checks if there are pieces in the pool.
             if(piecePool.Count == 0)
             {
-                // The prefab to be instantiated.
-                SlidingPiece piecePrefab;
-
-                // Gets the prefab, instantiates it, and gets the value.
-                PuzzleValue temp = Instantiate(valuePrefabs.GetPrefabByValue(value));
-                piecePrefab = temp.GetComponent<SlidingPiece>();
-
-                // Instantiates the prefab.
+                // The new piece, which is generated from a prefab.
                 piece = Instantiate(piecePrefab);
             }
             else // No pieces, so make a new one.
@@ -88,8 +72,8 @@ namespace RM_EM
                 piece = piecePool.Dequeue();
             }
 
-            // Set the piece value.
-            piece.puzzleValue.value = value;
+            // Set the piece value and changes the sprite.
+            piece.puzzleValue.SetValueAndSprite(value, valueSprites);
 
             // Saves the segment the piece is for, and increases the piece count.
             piece.segment = segment;
@@ -135,22 +119,14 @@ namespace RM_EM
         // Updates the mechanic.
         public override void UpdateMechanic()
         {
-            // Checks if the timer is going.
-            if(spawnTimer > 0)
-            {
-                // Reduce timer.
-                spawnTimer -= Time.deltaTime;
+            // Updates the spawn timer.
+            bool spawn = UpdateSpawnTimer();
 
-                // Set to zero if negative.
-                if (spawnTimer < 0)
-                    spawnTimer = 0.0F;
-            }
-
-            // Gets the number of active pieces.
-            int activePieces = puzzleValues.Count;
+            // Checks if the values have been maxed out.
+            bool maxedValues = HasPuzzleValuesCountReachedMax();
 
             // Checks if a piece should be generated.
-            bool generate = spawnTimer <= 0 && activePieces < activePieceCountMax;
+            bool generate = spawn && !maxedValues;
 
             // Generates a piece.
             if(generate)
@@ -160,8 +136,11 @@ namespace RM_EM
                 // The segment the piece will go in.
                 int segment = -1;
 
+                // Gets the number of active pieces.
+                int activePieces = GetActivePuzzleValues();
+
                 // Checks how many segments there are. If there's only 1, all the pieces go in the same segment.
-                if(segments > 1)
+                if (segments > 1)
                 {
                     // The chance rates for each segment.
                     // The more pieces a segment has, the less likely that segment is to be chosen.
@@ -265,6 +244,9 @@ namespace RM_EM
 
                 // Generates the piece.
                 GeneratePiece(puzzle.GetRandomPuzzleValue(), segment, piecePos, moveDirec);
+
+                // Resets the spawn timer.
+                ResetSpawnTimerToMax();
             }
         }
 
