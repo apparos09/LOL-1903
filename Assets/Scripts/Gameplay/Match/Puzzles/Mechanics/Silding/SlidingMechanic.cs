@@ -42,34 +42,14 @@ namespace RM_EM
         // The pool of chips for the puzzle mechanic.
         public Queue<SlidingPiece> piecePool;
 
+        // Prefabs for the sliding mechanic puzzle.
+        public PuzzleValuePrefabs valuePrefabs;
+
         // The piece movement direction.
         public Vector3 pieceDirec = new Vector3(0, 1, 0);
 
         // If 'true', the pieces alternate directions based on the segment they fall into.
         public bool alternateDirec = true;
-
-        [Header("Sliding/Piece Prefabs")]
-        
-        // The default piece.
-        public SlidingPiece pieceDefault;
-
-        // Numbers.
-        public SlidingPiece piece0;
-        public SlidingPiece piece1;
-        public SlidingPiece piece2;
-        public SlidingPiece piece3;
-        public SlidingPiece piece4;
-        public SlidingPiece piece5;
-        public SlidingPiece piece6;
-        public SlidingPiece piece7;
-        public SlidingPiece piece8;
-        public SlidingPiece piece9;
-
-        // Math operations.
-        public SlidingPiece piecePlus;
-        public SlidingPiece pieceMinus;
-        public SlidingPiece pieceMultiply;
-        public SlidingPiece pieceDivide;
 
         // Start is called before the first frame update
         protected override void Start()
@@ -95,70 +75,10 @@ namespace RM_EM
             {
                 // The prefab to be instantiated.
                 SlidingPiece piecePrefab;
-                
-                // Checks the value.
-                switch(value)
-                {
-                    case '0':
-                        piecePrefab = piece0;
-                        break;
 
-                    case '1':
-                        piecePrefab = piece1;
-                        break;
-
-                    case '2':
-                        piecePrefab = piece2;
-                        break;
-
-                    case '3':
-                        piecePrefab = piece3;
-                        break;
-
-                    case '4':
-                        piecePrefab = piece4;
-                        break;
-
-                    case '5':
-                        piecePrefab = piece5;
-                        break;
-
-                    case '6':
-                        piecePrefab = piece6;
-                        break;
-
-                    case '7':
-                        piecePrefab = piece7;
-                        break;
-
-                    case '8':
-                        piecePrefab = piece8;
-                        break;
-
-                    case '9':
-                        piecePrefab = piece9;
-                        break;
-
-                    case '+':
-                        piecePrefab = piecePlus;
-                        break;
-
-                    case '-':
-                        piecePrefab = pieceMinus;
-                        break;
-
-                    case '*':
-                        piecePrefab = pieceMultiply;
-                        break;
-
-                    case '/':
-                        piecePrefab = pieceDivide;
-                        break;
-
-                    default:
-                        piecePrefab = pieceDefault;
-                        break;
-                }
+                // Gets the prefab, instantiates it, and gets the value.
+                PuzzleValue temp = Instantiate(valuePrefabs.GetPrefabByValue(value));
+                piecePrefab = temp.GetComponent<SlidingPiece>();
 
                 // Instantiates the prefab.
                 piece = Instantiate(piecePrefab);
