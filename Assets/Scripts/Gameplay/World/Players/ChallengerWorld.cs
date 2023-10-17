@@ -17,7 +17,12 @@ namespace RM_EM
         // The sprite renderer for the the challenger.
         public SpriteRenderer spriteRenderer;
 
+        // The sprite for the challenger prompt.
+        [Tooltip("The sprite for the challenge prompt.")]
+        public Sprite challengeSprite;
+
         [Header("Settings")]
+
         // The difficulty of the challenger.
         public int difficulty = 0;
 
@@ -35,19 +40,19 @@ namespace RM_EM
         // The exponent rates.
         public float baseExpoRate = 1.0F;
 
-        // Rate for multiplicaton (same bases) exponents.
+        // Rate for product rule/multiplicaton (same bases) exponents.
         public float multSameRate = 1.0F;
 
-        // Rate for exponent by exponent exponents.
+        // Rate for power of a power/exponent by exponent exponents.
         public float expoByExpoRate = 1.0F;
 
-        // Rate for multplication (different bases) exponents.
+        // Rate for power of a product/multplication (different bases) exponents.
         public float multDiffRate = 1.0F;
 
-        // Rate for zero exponents.
+        // Rate for zero exponent rule.
         public float zeroRate = 1.0F;
 
-        // Rate for negative exponents.
+        // Rate for negative exponent rule.
         public float negativeRate = 1.0F;
 
 
@@ -79,7 +84,7 @@ namespace RM_EM
             // If the challenger UI isn't open, open the UI and set this as the challenger.
             if(!manager.worldUI.IsChallengerUIActive())
             {
-                manager.worldUI.ShowChallengeUI(this);
+                manager.worldUI.ShowChallengeUI(this, manager.GetChallengerIndex(this));
             }
         }
 

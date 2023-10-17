@@ -18,7 +18,9 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
-            eventTag = "Area Switch";
+            // If the event tag isn't set.
+            if(eventTag == "")
+                eventTag = "Area Switch";
 
             // Manager.
             if (manager == null)

@@ -49,7 +49,19 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
-            // ...
+            // Looks for the result data.
+            ResultsData data = FindObjectOfType<ResultsData>();
+
+            // Applies the results data.
+            if(data != null)
+            {
+                // Applies the data.
+                ApplyResultsData(data);
+
+                // Destroys the object.
+                Destroy(data.gameObject);
+            }
+                
         }
 
         // Gets the instance.
@@ -86,6 +98,12 @@ namespace RM_EM
             {
                 return instanced;
             }
+        }
+
+        // Applies the results data.
+        public void ApplyResultsData(ResultsData data)
+        {
+            resultsUI.ApplyResultsData(data);
         }
 
         // Goes to the title scene.

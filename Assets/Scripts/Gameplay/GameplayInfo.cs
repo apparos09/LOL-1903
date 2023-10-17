@@ -31,7 +31,7 @@ namespace RM_EM
         [Header("Match Info")]
 
         // The puzzle type.
-        public Puzzle.puzzleType puzzle = Puzzle.puzzleType.keypad; 
+        public Puzzle.puzzleType puzzle = Puzzle.puzzleType.unknown; 
 
         [Header("Match Info/Exponents")]
 
@@ -100,9 +100,17 @@ namespace RM_EM
         // Player 2's power type.
         public Power.powerType p2Power = Power.powerType.none;
 
+        // The index of the challenger in the world list.
+        public int challengerIndex = -1;
+
+        // TODO: add challenger icon?
+
         // The difficulty of the challenger.
         // NOTE: if the challenger difficulty is 0 or less, the equation details WON'T be overwritten.
         public int challengerDifficulty = 0;
+
+        // Checks if the challenger has been defeated.
+        public bool challengerDefeated = false;
 
         // Constructor
         private GameplayInfo()
@@ -220,6 +228,10 @@ namespace RM_EM
             // Set the area.
             manager.SetArea(currAreaIndex);
 
+            // Update the current challenger defeat status if the index is valid.
+            if(challengerIndex > 0 && challengerIndex < challengersDefeated.Count)
+                challengersDefeated[challengerIndex] = challengerDefeated;
+
             // Goes through all challengers and sets if they're defeated or not.
             for (int i = 0; i < manager.challengers.Count && i < challengersDefeated.Count; i++)
             {
@@ -266,7 +278,12 @@ namespace RM_EM
 
 
             // CHALLENGER
+            // The challenger's index in the world list.
+            challengerIndex = manager.GetChallengerIndex(challenger);
+
+            // Difficulty, and defeat status.
             challengerDifficulty = challenger.difficulty;
+            challengerDefeated = challenger.defeated;
         }
 
         // Loads match info into the manager.

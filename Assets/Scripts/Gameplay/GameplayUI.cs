@@ -11,6 +11,7 @@ namespace RM_EM
         public GameplayManager gameManager;
 
         // The settings UI.
+        // TODO: add quit button.
         public GameSettingsUI settingsUI;
 
         // The tutorial text box.
@@ -28,7 +29,7 @@ namespace RM_EM
         {
             // TODO: pause game.
             settingsUI.gameObject.SetActive(true);
-            OnWindowOpened();
+            OnWindowOpened(settingsUI.gameObject);
         }
 
         // Closes the settings.
@@ -39,9 +40,13 @@ namespace RM_EM
         }
 
         // Called when a window is opened.
-        public virtual void OnWindowOpened()
+        public virtual void OnWindowOpened(GameObject window)
         {
             gameManager.PauseGame();
+
+            // Turns off the settings window if it wasn't the one that got turned on.
+            if (window != settingsUI.gameObject)
+                settingsUI.gameObject.SetActive(false);
         }
 
         // Called when a window is closed.

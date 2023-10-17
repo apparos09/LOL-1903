@@ -39,6 +39,9 @@ namespace RM_EM
         // A list of all challengers in the game.
         public List<ChallengerWorld> challengers;
 
+        // The final challenger of the game.
+        public ChallengerWorld finalChallenger;
+
         // Constructor
         private WorldManager()
         {
@@ -291,6 +294,20 @@ namespace RM_EM
             SetArea(index);
         }
 
+        // Returns the index of the challenger.
+        public int GetChallengerIndex(ChallengerWorld challenger)
+        {
+            // Sees if the challenger's in the list.
+            if(challengers.Contains(challenger))
+            {
+                return challengers.IndexOf(challenger);
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
 
         // CHALLENGE //
         // Accept the challenge.
@@ -315,7 +332,22 @@ namespace RM_EM
             worldUI.HideChallengeUI();
         }
 
-        // SCENE TRANSITIONS
+        // Called when the game is completed.
+        public override void OnGameComplete()
+        {
+            // Creates the results data.
+            GameObject temp = new GameObject("Results Data");
+            ResultsData data = temp.AddComponent<ResultsData>();
+            DontDestroyOnLoad(temp);
+
+            // TODO: set data values.
+            data.gameTime = gameTime;
+
+            // Goes to the scene.
+            base.OnGameComplete();
+        }
+
+        // SCENES //
         // Goes to the match scene. Call AcceptChallenge() if a match info object should be created.
         public void ToMatchScene()
         {

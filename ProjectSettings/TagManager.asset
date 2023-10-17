@@ -8,6 +8,9 @@ TagManager:
   - SFX
   - TTS
   - Puzzle Value
+  - Area
+  - Challenger
+  - Manager
   layers:
   - Default
   - TransparentFX

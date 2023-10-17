@@ -22,7 +22,8 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
-            eventTag = "Challenger";
+            if(eventTag == "")
+                eventTag = "Challenger";
 
             // Tries to get the challenger.
             if (challenger == null)

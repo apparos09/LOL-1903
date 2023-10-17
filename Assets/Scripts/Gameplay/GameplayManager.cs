@@ -127,12 +127,25 @@ namespace RM_EM
             // End...
         }
 
+        // Called when the game is completed.
+        public virtual void OnGameComplete()
+        {
+            ToResultsScene();
+        }
+
         // SCENES //
         // Go to the title scene.
         public virtual void ToTitleScene()
         {
             // TODO: add loading screen.
             SceneManager.LoadScene("TitleScene");
+        }
+
+        // Go to the resultsscene.
+        public virtual void ToResultsScene()
+        {
+            // TODO: add loading screen.
+            SceneManager.LoadScene("ResultsScene");
         }
 
         // Update is called once per frame

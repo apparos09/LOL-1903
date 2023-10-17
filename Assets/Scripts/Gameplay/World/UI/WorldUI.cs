@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,9 @@ namespace RM_EM
 
         // The match manager.
         public WorldManager worldManager;
+
+        // The save window.
+        public GameObject saveWindow;
 
         // The challenge window.
         public ChallengeUI challengeUI;
@@ -32,20 +36,59 @@ namespace RM_EM
                 worldManager = WorldManager.Instance;
         }
 
+        // SETTINGS (EXPANDED //
+        // Open the save window.
+        public void OpenSaveWindow()
+        {
+            saveWindow.gameObject.SetActive(true);
+            OnWindowOpened(saveWindow);
+        }
+
+        // Close the save window.
+        public void CloseSaveWindow()
+        {
+            saveWindow.gameObject.SetActive(false);
+            OnWindowClosed();
+        }
+
+        // Overrides the on window opened function.
+        public override void OnWindowOpened(GameObject window)
+        {
+            base.OnWindowOpened(window);
+
+            // Turns off the save window.
+            if (window != saveWindow)
+                saveWindow.gameObject.SetActive(false);
+        }
+
+        // NEXT AREA/PREVIOUS AREA
+        // Goes to the next area.
+        public void NextArea()
+        {
+            worldManager.NextArea();
+        }
+
+        // Goes to the previous area.
+        public void PreviousArea()
+        {
+            worldManager.PreviousArea();
+        }
+
+
         // CHALLENGE UI //
 
         // Sets the challenger UI to be active. If it's being deactivated, the challenger can just be set to null.
-        public void SetChallengeUIActive(bool active, ChallengerWorld challenger)
+        public void SetChallengeUIActive(bool active, ChallengerWorld challenger, int index)
         {
             // Checks if active or inactive.
             if(active)
             {
-                challengeUI.challenger = challenger;
+                challengeUI.SetChallenger(challenger, index);
                 challengeUI.gameObject.SetActive(true);
             }
             else
             {
-                challengeUI.challenger = null;
+                challengeUI.SetChallenger(null, -1);
                 challengeUI.gameObject.SetActive(false);
             }
         }
@@ -58,15 +101,15 @@ namespace RM_EM
         }
 
         // Shows the challenge UI.
-        public void ShowChallengeUI(ChallengerWorld challenger)
+        public void ShowChallengeUI(ChallengerWorld challenger, int index)
         {
-            SetChallengeUIActive(true, challenger);
+            SetChallengeUIActive(true, challenger, index);
         }
 
         // Hides the challenge UI.
         public void HideChallengeUI()
         {
-            SetChallengeUIActive(false, null);
+            SetChallengeUIActive(false, null, -1);
         }
 
     }

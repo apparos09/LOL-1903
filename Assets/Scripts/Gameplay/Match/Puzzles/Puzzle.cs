@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -160,6 +161,48 @@ namespace RM_EM
 
             // Generates a equation to start off.
             GenerateEquation();
+        }
+
+        // Gets the rule name.
+        public static string GetRuleName(exponentRule rule)
+        {
+            // Sets the rule name.
+            string ruleName = "";
+
+            // Checks the rule.
+            switch(rule)
+            {
+                default:
+                case exponentRule.none:
+                    ruleName = "None";
+                    break;
+
+                case exponentRule.expo:
+                    ruleName = "Exponent";
+                    break;
+
+                case exponentRule.multSame:
+                    ruleName = "Product Rule";
+                    break;
+
+                case exponentRule.expoByExpo:
+                    ruleName = "Power of a Power Rule";
+                    break;
+
+                case exponentRule.multDiff:
+                    ruleName = "Power of a Product Rule";
+                    break;
+
+                case exponentRule.zero:
+                    ruleName = "Zero Rule";
+                    break;
+
+                case exponentRule.negative:
+                    ruleName = "Negative Exponent Rule";
+                    break;
+            }
+
+            return ruleName;
         }
 
         // Generates and results a calculation.
