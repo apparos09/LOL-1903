@@ -241,7 +241,7 @@ namespace RM_EM
 
         // POWER
         // Called when a power is used.
-        public void OnPowerUsed(Power power)
+        public void OnPowerStarted(Power power)
         {
             // ...
             // power.playerMatch.puzzle.ApplyPower(power);
@@ -322,6 +322,9 @@ namespace RM_EM
 
             // Points for answer speed.
             points += puzzle.GetPointsForAnswerSpeed(1, 15);
+
+            // Applies the points multiplier.
+            points = Mathf.CeilToInt(points * player.pointsMultiplier);
 
             // Add points.
             player.points += points;

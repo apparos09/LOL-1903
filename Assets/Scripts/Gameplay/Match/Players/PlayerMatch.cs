@@ -22,10 +22,13 @@ namespace RM_EM
         public Puzzle puzzle;
 
         // The amount of match points the player has.
-        public float points;
+        public float points = 0;
+
+        // A multiplier for the points the player gets.
+        public float pointsMultiplier = 1.0F;
 
         // The power the player has.
-        public Power power;
+        public Power power = null;
 
         // Start is called before the first frame update
         protected virtual void Start()
@@ -88,7 +91,11 @@ namespace RM_EM
                     power = null;
                     break;
 
-                case Power.powerType.temp:
+                case Power.powerType.pointsPlus:
+                    // TODO: implement.
+                    break;
+
+                case Power.powerType.pointsMinus:
                     // TODO: implement.
                     break;
             }

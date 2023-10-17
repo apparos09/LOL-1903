@@ -19,6 +19,12 @@ namespace RM_EM
         // The nothing power (for testing purposes only).
         public PowerNothing nothing;
 
+        // Increases the number of points the user gets.
+        public PowerPoints pointsPlus;
+
+        // Decreases the number of points the target gets.
+        public PowerPoints pointsMinus;
+
         // Constructor
         private PowerPrefabs()
         {

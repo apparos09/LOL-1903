@@ -1556,6 +1556,7 @@ MonoBehaviour:
   reticle: {fileID: 1830566265}
   puzzle: {fileID: 1159540614}
   points: 0
+  pointsMultiplier: 1
   power: {fileID: 0}
   difficulty: 0
   targetValue: {fileID: 0}
@@ -2055,6 +2056,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   puzzle: {fileID: 788031213}
   points: 0
+  pointsMultiplier: 1
   power: {fileID: 1039013019}
 --- !u!114 &1039013019
 MonoBehaviour:

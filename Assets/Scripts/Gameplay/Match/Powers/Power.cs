@@ -8,7 +8,7 @@ namespace RM_EM
     public abstract class Power : MonoBehaviour
     {
         // The power type.
-        public enum powerType { none, temp }
+        public enum powerType { none, pointsPlus, pointsMinus }
 
         // The match manager.
         public MatchManager manager;
@@ -70,7 +70,7 @@ namespace RM_EM
         public void UsePower()
         {
             powerActive = true;
-            manager.OnPowerUsed(this);
+            OnPowerStarted();
         }
 
         // Gets the power fill percentage.
@@ -99,6 +99,18 @@ namespace RM_EM
             energy = Mathf.Clamp(energy, 0, energyMax);
         }
 
+        // Called when the power is started.
+        public virtual void OnPowerStarted()
+        {
+            manager.OnPowerStarted(this);
+        }
+
+        // Called when the power is over.
+        public virtual void OnPowerFinished()
+        {
+            manager.OnPowerFinished(this);
+        }
+
         // Called to update the power when it's active. 
         public abstract void UpdatePower();
 
@@ -112,11 +124,11 @@ namespace RM_EM
                 if (powerActive)
                 {
                     // TODO: should I change the order here?
-                    // Called while the power is active.
-                    manager.OnPowerActive(this);
-
                     // Update the power.
                     UpdatePower();
+
+                    // Called while the power is active.
+                    manager.OnPowerActive(this);
 
                     // Reduce the energy.
                     energy -= depletionDec * depletionRate * Time.deltaTime;
@@ -126,7 +138,7 @@ namespace RM_EM
                     {
                         energy = 0;
                         powerActive = false;
-                        manager.OnPowerFinished(this);
+                        OnPowerFinished();
                     }
                 }
             }
