@@ -152,6 +152,9 @@ namespace RM_EM
         // The starting number of missing values.
         private int missingValuesCountStart = 0;
 
+        // The minimum amount of random values available when asking for a random value.
+        private const int RANDOM_VALUE_MIN = 5;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -939,79 +942,61 @@ namespace RM_EM
 
         // Returns a random value.
         // if 'useLimit' is true, the random value is limited to a certain set of values.
-        public char GetRandomPuzzleValue(bool useLimit = true)
+        public char GetRandomPuzzleValue(bool limitValues = true)
         {
             // TODO: have this limit the value based on what's needed for the actual question.
             // The value to be returned.
             char value;
 
-            // Generate a random value.
-            int randInt = Random.Range(0, 14);
-
-            // Checks the random int.
-            switch(randInt)
+            // The list of available chars.
+            // Numbers 0-9, Plus, Minus, Multiply, and Divide
+            List<char> valueList = new List<char>
             {
-                case 0: // 0
-                    value = '0';
-                    break;
+                '0', '1', '2', '3', '4',
+                '5', '6', '7', '8', '9',
+                '+', '-', '*', '/'
+            };
 
-                case 1: // 1
-                    value = '1';
-                    break;
+            // A random index variable.
+            int randIndex = -1;
 
-                case 2: // 2
-                    value = '2';
-                    break;
+            // Checks if the limit should be used, and there are missing values.
+            if(limitValues && missingValues.Count > 0)
+            {
+                // Creates a list copy of the missing values.
+                List<ValueSpace> valueSpaces = new List<ValueSpace>(missingValues);
 
-                case 3: // 3
-                    value = '3';
-                    break;
+                // TODO: should I remove duplicates? Maybe not.
 
-                case 4: // 4
-                    value = '4';
-                    break;
+                // While the random value count is below the minimum.
+                while(valueSpaces.Count < RANDOM_VALUE_MIN)
+                {
+                    // Generate a random value.
+                    randIndex = Random.Range(0, valueList.Count);
 
-                case 5: // 5
-                    value = '5';
-                    break;
+                    // Creates a new value space object.
+                    ValueSpace vs = new ValueSpace();
+                    vs.value = valueList[randIndex];
+                    vs.index = -1;
 
-                case 6: // 6
-                    value = '6';
-                    break;
+                    // Puts the random value in the value spaces list.
+                    valueSpaces.Add(vs);
+                }
 
-                case 7: // 7
-                    value = '7';
-                    break;
-
-                case 8: // 8
-                    value = '8';
-                    break;
-
-                case 9: // 9
-                    value = '9';
-                    break;
-
-                case 10: // Add
-                    value = '+';
-                    break;
-
-                case 11: // Minus
-                    value = '-';
-                    break;
-
-                case 12: // Multiply
-                    value = '*';
-                    break;
-
-                case 13: // Divide
-                    value = '/';
-                    break;
-
-                default: // Exponent
-                    value = '^';
-                    break;
+                // Generates a random index of the values.
+                randIndex = Random.Range(0, valueSpaces.Count);
+                value = valueSpaces[randIndex].value;
             }
+            else // Equally-weighted value randomizer.
+            {
+                // Generate a random value.
+                randIndex = Random.Range(0, valueList.Count);
 
+                // Sets the value from the random index.
+                value = valueList[randIndex];
+            }
+            
+            // Returns the value.
             return value;
         }
 
