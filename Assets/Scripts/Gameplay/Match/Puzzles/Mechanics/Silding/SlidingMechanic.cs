@@ -88,7 +88,7 @@ namespace RM_EM
 
             // Set the mechanic and parent
             piece.mechanic = this;
-            // piece.transform.parent = transform;
+            piece.transform.parent = transform;
 
             // Set the piece value and changes the sprite.
             piece.SetValueAndSprite(value, valueSprites);

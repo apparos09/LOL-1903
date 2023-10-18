@@ -51,18 +51,18 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   puzzleValues: []
   autoFillPuzzleValues: 1
-  activeValueCountMax: 10
+  activeValueCountMax: 20
   spawnTimer: 0
-  spawnTimeMax: 0.8
+  spawnTimeMax: 0.85
   topLeftCorner: {fileID: 8160587505571563580}
   bottomRightCorner: {fileID: 7443864971172500003}
-  segments: 3
+  segments: 5
   segmentPieceCounts: 
   slideAxis: 2
   piecePrefab: {fileID: 2562848240133614952, guid: 52d95270a233ce349be570d8eafaad95, type: 3}
   valueSprites: {fileID: 5175600183300739261}
   alternateDirec: 1
-  pieceSpeed: 3
+  pieceSpeed: 3.5
 --- !u!114 &5175600183300739261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 7443864971172500003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -5.5, z: 0}
+  m_LocalPosition: {x: 10.5, y: -10.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 8160587505571563580}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 5.5, z: 0}
+  m_LocalPosition: {x: -10.5, y: 10.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
