@@ -11,6 +11,7 @@ TagManager:
   - Area
   - Challenger
   - Manager
+  - Puzzle Mechanic
   layers:
   - Default
   - TransparentFX

@@ -61,8 +61,9 @@ namespace RM_EM
                 bubble.gameObject.SetActive(true);
             }
 
-            // Set the mechanic.
+            // Set the mechanic and the parent.
             bubble.mechanic = this;
+            bubble.transform.parent = transform;
 
             // Set the bubble value and changes the sprite.
             bubble.SetValueAndSprite(value, valueSprites);

@@ -10,7 +10,8 @@ namespace RM_EM
         // The mechanic this sliding piece belongs to.
         public SlidingMechanic mechanic;
 
-        // The segment the sliding piece is in.
+        // The segment the sliding piece is in (starts at 0).
+        [Tooltip("The segment the piece is part of. It starts at (0) so that it also counts as the segment index.")]
         public int segment = -1;
 
         // The movement direction.

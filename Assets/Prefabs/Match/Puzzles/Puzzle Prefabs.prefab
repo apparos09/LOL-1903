@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypad: {fileID: 6315003023982069153, guid: 62a478909fc77854a8b033cd46677f40, type: 3}
+  sliding: {fileID: 4987826650993331127, guid: 7f10e4c64da509a4385ebaabe9d2e265, type: 3}
+  bubbles: {fileID: 1008702947505753004, guid: 2fa36953e9138ae40bda19f8eb545df3, type: 3}
+  pinball: {fileID: 0}

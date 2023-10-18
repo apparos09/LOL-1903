@@ -23,7 +23,7 @@ namespace RM_EM
         [Header("Pinball/Balls")]
 
         // The ball pool.
-        public Queue<BallValue> ballPool;
+        public Queue<BallValue> ballPool = new Queue<BallValue>();
 
         // The ball prefab.
         public BallValue ballPrefab;
@@ -58,8 +58,9 @@ namespace RM_EM
                 ball.gameObject.SetActive(true);
             }
 
-            // Set the mechanic.
+            // Set the mechanic and parent.
             ball.mechanic = this;
+            ball.transform.parent = transform;
 
             // Sets the ball char and sprite.
             ball.SetValueAndSprite(value, valueSprites);
