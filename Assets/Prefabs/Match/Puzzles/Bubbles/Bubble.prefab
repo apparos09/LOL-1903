@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 8859980996436911859}
   - component: {fileID: 1851757486888839188}
   - component: {fileID: 1937760933923109313}
-  - component: {fileID: 8476554765232258708}
   - component: {fileID: 6794533893258619650}
   m_Layer: 0
   m_Name: Bubble
@@ -224,7 +223,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 300897769246514434}
@@ -292,21 +291,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8476554765232258708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7091103526904623455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 94
-  valueRenderer: {fileID: 9143602041045434142}
+  m_Constraints: 4
 --- !u!114 &6794533893258619650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,9 +304,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dbae6d027815c4d86c5db8c02e5c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 94
+  valueRenderer: {fileID: 9143602041045434142}
   mechanic: {fileID: 0}
   rigidbody: {fileID: 1937760933923109313}
-  puzzleValue: {fileID: 8476554765232258708}
   lifeTimer: 10
   lifeTimerMax: 10
   moveForce: 1

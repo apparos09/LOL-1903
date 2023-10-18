@@ -5,16 +5,13 @@ using UnityEngine;
 namespace RM_EM
 {
     // The ball value script.
-    public class BallValue : MonoBehaviour
+    public class BallValue : PuzzleValue
     {
         // The pinball mechanic.
         public PinballMechanic mechanic;
 
         // The bubble value's rigidbody.
         public new Rigidbody2D rigidbody;
-
-        // The puzzle value for this bubble.
-        public PuzzleValue puzzleValue;
 
         // The balls this ball is touching.
         public List<BallValue> touchingBalls;
@@ -23,8 +20,10 @@ namespace RM_EM
         public float weight = 1;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             // Grabs the rigidbody.
             if (rigidbody == null)
                 rigidbody = GetComponent<Rigidbody2D>();
@@ -92,9 +91,17 @@ namespace RM_EM
                 touchingBalls.Remove(ballValue);
         }
 
-        // Update is called once per frame
-        void Update()
+        // OnHit Function
+        public override void OnHit(bool rightAnswer)
         {
+            mechanic.ReturnBall(this);
+        }
+
+        // Update is called once per frame
+        protected override void Update()
+        {
+            base.Update();
+
             // If the ball is in the death zone.
             if(mechanic.BallInDeathZone(this))
             {

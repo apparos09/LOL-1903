@@ -9,22 +9,22 @@ namespace RM_EM
     {
         [Header("Keyboard")]
         // Numbers.
-        public PuzzleValue key0;
-        public PuzzleValue key1;
-        public PuzzleValue key2;
-        public PuzzleValue key3;
-        public PuzzleValue key4;
-        public PuzzleValue key5;
-        public PuzzleValue key6;
-        public PuzzleValue key7;
-        public PuzzleValue key8;
-        public PuzzleValue key9;        
+        public KeypadValue key0;
+        public KeypadValue key1;
+        public KeypadValue key2;
+        public KeypadValue key3;
+        public KeypadValue key4;
+        public KeypadValue key5;
+        public KeypadValue key6;
+        public KeypadValue key7;
+        public KeypadValue key8;
+        public KeypadValue key9;        
 
         // Math operations.
-        public PuzzleValue keyPlus;
-        public PuzzleValue keyMinus;
-        public PuzzleValue keyMultiply;
-        public PuzzleValue keyDivide;
+        public KeypadValue keyPlus;
+        public KeypadValue keyMinus;
+        public KeypadValue keyMultiply;
+        public KeypadValue keyDivide;
 
 
         // Start is called before the first frame update

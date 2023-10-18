@@ -67,6 +67,27 @@ namespace RM_EM
             }
         }
 
+        // OnMouseDown
+        private void OnMouseDown()
+        {
+            // If the pinball gate has been clicked on, change the gate.
+            // TODO: I think I only allow the player to open the gate. So change that.
+            if(openedGate)
+            {
+                CloseGate();
+            }
+            else
+            {
+                OpenGate();
+            }
+        }
+
+        // Checks if the pinball gate is open.
+        public bool IsOpen()
+        {
+            return openedGate;
+        }
+
         // TODO: change how the door opens and closes, and allow the player to manually open it.
         // Opens the gate.
         public void OpenGate()

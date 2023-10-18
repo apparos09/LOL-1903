@@ -5,13 +5,10 @@ using UnityEngine;
 namespace RM_EM
 {
     // A sliding piece.
-    public class SlidingPiece : MonoBehaviour
+    public class SlidingPiece : PuzzleValue
     {
         // The mechanic this sliding piece belongs to.
         public SlidingMechanic mechanic;
-
-        // The puzzle value for the sliding piece.
-        public PuzzleValue puzzleValue;
 
         // The segment the sliding piece is in.
         public int segment = -1;
@@ -22,19 +19,17 @@ namespace RM_EM
         // The move speed.
         public float moveSpeed = 1.0F;
 
-        // Start is called before the first frame update
-        void Start()
+        // OnHit Function
+        public override void OnHit(bool rightAnswer)
         {
-            // If the puzzle value isn't set, try to grab it.
-            if(puzzleValue == null)
-            {
-                puzzleValue = GetComponent<PuzzleValue>();
-            }
+            mechanic.ReturnPiece(this);
         }
 
         // Update is called once per frame
-        void Update()
+        protected override void Update()
         {
+            base.Update();
+
             // Moves the piece.
             transform.Translate(moveDirec * moveSpeed * Time.deltaTime);
             

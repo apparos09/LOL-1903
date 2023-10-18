@@ -938,7 +938,8 @@ namespace RM_EM
         }
 
         // Returns a random value.
-        public char GetRandomPuzzleValue()
+        // if 'useLimit' is true, the random value is limited to a certain set of values.
+        public char GetRandomPuzzleValue(bool useLimit = true)
         {
             // TODO: have this limit the value based on what's needed for the actual question.
             // The value to be returned.
@@ -1051,9 +1052,12 @@ namespace RM_EM
                 return;
 
 
+            // Checks if it was the correct value.
+            bool rightValue = value.value == missingValues.Peek().value;
+
             // TODO: remove log calls.
-            // Checks if the selected value is correct.
-            if(value.value == missingValues.Peek().value)
+            // Conditional for right and wrong value.
+            if (rightValue)
             {
                 Debug.Log("Right!");
 
@@ -1076,8 +1080,7 @@ namespace RM_EM
                 Debug.Log("Wrong!");
             }
 
-
-            // TODO; maybe move this inside the "right" bracket?
+            // TODO: maybe move this inside the "right" bracket?
             if (missingValues.Count == 0)
             {
                 // Call the manager to say that the equation has been completed.
@@ -1087,6 +1090,10 @@ namespace RM_EM
                 // Sets the answer time to 0.
                 answerTime = 0.0F;
             }
+
+            // Call the OnHit function for the value.
+            value.OnHit(rightValue);
+
         }
 
         // TODO: not needed?

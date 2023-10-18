@@ -20,7 +20,7 @@ namespace RM_EM
 
         [Header("Bubble/Bubbles")]
         // The bubble pool.
-        public Queue<BubbleValue> bubblePool;
+        public Queue<BubbleValue> bubblePool = new Queue<BubbleValue>();
 
         // The bubble prefab.
         public BubbleValue bubblePrefab;
@@ -29,7 +29,7 @@ namespace RM_EM
         public PuzzleValueSprites valueSprites;
 
         // The force applied to bubbles upon being created.
-        public float bubbleMoveForce = 10.0F;
+        public float bubbleMoveForce = 1.0F;
 
         // The life time of spawned bubbles.
         public float bubbleLifeTime = 10.0F;
@@ -50,18 +50,22 @@ namespace RM_EM
             BubbleValue bubble;
 
             // Checks if there are bubbles in the pool.
-            if (bubblePool.Count == 0)
+            if (bubblePool.Count == 0) // No bubbles.
             {
                 // The new bubble, which is generated from a prefab.
                 bubble = Instantiate(bubblePrefab);
             }
-            else // No bubbles, so make a new one.
+            else // Re-use a disabled bubble.
             {
                 bubble = bubblePool.Dequeue();
+                bubble.gameObject.SetActive(true);
             }
 
+            // Set the mechanic.
+            bubble.mechanic = this;
+
             // Set the bubble value and changes the sprite.
-            bubble.puzzleValue.SetValueAndSprite(value, valueSprites);
+            bubble.SetValueAndSprite(value, valueSprites);
 
             // Set position.
             bubble.transform.position = spawnPos;
@@ -77,7 +81,7 @@ namespace RM_EM
 
             // Other
             // Add the bubble to the values lit.
-            puzzleValues.Add(bubble.puzzleValue);
+            puzzleValues.Add(bubble);
             
             // Return the bubble.
             return bubble;
@@ -96,7 +100,7 @@ namespace RM_EM
             bubble.gameObject.SetActive(false);
 
             // Remove from the list.
-            puzzleValues.Remove(bubble.puzzleValue);
+            puzzleValues.Remove(bubble);
             
             // Put bubble in the queue.
             bubblePool.Enqueue(bubble);

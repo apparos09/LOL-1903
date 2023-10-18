@@ -70,13 +70,17 @@ namespace RM_EM
                 // The new piece, which is generated from a prefab.
                 piece = Instantiate(piecePrefab);
             }
-            else // No pieces, so make a new one.
+            else // Re-use deactivated piece.
             {
                 piece = piecePool.Dequeue();
+                piece.gameObject.SetActive(true);
             }
 
+            // Set the mechanic.
+            piece.mechanic = this;
+
             // Set the piece value and changes the sprite.
-            piece.puzzleValue.SetValueAndSprite(value, valueSprites);
+            piece.SetValueAndSprite(value, valueSprites);
 
             // Saves the segment the piece is for, and increases the piece count.
             piece.segment = segment;
@@ -87,7 +91,7 @@ namespace RM_EM
             piece.moveDirec = direc;
 
             // Add this to the puzzle value list.
-            puzzleValues.Add(piece.puzzleValue);
+            puzzleValues.Add(piece);
 
             // Returns the piece.
             return piece;
@@ -105,7 +109,7 @@ namespace RM_EM
             piecePool.Enqueue(piece);
             
             // Remove this from the puzzle value list.
-            puzzleValues.Remove(piece.puzzleValue);
+            puzzleValues.Remove(piece);
         }
         
         // Returns 'true' if the position is within the bounds of the puzzle space.

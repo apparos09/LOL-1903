@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6406947985265898067}
   - component: {fileID: 3527011768876513255}
-  - component: {fileID: 384316911712663016}
   - component: {fileID: 2562848240133614952}
   m_Layer: 0
   m_Name: Sliding Piece
@@ -265,20 +264,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.3
---- !u!114 &384316911712663016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7227789807543975141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 94
-  valueRenderer: {fileID: 2763513468572574151}
 --- !u!114 &2562848240133614952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,8 +276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13f5779d22dbb74c931239c57453f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 94
+  valueRenderer: {fileID: 2763513468572574151}
   mechanic: {fileID: 0}
-  puzzleValue: {fileID: 384316911712663016}
   segment: -1
   moveDirec: {x: 0, y: -1, z: 0}
   moveSpeed: 1

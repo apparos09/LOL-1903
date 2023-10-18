@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3144168567753178403}
   - component: {fileID: 7119146529757499720}
-  - component: {fileID: 5041536939201776997}
+  - component: {fileID: 4250267251182535816}
   m_Layer: 0
   m_Name: Keypad Button
   m_TagString: Puzzle Value
@@ -177,7 +177,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5041536939201776997
+--- !u!114 &4250267251182535816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,11 +186,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987272066844572780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: c56be19836aec54469f1b0d70b765bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 94
   valueRenderer: {fileID: 4196758696294030970}
+  destroyOnHit: 1
 --- !u!1 &4148708873465944014
 GameObject:
   m_ObjectHideFlags: 0

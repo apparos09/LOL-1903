@@ -5,7 +5,7 @@ using UnityEngine;
 namespace RM_EM
 {
     // The puzzle value script.
-    public class PuzzleValue : MonoBehaviour
+    public abstract class PuzzleValue : MonoBehaviour
     {
         // The value saved to this puzzle entity.
         // 0-9, +, -, *, /
@@ -14,11 +14,11 @@ namespace RM_EM
         // The sprite renderer.
         public SpriteRenderer valueRenderer;
 
-        //// Start is called before the first frame update
-        //void Start()
-        //{
-
-        //}
+        // Start is called before the first frame update
+        protected virtual void Start()
+        {
+            // ...
+        }
 
         // Sets the sprite using the set value.
         public void SetSpriteByValue(PuzzleValueSprites sprites)
@@ -35,20 +35,13 @@ namespace RM_EM
         }
 
         // Called when the puzzle value is hit.
-        // If 'destroy' is true, the value object is destroyed upon the value being returned.
-        public char OnHit(bool destroy)
+        // The 'rightAnswer' argument shows if it was the right value or not.
+        public abstract void OnHit(bool rightAnswer);
+
+        // Update is called once per frame
+        protected virtual void Update()
         {
-            // Note: you should play some animation for removing the object.
-            if(destroy)
-                Destroy(gameObject, 0.5F);
 
-            return value;
         }
-
-        //// Update is called once per frame
-        //void Update()
-        //{
-
-        //}
     }
 }

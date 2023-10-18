@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 8856547898146546779}
   - component: {fileID: 5121405457758094976}
   - component: {fileID: 3252756567630896540}
-  - component: {fileID: 9015545518737952974}
   - component: {fileID: 6419383001932815216}
   m_Layer: 0
   m_Name: Ball
@@ -293,20 +292,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &9015545518737952974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8970323513769119203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3cc92f3446fac44bd59b00d14ba1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 94
-  valueRenderer: {fileID: 7743733147098213157}
 --- !u!114 &6419383001932815216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,8 +304,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc61a4d050d609419dba8d71d741a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 94
+  valueRenderer: {fileID: 7743733147098213157}
   mechanic: {fileID: 0}
   rigidbody: {fileID: 3252756567630896540}
-  puzzleValue: {fileID: 9015545518737952974}
   touchingBalls: []
   weight: 1

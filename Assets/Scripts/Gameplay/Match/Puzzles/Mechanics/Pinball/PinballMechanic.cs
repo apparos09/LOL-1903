@@ -52,20 +52,24 @@ namespace RM_EM
                 // The new ball, which is generated from a prefab.
                 ball = Instantiate(ballPrefab);
             }
-            else // No balls, so make a new one.
+            else // Re-use a deactivated ball.
             {
                 ball = ballPool.Dequeue();
+                ball.gameObject.SetActive(true);
             }
 
+            // Set the mechanic.
+            ball.mechanic = this;
+
             // Sets the ball char and sprite.
-            ball.puzzleValue.SetValueAndSprite(value, valueSprites);
+            ball.SetValueAndSprite(value, valueSprites);
 
             // Sets the position and velocity.
             ball.transform.position = spawnPos;
             ball.rigidbody.velocity = Vector2.zero;
 
             // Add the ball to the value list.
-            puzzleValues.Add(ball.puzzleValue);
+            puzzleValues.Add(ball);
 
             return ball;
         }
@@ -76,12 +80,15 @@ namespace RM_EM
             // Set the rigidbody to zero.
             ball.rigidbody.velocity = Vector2.zero;
 
+            // Clear the list.
+            ball.touchingBalls.Clear();
+
             // Disable.
             ball.gameObject.SetActive(false);
 
             // Put the ball back in the pool and remove it from the puzzle values list.
             ballPool.Enqueue(ball);
-            puzzleValues.Remove(ball.puzzleValue);
+            puzzleValues.Remove(ball);
         }
 
         // Returns 'true' if the ball is in the death zone.

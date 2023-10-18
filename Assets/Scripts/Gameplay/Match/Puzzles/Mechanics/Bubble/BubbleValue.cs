@@ -5,16 +5,13 @@ using UnityEngine;
 namespace RM_EM
 {
     // The bubble piece.
-    public class BubbleValue : MonoBehaviour
+    public class BubbleValue : PuzzleValue
     {
         // The bubble mechanic.
         public BubbleMechanic mechanic;
 
         // The bubble value's rigidbody.
         public new Rigidbody2D rigidbody;
-
-        // The puzzle value for this bubble.
-        public PuzzleValue puzzleValue;
 
 
         [Header("Life")]
@@ -38,18 +35,14 @@ namespace RM_EM
         public bool scaleForce = false;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             // Grabs the rigidbody.
             if(rigidbody == null)
             {
                 rigidbody = GetComponent<Rigidbody2D>();
-            }
-
-            // If the puzzle value isn't set, try to grab it.
-            if (puzzleValue == null)
-            {
-                puzzleValue = GetComponent<PuzzleValue>();
             }
         }
 
@@ -87,9 +80,18 @@ namespace RM_EM
             mechanic.ReturnBubble(this);
         }
 
-        // Update is called once per frame
-        void Update()
+        // OnHit Function
+        public override void OnHit(bool rightAnswer)
         {
+            // Kill the bubble.
+            Kill();
+        }
+
+        // Update is called once per frame
+        protected override void Update()
+        {
+            base.Update();
+
             // If the match isn't paused.
             if(!mechanic.manager.MatchPaused)
             {

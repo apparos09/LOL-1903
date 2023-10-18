@@ -200,7 +200,7 @@ namespace RM_EM
                     // Sets the target value.
                     targetValue = valueOptions[0];
                 }
-                else // There's multiple values, so check the closet one.
+                else if (valueOptions.Count > 1) // There's multiple values, so check the closet one.
                 {
                     targetValue = valueOptions[0];
                     
