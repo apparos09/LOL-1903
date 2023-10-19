@@ -33,37 +33,46 @@ namespace RM_EM
         public GameObject TryHit(util.MouseButton mouseButton)
         {
             // CALCULATING THE HIT LOCATION ON THE OBJECT.
-            // Grabs the hit point of the ray.
+            // Grabs the hit point of the ray (impact point is in world space).
             Vector3 hitPoint = mouseButton.lastClickedHit.point;
 
-            // New - Camera Scale
-            // Modifies the scale of the offset so that matches up with the camera.
-            Vector3 camScale = new Vector3(0, 0, 1);
+            // The bounds information is in world space.
+            // The hit point in 0-1 space.
+            Vector3 hitPoint01 = new Vector3();
 
-            // TODO: change this to use a percentage of the quad size and camera view.
+            // Calculates the hit point in a 0-1 space by checking the bounds of the collider (in world space).
+            hitPoint01.x = Mathf.InverseLerp(collider.bounds.min.x, collider.bounds.max.x, hitPoint.x);
+            hitPoint01.y = Mathf.InverseLerp(collider.bounds.min.y, collider.bounds.max.y, hitPoint.y);
+            hitPoint01.z = Mathf.InverseLerp(collider.bounds.min.z, collider.bounds.max.z, hitPoint.z);
 
-            // Checks if the camera is orthographic or perspective.
-            if(renderCamera.orthographic) // Orthographic
-            {
-                // Camera Size / Collider Size
+            //// New - Camera Scale
+            //// Modifies the scale of the offset so that matches up with the camera.
+            //Vector3 camScale = new Vector3(0, 0, 1);
 
-                // Ver. 1
-                // camScale.x = renderCamera.orthographicSize / collider.size.x;
-                // camScale.y = renderCamera.orthographicSize / collider.size.y;
+            //// TODO: change this to use a percentage of the quad size and camera view.
 
-                // Ver. 2
-                camScale.x = renderCamera.pixelWidth / collider.size.x;
-                camScale.y = renderCamera.pixelHeight / collider.size.y;
+            //// Checks if the camera is orthographic or perspective.
+            //if(renderCamera.orthographic) // Orthographic
+            //{
+            //    // Camera Size / Collider Size
 
-            }
-            else // Perspective
-            {
-                // Checks the camera's size in pixels so that it can convert the collider size to it.
-                // I don't know if this works, but I probably won't use it anyway.
-                // (Camera Pixel Size) / Collider Size
-                camScale.x = renderCamera.pixelWidth / collider.size.x;
-                camScale.y = renderCamera.pixelHeight / collider.size.y;
-            }
+            //    // Ver. 1
+            //    // camScale.x = renderCamera.orthographicSize / collider.size.x;
+            //    // camScale.y = renderCamera.orthographicSize / collider.size.y;
+
+            //    // Ver. 2
+            //    camScale.x = renderCamera.pixelWidth / collider.size.x;
+            //    camScale.y = renderCamera.pixelHeight / collider.size.y;
+
+            //}
+            //else // Perspective
+            //{
+            //    // Checks the camera's size in pixels so that it can convert the collider size to it.
+            //    // I don't know if this works, but I probably won't use it anyway.
+            //    // (Camera Pixel Size) / Collider Size
+            //    camScale.x = renderCamera.pixelWidth / collider.size.x;
+            //    camScale.y = renderCamera.pixelHeight / collider.size.y;
+            //}
 
 
             // Calculates the offset position from the render camera's center based on the render object's center.
@@ -73,7 +82,7 @@ namespace RM_EM
             offsetPos.y = hitPoint.y - collider.bounds.center.z;
 
             // CALCULATING THE RAY FROM THE RENDER CAMERA'S POSITION
-            // Gets the ray's position for the render cmaera.
+            // Gets the ray's position for the render camera.
 
             // Old
             // Using the old version for now so I can finish the pinball.
@@ -81,6 +90,17 @@ namespace RM_EM
 
             // New
             // Vector3 renderRayPos = renderCamera.transform.position + Vector3.Scale(new Vector3(offsetPos.x, offsetPos.y, 0), camScale);
+
+            // New
+
+            Debug.Log("Hit Point 01: " + hitPoint01.ToString());
+            
+            // Converts the hit position on the render to a point in the camera in world space.
+            // The hitpoint is in 0-1 space in reference the bounds of the collider. As such, the viewport conversion...
+            // Has it match up with the bounds of the camera.
+            renderRayPos = renderCamera.ViewportToWorldPoint(hitPoint01);
+            renderRayPos.z = renderCamera.transform.position.z;
+
 
             // // The render ray pos.
             // Debug.Log("Render Ray Pos: " + renderRayPos.ToString());
