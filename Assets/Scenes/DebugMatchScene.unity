@@ -4133,6 +4133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pinball 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8125045993918137128, guid: 33690c143201d674f84246d2fa1a26a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

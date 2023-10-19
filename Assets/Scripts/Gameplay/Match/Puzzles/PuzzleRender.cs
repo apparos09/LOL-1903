@@ -36,74 +36,29 @@ namespace RM_EM
             // Grabs the hit point of the ray (impact point is in world space).
             Vector3 hitPoint = mouseButton.lastClickedHit.point;
 
-            // The bounds information is in world space.
+            // HIT POINT IN RENDER CAMERA VIEW
+
+            // Converts the hitpoint to a 0-1 space by checking the collider bounds in world space.
             // The hit point in 0-1 space.
             Vector3 hitPoint01 = new Vector3();
 
             // Calculates the hit point in a 0-1 space by checking the bounds of the collider (in world space).
+            // This uses inverse lerp to see how far along the point is.
             hitPoint01.x = Mathf.InverseLerp(collider.bounds.min.x, collider.bounds.max.x, hitPoint.x);
             hitPoint01.y = Mathf.InverseLerp(collider.bounds.min.y, collider.bounds.max.y, hitPoint.y);
             hitPoint01.z = Mathf.InverseLerp(collider.bounds.min.z, collider.bounds.max.z, hitPoint.z);
 
-            //// New - Camera Scale
-            //// Modifies the scale of the offset so that matches up with the camera.
-            //Vector3 camScale = new Vector3(0, 0, 1);
 
-            //// TODO: change this to use a percentage of the quad size and camera view.
-
-            //// Checks if the camera is orthographic or perspective.
-            //if(renderCamera.orthographic) // Orthographic
-            //{
-            //    // Camera Size / Collider Size
-
-            //    // Ver. 1
-            //    // camScale.x = renderCamera.orthographicSize / collider.size.x;
-            //    // camScale.y = renderCamera.orthographicSize / collider.size.y;
-
-            //    // Ver. 2
-            //    camScale.x = renderCamera.pixelWidth / collider.size.x;
-            //    camScale.y = renderCamera.pixelHeight / collider.size.y;
-
-            //}
-            //else // Perspective
-            //{
-            //    // Checks the camera's size in pixels so that it can convert the collider size to it.
-            //    // I don't know if this works, but I probably won't use it anyway.
-            //    // (Camera Pixel Size) / Collider Size
-            //    camScale.x = renderCamera.pixelWidth / collider.size.x;
-            //    camScale.y = renderCamera.pixelHeight / collider.size.y;
-            //}
-
-
-            // Calculates the offset position from the render camera's center based on the render object's center.
-            // Due to how the object is oriented, the object's (z) is used in place of (y) for this operation.
-            Vector2 offsetPos = new Vector2();
-            offsetPos.x = hitPoint.x - collider.bounds.center.x;
-            offsetPos.y = hitPoint.y - collider.bounds.center.z;
-
-            // CALCULATING THE RAY FROM THE RENDER CAMERA'S POSITION
-            // Gets the ray's position for the render camera.
-
-            // Old
-            // Using the old version for now so I can finish the pinball.
-            Vector3 renderRayPos = renderCamera.transform.position + new Vector3(offsetPos.x, offsetPos.y, 0);
-
-            // New
-            // Vector3 renderRayPos = renderCamera.transform.position + Vector3.Scale(new Vector3(offsetPos.x, offsetPos.y, 0), camScale);
-
-            // New
-
-            Debug.Log("Hit Point 01: " + hitPoint01.ToString());
-            
-            // Converts the hit position on the render to a point in the camera in world space.
-            // The hitpoint is in 0-1 space in reference the bounds of the collider. As such, the viewport conversion...
-            // Has it match up with the bounds of the camera.
-            renderRayPos = renderCamera.ViewportToWorldPoint(hitPoint01);
+            // The ray position from the render camera.
+            // This converts the hit position on the render to a point in the camera in world space.
+            // The hitpoint is in a 0-1 space, so it uses ViewportToWorldPoint since viewport space is also in a 0-1 space.
+            // This allows it to match up with the bounds of the camera.
+            // The z-position is kept as the camera's z-position.
+            Vector3 renderRayPos = renderCamera.ViewportToWorldPoint(hitPoint01);
             renderRayPos.z = renderCamera.transform.position.z;
 
 
-            // // The render ray pos.
-            // Debug.Log("Render Ray Pos: " + renderRayPos.ToString());
+            // RAYCASTING
 
             // Copied from the mouse touch script.
             Vector3 target; // ray's target
@@ -147,7 +102,7 @@ namespace RM_EM
                 // I'm pretty sure this doesn't work though.
 
                 // Gets the render position in pixels.
-                // TODO: this probably doesn't work. 
+                // TODO: this probably doesn't work, but I likely won't use it.
                 Vector3 renderRayPosPixels = Camera.main.WorldToScreenPoint(renderRayPos);
 
                 // The render camera's position in world space.
@@ -210,21 +165,21 @@ namespace RM_EM
             }
 
 
-            // If the ray hit an object successfully (hitObject should be set by this point)
-            if(rayHit && hitObject != null)
-            {
-                // TODO: comment out.
-                Debug.Log(hitObject.name);
-            }
+            // // If the ray hit an object successfully (hitObject should be set by this point)
+            // if(rayHit && hitObject != null)
+            // {
+            //     // TODO: comment out.
+            //     Debug.Log(hitObject.name);
+            // }
 
             // Returns the hit object.
             return hitObject;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        // // Update is called once per frame
+        // void Update()
+        // {
+        // 
+        // }
     }
 }
