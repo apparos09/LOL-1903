@@ -61,20 +61,20 @@ MonoBehaviour:
   manager: {fileID: 0}
   puzzle: {fileID: 0}
   puzzleValues:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 399670318458255472}
+  - {fileID: 8820654834909851653}
+  - {fileID: 2088738510608382152}
+  - {fileID: 469933075487082338}
+  - {fileID: 8962671749869017533}
+  - {fileID: 97015294351602859}
+  - {fileID: 3946172458259032354}
+  - {fileID: 5097708849113493821}
+  - {fileID: 7637941395753866590}
+  - {fileID: 1149941453736629167}
+  - {fileID: 8891458780803588980}
+  - {fileID: 8130715041971390022}
+  - {fileID: 7601107424570364250}
+  - {fileID: 5841841507735503206}
   autoFillPuzzleValues: 0
   key0: {fileID: 399670318458255472}
   key1: {fileID: 8820654834909851653}
@@ -98,10 +98,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5877637028084620904}
     m_Modifications:
-    - target: {fileID: 5666427215976966803, guid: 703a113e04031204aaf2c64c62f30a69, type: 3}
-      propertyPath: value
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 6916014636135338808, guid: 703a113e04031204aaf2c64c62f30a69, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -215,10 +211,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2039118696419471504, guid: 1fb527823e7e93d4486ff50a94926066, type: 3}
-      propertyPath: value
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 4405550983603882100, guid: 1fb527823e7e93d4486ff50a94926066, type: 3}
       propertyPath: m_Name
       value: Keypad Button Variant 3
@@ -328,10 +320,6 @@ PrefabInstance:
     - target: {fileID: 4825067244557053293, guid: 6ac5e5dcced29074e9fb276a4110e7f8, type: 3}
       propertyPath: m_Name
       value: Keypad Button Variant 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7177009345871713673, guid: 6ac5e5dcced29074e9fb276a4110e7f8, type: 3}
-      propertyPath: value
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8268737374759021602, guid: 6ac5e5dcced29074e9fb276a4110e7f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,10 +536,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5877637028084620904}
     m_Modifications:
-    - target: {fileID: 4867334841300578194, guid: 98f2665b6878f494eb20dc04c805ac93, type: 3}
-      propertyPath: value
-      value: 47
-      objectReference: {fileID: 0}
     - target: {fileID: 5968835293825734201, guid: 98f2665b6878f494eb20dc04c805ac93, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -741,10 +725,6 @@ PrefabInstance:
     - target: {fileID: 2487440046019294684, guid: fe2fa08801261244aa29d2d9f772e8be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3737009839924694135, guid: fe2fa08801261244aa29d2d9f772e8be, type: 3}
-      propertyPath: value
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -965,10 +945,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4149874563233330749, guid: 06b0455cc4c8ebd469e466866d81848d, type: 3}
-      propertyPath: value
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1001,10 +977,6 @@ PrefabInstance:
     - target: {fileID: 313718089610762612, guid: 22adef8a1574e9648bc0388d4e254592, type: 3}
       propertyPath: m_Name
       value: 'Keypad Button Variant Minus '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681121793979752848, guid: 22adef8a1574e9648bc0388d4e254592, type: 3}
-      propertyPath: value
-      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 3777655036531628091, guid: 22adef8a1574e9648bc0388d4e254592, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1078,10 +1050,6 @@ PrefabInstance:
     - target: {fileID: 988909470459234195, guid: fb605aba7ac85e545ac3ee737b236446, type: 3}
       propertyPath: m_Name
       value: 'Keypad Button Variant Plus '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3230911676574056311, guid: fb605aba7ac85e545ac3ee737b236446, type: 3}
-      propertyPath: value
-      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 4435814879786288860, guid: fb605aba7ac85e545ac3ee737b236446, type: 3}
       propertyPath: m_LocalPosition.x

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8805017120555498542}
   - component: {fileID: 3441487356937559241}
   - component: {fileID: 3221952408997344624}
+  - component: {fileID: 1255273787421582813}
   m_Layer: 0
   m_Name: Puzzle Window (Quad)
   m_TagString: Untagged
@@ -145,3 +146,15 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   renderCamera: {fileID: 0}
   collider: {fileID: 3441487356937559241}
+--- !u!210 &1255273787421582813
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989126090862758216}
+  m_Enabled: 1
+  m_SortingLayerID: -672784595
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

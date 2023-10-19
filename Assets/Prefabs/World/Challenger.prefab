@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5455840739512098616}
   - component: {fileID: 4730313478421702560}
   - component: {fileID: 6139453292235157198}
+  - component: {fileID: 5095991737127549738}
   m_Layer: 0
   m_Name: Challenger
   m_TagString: Challenger
@@ -133,6 +134,18 @@ MonoBehaviour:
   multDiffRate: 1
   zeroRate: 1
   negativeRate: 1
+--- !u!210 &5095991737127549738
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584869301959146280}
+  m_Enabled: 1
+  m_SortingLayerID: 1265950517
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &5067418088833491681
 GameObject:
   m_ObjectHideFlags: 0

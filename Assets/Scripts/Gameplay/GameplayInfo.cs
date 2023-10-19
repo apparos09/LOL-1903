@@ -203,6 +203,10 @@ namespace RM_EM
             // Save the index.
             currAreaIndex = manager.currAreaIndex;
 
+            // TODO: not needed?
+            // // Save the puzzle type
+            // puzzle = manager.worldUI.challengeUI.challenger.puzzle;
+
             // Clears out the list.
             challengersDefeated.Clear();
 
@@ -337,15 +341,15 @@ namespace RM_EM
             // Set P1 Puzzle Mechanic Parent and Position
             p1Mech.transform.parent = manager.p1Puzzle.transform; // Parent
 
-            if (manager.p1MechanicPos != null) // Position
-                p1Mech.transform.position = manager.p1MechanicPos.transform.position;
+            if (manager.p1Puzzle.puzzleMechanicPos != null) // Position
+                p1Mech.transform.position = manager.p1Puzzle.puzzleMechanicPos.transform.position;
 
 
             // Set P2 Puzzle Mechanic Parent and Position
             p2Mech.transform.parent = manager.p2Puzzle.transform; // Parent
 
-            if (manager.p2MechanicPos != null) // Position
-                p2Mech.transform.position = manager.p2MechanicPos.transform.position;
+            if (manager.p2Puzzle.puzzleMechanicPos != null) // Position
+                p2Mech.transform.position = manager.p2Puzzle.puzzleMechanicPos.transform.position;
 
             // Set the managers.
             p1Mech.manager = manager;

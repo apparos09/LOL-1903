@@ -16,7 +16,7 @@ namespace RM_EM
         public MatchManager matchManager;
 
         // The time for the match UI.
-        public TMP_Text timeText;
+        public TMP_Text timerText;
 
         // The UI contnet shown when the match ends.
         public GameObject matchEnd;
@@ -99,7 +99,7 @@ namespace RM_EM
         // Updates the timer displayed.
         public void UpdateTimeText()
         {
-            timeText.text = GameplayManager.GetTimeFormatted(matchManager.matchTime);
+            timerText.text = GameplayManager.GetTimeFormatted(matchManager.matchTime);
         }
 
         // Updates all player displays.

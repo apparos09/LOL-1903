@@ -43,17 +43,11 @@ namespace RM_EM
         // P1 Puzzle
         public Puzzle p1Puzzle;
 
-        // An object used to position P1's mechanic and camera off-screen.
-        public GameObject p1MechanicPos;
-
         [Header("Player 2")]
         // P2
         public PlayerMatch p2;
         // P2 Puzzle
         public Puzzle p2Puzzle;
-
-        // An object used to position P1's mechanic and camera off-screen.
-        public GameObject p2MechanicPos;
 
         // Constructor
         private MatchManager()

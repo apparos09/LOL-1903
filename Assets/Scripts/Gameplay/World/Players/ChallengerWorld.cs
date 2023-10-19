@@ -21,7 +21,13 @@ namespace RM_EM
         [Tooltip("The sprite for the challenge prompt.")]
         public Sprite challengeSprite;
 
-        [Header("Settings")]
+        [Header("Info")]
+
+        // The challenger's name.
+        public string challengerName = string.Empty;
+
+        // The challenger's quote.
+        public string challengerQuote = string.Empty;
 
         // The difficulty of the challenger.
         public int difficulty = 0;

@@ -49,3 +49,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3582002141
+    locked: 0
+  - name: World Challenger
+    uniqueID: 1265950517
+    locked: 0
+  - name: Puzzle Render
+    uniqueID: 3622182701
+    locked: 0
+  - name: Puzzle Object
+    uniqueID: 70110741
+    locked: 0
+  - name: Puzzle Value
+    uniqueID: 3499995517
+    locked: 0

@@ -84,14 +84,19 @@ namespace RM_EM
             // Sets the power.
             power = newPower;
 
-            // Sets the player.
-            power.playerMatch = this;
-
-            // Sets the transform parent if the component isn't attached to the player.
-            if(setPlayerAsParent && power.gameObject != gameObject)
+            // The power has been set.
+            if(power != null)
             {
-                power.transform.parent = transform;
+                // Sets the player.
+                power.playerMatch = this;
+
+                // Sets the transform parent if the component isn't attached to the player.
+                if (setPlayerAsParent && power.gameObject != gameObject)
+                {
+                    power.transform.parent = transform;
+                }
             }
+            
         }
 
         // Sets the power using the provided type.

@@ -33,6 +33,15 @@ namespace RM_EM
             {
                 // Puts the values in the list.
                 GetComponentsInChildren<PuzzleValue>(true, puzzleValues);
+
+                // NOTE: this should not be needed.
+                //// Removes null values.
+                //for(int i = puzzleValues.Count - 1; i >= 0; i--)
+                //{
+                //    // Remove at the set index.
+                //    if (puzzleValues[i] == null)
+                //        puzzleValues.RemoveAt(i);
+                //}
             }
         }
 

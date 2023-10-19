@@ -58,6 +58,9 @@ namespace RM_EM
 
         // The renderer for the puzzle space.
         public PuzzleRender puzzleRender;
+
+        // The position of the puzzle mechanic.
+        public GameObject puzzleMechanicPos;
         
         // The player this puzzle belongs to. If no player is set, then any player can interact with it.
         public PlayerMatch playerMatch;
@@ -162,8 +165,8 @@ namespace RM_EM
             if (manager == null)
                 manager = MatchManager.Instance;
 
-            // Generates a equation to start off.
-            GenerateEquation();
+            // Generates a equation to start off (not needed).
+            // GenerateEquation();
         }
 
         // Gets the rule name.
