@@ -13,14 +13,17 @@ namespace RM_EM
         // The pinball mechanic.
         public PinballMechanic mechanic;
 
-        // The door of the gate.
-        public GameObject door;
+        // The collider of the gate.
+        public new BoxCollider2D collider;
+
+        // The sprite renderer.
+        public SpriteRenderer spriteRenderer;
 
         // Gets set to 'true' if the gate is open.
         public bool openedGate = false;
 
         // The max weight that can be handled before the gate opens.
-        public float maxWeight = 100.0F;
+        public float maxWeight = 5.0F;
 
         // The timer for how long the gate stays open for.
         public float openTimer = 0.0F;
@@ -67,6 +70,7 @@ namespace RM_EM
             }
         }
 
+        // I don't think this gets used...
         // OnMouseDown
         private void OnMouseDown()
         {
@@ -94,12 +98,13 @@ namespace RM_EM
         {
             // Open the gate.
             openedGate = true;
-            
+
+            // Disables door and hides the sprite.
+            collider.enabled = false;
+            spriteRenderer.enabled = false;
+
             // Set the timer to max.
             ResetOpenTimerToMax();
-
-            // Disables door.
-            door.gameObject.SetActive(false);
         }
 
         // Closes the gate.
@@ -108,11 +113,12 @@ namespace RM_EM
             // Close the gate.
             openedGate = false;
 
+            // Enables door and shows the sprite.
+            collider.enabled = true;
+            spriteRenderer.enabled = true;
+
             // Set timer to 0.
             openTimer = 0.0F;
-
-            // Enables door.
-            door.gameObject.SetActive(true);
         }
 
         // Set the timer to max.
@@ -130,21 +136,28 @@ namespace RM_EM
             // The sum of the weights.
             float weightSum = 0.0F;
 
-            // Goes through all touching balls.
-            for (int i = 0; i < touchingBalls.Count; i++)
+            // Goes through the balls touching the platform directly.
+            foreach(BallValue ball in touchingBalls)
             {
-                // The current ball.
-                BallValue currentBall = touchingBalls[i];
-
-                // If the ball isn't in the list, add it.
-                if (!contactBalls.Contains(currentBall))
-                    contactBalls.Add(currentBall);
-
-                // TODO: account for the balls touching other balls, but not the gate itself.
-                // TODO: there needs to be a better way to do this. Maybe do something with the physics engine?
-
-                
+                // Add to the contact balls list in a recursive loop.
+                ball.AddTouchingBalls(ref contactBalls);
             }
+
+            // // Goes through all touching balls.
+            // for (int i = 0; i < touchingBalls.Count; i++)
+            // {
+            //     // The current ball.
+            //     BallValue currentBall = touchingBalls[i];
+            // 
+            //     // If the ball isn't in the list, add it.
+            //     if (!contactBalls.Contains(currentBall))
+            //         contactBalls.Add(currentBall);
+            // 
+            //     // TODO: account for the balls touching other balls, but not the gate itself.
+            //     // TODO: there needs to be a better way to do this. Maybe do something with the physics engine?
+            // 
+            //     
+            // }
            
             // Sum up the weights of the balls.
             foreach(BallValue ball in contactBalls)
@@ -154,6 +167,21 @@ namespace RM_EM
             }
 
             return weightSum;
+        }
+
+        // Called when the user has interacted with the pinball gate.
+        public void OnInteract()
+        {
+            // TODO: if the gate is open, don't allow the player to interact with it.
+            // Checks if the gate is open.
+            if(IsOpen())
+            {
+                CloseGate();
+            }
+            else
+            {
+                OpenGate();   
+            }
         }
 
         // Update is called once per frame
@@ -182,11 +210,16 @@ namespace RM_EM
                 }
                 else
                 {
-                    // Checks if the weight is too much, causing the gate to open.
-                    if (CalculateAppliedWeight() > maxWeight)
+                    // If balls are touching the gate.
+                    if(touchingBalls.Count > 0)
                     {
-                        OpenGate();
+                        // Checks if the weight is too much, causing the gate to open.
+                        if (CalculateAppliedWeight() > maxWeight)
+                        {
+                            OpenGate();
+                        }
                     }
+                    
                 }
 
             }

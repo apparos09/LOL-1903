@@ -21,7 +21,7 @@ namespace RM_EM
     public class Puzzle : MonoBehaviour
     {
         // The puzzle types.
-        public enum puzzleType { unknown, keypad, sliding, bubble, pinball }
+        public enum puzzleType { unknown, keypad, bubbles, sliding, pinball }
 
         // A value space.
         public struct ValueSpace
@@ -1011,12 +1011,22 @@ namespace RM_EM
                     return;
             }
 
+            // Puzzle value object.
             PuzzleValue value;
+
+            // Other
+            PinballGate gate;
 
             // If a puzzle value was grabbed from the selected element.
             if(hitObject.TryGetComponent(out value))
             {
                 SelectValue(player, value);
+            }
+
+            // Checks if the selected object is a pinball gate.
+            if(hitObject.TryGetComponent(out gate))
+            {
+                gate.OnInteract();
             }
         }
 
@@ -1179,7 +1189,7 @@ namespace RM_EM
                     mult = 1.25F;
                     break;
 
-                case puzzleType.bubble:
+                case puzzleType.bubbles:
                     mult = 1.4F;
                     break;
 

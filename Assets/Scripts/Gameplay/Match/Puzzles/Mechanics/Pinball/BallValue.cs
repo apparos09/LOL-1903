@@ -91,6 +91,26 @@ namespace RM_EM
                 touchingBalls.Remove(ballValue);
         }
 
+        // Adds the balls touching this ball to the contact list if they're not in it already.
+        public void AddTouchingBalls(ref List<BallValue> contactBalls)
+        {
+            // If this ball is not in the contact balls list, add it.
+            if(!contactBalls.Contains(this))
+            {
+                contactBalls.Add(this);
+            }
+
+            // Goes though all connected balls.
+            foreach(BallValue ball in touchingBalls)
+            {
+                // If the ball isn't in the list, call the ball's add touching function.
+                if(!contactBalls.Contains(ball))
+                {
+                    ball.AddTouchingBalls(ref contactBalls);
+                }
+            }
+        }
+
         // OnHit Function
         public override void OnHit(bool rightAnswer)
         {

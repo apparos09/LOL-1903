@@ -19,11 +19,11 @@ namespace RM_EM
         // The keypad mechanic.
         public KeypadMechanic keypad;
 
+        // The bubbles mechanic.
+        public BubbleMechanic bubble;
+
         // The sliding mechanic.
         public SlidingMechanic sliding;
-
-        // The bubbles mechanic.
-        public BubbleMechanic bubbles;
 
         // The pinball mechanic.
         public PinballMechanic pinball;

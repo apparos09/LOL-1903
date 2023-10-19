@@ -75,29 +75,79 @@ namespace RM_EM
         }
 
         // Sets the power to the provided power.
-        public void SetPower(Power newPower)
+        // setPlayerAsParent - sets the player as the power's parent if it's not attached to the player directly.
+        public void SetPower(Power newPower, bool setPlayerAsParent = true)
         {
+            // Removes the current power.
+            RemovePower();
+
+            // Sets the power.
             power = newPower;
+
+            // Sets the player.
+            power.playerMatch = this;
+
+            // Sets the transform parent if the component isn't attached to the player.
+            if(setPlayerAsParent && power.gameObject != gameObject)
+            {
+                power.transform.parent = transform;
+            }
         }
 
         // Sets the power using the provided type.
-        public void SetPower(Power.powerType type)
+        // setPlayerAsParent - sets the player as the power's parent if it's not attached to the player directly.
+        public void SetPower(Power.powerType type, bool setPlayerAsParent = true)
         {
-            // Generates a power based on the type.
-            switch(type)
+            // The power prefabs.
+            PowerPrefabs powerPrefabs = PowerPrefabs.Instance;
+
+            // The new power for the player.
+            Power newPower = null;
+
+            // Checks the power type.
+            switch (type)
             {
+                // Generates the power for the player.
                 default:
                 case Power.powerType.none:
-                    power = null;
+                    // TODO: set to null instead of using the nothing power.
+                    // newPower = Instantiate(powerPrefabs.nothing);
+                    newPower = null;
                     break;
 
-                case Power.powerType.pointsPlus:
-                    // TODO: implement.
+                case Power.powerType.pointsPlus: // Points Plus
+                    newPower = Instantiate(powerPrefabs.pointsPlus);
                     break;
 
-                case Power.powerType.pointsMinus:
-                    // TODO: implement.
+                case Power.powerType.pointsMinus: // Points Minus
+                    newPower = Instantiate(powerPrefabs.pointsMinus);
                     break;
+
+                case Power.powerType.powerTwist: // Points Twist
+                    newPower = Instantiate(powerPrefabs.renderTwist);
+                    break;
+            }
+
+            // Sets the power.
+            SetPower(newPower, setPlayerAsParent);
+        }
+
+        // Removes the power. If 'destroyPower' is true, the power component is destroyed.
+        public void RemovePower(bool destroyPower = true)
+        {
+            // Power is set.
+            if (power != null)
+            {
+                // If attached to the player, only destroy the component.
+                if(power.gameObject == gameObject)
+                {
+                    Destroy(power);
+                }
+                // If not attached to the player, destroy the whole object.
+                else if(power.gameObject != gameObject)
+                {
+                    Destroy(power.gameObject);
+                }
             }
         }
 
@@ -195,8 +245,8 @@ namespace RM_EM
                     mb.lastClickedHit2D = manager.mouseTouch.mouseHoveredHit2D;
 
 
-                    // Checks last clicked.
-                    if (mb.held != null)
+                    // Checks last clicked object if it's from the user's puzzle render.
+                    if (mb.held != null && mb.held == puzzle.puzzleRender.gameObject)
                     {
                         // Grabs the object.
                         GameObject hit = puzzle.puzzleRender.TryHit(mb);

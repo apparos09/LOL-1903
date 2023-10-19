@@ -309,9 +309,24 @@ namespace RM_EM
             {
                 // Generates a keypad by default.
                 default:
-                case Puzzle.puzzleType.keypad:
+                case Puzzle.puzzleType.keypad: // Keypad
                     p1Mech = Instantiate(puzzlePrefabs.keypad);
                     p2Mech = Instantiate(puzzlePrefabs.keypad);
+                    break;
+
+                case Puzzle.puzzleType.bubbles: // Bubbles
+                    p1Mech = Instantiate(puzzlePrefabs.bubble);
+                    p2Mech = Instantiate(puzzlePrefabs.bubble);
+                    break;
+
+                case Puzzle.puzzleType.sliding: // Sliding
+                    p1Mech = Instantiate(puzzlePrefabs.sliding);
+                    p2Mech = Instantiate(puzzlePrefabs.sliding);
+                    break;
+
+                case Puzzle.puzzleType.pinball: // Pinball
+                    p1Mech = Instantiate(puzzlePrefabs.pinball);
+                    p2Mech = Instantiate(puzzlePrefabs.pinball);
                     break;
             }
 
@@ -419,8 +434,7 @@ namespace RM_EM
             // Goes through both players.
             for(int n = 1; n <= 2; n++)
             {
-                // The generated power, thep layer, and the power.
-                Power genPower;
+                // The player and the power.
                 PlayerMatch player;
                 Power.powerType power = Power.powerType.none;
 
@@ -441,27 +455,8 @@ namespace RM_EM
                         continue;
                 }
 
-                // Checks the power type.
-                switch (power)
-                {
-                    // Generates the power for the player.
-                    default:
-                    case Power.powerType.none:
-                        // TODO: set to null instead of using the nothing power.
-                        genPower = Instantiate(powerPrefabs.nothing);
-                        break;
-                }
-
-                // Set power.
-                player.SetPower(genPower);
-
-                // If the power isn't null.
-                if(genPower != null)
-                {
-                    // Set the player and the power's parent.
-                    genPower.playerMatch = player;
-                    genPower.transform.parent = player.transform;
-                }
+                // Sets the player's power.
+                player.SetPower(power);
             }
 
             // Player 1 (Other)

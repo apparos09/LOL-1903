@@ -27,6 +27,8 @@ namespace RM_EM
         {
             base.Start();
 
+            // No autosets since this script is used by multiple powers.
+
             // If the target should be auto-set, and the target is null.
             if(autoSetTarget && target == null)
             {

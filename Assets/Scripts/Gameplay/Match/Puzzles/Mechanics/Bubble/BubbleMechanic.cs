@@ -40,7 +40,7 @@ namespace RM_EM
             base.Start();
 
             // Set the puzzle type.
-            puzzle.puzzle = Puzzle.puzzleType.bubble;
+            puzzle.puzzle = Puzzle.puzzleType.bubbles;
         }
 
         // Generates a bubble.

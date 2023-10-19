@@ -36,6 +36,36 @@ namespace RM_EM
             // Grabs the hit point of the ray.
             Vector3 hitPoint = mouseButton.lastClickedHit.point;
 
+            // New - Camera Scale
+            // Modifies the scale of the offset so that matches up with the camera.
+            Vector3 camScale = new Vector3(0, 0, 1);
+
+            // TODO: change this to use a percentage of the quad size and camera view.
+
+            // Checks if the camera is orthographic or perspective.
+            if(renderCamera.orthographic) // Orthographic
+            {
+                // Camera Size / Collider Size
+
+                // Ver. 1
+                // camScale.x = renderCamera.orthographicSize / collider.size.x;
+                // camScale.y = renderCamera.orthographicSize / collider.size.y;
+
+                // Ver. 2
+                camScale.x = renderCamera.pixelWidth / collider.size.x;
+                camScale.y = renderCamera.pixelHeight / collider.size.y;
+
+            }
+            else // Perspective
+            {
+                // Checks the camera's size in pixels so that it can convert the collider size to it.
+                // I don't know if this works, but I probably won't use it anyway.
+                // (Camera Pixel Size) / Collider Size
+                camScale.x = renderCamera.pixelWidth / collider.size.x;
+                camScale.y = renderCamera.pixelHeight / collider.size.y;
+            }
+
+
             // Calculates the offset position from the render camera's center based on the render object's center.
             // Due to how the object is oriented, the object's (z) is used in place of (y) for this operation.
             Vector2 offsetPos = new Vector2();
@@ -44,7 +74,13 @@ namespace RM_EM
 
             // CALCULATING THE RAY FROM THE RENDER CAMERA'S POSITION
             // Gets the ray's position for the render cmaera.
+
+            // Old
+            // Using the old version for now so I can finish the pinball.
             Vector3 renderRayPos = renderCamera.transform.position + new Vector3(offsetPos.x, offsetPos.y, 0);
+
+            // New
+            // Vector3 renderRayPos = renderCamera.transform.position + Vector3.Scale(new Vector3(offsetPos.x, offsetPos.y, 0), camScale);
 
             // // The render ray pos.
             // Debug.Log("Render Ray Pos: " + renderRayPos.ToString());
@@ -97,6 +133,7 @@ namespace RM_EM
                 // The render camera's position in world space.
                 Vector3 camWPos;
 
+                // TODO: why do I check for orthographic twice? Take that out.
                 // Calculates the world position based on the ray position.
                 if (renderCamera.orthographic)
                     camWPos = renderCamera.ScreenToWorldPoint(new Vector3(renderRayPosPixels.x, renderRayPosPixels.y, renderCamera.nearClipPlane));

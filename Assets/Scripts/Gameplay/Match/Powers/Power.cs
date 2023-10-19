@@ -8,7 +8,7 @@ namespace RM_EM
     public abstract class Power : MonoBehaviour
     {
         // The power type.
-        public enum powerType { none, pointsPlus, pointsMinus }
+        public enum powerType { none, pointsPlus, pointsMinus, powerTwist }
 
         // The match manager.
         public MatchManager manager;
@@ -57,6 +57,9 @@ namespace RM_EM
             // The match manager.
             if (manager == null)
                 manager = MatchManager.Instance;
+
+            powerName = "Power Twist";
+            power = powerType.powerTwist;
         }
 
         // Checks if the power is usable.

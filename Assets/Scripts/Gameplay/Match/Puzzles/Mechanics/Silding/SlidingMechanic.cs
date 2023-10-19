@@ -35,10 +35,10 @@ namespace RM_EM
         [Header("Sliding/Pieces")]
 
         // The pool of chips for the puzzle mechanic.
-        public Queue<SlidingPiece> piecePool = new Queue<SlidingPiece>();
+        public Queue<SlidingPieceValue> piecePool = new Queue<SlidingPieceValue>();
 
         // The prefab of the piece to be instanted.
-        public SlidingPiece piecePrefab;
+        public SlidingPieceValue piecePrefab;
 
         // Sprites for the sliding mechanic puzzle.
         public PuzzleValueSprites valueSprites;
@@ -66,10 +66,10 @@ namespace RM_EM
         // The piece is given the value provided.
         // The 'startPos' determines the starting position of the instantiated piece.
         // The 'direc' argument determines the direction of travel.
-        public SlidingPiece GeneratePiece(char value, int segment, Vector3 startPos, Vector3 direc)
+        public SlidingPieceValue GeneratePiece(char value, int segment, Vector3 startPos, Vector3 direc)
         {
             // The piece being generated.
-            SlidingPiece piece;
+            SlidingPieceValue piece;
 
             // Checks if there are pieces in the pool.
             if(piecePool.Count == 0)
@@ -107,7 +107,7 @@ namespace RM_EM
         }
 
         // Returns a piece to the pool when its gone off-screen.
-        public void ReturnPiece(SlidingPiece piece)
+        public void ReturnPiece(SlidingPieceValue piece)
         {
             // Reduce segment's piece count and set piece segment to -1 (no segment).
             segmentPieceCounts[piece.segment]--;

@@ -25,6 +25,9 @@ namespace RM_EM
         // Decreases the number of points the target gets.
         public PowerPoints pointsMinus;
 
+        // Twists the opponent's render (no use for the player since the AI isn't effected).
+        public PowerTwist renderTwist;
+
         // Constructor
         private PowerPrefabs()
         {

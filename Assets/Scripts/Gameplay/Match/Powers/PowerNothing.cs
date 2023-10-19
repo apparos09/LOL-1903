@@ -11,9 +11,14 @@ namespace RM_EM
         protected override void Start()
         {
             base.Start();
-            
-            powerName = "Power Nothing";
-            power = powerType.none;
+
+            // Autoset Type
+            if (power == powerType.none)
+                power = powerType.none;
+
+            // Autoset Name
+            if (powerName == string.Empty)
+                powerName = "Power Nothing";
         }
 
         // Called to update the power.

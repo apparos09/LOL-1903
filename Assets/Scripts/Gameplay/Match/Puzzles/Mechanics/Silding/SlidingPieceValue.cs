@@ -5,7 +5,7 @@ using UnityEngine;
 namespace RM_EM
 {
     // A sliding piece.
-    public class SlidingPiece : PuzzleValue
+    public class SlidingPieceValue : PuzzleValue
     {
         // The mechanic this sliding piece belongs to.
         public SlidingMechanic mechanic;
