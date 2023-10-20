@@ -27,6 +27,8 @@ namespace RM_EM
         // Update Event
         public override bool UpdateEvent()
         {
+            // TODO: don't check this every frame.
+
             // Checks if the event is finished.
             bool finished = true;
 

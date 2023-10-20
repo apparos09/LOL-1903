@@ -299,6 +299,8 @@ MonoBehaviour:
   collider: {fileID: 616700690}
   spriteRenderer: {fileID: 888863626}
   challengeSprite: {fileID: 0}
+  challengerName: 
+  challengerQuote: 
   difficulty: 0
   available: 1
   defeated: 0
@@ -410,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: 
-  eventId: 0
+  eventNumber: 0
   eventTag: 
   cleared: 0
   challenger: {fileID: 616700689}
@@ -1037,50 +1039,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1139977219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1412461661
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1412461663}
-  - component: {fileID: 1412461664}
-  m_Layer: 0
-  m_Name: Tutorial
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1412461663
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412461661}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1412461664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412461661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ba217ac6c62ba4c8e7b514adb27f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1432786160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1162,7 @@ MonoBehaviour:
   settingsUI: {fileID: 1728383449}
   tutorialTextBox: {fileID: 5278463946730209078}
   worldManager: {fileID: 0}
+  saveWindow: {fileID: 0}
   challengeUI: {fileID: 1620257225}
   prevAreaButton: {fileID: 1319003835}
   nextAreaButton: {fileID: 1854869385}
@@ -1309,6 +1268,8 @@ MonoBehaviour:
   collider: {fileID: 1547001939}
   spriteRenderer: {fileID: 1312580242}
   challengeSprite: {fileID: 0}
+  challengerName: 
+  challengerQuote: 
   difficulty: 0
   available: 1
   defeated: 0
@@ -1558,7 +1519,6 @@ MonoBehaviour:
   gameUI: {fileID: 1432786165}
   gameTime: 0
   mouseTouch: {fileID: 0}
-  tutorial: {fileID: 0}
   worldUI: {fileID: 1432786165}
   worldCamera: {fileID: 322652622}
   worldEvents: {fileID: 1601187951}
@@ -1568,6 +1528,7 @@ MonoBehaviour:
   - {fileID: 1139977220}
   currAreaIndex: 0
   challengers: []
+  finalChallenger: {fileID: 0}
 --- !u!4 &1601187950
 Transform:
   m_ObjectHideFlags: 0
@@ -1683,7 +1644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: 
-  eventId: 0
+  eventNumber: 0
   eventTag: 
   cleared: 0
   manager: {fileID: 1601187949}
@@ -2215,7 +2176,6 @@ SceneRoots:
   - {fileID: 1432786164}
   - {fileID: 908490536}
   - {fileID: 1601187950}
-  - {fileID: 1412461663}
   - {fileID: 1707077276}
   - {fileID: 1502855966}
   - {fileID: 1139977219}

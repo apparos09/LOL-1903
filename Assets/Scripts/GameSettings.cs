@@ -75,10 +75,11 @@ namespace RM_EM
             }
         }
 
-        // Start is called before the first frame update
-        void Start()
-        {
-        }
+        //// Start is called before the first frame update
+        //void Start()
+        //{
+        //    // ...
+        //}
 
         // TODO: why did you take this out? I don't remember, but leave it out I guess.
         // // This function is called when the object is enabled and active
@@ -132,7 +133,7 @@ namespace RM_EM
 
 
         // the LOL SDK has been initialized.
-        public bool InitializedLOLSDK
+        public static bool InitializedLOLSDK
         {
             get
             {

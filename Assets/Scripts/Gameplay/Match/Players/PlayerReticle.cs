@@ -10,11 +10,11 @@ namespace RM_EM
         // The player the reticle belongs to.
         public PlayerMatch playerMatch;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
+        // // Start is called before the first frame update
+        // void Start()
+        // {
+        // 
+        // }
 
 
 
@@ -44,10 +44,10 @@ namespace RM_EM
 
 
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        // // Update is called once per frame
+        // void Update()
+        // {
+        // 
+        // }
     }
 }

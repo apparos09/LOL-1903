@@ -1076,6 +1076,19 @@ namespace RM_EM
             else
             {
                 Debug.Log("Wrong!");
+
+                // Checks if the gameplay object exists.
+                if(GameplayInfo.Instantiated)
+                {
+                    // Gets the instance.
+                    GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                    // If player 1 got it wrong, increase the number of wrong answers.
+                    if (player == manager.p1)
+                    {
+                        gameInfo.wrongAnswers++;
+                    }
+                }
             }
 
             // TODO: maybe move this inside the "right" bracket?
@@ -1123,7 +1136,7 @@ namespace RM_EM
             // The current index.
             int index = result.Length - 1;
 
-            // Go from the end of the string to the beggining, while the index is vali.
+            // Go from the end of the string to the begining, while the index is valid.
             while(index >= 0 && index < result.Length && result.Contains("^"))
             {
                 // Finds the last index of the "^" symbol.
@@ -1163,6 +1176,11 @@ namespace RM_EM
                     }
                 }
             }
+
+            // TODO: add in value missing sprite.
+
+            // // Replace the multiplication symbols with an x.
+            // result = result.Replace("*", "X");
 
             // Replaces the equation space with the on-screen space.
             result = result.Replace(EQUATION_SPACE, "[   ]");

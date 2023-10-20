@@ -1,3 +1,4 @@
+using LoLSDK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,12 +27,44 @@ namespace RM_EM
         {
             if (manager == null)
                 manager = TitleManager.Instance;
+
+            // If the LOLSDK isn't initialized, make the continue button non-interactable.
+            if(!GameSettings.InitializedLOLSDK)
+            {
+                continueButton.interactable = false;
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        // Starts the new game.
+        public void StartNewGame()
         {
-            // ...
+            manager.StartNewGame();
         }
+
+        // Continues the game.
+        public void ContinueGame()
+        {
+            manager.ContinueGame();
+        }
+
+        // Opens the controls window.
+        public void OpenControlsWindow()
+        {
+            // TODO: implement
+        }
+
+        // Opens the settings window.
+        public void OpenSettingsWindow()
+        {
+            // TODO: implement
+        }
+
+        // Opens the credits window.
+        public void OpenCreditsWindow()
+        {
+            // TODO: implement
+        }
+
+
     }
 }

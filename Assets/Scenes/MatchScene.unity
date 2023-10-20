@@ -501,6 +501,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3983546851440190390, guid: 117790c5ac7a5e94c8a4c1b323d96d17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 979213269}
+    - target: {fileID: 3983546851440190390, guid: 117790c5ac7a5e94c8a4c1b323d96d17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToWorldScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983546851440190390, guid: 117790c5ac7a5e94c8a4c1b323d96d17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RM_EM.MatchUI, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6009668108928403844, guid: 117790c5ac7a5e94c8a4c1b323d96d17, type: 3}
       propertyPath: m_Name
       value: Match End
@@ -826,11 +838,11 @@ MonoBehaviour:
   gameUI: {fileID: 979213269}
   gameTime: 0
   mouseTouch: {fileID: 1945610510}
-  tutorial: {fileID: 0}
   matchUI: {fileID: 979213269}
   pointGoal: 999
   usePointGoal: 1
   matchTime: 0
+  matchWinner: -1
   p1: {fileID: 717209386}
   p1Puzzle: {fileID: 1125935906180993782}
   p2: {fileID: 1084210061}

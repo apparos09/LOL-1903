@@ -337,5 +337,12 @@ namespace RM_EM
             matchManager.p2.SkipEquation();
         }
         
+
+        // MATCH END //
+        // Return to the game world.
+        public void ToWorldScene()
+        {
+            matchManager.ToWorldScene();
+        }
     }
 }

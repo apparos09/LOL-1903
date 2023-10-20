@@ -33,6 +33,9 @@ namespace RM_EM
         // The current time for the match.
         public float matchTime = 0;
 
+        // The winner of the match.
+        public int matchWinner = -1;
+
         // Checks if the match is paused.
         protected bool matchPaused = false;
 
@@ -79,10 +82,14 @@ namespace RM_EM
         // Start is called before the first frame update
         protected override void Start()
         {
+            // Checks if game info has been initialized already.
+            bool gameInfoInit = GameplayInfo.Instantiated;
+
+            // Calls base start.
             base.Start();
 
             // Checks if the info has been instantiated.
-            if(GameplayInfo.Instantiated)
+            if(gameInfoInit && GameplayInfo.Instantiated)
             {
                 // Gets the instance.
                 GameplayInfo gameInfo = GameplayInfo.Instance;
@@ -323,6 +330,7 @@ namespace RM_EM
             // Add points.
             player.points += points;
 
+
             // CALCULATING POWER ENERGY INCREASE //
             // TODO: check if the player has a power.
             if(player.HasPower() && !player.IsPowerActive())
@@ -347,7 +355,7 @@ namespace RM_EM
             // Checks if the player has won. If so, call the game finished function.
             if (HasPlayerWon(player))
             {
-                OnGameFinished();
+                OnMatchOver();
             }
         }
 
@@ -358,29 +366,36 @@ namespace RM_EM
             return result;
         }
 
-        // Called when the game is finished.
-        public void OnGameFinished()
+        // Called when the match is finished.
+        public void OnMatchOver()
         {
             // Gets set to 'true' if p1 has one.
-            PlayerMatch winner = null;
+            PlayerMatch winner;
 
             // Checks if p1 has reached the points goal.
             if(p1.points >= pointGoal)
             {
                 winner = p1;
+                matchWinner = 1;
             }
             // Checks if p2 has reached the points goal.
             else if(p2.points >= pointGoal)
             {
                 winner = p2;
+                matchWinner = 2;
+            }
+            else
+            {
+                winner = null;
+                matchWinner = 0;
             }
 
-            // The winner couldn't be set.
-            if(winner == null)
-            {
-                Debug.LogWarning("The winner cannot be found.");
-                return;
-            }
+            // // The winner couldn't be set.
+            // if(winner == null)
+            // {
+            //     Debug.LogWarning("The winner cannot be found.");
+            //     return;
+            // }
 
             // Pause the match to stop player inputs and AI calculations.
             PauseMatch();
@@ -398,9 +413,9 @@ namespace RM_EM
             // Gets the game info instance.
             GameplayInfo gameInfo = GameplayInfo.Instance;
 
-            // Save the world info changes from the match.
+            // Save the world and match info changes from the match.
+            gameInfo.SaveMatchInfo(this);
             gameInfo.SaveWorldInfo(this);
-
 
             // TODO: add loading screen.
             SceneManager.LoadScene("WorldScene");
@@ -413,6 +428,7 @@ namespace RM_EM
             if (!calledPostStart)
                 PostStart();
 
+            // Calls the base update function.
             base.Update();
 
             // The match isn't paused.

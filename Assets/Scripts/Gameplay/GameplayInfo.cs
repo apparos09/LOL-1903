@@ -17,6 +17,9 @@ namespace RM_EM
         // The game time.
         public float gameTime = 0.0F;
 
+        // The number of wrong answers from the player.
+        public int wrongAnswers = 0;
+
         // WORLD
         [Header("World Info")]
 
@@ -24,14 +27,18 @@ namespace RM_EM
         public int currAreaIndex = 0;
 
         // A list that stores what challengers have and have not been defeated.
-        public List<bool> challengersDefeated;
+        public List<bool> challengersDefeated = new List<bool>();
 
 
         // MATCH
         [Header("Match Info")]
 
         // The puzzle type.
-        public Puzzle.puzzleType puzzle = Puzzle.puzzleType.unknown; 
+        public Puzzle.puzzleType puzzle = Puzzle.puzzleType.unknown;
+
+        // The number of the winner (1 = player 1, 2 = player 2/computer, else unknown)
+        [Tooltip("The player number of the winner. 1 is P1, 2 is P2/COM, else is unknown.")]
+        public int pWinner = -1;
 
         [Header("Match Info/Exponents")]
 
@@ -223,7 +230,16 @@ namespace RM_EM
         {
             SaveGameInfo(manager);
 
-            // TODO: add content.
+            // Updates the match winner if it hasn't been updated already.
+            pWinner = manager.matchWinner;
+
+            // If the challenger has not been defeated yet, check if the challenger has been defeated now.
+            if (!challengerDefeated && pWinner > 0 && pWinner <= 2)
+                challengerDefeated = (pWinner == 1);
+
+            // Updates the challenger that was defeated.
+            if (challengerIndex != 1)
+                challengersDefeated[challengerIndex] = challengerDefeated;
         }
 
         // Loads world info into manager.
@@ -240,7 +256,7 @@ namespace RM_EM
             for (int i = 0; i < manager.challengers.Count && i < challengersDefeated.Count; i++)
             {
                 // Set if the challenger's been defeated.
-                manager.challengers[i].defeated = challengersDefeated[i];
+                manager.challengers[i].SetChallengerDefeated(challengersDefeated[i]);
             }
         }
 
@@ -252,7 +268,8 @@ namespace RM_EM
         {
             SaveGameInfo(manager);
 
-            // TODO: add content.
+            // Saves the match winner.
+            pWinner = manager.matchWinner;
         }
 
         // Stores the match info from the world manager to be used in the match info.

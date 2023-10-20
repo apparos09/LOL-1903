@@ -16,6 +16,9 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private static bool instanced = false;
 
+        // Gets set to 'true', when post start has been called.
+        private bool calledPostStart = false;
+
         [Header("World")]
         // The world UI.
         public WorldUI worldUI;
@@ -72,6 +75,10 @@ namespace RM_EM
         // Start is called before the first frame update
         protected override void Start()
         {
+            // Checks if the game info has been initialized already.
+            bool gameInfoInit = GameplayInfo.Instantiated;
+
+            // Calls the base function.
             base.Start();
 
             // If the challenger list isn't set, find all challengers.
@@ -88,8 +95,8 @@ namespace RM_EM
             // Sets the current area.
             SetArea(currAreaIndex);
 
-            // Checks if the info object has been instantiated.
-            if (GameplayInfo.Instantiated)
+            // Checks if the info object has been instantiated to load content from it.
+            if (gameInfoInit && GameplayInfo.Instantiated)
             {
                 // Gets the instance.
                 GameplayInfo gameInfo = GameplayInfo.Instance;
@@ -135,6 +142,16 @@ namespace RM_EM
             {
                 return instanced;
             }
+        }
+
+        // Post start function.
+        private void PostStart()
+        {
+            // Check if the game is over.
+            
+
+            // Called post start.
+            calledPostStart = true;
         }
 
         // SETTINGS //
@@ -343,6 +360,17 @@ namespace RM_EM
             // TODO: set data values.
             data.gameTime = gameTime;
 
+            // Checks if the gameplay info has been instantiated.
+            if(GameplayInfo.Instantiated)
+            {
+                // Grabs the instance.
+                GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                // Sets the wrong answers.
+                data.wrongAnswers = gameInfo.wrongAnswers;
+            }
+            
+
             // Goes to the scene.
             base.OnGameComplete();
         }
@@ -354,7 +382,8 @@ namespace RM_EM
             // Gets the game info.
             GameplayInfo gameInfo = GameplayInfo.Instance;
 
-            // Save the match info to the game info instance.
+            // Save the world and match info to the game info instance.
+            gameInfo.SaveWorldInfo(this);
             gameInfo.SaveMatchInfo(this);
 
             // TODO: add loading screen.
@@ -365,6 +394,11 @@ namespace RM_EM
         // Update is called once per frame
         protected override void Update()
         {
+            // Calls post start if it hasn't been called yet.
+            if (!calledPostStart)
+                PostStart();
+
+            // Calls the base update function.
             base.Update();
         }
 

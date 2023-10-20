@@ -22,8 +22,8 @@ namespace RM_EM
         // The mouse touch object.
         public MouseTouchInput mouseTouch;
 
-        // The tutorial.
-        public Tutorial tutorial;
+        // NOTE: GameInfo and Tutorial aren't listed here because they're singletons.
+        // Having them be in the scene from the start caused issues, so I'm not going to have them.
 
         // Awake is called when the script is being loaded
         protected virtual void Awake()
@@ -34,12 +34,21 @@ namespace RM_EM
         // Start is called before the first frame update
         protected virtual void Start()
         {
-            // Grabs the tutorial instance.
-            if (tutorial == null)
-                tutorial = Tutorial.Instance;
+            // For some reason, when coming back from the match scene this is listed as 'missing'.
+            
+            // Creates/gets the game info instance.
+            GameplayInfo gameInfo = GameplayInfo.Instance;
+
+            // Creates/gets the tutorial instance if it will be used.
+            if(IsUsingTutorial())
+            {
+                Tutorial tutorial = Tutorial.Instance;
+            }
+                
+
 
             // If the gameUI is set, check for the tutorial text box.
-            if(gameUI != null)
+            if (gameUI != null)
             {
                 // If the tutorial text box is set...
                 if(gameUI.tutorialTextBox != null)
@@ -144,6 +153,19 @@ namespace RM_EM
         // Go to the resultsscene.
         public virtual void ToResultsScene()
         {
+            // If the game info object exists, destroy it.
+            if(GameplayInfo.Instantiated)
+            {
+                Destroy(GameplayInfo.Instance.gameObject);
+            }
+
+            // If the tutorial object exists, destroy it.
+            if(Tutorial.Instantiated)
+            {
+                Destroy(Tutorial.Instance.gameObject);
+            }
+
+
             // TODO: add loading screen.
             SceneManager.LoadScene("ResultsScene");
         }

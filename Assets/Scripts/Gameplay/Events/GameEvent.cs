@@ -11,7 +11,7 @@ namespace RM_EM
         public string eventName = "";
 
         // The ID number of the event.
-        public int eventId = 0;
+        public int eventNumber = 0;
 
         // A tag used to mark the event.
         public string eventTag = "";

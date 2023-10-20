@@ -87,11 +87,8 @@ namespace RM_EM
         // MouseDown
         private void OnMouseDown()
         {
-            // If the challenger UI isn't open, open the UI and set this as the challenger.
-            if(!manager.worldUI.IsChallengerUIActive())
-            {
-                manager.worldUI.ShowChallengeUI(this, manager.GetChallengerIndex(this));
-            }
+            // Shows the challenge UI.
+            ShowChallengeUI();
         }
 
         // Sets if the challenger is locked or not.
@@ -122,6 +119,46 @@ namespace RM_EM
         public void SetChallengerToUnavailable()
         {
             SetChallengerAvailable(false);
+        }
+
+        // Checks if the challenger has been defeated.
+        public bool IsChallengerDefeated()
+        {
+            return defeated;
+        }
+
+        // Sets if the challenger is defeated.
+        public void SetChallengerDefeated(bool defeat)
+        {
+            defeated = defeat;
+
+            // Changes the colour based on if the challenger is defeated or not.
+            if(defeated && spriteRenderer.color != Color.grey)
+            {
+                spriteRenderer.color = Color.grey;
+            }
+            else if(!defeated && spriteRenderer.color != Color.white)
+            {
+                spriteRenderer.color = Color.white;
+            }
+        }
+
+        // Tries to show the challenge UI and loads in the content.
+        public void ShowChallengeUI()
+        {
+            // Checks if the challenger is available.
+            if(available)
+            {
+                // Checks if the challenger has been defeated yet. If not, allow the challenge.
+                if(!defeated)
+                {
+                    // If the challenge UI is not active.
+                    if (!manager.worldUI.IsChallengerUIActive())
+                    {
+                        manager.worldUI.ShowChallengeUI(this, manager.GetChallengerIndex(this));
+                    }
+                }    
+            }
         }
 
         //// Update is called once per frame
