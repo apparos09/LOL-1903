@@ -14,6 +14,9 @@ namespace RM_EM
         // The manager for the match.
         public MatchManager manager;
 
+        // The UI for the match.
+        public MatchUI matchUI;
+
         // The player this UI is for.
         public PlayerMatch playerMatch;
 
@@ -47,8 +50,13 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
+            // The manager.
             if (manager == null)
                 manager = MatchManager.Instance;
+
+            // Autoset match UI.
+            if (matchUI == null)
+                matchUI = manager.matchUI;
 
             // If player 2 is set.
             if (manager.p2 == this)
@@ -69,11 +77,11 @@ namespace RM_EM
         public void UpdatePlayerEquationDisplay()
         {
             // Gets the equation question formatted.
-            if(manager.p1 == this)
+            if(manager.p1 == playerMatch)
             {
                 equationText.text = manager.p1Puzzle.GetEquationQuestionFormatted();
             }
-            else if(manager.p2 == this)
+            else if(manager.p2 == playerMatch)
             {
                 equationText.text = manager.p2Puzzle.GetEquationQuestionFormatted();
             }
@@ -206,6 +214,19 @@ namespace RM_EM
             }
         }
 
+        // OPERATIONS //
+        // Use Player's Power
+        public void UsePlayerPower()
+        {
+            playerMatch.UsePower();
+        }
+
+        // Skips
+        // Player Equation Skip
+        public void UsePlayerEquationSkip()
+        {
+            playerMatch.SkipEquation();
+        }
 
     }
 }

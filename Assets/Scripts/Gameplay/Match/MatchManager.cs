@@ -432,9 +432,12 @@ namespace RM_EM
             base.Update();
 
             // The match isn't paused.
-            if (!matchPaused)
+            if (!MatchPaused)
             {
                 matchTime += Time.fixedDeltaTime;
+
+                // Updates the timer text.
+                matchUI.UpdateTimerText();
             }
         }
 
