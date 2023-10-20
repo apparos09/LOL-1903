@@ -19,6 +19,10 @@ namespace RM_EM
             // Autoset Name
             if (powerName == string.Empty)
                 powerName = "Power Nothing";
+
+            // Autoset description.
+            if (powerDesc == string.Empty)
+                powerDesc = "This power does nothing. It should not be used in-game.";
         }
 
         // Called to update the power.

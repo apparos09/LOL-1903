@@ -23,6 +23,10 @@ namespace RM_EM
             if (powerName == string.Empty)
                 powerName = "Power Twist";
 
+            // Autoset description.
+            if (powerDesc == string.Empty)
+                powerDesc = "This user turns the target's puzzle upside down.";
+
             // Checks if the user of this power is player 1 or player 2.
             if (playerMatch == manager.p1) // Onwer is P1
             {

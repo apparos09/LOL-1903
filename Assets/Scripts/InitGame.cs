@@ -16,7 +16,7 @@ namespace RM_EM
     {
         // GAME //
         // Data for the game.
-        CCC_GameData gameData;
+        EM_GameData gameData;
 
         // Becomes 'true' when the game has been initialized.
         public bool initGame = false;
@@ -195,7 +195,7 @@ namespace RM_EM
         /// users saved data after a valid save is called.
         /// </summary>
         /// <param name="loadedGameData"></param>
-        void OnLoad(CCC_GameData loadedGameData)
+        void OnLoad(EM_GameData loadedGameData)
         {
             // Overrides serialized state data or continues with editor serialized values.
             if (loadedGameData != null)

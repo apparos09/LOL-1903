@@ -35,7 +35,20 @@ namespace RM_EM
         // Closes the settings.
         public void CloseSettings()
         {
+            // Close the settings window.
             settingsUI.gameObject.SetActive(false);
+
+            // Close all the windows.
+            CloseAllWindows();
+        }
+
+        // Closes all the windows.
+        public virtual void CloseAllWindows()
+        {
+            // Settings
+            settingsUI.gameObject.SetActive(false);
+            
+            // On Window Closed
             OnWindowClosed();
         }
 

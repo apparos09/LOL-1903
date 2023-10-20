@@ -20,6 +20,9 @@ namespace RM_EM
         // The number of wrong answers from the player.
         public int wrongAnswers = 0;
 
+        // The powers p1 has.
+        public List<Power.powerType> p1PowerList = new List<Power.powerType>();
+
         // WORLD
         [Header("World Info")]
 
@@ -207,6 +210,9 @@ namespace RM_EM
         {
             SaveGameInfo(manager);
 
+            // Save the player powers by copying over the list.
+            p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);
+
             // Save the index.
             currAreaIndex = manager.currAreaIndex;
 
@@ -257,6 +263,20 @@ namespace RM_EM
             {
                 // Set if the challenger's been defeated.
                 manager.challengers[i].SetChallengerDefeated(challengersDefeated[i]);
+            }
+
+            // Set player's powers.
+            manager.playerWorld.powerList = new List<Power.powerType>(p1PowerList);
+
+            // Unlocking a Power
+            // If player 1 (user) won the most recent match.
+            if(pWinner == 1)
+            {
+                // TODO: this makes checks anyway, but maybe you should check here anyway?.
+                manager.playerWorld.GivePower(p2Power, false);
+
+                // Overrwite the power list with the new updates.
+                p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);
             }
         }
 

@@ -10,6 +10,9 @@ namespace RM_EM
         // The power type.
         public enum powerType { none, pointsPlus, pointsMinus, powerTwist }
 
+        // The total number of powers (including the 'none' type).
+        public const int POWER_TYPE_COUNT = 4;
+
         // The match manager.
         public MatchManager manager;
 
@@ -23,6 +26,9 @@ namespace RM_EM
 
         // The name of the power.
         public string powerName = string.Empty;
+
+        // The power description.
+        public string powerDesc = string.Empty;
 
         // The energy for the power (0-1.0).
         public float energy = 0;
@@ -57,11 +63,25 @@ namespace RM_EM
             // The match manager.
             if (manager == null)
                 manager = MatchManager.Instance;
-
-            powerName = "Power Twist";
-            power = powerType.powerTwist;
         }
 
+        // INFO
+        // Gets the power name.
+        public static string GetPowerName(powerType power)
+        {
+            // TODO: implement.
+            return "";
+        }
+
+        // Gets the power description.
+        public static string GetPowerDescription(powerType power)
+        {
+            // TODO: implement.
+            return "";
+        }
+
+
+        // FUNCTIONALITY
         // Checks if the power is usable.
         public bool IsPowerUsable()
         {

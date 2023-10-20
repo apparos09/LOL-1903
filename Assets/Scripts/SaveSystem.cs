@@ -13,10 +13,28 @@ namespace RM_EM
 {
     // The save system for the game.
     [System.Serializable]
-    public class CCC_GameData
+    public class EM_GameData
     {
         // Shows if the game data is valid.
         public bool valid = false;
+
+        // The player's LOL score.
+        public int score = 0;
+
+        // The current area index.
+        public int currAreaIndex = -1;
+
+        // Player
+        // The player's selected power.
+        public Power.powerType playerPower = Power.powerType.none;
+
+        // The player power list.
+        public Power.powerType[] playerPowerList = new Power.powerType[Power.POWER_TYPE_COUNT];
+
+        // Challengers Defeated
+        public bool[] challengersDefeated = new bool[WorldManager.CHALLENGER_COUNT];
+
+        // Tutorial Clears
     }
 
     // Used to save the game.
@@ -24,10 +42,10 @@ namespace RM_EM
     {
         // The game data.
         // The last game save. This is only for testing purposes.
-        public CCC_GameData lastSave;
+        public EM_GameData lastSave;
 
         // The data that was loaded.
-        public CCC_GameData loadedData;
+        public EM_GameData loadedData;
 
         // The manager for the game.
         public GameplayManager gameManager;
@@ -62,7 +80,7 @@ namespace RM_EM
         public void Initialize(Button newGameButton, Button continueButton)
         {
             // Makes the continue button disappear if there is no data to load. 
-            Helper.StateButtonInitialize<CCC_GameData>(newGameButton, continueButton, OnLoadData);
+            Helper.StateButtonInitialize<EM_GameData>(newGameButton, continueButton, OnLoadData);
         }
 
         // Checks if the game manager has been set.
@@ -110,7 +128,7 @@ namespace RM_EM
             // Generates the save data.
             // TODO: add
             // CCC_GameData savedData = gameManager.GenerateSaveData();
-            CCC_GameData savedData = null;
+            EM_GameData savedData = null;
 
             // Stores the most recent save.
             lastSave = savedData;
@@ -223,7 +241,7 @@ namespace RM_EM
         // }
 
         // Called to load data from the server.
-        private void OnLoadData(CCC_GameData loadedGameData)
+        private void OnLoadData(EM_GameData loadedGameData)
         {
             // Overrides serialized state data or continues with editor serialized values.
             if (loadedGameData != null)

@@ -47,6 +47,9 @@ namespace RM_EM
         // A list of all challengers in the game.
         public List<ChallengerWorld> challengers;
 
+        // The total number of challengers in the game.
+        public const int CHALLENGER_COUNT = 9;
+
         // The final challenger of the game.
         public ChallengerWorld finalChallenger;
 

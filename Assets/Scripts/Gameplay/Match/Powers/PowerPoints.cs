@@ -19,7 +19,7 @@ namespace RM_EM
         // Checks if the target is the 'user', or if it's the enemy.
         public bool targetIsUser = true;
 
-        // the multiplier.
+        // The multiplier.
         public float multiplier = 1.0F;
 
         // Start is called before the first frame update
@@ -27,10 +27,40 @@ namespace RM_EM
         {
             base.Start();
 
-            // No autosets since this script is used by multiple powers.
+            // Autoset information.
+            if (multiplier > 1.0F && targetIsUser) // Points Plus
+            {
+                // Autoset Type
+                if (power == powerType.none)
+                    power = powerType.pointsPlus;
+
+                // Autoset Name
+                if (powerName == string.Empty)
+                    powerName = "Points Up";
+
+                // Autoset description.
+                if (powerDesc == string.Empty)
+                    powerDesc = "Increases the number of points the user gets for a limited time.";
+            }
+            else if(multiplier < 1.0F && !targetIsUser) // Points Minus
+            {
+                // Autoset Type
+                if (power == powerType.none)
+                    power = powerType.pointsMinus;
+
+                // Autoset Name
+                if (powerName == string.Empty)
+                    powerName = "Points Down";
+
+                // Autoset description.
+                if (powerDesc == string.Empty)
+                    powerDesc = "Decreases the number of points the opponent gets for a limited time.";
+            }
+
+
 
             // If the target should be auto-set, and the target is null.
-            if(autoSetTarget && target == null)
+            if (autoSetTarget && target == null)
             {
                 // Checks target.
                 if(targetIsUser) // Target is user.

@@ -24,25 +24,60 @@ namespace RM_EM
                 manager = WorldManager.Instance;
         }
 
-        // Selects a power by type.
-        public void SelectPower(Power.powerType powerType)
-        {
-            // Checks if the player's has the power in their list.
-            if(!powerList.Contains(powerType) && powerType != Power.powerType.none) 
-            {
-                powerList.Add(powerType);
-            }
-
-            // Set the power.
-            power = powerType;
-        }
-
         // Sorts the power list.
         public void SortPowerList()
         {
             // Sorts the power list.
             if (powerList.Count > 0)
                 powerList.Sort();
+        }
+
+        // Selects a power by type.
+        // If 'savePower' is true, the power is saved to the list if it's not already in the list.
+        public void SetPower(Power.powerType newPower, bool savePower = true)
+        {
+            // If the power should be saved.
+            if(savePower)
+            {
+                // Checks if the player's has the power in their list.
+                if (!powerList.Contains(newPower) && newPower != Power.powerType.none)
+                {
+                    powerList.Add(newPower);
+                }
+            }
+            
+
+            // Set the power.
+            power = newPower;
+        }
+
+        // Sets the power using the index.
+        public void SetPower(int index)
+        {
+            if (index > 0 && index < powerList.Count)
+                power = powerList[index];
+        }
+
+        // Gives a power to the player.
+        // If 'selectPower' is true, the power is also automatically selected.
+        public void GivePower(Power.powerType newPower, bool selectPower)
+        {
+            // If the new power is not equal to none.
+            if(newPower != Power.powerType.none)
+            {
+                // If the power list does not contain the provided power, add it.
+                if (!powerList.Contains(newPower))
+                    powerList.Add(newPower);
+            }
+
+            // Sorts the power list.
+            SortPowerList();
+
+            // If the power should also be selected.
+            if(selectPower)
+            {
+                SetPower(newPower);
+            }
         }
     }
 }
