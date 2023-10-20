@@ -32,6 +32,11 @@ namespace RM_EM
         // The manager for world events.
         public GameEventManager worldEvents;
 
+        [Header("Player")]
+
+        // The player in the game world.
+        public PlayerWorld playerWorld;
+
         [Header("Areas, Challengers")]
         // The areas in the world.
         public List<Area> areas = new List<Area>();

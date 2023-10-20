@@ -21,7 +21,8 @@ namespace RM_EM
         // The UI contnet shown when the match ends.
         public GameObject matchEnd;
 
-        [Header("Match/Player 1")]
+        [Header("Match/Players")]
+
         // The player 1 equation.
         public TMP_Text p1EquationText;
 
@@ -34,7 +35,7 @@ namespace RM_EM
         // The fill image for the player 1 power bar.
         public Image p1PowerBarFill;
 
-        // The power button for player 2.
+        // The power button for player 1.
         public Button p1PowerButton;
 
         // The skip button for player 1.

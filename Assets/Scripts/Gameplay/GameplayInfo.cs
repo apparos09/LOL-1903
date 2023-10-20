@@ -305,6 +305,12 @@ namespace RM_EM
             // Difficulty, and defeat status.
             challengerDifficulty = challenger.difficulty;
             challengerDefeated = challenger.defeated;
+
+
+            // PLAYERS
+            // Sets the powers.
+            p1Power = manager.playerWorld.power;
+            p2Power = challenger.power;
         }
 
         // Loads match info into the manager.
@@ -447,10 +453,7 @@ namespace RM_EM
 
             // PLAYERS //
 
-            // TODO: comment this out when testing specific powers, or just enter the match with no data.
             // Powers
-            // Generate the powers prefabs.
-            PowerPrefabs powerPrefabs = PowerPrefabs.Instance;
         
             // Goes through both players.
             for(int n = 1; n <= 2; n++)

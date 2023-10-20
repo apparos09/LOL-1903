@@ -40,7 +40,10 @@ namespace RM_EM
 
         [Header("Puzzle")]
         // The puzzle type.
-        public Puzzle.puzzleType puzzle;
+        public Puzzle.puzzleType puzzle = Puzzle.puzzleType.unknown;
+
+        // The power the challenger has.
+        public Power.powerType power = Power.powerType.none;
 
         [Header("Exponents")]
         // The exponent rates.

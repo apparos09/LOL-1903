@@ -2898,6 +2898,53 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3346965147616308430, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
   m_PrefabInstance: {fileID: 1503540672}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1505618322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505618324}
+  - component: {fileID: 1505618323}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1505618323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505618322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1686e8c6f0cd14faf637fea7c877d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  power: 0
+  powerList: 
+--- !u!4 &1505618324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505618322}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1514381026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3789,6 +3836,7 @@ MonoBehaviour:
   worldUI: {fileID: 1503540674}
   worldCamera: {fileID: 272905709}
   worldEvents: {fileID: 2106017675}
+  playerWorld: {fileID: 1505618323}
   areas:
   - {fileID: 79982932}
   - {fileID: 1514381027}
@@ -3868,6 +3916,7 @@ SceneRoots:
   - {fileID: 1503540672}
   - {fileID: 1846092011}
   - {fileID: 2106017677}
+  - {fileID: 1505618324}
   - {fileID: 79982931}
   - {fileID: 1514381026}
   - {fileID: 434993158}
