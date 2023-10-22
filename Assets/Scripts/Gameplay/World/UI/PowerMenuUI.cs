@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RM_EM
 {
@@ -23,6 +24,9 @@ namespace RM_EM
 
         // The world UI.
         public WorldUI worldUI;
+
+        // The power symbols.
+        public PowerInfo powerSymbols;
 
         // The player.
         public PlayerWorld playerWorld;

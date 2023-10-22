@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 720399440158785242}
   - component: {fileID: 8255859112656522611}
   m_Layer: 0
-  m_Name: Power Prefabs
+  m_Name: Power Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,3 +48,7 @@ MonoBehaviour:
   pointsPlus: {fileID: 5864321008241972459, guid: d24b9c4acdee7b64f81e1839c8dc3aa4, type: 3}
   pointsMinus: {fileID: 3464867747759636638, guid: d7f73ee8e6fdab2488f2ed8bfde29792, type: 3}
   renderTwist: {fileID: 5356708047269608481, guid: abdc29da6e7cd4641b8f25818345a883, type: 3}
+  defaultSymbol: {fileID: 21300000, guid: 17bee2e09afb6914e9e82a388e1d067f, type: 3}
+  pointsPlusSymbol: {fileID: 21300000, guid: 17bee2e09afb6914e9e82a388e1d067f, type: 3}
+  pointsMinusSymbol: {fileID: 21300000, guid: 17bee2e09afb6914e9e82a388e1d067f, type: 3}
+  renderTwistSymbol: {fileID: 21300000, guid: 17bee2e09afb6914e9e82a388e1d067f, type: 3}

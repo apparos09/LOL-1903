@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -112,6 +113,16 @@ namespace RM_EM
                 // Load the world info.
                 gameInfo.LoadWorldInfo(this);
             }
+
+            // The power menu can only be accessed if the player has powers.
+            // TODO: once the game is done, you can take out these null checks since this should always be present.
+            //if(worldUI.powerMenuUI != null)
+            //{
+            //    if(worldUI.powerMenuUI.menuButton != null)
+            //    {
+            //        worldUI.powerMenuUI.menuButton.interactable = playerWorld.HasPowers();
+            //    }
+            //}
 
             // StartTutorial(tutorial.GetTestPages());
         }
@@ -357,6 +368,161 @@ namespace RM_EM
             worldUI.HideChallengeUI();
         }
 
+
+
+        // SAVING/LOADING
+        // Generates the save data or the game.
+        public EM_GameData GenerateSaveData()
+        {
+            // The data.
+            EM_GameData data = new EM_GameData();
+
+            // Save the current area index.
+            data.currAreaIndex = currAreaIndex;
+
+            // Saves the player's current power.
+            data.playerPower = playerWorld.power;
+
+            // Stores the player's power information.
+            for (int i = 0; i < data.playerPowerList.Length && i < playerWorld.powerList.Count; i++)
+            {
+                data.playerPowerList[i] = playerWorld.powerList[i];
+            }
+
+            // Stores information on the challengers that have been defeated.
+            for (int i = 0; i < data.challengersDefeated.Length && i < challengers.Count; i++)
+            {
+                // Saves if the challenger has been defeated.
+                // NOTE: you don't check challenger available, but I don't think you need to.
+                data.challengersDefeated[i] = challengers[i].defeated;
+            }
+
+            // TODO: add tutorial clears.
+
+            // The data is valid.
+            data.valid = true;
+
+            // Returns 'true'.
+            return data;
+        }
+
+        // Saves the data for the game.
+        public bool SaveGame()
+        {
+            // If the LOL Manager does not exist, return false.
+            if (!LOLManager.Instantiated)
+            {
+                Debug.LogError("The LOL Manager does not exist.");
+                return false;
+            }
+
+            // Gets the save system.
+            SaveSystem saveSys = LOLManager.Instance.saveSystem;
+
+            // Checks if the save system exists.
+            if (saveSys == null)
+            {
+                Debug.LogError("The save system could not be found.");
+                return false;
+            }
+            
+
+            // Set the world manager.
+            if(saveSys.worldManager == null)
+                saveSys.worldManager = this;
+
+            // Saves the game.
+            bool result = saveSys.SaveGame();
+            return result;
+        }
+
+        // Loads data, and return a 'bool' to show it was successful.
+        public bool LoadGame()
+        {
+            // If the LOL Manager does not exist, return false.
+            if(!LOLManager.Instantiated)
+            {
+                Debug.LogError("The LOL Manager does not exist.");
+                return false;
+            }
+
+            // Gets the save system.
+            SaveSystem saveSys = LOLManager.Instance.saveSystem;
+
+            // Checks if the save system exists.
+            if(saveSys == null)
+            {
+                Debug.LogError("The save system could not be found.");
+                return false;
+            }
+
+            // No data to load.
+            if(saveSys.loadedData == null)
+            {
+                Debug.LogError("The save data does not exist.");
+                return false;
+            }
+
+            // Data invalid.
+            if (saveSys.loadedData.valid == false)
+            {
+                Debug.LogError("The save data is invalid.");
+                return false;
+            }
+
+            // Gets the loaded data.
+            EM_GameData loadedData = saveSys.loadedData;
+
+            // LOADING THE DATA
+            // Save the current area index.
+            SetArea(loadedData.currAreaIndex);
+
+
+            // Clears the power list.
+            playerWorld.powerList.Clear();
+
+            // Gives the player their powers.
+            for (int i = 0; i < loadedData.playerPowerList.Length; i++)
+            {
+                // Gives the player the power.
+                playerWorld.GivePower(loadedData.playerPowerList[i], false);
+            }
+
+            // Sets the player's current power.
+            playerWorld.SetPower(loadedData.playerPower);
+
+            // Sets if challengers have been defeated or not.
+            for (int i = 0; i < loadedData.challengersDefeated.Length && i < challengers.Count; i++)
+            {
+                // Sets if the challenger has been defeated.
+                challengers[i].defeated = loadedData.challengersDefeated[i];
+            }
+
+            // TODO: implement tutorial content.
+
+            // The data has been loaded successfully.
+            return true;
+        }
+
+        
+
+        // SCENES //
+        // Goes to the match scene. Call AcceptChallenge() if a match info object should be created.
+        public void ToMatchScene()
+        {
+            // Gets the game info.
+            GameplayInfo gameInfo = GameplayInfo.Instance;
+
+            // Save the world and match info to the game info instance.
+            gameInfo.SaveWorldInfo(this);
+            gameInfo.SaveMatchInfo(this);
+
+            // TODO: add loading screen.
+            SceneManager.LoadScene("MatchScene");
+        }
+
+
+        // GAME COMPLETE
         // Called when the game is completed.
         public override void OnGameComplete()
         {
@@ -381,21 +547,6 @@ namespace RM_EM
 
             // Goes to the scene.
             base.OnGameComplete();
-        }
-
-        // SCENES //
-        // Goes to the match scene. Call AcceptChallenge() if a match info object should be created.
-        public void ToMatchScene()
-        {
-            // Gets the game info.
-            GameplayInfo gameInfo = GameplayInfo.Instance;
-
-            // Save the world and match info to the game info instance.
-            gameInfo.SaveWorldInfo(this);
-            gameInfo.SaveMatchInfo(this);
-
-            // TODO: add loading screen.
-            SceneManager.LoadScene("MatchScene");
         }
 
 

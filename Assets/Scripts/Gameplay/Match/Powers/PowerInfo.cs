@@ -5,10 +5,10 @@ using UnityEngine;
 namespace RM_EM
 {
     // The power prefabs.
-    public class PowerPrefabs : MonoBehaviour
+    public class PowerInfo : MonoBehaviour
     {
         // The singleton instance.
-        private static PowerPrefabs instance;
+        private static PowerInfo instance;
 
         // Gets set to 'true' when the singleton has been instanced.
         // This isn't needed, but it helps with the clarity.
@@ -28,8 +28,22 @@ namespace RM_EM
         // Twists the opponent's render (no use for the player since the AI isn't effected).
         public PowerTwist renderTwist;
 
+        [Header("Symbols")]
+
+        // The default power symbol.
+        public Sprite defaultSymbol;
+
+        // The points plus symbol.
+        public Sprite pointsPlusSymbol;
+
+        // The points minus symbol.
+        public Sprite pointsMinusSymbol;
+
+        // The render twist symbol.
+        public Sprite renderTwistSymbol;
+
         // Constructor
-        private PowerPrefabs()
+        private PowerInfo()
         {
             // ...
         }
@@ -56,7 +70,7 @@ namespace RM_EM
         }
 
         // Gets the instance.
-        public static PowerPrefabs Instance
+        public static PowerInfo Instance
         {
             get
             {
@@ -64,7 +78,7 @@ namespace RM_EM
                 if (instance == null)
                 {
                     // Tries to find the instance.
-                    instance = FindObjectOfType<PowerPrefabs>(true);
+                    instance = FindObjectOfType<PowerInfo>(true);
 
 
                     // The instance doesn't already exist.
@@ -72,7 +86,7 @@ namespace RM_EM
                     {
                         // Generate the instance.
                         GameObject go = new GameObject("Power Prefabs (singleton)");
-                        instance = go.AddComponent<PowerPrefabs>();
+                        instance = go.AddComponent<PowerInfo>();
                     }
 
                 }

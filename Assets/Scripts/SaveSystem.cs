@@ -15,6 +15,8 @@ namespace RM_EM
     [System.Serializable]
     public class EM_GameData
     {
+        // TODO: add in marker to show that the game is over.
+
         // Shows if the game data is valid.
         public bool valid = false;
 
@@ -47,8 +49,8 @@ namespace RM_EM
         // The data that was loaded.
         public EM_GameData loadedData;
 
-        // The manager for the game.
-        public GameplayManager gameManager;
+        // The world manager for the game, which has the save information.
+        public WorldManager worldManager;
 
         // LOL - AutoSave //
         // Added from the ExampleCookingGame. Used for feedback from autosaves.
@@ -83,14 +85,14 @@ namespace RM_EM
             Helper.StateButtonInitialize<EM_GameData>(newGameButton, continueButton, OnLoadData);
         }
 
-        // Checks if the game manager has been set.
-        private bool IsGameManagerSet()
+        // Checks if the world manager has been set.
+        private bool IsWorldManagerSet()
         {
-            if (gameManager == null)
-                gameManager = FindObjectOfType<GameplayManager>(true);
+            if (worldManager == null)
+                worldManager = FindObjectOfType<WorldManager>(true);
 
             // Game manager does not exist.
-            if (gameManager == null)
+            if (worldManager == null)
             {
                 Debug.LogWarning("The Game Manager couldn't be found.");
                 return false;
@@ -116,7 +118,7 @@ namespace RM_EM
         public bool SaveGame()
         {
             // The game manager does not exist if false.
-            if (!IsGameManagerSet())
+            if (!IsWorldManagerSet())
             {
                 Debug.LogWarning("The Game Manager couldn't be found.");
                 return false;
@@ -126,9 +128,7 @@ namespace RM_EM
             bool success = false;
 
             // Generates the save data.
-            // TODO: add
-            // CCC_GameData savedData = gameManager.GenerateSaveData();
-            EM_GameData savedData = null;
+            EM_GameData savedData = worldManager.GenerateSaveData();
 
             // Stores the most recent save.
             lastSave = savedData;
@@ -256,7 +256,7 @@ namespace RM_EM
             }
 
             // TODO: save data for game loading.
-            if (!IsGameManagerSet())
+            if (!IsWorldManagerSet())
             {
                 Debug.LogError("Game gameManager not found.");
                 return;

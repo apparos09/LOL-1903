@@ -32,6 +32,12 @@ namespace RM_EM
                 powerList.Sort();
         }
 
+        // Checks if the player has powers.
+        public bool HasPowers()
+        {
+            return powerList.Count > 0;
+        }
+
         // Selects a power by type.
         // If 'savePower' is true, the power is saved to the list if it's not already in the list.
         public void SetPower(Power.powerType newPower, bool savePower = true)

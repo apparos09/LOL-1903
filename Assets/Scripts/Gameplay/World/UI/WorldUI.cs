@@ -14,6 +14,9 @@ namespace RM_EM
         // The match manager.
         public WorldManager worldManager;
 
+        // The power menu UI.
+        public PowerMenuUI powerMenuUI;
+
         // The save window.
         public GameObject saveWindow;
 

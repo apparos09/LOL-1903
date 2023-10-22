@@ -104,7 +104,7 @@ namespace RM_EM
         public void SetPower(Power.powerType type, bool setPlayerAsParent = true)
         {
             // The power prefabs.
-            PowerPrefabs powerPrefabs = PowerPrefabs.Instance;
+            PowerInfo powerPrefabs = PowerInfo.Instance;
 
             // The new power for the player.
             Power newPower = null;
