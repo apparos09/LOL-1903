@@ -32,7 +32,17 @@ namespace RM_EM
         public PlayerWorld playerWorld;
 
         // The power entries.
-        public PowerEntry[] powerEntries = new PowerEntry[Power.POWER_TYPE_COUNT];
+        public PowerEntry[] powerEntryList = new PowerEntry[Power.POWER_TYPE_COUNT];
+
+        [Header("Entries (UI)")]
+        // Menu entry 0
+        public PowerMenuEntryUI powerMenuEntry0;
+
+        // Menu entry 1
+        public PowerMenuEntryUI powerMenuEntry1;
+
+        // Menu entry 2
+        public PowerMenuEntryUI powerMenuEntry2;
 
         // Start is called before the first frame update
         void Start()
@@ -59,14 +69,30 @@ namespace RM_EM
             LoadPlayerPowerList();
         }
 
+        // Generates a power none entry.
+        public PowerEntry GeneratePowerNoneEntry()
+        {
+            PowerEntry entry = new PowerEntry();
+
+            entry.power = Power.powerType.none;
+
+            entry.name = "-";
+            entry.description = "-";
+
+            return entry;
+        }
+
         // Loads the player power list.
         public void LoadPlayerPowerList()
         {
             // Sorts the power list.
             playerWorld.SortPowerList();
 
+            // Generates a none entry as the first spot (used to deselect powers).
+            powerEntryList[0] = GeneratePowerNoneEntry();
+
             // Goes through all entries.
-            for(int i = 0; i < powerEntries.Length; i++) 
+            for(int i = 1; i < powerEntryList.Length; i++) 
             { 
                 // Put in list if valid.
                 if(i < playerWorld.powerList.Count)
@@ -80,16 +106,26 @@ namespace RM_EM
                     entry.description = Power.GetPowerDescription(entry.power);
 
                     // Saves the entry.
-                    powerEntries[i] = entry;
+                    powerEntryList[i] = entry;
                 }
                 else
                 {
-                    // Set to null/empty.
-                    powerEntries = null;
+                    // Set the none entry.
+                    powerEntryList[i] = GeneratePowerNoneEntry();
+
                 }
             }
 
             // TODO: do more
+
+            // Loads the entries into the UI.
+            LoadEntriesIntoUI();
+        }
+
+        // Loads the entries into the UI.
+        public void LoadEntriesIntoUI()
+        {
+            // TODO: implement.
         }
 
         // Update is called once per frame

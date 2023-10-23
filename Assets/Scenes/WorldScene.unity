@@ -3997,10 +3997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 913044575922900778, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
-      propertyPath: menuButton
-      value: 
-      objectReference: {fileID: 1062252267}
+    - target: {fileID: 11632807328100210, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5903965004865130634, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
