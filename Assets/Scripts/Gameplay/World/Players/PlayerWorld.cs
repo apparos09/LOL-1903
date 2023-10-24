@@ -64,6 +64,12 @@ namespace RM_EM
                 power = powerList[index];
         }
 
+        // Removes the player's power.
+        public void RemovePower()
+        {
+            SetPower(Power.powerType.none, false);
+        }
+
         // Gives a power to the player.
         // If 'selectPower' is true, the power is also automatically selected.
         public void GivePower(Power.powerType newPower, bool selectPower)

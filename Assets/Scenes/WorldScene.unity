@@ -1836,7 +1836,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1062252268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503540674}
+        m_TargetAssemblyTypeName: RM_EM.WorldUI, Assembly-CSharp
+        m_MethodName: OpenPowersMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1062252268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2753,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f47e0c6b13130e4dadc2d6e56d73b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1492007654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8255859112656522611, guid: 90fb09ad673e5bf41b9861db4f52c94c, type: 3}
+  m_PrefabInstance: {fileID: 1268910679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cf5f64ea3d3474ea5ad6f51f0ac584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1499394960
@@ -4001,6 +4024,46 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 913044575922900778, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: playerWorld
+      value: 
+      objectReference: {fileID: 1505618323}
+    - target: {fileID: 913044575922900778, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: powerSymbols
+      value: 
+      objectReference: {fileID: 1492007654}
+    - target: {fileID: 2600831448011029106, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: powerInfo
+      value: 
+      objectReference: {fileID: 1492007654}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503540674}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePowersMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RM_EM.WorldUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285901309720261226, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5903965004865130634, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4081,6 +4144,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6183980914431074549, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: m_Name
+      value: Title Text (TMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576395272344565621, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: powerInfo
+      value: 
+      objectReference: {fileID: 1492007654}
+    - target: {fileID: 6812607437000074271, guid: 71cee3f25224ee34db9f90375feaaa60, type: 3}
+      propertyPath: powerInfo
+      value: 
+      objectReference: {fileID: 1492007654}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

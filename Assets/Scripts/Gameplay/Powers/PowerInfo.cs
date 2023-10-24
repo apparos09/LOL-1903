@@ -104,5 +104,59 @@ namespace RM_EM
                 return instanced;
             }
         }
+
+        // INFO
+        // Gets the name of the power type name.
+        // 'shortHand' determines if the name is the shorthand or the full-name.
+        public static string GetPowerTypeName(Power.powerType power, bool shortHand)
+        {
+            // Sets the name string to be empty.
+            string name = string.Empty;
+
+            switch(power)
+            {
+                case Power.powerType.none:
+                    // ...
+                    break;
+                case Power.powerType.pointsPlus:
+                    // ...
+                    break;
+                case Power.powerType.pointsMinus:
+                    // ...
+                    break;
+                case Power.powerType.powerTwist:
+                    // ...
+                    break;
+            }
+
+            // TODO: implement.
+            return name;
+        }
+
+        // Gets the power type description.
+        public static string GetPowerTypeDescription(Power.powerType power)
+        {
+            // Sets the description string to be empty.
+            string desc = string.Empty;
+
+            switch (power)
+            {
+                case Power.powerType.none:
+                    // ...
+                    break;
+                case Power.powerType.pointsPlus:
+                    // ...
+                    break;
+                case Power.powerType.pointsMinus:
+                    // ...
+                    break;
+                case Power.powerType.powerTwist:
+                    // ...
+                    break;
+            }
+
+            // TODO: implement.
+            return desc;
+        }
     }
 }

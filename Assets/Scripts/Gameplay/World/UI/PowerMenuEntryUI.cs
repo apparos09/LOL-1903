@@ -52,5 +52,11 @@ namespace RM_EM
             powerSymbolImage.sprite = powerInfo.defaultSymbol;
             powerNameText.text = "-";
         }
+
+        // Selects this entry.
+        public void SelectEntry()
+        {
+            powerMenu.SetSelectedEntry(this);
+        }
     }
 }

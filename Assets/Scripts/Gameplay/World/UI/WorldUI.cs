@@ -39,7 +39,21 @@ namespace RM_EM
                 worldManager = WorldManager.Instance;
         }
 
-        // SETTINGS (EXPANDED //
+        // SETTINGS (EXPANDED) //
+
+        // Opens the power menu.
+        public void OpenPowersMenu()
+        {
+            CloseAllWindows();
+            powerMenuUI.gameObject.SetActive(true);
+        }
+
+        // Closes the power menu.
+        public void ClosePowersMenu()
+        {
+            powerMenuUI.gameObject.SetActive(false);
+        }
+
         // Open the save window.
         public void OpenSaveWindow()
         {
