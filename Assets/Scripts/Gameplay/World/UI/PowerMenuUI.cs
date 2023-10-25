@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ namespace RM_EM
 
             // Name and description.
             public string name;
+            // TODO: add shorthand name...
             public string description;
         }
 
@@ -31,8 +33,8 @@ namespace RM_EM
         // The player.
         public PlayerWorld playerWorld;
 
-        // The power entries. // TODO: change this to an array.
-        public PowerEntry[] powerEntryList = new PowerEntry[Power.POWER_TYPE_COUNT];
+        // The power entries the player can select.
+        public List<PowerEntry> powerEntryList = new List<PowerEntry>();
 
         // The entry page index (the item at the index is the first one displayed).
         [Tooltip("The entry page index. The entry at this index is the first one in the display.")]
@@ -54,6 +56,23 @@ namespace RM_EM
 
         // Menu entry 2
         public PowerMenuEntryUI powerMenuEntry2;
+
+        // The power menu UI entry count.
+        public const int POWER_MENU_ENTRY_UI_COUNT = 3;
+
+        // The previous entry button.
+        public Button prevEntryButton;
+
+        // The next entry button.
+        public Button nextEntryButton;
+
+        [Header("Entries (UI)/Selected")]
+
+        // The selected power name.
+        public TMP_Text selectedPowerName;
+
+        // The selected power description.
+        public TMP_Text selectedPowerDesc;
 
         // Start is called before the first frame update
         void Start()
@@ -91,8 +110,9 @@ namespace RM_EM
 
             entry.power = Power.powerType.none;
 
-            entry.name = "-";
-            entry.description = "-";
+            // Gets the name and the description.
+            entry.name = PowerInfo.GetPowerTypeName(entry.power, false);
+            entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
 
             return entry;
         }
@@ -106,54 +126,67 @@ namespace RM_EM
             // Sorts the power list.
             playerWorld.SortPowerList();
 
+            // Clears the list.
+            powerEntryList.Clear();
+
             // Generates a none entry as the first spot (used to deselect powers).
-            powerEntryList[0] = GeneratePowerNoneEntry();
+            // TODO: remove this?
+            powerEntryList.Add(GeneratePowerNoneEntry());
 
-            // Goes through all entries.
-            for(int i = 1; i < powerEntryList.Length; i++) 
-            { 
-                // Put in list if valid.
-                if(i < playerWorld.powerList.Count)
+            // Default to first index (nothing power).
+            selectedEntryIndex = 0;
+
+            // Goes through all of the player's powers.
+            for (int i = 0; i < playerWorld.powerList.Count; i++)
+            {
+                // New entry.
+                PowerEntry entry = new PowerEntry();
+
+                // Saves the power information (TODO: call function for name and description).
+                entry.power = playerWorld.powerList[i];
+                entry.name = PowerInfo.GetPowerTypeName(entry.power, true);
+                entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
+
+                // Adds the entry to the list.
+                powerEntryList.Add(entry);
+
+                // If this is the player's current power, set this as the selected power.
+                if (playerWorld.powerList[i] == playerWorld.power)
                 {
-                    // New entry.
-                    PowerEntry entry = new PowerEntry();
-
-                    // Saves the power information (TODO: call function for name and description).
-                    entry.power = playerWorld.powerList[i];
-                    entry.name = PowerInfo.GetPowerTypeName(entry.power, true);
-                    entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
-
-                    // Saves the entry.
-                    powerEntryList[i] = entry;
+                    selectedEntryIndex = powerEntryList.Count - 1;
+                    selectedEntry = powerEntryList[i];
                 }
-                else
-                {
-                    // Set the none entry.
-                    powerEntryList[i] = GeneratePowerNoneEntry();
-
-                }
-
-                // If the player's power is this entry, set the index and selected power.
-                if (powerEntryList[i].power == playerWorld.power)
-                {
-                    selectedEntryIndex = i;
-                    selectedEntry = powerEntryList[i]; // TODO: check that this works properly.
-                }
-                    
             }
 
             // TODO: do more
 
-            // Loads the entries into the UI.
+            // Sets to the first page.
             entryPageIndex = 0;
-            LoadEntriesIntoUI();
+
+            // Set selected power name and description to defaults.
+            selectedPowerName.text = "-";
+            selectedPowerDesc.text = "-";
+
+            // Make buttons interactable.
+            prevEntryButton.interactable = true;
+            nextEntryButton.interactable = true;
+
+            // If there are no other pages...
+            if (powerEntryList.Count <= 3)
+            {
+                prevEntryButton.interactable = false;
+                nextEntryButton.interactable = false;
+            }
+
+            // Loads the entry into the UI.
+            LoadEntriesIntoUI(0);
         }
 
         // Loads the entries into the UI.
         public void LoadEntriesIntoUI()
         {
             // Makes sure index is valid.
-            entryPageIndex = Mathf.Clamp(entryPageIndex, 0, powerEntryList.Length - 1);
+            entryPageIndex = Mathf.Clamp(entryPageIndex, 0, powerEntryList.Count - 1);
 
             // Puts the entries into an array.
             PowerMenuEntryUI[] entryArr = new PowerMenuEntryUI[3] { powerMenuEntry0, powerMenuEntry1, powerMenuEntry2 };
@@ -169,7 +202,7 @@ namespace RM_EM
                     entryUI.gameObject.SetActive(true);
 
                 // If the index is valid, load the entry.
-                if (currIndex >= 0 && currIndex < powerEntryList.Length)
+                if (currIndex >= 0 && currIndex < powerEntryList.Count)
                 {
                     entryUI.SetEntry(powerEntryList[currIndex]);
                 }
@@ -183,7 +216,11 @@ namespace RM_EM
                 }
 
                 // Increase the index.
-                currIndex++;              
+                currIndex++;
+
+                // Reset the currIndex variable.
+                if (currIndex >= powerEntryList.Count)
+                    currIndex = 0;
             }
 
         }
@@ -198,11 +235,17 @@ namespace RM_EM
         // Goes to the previous page.
         public void PreviousPage()
         {
-            int index = entryPageIndex - 3;
+            // If there's 3 entries or less (i.e., all of them can appear on screen)...
+            // Then don't allow page switching.
+            if (powerEntryList.Count <= POWER_MENU_ENTRY_UI_COUNT)
+                return;
+
+            // Shift by -1.
+            int index = entryPageIndex - 1;
 
             // Bounds check.
             if (index < 0)
-                index = powerEntryList.Length - 1;
+                index = powerEntryList.Count - 1;
 
             // Load the entries.
             LoadEntriesIntoUI(index);
@@ -211,10 +254,16 @@ namespace RM_EM
         // Goe to the next page.
         public void NextPage()
         {
-            int index = entryPageIndex + 3;
+            // If there's 3 entries or less (i.e., all of them can appear on screen)...
+            // Then don't allow page switching.
+            if (powerEntryList.Count <= POWER_MENU_ENTRY_UI_COUNT)
+                return;
 
-            // Bounds check.
-            if (index > powerEntryList.Length)
+            // Shift by +1.
+            int index = entryPageIndex + 1;
+
+            // Bounds checks.
+            if (index >= powerEntryList.Count)
                 index = 0;
 
             // Load the entries.
@@ -251,6 +300,10 @@ namespace RM_EM
 
             // Selects this entry.
             selectedEntry = entryUI.entry;
+
+            // The selected power's name.
+            selectedPowerName.text = selectedEntry.name;
+            selectedPowerDesc.text = selectedEntry.description;
         }
 
         // Equips the selected power.

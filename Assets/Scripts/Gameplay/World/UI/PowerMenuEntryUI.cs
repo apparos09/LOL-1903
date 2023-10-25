@@ -39,6 +39,7 @@ namespace RM_EM
         {
             entry = newEntry;
 
+            // TODO: get symbol by type.
             powerSymbolImage.sprite = powerInfo.defaultSymbol;
             powerNameText.text = newEntry.name;
         }

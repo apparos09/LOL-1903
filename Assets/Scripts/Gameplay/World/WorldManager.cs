@@ -27,11 +27,14 @@ namespace RM_EM
         // The camera the world uses.
         public WorldCamera worldCamera;
 
-        // Used to pause the world.
-        protected bool worldPaused = false;
-
         // The manager for world events.
         public GameEventManager worldEvents;
+
+        // An object that's used to block world colliders.
+        public GameObject colliderBlocker;
+
+        // Used to pause the world.
+        protected bool worldPaused = false;
 
         [Header("Player")]
 
@@ -100,6 +103,9 @@ namespace RM_EM
 
             // Hide the challenger UI.
             worldUI.HideChallengeUI();
+
+            // Turn off the blocker.
+            colliderBlocker.SetActive(false);
 
             // Sets the current area.
             SetArea(currAreaIndex);

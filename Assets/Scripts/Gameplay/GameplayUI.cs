@@ -37,9 +37,24 @@ namespace RM_EM
         {
             // Close the settings window.
             settingsUI.gameObject.SetActive(false);
+            OnWindowClosed();
 
             // Close all the windows.
-            CloseAllWindows();
+            // CloseAllWindows();
+        }
+
+        // Toggles the settings on and off.
+        public void ToggleSettings()
+        {
+            // If the settings is active, close it.
+            if(settingsUI.gameObject.activeSelf) 
+            {
+                CloseSettings();
+            }
+            else // Open the settings.
+            {
+                OpenSettings();
+            }
         }
 
         // Closes all the windows.

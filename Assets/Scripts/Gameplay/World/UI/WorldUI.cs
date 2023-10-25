@@ -46,12 +46,28 @@ namespace RM_EM
         {
             CloseAllWindows();
             powerMenuUI.gameObject.SetActive(true);
+            OnWindowOpened(powerMenuUI.gameObject);
         }
 
         // Closes the power menu.
         public void ClosePowersMenu()
         {
             powerMenuUI.gameObject.SetActive(false);
+            OnWindowClosed();
+        }
+
+        // Toggles the powers menu on/off.
+        public void TogglePowersMenu()
+        {
+            // If the powers menu is active, close it.
+            if (settingsUI.gameObject.activeSelf)
+            {
+                ClosePowersMenu();
+            }
+            else // Open the powers menu.
+            {
+                OpenPowersMenu();
+            }
         }
 
         // Open the save window.
@@ -68,15 +84,65 @@ namespace RM_EM
             OnWindowClosed();
         }
 
+        // Toggles the save window.
+        public void ToggleSaveWindow()
+        {
+            // If the save window is active, close it.
+            if (settingsUI.gameObject.activeSelf)
+            {
+                CloseSaveWindow();
+            }
+            else // Open the save window.
+            {
+                OpenSaveWindow();
+            }
+        }
+
+        // Saves the game and continues it.
+        public void SaveAndContinue()
+        {
+            worldManager.SaveGame();
+            CloseSaveWindow();
+        }
+
+        // Save and quit.
+        public void SaveAndQuit()
+        {
+            worldManager.SaveGame();
+            worldManager.ToTitleScene();
+        }
+
         // Overrides the on window opened function.
         public override void OnWindowOpened(GameObject window)
         {
             base.OnWindowOpened(window);
 
+            // Turn off the powers window.
+            if (window != powerMenuUI.gameObject)
+                powerMenuUI.gameObject.SetActive(false);
+
             // Turns off the save window.
             if (window != saveWindow)
                 saveWindow.gameObject.SetActive(false);
+
+            // Turn off the settings window.
+            if(window != settingsUI.gameObject)
+                settingsUI.gameObject.SetActive(false);
+
+            // Turn on the collider blocker.
+            worldManager.colliderBlocker.SetActive(true);
         }
+
+        // Called when a window is closed.
+        public override void OnWindowClosed()
+        {
+            base.OnWindowClosed();
+
+            // Turn off the blocker.
+            worldManager.colliderBlocker.SetActive(false);
+        }
+
+
 
         // NEXT AREA/PREVIOUS AREA
         // Goes to the next area.

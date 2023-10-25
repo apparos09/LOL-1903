@@ -99,6 +99,11 @@ namespace RM_EM
             return pages;
         }
 
+        public List<Page> GetOpeningTutorial()
+        {
+            return GetTestPages();
+        }
+
         // This function is called when the MonoBehaviour will be destroyed.
         private void OnDestroy()
         {

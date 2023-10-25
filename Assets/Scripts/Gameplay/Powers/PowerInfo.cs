@@ -116,16 +116,16 @@ namespace RM_EM
             switch(power)
             {
                 case Power.powerType.none:
-                    // ...
+                    name = "None";
                     break;
                 case Power.powerType.pointsPlus:
-                    // ...
+                    name = "Points Plus";
                     break;
                 case Power.powerType.pointsMinus:
-                    // ...
+                    name = "Points Minus";
                     break;
                 case Power.powerType.powerTwist:
-                    // ...
+                    name = "Twist";
                     break;
             }
 
@@ -142,16 +142,16 @@ namespace RM_EM
             switch (power)
             {
                 case Power.powerType.none:
-                    // ...
+                    desc = "A power that does nothing.";
                     break;
                 case Power.powerType.pointsPlus:
-                    // ...
+                    desc = "A power that increases the user's points for a time.";
                     break;
                 case Power.powerType.pointsMinus:
-                    // ...
+                    desc = "A power that decreases the opponent's points for a time.";
                     break;
                 case Power.powerType.powerTwist:
-                    // ...
+                    desc = "A power that flips the opponent's view upside down.";
                     break;
             }
 
