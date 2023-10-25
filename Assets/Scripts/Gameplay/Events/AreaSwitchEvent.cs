@@ -16,7 +16,7 @@ namespace RM_EM
         public Area area;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
             // If the event tag isn't set.
             if(eventTag == "")
@@ -29,6 +29,9 @@ namespace RM_EM
             // Tries to get the area if it's not set.
             if (area == null)
                 area = GetComponent<Area>();
+
+            // Base Start
+            base.Start();
         }
 
         // Initializes the event.
@@ -39,7 +42,7 @@ namespace RM_EM
         }
 
         // Updates the event.
-        public override bool UpdateEvent()
+        public override void UpdateEvent()
         {
             // Checks if the area is finished.
             bool finished = true;
@@ -63,10 +66,8 @@ namespace RM_EM
                 finished = true;
             }
 
-            // Not necessary.
+            // Set cleared.
             cleared = finished;
-
-            return finished;
         }
 
         // Called when the event is complete.
@@ -80,6 +81,8 @@ namespace RM_EM
                     manager.worldUI.nextAreaButton.interactable = true;
             }
 
+            // On Event Complete
+            base.OnEventComplete();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace RM_EM
 
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
             if(eventTag == "")
                 eventTag = "Challenger";
@@ -28,6 +28,9 @@ namespace RM_EM
             // Tries to get the challenger.
             if (challenger == null)
                 challenger = GetComponent<ChallengerWorld>();
+
+            // Calls base.Start() at the end to make sure everything's set.
+            base.Start();
         }
 
         // Initializes the event.
@@ -39,7 +42,7 @@ namespace RM_EM
         }
 
         // Updates the event.
-        public override bool UpdateEvent()
+        public override void UpdateEvent()
         {
             // Checks if all challengers have been beaten.
             bool allBeaten = true;
@@ -59,10 +62,8 @@ namespace RM_EM
                 }
             }
 
-            // Sets the cleared parameter (not needed).
+            // Sets the cleared parameter.
             cleared = allBeaten;
-
-            return allBeaten;
         }
 
         // Completes the event.
@@ -71,6 +72,9 @@ namespace RM_EM
             // Turn on the component, and make challenger availble.
             challenger.enabled = true;
             challenger.SetChallengerAvailable(true);
+
+            // Calls the event complete base function.
+            base.OnEventComplete();
         }
 
     }

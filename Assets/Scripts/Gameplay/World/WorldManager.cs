@@ -27,8 +27,9 @@ namespace RM_EM
         // The camera the world uses.
         public WorldCamera worldCamera;
 
-        // The manager for world events.
-        public GameEventManager worldEvents;
+        // This isn't needed.
+        // // The list for world events.
+        // public List<GameEvent> worldEvents = new List<GameEvent>();
 
         // An object that's used to block world colliders.
         public GameObject colliderBlocker;

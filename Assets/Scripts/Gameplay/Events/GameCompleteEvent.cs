@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RM_EM
@@ -11,21 +12,18 @@ namespace RM_EM
         public WorldManager manager;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
             // Not set.
             if(manager == null)
                 manager = WorldManager.Instance;
-        }
 
-        // Initialize event.
-        public override void InitalizeEvent()
-        {
-            // ...
+            // Base Start
+            base.Start();
         }
 
         // Update Event
-        public override bool UpdateEvent()
+        public override void UpdateEvent()
         {
             // TODO: don't check this every frame.
 
@@ -61,7 +59,8 @@ namespace RM_EM
                 finished = false;
             }
 
-            return finished;
+            // Sets finished.
+            cleared = finished;
         }
 
         // Event complete.
@@ -69,6 +68,9 @@ namespace RM_EM
         {
             // Called to complete the game.
             manager.OnGameComplete();
+
+            // Calls the base functon.
+            base.OnEventComplete();
         }
 
     }

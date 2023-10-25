@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RM_EM
 {
-    // TODO: implement.
+    // TODO: maybe rename this to story event?
     // An event to trigger a tutorial.
     public class TutorialEvent : GameEvent
     {
@@ -14,29 +14,31 @@ namespace RM_EM
         // TODO: add a callback or something for the tutorial.
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
             // Grabs the tutorial instance.
             if (tutorial == null)
                 tutorial = Tutorial.Instance;
+
+            base.Start();
         }
 
         // Initializes the event.
         public override void InitalizeEvent()
         {
-            throw new System.NotImplementedException();
+            base.InitalizeEvent();
         }
 
         // Updates the event.
-        public override bool UpdateEvent()
+        public override void UpdateEvent()
         {
-            throw new System.NotImplementedException();
+            // ...
         }
 
         // Called when the event is complete.
         public override void OnEventComplete()
         {
-            throw new System.NotImplementedException();
+            base.OnEventComplete();
         }
 
         //// Update is called once per frame
