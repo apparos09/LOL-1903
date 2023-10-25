@@ -99,10 +99,72 @@ namespace RM_EM
             return pages;
         }
 
+        
         public List<Page> GetOpeningTutorial()
         {
             return GetTestPages();
         }
+
+        public List<Page> GetExponentBasicsTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetFirstMatchTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetFirstMatchLossTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetPostFirstMatchTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetProductRuleTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetPowerOfAPowerRuleTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetProductOfAProductRuleTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetZeroExponentRuleTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetNegativeExponentRuleTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetFirstPowerTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetFinalMatchTutorial()
+        {
+            return GetTestPages();
+        }
+
+        public List<Page> GetGameOverTutorial()
+        {
+            return GetTestPages();
+        }
+
 
         // This function is called when the MonoBehaviour will be destroyed.
         private void OnDestroy()
