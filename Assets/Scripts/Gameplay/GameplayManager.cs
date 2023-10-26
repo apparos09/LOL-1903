@@ -116,7 +116,7 @@ namespace RM_EM
         }
 
         // Starts a tutorial using the provided pages.
-        public void StartTutorial(List<Page> pages)
+        public virtual void StartTutorial(List<Page> pages)
         {
             // Sets the pages and opens the text box.
             gameUI.tutorialTextBox.pages = pages;

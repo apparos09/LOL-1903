@@ -174,6 +174,23 @@ namespace RM_EM
         private void PostStart()
         {
             // Check if the game is over.
+
+            // This is being used for testing purposes. The game settings should be consulted for this value.
+            // Checks if the game settings have you use the tutorial.
+            bool useTutorial = true;
+            // if(GameSettings.Instance.UseTutorial)
+            if (useTutorial)
+            {
+                Tutorial tutorial = Tutorial.Instance;
+
+                // Opening not cleared, and the textbox isn't open.
+                if (!tutorial.clearedOpening && !worldUI.tutorialTextBox.IsVisible())
+                {
+                    // Gets the opening tutorial.
+                    StartTutorial(tutorial.GetOpeningTutorial());
+                    // Input.
+                }
+            }
             
 
             // Called post start.
@@ -242,12 +259,19 @@ namespace RM_EM
         public override void OnTutorialStart()
         {
             PauseWorld();
+
+            // Turn on the blocker.
+            colliderBlocker.SetActive(true);
         }
 
         // Called when a tutorial is ended.
         public override void OnTutorialEnd()
         {
             UnpauseWorld();
+
+            // Turn off the blocker, but only if a window isn't open.
+            if(!worldUI.IsWindowOpen())
+                colliderBlocker.SetActive(false);
         }
 
 

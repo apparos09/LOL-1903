@@ -83,6 +83,15 @@ namespace RM_EM
             gameManager.UnpauseGame();
         }
 
+        // Checks if a window is open.
+        public virtual bool IsWindowOpen()
+        {
+            // Only checks the settings window here.
+            bool open = settingsUI.gameObject.activeSelf;
+
+            return open;
+        }
+
         // Adds the tutorial text box open/close callbacks.
         public void AddTutorialTextBoxCallbacks(GameplayManager manager)
         {

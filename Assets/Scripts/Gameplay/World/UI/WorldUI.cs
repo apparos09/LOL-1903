@@ -138,10 +138,36 @@ namespace RM_EM
         {
             base.OnWindowClosed();
 
-            // Turn off the blocker.
-            worldManager.colliderBlocker.SetActive(false);
+            // Turn off the blocker. If the tutorial is running, then keep it on.
+            if(!tutorialTextBox.IsVisible())
+                worldManager.colliderBlocker.SetActive(false);
         }
 
+        // Returns 'true' if a window is open.
+        public override bool IsWindowOpen()
+        {
+            // The bool to check if a window is open.
+            bool open = false;
+
+            // List of statuses.
+            List<bool> activeStatus = new List<bool>()
+            { settingsUI.gameObject.activeSelf, powerMenuUI.gameObject.activeSelf, saveWindow.gameObject.activeSelf};
+
+
+            // Goes through all statuses
+            foreach(bool status in activeStatus)
+            {
+                // If one window is open, mark as true, and break.
+                if(status == true)
+                {
+                    open = true;
+                    break;
+                }
+            }
+
+            // A window is open.
+            return open;
+        }
 
 
         // NEXT AREA/PREVIOUS AREA
