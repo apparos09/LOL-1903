@@ -173,24 +173,24 @@ namespace RM_EM
         // Post start function.
         private void PostStart()
         {
-            // Check if the game is over.
+            // Check if the game is complete. Maybe load data here?
 
-            // This is being used for testing purposes. The game settings should be consulted for this value.
-            // Checks if the game settings have you use the tutorial.
-            bool useTutorial = true;
-            // if(GameSettings.Instance.UseTutorial)
-            if (useTutorial)
-            {
-                Tutorial tutorial = Tutorial.Instance;
+            //// This is being used for testing purposes. The game settings should be consulted for this value.
+            //// Checks if the game settings have you use the tutorial.
+            //bool useTutorial = true;
+            //// if(GameSettings.Instance.UseTutorial)
+            //if (useTutorial)
+            //{
+            //    Tutorial tutorial = Tutorial.Instance;
 
-                // Opening not cleared, and the textbox isn't open.
-                if (!tutorial.clearedOpening && !worldUI.tutorialTextBox.IsVisible())
-                {
-                    // Gets the opening tutorial.
-                    StartTutorial(tutorial.GetOpeningTutorial());
-                    // Input.
-                }
-            }
+            //    // Opening not cleared, and the textbox isn't open.
+            //    if (!tutorial.clearedOpening && !worldUI.tutorialTextBox.IsVisible())
+            //    {
+            //        // Gets the opening tutorial.
+            //        StartTutorial(tutorial.GetOpeningTutorial());
+            //        // Input.
+            //    }
+            //}
             
 
             // Called post start.

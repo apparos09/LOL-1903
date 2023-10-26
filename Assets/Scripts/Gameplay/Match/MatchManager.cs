@@ -153,6 +153,22 @@ namespace RM_EM
             p1.OnEquationGenerated();
             p2.OnEquationGenerated();
 
+            //// TUTORIAL
+            //bool useTutorial = true;
+            //// if(GameSettings.Instance.UseTutorial)
+            //if (useTutorial)
+            //{
+            //    Tutorial tutorial = Tutorial.Instance;
+
+            //    // First match not cleared, and the textbox isn't open.
+            //    if (!tutorial.clearedFirstMatch && !matchUI.tutorialTextBox.IsVisible())
+            //    {
+            //        // Gets the opening tutorial.
+            //        StartTutorial(tutorial.GetFirstMatchTutorial());
+            //        // Input.
+            //    }
+            //}
+
             calledPostStart = true;
         }
 
@@ -182,6 +198,9 @@ namespace RM_EM
 
                 // Set time scale to 0.
                 Time.timeScale = 0;
+
+                // Disable the mouse touch.
+                mouseTouch.gameObject.SetActive(false);
             }
             else
             {
@@ -194,6 +213,9 @@ namespace RM_EM
 
                 // Set time scale to 1.
                 Time.timeScale = 1;
+
+                // Enable the mouse touch.
+                mouseTouch.gameObject.SetActive(true);
             }
 
             
@@ -237,7 +259,9 @@ namespace RM_EM
         // Called when a tutorial is ended.
         public override void OnTutorialEnd()
         {
-            UnpauseMatch();
+            // If there's no window open, unpause the match.
+            if(!matchUI.IsWindowOpen())
+                UnpauseMatch();
         }
 
 
@@ -437,7 +461,7 @@ namespace RM_EM
             // The match isn't paused.
             if (!MatchPaused)
             {
-                matchTime += Time.fixedDeltaTime;
+                matchTime += Time.unscaledDeltaTime;
 
                 // Updates the timer text.
                 matchUI.UpdateTimerText();

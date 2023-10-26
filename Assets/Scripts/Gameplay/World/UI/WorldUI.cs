@@ -150,12 +150,22 @@ namespace RM_EM
             bool open = false;
 
             // List of statuses.
-            List<bool> activeStatus = new List<bool>()
-            { settingsUI.gameObject.activeSelf, powerMenuUI.gameObject.activeSelf, saveWindow.gameObject.activeSelf};
+            List<bool> activeStatuses = new List<bool>() {};
 
+            // Settings
+            if (settingsUI != null)
+                activeStatuses.Add(settingsUI.gameObject.activeSelf);
+
+            // Power Menu
+            if (powerMenuUI != null)
+                activeStatuses.Add(powerMenuUI.gameObject.activeSelf);
+
+            // Save Window
+            if (saveWindow != null)
+                activeStatuses.Add(saveWindow.gameObject.activeSelf);
 
             // Goes through all statuses
-            foreach(bool status in activeStatus)
+            foreach (bool status in activeStatuses)
             {
                 // If one window is open, mark as true, and break.
                 if(status == true)

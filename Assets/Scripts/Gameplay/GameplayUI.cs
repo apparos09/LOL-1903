@@ -80,7 +80,19 @@ namespace RM_EM
         // Called when a window is closed.
         public virtual void OnWindowClosed()
         {
-            gameManager.UnpauseGame();
+            // Checks for the tutorial text box.
+            if(tutorialTextBox != null)
+            {
+                // Unpause the game only if the tutorial textbox is closed.
+                if(!tutorialTextBox.IsVisible())
+                    gameManager.UnpauseGame();
+
+            }
+            else // Regular unpause.
+            {
+                gameManager.UnpauseGame();
+            }
+            
         }
 
         // Checks if a window is open.
