@@ -15,6 +15,31 @@ namespace RM_EM
         // This isn't needed, but it helps with the clarity.
         private static bool instanced = false;
 
+        
+        // TODO: maybe seperate them based on the tutorial type (world, match). Maybe re-arrange the function.
+        // Bools for clearing certain tutorials.
+        public bool clearedOpening = false;
+        public bool clearedFirstMatch = false;
+        public bool clearedFirstMatchLoss = false;
+        public bool clearedPostFirstMatch = false;
+
+        public bool clearedFirstPower = false;
+        public bool clearedFinalMatch = false;
+        public bool clearedGameOver = false;
+
+        [Header("Exponents")]
+        public bool clearedExponentBasics = false;
+        public bool clearedProduct = false;
+        public bool clearedPowerOfAPower = false;
+        public bool clearedProductOfAProduct = false;
+
+        public bool clearedZero = false;
+        public bool clearedNegative = false;
+
+
+        //// Cleared the exponent basics.
+        //public bool clearedExpoBasics;
+
         // Constructor
         private Tutorial()
         {
@@ -102,66 +127,92 @@ namespace RM_EM
         
         public List<Page> GetOpeningTutorial()
         {
+            clearedOpening = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetExponentBasicsTutorial()
         {
+            clearedExponentBasics = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetFirstMatchTutorial()
         {
+            clearedFirstMatch = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetFirstMatchLossTutorial()
         {
+            clearedFirstMatchLoss = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetPostFirstMatchTutorial()
         {
+            clearedPostFirstMatch = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetProductRuleTutorial()
         {
+            clearedProduct = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetPowerOfAPowerRuleTutorial()
         {
+            clearedPowerOfAPower = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetProductOfAProductRuleTutorial()
         {
+            clearedProductOfAProduct = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetZeroExponentRuleTutorial()
         {
+            clearedZero = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetNegativeExponentRuleTutorial()
         {
+            clearedNegative = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetFirstPowerTutorial()
         {
+            clearedFirstPower = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetFinalMatchTutorial()
         {
+            clearedFinalMatch = true;
+
             return GetTestPages();
         }
 
         public List<Page> GetGameOverTutorial()
         {
+            clearedGameOver = true;
+
             return GetTestPages();
         }
 

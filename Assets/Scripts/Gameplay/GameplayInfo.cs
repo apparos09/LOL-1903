@@ -36,6 +36,11 @@ namespace RM_EM
         // MATCH
         [Header("Match Info")]
 
+        // The number of the match. This is calculated in the world area, and is copied to the match area.
+        // Do not overwrite this with info from the match manager.
+        [Tooltip("The match number, which is set by the world manager via a function.")]
+        public int matchNumber = 0;
+
         // The puzzle type.
         public Puzzle.puzzleType puzzle = Puzzle.puzzleType.unknown;
 
@@ -229,6 +234,9 @@ namespace RM_EM
                 // Saves the defeated challengers.
                 challengersDefeated.Add(manager.challengers[i].defeated);
             }
+
+            // Saves the match number.
+            matchNumber = manager.GetMatchNumber();
         }
 
         // Saves world info from the match manager.
@@ -337,6 +345,9 @@ namespace RM_EM
         public void LoadMatchInfo(MatchManager manager)
         {
             LoadGameInfo(manager);
+
+            // Set the match number.
+            manager.matchNumber = matchNumber;
 
             // PUZZLE //
             // Set the puzzle type.

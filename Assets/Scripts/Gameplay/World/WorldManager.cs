@@ -375,7 +375,24 @@ namespace RM_EM
             worldUI.HideChallengeUI();
         }
 
+        // Returns the match number, which is determined based on...
+        // How many challengers are left.
+        public int GetMatchNumber()
+        {
+            // The defeated count.
+            int defeatedCount = 0;
 
+            // Goes through every challenger.
+            foreach(ChallengerWorld challenger in challengers)
+            {
+                // If the challenger has been defeated, increase the count.
+                if (challenger.defeated)
+                    defeatedCount++;
+            }
+
+            // Adds +1 so that it works as the match count.
+            return defeatedCount + 1;
+        }
 
         // SAVING/LOADING
         // Generates the save data or the game.

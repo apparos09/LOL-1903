@@ -24,6 +24,9 @@ namespace RM_EM
         // The UI for the match.
         public MatchUI matchUI;
 
+        // The match number.
+        public int matchNumber = 0;
+
         // The point goal for the game.
         public int pointGoal = 999;
 

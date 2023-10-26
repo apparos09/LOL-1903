@@ -8,14 +8,14 @@ namespace RM_EM
 {
     // The exponent rules.
     /*
-     * expo (Base Exponent Rule): a^n
-     * multSame (Multiplication (Same Base)): (a^n)*(a^m) = a^(n+m)
-     * expoByExpo (Exponent by Exponent): (a^n)^m = a^(n*m)
-     * multDiff (Multplication (Different Base)): (a^n)*(b^n) = (a*b)^n
-     * zero (Zero): a^0 = 1
-     * negative (Negative): a^(-1) = 1/(a^n)
+     * Exponent Rule (Basic Exponent Rule): a^n
+     * Product Rule (Multiplication (Same Base)): (a^n)*(a^m) = a^(n+m)
+     * Power of a Power (Exponent by Exponent): (a^n)^m = a^(n*m)
+     * Power of a Product (Multplication (Different Base)): (a^n)*(b^n) = (a*b)^n
+     * Zero Exponent (Zero): a^0 = 1
+     * Negative Exponent (Negative): a^(-1) = 1/(a^n)
      */
-    public enum exponentRule { none, expo, multSame, expoByExpo, multDiff, zero, negative }
+    public enum exponentRule { none, exponent, product, powerPower, powerProduct, zero, negative }
 
     // Generates content for a puzzle.
     public class Puzzle : MonoBehaviour
@@ -183,19 +183,19 @@ namespace RM_EM
                     ruleName = "None";
                     break;
 
-                case exponentRule.expo:
+                case exponentRule.exponent:
                     ruleName = "Exponent";
                     break;
 
-                case exponentRule.multSame:
+                case exponentRule.product:
                     ruleName = "Product Rule";
                     break;
 
-                case exponentRule.expoByExpo:
+                case exponentRule.powerPower:
                     ruleName = "Power of a Power Rule";
                     break;
 
-                case exponentRule.multDiff:
+                case exponentRule.powerProduct:
                     ruleName = "Power of a Product Rule";
                     break;
 
@@ -244,7 +244,7 @@ namespace RM_EM
             // Checks the rule being applied.
             switch(rule)
             {
-                case exponentRule.expo: // Exponent (Base)
+                case exponentRule.exponent: // Exponent (Base)
                 default:
                     
                     {
@@ -288,7 +288,7 @@ namespace RM_EM
 
                     break;
 
-                case exponentRule.multSame: // Multplication (Same Base)
+                case exponentRule.product: // Multplication (Same Base)
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
                     {
@@ -323,7 +323,7 @@ namespace RM_EM
 
                     break;
 
-                case exponentRule.expoByExpo: // Exponent by Exponent
+                case exponentRule.powerPower: // Exponent by Exponent
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
                     {
@@ -356,7 +356,7 @@ namespace RM_EM
 
                     break;
 
-                case exponentRule.multDiff: // Multiplication (Different Base)
+                case exponentRule.powerProduct: // Multiplication (Different Base)
 
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
@@ -543,7 +543,7 @@ namespace RM_EM
 
             // TODO: you'll need to change this so that missing values can be generated properly.
             // equation = "3x^2*3x^(21)=3x^4"; // Test
-            equation = GenerateCalculationAsString(exponentRule.expo, 1, 9, 1, 5);
+            equation = GenerateCalculationAsString(exponentRule.exponent, 1, 9, 1, 5);
 
             // GENERATE THE EQUATION.
 
@@ -567,8 +567,8 @@ namespace RM_EM
             // The exponent rules.
             exponentRule[] expoRules = new exponentRule[6]
             {
-                exponentRule.expo, exponentRule.multSame,
-                exponentRule.expoByExpo, exponentRule.multDiff,
+                exponentRule.exponent, exponentRule.product,
+                exponentRule.powerPower, exponentRule.powerProduct,
                 exponentRule.zero, exponentRule.negative
             };
 
@@ -632,7 +632,7 @@ namespace RM_EM
                 // Checks the rule for how to generate the calculation.
                 switch(rule)
                 {
-                    case exponentRule.expo: // Base Exponent
+                    case exponentRule.exponent: // Base Exponent
                         calc = GenerateCalculation(rule,
                             equationLowestValue, equationHighestValue, baseExponentTermsMin, baseExponentTermsMax);
 
