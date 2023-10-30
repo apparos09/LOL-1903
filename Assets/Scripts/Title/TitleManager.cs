@@ -204,6 +204,12 @@ namespace RM_EM
             titleUI.continueButton.interactable = false;
         }
 
+        // Quits the game (will not be used in LOL version).
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+
         // Update is called once per frame
         void Update()
         {
