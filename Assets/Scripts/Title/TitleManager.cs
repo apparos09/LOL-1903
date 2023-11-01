@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using util;
 
 namespace RM_EM
 {
@@ -19,6 +20,9 @@ namespace RM_EM
 
         // The title screen UI.
         public TitleUI titleUI;
+
+        // The audio credits for the game.
+        public AudioCredits audioCredits;
 
         // Constructor
         private TitleManager()
@@ -122,6 +126,7 @@ namespace RM_EM
         void Start()
         {
             // ...
+            // TODO: load audio credits.
         }
 
         // Gets the instance.

@@ -15,7 +15,7 @@ namespace util
             public string title;
 
             // The artist(s) that made the song.
-            public string artists;
+            public string artist;
 
             // The collection the song is part of (album, EP, group, etc.).
             public string collection;

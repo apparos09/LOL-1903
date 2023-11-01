@@ -20,8 +20,8 @@ namespace util
         // The name of the song.
         public TMP_Text songTitleText;
 
-        // The name of the artist(s).
-        public TMP_Text artistsText;
+        // The name of the artist.
+        public TMP_Text artistText;
 
         // The name of the album/group that the song comes from.
         public TMP_Text collectionText;
@@ -134,8 +134,8 @@ namespace util
                 songTitleText.text = credit.title;
 
             // Artists - the artist(s) responsible for the audio.
-            if(artistsText != null)
-                artistsText.text = credit.artists;
+            if(artistText != null)
+                artistText.text = credit.artist;
 
             // Collection - the album or package the audio came from.
             if(collectionText != null)
