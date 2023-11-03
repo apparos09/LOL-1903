@@ -32,6 +32,7 @@ namespace util
             else if (instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
 
             // Run code for initialization.

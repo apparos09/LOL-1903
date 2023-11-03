@@ -12,7 +12,7 @@ namespace util
         private static AudioControls instance;
 
         // Adjusts the audio levels when a new level is loaded.
-        public bool adjustAudioOnLevelLoaded = true;
+        public bool adjustAudioOnSceneLoaded = true;
 
         // Audio Tags and Volumes
         // Feel free to change these tags for individual project needs.
@@ -63,7 +63,6 @@ namespace util
         // This function is called when the object is enabled and active
         private void OnEnable()
         {
-            // This is called if the object is enabled when the program starts running.
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         
@@ -295,8 +294,12 @@ namespace util
         // Called when the scene was loaded.
         public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // Adjusts all the audio levels.
-            AdjustAllAudioLevels(bgmVolume, sfxVolume, vceVolume);
+            // Adjusts all the audio levels since a scene was loaded.
+            if (adjustAudioOnSceneLoaded)
+            {
+                AdjustAllAudioLevels(bgmVolume, sfxVolume, vceVolume);
+            }
+                
 
             // Refreshes the game mute, since this caused problems before.
             Mute = Mute;

@@ -73,6 +73,7 @@ namespace RM_EM
             else if (instance != this)
             {
                 Destroy(gameObject);
+                return;
             }
 
             // Run code for initialization.

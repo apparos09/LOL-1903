@@ -111,11 +111,6 @@ namespace RM_EM
             gameSettings = GameSettings.Instance;
         }
 
-        public void OnTextSpeechChange()
-        {
-            OnTextToSpeechChange(textToSpeechToggle);
-        }
-
         // On the mute changes.
         public void OnMuteChange(Toggle toggle)
         {

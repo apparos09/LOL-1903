@@ -55,13 +55,14 @@ namespace RM_EM
         private void Awake()
         {
             // Checks for the instance.
-            if (instance == null)
+            if (instance == null) // Set to nothing.
             {
                 instance = this;
             }
-            else
+            // If the instance isn't this, destroy the game object.
+            else if (instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
                 return;
             }
 
@@ -121,6 +122,20 @@ namespace RM_EM
             }
         }
 
+        // OnEnable
+        private void OnEnable()
+        {
+            // This is called if the object is enabled when the program starts running.
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        // OnDisable
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+
         // Returns 'true' if the object has been initialized.
         public static bool Instantiated
         {
@@ -129,7 +144,6 @@ namespace RM_EM
                 return instanced;
             }
         }
-
 
 
         // the LOL SDK has been initialized.
@@ -359,12 +373,15 @@ namespace RM_EM
             AdjustTtsAudioLevels();
         }
 
-        // // called when a scene is loaded.
-        // public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        // {
-        //     // adjusts the audio levels.
-        //     AdjustAudioLevels(bgmVolume, sfxVolume);
-        // }
+        // Called when the scene was loaded.
+        public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            // Adjusts all the audio levels.
+            AdjustAllAudioLevels();
+
+            // Refreshes the game mute, since this caused problems before.
+            Mute = Mute;
+        }
 
         // This function is called when the MonoBehaviour will be destroyed.
         private void OnDestroy()
