@@ -50,6 +50,10 @@ namespace util
         // Start is called before the first frame update
         protected virtual void Start()
         {
+            // If the audio source is not set, try to grab it from the game object.
+            if (audioSource == null)
+                audioSource = GetComponent<AudioSource>();
+
             // gets the start and end of the clip if not set.
             if (audioSource != null)
             {

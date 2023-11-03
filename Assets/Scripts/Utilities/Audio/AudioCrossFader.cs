@@ -24,18 +24,14 @@ namespace util
         // Start is called before the first frame update
         protected override void Start()
         {
-            // Implements the main fade's audio source as the main cross fader audio source.
-            if (audioSource == null)
-                audioSource = mainFade.audioSource;
+            // Call the base start function.
+            base.Start();
 
             // The transition shouldn't loop.
             transitionFade.audioSource.loop = false;
 
             // Stop the audio when the transition fade ends.
             transitionFade.stopOnFadeOut = true;
-
-            // Call the base start function.
-            base.Start();
         }
 
         // Called to loop the clip back to its start.

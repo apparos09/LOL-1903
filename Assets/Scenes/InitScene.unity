@@ -198,9 +198,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastSave:
     valid: 0
+    score: 0
+    currAreaIndex: -1
+    playerPower: 0
+    playerPowerList: 00000000000000000000000000000000
+    challengersDefeated: 000000000000000000
   loadedData:
     valid: 0
-  gameManager: {fileID: 0}
+    score: 0
+    currAreaIndex: -1
+    playerPower: 0
+    playerPowerList: 00000000000000000000000000000000
+    challengersDefeated: 000000000000000000
+  worldManager: {fileID: 0}
   feedbackText: {fileID: 0}
 --- !u!1 &495273269
 GameObject:
@@ -349,6 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921882456}
   - component: {fileID: 1921882457}
+  - component: {fileID: 1921882458}
   m_Layer: 0
   m_Name: Game Settings
   m_TagString: Untagged
@@ -383,6 +394,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb6f71995e34d640965ed75f02a7834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1921882458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921882455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc89aa234ee05d846b43cb961829f3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adjustAudioOnLevelLoaded: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -127,6 +127,97 @@ namespace RM_EM
         {
             // ...
             // TODO: load audio credits.
+
+            // AUDIO CREDITS
+            AudioCredits.AudioCredit credit;
+
+            // TODO: remove direct links for audio components since they're super long.
+
+            // Sound effects won't be credited unless they have to be, since they don't have proper names.
+
+            // BGM //
+            // Title
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Night in the Castle";
+            credit.artist = "Kevin Macleod";
+            credit.collection = "FreePD/Comedy";
+            credit.source = "FreePD";
+            credit.link1 = "https://freepd.com/comedy.php";
+            credit.link2 = "";
+            credit.copyright = 
+                "\"Night in the Castle\"\n" +
+                "Kevin Macleod (incompetech.com)\n" +
+                "Licensed under Creative Commons Zero: 1.0 Universal\n" + 
+                "https://creativecommons.org/publicdomain/zero/1.0/deed.en";
+
+            audioCredits.audioCredits.Add(credit);
+
+            // Game Results
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Beach Walk";
+            credit.artist = "Antti Luode";
+            credit.collection = "Anttis Instrumentals";
+            credit.source = "GameSounds.xyz";
+            credit.link1 = "https://gamesounds.xyz/?dir=Anttis%20instrumentals/Songs";
+            credit.link2 = "https://gamesounds.xyz/Anttis%20instrumentals/Songs/Anttis%20instrumentals%20-%20Beach%20walk.mp3";
+            credit.copyright =
+                "\"Beach Walk\"\n" +
+                "Antti Luode\n" +
+                "Licensed under Creative Commons: By Attribution 3.0\n" +
+                "https://creativecommons.org/licenses/by/3.0/";
+
+            audioCredits.audioCredits.Add(credit);
+
+            // Area
+            // Area 1
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Abracadabra";
+            credit.artist = "Antti Luode";
+            credit.collection = "Anttis Instrumentals";
+            credit.source = "GameSounds.xyz";
+            credit.link1 = "https://gamesounds.xyz/?dir=Anttis%20instrumentals/Songs";
+            credit.link2 = "https://gamesounds.xyz/Anttis%20instrumentals/Songs/Anttis%20instrumentals%20-%20Abracadabra.mp3";
+            credit.copyright =
+                "\"Abracadabra\"\n" +
+                "Antti Luode\n" +
+                "Licensed under Creative Commons: By Attribution 3.0\n" +
+                "https://creativecommons.org/licenses/by/3.0/";
+
+            audioCredits.audioCredits.Add(credit);
+
+            // Match
+            // Match - Normal 1
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Monsters in Hotel";
+            credit.artist = "Rafael Krux";
+            credit.collection = "FreePD/Comedy";
+            credit.source = "FreePD";
+            credit.link1 = "https://freepd.com/comedy.php";
+            credit.link2 = "https://music.orchestralis.net/track/28566249";
+            credit.copyright =
+                "'Monsters in Hotel' by Rafael Krux (orchestralis.net)\n" +
+                "Creative Commons 4.0 License.\n" +
+                "https://creativecommons.org/licenses/by/4.0/";
+
+            audioCredits.audioCredits.Add(credit);
+
+            // Match - Results
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Funky Energy Loop";
+            credit.artist = "Kevin Macleod";
+            credit.collection = "FreePD/Scoring";
+            credit.source = "FreePD";
+            credit.link1 = "https://freepd.com/scoring.php";
+            credit.link2 = "";
+            credit.copyright =
+                "\"Funky Energy Loop\"" +
+                "Kevin Macleod (incompetech.com)\n" +
+                "Licensed under Creative Commons Zero: 1.0 Universal\n" +
+                "https://creativecommons.org/publicdomain/zero/1.0/deed.en";
+
+            audioCredits.audioCredits.Add(credit);
+
+
         }
 
         // Gets the instance.
