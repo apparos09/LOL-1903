@@ -73,17 +73,17 @@ namespace RM_EM
 
         // NOTE: a rate of 0 or less means it will never appear.
 
-        // The exponent rates.
-        public float baseExpoRate = 1.0F;
+        // The exponent rate (base exponent rate).
+        public float exponentRate = 1.0F;
 
-        // Rate for multiplicaton (same bases) exponents.
-        public float multSameRate = 1.0F;
+        // Rate for multiplicaton (same bases)/product rule exponents.
+        public float productRate = 1.0F;
 
-        // Rate for exponent by exponent exponents.
-        public float expoByExpoRate = 1.0F;
+        // Rate for exponent by exponent/power of a power exponents.
+        public float powerOfAPowerRate = 1.0F;
 
-        // Rate for multplication (different bases) exponents.
-        public float multDiffRate = 1.0F;
+        // Rate for multplication (different bases)/power of a product exponents.
+        public float powerOfAProductRate = 1.0F;
 
         // Rate for zero exponents.
         public float zeroRate = 1.0F;
@@ -580,10 +580,10 @@ namespace RM_EM
             float rateSum = 0.0F;
 
             // Generates all the exponent rules.
-            expoRates[0] = baseExpoRate;
-            expoRates[1] = expoRates[0] + multSameRate;
-            expoRates[2] = expoRates[1] + expoByExpoRate;
-            expoRates[3] = expoRates[2] + multDiffRate;
+            expoRates[0] = exponentRate;
+            expoRates[1] = expoRates[0] + productRate;
+            expoRates[2] = expoRates[1] + powerOfAPowerRate;
+            expoRates[3] = expoRates[2] + powerOfAProductRate;
             expoRates[4] = expoRates[3] + zeroRate;
             expoRates[5] = expoRates[4] + negativeRate;
 

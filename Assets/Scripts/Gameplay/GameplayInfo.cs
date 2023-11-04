@@ -51,16 +51,16 @@ namespace RM_EM
         [Header("Match Info/Exponents")]
 
         // The exponent rates.
-        public float baseExpoRate = 1.0F;
+        public float exponentRate = 1.0F;
 
-        // Rate for multiplicaton (same bases) exponents.
-        public float multSameRate = 1.0F;
+        // Rate for multiplicaton (same bases)/product rule exponents.
+        public float productRate = 1.0F;
 
-        // Rate for exponent by exponent exponents.
-        public float expoByExpoRate = 1.0F;
+        // Rate for exponent by exponent/power of a power rule exponents.
+        public float powerOfAPowerRate = 1.0F;
 
-        // Rate for multplication (different bases) exponents.
-        public float multDiffRate = 1.0F;
+        // Rate for multplication (different bases)/power of a product rule exponents.
+        public float powerOfAProductRate = 1.0F;
 
         // Rate for zero exponents.
         public float zeroRate = 1.0F;
@@ -317,12 +317,12 @@ namespace RM_EM
 
             // Exponents
             // Base, Mult Same, Expo By Expo
-            baseExpoRate = challenger.baseExpoRate;
-            multSameRate = challenger.multSameRate;
-            expoByExpoRate = challenger.expoByExpoRate;
+            exponentRate = challenger.exponentRate;
+            productRate = challenger.productRate;
+            powerOfAPowerRate = challenger.powerOfAPowerRate;
 
             // Mult Diff, Zero, Negative
-            multDiffRate = challenger.multDiffRate;
+            powerOfAProductRate = challenger.powerOfAProductRate;
             zeroRate = challenger.zeroRate;
             negativeRate = challenger.negativeRate;
 
@@ -422,20 +422,20 @@ namespace RM_EM
 
             // EXPONENTS //
             // Base
-            manager.p1Puzzle.baseExpoRate = baseExpoRate;
-            manager.p2Puzzle.baseExpoRate = baseExpoRate;
+            manager.p1Puzzle.exponentRate = exponentRate;
+            manager.p2Puzzle.exponentRate = exponentRate;
 
             // Mult Same
-            manager.p1Puzzle.multSameRate = multSameRate;
-            manager.p2Puzzle.multSameRate = multSameRate;
+            manager.p1Puzzle.productRate = productRate;
+            manager.p2Puzzle.productRate = productRate;
 
             // Expo By Expo
-            manager.p1Puzzle.expoByExpoRate = expoByExpoRate;
-            manager.p2Puzzle.expoByExpoRate = expoByExpoRate;
+            manager.p1Puzzle.powerOfAPowerRate = powerOfAPowerRate;
+            manager.p2Puzzle.powerOfAPowerRate = powerOfAPowerRate;
 
             // Mult Diff
-            manager.p1Puzzle.multDiffRate = multDiffRate;
-            manager.p2Puzzle.multDiffRate = multDiffRate;
+            manager.p1Puzzle.powerOfAProductRate = powerOfAProductRate;
+            manager.p2Puzzle.powerOfAProductRate = powerOfAProductRate;
 
             // Zero
             manager.p1Puzzle.zeroRate = zeroRate;

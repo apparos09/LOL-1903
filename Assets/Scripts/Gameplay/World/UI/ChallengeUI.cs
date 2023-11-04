@@ -72,19 +72,19 @@ namespace RM_EM
             string rules = "";
 
             // Exponent Rule
-            if (challenger.baseExpoRate > 0)
+            if (challenger.exponentRate > 0)
                 ruleNames.Add(Puzzle.GetRuleName(exponentRule.exponent));
 
             // Product Rule
-            if (challenger.multSameRate> 0)
+            if (challenger.productRate> 0)
                 ruleNames.Add(Puzzle.GetRuleName(exponentRule.product));
 
             // Power of a Power
-            if (challenger.expoByExpoRate > 0)
+            if (challenger.powerOfAPowerRate > 0)
                 ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerPower));
 
             // Power of a Product
-            if (challenger.multDiffRate > 0)
+            if (challenger.powerOfAProductRate > 0)
                 ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerProduct));
 
             // Zero Rule

@@ -47,16 +47,16 @@ namespace RM_EM
 
         [Header("Exponents")]
         // The exponent rates.
-        public float baseExpoRate = 1.0F;
+        public float exponentRate = 1.0F;
 
         // Rate for product rule/multiplicaton (same bases) exponents.
-        public float multSameRate = 1.0F;
+        public float productRate = 1.0F;
 
         // Rate for power of a power/exponent by exponent exponents.
-        public float expoByExpoRate = 1.0F;
+        public float powerOfAPowerRate = 1.0F;
 
         // Rate for power of a product/multplication (different bases) exponents.
-        public float multDiffRate = 1.0F;
+        public float powerOfAProductRate = 1.0F;
 
         // Rate for zero exponent rule.
         public float zeroRate = 1.0F;
