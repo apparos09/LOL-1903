@@ -29,6 +29,15 @@ namespace RM_EM
         // Player 2's UI
         public PlayerMatchUI p2UI;
 
+        [Header("Match/Value Box")]
+
+        // The value box prefab.
+        public GameObject valueBoxPrefab;
+
+        // A pool of value boxes to pull from.
+        public Queue<GameObject> valueBoxPool;
+
+
         // Start is called before the first frame update
         protected override void Start()
         {
@@ -173,6 +182,66 @@ namespace RM_EM
             matchManager.p2.SkipEquation();
         }
 
+
+        // Equation Displays
+        // Value Box
+        // Gets a value box prefab.
+        public GameObject GetValueBox()
+        {
+            GameObject valueBox;
+
+            // Checks if a value is in the pool.
+            if (valueBoxPool.Count == 0) // None in pool.
+            {
+                valueBox = Instantiate(valueBoxPrefab);
+            }
+            else
+            {
+                // Grabs from the pool.
+                valueBox = valueBoxPool.Dequeue();
+            }
+
+            // Set the box to active.
+            valueBox.SetActive(true);
+
+            return valueBox;
+        }
+
+        // Returns a value box, setting its new parent and position.
+        public GameObject GetValueBox(Transform newParent, Vector3 newPos)
+        {
+            GameObject valueBox = GetValueBox();
+            valueBox.transform.parent = newParent;
+            valueBox.transform.position = newPos;
+
+            return valueBox;
+        }
+
+        // Returns a value box, setting its position.
+        public GameObject GetValueBox(Vector3 newPos)
+        {
+            return GetValueBox(null, newPos);
+        }
+
+        // Returns a value box, setting its parent.
+        public GameObject GetValueBox(Transform newParent)
+        {
+            return GetValueBox(newParent, Vector3.zero);
+        }
+
+        // Puts a value box back in the pool.
+        public void ReturnValueBox(GameObject valueBox)
+        {
+            // Remove parent and set position to zero.
+            valueBox.transform.parent = null;
+            valueBox.transform.position = Vector3.zero;
+
+            // Set to inactive.
+            valueBox.SetActive(false);
+
+            // Put in pool.
+            valueBoxPool.Enqueue(valueBox);
+        }
 
 
         // WINDOWS //

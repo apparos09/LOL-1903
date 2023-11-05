@@ -448,6 +448,7 @@ MonoBehaviour:
   gameTime: 0
   mouseTouch: {fileID: 1721578376}
   matchUI: {fileID: 965560303}
+  matchNumber: 0
   pointGoal: 999
   usePointGoal: 1
   matchTime: 0
@@ -1037,10 +1038,10 @@ MonoBehaviour:
   puzzleMechanicPos: {fileID: 1766388862}
   playerMatch: {fileID: 1039013018}
   answerTime: 0
-  baseExpoRate: 1
-  multSameRate: 0
-  expoByExpoRate: 0
-  multDiffRate: 0
+  exponentRate: 1
+  productRate: 1
+  powerOfAPowerRate: 1
+  powerOfAProductRate: 1
   zeroRate: 0
   negativeRate: 0
   equation: 
@@ -1276,6 +1277,7 @@ MonoBehaviour:
   matchEnd: {fileID: 70703659}
   p1UI: {fileID: 104550997}
   p2UI: {fileID: 1849882930}
+  valueBoxPrefab: {fileID: 8095605015608864194, guid: 9a299be1ce9c64949a21be6bd36133a4, type: 3}
 --- !u!4 &1019678795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5877637028084620904, guid: 62a478909fc77854a8b033cd46677f40, type: 3}
@@ -1349,6 +1351,7 @@ MonoBehaviour:
   playerMatch: {fileID: 1039013018}
   power: 0
   powerName: 
+  powerDesc: 
   energy: 0
   energyMax: 100
   powerActive: 0
@@ -1495,10 +1498,10 @@ MonoBehaviour:
   puzzleMechanicPos: {fileID: 919645581}
   playerMatch: {fileID: 883756869}
   answerTime: 0
-  baseExpoRate: 1
-  multSameRate: 1
-  expoByExpoRate: 1
-  multDiffRate: 1
+  exponentRate: 1
+  productRate: 1
+  powerOfAPowerRate: 1
+  powerOfAProductRate: 1
   zeroRate: 1
   negativeRate: 1
   equation: 

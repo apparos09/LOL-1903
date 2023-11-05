@@ -1610,6 +1610,7 @@ MonoBehaviour:
   matchEnd: {fileID: 128283751}
   p1UI: {fileID: 3005284030928076683}
   p2UI: {fileID: 144792229}
+  valueBoxPrefab: {fileID: 8095605015608864194, guid: 9a299be1ce9c64949a21be6bd36133a4, type: 3}
 --- !u!224 &979213270 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3346965147616308430, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}

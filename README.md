@@ -44,8 +44,13 @@ Antti Luode
 Licensed under Creative Commons: By Attribution 3.0
 https://creativecommons.org/licenses/by/3.0/
 
-== MATCH - NORMAL 1 (BGM) ==
+== MATCH - NORMAL (BGM) ==
 'Monsters in Hotel' by Rafael Krux (orchestralis.net)
+Creative Commons 4.0 License.
+https://creativecommons.org/licenses/by/4.0/
+
+== MATCH - BOSS (BGM) ==
+'Ghost Town' by Rafael Krux (orchestralis.net)
 Creative Commons 4.0 License.
 https://creativecommons.org/licenses/by/4.0/
 

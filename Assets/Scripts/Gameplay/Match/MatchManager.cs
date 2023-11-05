@@ -46,12 +46,14 @@ namespace RM_EM
         [Header("Player 1")]
         // P1
         public PlayerMatch p1;
+        
         // P1 Puzzle
         public Puzzle p1Puzzle;
 
         [Header("Player 2")]
         // P2
         public PlayerMatch p2;
+        
         // P2 Puzzle
         public Puzzle p2Puzzle;
 
@@ -264,6 +266,7 @@ namespace RM_EM
             if(!matchUI.IsWindowOpen())
                 UnpauseMatch();
         }
+
 
 
         // MECHANICS //
