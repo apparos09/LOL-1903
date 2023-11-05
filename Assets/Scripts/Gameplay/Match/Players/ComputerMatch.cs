@@ -36,9 +36,68 @@ namespace RM_EM
         }
 
         // Sets the difficulty of the computer.
-        public void SetDifficulty(int difficulty)
+        public void SetDifficulty(int newDiff)
         {
-            this.difficulty = difficulty;
+            // Sets the difficulty.
+            difficulty = newDiff;
+
+            // TODO: do more.
+            // TODO: change to using multiples instead of hard numbers?
+            // Changes the difficulty settings.
+            switch(difficulty)
+            {
+                default: // 0
+                    waitTimeMax = 2.5F;
+                    moveSpeed = 5.0F;
+                    break;
+
+                case 1: // Level 1
+                    waitTimeMax = 3.0F;
+                    moveSpeed = 4.0F;
+                    break;
+
+                case 2: // Level 2
+                    waitTimeMax = 3.0F;
+                    moveSpeed = 4.5F;
+                    break;
+
+                case 3: // Level 3 (Normal)
+                    waitTimeMax = 2.5F;
+                    moveSpeed = 5.0F;
+                    break;
+
+                case 4: // Level 4
+                    waitTimeMax = 2.25F;
+                    moveSpeed = 5.5F;
+                    break;
+
+                case 5: // Level 5
+                    waitTimeMax = 2.25F;
+                    moveSpeed = 6.0F;
+                    break;
+
+                case 6: // Level 6
+                    waitTimeMax = 2.25F;
+                    moveSpeed = 6.5F;
+                    break;
+
+                case 7: // Level 7
+                    waitTimeMax = 2.0F;
+                    moveSpeed = 7.0F;
+                    break;
+
+                case 8: // Level 8
+                    waitTimeMax = 2.0F;
+                    moveSpeed = 7.5F;
+                    break;
+
+                case 9: // Level 9
+                    waitTimeMax = 2.0F;
+                    moveSpeed = 8.0F;
+                    break;
+
+            }
+
 
             // TODO: implement difficulty changes.
         }

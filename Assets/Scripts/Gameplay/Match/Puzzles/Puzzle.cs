@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace RM_EM
      * Zero Exponent (Zero): a^0 = 1
      * Negative Exponent (Negative): a^(-1) = 1/(a^n)
      */
-    public enum exponentRule { none, exponent, product, powerPower, powerProduct, zero, negative }
+    public enum exponentRule { none, exponent, product, powerOfAPower, powerOfAProduct, zero, negative }
 
     // Generates content for a puzzle.
     public class Puzzle : MonoBehaviour
@@ -191,11 +192,11 @@ namespace RM_EM
                     ruleName = "Product Rule";
                     break;
 
-                case exponentRule.powerPower:
+                case exponentRule.powerOfAPower:
                     ruleName = "Power of a Power Rule";
                     break;
 
-                case exponentRule.powerProduct:
+                case exponentRule.powerOfAProduct:
                     ruleName = "Power of a Product Rule";
                     break;
 
@@ -323,7 +324,7 @@ namespace RM_EM
 
                     break;
 
-                case exponentRule.powerPower: // Exponent by Exponent
+                case exponentRule.powerOfAPower: // Exponent by Exponent
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
                     {
@@ -356,7 +357,7 @@ namespace RM_EM
 
                     break;
 
-                case exponentRule.powerProduct: // Multiplication (Different Base)
+                case exponentRule.powerOfAProduct: // Multiplication (Different Base)
 
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
@@ -563,29 +564,65 @@ namespace RM_EM
 
             // The puzzle calculations
             List<PuzzleCalculation> calcs = new List<PuzzleCalculation>();
-
-            // The exponent rules.
-            exponentRule[] expoRules = new exponentRule[6]
-            {
-                exponentRule.exponent, exponentRule.product,
-                exponentRule.powerPower, exponentRule.powerProduct,
-                exponentRule.zero, exponentRule.negative
-            };
-
-            // The exponent chance rates.
-            float[] expoRates = new float[6];
             
 
-            // The rate sum;
-            float rateSum = 0.0F;
 
-            // Generates all the exponent rules.
-            expoRates[0] = exponentRate;
-            expoRates[1] = expoRates[0] + productRate;
-            expoRates[2] = expoRates[1] + powerOfAPowerRate;
-            expoRates[3] = expoRates[2] + powerOfAProductRate;
-            expoRates[4] = expoRates[3] + zeroRate;
-            expoRates[5] = expoRates[4] + negativeRate;
+            // The active rules and the rates for said rules.
+            List<exponentRule> expoRules = new List<exponentRule>();
+            List<float> expoRates = new List<float>();
+
+            // Exponent
+            if(exponentRate > 0)
+            {
+                expoRules.Add(exponentRule.exponent);
+                expoRates.Add(exponentRate);
+            }
+
+            // Product Rule
+            if (productRate > 0)
+            {
+                expoRules.Add(exponentRule.product);
+                expoRates.Add(productRate);
+            }
+
+            // Power of a Power
+            if (powerOfAPowerRate > 0)
+            {
+                expoRules.Add(exponentRule.powerOfAPower);
+                expoRates.Add(powerOfAPowerRate);
+            }
+
+            // Power of a Product
+            if (powerOfAProductRate > 0)
+            {
+                expoRules.Add(exponentRule.powerOfAProduct);
+                expoRates.Add(powerOfAProductRate);
+            }
+
+            // Zero
+            if (zeroRate > 0)
+            {
+                expoRules.Add(exponentRule.zero);
+                expoRates.Add(zeroRate);
+            }
+
+            // Negative
+            if (negativeRate > 0)
+            {
+                expoRules.Add(exponentRule.negative);
+                expoRates.Add(negativeRate);
+            }
+
+            // Checks to see how the rules should be used.
+            if (expoRules.Count == 0) // No Rules Set
+            {
+                expoRules.Add(exponentRule.exponent); // Adds default.
+                expoRates.Add(1.0F);
+            }
+
+
+            // The rate sum for the exponent rules.
+            float rateSum = 0.0F;
 
             // Sums up the rates.
             foreach(float f in expoRates)
@@ -594,37 +631,50 @@ namespace RM_EM
             }
 
 
-            // Adds each term.
+            // Adds each term set calculation.
             for(int n = 1; n <= termCount; n++)
             {
                 // The rule being used.
                 exponentRule rule = exponentRule.none;
 
-                // Random float.
-                float randFloat = 0;
-
-                // Generates a random float.
-                randFloat = Random.Range(0.0F, rateSum);
-
-                // TODO: when you set it to only use zero rule, it ended up giving you base exponent rule too.
-                // Figure out how to fix that.
-
                 // The index of the chosen exponent rule.
-                int index = 0;
+                int ruleIndex = 0;
 
-                // Goes though all the exponent rates to see which exponent should be chosen.
-                for (int i = 0; i < expoRates.Length; i++)
+                // Checks the number of exponent rules.
+                if(expoRules.Count > 1) // More than 1.
                 {
-                    // The index has been found, so break it.
-                    if (randFloat <= expoRates[i] && expoRates[i] > 0)
+                    // Random float - generates a random float within the rate sum.
+                    float randFloat = Random.Range(0.0F, rateSum);
+
+                    // Sums up the values in the loop.
+                    float loopSum = 0.0F;
+
+                    // Goes though all the exponent rates to see which exponent should be chosen.
+                    for (int i = 0; i < expoRates.Count; i++)
                     {
-                        index = i;
-                        break;
+                        // Adds the rate to the loop sum.
+                        loopSum += expoRates[i];
+
+                        // If the random float is less than or equal to the loop sum, then choose the rule.
+                        // The index has been found,so break the loop.
+                        if (randFloat <= loopSum)
+                        {
+                            // Set the index and break.
+                            ruleIndex = i;
+                            break;
+                        }
                     }
+
+                }
+                else // Only 1.
+                {
+                    // Only one option.
+                    ruleIndex = 0;
                 }
 
+
                 // Grabs the rule to be used.
-                rule = expoRules[index];
+                rule = expoRules[ruleIndex];
 
                 // Generates a calculation using the rule.
                 PuzzleCalculation calc;
@@ -648,6 +698,8 @@ namespace RM_EM
                 // Adds the calculation to the list.
                 calcs.Add(calc);
             }
+
+
 
             // NEW (WIP)
 
@@ -1177,13 +1229,79 @@ namespace RM_EM
                 }
             }
 
-            // TODO: add in value missing sprite.
 
             // // Replace the multiplication symbols with an x.
             // result = result.Replace("*", "X");
 
             // Replaces the equation space with the on-screen space.
-            result = result.Replace(EQUATION_SPACE, "[   ]");
+            // result = result.Replace(EQUATION_SPACE, "[   ]"); // Old
+            result = result.Replace(EQUATION_SPACE, "[ " + EQUATION_SPACE + " ]"); // New
+
+
+            // TODO: add in value missing sprite.
+            // Finds the TMP_Text that will be used to display the equation.
+            TMP_Text tmpText = null;
+
+            // Sets the TMP_Text variable.
+            if (playerMatch == manager.p1)
+            {
+                tmpText = manager.matchUI.p1UI.equationText;
+            }
+            else if (playerMatch == manager.p2)
+            {
+                tmpText = manager.matchUI.p2UI.equationText;
+            }
+
+            // Text found.
+            if (tmpText != null)
+            {
+                // The TMP Text Info.
+                TMP_TextInfo tmpTextInfo = tmpText.GetTextInfo(result);
+
+                // THe character indexes.
+                List<int> charIndexes = new List<int>();
+
+                // The start index.
+                int startIndex = 0;
+
+                // Goes through the result.
+                while(startIndex < result.Length)
+                {
+                    // The next index.
+                    int nextIndex = result.IndexOf(EQUATION_SPACE, startIndex);
+
+                    // Next index exists.
+                    if(nextIndex != -1)
+                    {
+                        // Add to list, and set new start index.
+                        charIndexes.Add(nextIndex);
+                        startIndex = nextIndex + 1;
+                    }
+                    else // Next index does not exist.
+                    {
+                        break;
+                    }
+                }
+
+                // Goes through all the character infos.
+                // The list of missing values positions.
+                List<Vector3> valuePosList = new List<Vector3>();
+
+                // The character info.
+                for(int i = 0; i < charIndexes.Count; i++)
+                {
+                    // Gets the character info.
+                    TMP_CharacterInfo tmpCharInfo = tmpTextInfo.characterInfo[charIndexes[i]];
+
+                    // Gets the value's center position (TODO: check the position type).
+                    valuePosList.Add((tmpCharInfo.bottomLeft + tmpCharInfo.topRight) / 2.0F);
+                }
+
+                // TODO: place empty squares using the value pos list. Also scale them.
+            }
+
+            // Remove remaining equation spaces now that empty boxes have been placed.
+            result = result.Replace(EQUATION_SPACE, " ");
 
             // Returns the result.
             return result;

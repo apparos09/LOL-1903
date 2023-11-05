@@ -81,11 +81,11 @@ namespace RM_EM
 
             // Power of a Power
             if (challenger.powerOfAPowerRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerPower));
+                ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerOfAPower));
 
             // Power of a Product
             if (challenger.powerOfAProductRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerProduct));
+                ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerOfAProduct));
 
             // Zero Rule
             if (challenger.zeroRate > 0)
