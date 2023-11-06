@@ -179,6 +179,7 @@ namespace RM_EM
             //// This is being used for testing purposes. The game settings should be consulted for this value.
             //// Checks if the game settings have you use the tutorial.
             //bool useTutorial = true;
+
             //// if(GameSettings.Instance.UseTutorial)
             //if (useTutorial)
             //{

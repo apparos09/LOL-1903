@@ -155,5 +155,22 @@ namespace RM_EM
         {
             manager.QuitGame();
         }
+
+        // TEXT-TO-SPEECH
+        // Speaks text on the title screen (TTS)
+        public void SpeakText(string key)
+        {
+            // Checks if the instances exist.
+            if(GameSettings.Instantiated && LOLManager.Instantiated)
+            {
+                // Checks if TTS should be used.
+                if(GameSettings.Instance.UseTextToSpeech)
+                {
+                    // Grabs the LOL Manager to trigger text-to-speech.
+                    LOLManager lolManager = LOLManager.Instance;
+                    lolManager.textToSpeech.SpeakText(key);
+                }
+            }
+        }
     }
 }

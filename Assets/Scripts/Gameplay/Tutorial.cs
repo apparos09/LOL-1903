@@ -125,14 +125,21 @@ namespace RM_EM
             return pages;
         }
 
-        
+        // The opening tutorial.
         public List<Page> GetOpeningTutorial()
         {
+            // The test pages.
+            List<Page> pages = new List<Page>()
+            {
+                new Page("Welcome to the exponent club! As the name suggests, we play the exponent game here. Do you want to play? Oh, you’ve never played the game before? I guess the club will have to teach you then! Challenge me to a match, and I’ll show you the ropes!"),
+            };
+
             clearedOpening = true;
 
-            return GetTestPages();
+            return pages;
         }
 
+        // The exponent basics tutorial.
         public List<Page> GetExponentBasicsTutorial()
         {
             clearedExponentBasics = true;

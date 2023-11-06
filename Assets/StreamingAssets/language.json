@@ -1,51 +1,61 @@
 {
   "_meta": {
     "maxChars": {
-      "welcome": 20,
-      "readyToPlay": 20,
-      "pressContinue": 50,
-      "greatJob": 20,
-      "onePlusOne": 30
+      "_stop_": 0,
+
+      "gameTitle": 60,
+
+      "kwd_start": 12,
+      "kwd_newGame": 12,
+      "kwd_continue": 12,
+      "kwd_controls": 12,
+      "kwd_settings": 12,
+      "kwd_credits": 12,
+      "kwd_licenses": 12,
+
+      "mnu_controls_instruct": 42,
+      "mnu_controls_desc": 240,
+
+      "kwd_volume": 12,
+      "kwd_bgmVolume": 40,
+      "kwd_sfxVolume": 40,
+      "kwd_ttsVolume": 40,
+      "kwd_mute": 24,
+      "kwd_textToSpeech": 24,
+      "kwd_tutorial": 24,
+      "kwd_back": 12,
+
+      "owd_loadSuccess_msg": 250
+
     }
   },
   "en": {
-    "welcome": "Welcome!",
-    "readyToPlay": "Are you ready to play?",
-    "greatJob": "Great job!",
-    "pressContinue": "Press the next button to continue.",
-    "onePlusOne": "One + One = Two",
-    "newGame": "New Game",
-    "continue": "Continue",
-    "pantry": "Pantry",
-    "purchasePan": "Purchase Pan",
-    "autoSave": "...Auto Saving Complete"
-  },
-  "es": {
-    "welcome": "¡Bienvenido!",
-    "readyToPlay": "¿Estás listo para jugar?",
-    "greatJob": "¡Gran trabajo!",
-    "pressContinue": "Presione el botón 'siguiente' para continuar.",
-    "onePlusOne": "Uno + Uno = Dos"
-  },
-  "zh": {
-    "welcome": "欢迎！",
-    "readyToPlay": "你准备好玩吗",
-    "greatJob": "做得好！",
-    "pressContinue": "按“下一步”按钮继续。",
-    "onePlusOne": "一+一=二"
-  },
-  "jp": {
-    "welcome": "ようこそ!",
-    "readyToPlay": "あなたは遊ぶ準備ができていますか？",
-    "greatJob": "よくやった！",
-    "pressContinue": "続行するには '次へ'ボタンを押してください。",
-    "onePlusOne": "1 + 1 = 2"
-  },
-  "ru": {
-    "welcome": "Добро пожаловать!",
-    "readyToPlay": "Вы готовы играть?",
-    "greatJob": "Отличная работа!",
-    "pressContinue": "Нажмите следующую кнопку, чтобы продолжить.",
-    "onePlusOne": "один + один"
+    "_stop_": "",
+
+    "gameTitle": "Exponent Monsters",
+
+    "kwd_start": "Start",
+    "kwd_newGame": "New Game",
+    "kwd_continue": "Continue",
+    "kwd_controls": "Controls",
+    "kwd_settings": "Settings",
+    "kwd_credits": "Credits",
+    "kwd_licenses": "Licenses",
+    "kwd_quit": "Quit",
+
+    "mnu_controls_instruct": "Left Mouse Button/Touch: Interact",
+    "mnu_controls_desc": "Use the mouse and its buttons to interact with elements in the game world.",
+
+    "kwd_volume": "Volume",
+    "kwd_bgmVolume": "Background Music (BGM) Volume",
+    "kwd_sfxVolume": "Sound Effect (SFX) Volume",
+    "kwd_ttsVolume": "Text-to-Speech (TTS) Volume",
+    "kwd_mute": "Mute",
+    "kwd_textToSpeech": "Text-to-Speech",
+    "kwd_tutorial": "Tutorial",
+    "kwd_back": "Back",
+
+    "wrd_loadSuccess_msg": "Save data loaded successfully."
+
   }
 }
