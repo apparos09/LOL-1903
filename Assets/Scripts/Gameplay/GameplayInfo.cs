@@ -127,6 +127,11 @@ namespace RM_EM
         // Checks if the challenger has been defeated.
         public bool challengerDefeated = false;
 
+        [Header("Match Info/Other")]
+
+        // The background for the match.
+        public int matchBackgroundIndex = -1;
+
         // Constructor
         private GameplayInfo()
         {
@@ -311,6 +316,9 @@ namespace RM_EM
             // Save the game time.
             gameTime = manager.gameTime;
 
+            // Save the area index as the match background index.
+            matchBackgroundIndex = manager.currAreaIndex;
+
             // PUZZLE/CHALLENGE INFO
             // Sets the puzzle type.
             puzzle = challenger.puzzle;
@@ -349,6 +357,9 @@ namespace RM_EM
 
             // Set the match number.
             manager.matchNumber = matchNumber;
+
+            // Sets the background.
+            manager.SetBackground(matchBackgroundIndex);
 
             // PUZZLE //
             // Set the puzzle type.

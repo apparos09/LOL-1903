@@ -792,7 +792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &307144487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -834,7 +834,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c22b69f3cc89bca4da8076b8b98ca127, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e59ec3ed1aca5d648ad7cb0c509c4bdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -854,7 +854,7 @@ Transform:
   m_GameObject: {fileID: 307144486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -910,6 +910,11 @@ MonoBehaviour:
   usePointGoal: 1
   matchTime: 0
   matchWinner: -1
+  background: {fileID: 307144487}
+  backgrounds:
+  - {fileID: 21300000, guid: 29f5f0dc208b35749b8a0c90320f5165, type: 3}
+  - {fileID: 21300000, guid: e59ec3ed1aca5d648ad7cb0c509c4bdd, type: 3}
+  - {fileID: 21300000, guid: fff944479ffee3244b567c07462ebdf1, type: 3}
   p1: {fileID: 717209386}
   p1Puzzle: {fileID: 1125935906180993782}
   p2: {fileID: 1084210061}

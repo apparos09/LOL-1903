@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -42,6 +43,14 @@ namespace RM_EM
         // Checks if the match is paused.
         protected bool matchPaused = false;
 
+        [Header("Match/Backgrounds")]
+
+        // The background for the match.
+        public SpriteRenderer background;
+
+        // The match background list.
+        public List<Sprite> backgrounds;
+
         // PLAYERS
         [Header("Player 1")]
         // P1
@@ -56,6 +65,7 @@ namespace RM_EM
         
         // P2 Puzzle
         public Puzzle p2Puzzle;
+
 
         // Constructor
         private MatchManager()
@@ -249,6 +259,25 @@ namespace RM_EM
         public void TogglePausedMatch()
         {
             SetPausedMatch(!matchPaused);
+        }
+
+        // Sets the background by the number.
+        public void SetBackground(int bgIndex)
+        {
+            // No background set, so don't do anything.
+            if(background == null)
+            {
+                return;
+            }
+
+            // The index is out of bounds.
+            if(bgIndex >= backgrounds.Count || bgIndex < 0)
+            {
+                return;
+            }
+
+            // Set the background.
+            background.sprite = backgrounds[bgIndex];
         }
 
 
