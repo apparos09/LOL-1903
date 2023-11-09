@@ -1376,6 +1376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle 2 (P2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6235846275347174574, guid: 878cbf48622e18b49839ec8cc4fbcb2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7037564859089123189, guid: 878cbf48622e18b49839ec8cc4fbcb2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50
