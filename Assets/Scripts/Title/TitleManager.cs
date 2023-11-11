@@ -234,6 +234,41 @@ namespace RM_EM
             audioCredits.audioCredits.Add(credit);
 
 
+
+            // SOUND EFFECTS
+
+            // POWER EQUIP (SFX)
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Text Message Alert 5";
+            credit.artist = "Daniel Simon";
+            credit.collection = "-";
+            credit.source = "SoundBible";
+            credit.link1 = "https://soundbible.com/2158-Text-Message-Alert-5.html";
+            credit.link2 = "";
+            credit.copyright =
+                "\"Text Message Alert 5\"" +
+                "Daniel Simon\n" +
+                "Licensed under Creative Commons: By Attribution 3.0\n" +
+                "https://creativecommons.org/licenses/by/3.0/";
+
+            audioCredits.audioCredits.Add(credit);
+
+            // PUZZLE VALUE SELECT (SFX)
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Blop";
+            credit.artist = "Mark DiAngelo";
+            credit.collection = "-";
+            credit.source = "SoundBible";
+            credit.link1 = "https://soundbible.com/2067-Blop.html";
+            credit.link2 = "";
+            credit.copyright =
+                "\"Blop\"" +
+                "Mark DiAngelo\n" +
+                "Licensed under Creative Commons: By Attribution 3.0\n" +
+                "https://creativecommons.org/licenses/by/3.0/";
+
+            audioCredits.audioCredits.Add(credit);
+
         }
 
         // Gets the instance.
