@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6081391825481313852}
   - component: {fileID: 4299178670267723561}
-  - component: {fileID: 7454979405837163387}
   m_Layer: 0
   m_Name: Piece Sprite
   m_TagString: Untagged
@@ -71,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 70110741
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a7e86ba8dd88a3d46b69f26678139ca6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &7454979405837163387
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313723553855182105}
-  m_Enabled: 1
-  m_SortingLayerID: 70110741
-  m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &428128323372902633
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1343481163667898298}
   - component: {fileID: 2763513468572574151}
-  - component: {fileID: 9091190029943688552}
   m_Layer: 0
   m_Name: Value Sprite
   m_TagString: Untagged
@@ -168,8 +154,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -794971779
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1568435235, guid: f9a7a96542fbe8b4989b59c8ce61daea, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -182,18 +168,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &9091190029943688552
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428128323372902633}
-  m_Enabled: 1
-  m_SortingLayerID: -794971779
-  m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &7227789807543975141
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6765427347695225633}
   - component: {fileID: 7743733147098213157}
-  - component: {fileID: 8935062431227699798}
   m_Layer: 0
   m_Name: Value Sprite
   m_TagString: Untagged
@@ -71,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -794971779
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1568435235, guid: f9a7a96542fbe8b4989b59c8ce61daea, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8935062431227699798
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7635222670502781429}
-  m_Enabled: 1
-  m_SortingLayerID: -794971779
-  m_SortingLayer: 5
-  m_SortingOrder: 1
-  m_SortAtRoot: 0
 --- !u!1 &7723070553276469903
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5078391112260080358}
   - component: {fileID: 2300168660226340796}
-  - component: {fileID: 9042358069644481803}
   m_Layer: 0
   m_Name: Ball Sprite
   m_TagString: Untagged
@@ -168,8 +154,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 70110741
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5ee18f8bd7de25944884514105a2d18f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -182,18 +168,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &9042358069644481803
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723070553276469903}
-  m_Enabled: 1
-  m_SortingLayerID: 70110741
-  m_SortingLayer: 4
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8970323513769119203
 GameObject:
   m_ObjectHideFlags: 0

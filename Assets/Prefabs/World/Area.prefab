@@ -97,9 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: Area Switch
-  eventId: 0
+  eventNumber: 0
   eventTag: Area Switch
   cleared: 0
+  calledInit: 0
+  calledComplete: 0
   manager: {fileID: 0}
   area: {fileID: 5898150495570656792}
 --- !u!1 &7705468369958866106
@@ -112,7 +114,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2143976816341889437}
   - component: {fileID: 3517695245962152524}
-  - component: {fileID: 4162035171029775554}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -173,8 +174,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -712965155
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c22b69f3cc89bca4da8076b8b98ca127, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -187,15 +188,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &4162035171029775554
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7705468369958866106}
-  m_Enabled: 1
-  m_SortingLayerID: -712965155
-  m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
