@@ -79,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 1.25, y: 1.25}
   m_EdgeRadius: 0
 --- !u!50 &4730313478421702560
 Rigidbody2D:
@@ -124,14 +124,17 @@ MonoBehaviour:
   collider: {fileID: 5455840739512098616}
   spriteRenderer: {fileID: 964645638988108362}
   challengeSprite: {fileID: 21300000, guid: a2fc18d910db5134996945730b3de664, type: 3}
+  challengerName: 
+  challengerQuote: 
   difficulty: 0
   available: 1
   defeated: 0
   puzzle: 0
-  baseExpoRate: 1
-  multSameRate: 1
-  expoByExpoRate: 1
-  multDiffRate: 1
+  power: 0
+  exponentRate: 1
+  productRate: 1
+  powerOfAPowerRate: 1
+  powerOfAProductRate: 1
   zeroRate: 1
   negativeRate: 1
 --- !u!210 &5095991737127549738
@@ -174,7 +177,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4560830710801510753}
