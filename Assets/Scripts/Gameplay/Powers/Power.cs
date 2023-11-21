@@ -8,7 +8,7 @@ namespace RM_EM
     public abstract class Power : MonoBehaviour
     {
         // The power type.
-        public enum powerType { none, pointsPlus, pointsMinus, powerTwist }
+        public enum powerType { none, pointsPlus, pointsMinus, equationShorten, equationLengthen, pointsTransfer, twist }
 
         // The total number of powers (including the 'none' type).
         public const int POWER_TYPE_COUNT = 4;

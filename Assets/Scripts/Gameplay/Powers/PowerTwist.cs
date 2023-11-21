@@ -17,7 +17,7 @@ namespace RM_EM
 
             // Autoset Type
             if (power == powerType.none)
-                power = powerType.powerTwist;
+                power = powerType.twist;
 
             // Autoset Name
             if (powerName == string.Empty)

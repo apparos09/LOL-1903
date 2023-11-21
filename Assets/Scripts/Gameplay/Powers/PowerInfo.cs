@@ -25,13 +25,25 @@ namespace RM_EM
         // Decreases the number of points the target gets.
         public PowerPoints pointsMinus;
 
+        // Shortens the equation.
+        public PowerEquationChange equationShorten;
+
+        // Lengths an equation.
+        public PowerEquationChange equationLengthen;
+
+        // Transfers points from one player to another.
+        public PowerPointsTransfer pointsTransfer;
+
         // Twists the opponent's render (no use for the player since the AI isn't effected).
-        public PowerTwist renderTwist;
+        public PowerTwist twist;
 
         [Header("Symbols")]
 
         // The default power symbol.
         public Sprite defaultSymbol;
+
+        // The none/nothing symbol.
+        public Sprite noneSymbol;
 
         // The points plus symbol.
         public Sprite pointsPlusSymbol;
@@ -39,8 +51,17 @@ namespace RM_EM
         // The points minus symbol.
         public Sprite pointsMinusSymbol;
 
+        // The equation shorten symbol.
+        public Sprite equationShortenSymbol;
+
+        // The equation lengthn symbol.
+        public Sprite equationLengthenSymbol;
+
+        // The points transfer symbol.
+        public Sprite pointsTransferSymbol;
+
         // The render twist symbol.
-        public Sprite renderTwistSymbol;
+        public Sprite twistSymbol;
 
         // Constructor
         private PowerInfo()
@@ -124,7 +145,7 @@ namespace RM_EM
                 case Power.powerType.pointsMinus:
                     name = "Points Minus";
                     break;
-                case Power.powerType.powerTwist:
+                case Power.powerType.twist:
                     name = "Twist";
                     break;
             }
@@ -150,7 +171,7 @@ namespace RM_EM
                 case Power.powerType.pointsMinus:
                     desc = "A power that decreases the opponent's points for a time.";
                     break;
-                case Power.powerType.powerTwist:
+                case Power.powerType.twist:
                     desc = "A power that flips the opponent's view upside down.";
                     break;
             }

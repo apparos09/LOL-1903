@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 5630464657183279340}
-  key: 
+  key: kwd_back
   markIfFailed: 1
 --- !u!1 &6455235573826828016
 GameObject:
@@ -557,8 +557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  key: 
+  text: {fileID: 1025884077431602153}
+  key: kwd_settings
   markIfFailed: 1
 --- !u!1001 &2808122922972354881
 PrefabInstance:
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 226387127384837300}
-  key: kwd_soundEffects
+  key: kwd_sfxVolume
   markIfFailed: 1
 --- !u!224 &5056999698037081309 stripped
 RectTransform:
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6997294265669022352}
-  key: kwd_textToSpeech
+  key: kwd_ttsVolume
   markIfFailed: 1
 --- !u!114 &6997294265669022352 stripped
 MonoBehaviour:
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6874250545350396472}
-  key: kwd_backgroundMusic
+  key: kwd_bgmVolume
   markIfFailed: 1
 --- !u!1001 &7264206526264644393
 PrefabInstance:

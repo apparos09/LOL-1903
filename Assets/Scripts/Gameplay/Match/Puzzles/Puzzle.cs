@@ -127,12 +127,12 @@ namespace RM_EM
         public int equationTermsMax = 1;
 
         // The minimum number of terms for the base exponent rule.
-        [Tooltip("The minimum number of terms for the base exponent rule (combined rules only).")]
-        public int baseExponentTermsMin = 1;
+        [Tooltip("The minimum number of terms for the basic exponent rule (combined rules only).")]
+        public int exponentTermsMin = 1;
 
         // The maximum number of terms for the base exponent rule.
-        [Tooltip("The maximum number of terms for the base exponent rule (combined rules only).")]
-        public int baseExponentTermsMax = 3;
+        [Tooltip("The maximum number of terms for the basic exponent rule (combined rules only).")]
+        public int exponentTermsMax = 3;
 
         
         // MISSING VALUES //
@@ -684,7 +684,7 @@ namespace RM_EM
                 {
                     case exponentRule.exponent: // Base Exponent
                         calc = GenerateCalculation(rule,
-                            equationLowestValue, equationHighestValue, baseExponentTermsMin, baseExponentTermsMax);
+                            equationLowestValue, equationHighestValue, exponentTermsMin, exponentTermsMax);
 
                         break;
 

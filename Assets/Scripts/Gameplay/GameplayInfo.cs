@@ -478,12 +478,12 @@ namespace RM_EM
             manager.p2Puzzle.equationTermsMax = equationTermsMax;
 
             // Base exponent terms (minimum)
-            manager.p1Puzzle.baseExponentTermsMin = baseExponentTermsMin;
-            manager.p2Puzzle.baseExponentTermsMin = baseExponentTermsMin;
+            manager.p1Puzzle.exponentTermsMin = baseExponentTermsMin;
+            manager.p2Puzzle.exponentTermsMin = baseExponentTermsMin;
 
             // Base exponent terms (maximum)
-            manager.p1Puzzle.baseExponentTermsMax = baseExponentTermsMax;
-            manager.p2Puzzle.baseExponentTermsMax = baseExponentTermsMax;
+            manager.p1Puzzle.exponentTermsMax = baseExponentTermsMax;
+            manager.p2Puzzle.exponentTermsMax = baseExponentTermsMax;
 
             // Missing values (minimum)
             manager.p1Puzzle.missingValuesMin = missingValuesMin;

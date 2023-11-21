@@ -80,7 +80,11 @@ namespace RM_EM
             base.OnPowerStarted();
 
             // Applies the point multipler.
-            target.pointsMultiplier *= multiplier;
+            if (multiplier > 0)
+            {
+                target.pointsMultiplier *= multiplier;
+            }
+            
         }
 
         // Called when the power is finished.
@@ -89,7 +93,10 @@ namespace RM_EM
             base.OnPowerFinished();
 
             // Removes the point multipler.
-            target.pointsMultiplier /= multiplier;
+            if(multiplier > 0)
+            {
+                target.pointsMultiplier /= multiplier;
+            }
         }
 
         // Updates the power.
