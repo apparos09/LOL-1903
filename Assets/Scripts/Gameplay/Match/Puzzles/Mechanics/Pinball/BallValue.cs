@@ -29,6 +29,7 @@ namespace RM_EM
                 rigidbody = GetComponent<Rigidbody2D>();
         }
 
+
         // Collision Enter 2D
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -43,7 +44,7 @@ namespace RM_EM
         }
 
         // Collision Exit 2D
-        private void OnCollisionExit(Collision collision)
+        private void OnCollisionExit2D(Collision2D collision)
         {
             // Component.
             BallValue ballValue;
@@ -54,6 +55,8 @@ namespace RM_EM
                 UnregisterBallTouching(ballValue);
             }
         }
+
+
 
         // Returns the weight of the ball.
         public float GetWeight()
