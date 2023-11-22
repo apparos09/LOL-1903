@@ -25,7 +25,8 @@
       "kwd_tutorial": 24,
       "kwd_back": 12,
 
-      "owd_loadSuccess_msg": 250
+      "kwd_saving": 12,
+      "wrd_loadSuccess_msg": 250
 
     }
   },
@@ -55,6 +56,7 @@
     "kwd_tutorial": "Tutorial",
     "kwd_back": "Back",
 
+    "kwd_saving": "Saving...",
     "wrd_loadSuccess_msg": "Save data loaded successfully."
 
   }

@@ -71,7 +71,7 @@ namespace RM_EM
         // NOTE: you may not even change the defaults.
         [Header("Match Info/Puzzle Settings")]
         // The point goal for the game.
-        public int pointGoal = 999; // 999
+        public int pointGoal = 600; // 999
 
         // If 'true', the point goal is used.
         public bool usePointGoal = true;

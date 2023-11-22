@@ -1230,8 +1230,8 @@ namespace RM_EM
             }
 
 
-            // // Replace the multiplication symbols with an x.
-            // result = result.Replace("*", "X");
+            // Replace the "*" multiplication symbols with an X.
+            result = result.Replace("*", "X");
 
             // Replaces the equation space with the on-screen space.
             // result = result.Replace(EQUATION_SPACE, "[   ]"); // Old

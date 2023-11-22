@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   puzzle: 0
-  puzzleMechanic: {fileID: 1604941460}
+  puzzleMechanic: {fileID: 6183462148984664482}
   puzzleRender: {fileID: 358119977}
   puzzleMechanicPos: {fileID: 1766388862}
   playerMatch: {fileID: 1039013018}
@@ -1656,17 +1656,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5843360417295431937, guid: 33690c143201d674f84246d2fa1a26a0, type: 3}
   m_PrefabInstance: {fileID: 4956806839818076242}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1604941460 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6920850689933736930, guid: 33690c143201d674f84246d2fa1a26a0, type: 3}
-  m_PrefabInstance: {fileID: 4956806839818076242}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2196d67274423a649847c85385e320bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1610677991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2944,6 +2933,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fa36953e9138ae40bda19f8eb545df3, type: 3}
+--- !u!114 &6183462148984664482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1008702947505753004, guid: 2fa36953e9138ae40bda19f8eb545df3, type: 3}
+  m_PrefabInstance: {fileID: 6183462148984664481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253e4fe0ed6f5eb4eba494d80883bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6445835012713517679
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -472,16 +472,16 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   puzzleValues: []
   autoFillPuzzleValues: 1
-  activeValueCountMax: 10
+  activeValueCountMax: 20
   spawnTimer: 0
-  spawnTimeMax: 2
+  spawnTimeMax: 1.5
   areaCenter: {fileID: 998901984330751986}
   areaWidth: 20
   areaHeight: 20
   bubblePrefab: {fileID: 6794533893258619650, guid: 22fe33d49a016e8479d09f9a55724b88, type: 3}
   valueSprites: {fileID: 5194116366994581501}
-  bubbleMoveForce: 2
-  bubbleLifeTime: 10
+  bubbleMoveForce: 3
+  bubbleLifeTime: 8
 --- !u!114 &5194116366994581501
 MonoBehaviour:
   m_ObjectHideFlags: 0

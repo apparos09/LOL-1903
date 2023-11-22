@@ -34,6 +34,9 @@ namespace RM_EM
         // Transfers points from one player to another.
         public PowerPointsTransfer pointsTransfer;
 
+        // Blocks the target from gaining more points for a time.
+        public PowerPointsBlock pointsBlock;
+
         // Twists the opponent's render (no use for the player since the AI isn't effected).
         public PowerTwist twist;
 
@@ -59,6 +62,9 @@ namespace RM_EM
 
         // The points transfer symbol.
         public Sprite pointsTransferSymbol;
+
+        // The points block symbol.
+        public Sprite pointsBlockSymbol;
 
         // The render twist symbol.
         public Sprite twistSymbol;
@@ -160,6 +166,10 @@ namespace RM_EM
                     name = "Points Transfer";
                     break;
 
+                case Power.powerType.pointsBlock:
+                    name = "Points Block";
+                    break;
+
                 case Power.powerType.twist:
                     name = "Twist";
                     break;
@@ -200,13 +210,18 @@ namespace RM_EM
                 case Power.powerType.pointsTransfer:
                     desc = "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.";
                     break;
-                
+
+                case Power.powerType.pointsBlock:
+                    desc = "Blocks the target from gaining more points until the obstruction is removed.";
+                    break;
+
                 case Power.powerType.twist:
                     desc = "A power that flips the opponent's view upside down.";
                     break;
             }
 
-            // TODO: implement.
+            // TODO: implement translation.
+
             return desc;
         }
     }
