@@ -139,12 +139,27 @@ namespace RM_EM
                 case Power.powerType.none:
                     name = "None";
                     break;
+
                 case Power.powerType.pointsPlus:
                     name = "Points Plus";
                     break;
+
                 case Power.powerType.pointsMinus:
                     name = "Points Minus";
                     break;
+
+                case Power.powerType.equationShorten:
+                    name = "Question Short";
+                    break;
+
+                case Power.powerType.equationLengthen:
+                    name = "Question Long";
+                    break;
+
+                case Power.powerType.pointsTransfer:
+                    name = "Points Transfer";
+                    break;
+
                 case Power.powerType.twist:
                     name = "Twist";
                     break;
@@ -165,12 +180,27 @@ namespace RM_EM
                 case Power.powerType.none:
                     desc = "A power that does nothing.";
                     break;
+                
                 case Power.powerType.pointsPlus:
-                    desc = "A power that increases the user's points for a time.";
+                    desc = "Increases the user's points gained for correct answers for a time.";
                     break;
+                
                 case Power.powerType.pointsMinus:
-                    desc = "A power that decreases the opponent's points for a time.";
+                    desc = "Decreases the opponent's points gained answers for a time.";
                     break;
+
+                case Power.powerType.equationShorten:
+                    desc = "Shortens the user's questions, and increases the points they get for correct answers.";
+                    break;
+
+                case Power.powerType.equationLengthen:
+                    desc = "Increases the length of the opponent's questions, and decreases the points they get for correct answers";
+                    break;
+
+                case Power.powerType.pointsTransfer:
+                    desc = "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.";
+                    break;
+                
                 case Power.powerType.twist:
                     desc = "A power that flips the opponent's view upside down.";
                     break;

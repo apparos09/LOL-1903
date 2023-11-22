@@ -477,6 +477,9 @@ namespace RM_EM
             gameInfo.SaveMatchInfo(this);
             gameInfo.SaveWorldInfo(this);
 
+            // Makes sure the game is unpaused.
+            UnpauseGame();
+
             // TODO: add loading screen.
             SceneManager.LoadScene("WorldScene");
         }

@@ -31,11 +31,23 @@ namespace RM_EM
                 powerList.Sort();
         }
 
+
+        // Checks if the player has the provided power.
+        public bool HasPower(Power.powerType powerType)
+        {
+            if (powerList.Contains(powerType))
+                return true;
+            else
+                return false;
+        }
+
         // Checks if the player has powers.
         public bool HasPowers()
         {
             return powerList.Count > 0;
         }
+
+        
 
         // Selects a power by type.
         // If 'savePower' is true, the power is saved to the list if it's not already in the list.

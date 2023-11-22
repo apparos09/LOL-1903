@@ -64,3 +64,6 @@ TagManager:
   - name: Puzzle Value
     uniqueID: 3499995517
     locked: 0
+  - name: Reticle
+    uniqueID: 1690071023
+    locked: 0

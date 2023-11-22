@@ -453,6 +453,8 @@ MonoBehaviour:
   usePointGoal: 1
   matchTime: 0
   matchWinner: -1
+  background: {fileID: 0}
+  backgrounds: []
   p1: {fileID: 1039013018}
   p1Puzzle: {fileID: 788031213}
   p2: {fileID: 883756869}
@@ -1051,8 +1053,8 @@ MonoBehaviour:
   equationHighestValue: 9
   equationTermsMin: 1
   equationTermsMax: 1
-  baseExponentTermsMin: 1
-  baseExponentTermsMax: 3
+  exponentTermsMin: 1
+  exponentTermsMax: 3
   missingValuesMin: 1
   missingValuesMax: 1
 --- !u!1 &883756867
@@ -1511,8 +1513,8 @@ MonoBehaviour:
   equationHighestValue: 9
   equationTermsMin: 1
   equationTermsMax: 1
-  baseExponentTermsMin: 1
-  baseExponentTermsMax: 3
+  exponentTermsMin: 1
+  exponentTermsMax: 3
   missingValuesMin: 1
   missingValuesMax: 1
 --- !u!1 &1236572143
@@ -2870,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8125045993918137128, guid: 33690c143201d674f84246d2fa1a26a0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2895,7 +2897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5497052982325497415, guid: 2fa36953e9138ae40bda19f8eb545df3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8832628119426428816, guid: 2fa36953e9138ae40bda19f8eb545df3, type: 3}
       propertyPath: m_LocalPosition.x

@@ -41,6 +41,9 @@ namespace RM_EM
 
             // Set points.
             takerPoints = taker.points;
+
+            // // Increases points multiplier by the take percent.
+            // taker.pointsMultiplier *= (1.0F + takePercent);
         }
 
         // Called when the power is over.
@@ -50,6 +53,9 @@ namespace RM_EM
 
             // Clear points.
             takerPoints = 0;
+
+            // // Undoes the points multiplier by the take percent.
+            // taker.pointsMultiplier /= (1.0F + takePercent);
         }
 
         // Updates the power.

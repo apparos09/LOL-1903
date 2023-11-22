@@ -24,6 +24,12 @@ namespace RM_EM
         // The world UI.
         public WorldUI worldUI;
 
+        // The world audio.
+        public WorldAudio worldAudio;
+
+        // The world animation.
+        public WorldAnimation worldAnimation;
+
         // The camera the world uses.
         public WorldCamera worldCamera;
 
@@ -566,6 +572,9 @@ namespace RM_EM
             // Save the world and match info to the game info instance.
             gameInfo.SaveWorldInfo(this);
             gameInfo.SaveMatchInfo(this);
+
+            // Makes sure the game is unpaused.
+            UnpauseGame();
 
             // TODO: add loading screen.
             SceneManager.LoadScene("MatchScene");

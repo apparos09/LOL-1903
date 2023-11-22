@@ -128,7 +128,19 @@ namespace RM_EM
                     newPower = Instantiate(powerPrefabs.pointsMinus);
                     break;
 
-                case Power.powerType.twist: // Points Twist
+                case Power.powerType.equationShorten: // Equation Shorten
+                    newPower = Instantiate(powerPrefabs.equationShorten);
+                    break;
+
+                case Power.powerType.equationLengthen: // Equation Lengthen
+                    newPower = Instantiate(powerPrefabs.equationLengthen);
+                    break;
+
+                case Power.powerType.pointsTransfer: // Points Transfer
+                    newPower = Instantiate(powerPrefabs.pointsTransfer);
+                    break;
+
+                case Power.powerType.twist: // Render Twist
                     newPower = Instantiate(powerPrefabs.twist);
                     break;
             }

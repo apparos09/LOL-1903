@@ -71,7 +71,7 @@ namespace RM_EM
         // NOTE: you may not even change the defaults.
         [Header("Match Info/Puzzle Settings")]
         // The point goal for the game.
-        public int pointGoal = 999;
+        public int pointGoal = 999; // 999
 
         // If 'true', the point goal is used.
         public bool usePointGoal = true;
@@ -286,8 +286,19 @@ namespace RM_EM
             // If player 1 (user) won the most recent match.
             if(pWinner == 1)
             {
-                // TODO: this makes checks anyway, but maybe you should check here anyway?.
-                manager.playerWorld.GivePower(p2Power, false);
+                // Checks if the player has P2's power or not.
+                if(!manager.playerWorld.HasPower(p2Power))
+                {
+                    // Give power.
+                    manager.playerWorld.GivePower(p2Power, false);
+
+                    // Play the power unlock animation.
+                    if(manager.worldAnimation != null)
+                    {
+                        manager.worldAnimation.PlayPowerUnlockAnimation();
+                    }
+                }
+
 
                 // Overrwite the power list with the new updates.
                 p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);

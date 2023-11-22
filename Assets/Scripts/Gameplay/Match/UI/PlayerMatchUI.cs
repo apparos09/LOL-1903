@@ -182,7 +182,7 @@ namespace RM_EM
             }
             else if (manager.p2 == playerMatch)
             {
-                UpdatePlayerPowerBarFill(manager.p1, powerBar);
+                UpdatePlayerPowerBarFill(manager.p2, powerBar);
             }
         }
 
