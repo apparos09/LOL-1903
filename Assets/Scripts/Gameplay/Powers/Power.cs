@@ -42,7 +42,7 @@ namespace RM_EM
         [Header("Power/Speed")]
         // The increment for power filling.
         [Tooltip("The increment for power filling.")]
-        public float powerFillInc = 10.0F;
+        public float powerFillInc = 12.0F;
 
         // The rate that the power fills that.
         [Tooltip("The rate for power filling.")]
@@ -50,7 +50,7 @@ namespace RM_EM
 
         // The decrement at which the power decays when used.
         [Tooltip("The decrement for power depletion.")]
-        public float depletionDec = 1.0F;
+        public float depletionDec = 4.0F;
 
         // The rate at which the power decays when used.
         [Tooltip("The rate for power depletion.")]

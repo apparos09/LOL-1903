@@ -52,9 +52,9 @@ MonoBehaviour:
   energy: 0
   energyMax: 100
   powerActive: 0
-  powerFillInc: 10
+  powerFillInc: 12
   powerFillRate: 1
-  depletionDec: 1
+  depletionDec: 4
   depletionRate: 1
   target: {fileID: 0}
   autoSetTarget: 1

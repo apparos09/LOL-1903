@@ -106,8 +106,27 @@ namespace RM_EM
             // The power prefabs.
             PowerInfo powerPrefabs = PowerInfo.Instance;
 
+            // User and Opponent
+            // The user.
+            PlayerMatch user = this;
+
+            // The opponent.
+            if (manager == null) // Sets manager if it's not set already.
+                manager = MatchManager.Instance;
+
+            // Sets opponent.
+            PlayerMatch opp = (this == manager.p1) ? manager.p2 : manager.p1;
+
+            // POWERS
             // The new power for the player.
             Power newPower = null;
+
+            // Derived powers (for player settings).
+            PowerPoints powerPoints = null;
+            PowerEquationChange powerEquation = null;
+            PowerPointsTransfer powerTransfer = null;
+            PowerPointsBlock powerBlock = null;
+            PowerTwist powerTwist = null;
 
             // Checks the power type.
             switch (type)
@@ -122,28 +141,75 @@ namespace RM_EM
 
                 case Power.powerType.pointsPlus: // Points Plus
                     newPower = Instantiate(powerPrefabs.pointsPlus);
+
+                    // Settings
+                    powerPoints = (PowerPoints)newPower;
+                    powerPoints.target = user;
+                    powerPoints.targetIsUser = true;
+
                     break;
 
                 case Power.powerType.pointsMinus: // Points Minus
                     newPower = Instantiate(powerPrefabs.pointsMinus);
+
+                    // Settings
+                    powerPoints = (PowerPoints)newPower;
+                    powerPoints.target = opp;
+                    powerPoints.targetIsUser = false;
+
                     break;
 
                 case Power.powerType.equationShorten: // Equation Shorten
                     newPower = Instantiate(powerPrefabs.equationShorten);
+
+                    // Settings
+                    powerEquation = (PowerEquationChange)newPower;
+                    powerEquation.target = user;
+                    powerEquation.targetIsUser = true;
+
                     break;
 
                 case Power.powerType.equationLengthen: // Equation Lengthen
                     newPower = Instantiate(powerPrefabs.equationLengthen);
+
+                    // Settings
+                    powerEquation = (PowerEquationChange)newPower;
+                    powerEquation.target = opp;
+                    powerEquation.targetIsUser = false;
+
                     break;
 
                 case Power.powerType.pointsTransfer: // Points Transfer
                     newPower = Instantiate(powerPrefabs.pointsTransfer);
+
+                    // Settings
+                    powerTransfer = (PowerPointsTransfer)newPower;
+                    powerTransfer.taker = user;
+                    powerTransfer.giver = opp;
+
+                    break;
+
+                case Power.powerType.pointsBlock: // Points Block
+                    newPower = Instantiate(powerPrefabs.pointsBlock);
+
+                    // Settings
+                    powerBlock = (PowerPointsBlock)newPower;
+                    powerBlock.target = opp;
                     break;
 
                 case Power.powerType.twist: // Render Twist
                     newPower = Instantiate(powerPrefabs.twist);
+
+                    // Settings
+                    powerTwist = (PowerTwist)newPower;
+                    powerTwist.target = opp;
+
                     break;
             }
+
+            // // Sets the player match (is handled by the other function).
+            // if(newPower != null)
+            //     newPower.playerMatch = this;
 
             // Sets the power.
             SetPower(newPower, setPlayerAsParent);

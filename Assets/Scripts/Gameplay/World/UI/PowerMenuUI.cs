@@ -15,9 +15,14 @@ namespace RM_EM
             // The power type.
             public Power.powerType power;
 
-            // Name and description.
+            // Symbol
+            public Sprite symbol;
+
+            // Name
             public string name;
             // TODO: add shorthand name...
+
+            // Description
             public string description;
         }
 
@@ -68,6 +73,9 @@ namespace RM_EM
 
         [Header("Entries (UI)/Selected")]
 
+        // The selected power symbol.
+        public Image selectedPowerSymbol;
+
         // The selected power name.
         public TMP_Text selectedPowerName;
 
@@ -109,6 +117,7 @@ namespace RM_EM
             PowerEntry entry = new PowerEntry();
 
             entry.power = Power.powerType.none;
+            entry.symbol = PowerInfo.Instance.nothingSymbol;
 
             // Gets the name and the description.
             entry.name = PowerInfo.GetPowerTypeName(entry.power, false);
@@ -142,10 +151,15 @@ namespace RM_EM
                 // New entry.
                 PowerEntry entry = new PowerEntry();
 
-                // Saves the power information (TODO: call function for name and description).
+                // Saves the power information
+                // Power and Symbol
                 entry.power = playerWorld.powerList[i];
+                entry.symbol = PowerInfo.Instance.GetPowerSymbol(entry.power);
+
+                // Name and Description
                 entry.name = PowerInfo.GetPowerTypeName(entry.power, true);
                 entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
+                
 
                 // Adds the entry to the list.
                 powerEntryList.Add(entry);
@@ -163,9 +177,22 @@ namespace RM_EM
             // Sets to the first page.
             entryPageIndex = 0;
 
-            // Set selected power name and description to defaults.
-            selectedPowerName.text = "-";
-            selectedPowerDesc.text = "-";
+            // TODO: use selected entry instead?
+            // Set selected power symbol, name, description to current.
+            // If not available, set to defaults.
+            if(playerWorld.power != Power.powerType.none)
+            {
+                selectedPowerSymbol.sprite = PowerInfo.Instance.GetPowerSymbol(playerWorld.power);
+                selectedPowerName.text = PowerInfo.GetPowerTypeName(playerWorld.power, false);
+                selectedPowerDesc.text = PowerInfo.GetPowerTypeDescription(playerWorld.power);
+            }
+            else // None power
+            {
+                selectedPowerSymbol.sprite = powerEntryList[0].symbol;
+                selectedPowerName.text = powerEntryList[0].name;
+                selectedPowerDesc.text = powerEntryList[0].description;
+            }
+            
 
             // Make buttons interactable.
             prevEntryButton.interactable = true;
@@ -301,6 +328,9 @@ namespace RM_EM
             // Selects this entry.
             selectedEntry = entryUI.entry;
 
+            // Set the symbol.
+            selectedPowerSymbol.sprite = selectedEntry.symbol;
+
             // The selected power's name.
             selectedPowerName.text = selectedEntry.name;
             selectedPowerDesc.text = selectedEntry.description;
@@ -317,6 +347,12 @@ namespace RM_EM
         public void UnequipPower()
         {
             playerWorld.RemovePower();
+
+            // Sets to the 'none' power.
+            // TODO: streamline this
+            selectedPowerSymbol.sprite = powerEntryList[0].symbol;
+            selectedPowerName.text = powerEntryList[0].name;
+            selectedPowerDesc.text = powerEntryList[0].description;
         }
 
         //// Update is called once per frame

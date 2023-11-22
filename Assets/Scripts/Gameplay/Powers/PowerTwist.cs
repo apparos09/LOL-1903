@@ -7,8 +7,13 @@ namespace RM_EM
     // Twists the opponent's render 360 degrees.
     public class PowerTwist : Power
     {
-        // The opponent's render.
-        public PuzzleRender oppRender;
+        [Header("Twist")]
+
+        // The target of the twist power.
+        public PlayerMatch target;
+
+        // The target's render.
+        public PuzzleRender targetRender;
 
         // Start is called before the first frame update
         protected override void Start()
@@ -27,17 +32,30 @@ namespace RM_EM
             if (powerDesc == string.Empty)
                 powerDesc = "This user turns the target's puzzle upside down.";
 
-            // Checks if the user of this power is player 1 or player 2.
-            if (playerMatch == manager.p1) // Onwer is P1
+
+
+            // Target not set.
+            if(target == null)
             {
-                // P2's Render
-                oppRender = manager.p2Puzzle.puzzleRender;
+                // Checks if the user of this power is player 1 or player 2.
+                if (playerMatch == manager.p1) // Onwer is P1
+                {
+                    // P2
+                    target = manager.p2;
+                }
+                else if (playerMatch == manager.p2) // Owner is P2
+                {
+                    // P1
+                    target = manager.p1;
+                }
             }
-            else if(playerMatch == manager.p2) // Owner is P2
+
+            // Checks if the opponent render is set.
+            if(targetRender == null)
             {
-                // P1'S Render
-                oppRender = manager.p1Puzzle.puzzleRender;
+                targetRender = target.puzzle.puzzleRender;
             }
+            
            
         }
 
@@ -49,7 +67,7 @@ namespace RM_EM
             base.OnPowerStarted();
 
             // Rotates the opponent's render by 180 degrees.
-            oppRender.gameObject.transform.Rotate(Vector3.forward, 180.0F);
+            targetRender.gameObject.transform.Rotate(Vector3.forward, 180.0F);
         }
 
         // Called when the power is over.
@@ -58,7 +76,7 @@ namespace RM_EM
             base.OnPowerFinished();
 
             // Rotates the opponent's render by 180 degrees again.
-            oppRender.gameObject.transform.Rotate(Vector3.forward, -180.0F);
+            targetRender.gameObject.transform.Rotate(Vector3.forward, -180.0F);
         }
 
         // Updates the power.

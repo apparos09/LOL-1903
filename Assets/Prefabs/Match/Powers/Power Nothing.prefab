@@ -48,10 +48,11 @@ MonoBehaviour:
   playerMatch: {fileID: 0}
   power: 0
   powerName: Power of Nothing
+  powerDesc: 
   energy: 0
   energyMax: 100
   powerActive: 0
-  powerFillInc: 10
+  powerFillInc: 12
   powerFillRate: 1
-  depletionDec: 1
+  depletionDec: 4
   depletionRate: 1

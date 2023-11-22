@@ -116,7 +116,7 @@ namespace RM_EM
             colliderBlocker.SetActive(false);
 
             // Sets the current area.
-            SetArea(currAreaIndex);
+            SetArea(currAreaIndex, true);
 
             // Checks if the info object has been instantiated to load content from it.
             if (gameInfoInit && GameplayInfo.Instantiated)
@@ -285,7 +285,8 @@ namespace RM_EM
 
         // AREAS //
         // Sets the area.
-        public void SetArea(int newIndex)
+        // TODO: implement skip transition for areas.
+        public void SetArea(int newIndex, bool skipAnimation)
         {
             // Bounds check to see if the new index is valid.
             if(newIndex >= 0 && newIndex < areas.Count)
@@ -303,8 +304,18 @@ namespace RM_EM
             // Transition the camera.
             if(newArea.cameraPos != null)
             {
-                // Move the camera.
-                worldCamera.Move(newArea.cameraPos);
+                // Checks if the animation should be skipped.
+                if(skipAnimation) // Skip
+                {
+                    // Set the camera position.
+                    worldCamera.SetPosition(newArea.cameraPos);
+                }   
+                else // Don't skip
+                {
+                    // Move the camera.
+                    worldCamera.Move(newArea.cameraPos);
+                }
+
             }
 
 
@@ -352,7 +363,7 @@ namespace RM_EM
                 index = 0;
 
             // Set the area index.
-            SetArea(index);
+            SetArea(index, false);
         }
         
         // Go to the previous area.
@@ -366,7 +377,7 @@ namespace RM_EM
                 index = areas.Count - 1;
 
             // Set the area index.
-            SetArea(index);
+            SetArea(index, false);
         }
 
         // Returns the index of the challenger.
@@ -531,7 +542,7 @@ namespace RM_EM
 
             // LOADING THE DATA
             // Save the current area index.
-            SetArea(loadedData.currAreaIndex);
+            SetArea(loadedData.currAreaIndex, true);
 
 
             // Clears the power list.

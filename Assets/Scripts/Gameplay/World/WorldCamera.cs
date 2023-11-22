@@ -37,6 +37,20 @@ namespace RM_EM
             destPos = transform.position;
         }
 
+        // Sets the position of the world camera (no transition).
+        public void SetPosition(Vector3 newPos)
+        {
+            transform.position = newPos;
+            destPos = newPos;
+            inTransition = false;
+        }
+
+        // Sets the position of the world camera.
+        public void SetPosition(GameObject dest)
+        {
+            SetPosition(dest.transform.position);
+        }
+
         // Sets the destination position.
         public void Move(Vector3 newPos)
         {

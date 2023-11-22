@@ -266,7 +266,7 @@ namespace RM_EM
         public void LoadWorldInfo(WorldManager manager)
         {
             // Set the area.
-            manager.SetArea(currAreaIndex);
+            manager.SetArea(currAreaIndex, true);
 
             // Update the current challenger defeat status if the index is valid.
             if(challengerIndex > 0 && challengerIndex < challengersDefeated.Count)
@@ -280,29 +280,35 @@ namespace RM_EM
             }
 
             // Set player's powers.
-            manager.playerWorld.powerList = new List<Power.powerType>(p1PowerList);
+            manager.playerWorld.powerList = new List<Power.powerType>(p1PowerList); // Power List
+            manager.playerWorld.SetPower(p1Power); // Set Power
+
 
             // Unlocking a Power
             // If player 1 (user) won the most recent match.
             if(pWinner == 1)
             {
-                // Checks if the player has P2's power or not.
-                if(!manager.playerWorld.HasPower(p2Power))
+                // If player 2 had a power...
+                if(p2Power != Power.powerType.none)
                 {
-                    // Give power.
-                    manager.playerWorld.GivePower(p2Power, false);
-
-                    // Play the power unlock animation.
-                    if(manager.worldAnimation != null)
+                    // Checks if the player has P2's power or not.
+                    if (!manager.playerWorld.HasPower(p2Power))
                     {
-                        manager.worldAnimation.PlayPowerUnlockAnimation();
+                        // Give power.
+                        manager.playerWorld.GivePower(p2Power, false);
+
+                        // Play the power unlock animation.
+                        if (manager.worldAnimation != null)
+                        {
+                            manager.worldAnimation.PlayPowerUnlockAnimation();
+                        }
                     }
                 }
-
-
-                // Overrwite the power list with the new updates.
-                p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);
             }
+
+            // Overwite the power list with the new updates.
+            // TODO: does this need to happen every time?
+            p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);
         }
 
 

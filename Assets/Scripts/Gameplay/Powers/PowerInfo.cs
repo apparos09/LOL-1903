@@ -46,7 +46,7 @@ namespace RM_EM
         public Sprite defaultSymbol;
 
         // The none/nothing symbol.
-        public Sprite noneSymbol;
+        public Sprite nothingSymbol;
 
         // The points plus symbol.
         public Sprite pointsPlusSymbol;
@@ -132,7 +132,99 @@ namespace RM_EM
             }
         }
 
+        // TODO: combine these functions into one.
+
         // INFO
+        // Gets a power.
+        public Power GetPower(Power.powerType powerT)
+        {
+            // The power object.
+            Power powerObject = null;
+
+            switch (powerT)
+            {
+                default:
+                case Power.powerType.none:
+                    powerObject = nothing;
+                    break;
+
+                case Power.powerType.pointsPlus:
+                    powerObject = pointsPlus;
+                    break;
+
+                case Power.powerType.pointsMinus:
+                    powerObject = pointsMinus;
+                    break;
+
+                case Power.powerType.equationShorten:
+                    powerObject = equationShorten;
+                    break;
+
+                case Power.powerType.equationLengthen:
+                    powerObject = equationLengthen;
+                    break;
+
+                case Power.powerType.pointsTransfer:
+                    powerObject = pointsTransfer;
+                    break;
+
+                case Power.powerType.pointsBlock:
+                    powerObject = pointsBlock;
+                    break;
+
+                case Power.powerType.twist:
+                    powerObject = twist;
+                    break;
+            }
+
+            return powerObject;
+        }
+
+        // Gets a power symbol.
+        public Sprite GetPowerSymbol(Power.powerType powerT)
+        {
+            // The power sprite.
+            Sprite powerSprite = null;
+
+            switch (powerT)
+            {
+                default:
+                case Power.powerType.none:
+                    powerSprite = nothingSymbol;
+                    break;
+
+                case Power.powerType.pointsPlus:
+                    powerSprite = pointsPlusSymbol;
+                    break;
+
+                case Power.powerType.pointsMinus:
+                    powerSprite = pointsMinusSymbol;
+                    break;
+
+                case Power.powerType.equationShorten:
+                    powerSprite = equationShortenSymbol;
+                    break;
+
+                case Power.powerType.equationLengthen:
+                    powerSprite = equationLengthenSymbol;
+                    break;
+
+                case Power.powerType.pointsTransfer:
+                    powerSprite = pointsTransferSymbol;
+                    break;
+
+                case Power.powerType.pointsBlock:
+                    powerSprite = pointsBlockSymbol;
+                    break;
+
+                case Power.powerType.twist:
+                    powerSprite = twistSymbol;
+                    break;
+            }
+
+            return powerSprite;
+        }
+
         // Gets the name of the power type name.
         // 'shortHand' determines if the name is the shorthand or the full-name.
         public static string GetPowerTypeName(Power.powerType power, bool shortHand)
@@ -175,7 +267,6 @@ namespace RM_EM
                     break;
             }
 
-            // TODO: implement.
             return name;
         }
 

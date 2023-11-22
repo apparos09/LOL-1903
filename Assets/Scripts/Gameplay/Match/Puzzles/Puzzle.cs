@@ -156,8 +156,8 @@ namespace RM_EM
         // The starting number of missing values.
         private int missingValuesCountStart = 0;
 
-        // The minimum amount of random values available when asking for a random value.
-        private const int RANDOM_VALUE_MIN = 5;
+        // The maximum amount of random values available when asking for a random value.
+        private const int RANDOM_VALUE_MAX = 5;
 
         // Start is called before the first frame update
         void Start()
@@ -999,7 +999,6 @@ namespace RM_EM
         // if 'useLimit' is true, the random value is limited to a certain set of values.
         public char GetRandomPuzzleValue(bool limitValues = true)
         {
-            // TODO: have this limit the value based on what's needed for the actual question.
             // The value to be returned.
             char value;
 
@@ -1021,10 +1020,8 @@ namespace RM_EM
                 // Creates a list copy of the missing values.
                 List<ValueSpace> valueSpaces = new List<ValueSpace>(missingValues);
 
-                // TODO: should I remove duplicates? Maybe not.
-
-                // While the random value count is below the minimum.
-                while(valueSpaces.Count < RANDOM_VALUE_MIN)
+                // While the random value count is below the maximum.
+                while (valueSpaces.Count < RANDOM_VALUE_MAX)
                 {
                     // Generate a random value.
                     randIndex = Random.Range(0, valueList.Count);
@@ -1037,6 +1034,10 @@ namespace RM_EM
                     // Puts the random value in the value spaces list.
                     valueSpaces.Add(vs);
                 }
+
+                // Removes the extra values beyond the random value max.
+                if(valueSpaces.Count > RANDOM_VALUE_MAX)
+                    valueSpaces.RemoveRange(RANDOM_VALUE_MAX, valueSpaces.Count - RANDOM_VALUE_MAX);
 
                 // Generates a random index of the values.
                 randIndex = Random.Range(0, valueSpaces.Count);
