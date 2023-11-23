@@ -127,6 +127,9 @@ namespace RM_EM
         // Checks if the challenger has been defeated.
         public bool challengerDefeated = false;
 
+        // Gets set to 'true' if it's the final challenger.
+        public bool isFinalChallenger = false;
+
         [Header("Match Info/Other")]
 
         // The background for the match.
@@ -241,6 +244,9 @@ namespace RM_EM
                 challengersDefeated.Add(manager.challengers[i].defeated);
             }
 
+            // Reset the final challenger variable.
+            isFinalChallenger = false;
+
             // Saves the match number.
             matchNumber = manager.GetMatchNumber();
         }
@@ -326,9 +332,21 @@ namespace RM_EM
         // Stores the match info from the world manager to be used in the match info.
         public void SaveMatchInfo(WorldManager manager)
         {
-            // TODO: add content.
-            // Grabs the chalelnger.
+            // CHALLENGER
+            // Grabs the challenger.
             ChallengerWorld challenger = manager.worldUI.challengeUI.challenger;
+
+            // Checks if the challenger is the final challenger.
+            if (manager.finalChallenger != null)
+            {
+                // If this is the final challenger, set this to true.
+                isFinalChallenger = manager.finalChallenger == challenger;
+            }
+            else
+            {
+                isFinalChallenger = false;
+            }
+
 
             // Save the game time.
             gameTime = manager.gameTime;
@@ -359,6 +377,13 @@ namespace RM_EM
             // Difficulty, and defeat status.
             challengerDifficulty = challenger.difficulty;
             challengerDefeated = challenger.defeated;
+
+            // Match settings from challenger.
+            equationTermsMin = challenger.equationTermsMin;
+            equationTermsMax = challenger.equationTermsMax;
+
+            missingValuesMin = challenger.missingValuesMin;
+            missingValuesMax = challenger.missingValuesMax;
 
 
             // PLAYERS
@@ -554,6 +579,20 @@ namespace RM_EM
             {
                 // Sets difficulty.
                 cpu.difficulty = challengerDifficulty;
+            }
+
+            // Setting match BGM.
+            if(manager.matchAudio != null)
+            {
+                // Checks if the player is facing the final challenger.
+                if(isFinalChallenger) // Yes
+                {
+                    manager.matchAudio.PlayBossMatchBgm();
+                }
+                else // No
+                {
+                    manager.matchAudio.PlayNormalMatchBgm();
+                }
             }
         }
 

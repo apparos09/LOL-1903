@@ -64,6 +64,24 @@ namespace RM_EM
         // Rate for negative exponent rule.
         public float negativeRate = 1.0F;
 
+        [Header("Terms")]
+
+        // The minimum number of terms for the challenger's questions.
+        [Tooltip("The minimum number of equation terms.")]
+        public int equationTermsMin = 1;
+
+        // The maximum number of terms for the challenger's questions.
+        [Tooltip("The maximum number of equation terms.")]
+        public int equationTermsMax = 1;
+
+        // The minimum number of missing values.
+        [Tooltip("The minimum number of missing values.")]
+        public int missingValuesMin = 1;
+
+        // The maximum number of missing values.
+        [Tooltip("The maximum number of missing values.")]
+        public int missingValuesMax = 1;
+
 
         // Start is called before the first frame update
         void Start()

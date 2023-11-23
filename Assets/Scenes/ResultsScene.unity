@@ -629,6 +629,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 51833927898468110, guid: d24a5ab6d61132f4e800f34fdf9978cd, type: 3}
   m_PrefabInstance: {fileID: 615911611}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &615911613 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2936451469709582379, guid: d24a5ab6d61132f4e800f34fdf9978cd, type: 3}
+  m_PrefabInstance: {fileID: 615911611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427188030
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +910,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 645056177624515696, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
   m_PrefabInstance: {fileID: 1926097525}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1926097527 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2345190742428625749, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
+  m_PrefabInstance: {fileID: 1926097525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121404734
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2121404735}
   - component: {fileID: 2121404736}
+  - component: {fileID: 2121404737}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -952,6 +963,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultsUI: {fileID: 1462901754}
+  resultsAudio: {fileID: 2121404737}
+--- !u!114 &2121404737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121404734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbf07e49b4c17544a5fded727787c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  bgmSource: {fileID: 1926097527}
+  sfxSource: {fileID: 615911613}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

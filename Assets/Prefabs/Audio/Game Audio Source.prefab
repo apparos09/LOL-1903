@@ -160,5 +160,5 @@ MonoBehaviour:
   audioSource: {fileID: 6351066983186337218}
   clipStart: 0
   clipEnd: 0
-  playAtClipStart: 1
+  playAtClipStart: 0
   loopRelative: 1

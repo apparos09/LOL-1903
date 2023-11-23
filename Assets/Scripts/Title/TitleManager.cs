@@ -21,6 +21,9 @@ namespace RM_EM
         // The title screen UI.
         public TitleUI titleUI;
 
+        // The title audio for the game.
+        public TitleAudio titleAudio;
+
         // The audio credits for the game.
         public AudioCredits audioCredits;
 

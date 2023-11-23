@@ -197,6 +197,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 645056177624515696, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
   m_PrefabInstance: {fileID: 38797210}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &38797212 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2345190742428625749, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
+  m_PrefabInstance: {fileID: 38797210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &38797213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 37149182645630213, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
+  m_PrefabInstance: {fileID: 38797210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f7b328314474049a1d088337ea94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &54738128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -882,6 +898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 335020969}
   - component: {fileID: 335020968}
+  - component: {fileID: 335020970}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -905,6 +922,7 @@ MonoBehaviour:
   gameTime: 0
   mouseTouch: {fileID: 1945610510}
   matchUI: {fileID: 979213269}
+  matchAudio: {fileID: 335020970}
   matchNumber: 0
   pointGoal: 999
   usePointGoal: 1
@@ -936,6 +954,28 @@ Transform:
   - {fileID: 703993265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335020970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335020967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e75fde9a770e94086d1195134957b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  bgmSource: {fileID: 38797212}
+  bgmSourceLooper: {fileID: 38797213}
+  sfxSource: {fileID: 703993266}
+  normalMatchBgm: {fileID: 8300000, guid: afc69ac307d621c4d87fbf3160d62c1b, type: 3}
+  normalMatchLoopPoints: {x: 10.1, y: 86.899}
+  bossMatchBgm: {fileID: 8300000, guid: d1bcad9436b06694cbeb6858fb420fbf, type: 3}
+  bossMatchLoopPoints: {x: 1.851, y: 90.473}
+  resultsBgm: {fileID: 8300000, guid: 69bcade05878d4d4e8de465fe71d48fd, type: 3}
+  resultsLoopPoints: {x: 2.139, y: 35.484}
 --- !u!1001 &703993264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -996,6 +1036,11 @@ PrefabInstance:
 --- !u!4 &703993265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 51833927898468110, guid: d24a5ab6d61132f4e800f34fdf9978cd, type: 3}
+  m_PrefabInstance: {fileID: 703993264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &703993266 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2936451469709582379, guid: d24a5ab6d61132f4e800f34fdf9978cd, type: 3}
   m_PrefabInstance: {fileID: 703993264}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &717209382

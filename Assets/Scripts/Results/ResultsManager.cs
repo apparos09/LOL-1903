@@ -19,6 +19,9 @@ namespace RM_EM
         // The results UI.
         public ResultsUI resultsUI;
 
+        // The results audio.
+        public ResultsAudio resultsAudio;
+
         // Constructor
         private ResultsManager()
         {

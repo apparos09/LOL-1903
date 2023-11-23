@@ -25,6 +25,9 @@ namespace RM_EM
         // The UI for the match.
         public MatchUI matchUI;
 
+        // The match audio.
+        public MatchAudio matchAudio;
+
         // The match number.
         public int matchNumber = 0;
 
@@ -462,6 +465,10 @@ namespace RM_EM
 
             // Show the match end content.
             matchUI.ShowMatchEnd();
+
+            // Play the results audio.
+            if (matchAudio != null)
+                matchAudio.PlayResultsBgm();
         }
 
 
