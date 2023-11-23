@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 7203993997260855960}
   - component: {fileID: 6177204979531397537}
   - component: {fileID: 289596562903895648}
+  - component: {fileID: 8235088159594527240}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -331,7 +332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Power
+  m_text: Use Power
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -400,6 +401,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8235088159594527240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111595063191636286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 289596562903895648}
+  key: kwd_usePower
+  markIfFailed: 1
 --- !u!1 &5734964078804857048
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +427,7 @@ GameObject:
   - component: {fileID: 1689495194563932886}
   - component: {fileID: 1534990003222747687}
   - component: {fileID: 8474304379445326017}
+  - component: {fileID: 6106383472068147820}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -534,6 +551,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6106383472068147820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5734964078804857048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8474304379445326017}
+  key: kwd_skip
+  markIfFailed: 1
 --- !u!1 &7077766362241762790
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ namespace RM_EM
         public bool[] challengersDefeated = new bool[WorldManager.CHALLENGER_COUNT];
 
         // Tutorial Clears
+        public Tutorial.TutorialData tutorialData;
     }
 
     // Used to save the game.
