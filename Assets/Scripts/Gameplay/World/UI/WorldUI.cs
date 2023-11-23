@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,17 +31,30 @@ namespace RM_EM
         // Button for going to right room.
         public Button nextAreaButton;
 
+        [Header("Other")]
+        // The save text for the world.
+        public TMP_Text saveText;
+
         // Start is called before the first frame update
         protected override void Start()
         {
             base.Start();
 
+            // The world manager
             if (worldManager == null)
                 worldManager = WorldManager.Instance;
+
+            // If the LOL manager exists.
+            if (LOLManager.Instantiated)
+            {
+                // Sets the save text.
+                LOLManager.Instance.saveSystem.feedbackText = saveText;
+            }
         }
 
         // SETTINGS (EXPANDED) //
 
+        // POWERS
         // Opens the power menu.
         public void OpenPowersMenu()
         {
@@ -70,6 +84,7 @@ namespace RM_EM
             }
         }
 
+        // SAVE
         // Open the save window.
         public void OpenSaveWindow()
         {
@@ -112,6 +127,7 @@ namespace RM_EM
             worldManager.ToTitleScene();
         }
 
+        // WINDOW
         // Overrides the on window opened function.
         public override void OnWindowOpened(GameObject window)
         {

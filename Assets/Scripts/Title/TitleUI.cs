@@ -1,7 +1,9 @@
 using LoLSDK;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.UI;
 using util;
@@ -36,6 +38,10 @@ namespace RM_EM
         public GameSettingsUI settingsWindow;
         public AudioCreditsInterface creditsWindow;
 
+        [Header("Other")]
+        // The save text for the game.
+        public TMP_Text saveText;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -54,6 +60,10 @@ namespace RM_EM
                 // Disable continue.
                 continueButton.interactable = false;
             }
+
+            // Save the save text as the save feedback text.
+            if(LOLManager.Instantiated)
+                LOLManager.Instance.saveSystem.feedbackText = saveText;
         }
 
         // Starts the new game.

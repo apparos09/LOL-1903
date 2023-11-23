@@ -89,13 +89,14 @@ namespace RM_EM
         // Checks if the world manager has been set.
         private bool IsWorldManagerSet()
         {
+            // Tries to set the world manager.
             if (worldManager == null)
-                worldManager = FindObjectOfType<WorldManager>(true);
+                worldManager = WorldManager.Instance;
 
             // Game manager does not exist.
             if (worldManager == null)
             {
-                Debug.LogWarning("The Game Manager couldn't be found.");
+                Debug.LogWarning("The World Manager couldn't be found.");
                 return false;
             }
 
@@ -185,13 +186,21 @@ namespace RM_EM
         {
             // Only updates the text that the feedback text was set.
             if (feedbackText != null)
+            {
                 feedbackText.text = text;
+                feedbackText.gameObject.SetActive(true);
+            }
+                
 
             yield return feedbackTimer;
 
             // Only updates the content if the feedback text has been set.
             if (feedbackText != null)
+            {
                 feedbackText.text = string.Empty;
+                feedbackText.gameObject.SetActive(false);
+            }
+                
 
             // nullifies the feedback method.
             feedbackMethod = null;
@@ -257,11 +266,12 @@ namespace RM_EM
             }
 
             // TODO: save data for game loading.
-            if (!IsWorldManagerSet())
-            {
-                Debug.LogError("Game gameManager not found.");
-                return;
-            }
+            // TODO: why do I check this here? What purpose does this serve.
+            //if (!IsWorldManagerSet())
+            //{
+            //    Debug.LogError("Game gameManager not found.");
+            //    return;
+            //}
 
             // TODO: this automatically loads the game if the continue button is pressed.
             // If there is no data to load, the button is gone. 

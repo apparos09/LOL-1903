@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -95,6 +96,7 @@ namespace RM_EM
         // Start is called before the first frame update
         protected override void Start()
         {
+
             // Checks if the game info has been initialized already.
             bool gameInfoInit = GameplayInfo.Instantiated;
 
@@ -126,6 +128,10 @@ namespace RM_EM
 
                 // Load the world info.
                 gameInfo.LoadWorldInfo(this);
+
+                // Autosaves if the player won the last round.
+                if (gameInfo.pWinner == 1)
+                    SaveGame();
             }
 
             // The power menu can only be accessed if the player has powers.
@@ -186,6 +192,20 @@ namespace RM_EM
             //// Checks if the game settings have you use the tutorial.
             //bool useTutorial = true;
 
+            // If the LOL Manager has been instantiated.
+            if (LOLManager.Instantiated)
+            {
+                // Grabs the manager.
+                LOLManager lolManager = LOLManager.Instance;
+
+                // Checks for loaded data.
+                if (lolManager.saveSystem.HasLoadedData())
+                {
+                    // Loads the data.
+                    LoadGame();
+                }
+            }
+
             //// if(GameSettings.Instance.UseTutorial)
             //if (useTutorial)
             //{
@@ -199,7 +219,6 @@ namespace RM_EM
             //        // Input.
             //    }
             //}
-            
 
             // Called post start.
             calledPostStart = true;
@@ -464,7 +483,8 @@ namespace RM_EM
                 data.challengersDefeated[i] = challengers[i].defeated;
             }
 
-            // TODO: add tutorial clears.
+            // Generates the tutorial data.
+            data.tutorialData = Tutorial.Instance.GenerateTutorialData();
 
             // The data is valid.
             data.valid = true;
@@ -562,10 +582,11 @@ namespace RM_EM
             for (int i = 0; i < loadedData.challengersDefeated.Length && i < challengers.Count; i++)
             {
                 // Sets if the challenger has been defeated.
-                challengers[i].defeated = loadedData.challengersDefeated[i];
+                challengers[i].SetChallengerDefeated(loadedData.challengersDefeated[i]);
             }
 
-            // TODO: implement tutorial content.
+            // Load the tutorial data.
+            Tutorial.Instance.LoadTutorialData(loadedData.tutorialData);
 
             // The data has been loaded successfully.
             return true;

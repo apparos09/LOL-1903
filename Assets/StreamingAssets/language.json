@@ -56,19 +56,22 @@
     "kwd_tutorial": "Tutorial",
     "kwd_back": "Back",
 
+    "kwd_save": "Save",
     "kwd_saving": "Saving...",
     "kwd_loadSuccess_msg": "Save data loaded successfully.",
 
     "kwd_world": "World",
-    "kwd_power": "Power",
+    "kwd_info": "Info",
     "kwd_powers": "Powers",
+
+    "kwd_power": "Power",
 
     "kwd_match": "Match",
 
     "kwd_usePower": "Use Power",
     "kwd_skip": "Skip",
 
-    "mth_matchOver": "The match is over!",
+    "mth_matchOver": "The Match is Over!",
     "mth_userWins": "You won!",
     "mth_oppWins": "The opponent won!",
 

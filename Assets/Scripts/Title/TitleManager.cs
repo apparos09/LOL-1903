@@ -2,6 +2,7 @@ using LoLSDK;
 using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using util;
@@ -86,7 +87,6 @@ namespace RM_EM
                     // Set up the game initializations.
                     if (titleUI.newGameButton != null && titleUI.continueButton != null)
                         lolManager.saveSystem.Initialize(titleUI.newGameButton, titleUI.continueButton);
-
 
                     // Don't disable the continue button, otherwise the save data can't be loaded.
                     // Enables/disables the continue button based on if there is loaded data or not.
