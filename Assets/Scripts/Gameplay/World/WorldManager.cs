@@ -220,6 +220,28 @@ namespace RM_EM
             //    }
             //}
 
+
+            // If the game settings have been instantiated.
+            if(worldUI.infoButton != null && GameSettings.Instantiated)
+            {
+                GameSettings settings = GameSettings.Instance;
+
+                // If the tutorial is enabled
+                if(settings.UseTutorial)
+                {
+                    // The tutorial.
+                    Tutorial tutorial = Tutorial.Instance;
+
+                    // This is the first exponent tutoria. If it's been cleared, then there's something to show.
+                    // If there isn't anything to show, then keep the button disabled.
+                    worldUI.infoButton.interactable = tutorial.clearedExponent;
+                }
+            }
+
+            // If the player has no powers, disable the power menu.
+            if(worldUI.powersButton != null)
+                worldUI.powersButton.interactable = playerWorld.powerList.Count != 0;
+
             // Called post start.
             calledPostStart = true;
         }

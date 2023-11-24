@@ -429,6 +429,18 @@ namespace RM_EM
             return result;
         }
 
+        // Has Player 1 Won
+        public bool HasPlayer1Won()
+        {
+            return HasPlayerWon(p1);
+        }
+
+        // Has Player 2 Won
+        public bool HasPlayer2Won()
+        {
+            return HasPlayerWon(p2);
+        }
+
         // Called when the match is finished.
         public void OnMatchOver()
         {
@@ -436,13 +448,13 @@ namespace RM_EM
             PlayerMatch winner;
 
             // Checks if p1 has reached the points goal.
-            if(p1.points >= pointGoal)
+            if(HasPlayer1Won())
             {
                 winner = p1;
                 matchWinner = 1;
             }
             // Checks if p2 has reached the points goal.
-            else if(p2.points >= pointGoal)
+            else if(HasPlayer2Won())
             {
                 winner = p2;
                 matchWinner = 2;

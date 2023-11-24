@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using SimpleJSON;
 using util;
 using UnityEngine.UI;
-using System.Text.RegularExpressions;
 
 namespace RM_EM
 {
@@ -19,8 +19,13 @@ namespace RM_EM
         // The time for the match UI.
         public TMP_Text timerText;
 
+        [Header("Match/Match End")]
+
         // The UI contnet shown when the match ends.
         public GameObject matchEnd;
+
+        // The player win text from match end.
+        public TMP_Text playerWinText;
 
         [Header("Match/Players")]
 
@@ -251,6 +256,23 @@ namespace RM_EM
         public void ShowMatchEnd()
         {
             matchEnd.SetActive(true);
+
+            // Checks for defs
+            JSONNode defs = SharedState.LanguageDefs;
+
+            // Checks who has won.
+            if (matchManager.HasPlayer1Won()) // P1
+            {
+                playerWinText.text = (defs != null) ? defs["mth_userWins"] : "You Won!";
+            }
+            else if(matchManager.HasPlayer2Won()) // P2
+            {
+                playerWinText.text = (defs != null) ? defs["mth_oppWins"] : "The Opponent Won!";
+            }
+            else // None
+            {
+                playerWinText.text = "-";
+            }
         }
 
         // Hides the match end.

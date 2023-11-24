@@ -38,7 +38,7 @@ namespace RM_EM
 
         // Gets set to 'true' when the challenger has been defeated.
         // Set to public when not being used.
-        private bool defeated = false;
+        public bool defeated = false;
 
         [Header("Puzzle")]
         // The puzzle type.
@@ -75,6 +75,14 @@ namespace RM_EM
         // The maximum number of terms for the challenger's questions.
         [Tooltip("The maximum number of equation terms.")]
         public int equationTermsMax = 1;
+
+        // The minimum number of terms for the base exponent rule.
+        [Tooltip("The minimum number of terms for the base exponent rule (combined rules only).")]
+        public int exponentTermsMin = 1;
+
+        // The maximum number of terms for the base exponent rule.
+        [Tooltip("The maximum number of terms for the base exponent rule (combined rules only).")]
+        public int exponentTermsMax = 1;
 
         // The minimum number of missing values.
         [Tooltip("The minimum number of missing values.")]

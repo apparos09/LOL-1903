@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace RM_EM
@@ -10,7 +11,7 @@ namespace RM_EM
         [Header("Computer")]
 
         // The difficulty of the computer.
-        public int difficulty = 0;
+        private int difficulty = 0;
 
         // The target value to be selected.
         public PuzzleValue targetValue;
@@ -35,6 +36,12 @@ namespace RM_EM
             useMouseTouch = false;
         }
 
+        // Gets the difficulty.
+        public int GetDifficulty()
+        {
+            return difficulty;
+        }
+
         // Sets the difficulty of the computer.
         public void SetDifficulty(int newDiff)
         {
@@ -47,59 +54,56 @@ namespace RM_EM
             switch(difficulty)
             {
                 default: // 0
-                    waitTimeMax = 2.5F;
-                    moveSpeed = 5.0F;
-                    break;
-
-                case 1: // Level 1
-                    waitTimeMax = 3.0F;
+                    waitTimeMax = 3.5F;
                     moveSpeed = 4.0F;
                     break;
 
+                case 1: // Level 1
+                    waitTimeMax = 4.0F;
+                    moveSpeed = 3.0F;
+                    break;
+
                 case 2: // Level 2
-                    waitTimeMax = 3.0F;
-                    moveSpeed = 4.5F;
+                    waitTimeMax = 4.0F;
+                    moveSpeed = 3.5F;
                     break;
 
                 case 3: // Level 3 (Normal)
-                    waitTimeMax = 2.5F;
-                    moveSpeed = 5.0F;
+                    waitTimeMax = 3.5F;
+                    moveSpeed = 3.0F;
                     break;
 
                 case 4: // Level 4
-                    waitTimeMax = 2.25F;
-                    moveSpeed = 5.5F;
+                    waitTimeMax = 3.25F;
+                    moveSpeed = 3.5F;
                     break;
 
                 case 5: // Level 5
-                    waitTimeMax = 2.25F;
-                    moveSpeed = 6.0F;
+                    waitTimeMax = 3.25F;
+                    moveSpeed = 5.0F;
                     break;
 
                 case 6: // Level 6
-                    waitTimeMax = 2.25F;
-                    moveSpeed = 6.5F;
+                    waitTimeMax = 3.25F;
+                    moveSpeed = 5.5F;
                     break;
 
                 case 7: // Level 7
-                    waitTimeMax = 2.0F;
-                    moveSpeed = 7.0F;
+                    waitTimeMax = 3.0F;
+                    moveSpeed = 6.0F;
                     break;
 
                 case 8: // Level 8
-                    waitTimeMax = 2.0F;
-                    moveSpeed = 7.5F;
+                    waitTimeMax = 3.0F;
+                    moveSpeed = 6.5F;
                     break;
 
                 case 9: // Level 9
-                    waitTimeMax = 2.0F;
-                    moveSpeed = 8.0F;
+                    waitTimeMax = 3.0F;
+                    moveSpeed = 7.0F;
                     break;
 
             }
-
-
-            // TODO: implement difficulty changes.
         }
 
 
@@ -288,14 +292,43 @@ namespace RM_EM
                 // If the power is available for the computer.
                 if(IsPowerAvailable())
                 {
-                    // TODO: do differently based on the difficulty of the computer.
+                    // The opponent
+                    PlayerMatch opp = (this == manager.p2) ? manager.p1 : manager.p2;
+
+                    // The percent gap between the computer and the opponent (player).
+                    float percentThreshold = 0.0F;
+
+                    // Uses a power based on how far ahead the opponent is compared to the computer.
                     switch(difficulty)
                     {
                         default: // Use power instantly.
-                            UsePower();
+                        case 0:
+                            percentThreshold = -1.0F;
+                            break;
+
+                        case 1: // L01
+                        case 2: // L02
+                        case 3: // L03
+                            percentThreshold = 0.3F;
+                            break;
+
+                        case 4: // L04
+                        case 5: // L05
+                        case 6: // L06
+                            percentThreshold = 0.2F;
+                            break;
+
+                        case 7: // L07
+                        case 8: // L08
+                        case 9: // L09
+                            percentThreshold = 0.1F;
                             break;
                     }
-                    
+
+                    // If the percent threshold has been passed, use the power.
+                    if (opp.points / manager.pointGoal - points / manager.pointGoal >= percentThreshold)
+                        UsePower();
+
                 }
                 
             }

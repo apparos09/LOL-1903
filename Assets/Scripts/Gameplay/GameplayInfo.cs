@@ -92,11 +92,11 @@ namespace RM_EM
 
         // The minimum number of terms for the base exponent rule.
         [Tooltip("The minimum number of terms for the base exponent rule (combined rules only).")]
-        public int baseExponentTermsMin = 1;
+        public int exponentTermsMin = 1;
 
         // The maximum number of terms for the base exponent rule.
         [Tooltip("The maximum number of terms for the base exponent rule (combined rules only).")]
-        public int baseExponentTermsMax = 3;
+        public int exponentTermsMax = 3;
 
         // The minimum number of missing values.
         [Tooltip("The minimum number of missing values.")]
@@ -379,9 +379,15 @@ namespace RM_EM
             challengerDefeated = challenger.IsChallengerDefeated();
 
             // Match settings from challenger.
+            // Equation Terms
             equationTermsMin = challenger.equationTermsMin;
             equationTermsMax = challenger.equationTermsMax;
 
+            // Exponent Terms
+            exponentTermsMin = challenger.exponentTermsMin;
+            exponentTermsMax = challenger.exponentTermsMax;
+
+            // Missing Values
             missingValuesMin = challenger.missingValuesMin;
             missingValuesMax = challenger.missingValuesMax;
 
@@ -520,12 +526,12 @@ namespace RM_EM
             manager.p2Puzzle.equationTermsMax = equationTermsMax;
 
             // Base exponent terms (minimum)
-            manager.p1Puzzle.exponentTermsMin = baseExponentTermsMin;
-            manager.p2Puzzle.exponentTermsMin = baseExponentTermsMin;
+            manager.p1Puzzle.exponentTermsMin = exponentTermsMin;
+            manager.p2Puzzle.exponentTermsMin = exponentTermsMin;
 
             // Base exponent terms (maximum)
-            manager.p1Puzzle.exponentTermsMax = baseExponentTermsMax;
-            manager.p2Puzzle.exponentTermsMax = baseExponentTermsMax;
+            manager.p1Puzzle.exponentTermsMax = exponentTermsMax;
+            manager.p2Puzzle.exponentTermsMax = exponentTermsMax;
 
             // Missing values (minimum)
             manager.p1Puzzle.missingValuesMin = missingValuesMin;
@@ -578,7 +584,7 @@ namespace RM_EM
             if (manager.p2.TryGetComponent<ComputerMatch>(out cpu))
             {
                 // Sets difficulty.
-                cpu.difficulty = challengerDifficulty;
+                cpu.SetDifficulty(challengerDifficulty);
             }
 
             // Setting match BGM.

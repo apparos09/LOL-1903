@@ -50,7 +50,8 @@ namespace RM_EM
             // If the platform is set to webGL, disable the quit button.
             if (Application.platform == RuntimePlatform.WebGLPlayer)
             {
-                quitButton.interactable = false;
+                quitButton.interactable = false; // Disable
+                quitButton.gameObject.SetActive(false); // Turn-Off
             }
 
             // If the LOLSDK isn't initialized, make the continue button non-interactable.

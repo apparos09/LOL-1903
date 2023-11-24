@@ -43,9 +43,10 @@
     "kwd_credits": "Credits",
     "kwd_licenses": "Licenses",
     "kwd_quit": "Quit",
+    "kwd_back": "Back",
 
-    "mnu_controls_instruct": "Left Mouse Button/Touch: Interact",
-    "mnu_controls_desc": "Use the mouse and its buttons to interact with elements in the game world.",
+    "ttl_controls_instruct": "Left Mouse Button/Touch: Interact",
+    "ttl_controls_desc": "The game can be controlled via either the mouse or the touch screen. Use the left mouse click or a touch screen input to interact with elements in the game world.",
 
     "kwd_volume": "Volume",
     "kwd_bgmVolume": "Background Music (BGM) Volume",
@@ -54,7 +55,6 @@
     "kwd_mute": "Mute",
     "kwd_textToSpeech": "Text-to-Speech",
     "kwd_tutorial": "Tutorial",
-    "kwd_back": "Back",
 
     "kwd_save": "Save",
     "sve_msg_savingGame": "Saving Game...",
@@ -73,7 +73,7 @@
 
     "mth_matchOver": "The Match is Over!",
     "mth_userWins": "You won!",
-    "mth_oppWins": "The opponent won!",
+    "mth_oppWins": "The Opponent won!",
 
 
 

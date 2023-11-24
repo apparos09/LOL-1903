@@ -27,6 +27,20 @@ namespace RM_EM
         // The challenge window.
         public ChallengeUI challengeUI;
 
+        [Header("World/Header")]
+
+        // The info button.
+        public Button infoButton;
+
+        // The powers button.
+        public Button powersButton;
+
+        // The save button.
+        public Button saveButton;
+
+        // The settings button.
+        public Button settingsButton;
+
         [Header("World/Area")]
         // Button for left room.
         public Button prevAreaButton;
