@@ -41,6 +41,9 @@ namespace RM_EM
             {
                 RegisterBallTouching(ballValue);
             }
+
+            // Plays the ball hit SFX.
+            PlayBallHitSfx();
         }
 
         // Collision Exit 2D
@@ -114,10 +117,22 @@ namespace RM_EM
             }
         }
 
+        // Plays the ball hit SFX.
+        public void PlayBallHitSfx()
+        {
+            // Plays a SFX
+            if (manager.matchAudio != null)
+                manager.matchAudio.PlayBallHitSfx();
+        }
+
         // OnHit Function
         public override void OnHit(bool rightAnswer)
         {
             mechanic.ReturnBall(this);
+
+            // Plays a SFX
+            if (manager.matchAudio != null)
+                manager.matchAudio.PlayPuzzleValueSelectSfx();
         }
 
         // Update is called once per frame

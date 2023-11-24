@@ -57,7 +57,7 @@
     "kwd_back": "Back",
 
     "kwd_save": "Save",
-    "kwd_saving": "Saving...",
+    "sve_msg_savingGame": "Saving Game...",
     "kwd_loadSuccess_msg": "Save data loaded successfully.",
 
     "kwd_world": "World",

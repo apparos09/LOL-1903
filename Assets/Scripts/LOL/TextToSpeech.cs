@@ -61,11 +61,7 @@ namespace RM_EM
             if (!instanced)
             {
                 instanced = true;
-
-                // checks if the SDK has been initialized.
-                if (!LOLSDK.Instance.IsInitialized)
-                    Debug.LogError("The SDK has not been initialized.");
-
+            
                 // if the audio source has not been set, then add an audio source component.
                 if (ttsAudioSource == null)
                 {
@@ -101,6 +97,16 @@ namespace RM_EM
                 if (!asc.gameObject.CompareTag(GameSettings.TTS_TAG))
                     asc.gameObject.tag = GameSettings.TTS_TAG;
             }
+
+        }
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            // Checks if the SDK has been initialized.
+            // This get triggrered regardless of if the LOLSDK is initialized.
+            if (!LOLSDK.Instance.IsInitialized)
+                Debug.LogError("The SDK has not been initialized.");
 
         }
 

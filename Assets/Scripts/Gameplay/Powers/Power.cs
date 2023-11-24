@@ -83,7 +83,9 @@ namespace RM_EM
         // Checks if the power is usable.
         public bool IsPowerUsable()
         {
-            bool result = energy >= energyMax;
+            // If the power is filled, and the power is not active.
+            bool result = energy >= energyMax && !powerActive;
+
             return result;
         }
 
@@ -92,6 +94,12 @@ namespace RM_EM
         {
             powerActive = true;
             OnPowerStarted();
+        }
+
+        // Returns 'true' if the power is filled.
+        public bool IsPowerFilled()
+        {
+            return energy >= energyMax;
         }
 
         // Gets the power fill percentage.

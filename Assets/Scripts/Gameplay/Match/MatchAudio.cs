@@ -19,7 +19,7 @@ namespace RM_EM
         // The SFX source.
         public AudioSource sfxSource;
 
-        [Header("Audio Clips")]
+        [Header("Audio Clips/BGM")]
 
         // The normal BGM
         public AudioClip normalMatchBgm;
@@ -39,6 +39,17 @@ namespace RM_EM
         // Match Results loop
         public Vector2 resultsLoopPoints;
 
+        [Header("Audio Clips/SFX")]
+
+        // The value select SFX.
+        public AudioClip puzzleValueSelectSfx;
+
+        // The keyboard click SFX.
+        public AudioClip keyboardClickSfx;
+
+        // The ball hit SFX.
+        public AudioClip ballHitSfx;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -46,6 +57,8 @@ namespace RM_EM
                 manager = MatchManager.Instance;
         }
 
+
+        // BACKGROUND MUSIC //
         // Normal Match BGM
         public void PlayNormalMatchBgm()
         {
@@ -90,5 +103,27 @@ namespace RM_EM
             bgmSource.clip = resultsBgm;
             bgmSource.Play();
         }
+
+
+
+        // SOUND EFFECTS //
+        // Puzzle Value Select SFX
+        public void PlayPuzzleValueSelectSfx()
+        {
+            sfxSource.PlayOneShot(puzzleValueSelectSfx);
+        }
+
+        // Plays the keyboard click SFX
+        public void PlayKeyboardClickSfx()
+        {
+            sfxSource.PlayOneShot(keyboardClickSfx);
+        }
+
+        // Ball Hit SFX
+        public void PlayBallHitSfx()
+        {
+            sfxSource.PlayOneShot(ballHitSfx);
+        }
+
     }
 }

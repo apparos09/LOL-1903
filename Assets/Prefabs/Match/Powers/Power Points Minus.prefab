@@ -48,7 +48,7 @@ MonoBehaviour:
   playerMatch: {fileID: 0}
   power: 2
   powerName: Points Down
-  powerDesc: 
+  powerDesc: Reduces the opponent's points gained for right answers.
   energy: 0
   energyMax: 100
   powerActive: 0

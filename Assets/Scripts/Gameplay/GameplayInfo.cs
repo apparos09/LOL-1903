@@ -241,7 +241,7 @@ namespace RM_EM
             for(int i = 0; i < manager.challengers.Count; i++)
             {
                 // Saves the defeated challengers.
-                challengersDefeated.Add(manager.challengers[i].defeated);
+                challengersDefeated.Add(manager.challengers[i].IsChallengerDefeated());
             }
 
             // Reset the final challenger variable.
@@ -376,7 +376,7 @@ namespace RM_EM
 
             // Difficulty, and defeat status.
             challengerDifficulty = challenger.difficulty;
-            challengerDefeated = challenger.defeated;
+            challengerDefeated = challenger.IsChallengerDefeated();
 
             // Match settings from challenger.
             equationTermsMin = challenger.equationTermsMin;

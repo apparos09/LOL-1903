@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using util;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 namespace RM_EM
 {
@@ -263,6 +264,46 @@ namespace RM_EM
         public void ToWorldScene()
         {
             matchManager.ToWorldScene();
+        }
+
+        // Update is called once per frame
+        protected override void Update()
+        {
+            base.Update();
+
+            // The match isn't paused.
+            if (!matchManager.MatchPaused)
+            {
+                // Updates the timer text.
+                UpdateTimerText();
+
+                // Enables/disables power buttons
+
+                // P1 Power
+                if (matchManager.p1.IsPowerAvailable()) // Power available.
+                {
+                    if (!p1UI.powerButton.interactable)
+                        p1UI.powerButton.interactable = true;
+                }
+                else // Power not available.
+                {
+                    if (p1UI.powerButton.interactable)
+                        p1UI.powerButton.interactable = false;
+                }
+
+                // P2 Power
+                if (matchManager.p2.IsPowerAvailable()) // Power available.
+                {
+                    if (!p2UI.powerButton.interactable)
+                        p2UI.powerButton.interactable = true;
+                }
+                else // Power not available.
+                {
+                    if (p2UI.powerButton.interactable)
+                        p2UI.powerButton.interactable = false;
+                }
+            }
+
         }
     }
 }

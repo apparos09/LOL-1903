@@ -117,5 +117,11 @@ namespace RM_EM
             tutorialTextBox.OnTextBoxOpenedRemoveCallback(manager.OnTutorialStart);
             tutorialTextBox.OnTextBoxClosedRemoveCallback(manager.OnTutorialEnd);
         }
+
+        // Update is called once per frame
+        protected virtual void Update()
+        {
+            // ...
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace RM_EM
                 for(int i = 0; i < area.challengers.Count; i++)
                 {
                     // A challenger hasn't be beaten yet, so the area is not finished.
-                    if (!area.challengers[i].defeated)
+                    if (!area.challengers[i].IsChallengerDefeated())
                     {
                         finished = false;
                         break;

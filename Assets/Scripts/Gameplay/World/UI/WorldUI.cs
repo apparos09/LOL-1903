@@ -15,6 +15,9 @@ namespace RM_EM
         // The match manager.
         public WorldManager worldManager;
 
+        // The info menu
+        public InfoMenu infoMenu;
+
         // The power menu UI.
         public PowerMenuUI powerMenuUI;
 
@@ -54,6 +57,36 @@ namespace RM_EM
 
         // SETTINGS (EXPANDED) //
 
+        // INFO
+        // Open Info
+        public void OpenInfoMenu()
+        {
+            CloseAllWindows();
+            infoMenu.gameObject.SetActive(true);
+            OnWindowOpened(infoMenu.gameObject);
+        }
+
+        // Close Info
+        public void CloseInfoMenu()
+        {
+            infoMenu.gameObject.SetActive(false);
+            OnWindowClosed();
+        }
+
+        // Toggles the powers menu on/off.
+        public void ToggleInfoMenu()
+        {
+            // If the info menu is active, close it.
+            if (infoMenu.gameObject.activeSelf)
+            {
+                CloseInfoMenu();
+            }
+            else // Open the info menu.
+            {
+                OpenInfoMenu();
+            }
+        }
+
         // POWERS
         // Opens the power menu.
         public void OpenPowersMenu()
@@ -74,7 +107,7 @@ namespace RM_EM
         public void TogglePowersMenu()
         {
             // If the powers menu is active, close it.
-            if (settingsUI.gameObject.activeSelf)
+            if (powerMenuUI.gameObject.activeSelf)
             {
                 ClosePowersMenu();
             }
@@ -103,7 +136,7 @@ namespace RM_EM
         public void ToggleSaveWindow()
         {
             // If the save window is active, close it.
-            if (settingsUI.gameObject.activeSelf)
+            if (saveWindow.gameObject.activeSelf)
             {
                 CloseSaveWindow();
             }
@@ -128,6 +161,18 @@ namespace RM_EM
         }
 
         // WINDOW
+
+        // Closes all windows.
+        public override void CloseAllWindows()
+        {
+            base.CloseAllWindows();
+
+            infoMenu.gameObject.SetActive(false);
+            powerMenuUI.gameObject.SetActive(false);
+            saveWindow.gameObject.SetActive(false);
+
+        }
+
         // Overrides the on window opened function.
         public override void OnWindowOpened(GameObject window)
         {
@@ -171,6 +216,10 @@ namespace RM_EM
             // Settings
             if (settingsUI != null)
                 activeStatuses.Add(settingsUI.gameObject.activeSelf);
+
+            // Info Menu
+            if (infoMenu != null)
+                activeStatuses.Add(infoMenu.gameObject.activeSelf);
 
             // Power Menu
             if (powerMenuUI != null)

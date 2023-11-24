@@ -47,8 +47,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
   power: 4
-  powerName: 
-  powerDesc: 
+  powerName: Equation Lengthen
+  powerDesc: Extends the opponent's questions.
   energy: 0
   energyMax: 100
   powerActive: 0

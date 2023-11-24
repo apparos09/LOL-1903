@@ -234,6 +234,21 @@ namespace RM_EM
             }
         }
 
+        // Checks if the power is available.
+        public bool IsPowerAvailable()
+        {
+            // Checks if the player has a power at all.
+            if(HasPower())
+            {
+                bool result = power.IsPowerUsable();
+                return result;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         // Call to use the power.
         public void UsePower()
         {

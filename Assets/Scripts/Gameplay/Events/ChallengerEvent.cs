@@ -53,7 +53,7 @@ namespace RM_EM
                 for (int i = 0; i < reqChallengers.Count; i++)
                 {
                     // Not all challengers have been beaten.
-                    if (!reqChallengers[i].defeated)
+                    if (!reqChallengers[i].IsChallengerDefeated())
                     {
                         allBeaten = false;
                         break;

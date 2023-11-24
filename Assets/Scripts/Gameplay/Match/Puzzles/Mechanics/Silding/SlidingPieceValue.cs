@@ -24,6 +24,10 @@ namespace RM_EM
         public override void OnHit(bool rightAnswer)
         {
             mechanic.ReturnPiece(this);
+
+            // Plays a SFX
+            if (manager.matchAudio != null)
+                manager.matchAudio.PlayPuzzleValueSelectSfx();
         }
 
         // Update is called once per frame

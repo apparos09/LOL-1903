@@ -7,6 +7,9 @@ namespace RM_EM
     // The puzzle value script.
     public abstract class PuzzleValue : MonoBehaviour
     {
+        // The match manager.
+        public MatchManager manager;
+
         // The value saved to this puzzle entity.
         // 0-9, +, -, *, /
         public char value = '\0';
@@ -17,7 +20,9 @@ namespace RM_EM
         // Start is called before the first frame update
         protected virtual void Start()
         {
-            // ...
+            // Sets the manager.
+            if (manager == null)
+                manager = MatchManager.Instance;
         }
 
         // Sets the sprite using the set value.
@@ -41,7 +46,7 @@ namespace RM_EM
         // Update is called once per frame
         protected virtual void Update()
         {
-
+            // ...
         }
     }
 }

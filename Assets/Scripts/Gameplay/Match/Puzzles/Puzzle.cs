@@ -212,6 +212,50 @@ namespace RM_EM
             return ruleName;
         }
 
+        // Gets the rule description.
+        public static string GetRuleDescription(exponentRule rule)
+        {
+            // TODO: rewrite so that they make more sense.
+
+            // Sets the rule description.
+            string ruleDesc = "";
+
+            // Checks the rule.
+            switch (rule)
+            {
+                default:
+                case exponentRule.none:
+                    ruleDesc = "None";
+                    break;
+
+                case exponentRule.exponent:
+                    ruleDesc = "Multiplies a term (x) number of times.";
+                    break;
+
+                case exponentRule.product:
+                    ruleDesc = "Exponents with the same base are equal to said base to the sum of the exponents.";
+                    break;
+
+                case exponentRule.powerOfAPower:
+                    ruleDesc = "A base and exponent to another exponent is equal to the base to the product of said exponents.";
+                    break;
+
+                case exponentRule.powerOfAProduct:
+                    ruleDesc = "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.";
+                    break;
+
+                case exponentRule.zero:
+                    ruleDesc = "A zero exponent always rules in a 1.";
+                    break;
+
+                case exponentRule.negative:
+                    ruleDesc = "A negative exponent becomes 1/x.";
+                    break;
+            }
+
+            return ruleDesc;
+        }
+
         // Generates and results a calculation.
         /*
          * rule: the exponent rule being used.
@@ -1110,7 +1154,7 @@ namespace RM_EM
             // Conditional for right and wrong value.
             if (rightValue)
             {
-                Debug.Log("Right!");
+                // Debug.Log("Right!");
 
                 // Grabs the value space.
                 ValueSpace vs = missingValues.Pop();
@@ -1128,7 +1172,7 @@ namespace RM_EM
             }
             else
             {
-                Debug.Log("Wrong!");
+                // Debug.Log("Wrong!");
 
                 // Checks if the gameplay object exists.
                 if(GameplayInfo.Instantiated)

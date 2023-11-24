@@ -23,7 +23,7 @@ namespace RM_EM
             public bool clearedGameOver;
 
             // Exponents
-            public bool clearedExponentBasics;
+            public bool clearedExponent;
             public bool clearedProduct;
             public bool clearedPowerOfAPower;
             public bool clearedProductOfAProduct;
@@ -56,10 +56,10 @@ namespace RM_EM
         public bool clearedGameOver = false;
 
         [Header("Triggers/Exponents")]
-        public bool clearedExponentBasics = false;
+        public bool clearedExponent = false;
         public bool clearedProduct = false;
         public bool clearedPowerOfAPower = false;
-        public bool clearedProductOfAProduct = false;
+        public bool clearedPowerOfAProduct = false;
 
         public bool clearedZero = false;
         public bool clearedNegative = false;
@@ -175,7 +175,7 @@ namespace RM_EM
         }
 
         // The exponent basics tutorial.
-        public List<Page> GetExponentBasicsTutorial()
+        public List<Page> GetExponentTutorial()
         {
             // Pages
             List<Page> pages = new List<Page>();
@@ -190,7 +190,7 @@ namespace RM_EM
                 pages.Add(new Page("Time to teach you some exponent basics. Exponents are math operations where you multiply a value by itself a certain number of times, with said number being determined by the exponent. Exponent operations have multiple rules, which will be explained later."));
             }
 
-            clearedExponentBasics = true;
+            clearedExponent = true;
 
             return pages;
         }
@@ -316,7 +316,7 @@ namespace RM_EM
                 pages.Add(new Page("This match uses the product of a product rule. If two terms with different bases and the same exponents are multiplied, the bases are multiplied together, with their result being put to the power of the shared exponent."));
             }
 
-            clearedProductOfAProduct = true;
+            clearedPowerOfAProduct = true;
 
             return pages;
         }
@@ -442,10 +442,10 @@ namespace RM_EM
             data.clearedFinalMatch = clearedFinalMatch;
             data.clearedGameOver = clearedGameOver;
 
-            data.clearedExponentBasics = clearedExponentBasics;
+            data.clearedExponent = clearedExponent;
             data.clearedProduct = clearedProduct;
             data.clearedPowerOfAPower = clearedPowerOfAPower;
-            data.clearedProductOfAProduct = clearedProductOfAProduct;
+            data.clearedProductOfAProduct = clearedPowerOfAProduct;
 
             data.clearedZero = clearedZero;
             data.clearedNegative = clearedNegative;
@@ -466,10 +466,10 @@ namespace RM_EM
             clearedFinalMatch = data.clearedFinalMatch;
             clearedGameOver = data.clearedGameOver;
 
-            clearedExponentBasics = data.clearedExponentBasics;
+            clearedExponent = data.clearedExponent;
             clearedProduct = data.clearedProduct;
             clearedPowerOfAPower = data.clearedPowerOfAPower;
-            clearedProductOfAProduct = data.clearedProductOfAProduct;
+            clearedPowerOfAProduct = data.clearedProductOfAProduct;
 
             clearedZero = data.clearedZero;
             clearedNegative = data.clearedNegative;

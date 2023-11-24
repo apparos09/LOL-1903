@@ -47,8 +47,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
   power: 6
-  powerName: 
-  powerDesc: 
+  powerName: Points Block
+  powerDesc: Temporarily takes away some of the opponent's points.
   energy: 0
   energyMax: 100
   powerActive: 0

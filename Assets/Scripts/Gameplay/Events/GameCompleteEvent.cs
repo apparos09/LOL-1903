@@ -37,7 +37,7 @@ namespace RM_EM
                 if(manager.finalChallenger != null)
                 {
                     // Only checks the final boss instead of all challengers.
-                    finished = manager.finalChallenger.defeated;
+                    finished = manager.finalChallenger.IsChallengerDefeated();
                 }
                 else // Can't find final boss, so check every challnger.
                 {
@@ -45,7 +45,7 @@ namespace RM_EM
                     foreach (ChallengerWorld challenger in manager.challengers)
                     {
                         // A challenger hasn't been beaten yet, so the game can't end.
-                        if (!challenger.defeated)
+                        if (!challenger.IsChallengerDefeated())
                         {
                             finished = false;
                             break;

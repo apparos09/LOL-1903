@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
-  power: 3
-  powerName: Topsy-Turvy
-  powerDesc: 
+  power: 7
+  powerName: Twist
+  powerDesc: Twists the opponent's view.
   energy: 0
   energyMax: 100
   powerActive: 0

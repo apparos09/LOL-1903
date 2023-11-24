@@ -376,13 +376,13 @@ namespace RM_EM
         {
             // CALCULATING PLAYER POINTS //
             // Base points gained.
-            int points = 5;
+            int points = 10;
 
             // Increase poitns by number of rules used.
-            points += 5 * rulesUsed.Count;
+            points += 7 * rulesUsed.Count;
 
             // Add points based on the number of missing values.
-            points += 10 * missingValuesCountStart;
+            points += 12 * missingValuesCountStart;
 
             // Points for answer speed.
             points += puzzle.GetPointsForAnswerSpeed(1, 15);
@@ -506,8 +506,7 @@ namespace RM_EM
             {
                 matchTime += Time.unscaledDeltaTime;
 
-                // Updates the timer text.
-                matchUI.UpdateTimerText();
+                // TODO: move this to the matchUI script?
             }
         }
 

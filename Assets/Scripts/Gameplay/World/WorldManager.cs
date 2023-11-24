@@ -448,7 +448,7 @@ namespace RM_EM
             foreach(ChallengerWorld challenger in challengers)
             {
                 // If the challenger has been defeated, increase the count.
-                if (challenger.defeated)
+                if (challenger.IsChallengerDefeated())
                     defeatedCount++;
             }
 
@@ -480,7 +480,7 @@ namespace RM_EM
             {
                 // Saves if the challenger has been defeated.
                 // NOTE: you don't check challenger available, but I don't think you need to.
-                data.challengersDefeated[i] = challengers[i].defeated;
+                data.challengersDefeated[i] = challengers[i].IsChallengerDefeated();
             }
 
             // Generates the tutorial data.

@@ -48,7 +48,7 @@ MonoBehaviour:
   playerMatch: {fileID: 0}
   power: 0
   powerName: Power of Nothing
-  powerDesc: 
+  powerDesc: A power that does nothing.
   energy: 0
   energyMax: 100
   powerActive: 0

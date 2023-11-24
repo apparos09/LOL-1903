@@ -185,6 +185,11 @@ namespace RM_EM
             // TODO: prioritize closest value.
             // Tries to find the value in the puzzle space so that the reticle can move towards it.
 
+            // If there are no missing values, do nothing?
+            // TODO: this was made to address a quick error. Maybe there's a better way to handle it.
+            if (puzzle.missingValues.Count == 0)
+                return;
+
             // Gets the value needed.
             char value = puzzle.missingValues.Peek().value;
 
@@ -280,7 +285,18 @@ namespace RM_EM
                 }
 
                 
-
+                // If the power is available for the computer.
+                if(IsPowerAvailable())
+                {
+                    // TODO: do differently based on the difficulty of the computer.
+                    switch(difficulty)
+                    {
+                        default: // Use power instantly.
+                            UsePower();
+                            break;
+                    }
+                    
+                }
                 
             }
 

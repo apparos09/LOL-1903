@@ -47,8 +47,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
   power: 5
-  powerName: 
-  powerDesc: 
+  powerName: Points Transfer
+  powerDesc: Steals points from the opponent for correct answers.
   energy: 0
   energyMax: 100
   powerActive: 0

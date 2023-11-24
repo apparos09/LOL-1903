@@ -30,13 +30,15 @@ namespace RM_EM
         public string challengerQuote = string.Empty;
 
         // The difficulty of the challenger.
+        // TODO: set to private
         public int difficulty = 0;
 
         // Sets if the challenger is available for a match.
         public bool available = true;
 
         // Gets set to 'true' when the challenger has been defeated.
-        public bool defeated = false;
+        // Set to public when not being used.
+        private bool defeated = false;
 
         [Header("Puzzle")]
         // The puzzle type.

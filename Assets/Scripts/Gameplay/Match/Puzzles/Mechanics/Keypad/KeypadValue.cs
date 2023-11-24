@@ -10,7 +10,9 @@ namespace RM_EM
         // OnHit
         public override void OnHit(bool rightAnswer)
         {
-            // ...
+            // Plays a SFX
+            if (manager.matchAudio != null)
+                manager.matchAudio.PlayKeyboardClickSfx();
         }
     }
 }
