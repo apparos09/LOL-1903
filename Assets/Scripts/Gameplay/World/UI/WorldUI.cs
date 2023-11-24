@@ -160,6 +160,13 @@ namespace RM_EM
             worldManager.ToTitleScene();
         }
 
+        // Quit without saving.
+        public void ToTitleScene()
+        {
+            worldManager.ToTitleScene();
+        }
+
+
         // WINDOW
 
         // Closes all windows.

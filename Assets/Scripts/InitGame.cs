@@ -65,6 +65,8 @@ namespace RM_EM
             ILOLSDK sdk = new LoLSDK.WebGL();
 #elif UNITY_IOS || UNITY_ANDROID
             ILOLSDK sdk = null; 
+//#elif UNITY_STANDALONE // New - For Unity Editor (TODO: should I change this to Win?)
+//            ILOLSDK sdk = null; 
 #endif
 
             // Initialize the object, passing in the WebGL
