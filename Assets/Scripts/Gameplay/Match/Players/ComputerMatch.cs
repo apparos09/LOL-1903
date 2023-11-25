@@ -192,7 +192,14 @@ namespace RM_EM
             // If there are no missing values, do nothing?
             // TODO: this was made to address a quick error. Maybe there's a better way to handle it.
             if (puzzle.missingValues.Count == 0)
+            {
+                // Skips the equation since there are no missing values (TODO: remove?)
+                SkipEquation();
+
+                // Return.
                 return;
+            }
+                
 
             // Gets the value needed.
             char value = puzzle.missingValues.Peek().value;

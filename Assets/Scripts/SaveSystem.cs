@@ -20,6 +20,9 @@ namespace RM_EM
         // Shows if the game data is valid.
         public bool valid = false;
 
+        // Gets set to 'true' if the game was completed.
+        public bool complete = false;
+
         // The player's LOL score.
         public int score = 0;
 

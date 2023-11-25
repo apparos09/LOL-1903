@@ -466,6 +466,8 @@ namespace RM_EM
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
                     {
+                        // TODO: prevent an exponent of 1 and a lowest value of 1?
+
                         PuzzleCalculation calc = new PuzzleCalculation();
 
                         // Set the rule.
@@ -858,7 +860,9 @@ namespace RM_EM
                                 }
 
                                 break;
-                                
+
+                            // TODO: add negative check?
+                            
                             default: // Default
                                 usableIndexes.Add(j);
                                 break;
@@ -870,8 +874,8 @@ namespace RM_EM
                 // If the count is not set to 0.
                 if(usableIndexes.Count != 0)
                 {
-                    // Finds what values will be replaced.
-                    for (int j = 0; j < replaceCount; j++)
+                    // Finds what values will be replaced while there are values to replace.
+                    for (int j = 0; j < replaceCount && usableIndexes.Count > 0; j++)
                     {
                         // Generate a random index.
                         int randIndex = Random.Range(0, usableIndexes.Count);
@@ -949,7 +953,7 @@ namespace RM_EM
                 string answerSolved = "";
                 string answerBlank = "";
 
-                // The end results.
+                // The end results (TODO: remove?)
                 string resultSolved = "";
                 string resultBlank = "";
 

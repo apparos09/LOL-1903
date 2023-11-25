@@ -273,8 +273,7 @@ namespace RM_EM
         {
             LoadGameInfo(manager);
 
-            // Set the area.
-            manager.SetArea(currAreaIndex, true);
+            // Moved set area to the end.
 
             // Update the current challenger defeat status if the index is valid.
             if(challengerIndex > 0 && challengerIndex < challengersDefeated.Count)
@@ -318,6 +317,13 @@ namespace RM_EM
             // TODO: does this need to happen every time?
             p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);
 
+
+            // For some reason this is causing issues with defeated parameter.
+            // Updates the area events.
+            // manager.UpdateAreaEvents();
+
+            // Set the area.
+            manager.SetArea(currAreaIndex, true);
         }
 
 

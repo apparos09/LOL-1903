@@ -201,7 +201,7 @@ namespace RM_EM
                 if (lolManager.saveSystem.HasLoadedData())
                 {
                     // Loads the data.
-                    LoadGame();
+                    bool success = LoadGame();
                 }
             }
 
@@ -382,6 +382,8 @@ namespace RM_EM
             // If the next button is interactable, check if the area has been cleared.
             if(worldUI.nextAreaButton.interactable)
             {
+                // TODO: for some reason, this isn't working when loadng save data.
+
                 // If the area event is set.
                 if(newArea.areaEvent != null)
                 {
@@ -424,6 +426,19 @@ namespace RM_EM
             SetArea(index, false);
         }
 
+        // Updates the area events.
+        public void UpdateAreaEvents()
+        {
+            // Updates all area events.
+            foreach (Area area in areas)
+            {
+                // Updates the events with the new changes.
+                if (area.areaEvent != null)
+                    area.areaEvent.UpdateEvent();
+            }
+        }
+
+
         // Returns the index of the challenger.
         public int GetChallengerIndex(ChallengerWorld challenger)
         {
@@ -461,6 +476,8 @@ namespace RM_EM
         {
             worldUI.HideChallengeUI();
         }
+
+        // MATCH
 
         // Returns the match number, which is determined based on...
         // How many challengers are left.
@@ -510,6 +527,9 @@ namespace RM_EM
 
             // Generates the tutorial data.
             data.tutorialData = Tutorial.Instance.GenerateTutorialData();
+
+            // Checks if the game is completed.
+            data.complete = IsGameComplete();
 
             // The data is valid.
             data.valid = true;
@@ -574,27 +594,35 @@ namespace RM_EM
                 return false;
             }
 
+
+            // Gets the loaded data.
+            EM_GameData loadedData = saveSys.loadedData;
+
             // No data to load.
-            if(saveSys.loadedData == null)
+            if (loadedData == null)
             {
                 Debug.LogError("The save data does not exist.");
                 return false;
             }
 
             // Data invalid.
-            if (saveSys.loadedData.valid == false)
+            if (loadedData.valid == false)
             {
                 Debug.LogError("The save data is invalid.");
                 return false;
             }
 
-            // Gets the loaded data.
-            EM_GameData loadedData = saveSys.loadedData;
+            // Game complete
+            if(loadedData.complete)
+            {
+                Debug.LogAssertion("The game was completed, so the data hasn't been loaded.");
+                return false;
+            }
+
 
             // LOADING THE DATA
-            // Save the current area index.
-            SetArea(loadedData.currAreaIndex, true);
 
+            // Moved set area to the end.
 
             // Clears the power list.
             playerWorld.powerList.Clear();
@@ -619,12 +647,25 @@ namespace RM_EM
             // Load the tutorial data.
             Tutorial.Instance.LoadTutorialData(loadedData.tutorialData);
 
+            // Updates the area events.
+            // UpdateAreaEvents();
+
+            // Save the current area index.
+            SetArea(loadedData.currAreaIndex, true);
+
             // The data has been loaded successfully.
             return true;
         }
 
 
         // GAME PROGRESS
+
+        // Check if the game is complete.
+        public bool IsGameComplete()
+        {
+            return finalChallenger.defeated;
+        }
+
         // Gets the game progress.
         public int GetGameProgress()
         {
