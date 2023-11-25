@@ -271,6 +271,8 @@ namespace RM_EM
         // Loads world info into manager.
         public void LoadWorldInfo(WorldManager manager)
         {
+            LoadGameInfo(manager);
+
             // Set the area.
             manager.SetArea(currAreaIndex, true);
 
@@ -315,6 +317,7 @@ namespace RM_EM
             // Overwite the power list with the new updates.
             // TODO: does this need to happen every time?
             p1PowerList = new List<Power.powerType>(manager.playerWorld.powerList);
+
         }
 
 

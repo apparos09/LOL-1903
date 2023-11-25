@@ -876,6 +876,9 @@ namespace RM_EM
                         // Generate a random index.
                         int randIndex = Random.Range(0, usableIndexes.Count);
 
+                        // TODO: An error happens here when facing the boss, and only the boss.
+                        // Why?
+
                         // Add the index to the replacment list, and remove it from the list of available indexes.
                         replaceIndexes.Add(usableIndexes[randIndex]);
                         usableIndexes.RemoveAt(randIndex);

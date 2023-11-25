@@ -27,7 +27,7 @@ namespace RM_EM
 
         // The maixmum progress points for the game.
         // TODO: set this some other way.
-        const int MAX_PROGRESS = 15; // same as room count.
+        const int MAX_PROGRESS = WorldManager.CHALLENGER_COUNT; // same as room count.
 
         // private constructor so that only one accessibility object exists.
         private LOLManager()

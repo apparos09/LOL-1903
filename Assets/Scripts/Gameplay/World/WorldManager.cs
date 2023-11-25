@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -241,6 +240,10 @@ namespace RM_EM
             // If the player has no powers, disable the power menu.
             if(worldUI.powersButton != null)
                 worldUI.powersButton.interactable = playerWorld.powerList.Count != 0;
+
+
+            // Gets and saves the game progress.
+            gameProgress = GetGameProgress();
 
             // Called post start.
             calledPostStart = true;
@@ -542,6 +545,12 @@ namespace RM_EM
 
             // Saves the game.
             bool result = saveSys.SaveGame();
+
+            // Submits the game's progress if the save was successful.
+            if(result)
+                SubmitProgress();
+
+            // Return result.
             return result;
         }
 
@@ -614,7 +623,40 @@ namespace RM_EM
             return true;
         }
 
-        
+
+        // GAME PROGRESS
+        // Gets the game progress.
+        public int GetGameProgress()
+        {
+            // Progress
+            int progress = 0;
+
+            // Increases progress for every defeated challenger.
+            for(int i = 0; i < challengers.Count; i++)
+            {
+                if (challengers[i].defeated)
+                    progress++;
+            }
+
+            // Returns the progress.
+            return progress;
+        }
+
+        // Submits the current game progress.
+        public void SubmitProgress()
+        {
+            if (LOLManager.Instantiated)
+                LOLManager.Instance.SubmitProgress(gameScore, gameProgress);
+        }
+
+        // Submits the game progress complete.
+        public void SubmitProgressComplete()
+        {
+            if (LOLManager.Instantiated)
+                LOLManager.Instance.SubmitProgressComplete(gameScore);
+        }
+
+
 
         // SCENES //
         // Goes to the match scene. Call AcceptChallenge() if a match info object should be created.
@@ -656,7 +698,9 @@ namespace RM_EM
                 // Sets the wrong answers.
                 data.wrongAnswers = gameInfo.wrongAnswers;
             }
-            
+
+            // Submit progress complete.
+            SubmitProgressComplete();
 
             // Goes to the scene.
             base.OnGameComplete();

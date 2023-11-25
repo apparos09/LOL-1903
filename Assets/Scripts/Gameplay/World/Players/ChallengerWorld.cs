@@ -34,10 +34,11 @@ namespace RM_EM
         public int difficulty = 0;
 
         // Sets if the challenger is available for a match.
-        public bool available = true;
+        // Set to public for testing purposes.
+        private bool available = true;
 
         // Gets set to 'true' when the challenger has been defeated.
-        // Set to public when not being used.
+        // Set to public for testing purposes.
         public bool defeated = false;
 
         [Header("Puzzle")]
@@ -120,6 +121,12 @@ namespace RM_EM
         {
             // Shows the challenge UI.
             ShowChallengeUI();
+        }
+
+        // Returns 'true' if the challenger is available.
+        public bool IsChallengerAvailable()
+        {
+            return available;
         }
 
         // Sets if the challenger is locked or not.

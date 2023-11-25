@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using util;
 
 namespace RM_EM
@@ -15,6 +16,12 @@ namespace RM_EM
 
         // The timer for the game.
         public float gameTime = 0;
+
+        // The game score (TODO: implement)
+        public int gameScore = 0;
+
+        // The game progress.
+        public int gameProgress = 0;
 
         // Pauses the timer if true.
         protected bool gamePaused = false;

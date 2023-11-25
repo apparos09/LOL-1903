@@ -35,9 +35,12 @@ namespace RM_EM
         // Initializes the event.
         public override void InitalizeEvent()
         {
-            // Make challenger unavailable, and turn off the challenger component.
+            // Make challenger unavailable.
             challenger.SetChallengerAvailable(false);
-            challenger.enabled = false;
+
+            // Disable the challenger - why do I do this?
+            // Let's try not doing this.
+            // challenger.enabled = false;
         }
 
         // Updates the event.
@@ -68,8 +71,12 @@ namespace RM_EM
         // Completes the event.
         public override void OnEventComplete()
         {
-            // Turn on the component, and make challenger availble.
-            challenger.enabled = true;
+            // Turn on the component again. Do I have to do this?
+            // Let's try not doing this.
+            // challenger.enabled = true;
+
+
+            // Make challenger available.
             challenger.SetChallengerAvailable(true);
 
             // Calls the event complete base function.

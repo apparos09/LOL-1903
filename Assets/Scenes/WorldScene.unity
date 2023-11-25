@@ -358,6 +358,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: 'Forgerton the Fire Spirit '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: f63db774470ff3e44b79a544c2a063cb, type: 3}
@@ -648,6 +652,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Reptoc the Lizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 85740a3be466406459c3c2dade4e2d80, type: 3}
@@ -900,6 +908,10 @@ PrefabInstance:
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: negativeRate
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Minraul the Statue
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: powerPowerRate
@@ -1836,6 +1848,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Minraul the Statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3c91e01b19018cc43b35d2b853ca1162, type: 3}
@@ -2346,6 +2362,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Mona the Mummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3dbb5b1111fd9de4c84d577f301e9334, type: 3}
@@ -2603,12 +2623,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Howluf the Werewolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 9cb7ca6728885da4da5cc9924b34e8e6, type: 3}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: equationTermsMax
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: equationTermsMin
@@ -3482,6 +3506,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Divytide the Water Spirit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 58c40863e63338641a55755652e0ea26, type: 3}
@@ -3639,6 +3667,10 @@ PrefabInstance:
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: negativeRate
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Ecto the Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
@@ -4298,12 +4330,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: challengerName
+      value: Fang the Vampire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 133a61ca6fec6bf42860b6ca6a94b05d, type: 3}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: equationTermsMax
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: equationTermsMin
@@ -5950,6 +5986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameUI: {fileID: 1503540674}
   gameTime: 0
+  gameScore: 0
+  gameProgress: 0
   mouseTouch: {fileID: 0}
   worldUI: {fileID: 1503540674}
   worldAudio: {fileID: 2106017679}
