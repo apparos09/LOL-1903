@@ -343,9 +343,6 @@ namespace RM_EM
         // Save the match info from the match manager.
         public void SaveMatchInfo(MatchManager manager)
         {
-            // Adds to the game score.
-            gameScore += manager.p1Score;
-
             // Saves the game info.
             SaveGameInfo(manager);
 

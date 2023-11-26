@@ -481,7 +481,7 @@ namespace RM_EM
                 }
 
                 // Wrong Answer Bonus
-                // The wrong answer limit.
+                // The wrong answer limit. TODO: account for a max of zero.
                 int wrongAnswerLimit = 15 * p1Puzzle.missingValuesMax;
 
                 // Checks the wrong answers for extra points.
@@ -495,6 +495,8 @@ namespace RM_EM
                     p1Score += 5;
                 }
 
+                // Add to the game score (will get saved in GameInfo).
+                gameScore += p1Score;
             }
             // Checks if p2 has reached the points goal.
             else if(HasPlayer2Won())
