@@ -195,14 +195,21 @@ namespace RM_EM
 
             defeated = defeat;
 
+            // Checks if the sprite renderer is enabled.
+            bool rendererEnabled = spriteRenderer.enabled;
+
             // Changes the colour based on if the challenger is defeated or not.
-            if(defeated && spriteRenderer.color != Color.grey)
+            if (defeated && spriteRenderer.color != Color.grey) // Greyed Out
             {
+                spriteRenderer.enabled = true;
                 spriteRenderer.color = Color.grey;
+                spriteRenderer.enabled = rendererEnabled;
             }
-            else if(!defeated && spriteRenderer.color != Color.white)
+            else if(!defeated && spriteRenderer.color != Color.white) // Regular Colour
             {
+                spriteRenderer.enabled = true;
                 spriteRenderer.color = Color.white;
+                spriteRenderer.enabled = rendererEnabled;
             }
         }
 
