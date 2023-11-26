@@ -439,6 +439,7 @@ namespace RM_EM
         }
 
 
+        // CHALLENGE //
         // Returns the index of the challenger.
         public int GetChallengerIndex(ChallengerWorld challenger)
         {
@@ -453,8 +454,12 @@ namespace RM_EM
             }
         }
 
-
-        // CHALLENGE //
+        // Is this the final challenger?
+        public bool IsFinalChallenger(ChallengerWorld challenger)
+        {
+            return challenger == finalChallenger;
+        }
+        
         // Accept the challenge.
         public void AcceptChallenge(ChallengerWorld challenger)
         {

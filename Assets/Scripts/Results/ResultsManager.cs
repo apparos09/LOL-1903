@@ -138,12 +138,6 @@ namespace RM_EM
             // ToTitleScene();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         // This function is called when the MonoBehaviour will be destroyed.
         private void OnDestroy()
         {

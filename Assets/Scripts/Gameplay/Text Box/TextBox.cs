@@ -12,6 +12,11 @@ namespace RM_EM
         // the text box object to be opened/closed.
         public GameObject boxObject;
 
+        // The name of the speaker. TODO: this currently does nothing.
+        public string speakerName = "";
+
+        [Header("Text Settings")]
+
         // The current page.
         private int currPageIndex = -1;
 
@@ -113,8 +118,6 @@ namespace RM_EM
             if (!LOLSDK.Instance.IsInitialized)
                 LanguageMarker.Instance.MarkText(boxText);
         }
-
-        // TODO: add touch and mouse for going onto the next page.
 
         // The current page index.
         public int CurrentPageIndex

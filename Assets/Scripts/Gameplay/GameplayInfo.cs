@@ -364,7 +364,7 @@ namespace RM_EM
             if (manager.finalChallenger != null)
             {
                 // If this is the final challenger, set this to true.
-                isFinalChallenger = manager.finalChallenger == challenger;
+                isFinalChallenger = manager.IsFinalChallenger(challenger);
             }
             else
             {

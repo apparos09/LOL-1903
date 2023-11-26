@@ -25,7 +25,7 @@ namespace RM_EM
         public GameObject saveWindow;
 
         // The challenge window.
-        public ChallengeUI challengeUI;
+        public ChallengerUI challengeUI;
 
         [Header("World/Header")]
 

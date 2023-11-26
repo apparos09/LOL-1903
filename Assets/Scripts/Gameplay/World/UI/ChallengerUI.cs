@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace RM_EM
 {
     // The UI for the challenger.
-    public class ChallengeUI : MonoBehaviour
+    public class ChallengerUI : MonoBehaviour
     {
         // The world manager.
         public WorldManager manager;

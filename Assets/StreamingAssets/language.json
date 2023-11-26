@@ -109,6 +109,12 @@
     "trl_powerOfAPower_00": "This match uses the power of a power rule. When a term with an exponent is having its result get another exponent applied to it, it can be converted to the base value to a single, combined exponent. The combined exponent is the two exponents from the original expression multiplied together.",
     "trl_powerOfAProduct_00": "This match uses the power of a product rule. If two terms with different bases and the same exponents are multiplied, the bases are multiplied together, with their result being put to the power of the shared exponent.",
     "trl_zero_00": "This match uses the zero exponent rule. Any value to the power of 0 will give the result of 1.",
-    "trl_negative_00": "This match uses the negative exponent rule. The negative exponent rule dictates that any value to the power of a negative exponent becomes a fraction with a numerator of 1. The value with the exponent applied becomes the denominator."
+    "trl_negative_00": "This match uses the negative exponent rule. The negative exponent rule dictates that any value to the power of a negative exponent becomes a fraction with a numerator of 1. The value with the exponent applied becomes the denominator.",
+
+
+    "kwd_results": "Results",
+    "kwd_time": "Time",
+    "kwd_score": "Score",
+    "rst_wrongAnswers": "Wrong Answers"
   }
 }

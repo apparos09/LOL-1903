@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1304232112462498875}
   - component: {fileID: 4974211184102125121}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Textbox Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 4058342359282509730}
   - component: {fileID: 8321078174608451636}
   - component: {fileID: 837783616110393181}
+  - component: {fileID: 7822300452377206455}
   m_Layer: 5
   m_Name: Background Image
   m_TagString: Untagged
@@ -209,6 +210,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7822300452377206455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498882589773308311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8866871738714525020
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxObject: {fileID: 8866871738714525020}
+  speakerName: 
   boxText: {fileID: 4974211184102125121}
   autoNext: 0
   autoNextTimerMax: 5
