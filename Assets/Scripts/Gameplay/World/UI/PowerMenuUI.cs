@@ -71,6 +71,9 @@ namespace RM_EM
         // The next entry button.
         public Button nextEntryButton;
 
+        // The button for equipping powers.
+        public Button equipButton;
+
         [Header("Entries (UI)/Selected")]
 
         // The selected power symbol.
@@ -207,6 +210,9 @@ namespace RM_EM
 
             // Loads the entry into the UI.
             LoadEntriesIntoUI(0);
+
+            // TODO: disable the equip button if the player has no power equipped.
+            // It doesn't work when the player first opens the menu, so I need to fix that.
         }
 
         // Loads the entries into the UI.
@@ -327,6 +333,7 @@ namespace RM_EM
 
             // Selects this entry.
             selectedEntry = entryUI.entry;
+            selectedEntry.power = entryUI.entry.power;
 
             // Set the symbol.
             selectedPowerSymbol.sprite = selectedEntry.symbol;
@@ -334,6 +341,16 @@ namespace RM_EM
             // The selected power's name.
             selectedPowerName.text = selectedEntry.name;
             selectedPowerDesc.text = selectedEntry.description;
+
+
+            // Set button to be interactable.
+            equipButton.interactable = true;
+
+            // If the player has this power, disable the equip button.
+            if(playerWorld.power == selectedEntry.power)
+            {
+                equipButton.interactable = false;
+            }
         }
 
         // Equips the selected power.
@@ -341,6 +358,15 @@ namespace RM_EM
         {
             // The selected entry.
             playerWorld.SetPower(selectedEntry.power);
+
+            // Sets the equip button.
+            equipButton.interactable = true;
+
+            // If the power was selected, disable the equip button.
+            if(playerWorld.power == selectedEntry.power)
+            {
+                equipButton.interactable = false;
+            }
         }
 
         // Unequips the current power.

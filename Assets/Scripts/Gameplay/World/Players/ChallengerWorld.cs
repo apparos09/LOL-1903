@@ -190,9 +190,6 @@ namespace RM_EM
         // Sets if the challenger is defeated.
         public void SetChallengerDefeated(bool defeat)
         {
-            if (defeat == false)
-                Debug.Log("Not defeat.");
-
             defeated = defeat;
 
             // Checks if the sprite renderer is enabled.

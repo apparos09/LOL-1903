@@ -73,6 +73,7 @@ MonoBehaviour:
   powerMenuEntry2: {fileID: 6812607437000074271}
   prevEntryButton: {fileID: 514993723257525715}
   nextEntryButton: {fileID: 5043500377494043813}
+  equipButton: {fileID: 2866948560757371679}
   selectedPowerSymbol: {fileID: 4921199045865621698}
   selectedPowerName: {fileID: 14251014759260237}
   selectedPowerDesc: {fileID: 6800154188188898519}

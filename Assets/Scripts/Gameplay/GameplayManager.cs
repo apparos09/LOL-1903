@@ -46,12 +46,14 @@ namespace RM_EM
             // Creates/gets the game info instance.
             GameplayInfo gameInfo = GameplayInfo.Instance;
 
-            // Creates/gets the tutorial instance if it will be used.
-            if(IsUsingTutorial())
-            {
-                Tutorial tutorial = Tutorial.Instance;
-            }
-                
+            // // Creates/gets the tutorial instance if it will be used.
+            // if(IsUsingTutorial())
+            // {
+            //     Tutorial tutorial = Tutorial.Instance;
+            // }
+
+            // Creates a tutorial instance.
+            Tutorial tutorial = Tutorial.Instance;
 
 
             // If the gameUI is set, check for the tutorial text box.
