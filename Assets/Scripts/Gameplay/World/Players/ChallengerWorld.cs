@@ -1,3 +1,4 @@
+using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,8 +27,16 @@ namespace RM_EM
         // The challenger's name.
         public string challengerName = string.Empty;
 
+        // The name language key.
+        [Tooltip("The language key for the name.")]
+        public string nameKey = string.Empty;
+
         // The challenger's quote.
         public string challengerQuote = string.Empty;
+
+        // The quote language key.
+        [Tooltip("THe language key for the quote.")]
+        public string quoteKey = string.Empty;
 
         // The difficulty of the challenger.
         // TODO: set to private
@@ -113,6 +122,19 @@ namespace RM_EM
             {
                 // Tries to get the component (no longer checks children for misinput concerns).
                 spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            // Used for translation.
+            JSONNode defs = SharedState.LanguageDefs;
+
+            // Translation is possible.
+            if(defs != null)
+            {
+                if(nameKey != "") // Translate name
+                challengerName = defs[nameKey];
+
+                if(quoteKey != "") // Translate quote
+                challengerQuote = defs[quoteKey];
             }
         }
 

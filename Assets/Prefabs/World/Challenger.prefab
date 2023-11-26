@@ -124,10 +124,11 @@ MonoBehaviour:
   collider: {fileID: 5455840739512098616}
   spriteRenderer: {fileID: 964645638988108362}
   challengeSprite: {fileID: 21300000, guid: a2fc18d910db5134996945730b3de664, type: 3}
-  challengerName: 
-  challengerQuote: 
+  challengerName: '-'
+  nameKey: 
+  challengerQuote: ...
+  quoteKey: 
   difficulty: 0
-  available: 1
   defeated: 0
   puzzle: 0
   power: 0
@@ -137,6 +138,12 @@ MonoBehaviour:
   powerOfAProductRate: 1
   zeroRate: 1
   negativeRate: 1
+  equationTermsMin: 1
+  equationTermsMax: 1
+  exponentTermsMin: 1
+  exponentTermsMax: 1
+  missingValuesMin: 1
+  missingValuesMax: 1
 --- !u!210 &5095991737127549738
 SortingGroup:
   m_ObjectHideFlags: 0

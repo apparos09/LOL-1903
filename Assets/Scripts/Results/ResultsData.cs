@@ -10,6 +10,9 @@ namespace RM_EM
         // The game time.
         public float gameTime = 0;
 
+        // The game score.
+        public int gameScore = 0;
+
         // The number of wrong answers.
         public int wrongAnswers = 0;
     }

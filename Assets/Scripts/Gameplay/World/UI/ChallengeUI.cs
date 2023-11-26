@@ -21,6 +21,14 @@ namespace RM_EM
         // The renderer of the challenger art.
         public Image challengerRenderer;
 
+        [Header("Text")]
+
+        // The name text.
+        public TMP_Text nameText;
+
+        // The quote text.
+        public TMP_Text quoteText;
+
         // The rules text for the UI.
         public TMP_Text rulesText;
 
@@ -38,6 +46,8 @@ namespace RM_EM
             challengerIndex = index;
 
             UpdateChallengerSprite();
+            UpdateNameText();
+            UpdateQuoteText();
             UpdateRulesText();
         }
 
@@ -53,6 +63,26 @@ namespace RM_EM
                 challengerRenderer.sprite = null;
             }
             
+        }
+
+        // Updates the name text.
+        public void UpdateNameText()
+        {
+            // Checks if the challenger is set.
+            if (challenger != null)
+                nameText.text = challenger.challengerName;
+            else
+                nameText.text = "-";
+        }
+
+        // Updates the quote text.
+        public void UpdateQuoteText()
+        {
+            // Checks if the challenger is set.
+            if (challenger != null)
+                quoteText.text = "\"" + challenger.challengerQuote + "\"";
+            else
+                quoteText.text = "\"-\"";
         }
 
         // Updates the rules text.

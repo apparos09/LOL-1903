@@ -63,11 +63,30 @@
     "kwd_world": "World",
     "kwd_info": "Info",
     "kwd_powers": "Powers",
-
     "kwd_power": "Power",
 
-    "kwd_match": "Match",
+    "kwd_versus": "Vs.",
+    "chr_statue": "Minraul the Statue",
+    "chr_lizard": "Reptoc the Lizard",
+    "chr_mummy": "Mona the Mummy",
+    "chr_fire": "Forgerton the Fire Spirit",
+    "chr_ghost": "Ecto the Ghost",
+    "chr_vampire": "Fang the Vampire",
+    "chr_werewolf": "Howluf the Werewolf",
+    "chr_water": "Divytide the Water",
 
+    "chr_statue_quote": "...",
+    "chr_lizard_quote": "...",
+    "chr_mummy_quote": "...",
+    "chr_fire_quote": "...",
+    "chr_ghost_quote": "...",
+    "chr_vampire_quote": "...",
+    "chr_werewolf_quote": "...",
+    "chr_water_quote": "...",
+
+
+
+    "kwd_match": "Match",
     "kwd_usePower": "Use Power",
     "kwd_skip": "Skip",
 

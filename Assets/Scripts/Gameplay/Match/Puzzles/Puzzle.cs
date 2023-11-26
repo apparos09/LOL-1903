@@ -1190,7 +1190,7 @@ namespace RM_EM
                     // If player 1 got it wrong, increase the number of wrong answers.
                     if (player == manager.p1)
                     {
-                        gameInfo.wrongAnswers++;
+                        manager.p1WrongAnswers++;
                     }
                 }
             }

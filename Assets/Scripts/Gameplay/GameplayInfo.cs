@@ -17,6 +17,9 @@ namespace RM_EM
         // The game time.
         public float gameTime = 0.0F;
 
+        // The game score.
+        public int gameScore = 0;
+
         // The number of wrong answers from the player.
         public int wrongAnswers = 0;
 
@@ -209,13 +212,21 @@ namespace RM_EM
         // Saves general game info.
         protected void SaveGameInfo(GameplayManager manager)
         {
+            // Time
             gameTime = manager.gameTime;
+
+            // Score
+            gameScore = manager.gameScore;
         }
 
         // Loads general game info.
         protected void LoadGameInfo(GameplayManager manager)
         {
+            // Time
             manager.gameTime = gameTime;
+
+            // Score
+            manager.gameScore = gameScore;
         }
 
         // WORLD //
@@ -328,14 +339,21 @@ namespace RM_EM
 
 
 
-        // MATCH//
+        // MATCH //
         // Save the match info from the match manager.
         public void SaveMatchInfo(MatchManager manager)
         {
+            // Adds to the game score.
+            gameScore += manager.p1Score;
+
+            // Saves the game info.
             SaveGameInfo(manager);
 
             // Saves the match winner.
             pWinner = manager.matchWinner;
+
+            // Add the wrong answers from the match.
+            wrongAnswers += manager.p1WrongAnswers;
         }
 
         // Stores the match info from the world manager to be used in the match info.

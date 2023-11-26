@@ -894,6 +894,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: nameKey
+      value: chr_statue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: zeroRate
       value: 0
       objectReference: {fileID: 0}
@@ -4061,7 +4065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8082988104179257219, guid: 8baf49f86bed213408b6aec07b691446, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 8082988104179257219, guid: 8baf49f86bed213408b6aec07b691446, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

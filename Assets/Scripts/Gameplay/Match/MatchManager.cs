@@ -62,6 +62,12 @@ namespace RM_EM
         // P1 Puzzle
         public Puzzle p1Puzzle;
 
+        // P1 Game Score
+        public int p1Score = 0;
+
+        // The wrong answers from p1.
+        public int p1WrongAnswers = 0;
+
         [Header("Player 2")]
         // P2
         public PlayerMatch p2;
@@ -452,6 +458,43 @@ namespace RM_EM
             {
                 winner = p1;
                 matchWinner = 1;
+
+
+                // SCORE //
+
+                // Increase game score.
+                p1Score = 500; // Base game score increase.
+
+                // Time Bonus
+                // The bonus for match speed.
+                float timeBonusLimit = 150.0F;
+
+                // Checks the match time for extra points.
+                if(matchTime < timeBonusLimit) // < 2.5 minutes
+                {
+                    // A max of 1000 points for a time bonus.
+                    p1Score += Mathf.CeilToInt(1000.0F * (1.0F - (Mathf.Clamp(matchTime, 0, timeBonusLimit) / timeBonusLimit)));
+                }
+                else // > 2.5 minutes
+                {
+                    p1Score += 10;
+                }
+
+                // Wrong Answer Bonus
+                // The wrong answer limit.
+                int wrongAnswerLimit = 15 * p1Puzzle.missingValuesMax;
+
+                // Checks the wrong answers for extra points.
+                if (p1WrongAnswers < wrongAnswerLimit) // < Under wrong answer limit
+                {
+                    // A max of 1000 points for a time bonus.
+                    p1Score += Mathf.CeilToInt(800.0F * (1.0F - (Mathf.Clamp(p1WrongAnswers, 0, wrongAnswerLimit) / wrongAnswerLimit)));
+                }
+                else // Over wrong answer limit
+                {
+                    p1Score += 5;
+                }
+
             }
             // Checks if p2 has reached the points goal.
             else if(HasPlayer2Won())

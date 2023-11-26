@@ -727,8 +727,15 @@ namespace RM_EM
             ResultsData data = temp.AddComponent<ResultsData>();
             DontDestroyOnLoad(temp);
 
-            // TODO: set data values.
+            // Saves the game.
+            SaveGame();
+
+            // Results Values
+            // Game Time
             data.gameTime = gameTime;
+
+            // Game Score
+            data.gameScore = gameScore;
 
             // Checks if the gameplay info has been instantiated.
             if(GameplayInfo.Instantiated)
