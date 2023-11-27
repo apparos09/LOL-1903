@@ -67,9 +67,9 @@ namespace RM_EM
 
         // INFO
         // Gets the power name.
-        public static string GetPowerTypeName(powerType power, bool shortHand)
+        public static string GetPowerTypeName(powerType power)
         {
-            return PowerInfo.GetPowerTypeName(power, shortHand);
+            return PowerInfo.GetPowerTypeName(power);
         }
 
         // Gets the power description.

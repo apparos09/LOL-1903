@@ -86,13 +86,14 @@ namespace RM_EM
         [Tooltip("The maximum number of equation terms.")]
         public int equationTermsMax = 1;
 
+        // The exponent term min must be at least 2.
         // The minimum number of terms for the base exponent rule.
         [Tooltip("The minimum number of terms for the base exponent rule (combined rules only).")]
-        public int exponentTermsMin = 1;
+        public int exponentTermsMin = 2;
 
         // The maximum number of terms for the base exponent rule.
         [Tooltip("The maximum number of terms for the base exponent rule (combined rules only).")]
-        public int exponentTermsMax = 1;
+        public int exponentTermsMax = 2;
 
         // The minimum number of missing values.
         [Tooltip("The minimum number of missing values.")]

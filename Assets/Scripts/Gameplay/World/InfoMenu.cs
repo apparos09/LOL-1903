@@ -136,11 +136,11 @@ namespace RM_EM
 
                 newEntry.rule = exponentRule.exponent;
                 
-                newEntry.name = Puzzle.GetRuleName(exponentRule.exponent);
-                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.exponent);
+                newEntry.name = PuzzleInfo.GetRuleName(exponentRule.exponent);
+                newEntry.nameKey = PuzzleInfo.GetRuleNameSpeakKey(exponentRule.exponent);
 
-                newEntry.description = Puzzle.GetRuleDescription(exponentRule.exponent);
-                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.exponent);
+                newEntry.description = PuzzleInfo.GetRuleDescription(exponentRule.exponent);
+                newEntry.descKey = PuzzleInfo.GetRuleDescriptionSpeakKey(exponentRule.exponent);
 
                 newEntry.diagramSprite = exponentDiagram;
 
@@ -154,11 +154,11 @@ namespace RM_EM
 
                 newEntry.rule = exponentRule.product;
 
-                newEntry.name = Puzzle.GetRuleName(exponentRule.product);
-                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.product);
+                newEntry.name = PuzzleInfo.GetRuleName(exponentRule.product);
+                newEntry.nameKey = PuzzleInfo.GetRuleNameSpeakKey(exponentRule.product);
 
-                newEntry.description = Puzzle.GetRuleDescription(exponentRule.product);
-                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.product);
+                newEntry.description = PuzzleInfo.GetRuleDescription(exponentRule.product);
+                newEntry.descKey = PuzzleInfo.GetRuleDescriptionSpeakKey(exponentRule.product);
 
                 newEntry.diagramSprite = productDiagram;
 
@@ -172,11 +172,11 @@ namespace RM_EM
 
                 newEntry.rule = exponentRule.powerOfAPower;
 
-                newEntry.name = Puzzle.GetRuleName(exponentRule.powerOfAPower);
-                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.powerOfAPower);
+                newEntry.name = PuzzleInfo.GetRuleName(exponentRule.powerOfAPower);
+                newEntry.nameKey = PuzzleInfo.GetRuleNameSpeakKey(exponentRule.powerOfAPower);
 
-                newEntry.description = Puzzle.GetRuleDescription(exponentRule.powerOfAPower);
-                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.powerOfAPower);
+                newEntry.description = PuzzleInfo.GetRuleDescription(exponentRule.powerOfAPower);
+                newEntry.descKey = PuzzleInfo.GetRuleDescriptionSpeakKey(exponentRule.powerOfAPower);
 
                 newEntry.diagramSprite = powerOfAPowerDiagram;
 
@@ -190,11 +190,11 @@ namespace RM_EM
 
                 newEntry.rule = exponentRule.powerOfAProduct;
                 
-                newEntry.name = Puzzle.GetRuleName(exponentRule.powerOfAProduct);
-                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.powerOfAProduct);
+                newEntry.name = PuzzleInfo.GetRuleName(exponentRule.powerOfAProduct);
+                newEntry.nameKey = PuzzleInfo.GetRuleNameSpeakKey(exponentRule.powerOfAProduct);
 
-                newEntry.description = Puzzle.GetRuleDescription(exponentRule.powerOfAProduct);
-                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.powerOfAProduct);
+                newEntry.description = PuzzleInfo.GetRuleDescription(exponentRule.powerOfAProduct);
+                newEntry.descKey = PuzzleInfo.GetRuleDescriptionSpeakKey(exponentRule.powerOfAProduct);
 
                 newEntry.diagramSprite = powerOfAProductDiagram;
 
@@ -209,11 +209,11 @@ namespace RM_EM
 
                 newEntry.rule = exponentRule.zero;
 
-                newEntry.name = Puzzle.GetRuleName(exponentRule.zero);
-                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.zero);
+                newEntry.name = PuzzleInfo.GetRuleName(exponentRule.zero);
+                newEntry.nameKey = PuzzleInfo.GetRuleNameSpeakKey(exponentRule.zero);
 
-                newEntry.description = Puzzle.GetRuleDescription(exponentRule.zero);
-                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.zero);
+                newEntry.description = PuzzleInfo.GetRuleDescription(exponentRule.zero);
+                newEntry.descKey = PuzzleInfo.GetRuleDescriptionSpeakKey(exponentRule.zero);
 
                 newEntry.diagramSprite = zeroDiagram;
 
@@ -227,11 +227,11 @@ namespace RM_EM
 
                 newEntry.rule = exponentRule.negative;
 
-                newEntry.name = Puzzle.GetRuleName(exponentRule.negative);
-                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.negative);
+                newEntry.name = PuzzleInfo.GetRuleName(exponentRule.negative);
+                newEntry.nameKey = PuzzleInfo.GetRuleNameSpeakKey(exponentRule.negative);
 
-                newEntry.description = Puzzle.GetRuleDescription(exponentRule.negative);
-                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.negative);
+                newEntry.description = PuzzleInfo.GetRuleDescription(exponentRule.negative);
+                newEntry.descKey = PuzzleInfo.GetRuleDescriptionSpeakKey(exponentRule.negative);
 
                 newEntry.diagramSprite = negativeDiagram;
 

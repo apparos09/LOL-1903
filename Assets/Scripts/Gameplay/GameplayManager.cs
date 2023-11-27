@@ -124,6 +124,12 @@ namespace RM_EM
             return result;
         }
 
+        // Set if the tutorial will be used.
+        public void SetUsingTutorial(bool value)
+        {
+            GameSettings.Instance.UseTutorial = value;
+        }
+
         // Returns 'true' if the tutorial is available to be activated.
         public bool IsTutorialAvailable()
         {

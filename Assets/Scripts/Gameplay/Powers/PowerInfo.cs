@@ -1,5 +1,7 @@
+using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 namespace RM_EM
@@ -225,95 +227,198 @@ namespace RM_EM
             return powerSprite;
         }
 
-        // Gets the name of the power type name.
-        // 'shortHand' determines if the name is the shorthand or the full-name.
-        public static string GetPowerTypeName(Power.powerType power, bool shortHand)
+        // Gets the name of the power type.
+        public static string GetPowerTypeName(Power.powerType power)
         {
             // Sets the name string to be empty.
-            string name = string.Empty;
+            string powerName = string.Empty;
 
-            switch(power)
+            // Translation.
+            JSONNode defs = (LOLManager.IsLOLSDKInitialized()) ? SharedState.LanguageDefs : null;
+
+
+            switch (power)
             {
                 case Power.powerType.none:
-                    name = "None";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "None";
                     break;
 
                 case Power.powerType.pointsPlus:
-                    name = "Points Plus";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Points Plus";
                     break;
 
                 case Power.powerType.pointsMinus:
-                    name = "Points Minus";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Points Minus";
                     break;
 
                 case Power.powerType.equationShorten:
-                    name = "Question Short";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Question Short";
                     break;
 
                 case Power.powerType.equationLengthen:
-                    name = "Question Long";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Question Long";
                     break;
 
                 case Power.powerType.pointsTransfer:
-                    name = "Points Transfer";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Points Transfer";
                     break;
 
                 case Power.powerType.pointsBlock:
-                    name = "Points Block";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Points Block";
                     break;
 
                 case Power.powerType.twist:
-                    name = "Twist";
+                    powerName = (defs != null) ? defs[GetPowerTypeNameSpeakKey(power)] : "Twist";
                     break;
             }
 
-            return name;
+            return powerName;
+        }
+
+        // Gets the power type name speak key.
+        public static string GetPowerTypeNameSpeakKey(Power.powerType power)
+        {
+            // Sets the rule name speak key.
+            string speakKey = "";
+
+            // If the LOLManager wasn't instantiated, then neither was
+            if (!LOLManager.IsLOLSDKInitialized())
+                return "";
+
+            switch (power)
+            {
+                case Power.powerType.none:
+                    speakKey = "pwr_none_nme";
+                    break;
+
+                case Power.powerType.pointsPlus:
+                    speakKey = "pwr_pointsPlus_nme";
+                    break;
+
+                case Power.powerType.pointsMinus:
+                    speakKey = "pwr_pointsMinus_nme";
+                    break;
+
+                case Power.powerType.equationShorten:
+                    speakKey = "pwr_equationShorten_nme";
+                    break;
+
+                case Power.powerType.equationLengthen:
+                    speakKey = "pwr_eqautionLengthen_nme";
+                    break;
+
+                case Power.powerType.pointsTransfer:
+                    speakKey = "pwr_pointsTransfer_nme";
+                    break;
+
+                case Power.powerType.pointsBlock:
+                    speakKey = "pwr_pointsBlock_nme";
+                    break;
+
+                case Power.powerType.twist:
+                    speakKey = "pwr_twist_nme";
+                    break;
+            }
+
+            return speakKey;
         }
 
         // Gets the power type description.
         public static string GetPowerTypeDescription(Power.powerType power)
         {
             // Sets the description string to be empty.
-            string desc = string.Empty;
+            string powerDesc = string.Empty;
+
+            // Translation.
+            JSONNode defs = (LOLManager.IsLOLSDKInitialized()) ? SharedState.LanguageDefs : null;
 
             switch (power)
             {
                 case Power.powerType.none:
-                    desc = "A power that does nothing.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "A power that does nothing.";
                     break;
                 
                 case Power.powerType.pointsPlus:
-                    desc = "Increases the user's points gained for correct answers for a time.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases the user's points gained for correct answers for a time.";
                     break;
                 
                 case Power.powerType.pointsMinus:
-                    desc = "Decreases the opponent's points gained answers for a time.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Decreases the opponent's points gained answers for a time.";
                     break;
 
                 case Power.powerType.equationShorten:
-                    desc = "Shortens the user's questions, and increases the points they get for correct answers.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Shortens the user's questions, and increases the points they get for correct answers.";
                     break;
 
                 case Power.powerType.equationLengthen:
-                    desc = "Increases the length of the opponent's questions, and decreases the points they get for correct answers";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases the length of the opponent's questions, and decreases the points they get for correct answers";
                     break;
 
                 case Power.powerType.pointsTransfer:
-                    desc = "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.";
                     break;
 
                 case Power.powerType.pointsBlock:
-                    desc = "Blocks the target from gaining more points until the obstruction is removed.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Blocks the target from gaining more points until the obstruction is removed.";
                     break;
 
                 case Power.powerType.twist:
-                    desc = "A power that flips the opponent's view upside down.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "A power that flips the opponent's view upside down.";
                     break;
             }
 
-            // TODO: implement translation.
+            return powerDesc;
+        }
 
-            return desc;
+        // Gets the power type description speak key.
+        public static string GetPowerTypeDescriptionSpeakKey(Power.powerType power)
+        {
+            // Sets the rule name speak key.
+            string speakKey = "";
+
+            // If the LOLManager wasn't instantiated, then neither was
+            if (!LOLManager.IsLOLSDKInitialized())
+                return "";
+
+            // Translation.
+            JSONNode defs = SharedState.LanguageDefs;
+
+            switch (power)
+            {
+                case Power.powerType.none:
+                    speakKey = "pwr_none_dsc";
+                    break;
+
+                case Power.powerType.pointsPlus:
+                    speakKey = "pwr_pointsPlus_dsc";
+                    break;
+
+                case Power.powerType.pointsMinus:
+                    speakKey = "pwr_pointsMinus_dsc";
+                    break;
+
+                case Power.powerType.equationShorten:
+                    speakKey = "pwr_equationShorten_dsc";
+                    break;
+
+                case Power.powerType.equationLengthen:
+                    speakKey = "pwr_eqautionLengthen_dsc";
+                    break;
+
+                case Power.powerType.pointsTransfer:
+                    speakKey = "pwr_pointsTransfer_dsc";
+                    break;
+
+                case Power.powerType.pointsBlock:
+                    speakKey = "pwr_pointsBlock_dsc";
+                    break;
+
+                case Power.powerType.twist:
+                    speakKey = "pwr_twist_dsc";
+                    break;
+            }
+
+            return speakKey;
         }
     }
 }

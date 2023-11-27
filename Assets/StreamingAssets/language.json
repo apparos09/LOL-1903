@@ -86,6 +86,34 @@
     "rle_negative_nme": "Negative",
     "rle_negative_dsc": "A negative exponent becomes 1/x.",
 
+
+
+    "pwr_none_nme": "None",
+    "pwr_none_dsc": "A power that does nothing.",
+
+    "pwr_pointsPlus_nme": "Points Plus",
+    "pwr_pointsPlus_dsc": "Increases the user's points gained for correct answers for a time.",
+
+    "pwr_pointsMinus_nme": "Points Minus",
+    "pwr_pointsMinus_dsc": "Decreases the opponent's points gained answers for a time.",
+
+    "pwr_equationShorten_nme": "Question Short",
+    "pwr_equationShorten_dsc": "Shortens the user's questions, and increases the points they get for correct answers.",
+
+    "pwr_eqautionLengthen_nme": "Question Long",
+    "pwr_eqautionLengthen_dsc": "Increases the length of the opponent's questions, and decreases the points they get for correct answers",
+
+    "pwr_pointsTransfer_nme": "Points Transfer",
+    "pwr_pointsTransfer_dsc": "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.",
+
+    "pwr_pointsBlock_nme": "Point Block",
+    "pwr_pointsBlock_dsc": "Blocks the target from gaining more points until the obstruction is removed.",
+
+    "pwr_twist_nme": "Twist",
+    "pwr_twist_dsc": "A power that flips the opponent's view upside down.",
+
+
+
     "kwd_versus": "Vs.",
     "chr_statue": "Minraul the Statue",
     "chr_lizard": "Reptoc the Lizard",

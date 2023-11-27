@@ -140,8 +140,8 @@ MonoBehaviour:
   negativeRate: 1
   equationTermsMin: 1
   equationTermsMax: 1
-  exponentTermsMin: 1
-  exponentTermsMax: 1
+  exponentTermsMin: 2
+  exponentTermsMax: 2
   missingValuesMin: 1
   missingValuesMax: 1
 --- !u!210 &5095991737127549738

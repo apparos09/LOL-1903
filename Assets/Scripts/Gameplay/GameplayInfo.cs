@@ -447,7 +447,7 @@ namespace RM_EM
 
             // Puzzle Mechanics
             // Grabs the instance.
-            PuzzlePrefabs puzzlePrefabs = PuzzlePrefabs.Instance;
+            PuzzleInfo puzzlePrefabs = PuzzleInfo.Instance;
 
             // The mechanics for P1 and P2.
             PuzzleMechanic p1Mech, p2Mech;

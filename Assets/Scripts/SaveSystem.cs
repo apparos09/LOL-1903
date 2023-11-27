@@ -23,6 +23,9 @@ namespace RM_EM
         // Gets set to 'true' if the game was completed.
         public bool complete = false;
 
+        // To avoid problems, the tutorial parameter cannot be changed for a saved game.
+        public bool useTutorial = true;
+
         // The player's LOL score.
         public int score = 0;
 

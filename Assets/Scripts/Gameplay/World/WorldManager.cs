@@ -526,6 +526,9 @@ namespace RM_EM
             // The data.
             EM_GameData data = new EM_GameData();
 
+            // Save tutorial setting.
+            data.useTutorial = IsUsingTutorial();
+
             // Save the current area index.
             data.currAreaIndex = currAreaIndex;
 
@@ -642,6 +645,9 @@ namespace RM_EM
 
 
             // LOADING THE DATA
+
+            // Tutorial settings.
+            SetUsingTutorial(loadedData.useTutorial);
 
             // Moved set area to the end.
 

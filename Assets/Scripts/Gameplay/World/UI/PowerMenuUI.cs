@@ -18,12 +18,13 @@ namespace RM_EM
             // Symbol
             public Sprite symbol;
 
-            // Name
+            // Name and Speak Key
             public string name;
-            // TODO: add shorthand name...
+            public string nameKey;
 
             // Description
             public string description;
+            public string descKey;
         }
 
         // The world manager.
@@ -123,8 +124,11 @@ namespace RM_EM
             entry.symbol = PowerInfo.Instance.nothingSymbol;
 
             // Gets the name and the description.
-            entry.name = PowerInfo.GetPowerTypeName(entry.power, false);
+            entry.name = PowerInfo.GetPowerTypeName(entry.power);
+            entry.nameKey = PowerInfo.GetPowerTypeNameSpeakKey(entry.power);
+
             entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
+            entry.descKey = PowerInfo.GetPowerTypeDescriptionSpeakKey(entry.power);
 
             return entry;
         }
@@ -159,10 +163,14 @@ namespace RM_EM
                 entry.power = playerWorld.powerList[i];
                 entry.symbol = PowerInfo.Instance.GetPowerSymbol(entry.power);
 
-                // Name and Description
-                entry.name = PowerInfo.GetPowerTypeName(entry.power, true);
+                // Name and Speak Key
+                entry.name = PowerInfo.GetPowerTypeName(entry.power);
+                entry.nameKey = PowerInfo.GetPowerTypeNameSpeakKey(entry.power);
+
+                // Description and Speak Key
                 entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
-                
+                entry.descKey = PowerInfo.GetPowerTypeDescriptionSpeakKey(entry.power);
+
 
                 // Adds the entry to the list.
                 powerEntryList.Add(entry);
@@ -175,7 +183,6 @@ namespace RM_EM
                 }
             }
 
-            // TODO: do more
 
             // Sets to the first page.
             entryPageIndex = 0;
@@ -186,7 +193,7 @@ namespace RM_EM
             if(playerWorld.power != Power.powerType.none)
             {
                 selectedPowerSymbol.sprite = PowerInfo.Instance.GetPowerSymbol(playerWorld.power);
-                selectedPowerName.text = PowerInfo.GetPowerTypeName(playerWorld.power, false);
+                selectedPowerName.text = PowerInfo.GetPowerTypeName(playerWorld.power);
                 selectedPowerDesc.text = PowerInfo.GetPowerTypeDescription(playerWorld.power);
             }
             else // None power
@@ -350,6 +357,16 @@ namespace RM_EM
             if(playerWorld.power == selectedEntry.power)
             {
                 equipButton.interactable = false;
+            }
+
+            // If text-to-speech should be used.
+            if(GameSettings.Instance.UseTextToSpeech && LOLManager.IsLOLSDKInitialized())
+            {
+                // Gets the manager.
+                LOLManager lolManager = LOLManager.Instance;
+
+                // Speak the text.
+                lolManager.SpeakText(selectedEntry.descKey);
             }
         }
 

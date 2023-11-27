@@ -19,13 +19,8 @@ namespace RM_EM
         // The time for the match UI.
         public TMP_Text timerText;
 
-        [Header("Match/Match End")]
-
-        // The UI contnet shown when the match ends.
-        public GameObject matchEnd;
-
-        // The player win text from match end.
-        public TMP_Text playerWinText;
+        // The UI content shown when the match ends.
+        public MatchEnd matchEnd;
 
         [Header("Match/Players")]
 
@@ -283,30 +278,17 @@ namespace RM_EM
         // Shows the match end.
         public void ShowMatchEnd()
         {
-            matchEnd.SetActive(true);
+            // Make active.
+            matchEnd.gameObject.SetActive(true);
 
-            // Checks for defs
-            JSONNode defs = SharedState.LanguageDefs;
-
-            // Checks who has won.
-            if (matchManager.HasPlayer1Won()) // P1
-            {
-                playerWinText.text = (defs != null) ? defs["mth_userWins"] : "You Won!";
-            }
-            else if(matchManager.HasPlayer2Won()) // P2
-            {
-                playerWinText.text = (defs != null) ? defs["mth_oppWins"] : "The Opponent Won!";
-            }
-            else // None
-            {
-                playerWinText.text = "-";
-            }
+            // Set the player win text.
+            matchEnd.SetPlayerWinText();
         }
 
         // Hides the match end.
         public void HideMatchEnd()
         {
-            matchEnd.SetActive(false);
+            matchEnd.gameObject.SetActive(false);
         }
 
         // MATCH END //

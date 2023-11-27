@@ -103,27 +103,27 @@ namespace RM_EM
 
             // Exponent Rule
             if (challenger.exponentRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.exponent));
+                ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.exponent));
 
             // Product Rule
             if (challenger.productRate> 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.product));
+                ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.product));
 
             // Power of a Power
             if (challenger.powerOfAPowerRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerOfAPower));
+                ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.powerOfAPower));
 
             // Power of a Product
             if (challenger.powerOfAProductRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.powerOfAProduct));
+                ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.powerOfAProduct));
 
             // Zero Rule
             if (challenger.zeroRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.zero));
+                ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.zero));
 
             // Negative Rule
             if (challenger.negativeRate > 0)
-                ruleNames.Add(Puzzle.GetRuleName(exponentRule.negative));
+                ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.negative));
 
 
             // Checks for valid rules.
