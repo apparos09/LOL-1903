@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 522159042}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!4 &532776828 stripped
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 753241256}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &783969250
@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1011156326}
-  key: 
+  key: kwd_back
   markIfFailed: 1
 --- !u!114 &1011156326
 MonoBehaviour:
@@ -2759,6 +2759,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1376423908}
+        m_TargetAssemblyTypeName: RM_EM.SpeakKeyUI, Assembly-CSharp
+        m_MethodName: SpeakText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kwd_settings
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1093687676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,7 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1093687675}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &1128924533
@@ -2908,6 +2920,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1376423908}
+        m_TargetAssemblyTypeName: RM_EM.SpeakKeyUI, Assembly-CSharp
+        m_MethodName: SpeakText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ttl_controls_desc
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1128924536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2958,7 +2982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1128924535}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &1152301790
@@ -3325,6 +3349,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1376423908}
+        m_TargetAssemblyTypeName: RM_EM.SpeakKeyUI, Assembly-CSharp
+        m_MethodName: SpeakText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kwd_licenses
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1235897263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,7 +3411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1235897262}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &1277867189
@@ -4938,7 +4974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 1740944785}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1001 &1776066832

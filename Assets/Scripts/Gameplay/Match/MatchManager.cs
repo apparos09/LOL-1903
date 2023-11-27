@@ -294,12 +294,16 @@ namespace RM_EM
         // Called when a tutorial is started.
         public override void OnTutorialStart()
         {
+            base.OnTutorialStart();
+
             PauseMatch();
         }
 
         // Called when a tutorial is ended.
         public override void OnTutorialEnd()
         {
+            base.OnTutorialEnd();
+
             // If there's no window open, unpause the match.
             if(!matchUI.IsWindowOpen())
                 UnpauseMatch();
@@ -503,6 +507,25 @@ namespace RM_EM
             {
                 winner = p2;
                 matchWinner = 2;
+
+                // If the tutorial is active.
+                if(IsUsingTutorial() && IsTutorialAvailable())
+                {
+                    // The tutorial instance.
+                    Tutorial tutorial = Tutorial.Instance;
+
+                    // If the player lost the first match.
+                    if(!tutorial.clearedFirstMatchLoss && matchNumber <= 1) // First Match Loss
+                    {
+                        // First Match Loss
+                        StartTutorial(tutorial.GetFirstMatchLossTutorial());
+                    }
+                    else if(!tutorial.clearedGameOver) // Game Over
+                    {
+                        // Game Over
+                        StartTutorial(tutorial.GetGameOverTutorial());
+                    }
+                }
             }
             else
             {

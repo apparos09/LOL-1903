@@ -23,6 +23,9 @@ namespace RM_EM
         // The number of wrong answers from the player.
         public int wrongAnswers = 0;
 
+        // The number of losses from P1.
+        public int p1Losses = 0;
+
         // The powers p1 has.
         public List<Power.powerType> p1PowerList = new List<Power.powerType>();
 
@@ -348,6 +351,10 @@ namespace RM_EM
 
             // Saves the match winner.
             pWinner = manager.matchWinner;
+
+            // Increases the number of losses if P1 lost the match.
+            if (pWinner == 2)
+                p1Losses++;
 
             // Add the wrong answers from the match.
             wrongAnswers += manager.p1WrongAnswers;

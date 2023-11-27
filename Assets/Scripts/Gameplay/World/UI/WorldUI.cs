@@ -69,6 +69,22 @@ namespace RM_EM
             }
         }
 
+        // TUTORIAL
+        // On Tutorial Start
+        public override void OnTutorialStart()
+        {
+            base.OnTutorialStart();
+        }
+
+        // On Tutorial End
+        public override void OnTutorialEnd()
+        {
+            base.OnTutorialEnd();
+
+            // Grabs the instance.
+            Tutorial tutorial = Tutorial.Instance;
+        }
+
         // SETTINGS (EXPANDED) //
 
         // INFO
@@ -99,6 +115,18 @@ namespace RM_EM
             {
                 OpenInfoMenu();
             }
+        }
+
+        // Enables the info button.
+        public void SetInfoButtonInteractable()
+        {
+            infoButton.interactable = true;
+        }
+
+        // Disables the info button.
+        public void SetInfoButtonNoninteractable()
+        {
+            infoButton.interactable = false;
         }
 
         // POWERS
@@ -290,6 +318,39 @@ namespace RM_EM
             {
                 challengeUI.SetChallenger(challenger, index);
                 challengeUI.gameObject.SetActive(true);
+
+                // If the challenge UI has become active, try to check for a tutorial trigger.
+                if(GameSettings.Instance.UseTutorial && IsTutorialAvailable())
+                {
+                    // Gets the instance.
+                    Tutorial tutorial = Tutorial.Instance;
+
+                    // Checks what exponent tutorial to play.
+                    if(challenger.exponentRate > 0 && !tutorial.clearedExponent) // Tutorial
+                    {
+                        worldManager.StartTutorial(tutorial.GetExponentTutorial());
+                    }
+                    else if(challenger.productRate > 0 && !tutorial.clearedProduct) // Product
+                    {
+                        worldManager.StartTutorial(tutorial.GetProductRuleTutorial());
+                    }
+                    else if(challenger.powerOfAPowerRate > 0 && !tutorial.clearedPowerOfAPower) // Power of a Power
+                    {
+                        worldManager.StartTutorial(tutorial.GetPowerOfAPowerRuleTutorial());
+                    }
+                    else if(challenger.powerOfAProductRate > 0 && !tutorial.clearedPowerOfAProduct) // Power of a Product
+                    {
+                        worldManager.StartTutorial(tutorial.GetPowerOfAProductRuleTutorial());
+                    }
+                    else if(challenger.zeroRate > 0 && !tutorial.clearedZero) // Zero
+                    {
+                        worldManager.StartTutorial(tutorial.GetZeroExponentRuleTutorial());
+                    }
+                    else if(challenger.negativeRate > 0 && !tutorial.clearedNegative) // Negative
+                    {
+                        worldManager.StartTutorial(tutorial.GetNegativeExponentRuleTutorial());
+                    }
+                }
             }
             else
             {
@@ -306,7 +367,7 @@ namespace RM_EM
         }
 
         // Shows the challenge UI.
-        public void ShowChallengeUI(ChallengerWorld challenger, int index)
+        public void ShowChallengerUI(ChallengerWorld challenger, int index)
         {
             SetChallengeUIActive(true, challenger, index);
         }

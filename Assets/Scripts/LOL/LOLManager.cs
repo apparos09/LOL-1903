@@ -123,6 +123,12 @@ namespace RM_EM
             }
         }
 
+        // Returns 'true' if the LOLSDK is initialized.
+        public static bool IsLOLSDKInitialized()
+        {
+            return LOLSDK.Instance.IsInitialized;
+        }
+
         // Gets the text from the language file.
         public string GetLanguageText(string key)
         {
@@ -136,6 +142,13 @@ namespace RM_EM
             else
                 return "";
         }
+
+        // Speaks the text.
+        public void SpeakText(string key)
+        {
+            textToSpeech.SpeakText(key);
+        }   
+        
 
         // Submits progress for the game.
         // The value overrides the last progress value submitted, and must not go over the max.

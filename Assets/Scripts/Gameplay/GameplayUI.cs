@@ -23,6 +23,54 @@ namespace RM_EM
             // ...
         }
 
+        // TUTORIAL //
+        // Start tutorial
+        public void StartTutorial(List<Page> pages)
+        {
+            // Sets the pages and opens the text box.
+            tutorialTextBox.pages = pages;
+            tutorialTextBox.CurrentPageIndex = 0;
+            tutorialTextBox.Open();
+        }
+
+        // On Tutorial Start
+        public virtual void OnTutorialStart()
+        {
+            // ...
+        }
+
+        // On Tutorial End
+        public virtual void OnTutorialEnd()
+        {
+            // ...
+        }
+
+        // Checks if the tutorial text box is open.
+        public bool IsTutorialTextBoxOpen()
+        {
+            return tutorialTextBox.IsVisible();
+        }
+
+        // Returns 'true' if the tutorial can be started.
+        public bool IsTutorialAvailable()
+        {
+            return !IsTutorialTextBoxOpen();
+        }
+
+        // Adds the tutorial text box open/close callbacks.
+        public void AddTutorialTextBoxCallbacks(GameplayManager manager)
+        {
+            tutorialTextBox.OnTextBoxOpenedAddCallback(manager.OnTutorialStart);
+            tutorialTextBox.OnTextBoxClosedAddCallback(manager.OnTutorialEnd);
+        }
+
+        // Removes the tutorial text box open/close callbacks.
+        public void RemoveTutorialTextBoxCallbacks(GameplayManager manager)
+        {
+            tutorialTextBox.OnTextBoxOpenedRemoveCallback(manager.OnTutorialStart);
+            tutorialTextBox.OnTextBoxClosedRemoveCallback(manager.OnTutorialEnd);
+        }
+
         // WINDOWS //
         // Opens the settings.
         public void OpenSettings()
@@ -102,20 +150,6 @@ namespace RM_EM
             bool open = settingsUI.gameObject.activeSelf;
 
             return open;
-        }
-
-        // Adds the tutorial text box open/close callbacks.
-        public void AddTutorialTextBoxCallbacks(GameplayManager manager)
-        {
-            tutorialTextBox.OnTextBoxOpenedAddCallback(manager.OnTutorialStart);
-            tutorialTextBox.OnTextBoxClosedAddCallback(manager.OnTutorialEnd);
-        }
-
-        // Removes the tutorial text box open/close callbacks.
-        public void RemoveTutorialTextBoxCallbacks(GameplayManager manager)
-        {
-            tutorialTextBox.OnTextBoxOpenedRemoveCallback(manager.OnTutorialStart);
-            tutorialTextBox.OnTextBoxClosedRemoveCallback(manager.OnTutorialEnd);
         }
 
         // Update is called once per frame

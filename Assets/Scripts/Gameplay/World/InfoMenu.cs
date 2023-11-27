@@ -15,12 +15,18 @@ namespace RM_EM
             // The Rule
             public exponentRule rule;
             
-            // Name and Description
+            // Name and Speak Key
             public string name;
+            public string nameKey;
+
+            // Description and Speak Key
             public string description;
+            public string descKey;
 
             // The diagram
             public Sprite diagramSprite;
+
+            // Description Speak Key
 
         }
 
@@ -129,8 +135,13 @@ namespace RM_EM
                 newEntry = new InfoEntry();
 
                 newEntry.rule = exponentRule.exponent;
+                
                 newEntry.name = Puzzle.GetRuleName(exponentRule.exponent);
+                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.exponent);
+
                 newEntry.description = Puzzle.GetRuleDescription(exponentRule.exponent);
+                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.exponent);
+
                 newEntry.diagramSprite = exponentDiagram;
 
                 entries.Add(newEntry);
@@ -142,8 +153,13 @@ namespace RM_EM
                 newEntry = new InfoEntry();
 
                 newEntry.rule = exponentRule.product;
+
                 newEntry.name = Puzzle.GetRuleName(exponentRule.product);
+                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.product);
+
                 newEntry.description = Puzzle.GetRuleDescription(exponentRule.product);
+                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.product);
+
                 newEntry.diagramSprite = productDiagram;
 
                 entries.Add(newEntry);
@@ -155,8 +171,13 @@ namespace RM_EM
                 newEntry = new InfoEntry();
 
                 newEntry.rule = exponentRule.powerOfAPower;
+
                 newEntry.name = Puzzle.GetRuleName(exponentRule.powerOfAPower);
+                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.powerOfAPower);
+
                 newEntry.description = Puzzle.GetRuleDescription(exponentRule.powerOfAPower);
+                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.powerOfAPower);
+
                 newEntry.diagramSprite = powerOfAPowerDiagram;
 
                 entries.Add(newEntry);
@@ -168,8 +189,13 @@ namespace RM_EM
                 newEntry = new InfoEntry();
 
                 newEntry.rule = exponentRule.powerOfAProduct;
+                
                 newEntry.name = Puzzle.GetRuleName(exponentRule.powerOfAProduct);
+                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.powerOfAProduct);
+
                 newEntry.description = Puzzle.GetRuleDescription(exponentRule.powerOfAProduct);
+                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.powerOfAProduct);
+
                 newEntry.diagramSprite = powerOfAProductDiagram;
 
                 entries.Add(newEntry);
@@ -182,8 +208,13 @@ namespace RM_EM
                 newEntry = new InfoEntry();
 
                 newEntry.rule = exponentRule.zero;
+
                 newEntry.name = Puzzle.GetRuleName(exponentRule.zero);
+                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.zero);
+
                 newEntry.description = Puzzle.GetRuleDescription(exponentRule.zero);
+                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.zero);
+
                 newEntry.diagramSprite = zeroDiagram;
 
                 entries.Add(newEntry);
@@ -195,8 +226,13 @@ namespace RM_EM
                 newEntry = new InfoEntry();
 
                 newEntry.rule = exponentRule.negative;
+
                 newEntry.name = Puzzle.GetRuleName(exponentRule.negative);
+                newEntry.nameKey = Puzzle.GetRuleNameSpeakKey(exponentRule.negative);
+
                 newEntry.description = Puzzle.GetRuleDescription(exponentRule.negative);
+                newEntry.descKey = Puzzle.GetRuleDescriptionSpeakKey(exponentRule.negative);
+
                 newEntry.diagramSprite = negativeDiagram;
 
                 entries.Add(newEntry);
@@ -264,6 +300,18 @@ namespace RM_EM
             ruleDesc.text = entry.description;
 
             diagramImage.sprite = entry.diagramSprite;
+
+            // If the LOL Manager has been instantiated.
+            if(GameSettings.Instance.UseTextToSpeech)
+            {
+                // The LOL Manager
+                LOLManager lolManager = LOLManager.Instance;
+
+                // If there is a description key, read it.
+                if (entry.descKey != "")
+                    lolManager.SpeakText(entry.descKey);
+
+            }
         }
     }
 }

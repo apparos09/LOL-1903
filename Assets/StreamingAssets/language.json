@@ -65,6 +65,27 @@
     "kwd_powers": "Powers",
     "kwd_power": "Power",
 
+    "rle_none_nme": "None",
+    "rle_none_dsc": "No exponent rule.",
+
+    "rle_exponent_nme": "Exponent",
+    "rle_exponent_dsc": "Multiplies a term (n) number of times.",
+
+    "rle_product_nme": "Product",
+    "rle_product_dsc": "Exponents with the same base are equal to said base to the sum of the exponents.",
+
+    "rle_powerOfAPower_nme": "Power of a Power",
+    "rle_powerOfAPower_dsc": "A base and exponent to another exponent is equal to the base to the product of said exponents.",
+
+    "rle_powerOfAProduct_nme": "Power of a Product",
+    "rle_powerOfAProduct_dsc": "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.",
+
+    "rle_zero_nme": "Zero",
+    "rle_zero_dsc": "A zero exponent always rules in a 1.",
+
+    "rle_negative_nme": "Negative",
+    "rle_negative_dsc": "A negative exponent becomes 1/x.",
+
     "kwd_versus": "Vs.",
     "chr_statue": "Minraul the Statue",
     "chr_lizard": "Reptoc the Lizard",
@@ -97,7 +118,7 @@
 
 
     "trl_opening_00": "Welcome to the exponent club! As the name suggests, we play the exponent game here. Do you want to play? Oh, you’ve never played the game before? I guess the club will have to teach you then! Challenge me to a match, and I’ll show you the ropes!",
-    "trl_firstMatch_00": "The exponent game is pretty symbol. You and your opponent will both be given equations with missing values, which can be numbers or operations. You need to pick the right value from your puzzle board to complete the equation. When the equation is complete, you get points, and move onto the next equation. The player fills their points bar first wins. Good luck!",
+    "trl_opening_01": "The exponent game is simple. You and your opponent will both be given equations with missing values, which can be numbers or operations. You need to pick the right value from your puzzle board to complete the equation. When the equation is complete, you get points, and move onto the next equation. The player fills their points bar first wins. With all that explained, challenge me to a match by selecting my icon!",
     "trl_firstMatchLoss_00": "You’ve lost the introductory match. It’s important that you learn this rule before going forward, so please try again.",
     "trl_firstMatchWin_00": "Congratulations on winning the introduction match! Now that you’re familiar with the rules, you’ll have to beat every member of the club! Each member focuses on one or more exponent rules, so you’ll get introduced to each rule one at a time. You’ll be a master at this in no time. Good luck!",
     "trl_firstPower_00": "You just got a match power! A power can be used to give you an edge during a match, but only after building up its energy first. When you defeat a challenger, you also receive the power, which you can equip for future matches. Check the power menu to see what each power does, and select what power you want.",

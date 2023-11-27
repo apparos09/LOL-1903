@@ -124,25 +124,28 @@ namespace RM_EM
             return result;
         }
 
+        // Returns 'true' if the tutorial is available to be activated.
+        public bool IsTutorialAvailable()
+        {
+            return gameUI.IsTutorialAvailable();
+        }
+
         // Starts a tutorial using the provided pages.
         public virtual void StartTutorial(List<Page> pages)
         {
-            // Sets the pages and opens the text box.
-            gameUI.tutorialTextBox.pages = pages;
-            gameUI.tutorialTextBox.CurrentPageIndex = 0;
-            gameUI.tutorialTextBox.Open();
+            gameUI.StartTutorial(pages);
         }
 
         // Called when a tutorial is started.
         public virtual void OnTutorialStart()
         {
-            // Start...
+            gameUI.OnTutorialStart();
         }
 
         // Called when a tutorial is ended.
         public virtual void OnTutorialEnd()
         {
-            // End...
+            gameUI.OnTutorialEnd();
         }
 
         // Called when the game is completed.

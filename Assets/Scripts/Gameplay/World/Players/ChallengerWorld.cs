@@ -222,7 +222,7 @@ namespace RM_EM
                     // If the challenge UI is not active.
                     if (!manager.worldUI.IsChallengerUIActive())
                     {
-                        manager.worldUI.ShowChallengeUI(this, manager.GetChallengerIndex(this));
+                        manager.ShowChallengerUI(this, manager.GetChallengerIndex(this));
                     }
                 }    
             }

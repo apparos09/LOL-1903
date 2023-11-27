@@ -43,6 +43,16 @@ namespace RM_EM
         // A pool of value boxes to pull from.
         public Queue<GameObject> valueBoxPool;
 
+        [Header("Match/Buttons")]
+
+        // Button to return to the world.
+        public Button toWorldButton;
+
+        // The replay button.
+        // public Button replayButton;
+
+        // The match quit button.
+        // public Button matchQuitButton;
 
         // Start is called before the first frame update
         protected override void Start()
@@ -55,6 +65,24 @@ namespace RM_EM
 
             // Hides the match end.
             HideMatchEnd();
+        }
+
+        // TUTORIAL
+
+        // On Tutorial Start
+        public override void OnTutorialStart()
+        {
+            base.OnTutorialStart();
+
+            toWorldButton.interactable = false;
+        }
+
+        // On Tutorial End
+        public override void OnTutorialEnd()
+        {
+            base.OnTutorialEnd();
+
+            toWorldButton.interactable = true;
         }
 
         // INTERFACE UPDATES //

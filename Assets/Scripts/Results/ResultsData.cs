@@ -15,5 +15,8 @@ namespace RM_EM
 
         // The number of wrong answers.
         public int wrongAnswers = 0;
+
+        // The number of losses the player had.
+        public int losses = 0;
     }
 }

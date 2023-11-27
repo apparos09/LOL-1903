@@ -61,6 +61,9 @@ namespace RM_EM
         // The total number of challengers in the game.
         public const int CHALLENGER_COUNT = 9;
 
+        // The first challenger for the game.
+        public ChallengerWorld firstChallenger;
+
         // The final challenger of the game.
         public ChallengerWorld finalChallenger;
 
@@ -205,44 +208,48 @@ namespace RM_EM
                 }
             }
 
-            //// if(GameSettings.Instance.UseTutorial)
-            //if (useTutorial)
-            //{
-            //    Tutorial tutorial = Tutorial.Instance;
-
-            //    // Opening not cleared, and the textbox isn't open.
-            //    if (!tutorial.clearedOpening && !worldUI.tutorialTextBox.IsVisible())
-            //    {
-            //        // Gets the opening tutorial.
-            //        StartTutorial(tutorial.GetOpeningTutorial());
-            //        // Input.
-            //    }
-            //}
-
+            // If the player has no powers, disable the power menu.
+            if (worldUI.powersButton != null)
+                worldUI.powersButton.interactable = playerWorld.powerList.Count != 0;
 
             // If the game settings have been instantiated.
-            if(worldUI.infoButton != null && GameSettings.Instantiated)
+            if (worldUI.infoButton != null && GameSettings.Instantiated)
             {
-                GameSettings settings = GameSettings.Instance;
-
-                // If the tutorial is enabled
-                if(settings.UseTutorial)
+                // If the tutorial is enabled, and the textbox isn't open.
+                if (IsUsingTutorial() && IsTutorialAvailable())
                 {
                     // The tutorial.
                     Tutorial tutorial = Tutorial.Instance;
 
-                    // This is the first exponent tutoria. If it's been cleared, then there's something to show.
+                    // This is the first exponent tutorial. If it's been cleared, then there's something to show.
                     // If there isn't anything to show, then keep the button disabled.
                     worldUI.infoButton.interactable = tutorial.clearedExponent;
+
+
+                    // Tutorial Triggers
+                    // Opening not cleared, and the textbox isn't open.
+                    if (!tutorial.clearedOpening)
+                    {
+                        // Gets the opening tutorial and opens it.
+                        StartTutorial(tutorial.GetOpeningTutorial());
+                    }
+                    // Checks if the first match tutorial has happened yet.
+                    // Also checks if the first challenger has been defeated.
+                    else if(!tutorial.clearedFirstMatchWin && firstChallenger.defeated)
+                    {
+                        // Gets the first match win tutorial and opens it.
+                        StartTutorial(tutorial.GetFirstMatchWinTutorial());
+                    }
+                    // If the player hasn't gotten the first power tutorial, and they have powers.
+                    else if (!tutorial.clearedFirstPower && playerWorld.HasPowers())
+                    {
+                        // Gets the first power tutorial and opens it.
+                        StartTutorial(tutorial.GetFirstPowerTutorial());
+                    }
                 }
             }
 
-            // If the player has no powers, disable the power menu.
-            if(worldUI.powersButton != null)
-                worldUI.powersButton.interactable = playerWorld.powerList.Count != 0;
-
-
-            // Gets and saves the game progress.
+            // Gets and saves the game progress (for LOL content).
             gameProgress = GetGameProgress();
 
             // Called post start.
@@ -310,6 +317,8 @@ namespace RM_EM
         // Called when a tutorial is started.
         public override void OnTutorialStart()
         {
+            base.OnTutorialStart();
+
             PauseWorld();
 
             // Turn on the blocker.
@@ -319,6 +328,8 @@ namespace RM_EM
         // Called when a tutorial is ended.
         public override void OnTutorialEnd()
         {
+            base.OnTutorialEnd();
+
             UnpauseWorld();
 
             // Turn off the blocker, but only if a window isn't open.
@@ -348,17 +359,9 @@ namespace RM_EM
             // Transition the camera.
             if(newArea.cameraPos != null)
             {
-                // Checks if the animation should be skipped.
-                if(skipAnimation) // Skip
-                {
-                    // Set the camera position.
-                    worldCamera.SetPosition(newArea.cameraPos);
-                }   
-                else // Don't skip
-                {
-                    // Move the camera.
-                    worldCamera.Move(newArea.cameraPos);
-                }
+                // Moves the camera.
+                // If the animation should be skipped, the change is instant.
+                worldCamera.Move(newArea.cameraPos, skipAnimation);
 
             }
 
@@ -426,6 +429,12 @@ namespace RM_EM
             SetArea(index, false);
         }
 
+        // Checks if the player is in the final area.
+        public bool InFinalArea()
+        {
+            return currAreaIndex == areas.Count - 1;
+        }
+
         // Updates the area events.
         public void UpdateAreaEvents()
         {
@@ -459,6 +468,12 @@ namespace RM_EM
         {
             return challenger == finalChallenger;
         }
+
+        // Shows the challenger UI.
+        public void ShowChallengerUI(ChallengerWorld challenger, int index)
+        {
+            worldUI.ShowChallengerUI(challenger, index);
+        }
         
         // Accept the challenge.
         public void AcceptChallenge(ChallengerWorld challenger)
@@ -482,8 +497,9 @@ namespace RM_EM
             worldUI.HideChallengeUI();
         }
 
-        // MATCH
 
+
+        // MATCH //
         // Returns the match number, which is determined based on...
         // How many challengers are left.
         public int GetMatchNumber()
@@ -750,6 +766,9 @@ namespace RM_EM
 
                 // Sets the wrong answers.
                 data.wrongAnswers = gameInfo.wrongAnswers;
+
+                // Add to the P1 losses.
+                data.losses = gameInfo.p1Losses;
             }
 
             // Submit progress complete.

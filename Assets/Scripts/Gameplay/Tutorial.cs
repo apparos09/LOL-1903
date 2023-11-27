@@ -14,9 +14,8 @@ namespace RM_EM
         {
             // Bools for clearing certain tutorials.
             public bool clearedOpening;
-            public bool clearedFirstMatch;
             public bool clearedFirstMatchLoss;
-            public bool clearedPostFirstMatch;
+            public bool clearedFirstMatchWin;
 
             public bool clearedFirstPower;
             public bool clearedFinalMatch;
@@ -47,9 +46,8 @@ namespace RM_EM
         // TODO: maybe seperate them based on the tutorial type (world, match). Maybe re-arrange the function.
         // Bools for clearing certain tutorials.
         public bool clearedOpening = false;
-        public bool clearedFirstMatch = false;
         public bool clearedFirstMatchLoss = false;
-        public bool clearedPostFirstMatch = false;
+        public bool clearedFirstMatchWin = false;
 
         public bool clearedFirstPower = false;
         public bool clearedFinalMatch = false;
@@ -162,10 +160,12 @@ namespace RM_EM
             if (defs != null) // Translation
             {
                 pages.Add(new Page(defs["trl_opening_00"], "trl_opening_00"));
+                pages.Add(new Page(defs["trl_opening_01"], "trl_opening_01"));
             }
             else
             {
                 pages.Add(new Page("Welcome to the exponent club! As the name suggests, we play the exponent game here. Do you want to play? Oh, you’ve never played the game before? I guess the club will have to teach you then! Challenge me to a match, and I’ll show you the ropes!"));
+                pages.Add(new Page("The exponent game is simple. You and your opponent will both be given equations with missing values, which can be numbers or operations. You need to pick the right value from your puzzle board to complete the equation. When the equation is complete, you get points, and move onto the next equation. The player fills their points bar first wins. With all that explained, challenge me to a match by selecting my icon!"));
             }
             
 
@@ -190,28 +190,20 @@ namespace RM_EM
                 pages.Add(new Page("Time to teach you some exponent basics. Exponents are math operations where you multiply a value by itself a certain number of times, with said number being determined by the exponent. Exponent operations have multiple rules, which will be explained later."));
             }
 
+
+            // If the world manager is instantiated.
+            if(WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager manager = WorldManager.Instance;
+
+                // Makes the info button interactable.
+                pages[0].OnPageClosedAddCallback(manager.worldUI.SetInfoButtonInteractable);
+            }
+            
+
+            // Cleared the tutorial.
             clearedExponent = true;
-
-            return pages;
-        }
-
-        // The first match tutorial.
-        public List<Page> GetFirstMatchTutorial()
-        {
-            // The pages list.
-            List<Page> pages = new List<Page>();
-
-            // Loads the pages
-            if (defs != null) // Translation
-            {
-                pages.Add(new Page(defs["trl_firstMatch_00"], "trl_firstMatch_00"));
-            }
-            else
-            {
-                pages.Add(new Page("The exponent game is pretty symbol. You and your opponent will both be given equations with missing values, which can be numbers or operations. You need to pick the right value from your puzzle board to complete the equation. When the equation is complete, you get points, and move onto the next equation. The player fills their points bar first wins. Good luck!"));
-            }
-
-            clearedFirstMatch = true;
 
             return pages;
         }
@@ -253,7 +245,7 @@ namespace RM_EM
                 pages.Add(new Page("Congratulations on winning the introduction match! Now that you’re familiar with the rules, you’ll have to beat every member of the club! Each member focuses on one or more exponent rules, so you’ll get introduced to each rule one at a time. You’ll be a master at this in no time. Good luck!"));
             }
 
-            clearedPostFirstMatch = true;
+            clearedFirstMatchWin = true;
 
             return pages;
         }
@@ -434,9 +426,8 @@ namespace RM_EM
 
             // Saving the data
             data.clearedOpening = clearedOpening;
-            data.clearedFirstMatch = clearedFirstMatch;
             data.clearedFirstMatchLoss = clearedFirstMatchLoss;
-            data.clearedPostFirstMatch = clearedPostFirstMatch;
+            data.clearedFirstMatchWin = clearedFirstMatchWin;
 
             data.clearedFirstPower = clearedFirstPower;
             data.clearedFinalMatch = clearedFinalMatch;
@@ -458,9 +449,8 @@ namespace RM_EM
         {
             // Loading the data
             clearedOpening = data.clearedOpening;
-            clearedFirstMatch = data.clearedFirstMatch;
             clearedFirstMatchLoss = data.clearedFirstMatchLoss;
-            clearedPostFirstMatch = data.clearedPostFirstMatch;
+            clearedFirstMatchWin = data.clearedFirstMatchWin;
 
             clearedFirstPower = data.clearedFirstPower;
             clearedFinalMatch = data.clearedFinalMatch;
