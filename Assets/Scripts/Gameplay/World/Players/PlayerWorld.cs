@@ -47,7 +47,11 @@ namespace RM_EM
             return powerList.Count > 0;
         }
 
-        
+        // Gets the player's current power.
+        public Power.powerType GetPower()
+        {
+            return power;
+        }
 
         // Selects a power by type.
         // If 'savePower' is true, the power is saved to the list if it's not already in the list.
@@ -101,6 +105,12 @@ namespace RM_EM
             {
                 SetPower(newPower);
             }
+        }
+
+        // Gets the index of the player's equipped power.
+        public int GetPowerIndex()
+        {
+            return powerList.IndexOf(power);
         }
     }
 }

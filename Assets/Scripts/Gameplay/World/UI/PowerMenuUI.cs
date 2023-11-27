@@ -116,17 +116,20 @@ namespace RM_EM
         }
 
         // Generates a power none entry.
-        public PowerEntry GeneratePowerNoneEntry()
+        public PowerEntry GeneratePowerEntry(Power.powerType power)
         {
+            // Entry
             PowerEntry entry = new PowerEntry();
 
-            entry.power = Power.powerType.none;
-            entry.symbol = PowerInfo.Instance.nothingSymbol;
+            // Power and Symbol
+            entry.power = power;
+            entry.symbol = PowerInfo.Instance.GetPowerSymbol(entry.power);
 
-            // Gets the name and the description.
+            // Name and Key
             entry.name = PowerInfo.GetPowerTypeName(entry.power);
             entry.nameKey = PowerInfo.GetPowerTypeNameSpeakKey(entry.power);
 
+            // Description and Key
             entry.description = PowerInfo.GetPowerTypeDescription(entry.power);
             entry.descKey = PowerInfo.GetPowerTypeDescriptionSpeakKey(entry.power);
 
@@ -146,8 +149,7 @@ namespace RM_EM
             powerEntryList.Clear();
 
             // Generates a none entry as the first spot (used to deselect powers).
-            // TODO: remove this?
-            powerEntryList.Add(GeneratePowerNoneEntry());
+            powerEntryList.Add(GeneratePowerEntry(Power.powerType.none));
 
             // Default to first index (nothing power).
             selectedEntryIndex = 0;
@@ -187,21 +189,46 @@ namespace RM_EM
             // Sets to the first page.
             entryPageIndex = 0;
 
-            // TODO: use selected entry instead?
-            // Set selected power symbol, name, description to current.
+            // Loads the entry into the UI.
+            LoadEntriesIntoUI(entryPageIndex);
+
             // If not available, set to defaults.
-            if(playerWorld.power != Power.powerType.none)
             {
-                selectedPowerSymbol.sprite = PowerInfo.Instance.GetPowerSymbol(playerWorld.power);
-                selectedPowerName.text = PowerInfo.GetPowerTypeName(playerWorld.power);
-                selectedPowerDesc.text = PowerInfo.GetPowerTypeDescription(playerWorld.power);
+                // TODO: this could be optimized.
+                
+                // The speak key to be used.
+                string speakKey = "";
+
+                // Checks if the player has a power equipped.
+                if (playerWorld.power != Power.powerType.none)
+                {
+                    // Set UI
+                    SetSelectedPowerUI(playerWorld.power);
+
+                    // Sets the speak key.
+                    speakKey = PowerInfo.GetPowerTypeDescriptionSpeakKey(playerWorld.power);
+                }
+                else // None power
+                {
+                    // Set UI
+                    SetSelectedPowerUI(powerEntryList[0].power);
+
+                    // Sets the speak key.
+                    speakKey = PowerInfo.GetPowerTypeDescriptionSpeakKey(powerEntryList[0].power);
+                }
+
+
+
+                // Disable the equip button since the player's power is being disabled.
+                equipButton.interactable = false;
+
+                // Text-To-Speech
+                if (GameSettings.Instance.UseTextToSpeech && LOLManager.IsLOLSDKInitialized())
+                {
+                    LOLManager.Instance.SpeakText(speakKey);
+                }
             }
-            else // None power
-            {
-                selectedPowerSymbol.sprite = powerEntryList[0].symbol;
-                selectedPowerName.text = powerEntryList[0].name;
-                selectedPowerDesc.text = powerEntryList[0].description;
-            }
+            
             
 
             // Make buttons interactable.
@@ -214,9 +241,6 @@ namespace RM_EM
                 prevEntryButton.interactable = false;
                 nextEntryButton.interactable = false;
             }
-
-            // Loads the entry into the UI.
-            LoadEntriesIntoUI(0);
 
             // TODO: disable the equip button if the player has no power equipped.
             // It doesn't work when the player first opens the menu, so I need to fix that.
@@ -370,6 +394,16 @@ namespace RM_EM
             }
         }
 
+        // Sets the UI using the provided power (does not effect selectedIndex).
+        public void SetSelectedPowerUI(Power.powerType power)
+        {
+            selectedPowerSymbol.sprite = PowerInfo.Instance.GetPowerSymbol(power);
+            selectedPowerName.text = PowerInfo.GetPowerTypeName(power);
+            selectedPowerDesc.text = PowerInfo.GetPowerTypeDescription(power);
+        }
+
+
+        // EQUIP / UNEQUIP
         // Equips the selected power.
         public void EquipPower()
         {
