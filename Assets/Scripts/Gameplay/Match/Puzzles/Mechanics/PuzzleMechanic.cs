@@ -48,6 +48,9 @@ namespace RM_EM
         // Called to update the mechanic.
         public abstract void UpdateMechanic();
 
+        // Resets the mechanic.
+        public abstract void ResetMechanic();
+
         // Update is called once per frame
         protected virtual void Update()
         {

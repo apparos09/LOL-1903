@@ -118,6 +118,24 @@ namespace RM_EM
             }
         }
 
+        // Resets the mechanic.
+        public override void ResetMechanic()
+        {
+            // Goes through all the ball values.
+            // This goes in reverse because the balls are being removed from the list.
+            for (int i = puzzleValues.Count - 1; i >= 0; i--)
+            {
+                // Cast to Ball value.
+                BallValue ball = (BallValue)puzzleValues[i];
+
+                // Kill the ball.
+                ball.Kill();
+            }
+
+            // Makes sure the gate is closed.
+            gate.CloseGate();
+        }
+
         // Update is called once per frame
         protected override void Update()
         {

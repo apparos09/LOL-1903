@@ -170,6 +170,15 @@ namespace RM_EM
         // Go to the title scene.
         public virtual void ToTitleScene()
         {
+            // Destroys 'DontDestroyOnLoad' Objects
+            // Game Info
+            if (GameplayInfo.Instantiated)
+                Destroy(GameplayInfo.Instance.gameObject);
+
+            // Tutorial
+            if (Tutorial.Instantiated)
+                Destroy(Tutorial.Instance.gameObject);
+
             // TODO: add loading screen.
             SceneManager.LoadScene("TitleScene");
         }

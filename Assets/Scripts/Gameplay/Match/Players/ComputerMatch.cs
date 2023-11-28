@@ -353,7 +353,16 @@ namespace RM_EM
             Vector3 newPos = Vector3.MoveTowards(reticle.transform.position, targetValue.transform.position, moveSpeed * Time.deltaTime);
             reticle.transform.position = newPos;
 
-            // TODO: set something to use powers and skips.
+            // TODO: set something to use skips?
+        }
+
+        // Resets the player.
+        public override void ResetPlayer()
+        {
+            base.ResetPlayer();
+
+            // Sets the wait time to max.
+            waitTimer = waitTimeMax;
         }
 
         // Update is called once per frame

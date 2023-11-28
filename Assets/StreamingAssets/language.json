@@ -57,6 +57,7 @@
     "kwd_tutorial": "Tutorial",
 
     "kwd_save": "Save",
+    "kwd_saveQuit": "Save/Quit",
     "sve_msg_savingGame": "Saving Game...",
     "kwd_loadSuccess_msg": "Save data loaded successfully.",
 
@@ -115,23 +116,32 @@
 
 
     "kwd_versus": "Vs.",
-    "chr_statue": "Minraul the Statue",
-    "chr_lizard": "Reptoc the Lizard",
-    "chr_mummy": "Mona the Mummy",
-    "chr_fire": "Forgerton the Fire Spirit",
-    "chr_ghost": "Ecto the Ghost",
-    "chr_vampire": "Fang the Vampire",
-    "chr_werewolf": "Howluf the Werewolf",
-    "chr_water": "Divytide the Water",
 
-    "chr_statue_quote": "...",
-    "chr_lizard_quote": "...",
-    "chr_mummy_quote": "...",
-    "chr_fire_quote": "...",
-    "chr_ghost_quote": "...",
-    "chr_vampire_quote": "...",
-    "chr_werewolf_quote": "...",
-    "chr_water_quote": "...",
+    "chr_statue_nme": "Minraul the Statue",
+    "chr_statue_qte_00": "...",
+    "chr_statue_qte_01": "...",
+
+    "chr_lizard_nme": "Reptoc the Lizard",
+    "chr_lizard_qte": "...",
+
+    "chr_mummy_nme": "Mona the Mummy",
+    "chr_mummy_qte": "...",
+
+    "chr_fire_nme": "Forgerton the Fire Spirit",
+    "chr_fire_qte": "...",
+
+    "chr_ghost_nme": "Ecto the Ghost",
+    "chr_ghost_qte": "...",
+
+    "chr_vampire_nme": "Fang the Vampire",
+    "chr_vampire_qte": "...",
+
+    "chr_werewolf_nme": "Howluf the Werewolf",
+    "chr_werewolf_qte": "...",
+
+    "chr_water_nme": "Divytide the Water",
+    "chr_water_qte": "...",
+
 
 
 
@@ -142,6 +152,7 @@
     "mth_matchOver": "The Match is Over!",
     "mth_userWins": "You won!",
     "mth_oppWins": "The Opponent won!",
+    "kwd_rematch": "Rematch",
 
 
 

@@ -69,6 +69,11 @@ namespace RM_EM
             return timerOver;
         }
 
-        
+        // Resets the mechanic.
+        public override void ResetMechanic()
+        {
+
+        }
+
     }
 }

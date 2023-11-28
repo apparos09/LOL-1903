@@ -158,7 +158,7 @@ namespace RM_EM
         private int missingValuesCountStart = 0;
 
         // The maximum amount of random values available when asking for a random value.
-        private const int RANDOM_VALUE_MAX = 5;
+        private const int RANDOM_VALUE_MAX = 4; // 5
 
         // Start is called before the first frame update
         void Start()
@@ -1363,7 +1363,11 @@ namespace RM_EM
         // Resets the puzzle. TODO: implement for each puzzle mechanic.
         public virtual void ResetPuzzle()
         {
+            // Answer time.
             answerTime = 0.0F;
+
+            // Resets the mechanic.
+            puzzleMechanic.ResetMechanic();
         }
 
         // Update is called once per frame

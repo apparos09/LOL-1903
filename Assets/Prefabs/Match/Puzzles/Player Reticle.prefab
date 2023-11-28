@@ -193,4 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7df815e43da784ea7005fde4a6b055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4811227746414971191}
   playerMatch: {fileID: 0}

@@ -125,6 +125,13 @@ namespace RM_EM
                 manager.matchAudio.PlayBallHitSfx();
         }
 
+        // Kills the ball.
+        public void Kill()
+        {
+            // Return the ball.
+            mechanic.ReturnBall(this);
+        }
+
         // OnHit Function
         public override void OnHit(bool rightAnswer)
         {
@@ -143,8 +150,7 @@ namespace RM_EM
             // If the ball is in the death zone.
             if(mechanic.BallInDeathZone(this))
             {
-                // Return the ball.
-                mechanic.ReturnBall(this);
+                Kill();
             }
         }
     }

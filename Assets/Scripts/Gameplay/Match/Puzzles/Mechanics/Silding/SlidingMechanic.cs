@@ -302,6 +302,21 @@ namespace RM_EM
             }
         }
 
+        // Resets the mechanic.
+        public override void ResetMechanic()
+        {
+            // Goes through all the puzzle values.
+            // This goes in reverse because the pieces are being removed from the list.
+            for (int i = puzzleValues.Count - 1; i >= 0; i--)
+            {
+                // Cast to sliding piece value.
+                SlidingPieceValue piece = (SlidingPieceValue)puzzleValues[i];
+
+                // Kill the piece.
+                piece.Kill();
+            }
+        }
+
         // Update is called once per frame
         protected override void Update()
         {

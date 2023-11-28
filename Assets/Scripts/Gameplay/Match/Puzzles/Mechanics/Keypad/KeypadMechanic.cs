@@ -42,6 +42,12 @@ namespace RM_EM
             // Nothing
         }
 
+        // Resets the mechanic.
+        public override void ResetMechanic()
+        {
+            // Nothing
+        }
+
         // Update is called once per frame
         protected override void Update()
         {

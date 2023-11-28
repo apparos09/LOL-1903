@@ -81,7 +81,7 @@ namespace RM_EM
             bubble.SetLifeTimerToMax();
 
             // Other
-            // Add the bubble to the values lit.
+            // Add the bubble to the values list.
             puzzleValues.Add(bubble);
             
             // Return the bubble.
@@ -148,6 +148,21 @@ namespace RM_EM
 
                 // Resets the spawn timer.
                 ResetSpawnTimerToMax();
+            }
+        }
+
+        // Resets the mechanic.
+        public override void ResetMechanic()
+        {
+            // Goes through all the puzzle values.
+            // This goes in reverse because the bubbles are being removed from the list.
+            for(int i = puzzleValues.Count - 1; i >= 0; i--)
+            {
+                // Cast to BubbleValue
+                BubbleValue bubble = (BubbleValue)puzzleValues[i];
+
+                // Kill the bubble.
+                bubble.Kill();
             }
         }
 

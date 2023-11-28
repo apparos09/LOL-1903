@@ -59,4 +59,4 @@ MonoBehaviour:
   target: {fileID: 0}
   autoSetTarget: 1
   targetIsUser: 0
-  multiplier: 1
+  multiplier: 1.5

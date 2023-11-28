@@ -565,6 +565,18 @@ namespace RM_EM
             p1.ResetPlayer();
             p2.ResetPlayer();
 
+            // Reset Puzzle
+            p1Puzzle.ResetPuzzle();
+            p2Puzzle.ResetPuzzle();
+
+            // Generate new equations (P1)
+            p1Puzzle.GenerateEquation();
+            p1.OnEquationGenerated();
+
+            // Generate new equations (P2)
+            p2Puzzle.GenerateEquation();
+            p2.OnEquationGenerated();
+
             // Reset time.
             matchTime = 0;
 

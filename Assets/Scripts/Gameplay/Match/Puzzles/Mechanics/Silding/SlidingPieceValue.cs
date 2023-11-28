@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RM_EM
@@ -20,6 +21,13 @@ namespace RM_EM
         // The move speed.
         public float moveSpeed = 1.0F;
 
+        // Kills the piece.
+        public void Kill()
+        {
+            // Returns the piece.
+            mechanic.ReturnPiece(this);
+        }
+
         // OnHit Function
         public override void OnHit(bool rightAnswer)
         {
@@ -29,6 +37,8 @@ namespace RM_EM
             if (manager.matchAudio != null)
                 manager.matchAudio.PlayPuzzleValueSelectSfx();
         }
+
+
 
         // Update is called once per frame
         protected override void Update()
@@ -42,7 +52,7 @@ namespace RM_EM
             if(!mechanic.PositionXYInBounds(transform.position))
             {
                 // Not in bounds, so return the piece.
-                mechanic.ReturnPiece(this);
+                Kill();
             }
         }
     }

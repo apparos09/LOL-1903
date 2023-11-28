@@ -77,6 +77,10 @@ namespace RM_EM
         // Kills the bubble.
         public void Kill()
         {
+            // Seet timer to 0.
+            lifeTimer = 0;
+
+            // Return bubble.
             mechanic.ReturnBubble(this);
         }
 

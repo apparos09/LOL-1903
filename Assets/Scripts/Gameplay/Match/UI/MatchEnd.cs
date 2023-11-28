@@ -22,30 +22,41 @@ namespace RM_EM
         // The match over text.
         public TMP_Text playerWinText;
 
+        [Header("Buttons")]
         // The world button.
         public Button worldButton;
+
+        // The replay button.
+        public Button rematchButton;
+
+        // The quit button.
+        public Button quitButton;
 
         // Start is called before the first frame update
         void Start()
         {
+            SetManagerAndUI();
+        }
+
+        // Sets the manager and the UI.
+        private void SetManagerAndUI()
+        {
             // Set Manager
-            if(matchManager != null)
+            if (matchManager == null)
                 matchManager = MatchManager.Instance;
 
             // Set UI
-            if (matchUI != null)
+            if (matchUI == null)
                 matchUI = matchManager.matchUI;
         }
 
         // Sets the player win text.
         public void SetPlayerWinText()
         {
+            SetManagerAndUI();
+
             // Checks for defs
             JSONNode defs = SharedState.LanguageDefs;
-
-            // If instance isn't set, set it.
-            if (matchManager == null)
-                matchManager = MatchManager.Instance;
 
             // Checks who has won.
             if (matchManager.HasPlayer1Won()) // P1
@@ -60,6 +71,30 @@ namespace RM_EM
             {
                 playerWinText.text = "-";
             }
+        }
+
+        // Return to the game world.
+        public void ToWorldScene()
+        {
+            SetManagerAndUI();
+
+            matchUI.ToWorldScene();
+        }
+
+        // Replays the match.
+        public void ReplayMatch()
+        {
+            SetManagerAndUI();
+
+            matchUI.ReplayMatch();
+        }
+
+        // Quits the game.
+        public void QuitGame()
+        {
+            SetManagerAndUI();
+
+            matchUI.QuitGame();
         }
 
     }

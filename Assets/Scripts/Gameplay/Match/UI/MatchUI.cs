@@ -39,17 +39,6 @@ namespace RM_EM
         // A pool of value boxes to pull from.
         public Queue<GameObject> valueBoxPool;
 
-        [Header("Match/Buttons")]
-
-        // Button to return to the world.
-        public Button worldButton;
-
-        // The replay button.
-        // public Button replayButton;
-
-        // The match quit button.
-        // public Button matchQuitButton;
-
         // Start is called before the first frame update
         protected override void Start()
         {
@@ -78,8 +67,10 @@ namespace RM_EM
             p2UI.powerButton.interactable = false;
             p2UI.skipButton.interactable = false;
 
-            // Other
-            worldButton.interactable = false;
+            // Match End
+            matchEnd.worldButton.interactable = false;
+            matchEnd.rematchButton.interactable = false;
+            matchEnd.quitButton.interactable = false;
         }
 
         // On Tutorial End
@@ -95,8 +86,10 @@ namespace RM_EM
             p2UI.powerButton.interactable = p2UI.playerMatch.IsPowerAvailable();
             p2UI.skipButton.interactable = p2UI.playerMatch.CanSkipEquation();
 
-            // Other
-            worldButton.interactable = true;
+            // Match End
+            matchEnd.worldButton.interactable = true;
+            matchEnd.rematchButton.interactable = matchManager.HasPlayer2Won();
+            matchEnd.quitButton.interactable = true;
         }
 
         // INTERFACE UPDATES //
@@ -309,6 +302,9 @@ namespace RM_EM
 
             // Set the player win text.
             matchEnd.SetPlayerWinText();
+
+            // If player 2 won, then a rematch is available. If playe 1 won, there is no rematch.
+            matchEnd.rematchButton.interactable = matchManager.HasPlayer2Won();
         }
 
         // Hides the match end.
@@ -324,10 +320,12 @@ namespace RM_EM
             // Updates P1 UI
             p1UI.UpdatePlayerPointsBar();
             p1UI.UpdatePlayerPowerBarFill();
+            UpdateOnEquationCompleteUI(matchManager.p1);
 
             // Updates P2 UI
             p2UI.UpdatePlayerPointsBar();
             p2UI.UpdatePlayerPowerBarFill();
+            UpdateOnEquationCompleteUI(matchManager.p2);
 
             // Close all the windows.
             CloseAllWindows();
@@ -345,6 +343,24 @@ namespace RM_EM
         public void ToWorldScene()
         {
             matchManager.ToWorldScene();
+        }
+
+        // Replays the match.
+        public void ReplayMatch()
+        {
+            matchManager.ResetMatch();
+        }
+
+        // Quits the game.
+        public void QuitGame()
+        {
+            matchManager.ToTitleScene();
+        }
+
+        // Goes to the title scene.
+        public void ToTitleScene()
+        {
+            matchManager.ToTitleScene();
         }
 
         // Update is called once per frame
