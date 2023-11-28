@@ -5,6 +5,7 @@ using TMPro;
 using SimpleJSON;
 using util;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 namespace RM_EM
 {
@@ -41,7 +42,7 @@ namespace RM_EM
         [Header("Match/Buttons")]
 
         // Button to return to the world.
-        public Button toWorldButton;
+        public Button worldButton;
 
         // The replay button.
         // public Button replayButton;
@@ -69,7 +70,16 @@ namespace RM_EM
         {
             base.OnTutorialStart();
 
-            toWorldButton.interactable = false;
+            // P1
+            p1UI.powerButton.interactable = false;
+            p1UI.skipButton.interactable = false;
+
+            // P2
+            p2UI.powerButton.interactable = false;
+            p2UI.skipButton.interactable = false;
+
+            // Other
+            worldButton.interactable = false;
         }
 
         // On Tutorial End
@@ -77,7 +87,16 @@ namespace RM_EM
         {
             base.OnTutorialEnd();
 
-            toWorldButton.interactable = true;
+            // P1
+            p1UI.powerButton.interactable = p1UI.playerMatch.IsPowerAvailable();
+            p1UI.skipButton.interactable = p1UI.playerMatch.CanSkipEquation();
+
+            // P2
+            p2UI.powerButton.interactable = p2UI.playerMatch.IsPowerAvailable();
+            p2UI.skipButton.interactable = p2UI.playerMatch.CanSkipEquation();
+
+            // Other
+            worldButton.interactable = true;
         }
 
         // INTERFACE UPDATES //
@@ -202,13 +221,14 @@ namespace RM_EM
         // Player 1 Skip
         public void UsePlayer1EquationSkip()
         {
-            matchManager.p1.SkipEquation();
+            matchManager.p1.SkipEquation(true);
         }
 
         // Player 2 Skip
         public void UsePlayer2EquationSkip()
         {
-            matchManager.p2.SkipEquation();
+            // P2 always ignores the limit.
+            matchManager.p2.SkipEquation(false);
         }
 
 
@@ -275,6 +295,12 @@ namespace RM_EM
 
         // WINDOWS //
 
+        // Checks if match end is active.
+        public bool IsMatchEndActive()
+        {
+            return matchEnd.gameObject.activeSelf;
+        }
+
         // Shows the match end.
         public void ShowMatchEnd()
         {
@@ -291,7 +317,30 @@ namespace RM_EM
             matchEnd.gameObject.SetActive(false);
         }
 
-        // MATCH END //
+        // Reset Match UI - only call this after related values have been reset.
+        public void ResetMatchUI()
+        {
+            // TODO: updating the power bar may not be needed here.
+            // Updates P1 UI
+            p1UI.UpdatePlayerPointsBar();
+            p1UI.UpdatePlayerPowerBarFill();
+
+            // Updates P2 UI
+            p2UI.UpdatePlayerPointsBar();
+            p2UI.UpdatePlayerPowerBarFill();
+
+            // Close all the windows.
+            CloseAllWindows();
+
+            // Hide match end if it's currently active.
+            if (IsMatchEndActive())
+                HideMatchEnd();
+
+            // Updates the timer text. Time should be set to 0 now.
+            UpdateTimerText();
+        }
+
+
         // Return to the game world.
         public void ToWorldScene()
         {

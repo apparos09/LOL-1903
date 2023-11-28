@@ -21,14 +21,36 @@ namespace RM_EM
         // The puzzle the player is answering.
         public Puzzle puzzle;
 
+
+        [Header("Match/Points")]
         // The amount of match points the player has.
         public float points = 0;
 
         // A multiplier for the points the player gets.
         public float pointsMultiplier = 1.0F;
 
+        // Power
+        [Header("Match/Power")]
         // The power the player has.
         public Power power = null;
+
+        // Skip
+        [Header("Match/Skip")]
+
+        // If 'true', the skip feature is limited.
+        public bool limitSkipping = true;
+
+        // The skip points.
+        public float skipPoints = 100;
+
+        // The maximum amount of skip points.
+        public float skipPointsMax = 100;
+
+        // The amount of points that a skip costs.
+        public float skipPointCost = 25;
+
+        // The restoration speed for skipping.
+        public float skipRestoreMult = 5.0F;
 
         // Start is called before the first frame update
         protected virtual void Start()
@@ -286,12 +308,42 @@ namespace RM_EM
 
         // TODO: should this be moved?
         // SKIP
-        // Skips the equation.
-        public void SkipEquation()
-        {
-            // TODO: implement checks to prevent the player from skipping every time.
 
-            puzzle.SkipEquation();
+        // Returns 'true' if the player can skip the equation.
+        public bool CanSkipEquation()
+        {
+            // If the skip option is available.
+            if(!limitSkipping || (skipPoints - skipPointCost > 0))
+            {
+                return true;
+            }
+            else // Skip option is not available.
+            {
+                return false;
+            }
+        }
+
+        // Skips the equation.
+        public void SkipEquation(bool useLimit)
+        {
+            // Checks if the limit should be used.
+            if(useLimit && limitSkipping)
+            {
+                // Skip valid.
+                if(skipPoints - skipPointCost >= 0)
+                {
+                    // Reduce skip points.
+                    skipPoints -= skipPointCost;
+                }
+
+                // Skip with no point changes.
+                puzzle.SkipEquation();
+            }
+            else
+            {
+                // Skip with no point changes.
+                puzzle.SkipEquation();
+            }
         }
 
 
@@ -306,6 +358,30 @@ namespace RM_EM
         public virtual void OnEquationComplete()
         {
             // ...
+        }
+
+        // Resets the player.
+        public virtual void ResetPlayer()
+        {
+            // Points
+            points = 0;
+            
+            // Power
+            if(power != null)
+            {
+                // Set energy to 0.
+                power.energy = 0;
+
+                // Call power finished to disable the power.
+                if(power.powerActive)
+                    power.OnPowerFinished();
+
+                // Power is not active.
+                power.powerActive = false;
+            }
+            
+            // Skip
+            skipPoints = skipPointsMax;
         }
 
 
@@ -355,6 +431,24 @@ namespace RM_EM
                             // Select the element.
                             puzzle.SelectElement(this, hit);
                         }
+                    }
+                }
+            }
+
+            // If skipping should be limited.
+            if(limitSkipping)
+            {
+                // Skip points not at max.
+                if(skipPoints < skipPointsMax)
+                {
+                    // Restores skip points.
+                    skipPoints += Time.deltaTime * skipRestoreMult;
+
+                    // Max reached.
+                    if (skipPoints >= skipPointsMax)
+                    {
+                        // Set to max.
+                        skipPoints = skipPointsMax;
                     }
                 }
             }

@@ -225,7 +225,24 @@ namespace RM_EM
         // Player Equation Skip
         public void UsePlayerEquationSkip()
         {
-            playerMatch.SkipEquation();
+            // Uses limit setting.
+            playerMatch.SkipEquation(playerMatch.limitSkipping);
+        }
+
+        // Update is called once per frame
+        private void Update()
+        {
+            // If skipping is limited, check if the player can skip.
+            // If skipping isn't limited, then keep it on.
+
+            // If the match isn't paused.
+            if(!manager.MatchPaused && !manager.IsTutorialTextBoxOpen())
+            {
+                skipButton.interactable = (playerMatch.limitSkipping) ? playerMatch.CanSkipEquation() : true;
+            }
+
+            // NOTE: if the skip button is disabled as part of some operation (window open, tutorial, etc.)...
+            // This constant update will make sure the skip button is always given its right value.
         }
 
     }

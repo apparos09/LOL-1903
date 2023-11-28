@@ -10,11 +10,11 @@ namespace RM_EM
     {
         [Header("Computer")]
 
-        // The difficulty of the computer.
-        private int difficulty = 0;
-
         // The target value to be selected.
         public PuzzleValue targetValue;
+
+        // The difficulty of the computer.
+        private int difficulty = 0;
 
         [Header("AI")]
 
@@ -193,8 +193,9 @@ namespace RM_EM
             // TODO: this was made to address a quick error. Maybe there's a better way to handle it.
             if (puzzle.missingValues.Count == 0)
             {
-                // Skips the equation since there are no missing values (TODO: remove?)
-                SkipEquation();
+                // Skips the equation since there are no missing values.
+                // Always ignore the limit.
+                SkipEquation(false);
 
                 // Return.
                 return;

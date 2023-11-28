@@ -672,6 +672,11 @@ MonoBehaviour:
   points: 0
   pointsMultiplier: 1
   power: {fileID: 0}
+  limitSkipping: 1
+  skipPoints: 100
+  skipPointsMax: 100
+  skipPointCost: 25
+  skipRestoreMult: 5
 --- !u!1001 &963533802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -888,6 +893,11 @@ MonoBehaviour:
   points: 0
   pointsMultiplier: 1
   power: {fileID: 0}
+  limitSkipping: 0
+  skipPoints: 100
+  skipPointsMax: 100
+  skipPointCost: 25
+  skipRestoreMult: 5
   targetValue: {fileID: 0}
   waitTimer: 0
   waitTimeMax: 2.5

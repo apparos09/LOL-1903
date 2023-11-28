@@ -1360,6 +1360,12 @@ namespace RM_EM
             return pointsInt;
         }
 
+        // Resets the puzzle. TODO: implement for each puzzle mechanic.
+        public virtual void ResetPuzzle()
+        {
+            answerTime = 0.0F;
+        }
+
         // Update is called once per frame
         void Update()
         {

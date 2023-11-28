@@ -136,6 +136,12 @@ namespace RM_EM
             return gameUI.IsTutorialAvailable();
         }
 
+        // Checks if the text box is open.
+        public bool IsTutorialTextBoxOpen()
+        {
+            return gameUI.IsTutorialTextBoxOpen();
+        }
+
         // Starts a tutorial using the provided pages.
         public virtual void StartTutorial(List<Page> pages)
         {

@@ -55,7 +55,7 @@ namespace RM_EM
         public List<Sprite> backgrounds;
 
         // PLAYERS
-        [Header("Player 1")]
+        [Header("Match/Player 1")]
         // P1
         public PlayerMatch p1;
         
@@ -68,7 +68,7 @@ namespace RM_EM
         // The wrong answers from p1.
         public int p1WrongAnswers = 0;
 
-        [Header("Player 2")]
+        [Header("Match/Player 2")]
         // P2
         public PlayerMatch p2;
         
@@ -296,6 +296,7 @@ namespace RM_EM
         {
             base.OnTutorialStart();
 
+            // Pause match.
             PauseMatch();
         }
 
@@ -304,8 +305,8 @@ namespace RM_EM
         {
             base.OnTutorialEnd();
 
-            // If there's no window open, unpause the match.
-            if(!matchUI.IsWindowOpen())
+            // If there's no window open, and the match isn't over, unpause the match.
+            if(!matchUI.IsWindowOpen() && !IsMatchOver())
                 UnpauseMatch();
         }
 
@@ -451,6 +452,12 @@ namespace RM_EM
             return HasPlayerWon(p2);
         }
 
+        // Checks if the match is over.
+        public bool IsMatchOver()
+        {
+            return matchUI.IsMatchEndActive();
+        }
+
         // Called when the match is finished.
         public void OnMatchOver()
         {
@@ -549,6 +556,23 @@ namespace RM_EM
             // Play the results audio.
             if (matchAudio != null)
                 matchAudio.PlayResultsBgm();
+        }
+
+        // Resets the match. TODO: implement resets for puzzle mechanics, and test it.
+        public void ResetMatch()
+        {
+            // Resets Player
+            p1.ResetPlayer();
+            p2.ResetPlayer();
+
+            // Reset time.
+            matchTime = 0;
+
+            // Resets the match UI.
+            matchUI.ResetMatchUI();
+
+            // Unpause the match.
+            UnpauseMatch();
         }
 
 
