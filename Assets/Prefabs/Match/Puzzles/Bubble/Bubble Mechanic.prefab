@@ -472,7 +472,7 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   puzzleValues: []
   autoFillPuzzleValues: 1
-  activeValueCountMax: 20
+  activeValueCountMax: 25
   spawnTimer: 0
   spawnTimeMax: 1.25
   areaCenter: {fileID: 998901984330751986}
