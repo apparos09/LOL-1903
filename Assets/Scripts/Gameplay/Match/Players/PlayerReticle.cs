@@ -7,16 +7,11 @@ namespace RM_EM
     // A reticle that's used to select values in th puzzle space.
     public class PlayerReticle : MonoBehaviour
     {
+        // The sprite renderer.
+        public SpriteRenderer spriteRenderer;
+
         // The player the reticle belongs to.
         public PlayerMatch playerMatch;
-
-        // // Start is called before the first frame update
-        // void Start()
-        // {
-        // 
-        // }
-
-
 
         // TriggerEnter
         private void OnTriggerEnter(Collider other)
@@ -43,11 +38,5 @@ namespace RM_EM
         }
 
 
-
-        // // Update is called once per frame
-        // void Update()
-        // {
-        // 
-        // }
     }
 }

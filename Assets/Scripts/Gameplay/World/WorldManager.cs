@@ -529,6 +529,29 @@ namespace RM_EM
             // Save tutorial setting.
             data.useTutorial = IsUsingTutorial();
 
+
+            // Saves the game time.
+            data.gameTime = gameTime;
+
+            // Saves the game score (this should be the same as what's in GameplayInfo)
+            data.gameScore = gameScore;
+
+            // If the game info is instantited.
+            if(GameplayInfo.Instantiated)
+            {
+                GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                // Losses
+                data.losses = gameInfo.p1Losses;
+                data.recentLosses = gameInfo.p1RecentLosses;
+            }
+            else
+            {
+                data.losses = 0;
+                data.recentLosses = 0;
+            }
+
+
             // Save the current area index.
             data.currAreaIndex = currAreaIndex;
 
@@ -649,7 +672,23 @@ namespace RM_EM
             // Tutorial settings.
             SetUsingTutorial(loadedData.useTutorial);
 
-            // Moved set area to the end.
+            // Loads the game time.
+            gameTime = loadedData.gameTime;
+
+            // Loads the game score
+            gameScore = loadedData.gameScore;
+
+            // If the game info is instantited.
+            if (GameplayInfo.Instantiated)
+            {
+                GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                // Load Losses
+                gameInfo.p1Losses = loadedData.losses;
+                gameInfo.p1RecentLosses = loadedData.recentLosses;
+            }
+
+            // NOTE: moved set area to the end.
 
             // Clears the power list.
             playerWorld.powerList.Clear();

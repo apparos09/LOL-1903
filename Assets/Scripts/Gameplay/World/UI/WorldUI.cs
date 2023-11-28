@@ -74,6 +74,10 @@ namespace RM_EM
         public override void OnTutorialStart()
         {
             base.OnTutorialStart();
+
+            // Disable the controls for the challenger UI.
+            challengeUI.acceptButton.interactable = false;
+            challengeUI.declineButton.interactable = false;
         }
 
         // On Tutorial End
@@ -81,8 +85,9 @@ namespace RM_EM
         {
             base.OnTutorialEnd();
 
-            // Grabs the instance.
-            Tutorial tutorial = Tutorial.Instance;
+            // Enable the controls for the challenger UI.
+            challengeUI.acceptButton.interactable = true;
+            challengeUI.declineButton.interactable = true;
         }
 
         // SETTINGS (EXPANDED) //

@@ -21,10 +21,16 @@ namespace RM_EM
         public int gameScore = 0;
 
         // The number of wrong answers from the player.
+        [Tooltip("The total number of wrong answers from P1.")]
         public int wrongAnswers = 0;
 
         // The number of losses from P1.
+        [Tooltip("The total number of losses from P1.")]
         public int p1Losses = 0;
+
+        // The number of recent losses from P1. When P1 wins a match, this is reset.
+        [Tooltip("The recent number of losses from P1. When P1 wins a match, this is reset.")]
+        public int p1RecentLosses = 0;
 
         // The powers p1 has.
         public List<Power.powerType> p1PowerList = new List<Power.powerType>();
@@ -129,6 +135,12 @@ namespace RM_EM
         // The difficulty of the challenger.
         // NOTE: if the challenger difficulty is 0 or less, the equation details WON'T be overwritten.
         public int challengerDifficulty = 0;
+
+        // If 'true', dynamic difficulty will be used.
+        public const bool USE_DYNAMIC_DIFFICULTY = true;
+
+        // The multiple for dynamic difficulty changes.
+        public const int DIFFICULTY_LOWER_MULT = 2;
 
         // Checks if the challenger has been defeated.
         public bool challengerDefeated = false;
@@ -352,9 +364,21 @@ namespace RM_EM
             // Saves the match winner.
             pWinner = manager.matchWinner;
 
-            // Increases the number of losses if P1 lost the match.
-            if (pWinner == 2)
-                p1Losses++;
+            // Checks the winner.
+            switch(pWinner)
+            {
+                case 1: // P1
+                    p1RecentLosses = 0;
+
+                    break;
+
+                case 2: // P2
+                    // Increases the number of losses if P1 lost the match.
+                    p1Losses++;
+                    p1RecentLosses++;
+                    
+                    break;
+            }   
 
             // Add the wrong answers from the match.
             wrongAnswers += manager.p1WrongAnswers;
@@ -405,8 +429,34 @@ namespace RM_EM
             // The challenger's index in the world list.
             challengerIndex = manager.GetChallengerIndex(challenger);
 
-            // Difficulty, and defeat status.
+            // Sets difficulty.
             challengerDifficulty = challenger.difficulty;
+
+            // Difficulty - Dynamic Changes
+            {
+                // Checks if dynamic difficulty should be used.
+                bool dynamicDiff = USE_DYNAMIC_DIFFICULTY;
+
+                // Use dynamic difficulty.
+                if(dynamicDiff)
+                {
+                    // Determines how much lower the difficlty should go.
+                    int lowers = Mathf.FloorToInt((float)p1RecentLosses / DIFFICULTY_LOWER_MULT);
+
+                    // Sets to aboslute value.
+                    lowers = Mathf.Abs(lowers);
+
+                    // Reduces difficluty.
+                    challengerDifficulty -= lowers;
+
+                    // If the difficulty is less than 1, set it to 1.
+                    if (challengerDifficulty < 1)
+                        challengerDifficulty = 1;
+                }
+                
+            }
+
+            // Saves if the challenger was defeated.
             challengerDefeated = challenger.IsChallengerDefeated();
 
             // Match settings from challenger.

@@ -26,8 +26,20 @@ namespace RM_EM
         // To avoid problems, the tutorial parameter cannot be changed for a saved game.
         public bool useTutorial = true;
 
-        // The player's LOL score.
-        public int score = 0;
+        // The game time
+        public float gameTime = 0;
+
+        // The player's score.
+        public int gameScore = 0;
+
+        // The number of wrong answers.
+        public int wrongAnswers = 0;
+
+        // The number of losses.
+        public int losses = 0;
+
+        // The recent number of losses.
+        public int recentLosses = 0;
 
         // The current area index.
         public int currAreaIndex = -1;

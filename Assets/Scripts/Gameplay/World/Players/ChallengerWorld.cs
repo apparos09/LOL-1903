@@ -142,8 +142,17 @@ namespace RM_EM
         // MouseDown
         private void OnMouseDown()
         {
-            // Shows the challenge UI.
-            ShowChallengeUI();
+            // Grabs the instance if it's not set.
+            if (manager == null)
+                manager = WorldManager.Instance;
+
+            // Show the challenger prompt if no window is open, and if the tutorial text box isn't open.
+            if(!manager.worldUI.IsWindowOpen() && !manager.worldUI.IsTutorialTextBoxOpen())
+            {
+                // Shows the challenge UI.
+                ShowChallengeUI();
+            }
+            
         }
 
         // Returns 'true' if the challenger is available.

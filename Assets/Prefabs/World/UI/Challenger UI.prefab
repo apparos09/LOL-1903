@@ -1166,6 +1166,8 @@ MonoBehaviour:
   nameText: {fileID: 5898694682062260535}
   quoteText: {fileID: 1468446530111598850}
   rulesText: {fileID: 6250102389064734104}
+  acceptButton: {fileID: 4722611296848760377}
+  declineButton: {fileID: 6094399964124060188}
 --- !u!1 &8962463541235827951
 GameObject:
   m_ObjectHideFlags: 0

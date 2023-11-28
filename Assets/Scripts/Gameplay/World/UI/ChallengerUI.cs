@@ -32,6 +32,14 @@ namespace RM_EM
         // The rules text for the UI.
         public TMP_Text rulesText;
 
+        [Header("Buttons")]
+
+        // Accept Button
+        public Button acceptButton;
+
+        // Decline Button
+        public Button declineButton;
+
         // Start is called before the first frame update
         void Start()
         {

@@ -474,7 +474,7 @@ MonoBehaviour:
   autoFillPuzzleValues: 1
   activeValueCountMax: 20
   spawnTimer: 0
-  spawnTimeMax: 1.5
+  spawnTimeMax: 1.25
   areaCenter: {fileID: 998901984330751986}
   areaWidth: 20
   areaHeight: 20
