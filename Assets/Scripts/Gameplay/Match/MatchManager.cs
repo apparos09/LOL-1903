@@ -583,6 +583,11 @@ namespace RM_EM
             // Resets the match UI.
             matchUI.ResetMatchUI();
 
+            // Plays the match BGM.
+            if (matchAudio != null)
+                matchAudio.PlayMatchBgm();
+
+
             // Unpause the match.
             UnpauseMatch();
         }

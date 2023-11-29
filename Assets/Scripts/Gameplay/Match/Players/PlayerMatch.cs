@@ -382,6 +382,10 @@ namespace RM_EM
             
             // Skip
             skipPoints = skipPointsMax;
+
+            // If the player has a reticle, reset the position.
+            if (reticle != null)
+                reticle.ResetPosition();
         }
 
 

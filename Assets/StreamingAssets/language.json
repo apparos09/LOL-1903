@@ -26,8 +26,31 @@
       "kwd_back": 12,
 
       "kwd_saving": 12,
-      "wrd_loadSuccess_msg": 250
+      "wrd_loadSuccess_msg": 250,
 
+      "pwr_none_nme": 22,
+      "pwr_none_dsc": 130,
+
+      "pwr_pointsPlus_nme": 22,
+      "pwr_pointsPlus_dsc": 130,
+
+      "pwr_pointsMinus_nme": 22,
+      "pwr_pointsMinus_dsc": 130,
+
+      "pwr_equationShorten_nme": 22,
+      "pwr_equationShorten_dsc": 130,
+
+      "pwr_eqautionLengthen_nme": 22,
+      "pwr_eqautionLengthen_dsc": 130,
+
+      "pwr_pointsTransfer_nme": 22,
+      "pwr_pointsTransfer_dsc": 130,
+
+      "pwr_pointsBlock_nme": 22,
+      "pwr_pointsBlock_dsc": 130,
+
+      "pwr_twist_nme": 22,
+      "pwr_twist_dsc": 130
     }
   },
   "en": {

@@ -671,14 +671,19 @@ namespace RM_EM
             // Setting match BGM.
             if(manager.matchAudio != null)
             {
+                // Gets the match audio.
+                MatchAudio matchAudio = manager.matchAudio;
+
                 // Checks if the player is facing the final challenger.
                 if(isFinalChallenger) // Yes
                 {
-                    manager.matchAudio.PlayBossMatchBgm();
+                    // Normal BGM
+                    matchAudio.matchBgmNumber = 2;
                 }
                 else // No
                 {
-                    manager.matchAudio.PlayNormalMatchBgm();
+                    // Boss BGM
+                    matchAudio.matchBgmNumber = 1;
                 }
             }
         }

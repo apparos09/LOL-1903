@@ -33,6 +33,10 @@ namespace RM_EM
         // Boss match loop
         public Vector2 bossMatchLoopPoints;
 
+        // The match BGM. 0, 1 = Normal, 2 = Boss
+        [Tooltip("The number of the BGM being used for matches. 1 is normal, and 2 is boss.")]
+        public int matchBgmNumber = 0;
+
         // The results BGM.
         public AudioClip resultsBgm;
 
@@ -55,6 +59,10 @@ namespace RM_EM
         {
             if(manager == null)
                 manager = MatchManager.Instance;
+
+
+            // Plays the match BGM to start.
+            PlayMatchBgm();
         }
 
 
@@ -87,6 +95,31 @@ namespace RM_EM
             bgmSource.clip = bossMatchBgm;
             bgmSource.Play();
         }
+
+
+        // Plays the match BGM.
+        public void PlayMatchBgm()
+        {
+            switch(matchBgmNumber)
+            {
+                case 0:
+                case 1: // Normal
+                    PlayNormalMatchBgm();
+                    break;
+                     
+                case 2: // Boss
+                    PlayBossMatchBgm();
+                    break;
+            }
+        }
+
+        // Sets the match BGM and plays it.
+        public void PlayMatchBgm(int num)
+        {
+            matchBgmNumber = num;
+            PlayMatchBgm();
+        }
+
 
         // Results BGM
         public void PlayResultsBgm()

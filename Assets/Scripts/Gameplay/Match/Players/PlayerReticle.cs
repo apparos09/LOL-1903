@@ -13,6 +13,20 @@ namespace RM_EM
         // The player the reticle belongs to.
         public PlayerMatch playerMatch;
 
+        // The reset position of the reticle.
+        public Vector3 resetPos = Vector3.zero;
+
+        // Autosets the reset pos.
+        public bool autoSetResetPos = true;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            // Checks if the reset pos should be automatically set.
+            if(autoSetResetPos)
+                resetPos = transform.position;
+        }
+
         // TriggerEnter
         private void OnTriggerEnter(Collider other)
         {
@@ -37,6 +51,11 @@ namespace RM_EM
             playerMatch.OnReticleTriggerStay2D(collision);
         }
 
+        // Resets the reticle's position.
+        public void ResetPosition()
+        {
+            transform.position = resetPos;
+        }
 
     }
 }
