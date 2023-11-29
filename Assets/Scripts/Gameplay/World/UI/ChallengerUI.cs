@@ -26,6 +26,9 @@ namespace RM_EM
         // The name text.
         public TMP_Text nameText;
 
+        // The species text.
+        public TMP_Text speciesText;
+
         // The quote text.
         public TMP_Text quoteText;
 
@@ -55,6 +58,7 @@ namespace RM_EM
 
             UpdateChallengerSprite();
             UpdateNameText();
+            UpdateSpeciesText();
             UpdateQuoteText();
             UpdateRulesText();
         }
@@ -81,6 +85,16 @@ namespace RM_EM
                 nameText.text = challenger.challengerName;
             else
                 nameText.text = "-";
+        }
+
+        // Updates the species text.
+        public void UpdateSpeciesText()
+        {
+            // Checks if the challenger is set.
+            if (challenger != null)
+                speciesText.text = challenger.challengerSpecies;
+            else
+                speciesText.text = "-";
         }
 
         // Updates the quote text.

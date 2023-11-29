@@ -50,7 +50,105 @@
       "pwr_pointsBlock_dsc": 130,
 
       "pwr_twist_nme": 22,
-      "pwr_twist_dsc": 130
+      "pwr_twist_dsc": 130,
+
+      "kwd_save": 15,
+      "kwd_saveQuit": 15,
+      "sve_msg_savingGame": "Saving Game...",
+      "sve_msg_loadSuccess": "Save data loaded successfully.",
+
+      "kwd_world": "World",
+      "kwd_info": "Info",
+      "kwd_powers": "Powers",
+      "kwd_power": "Power",
+
+      "rle_none_nme": "None",
+      "rle_none_dsc": "No exponent rule.",
+
+      "rle_exponent_nme": "Exponent",
+      "rle_exponent_dsc": "Multiplies a term (n) number of times.",
+
+      "rle_product_nme": "Product",
+      "rle_product_dsc": "Exponents with the same base are equal to said base to the sum of the exponents.",
+
+      "rle_powerOfAPower_nme": "Power of a Power",
+      "rle_powerOfAPower_dsc": "A base and exponent to another exponent is equal to the base to the product of said exponents.",
+
+      "rle_powerOfAProduct_nme": "Power of a Product",
+      "rle_powerOfAProduct_dsc": "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.",
+
+      "rle_zero_nme": "Zero",
+      "rle_zero_dsc": "A zero exponent always rules in a 1.",
+
+      "rle_negative_nme": "Negative",
+      "rle_negative_dsc": "A negative exponent becomes 1/x.",
+
+
+      "wrd_saveMsg": "Would you like to save? Would you like to quit?",
+      "wrd_saveAndContinue": "Save and Continue",
+      "wrd_saveAndQuit": "Save and Quit",
+      "wrd_quitNoSave": "Quit Without Saving",
+
+
+      "kwd_versus": "Vs.",
+
+      "chr_statue_nme": "Minraul",
+      "chr_statue_spc": "Statue",
+
+      "chr_lizard_nme": "Reptoc",
+      "chr_lizard_spc": "Lizard",
+
+      "chr_mummy_nme": "Mona",
+      "chr_mummy_spc": "Mummy",
+
+      "chr_fire_nme": "Forgerton",
+      "chr_fire_spc": "Fire Spirit",
+
+      "chr_ghost_nme": "Ecto",
+      "chr_ghost_spc": "Ghost",
+
+      "chr_vampire_nme": "Fang",
+      "chr_vampire_spc": "Vampire",
+
+      "chr_werewolf_nme": "Howluf",
+      "chr_werewolf_spc": "Werewolf",
+
+      "chr_water_nme": "Divytide",
+      "chr_water_spc": "Water Spirit",
+
+
+
+      "kwd_match": "Match",
+      "kwd_usePower": "Use Power",
+      "kwd_skip": "Skip",
+
+      "mth_matchOver": "The Match is Over!",
+      "mth_userWins": "You won!",
+      "mth_oppWins": "The Opponent won!",
+      "kwd_rematch": "Rematch",
+
+
+      "trl_opening_00": 240,
+      "trl_opening_01": 240,
+      "trl_firstMatchLoss_00": 240,
+      "trl_firstMatchWin_00": 240,
+      "trl_firstPower_00": 240,
+      "trl_finalMatch_00": 240,
+      "trl_gameOver_00": 240,
+
+      "trl_exponent_00": 240,
+      "trl_product_00": 240,
+      "trl_powerOfAPower_00": 240,
+      "trl_powerOfAProduct_00": 240,
+      "trl_zero_00": 240,
+      "trl_negative_00": 240,
+
+
+
+      "kwd_results": 15,
+      "kwd_time": 25,
+      "kwd_score": 25,
+      "rst_wrongAnswers": 25
     }
   },
   "en": {
@@ -82,7 +180,7 @@
     "kwd_save": "Save",
     "kwd_saveQuit": "Save/Quit",
     "sve_msg_savingGame": "Saving Game...",
-    "kwd_loadSuccess_msg": "Save data loaded successfully.",
+    "sve_msg_loadSuccess": "Save data loaded successfully.",
 
     "kwd_world": "World",
     "kwd_info": "Info",
@@ -136,36 +234,37 @@
     "pwr_twist_nme": "Twist",
     "pwr_twist_dsc": "A power that flips the opponent's view upside down.",
 
+    "wrd_saveMsg": "Would you like to save? Would you like to quit?",
+    "wrd_saveAndContinue": "Save and Continue",
+    "wrd_saveAndQuit": "Save and Quit",
+    "wrd_quitNoSave": "Quit Without Saving",
 
 
     "kwd_versus": "Vs.",
 
-    "chr_statue_nme": "Minraul the Statue",
-    "chr_statue_qte_00": "...",
-    "chr_statue_qte_01": "...",
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Statue",
 
-    "chr_lizard_nme": "Reptoc the Lizard",
-    "chr_lizard_qte": "...",
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lizard",
 
-    "chr_mummy_nme": "Mona the Mummy",
-    "chr_mummy_qte": "...",
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Mummy",
 
-    "chr_fire_nme": "Forgerton the Fire Spirit",
-    "chr_fire_qte": "...",
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Fire Spirit",
 
-    "chr_ghost_nme": "Ecto the Ghost",
-    "chr_ghost_qte": "...",
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Ghost",
 
-    "chr_vampire_nme": "Fang the Vampire",
-    "chr_vampire_qte": "...",
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampire",
 
-    "chr_werewolf_nme": "Howluf the Werewolf",
-    "chr_werewolf_qte": "...",
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Werewolf",
 
-    "chr_water_nme": "Divytide the Water",
-    "chr_water_qte": "...",
-
-
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Water Spirit",
 
 
     "kwd_match": "Match",

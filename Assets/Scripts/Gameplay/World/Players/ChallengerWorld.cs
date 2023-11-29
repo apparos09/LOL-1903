@@ -31,6 +31,12 @@ namespace RM_EM
         [Tooltip("The language key for the name.")]
         public string nameKey = string.Empty;
 
+        // The challenger species.
+        public string challengerSpecies = string.Empty;
+
+        // The species key.
+        public string speciesKey = string.Empty;
+
         // The challenger's quote.
         public string challengerQuote = string.Empty;
 
@@ -134,8 +140,12 @@ namespace RM_EM
                 if(nameKey != "") // Translate name
                 challengerName = defs[nameKey];
 
-                if(quoteKey != "") // Translate quote
-                challengerQuote = defs[quoteKey];
+                if(quoteKey != "") // Translate species
+                    challengerSpecies = defs[speciesKey];
+
+                // NOTE: this isn't being used anymore. You may implement it again later.
+                //if(quoteKey != "") // Translate quote
+                //challengerQuote = defs[quoteKey];
             }
         }
 

@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 792158646930830392}
   - component: {fileID: 12919381945988428}
   - component: {fileID: 4696852844010591904}
+  - component: {fileID: 1248035370381852479}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -343,6 +344,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1248035370381852479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912738835825518298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 4696852844010591904}
+  key: kwd_back
+  markIfFailed: 1
 --- !u!1 &1260937640438898526
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 320, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1459800981109116062
@@ -777,7 +793,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 427, y: 341}
+  m_SizeDelta: {x: 600, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6967079308404433336
 CanvasRenderer:
@@ -962,6 +978,7 @@ GameObject:
   - component: {fileID: 6831105024250524253}
   - component: {fileID: 5055282861203769610}
   - component: {fileID: 3160429617196165919}
+  - component: {fileID: 2318684400802001770}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1085,6 +1102,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2318684400802001770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794088361873145661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 3160429617196165919}
+  key: wrd_saveAndQuit
+  markIfFailed: 1
 --- !u!1 &2833318953729386229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,8 +1128,9 @@ GameObject:
   - component: {fileID: 7663148257715581712}
   - component: {fileID: 3458380266845479553}
   - component: {fileID: 716111491300307168}
+  - component: {fileID: 4300848701932581408}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Save Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,8 +1152,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 120}
-  m_SizeDelta: {x: 200, y: 30}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 550, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3458380266845479553
 CanvasRenderer:
@@ -1150,7 +1183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save?
+  m_text: Would you like to save? Would you like to quit?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1177,8 +1210,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1219,6 +1252,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4300848701932581408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833318953729386229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 716111491300307168}
+  key: wrd_saveMsg
+  markIfFailed: 1
 --- !u!1 &3280395546216221986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 0, y: -140}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6614803748852298544
@@ -1513,8 +1561,9 @@ GameObject:
   - component: {fileID: 5268856011751410768}
   - component: {fileID: 6775229313752268898}
   - component: {fileID: 3244993187228704368}
+  - component: {fileID: 6644766204992550903}
   m_Layer: 5
-  m_Name: Save Text (TMP)
+  m_Name: Saving Game Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1567,7 +1616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Saving...
+  m_text: Saving Game...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1636,6 +1685,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6644766204992550903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249146218242592073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 3244993187228704368}
+  key: sve_msg_savingGame
+  markIfFailed: 1
 --- !u!1 &5688574614270442140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,7 +1869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: 320, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7790606125206631689
@@ -1938,7 +2002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 320, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5965677367990254273
@@ -2046,6 +2110,7 @@ GameObject:
   - component: {fileID: 2137212771199328641}
   - component: {fileID: 6039626524447133177}
   - component: {fileID: 4878812878137472031}
+  - component: {fileID: 646686720571715515}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2169,6 +2234,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &646686720571715515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997261940136934071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 4878812878137472031}
+  key: wrd_saveAndContinue
+  markIfFailed: 1
 --- !u!1 &6467647119660069670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,6 +2260,7 @@ GameObject:
   - component: {fileID: 5018019659354403862}
   - component: {fileID: 3509601736653295611}
   - component: {fileID: 6573855971682706423}
+  - component: {fileID: 4269872146809228476}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2303,6 +2384,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4269872146809228476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467647119660069670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 6573855971682706423}
+  key: wrd_quitNoSave
+  markIfFailed: 1
 --- !u!1 &7793505589631988540
 GameObject:
   m_ObjectHideFlags: 0
