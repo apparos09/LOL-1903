@@ -58,18 +58,32 @@ namespace RM_EM
             // Checks for defs
             JSONNode defs = SharedState.LanguageDefs;
 
+            // The language key.
+            string langKey = "";
+
             // Checks who has won.
             if (matchManager.HasPlayer1Won()) // P1
             {
-                playerWinText.text = (defs != null) ? defs["mth_userWins"] : "You Won!";
+                langKey = "mth_userWins";
+                playerWinText.text = (defs != null) ? defs[langKey] : "You Won!";
             }
             else if (matchManager.HasPlayer2Won()) // P2
             {
-                playerWinText.text = (defs != null) ? defs["mth_oppWins"] : "The Opponent Won!";
+                langKey = "mth_oppWins";
+                playerWinText.text = (defs != null) ? defs[langKey] : "The Opponent Won!";
             }
             else // None
             {
+                langKey = "mth_matchOver";
                 playerWinText.text = "-";
+            }
+
+
+            // If text-to-speech is active and available.
+            if(GameSettings.Instance.UseTextToSpeech && LOLManager.IsLOLSDKInitialized())
+            {
+                // Speak the text.
+                LOLManager.Instance.SpeakText(langKey);
             }
         }
 

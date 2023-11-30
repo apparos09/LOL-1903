@@ -38,7 +38,7 @@
       "kwd_powers": 15,
 
 
-      "kwd_power": "Power",
+      "kwd_power": 15,
       "wrd_powerUnlocked": 25,
 
 
@@ -89,48 +89,48 @@
       "pwr_twist_dsc": 130,
 
 
-      "wrd_saveMsg": "Would you like to save? Would you like to quit?",
-      "wrd_saveAndContinue": "Save and Continue",
-      "wrd_saveAndQuit": "Save and Quit",
-      "wrd_quitNoSave": "Quit Without Saving",
+      "wrd_saveMsg": 60,
+      "wrd_saveAndContinue": 20,
+      "wrd_saveAndQuit": 20,
+      "wrd_quitNoSave": 20,
 
 
-      "kwd_versus": "Vs.",
+      "kwd_versus": 15,
 
-      "chr_statue_nme": "Minraul",
-      "chr_statue_spc": "Statue",
+      "chr_statue_nme": 18,
+      "chr_statue_spc": 22,
 
-      "chr_lizard_nme": "Reptoc",
-      "chr_lizard_spc": "Lizard",
+      "chr_lizard_nme": 18,
+      "chr_lizard_spc": 22,
 
-      "chr_mummy_nme": "Mona",
-      "chr_mummy_spc": "Mummy",
+      "chr_mummy_nme": 18,
+      "chr_mummy_spc": 22,
 
-      "chr_fire_nme": "Forgerton",
-      "chr_fire_spc": "Fire Spirit",
+      "chr_fire_nme": 18,
+      "chr_fire_spc": 22,
 
-      "chr_ghost_nme": "Ecto",
-      "chr_ghost_spc": "Ghost",
+      "chr_ghost_nme": 18,
+      "chr_ghost_spc": 22,
 
-      "chr_vampire_nme": "Fang",
-      "chr_vampire_spc": "Vampire",
+      "chr_vampire_nme": 18,
+      "chr_vampire_spc": 22,
 
-      "chr_werewolf_nme": "Howluf",
-      "chr_werewolf_spc": "Werewolf",
+      "chr_werewolf_nme": 18,
+      "chr_werewolf_spc": 22,
 
-      "chr_water_nme": "Divytide",
-      "chr_water_spc": "Water Spirit",
+      "chr_water_nme": 18,
+      "chr_water_spc": 22,
 
 
 
-      "kwd_match": "Match",
-      "kwd_usePower": "Use Power",
-      "kwd_skip": "Skip",
+      "kwd_match": 15,
+      "kwd_usePower": 15,
+      "kwd_skip": 15,
 
-      "mth_matchOver": "The Match is Over!",
-      "mth_userWins": "You won!",
-      "mth_oppWins": "The Opponent won!",
-      "kwd_rematch": "Rematch",
+      "mth_matchOver": 22,
+      "mth_userWins": 22,
+      "mth_oppWins": 22,
+      "kwd_rematch": 15,
 
 
       "trl_opening_00": 240,
@@ -242,9 +242,9 @@
     "pwr_twist_dsc": "A power that flips the opponent's view upside down.",
 
     "wrd_saveMsg": "Would you like to save? Would you like to quit?",
-    "wrd_saveAndContinue": "Save and Continue",
-    "wrd_saveAndQuit": "Save and Quit",
-    "wrd_quitNoSave": "Quit Without Saving",
+    "wrd_saveAndContinue": "Save & Continue",
+    "wrd_saveAndQuit": "Save & Quit",
+    "wrd_quitNoSave": "Quit (No Save)",
 
 
     "kwd_versus": "Vs.",
@@ -279,8 +279,8 @@
     "kwd_skip": "Skip",
 
     "mth_matchOver": "The Match is Over!",
-    "mth_userWins": "You won!",
-    "mth_oppWins": "The Opponent won!",
+    "mth_userWins": "You Won!",
+    "mth_oppWins": "The Opponent Won!",
     "kwd_rematch": "Rematch",
 
 
