@@ -28,6 +28,42 @@
       "kwd_saving": 12,
       "wrd_loadSuccess_msg": 250,
 
+      "kwd_save": 15,
+      "kwd_saveQuit": 15,
+      "sve_msg_savingGame": 25,
+      "sve_msg_loadSuccess": 80,
+
+      "kwd_world": 15,
+      "kwd_info": 15,
+      "kwd_powers": 15,
+
+
+      "kwd_power": "Power",
+      "wrd_powerUnlocked": 25,
+
+
+      "rle_none_nme": "None",
+      "rle_none_dsc": "No exponent rule.",
+
+      "rle_exponent_nme": "Exponent",
+      "rle_exponent_dsc": "Multiplies a term (n) number of times.",
+
+      "rle_product_nme": "Product",
+      "rle_product_dsc": "Exponents with the same base are equal to said base to the sum of the exponents.",
+
+      "rle_powerOfAPower_nme": "Power of a Power",
+      "rle_powerOfAPower_dsc": "A base and exponent to another exponent is equal to the base to the product of said exponents.",
+
+      "rle_powerOfAProduct_nme": "Power of a Product",
+      "rle_powerOfAProduct_dsc": "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.",
+
+      "rle_zero_nme": "Zero",
+      "rle_zero_dsc": "A zero exponent always rules in a 1.",
+
+      "rle_negative_nme": "Negative",
+      "rle_negative_dsc": "A negative exponent becomes 1/x.",
+
+
       "pwr_none_nme": 22,
       "pwr_none_dsc": 130,
 
@@ -51,37 +87,6 @@
 
       "pwr_twist_nme": 22,
       "pwr_twist_dsc": 130,
-
-      "kwd_save": 15,
-      "kwd_saveQuit": 15,
-      "sve_msg_savingGame": "Saving Game...",
-      "sve_msg_loadSuccess": "Save data loaded successfully.",
-
-      "kwd_world": "World",
-      "kwd_info": "Info",
-      "kwd_powers": "Powers",
-      "kwd_power": "Power",
-
-      "rle_none_nme": "None",
-      "rle_none_dsc": "No exponent rule.",
-
-      "rle_exponent_nme": "Exponent",
-      "rle_exponent_dsc": "Multiplies a term (n) number of times.",
-
-      "rle_product_nme": "Product",
-      "rle_product_dsc": "Exponents with the same base are equal to said base to the sum of the exponents.",
-
-      "rle_powerOfAPower_nme": "Power of a Power",
-      "rle_powerOfAPower_dsc": "A base and exponent to another exponent is equal to the base to the product of said exponents.",
-
-      "rle_powerOfAProduct_nme": "Power of a Product",
-      "rle_powerOfAProduct_dsc": "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.",
-
-      "rle_zero_nme": "Zero",
-      "rle_zero_dsc": "A zero exponent always rules in a 1.",
-
-      "rle_negative_nme": "Negative",
-      "rle_negative_dsc": "A negative exponent becomes 1/x.",
 
 
       "wrd_saveMsg": "Would you like to save? Would you like to quit?",
@@ -185,7 +190,9 @@
     "kwd_world": "World",
     "kwd_info": "Info",
     "kwd_powers": "Powers",
+    
     "kwd_power": "Power",
+    "wrd_powerUnlocked": "New Power Unlocked!",
 
     "rle_none_nme": "None",
     "rle_none_dsc": "No exponent rule.",
