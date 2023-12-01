@@ -549,6 +549,7 @@ MonoBehaviour:
   normalMatchLoopPoints: {x: 10.1, y: 86.899}
   bossMatchBgm: {fileID: 8300000, guid: d1bcad9436b06694cbeb6858fb420fbf, type: 3}
   bossMatchLoopPoints: {x: 1.851, y: 90.473}
+  matchBgmNumber: 0
   resultsBgm: {fileID: 8300000, guid: 69bcade05878d4d4e8de465fe71d48fd, type: 3}
   resultsLoopPoints: {x: 2.139, y: 35.484}
   puzzleValueSelectSfx: {fileID: 8300000, guid: 0e1ded10c922f0e4397fdd320852469d, type: 3}
@@ -1193,6 +1194,22 @@ PrefabInstance:
       propertyPath: playerMatch
       value: 
       objectReference: {fileID: 717209386}
+    - target: {fileID: 1417358493508205197, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097238637314248420, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551217795692377676, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302867470213268005, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3799879670124323743, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: playerMatch
       value: 
@@ -1277,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4708677213414541416, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6008526244478992733, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1305,6 +1326,10 @@ PrefabInstance:
       propertyPath: matchManager
       value: 
       objectReference: {fileID: 335020968}
+    - target: {fileID: 8184258650678396073, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8993580480080620230, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

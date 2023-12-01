@@ -5,6 +5,7 @@
 
       "gameTitle": 60,
 
+      "kwd_title": 15,
       "kwd_start": 12,
       "kwd_newGame": 12,
       "kwd_continue": 12,
@@ -88,6 +89,9 @@
       "pwr_twist_nme": 22,
       "pwr_twist_dsc": 130,
 
+      "kwd_equip": 15,
+      "kwd_unequip": 15,
+
 
       "wrd_saveMsg": 60,
       "wrd_saveAndContinue": 20,
@@ -155,9 +159,8 @@
       "kwd_time": 25,
       "kwd_score": 25,
       "rst_wrongAnswers": 25,
-      "kwd_finish": 15,
+      "kwd_finish": 15
 
-      "kwd_title": 15
     }
   },
   "en": {
@@ -165,6 +168,7 @@
 
     "gameTitle": "Exponent Monsters",
 
+    "kwd_title": "Title",
     "kwd_start": "Start",
     "kwd_newGame": "New Game",
     "kwd_continue": "Continue",
@@ -247,6 +251,10 @@
     "pwr_twist_nme": "Twist",
     "pwr_twist_dsc": "A power that flips the opponent's view upside down.",
 
+    "kwd_equip": "Equip",
+    "kwd_unequip": "Unequip",
+
+
     "wrd_saveMsg": "Would you like to save? Would you like to quit?",
     "wrd_saveAndContinue": "Save & Continue",
     "wrd_saveAndQuit": "Save & Quit",
@@ -313,8 +321,7 @@
     "kwd_time": "Time",
     "kwd_score": "Score",
     "rst_wrongAnswers": "Wrong Answers",
-    "kwd_finish": "Finish",
+    "kwd_finish": "Finish"
 
-    "kwd_title": "Title"
   }
 }
