@@ -1,3 +1,4 @@
+using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -123,6 +124,9 @@ namespace RM_EM
             // Contains a list of all rules.
             string rules = "";
 
+            // The rule count.
+            const int RULE_COUNT_MAX = 6;
+
             // Exponent Rule
             if (challenger.exponentRate > 0)
                 ruleNames.Add(PuzzleInfo.GetRuleName(exponentRule.exponent));
@@ -151,18 +155,40 @@ namespace RM_EM
             // Checks for valid rules.
             if(ruleNames.Count != 0)
             {
-                // Adds all the rules to the string.
-                for(int i = 0; i < ruleNames.Count; i++)
+                // Set to rule count max, so just list as "ALL"
+                if(ruleNames.Count == RULE_COUNT_MAX)
                 {
-                    // Add the rule.
-                    rules += ruleNames[i];
-
-                    // If this isn't the last rule, add a slash.
-                    if(i + 1 < ruleNames.Count)
+                    // Checks if the LOLSDK is initialized.
+                    if(LOLManager.IsLOLSDKInitialized())
                     {
-                        rules += "/";
+                        // Defs
+                        JSONNode defs = SharedState.LanguageDefs;
+
+                        // Set to 'All'.
+                        rules = defs["kwd_all"];
+                    }
+                    else
+                    {
+                        // Set to 'All'.
+                        rules = "All";
                     }
                 }
+                else // Add the rule names.
+                {
+                    // Adds all the rules to the string.
+                    for (int i = 0; i < ruleNames.Count; i++)
+                    {
+                        // Add the rule.
+                        rules += ruleNames[i];
+
+                        // If this isn't the last rule, add a slash.
+                        if (i + 1 < ruleNames.Count)
+                        {
+                            rules += "/";
+                        }
+                    }
+                }
+                
             }
             else
             {

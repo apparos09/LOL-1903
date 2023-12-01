@@ -42,26 +42,26 @@
       "wrd_powerUnlocked": 25,
 
 
-      "rle_none_nme": "None",
-      "rle_none_dsc": "No exponent rule.",
+      "rle_none_nme": 24,
+      "rle_none_dsc": 105,
 
-      "rle_exponent_nme": "Exponent",
-      "rle_exponent_dsc": "Multiplies a term (n) number of times.",
+      "rle_exponent_nme": 24,
+      "rle_exponent_dsc": 105,
 
-      "rle_product_nme": "Product",
-      "rle_product_dsc": "Exponents with the same base are equal to said base to the sum of the exponents.",
+      "rle_product_nme": 24,
+      "rle_product_dsc": 105,
 
-      "rle_powerOfAPower_nme": "Power of a Power",
-      "rle_powerOfAPower_dsc": "A base and exponent to another exponent is equal to the base to the product of said exponents.",
+      "rle_powerOfAPower_nme": 24,
+      "rle_powerOfAPower_dsc": 105,
 
-      "rle_powerOfAProduct_nme": "Power of a Product",
-      "rle_powerOfAProduct_dsc": "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.",
+      "rle_powerOfAProduct_nme": 24,
+      "rle_powerOfAProduct_dsc": 105,
 
-      "rle_zero_nme": "Zero",
-      "rle_zero_dsc": "A zero exponent always rules in a 1.",
+      "rle_zero_nme": 24,
+      "rle_zero_dsc": 105,
 
-      "rle_negative_nme": "Negative",
-      "rle_negative_dsc": "A negative exponent becomes 1/x.",
+      "rle_negative_nme": 24,
+      "rle_negative_dsc": 105,
 
 
       "pwr_none_nme": 22,
@@ -121,6 +121,7 @@
       "chr_water_nme": 18,
       "chr_water_spc": 22,
 
+      "kwd_all": 15,
 
 
       "kwd_match": 15,
@@ -153,7 +154,10 @@
       "kwd_results": 15,
       "kwd_time": 25,
       "kwd_score": 25,
-      "rst_wrongAnswers": 25
+      "rst_wrongAnswers": 25,
+      "kwd_finish": 15,
+
+      "kwd_title": 15
     }
   },
   "en": {
@@ -190,9 +194,11 @@
     "kwd_world": "World",
     "kwd_info": "Info",
     "kwd_powers": "Powers",
-    
+
     "kwd_power": "Power",
     "wrd_powerUnlocked": "New Power Unlocked!",
+
+    "kwd_rules": "Rules",
 
     "rle_none_nme": "None",
     "rle_none_dsc": "No exponent rule.",
@@ -273,6 +279,8 @@
     "chr_water_nme": "Divytide",
     "chr_water_spc": "Water Spirit",
 
+    "kwd_all": "All",
+
 
     "kwd_match": "Match",
     "kwd_usePower": "Use Power",
@@ -304,6 +312,9 @@
     "kwd_results": "Results",
     "kwd_time": "Time",
     "kwd_score": "Score",
-    "rst_wrongAnswers": "Wrong Answers"
+    "rst_wrongAnswers": "Wrong Answers",
+    "kwd_finish": "Finish",
+
+    "kwd_title": "Title"
   }
 }
