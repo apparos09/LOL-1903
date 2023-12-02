@@ -158,7 +158,7 @@ namespace RM_EM
         private int missingValuesCountStart = 0;
 
         // The maximum amount of random values available when asking for a random value.
-        private const int RANDOM_VALUE_MAX = 4; // 5
+        private const int RANDOM_VALUE_MAX = 3; // 1/3 Chance
 
         // Start is called before the first frame update
         void Start()
@@ -400,10 +400,16 @@ namespace RM_EM
                         // Set the rule.
                         calc.rule = rule;
 
+
+                        // Limits what numbers can be used.
+                        // Dividing by 0 isn't possible, and doing a 1/1 fraction is unnecessary.
+                        int lowVal = (lowestValue > 1) ? lowestValue : 2;
+                        int highVal = (highestValue > 1) ? highestValue : 2;
+
                         // Expression: a^(-1) = 1/(a^n)
                         // Generates number 1 and number 2.
-                        int num1 = Random.Range(lowestValue, highestValue + 1); // a (base)
-                        int num2 = Random.Range(lowestValue, highestValue + 1); // b (exponent)
+                        int num1 = Random.Range(lowVal, highVal + 1); // a (base)
+                        int num2 = Random.Range(lowVal, highVal + 1); // b (exponent)
 
                         // There's no such thing as negative 0, so if num2 becomes 0, it defaults to 1.
                         if (num2 == 0)

@@ -38,7 +38,7 @@ namespace RM_EM
         public const string SFX_TAG = "SFX";
 
         // The volume for the sound effects.
-        private float sfxVolume = 0.6F;
+        private float sfxVolume = 0.35F;
 
         // The audio for the TTS.
         public const string TTS_TAG = "TTS";

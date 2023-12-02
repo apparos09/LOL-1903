@@ -209,7 +209,7 @@ namespace RM_EM
             // The game isn't paused.
             if(!gamePaused)
             {
-                gameTime += Time.fixedDeltaTime;
+                gameTime += Time.unscaledDeltaTime;
             }
         }
     }
