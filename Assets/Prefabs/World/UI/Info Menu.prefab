@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 4637028589941679988}
   - component: {fileID: 368214275920556590}
   - component: {fileID: 1615260051026616478}
+  - component: {fileID: 8314198458173407151}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -417,6 +418,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8314198458173407151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4777108225635641455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1615260051026616478}
+  key: kwd_back
+  markIfFailed: 1
 --- !u!1 &5673718082401821549
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +444,7 @@ GameObject:
   - component: {fileID: 6457020260687957027}
   - component: {fileID: 2904765503681944390}
   - component: {fileID: 8647051688472417827}
+  - component: {fileID: 1480919447920572203}
   m_Layer: 5
   m_Name: Info Title Text (TMP)
   m_TagString: Untagged
@@ -551,6 +568,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1480919447920572203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673718082401821549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8647051688472417827}
+  key: kwd_info
+  markIfFailed: 1
 --- !u!1 &6087659140930812595
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +595,7 @@ GameObject:
   - component: {fileID: 3339556780552620580}
   - component: {fileID: 1437672029494162534}
   - component: {fileID: 3810523958366103083}
+  - component: {fileID: 3842663737121040170}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -672,6 +705,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3842663737121040170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087659140930812595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 3810523958366103083}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &6323912116966372315
 GameObject:
   m_ObjectHideFlags: 0

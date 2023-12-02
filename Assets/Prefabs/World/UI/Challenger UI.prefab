@@ -805,6 +805,7 @@ GameObject:
   - component: {fileID: 4378030016701687273}
   - component: {fileID: 7033910458413159436}
   - component: {fileID: 4722611296848760377}
+  - component: {fileID: 6820472631163357370}
   m_Layer: 5
   m_Name: Accept Button
   m_TagString: Untagged
@@ -926,6 +927,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6820472631163357370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005998229734045474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4722611296848760377}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &6100245674786438934
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +953,7 @@ GameObject:
   - component: {fileID: 5953653294606142466}
   - component: {fileID: 5101267398613815857}
   - component: {fileID: 3507346358561173517}
+  - component: {fileID: 6446476920139552570}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1060,6 +1077,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6446476920139552570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6100245674786438934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 3507346358561173517}
+  key: kwd_decline
+  markIfFailed: 1
 --- !u!1 &6263841326485504000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1312,7 @@ GameObject:
   - component: {fileID: 9197557131372158424}
   - component: {fileID: 3968446615182266422}
   - component: {fileID: 8929036196819918517}
+  - component: {fileID: 7231431549426685550}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1403,6 +1436,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7231431549426685550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8781599875064155353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 8929036196819918517}
+  key: kwd_accept
+  markIfFailed: 1
 --- !u!1 &8855675458425185581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1531,7 @@ GameObject:
   - component: {fileID: 1372264662110001873}
   - component: {fileID: 3716717075368015846}
   - component: {fileID: 6094399964124060188}
+  - component: {fileID: 1937295107999960375}
   m_Layer: 5
   m_Name: Decline Button
   m_TagString: Untagged
@@ -1604,3 +1653,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1937295107999960375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962463541235827951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6094399964124060188}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}

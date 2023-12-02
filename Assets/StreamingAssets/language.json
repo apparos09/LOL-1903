@@ -129,6 +129,8 @@
       "chr_water_spc": 22,
 
       "kwd_all": 15,
+      "kwd_accept": 15,
+      "kwd_decline": 15,
 
 
       "kwd_match": 15,
@@ -294,6 +296,8 @@
     "chr_water_spc": "Water Spirit",
 
     "kwd_all": "All",
+    "kwd_accept": "Accept",
+    "kwd_decline": "Decline",
 
 
     "kwd_match": "Match",

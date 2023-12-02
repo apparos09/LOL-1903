@@ -223,7 +223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8299675320657915650, guid: a3166a8981de32b4baacd63bd5477a45, type: 3}
       propertyPath: m_Name
-      value: Puzzle Prefabs
+      value: Puzzle Info
       objectReference: {fileID: 0}
     - target: {fileID: 8466388987188993555, guid: a3166a8981de32b4baacd63bd5477a45, type: 3}
       propertyPath: m_LocalPosition.x
@@ -824,7 +824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8807766757911861258, guid: 90fb09ad673e5bf41b9861db4f52c94c, type: 3}
       propertyPath: m_Name
-      value: Power Prefabs
+      value: Power Info
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

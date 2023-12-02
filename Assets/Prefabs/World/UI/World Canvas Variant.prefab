@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 4706100987068594245}
   - component: {fileID: 5213020545127665335}
   - component: {fileID: 865047237112624642}
+  - component: {fileID: 8119841097116988669}
   m_Layer: 5
   m_Name: Info Button
   m_TagString: Untagged
@@ -492,6 +493,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8119841097116988669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260937640438898526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 865047237112624642}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &1687736707842262081
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +520,7 @@ GameObject:
   - component: {fileID: 4505493352220057289}
   - component: {fileID: 3126657640288297850}
   - component: {fileID: 4528737351491364114}
+  - component: {fileID: 140983932445221685}
   m_Layer: 5
   m_Name: Save/Quit Button
   m_TagString: Untagged
@@ -625,6 +642,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &140983932445221685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687736707842262081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4528737351491364114}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &1701824115563979087
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +669,7 @@ GameObject:
   - component: {fileID: 1459800981109116062}
   - component: {fileID: 7901612992844404923}
   - component: {fileID: 8729617894213542691}
+  - component: {fileID: 3844306481240254915}
   m_Layer: 5
   m_Name: Quit Without Saving Button
   m_TagString: Untagged
@@ -758,6 +791,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3844306481240254915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701824115563979087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 8729617894213542691}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &1819550028316606740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1493,7 @@ GameObject:
   - component: {fileID: 6614803748852298544}
   - component: {fileID: 7377444780323558824}
   - component: {fileID: 533929759892889351}
+  - component: {fileID: 3260419881331482861}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -1566,6 +1615,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3260419881331482861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925684407364206790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 533929759892889351}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &5249146218242592073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1792,7 @@ GameObject:
   - component: {fileID: 5459178444792066135}
   - component: {fileID: 733024042912600158}
   - component: {fileID: 9076091327501230174}
+  - component: {fileID: 8216051223924931930}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -1849,6 +1914,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8216051223924931930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688574614270442140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 9076091327501230174}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &5723330164233883989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1941,7 @@ GameObject:
   - component: {fileID: 7790606125206631689}
   - component: {fileID: 8077873912949585755}
   - component: {fileID: 716447261330685049}
+  - component: {fileID: 5481866868707270865}
   m_Layer: 5
   m_Name: Save and Continue Button
   m_TagString: Untagged
@@ -1982,6 +2063,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5481866868707270865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723330164233883989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 716447261330685049}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &5815957211447397715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2090,7 @@ GameObject:
   - component: {fileID: 5965677367990254273}
   - component: {fileID: 7696178926104441246}
   - component: {fileID: 2426904926313944014}
+  - component: {fileID: 8809295615236985093}
   m_Layer: 5
   m_Name: Save and Quit Button
   m_TagString: Untagged
@@ -2115,6 +2212,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8809295615236985093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815957211447397715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2426904926313944014}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &5997261940136934071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,6 +2839,7 @@ GameObject:
   - component: {fileID: 573409540787784002}
   - component: {fileID: 625089464925174766}
   - component: {fileID: 482978090673283375}
+  - component: {fileID: 1981030300910291387}
   m_Layer: 5
   m_Name: Powers Button
   m_TagString: Untagged
@@ -2848,6 +2961,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1981030300910291387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277698148947496963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 482978090673283375}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &8428248483204747744
 GameObject:
   m_ObjectHideFlags: 0
