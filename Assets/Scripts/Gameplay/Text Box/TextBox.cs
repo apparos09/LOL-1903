@@ -6,14 +6,11 @@ using TMPro;
 
 namespace RM_EM
 {
-    // The clas sfor the text box for the game.
+    // The class for the text box for the game.
     public class TextBox : MonoBehaviour
     {
         // the text box object to be opened/closed.
         public GameObject boxObject;
-
-        // The name of the speaker. TODO: this currently does nothing.
-        public string speakerName = "";
 
         [Header("Text Settings")]
 

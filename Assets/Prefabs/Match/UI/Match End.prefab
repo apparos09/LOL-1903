@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 7710401647530676567}
   - component: {fileID: 3434713849100720945}
   - component: {fileID: 3983546851440190390}
+  - component: {fileID: 3547581355247078333}
   m_Layer: 5
   m_Name: World Button
   m_TagString: Untagged
@@ -283,6 +284,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3547581355247078333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271035005803576463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 3983546851440190390}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &3119364017003950294
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +311,7 @@ GameObject:
   - component: {fileID: 949973577165081564}
   - component: {fileID: 9006320591277234350}
   - component: {fileID: 4780269505718660660}
+  - component: {fileID: 7854591470009849266}
   m_Layer: 5
   m_Name: Rematch Button
   m_TagString: Untagged
@@ -416,6 +433,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7854591470009849266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3119364017003950294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4780269505718660660}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &3894061719528043323
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +535,7 @@ GameObject:
   - component: {fileID: 1995100744740385974}
   - component: {fileID: 467081450337333144}
   - component: {fileID: 2522034980696586785}
+  - component: {fileID: 8378231197002008884}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -624,6 +657,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8378231197002008884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024210828754188948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2522034980696586785}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &4728726521161955266
 GameObject:
   m_ObjectHideFlags: 0

@@ -1202,14 +1202,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2408148897690682297, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 2551217795692377676, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844198730278570006, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
+    - target: {fileID: 2953548175686672739, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 3302867470213268005, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3583024562283494885, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 3799879670124323743, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: playerMatch
       value: 
@@ -1294,14 +1310,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4708343126440012555, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 4708677213414541416, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5441897531892283066, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 6008526244478992733, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6028377689233787650, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
+    - target: {fileID: 6360195557373798055, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 6421433437459321925, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1318,6 +1350,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575690561167610305, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 7353627963584966539, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: gameManager
       value: 
@@ -1326,10 +1362,22 @@ PrefabInstance:
       propertyPath: matchManager
       value: 
       objectReference: {fileID: 335020968}
+    - target: {fileID: 7891400538991174634, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 8184258650678396073, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8269373586996926029, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
+    - target: {fileID: 8475419570882413411, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 8993580480080620230, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1338,6 +1386,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9111996495908105926, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 9163179341828889636, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

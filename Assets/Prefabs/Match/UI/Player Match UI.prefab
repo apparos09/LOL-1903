@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5599335094510288953}
   - component: {fileID: 1101905905852667788}
   - component: {fileID: 3911833299618231827}
+  - component: {fileID: 5113189977252072915}
   m_Layer: 5
   m_Name: Power Button
   m_TagString: Untagged
@@ -133,6 +134,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5113189977252072915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839714091152956534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 3911833299618231827}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &3066190881675702272
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +161,7 @@ GameObject:
   - component: {fileID: 6718806881368649764}
   - component: {fileID: 3284617029672635542}
   - component: {fileID: 6797911762149012895}
+  - component: {fileID: 7721696615272933399}
   m_Layer: 5
   m_Name: Skip Button
   m_TagString: Untagged
@@ -266,6 +283,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7721696615272933399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066190881675702272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 6797911762149012895}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &5111595063191636286
 GameObject:
   m_ObjectHideFlags: 0
