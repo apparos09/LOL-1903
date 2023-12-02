@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -211,6 +210,10 @@ namespace RM_EM
             // If the player has no powers, disable the power menu.
             if (worldUI.powersButton != null)
                 worldUI.powersButton.interactable = playerWorld.powerList.Count != 0;
+
+
+            // Sets the power icon to the player's power.
+            worldUI.playerPowerIcon.SetPower(playerWorld.power);
 
             // If the game settings have been instantiated.
             if (worldUI.infoButton != null && GameSettings.Instantiated)

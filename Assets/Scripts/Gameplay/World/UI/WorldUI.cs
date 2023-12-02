@@ -27,7 +27,10 @@ namespace RM_EM
         // The challenge window.
         public ChallengerUI challengeUI;
 
-        [Header("World/Header")]
+        // The player's power icon.
+        public PowerIcon playerPowerIcon;
+
+        [Header("World/Buttons")]
 
         // The info button.
         public Button infoButton;
@@ -41,7 +44,7 @@ namespace RM_EM
         // The settings button.
         public Button settingsButton;
 
-        [Header("World/Area")]
+        [Header("World/Buttons/Area")]
         // Button for left room.
         public Button prevAreaButton;
 

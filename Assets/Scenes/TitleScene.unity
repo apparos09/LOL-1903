@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Previous Page Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3633413483111380634, guid: 4614534228b58824999e5ec17a963236, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2059196287809671290}
     - target: {fileID: 4212349176920680606, guid: 4614534228b58824999e5ec17a963236, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1152,6 +1156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Next Page Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3633413483111380634, guid: 4614534228b58824999e5ec17a963236, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 2059196287809671290}
     - target: {fileID: 4212349176920680606, guid: 4614534228b58824999e5ec17a963236, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1558,7 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 659688677}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &685180019
@@ -1707,7 +1715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cff0a985f6ce1468bf838abbc5e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 685180021}
   audioSource: {fileID: 2059196287809671290}
   audioClip: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1 &729324339
@@ -3283,7 +3291,7 @@ GameObject:
   - component: {fileID: 1235897262}
   - component: {fileID: 1235897265}
   m_Layer: 5
-  m_Name: Credits Button
+  m_Name: Licenses Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4252,6 +4260,7 @@ GameObject:
   - component: {fileID: 1611287779}
   - component: {fileID: 1611287781}
   - component: {fileID: 1611287780}
+  - component: {fileID: 1611287782}
   m_Layer: 5
   m_Name: Title Text (TMP)
   m_TagString: Untagged
@@ -4375,6 +4384,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611287778}
   m_CullTransparentMesh: 1
+--- !u!114 &1611287782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611287778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222577b872baa6045a872e924855e799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1611287780}
+  key: kwd_licenses
+  markIfFailed: 1
 --- !u!1 &1629816298
 GameObject:
   m_ObjectHideFlags: 0

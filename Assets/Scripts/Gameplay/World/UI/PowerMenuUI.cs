@@ -86,6 +86,11 @@ namespace RM_EM
         // The selected power description.
         public TMP_Text selectedPowerDesc;
 
+        [Header("Other")]
+
+        // The player power icon.
+        public PowerIcon playerPowerIcon;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -418,6 +423,10 @@ namespace RM_EM
             {
                 equipButton.interactable = false;
             }
+
+            // Set the new power icon.
+            if (playerPowerIcon != null)
+                playerPowerIcon.SetPower(playerWorld.power);
         }
 
         // Unequips the current power.
