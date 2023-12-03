@@ -337,16 +337,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f63db774470ff3e44b79a544c2a063cb, type: 3}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
-      propertyPath: equationTermsMax
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: missingValuesMax
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
-      propertyPath: missingValuesMin
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: challengerSpecies
@@ -1021,11 +1013,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3c91e01b19018cc43b35d2b853ca1162, type: 3}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: equationTermsMax
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: equationTermsMin
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
+      propertyPath: exponentTermsMax
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: missingValuesMax
@@ -1542,18 +1538,6 @@ PrefabInstance:
       propertyPath: challengeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 58c40863e63338641a55755652e0ea26, type: 3}
-    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
-      propertyPath: equationTermsMax
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
-      propertyPath: equationTermsMin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
-      propertyPath: exponentTermsMax
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6139453292235157198, guid: ca4261521a65d244f8ac26a8e6d3b147, type: 3}
       propertyPath: missingValuesMax
       value: 2
@@ -2380,7 +2364,6 @@ MonoBehaviour:
   gameUI: {fileID: 1503540674}
   gameTime: 0
   gameScore: 0
-  gameProgress: 0
   mouseTouch: {fileID: 0}
   worldUI: {fileID: 1503540674}
   worldAudio: {fileID: 2106017679}
