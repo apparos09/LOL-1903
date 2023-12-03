@@ -544,12 +544,16 @@ namespace RM_EM
             {
                 GameplayInfo gameInfo = GameplayInfo.Instance;
 
+                // Wrong Answers
+                data.wrongAnswers = gameInfo.wrongAnswers;
+
                 // Losses
                 data.losses = gameInfo.p1Losses;
                 data.recentLosses = gameInfo.p1RecentLosses;
             }
             else
             {
+                data.wrongAnswers = 0;
                 data.losses = 0;
                 data.recentLosses = 0;
             }
@@ -685,6 +689,9 @@ namespace RM_EM
             if (GameplayInfo.Instantiated)
             {
                 GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                // Wrong Answers
+                gameInfo.wrongAnswers = loadedData.wrongAnswers;
 
                 // Load Losses
                 gameInfo.p1Losses = loadedData.losses;

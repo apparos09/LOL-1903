@@ -65,8 +65,9 @@ namespace RM_EM
             // Sets the ball char and sprite.
             ball.SetValueAndSprite(value, valueSprites);
 
-            // Sets the position and velocity.
+            // Sets the position, rotation, and velocity.
             ball.transform.position = spawnPos;
+            ball.transform.rotation = Quaternion.identity;
             ball.rigidbody.velocity = Vector2.zero;
 
             // Add the ball to the value list.
@@ -78,6 +79,9 @@ namespace RM_EM
         // Returns the ball.
         public void ReturnBall(BallValue ball)
         {
+            // Reset rotation (not needed)
+            ball.transform.rotation = Quaternion.identity;
+
             // Set the rigidbody to zero.
             ball.rigidbody.velocity = Vector2.zero;
 

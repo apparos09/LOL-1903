@@ -124,7 +124,7 @@ MonoBehaviour:
   collider: {fileID: 5306882655320300528}
   spriteRenderer: {fileID: 5486689281267784949}
   openedGate: 0
-  maxWeight: 5
+  maxWeight: 10
   openTimer: 0
   openTimerMax: 10
   touchingBalls: []
@@ -1014,9 +1014,9 @@ MonoBehaviour:
   puzzle: {fileID: 0}
   puzzleValues: []
   autoFillPuzzleValues: 1
-  activeValueCountMax: 10
+  activeValueCountMax: 15
   spawnTimer: 0
-  spawnTimeMax: 2
+  spawnTimeMax: 1.85
   ballSpawn: {fileID: 3055302625588049213}
   pinballDeathZone: {fileID: 8224871925467924153}
   gate: {fileID: 2573829143460775994}
