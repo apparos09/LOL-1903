@@ -307,6 +307,7 @@ namespace RM_EM
                     float percentThreshold = 0.0F;
 
                     // Uses a power based on how far ahead the opponent is compared to the computer.
+                    // Adjusted the power thresholds since hte higher difficulties won't be used.
                     switch(difficulty)
                     {
                         default: // Use power instantly.
@@ -317,19 +318,19 @@ namespace RM_EM
                         case 1: // L01
                         case 2: // L02
                         case 3: // L03
-                            percentThreshold = 0.3F;
+                            percentThreshold = 0.25F;
                             break;
 
                         case 4: // L04
                         case 5: // L05
                         case 6: // L06
-                            percentThreshold = 0.2F;
+                            percentThreshold = 0.15F;
                             break;
 
                         case 7: // L07
                         case 8: // L08
                         case 9: // L09
-                            percentThreshold = 0.1F;
+                            percentThreshold = 0.05F;
                             break;
                     }
 

@@ -53,9 +53,9 @@ MonoBehaviour:
   energyMax: 100
   powerActive: 0
   powerFillInc: 12
-  powerFillRate: 1
+  powerFillRate: 1.15
   depletionDec: 4
-  depletionRate: 1
+  depletionRate: 1.4
   taker: {fileID: 0}
   giver: {fileID: 0}
   takerPoints: 0

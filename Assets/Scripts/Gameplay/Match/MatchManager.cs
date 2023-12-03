@@ -387,7 +387,7 @@ namespace RM_EM
         {
             // CALCULATING PLAYER POINTS //
             // Base points gained.
-            int points = 10;
+            int points = 20; // 10
 
             // Increase poitns by number of rules used.
             points += 7 * rulesUsed.Count;

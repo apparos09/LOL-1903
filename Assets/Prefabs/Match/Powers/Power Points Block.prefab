@@ -55,7 +55,7 @@ MonoBehaviour:
   powerFillInc: 12
   powerFillRate: 1
   depletionDec: 4
-  depletionRate: 1
+  depletionRate: 1.8
   target: {fileID: 0}
   blockPercent: 0.25
   origPoints: -1

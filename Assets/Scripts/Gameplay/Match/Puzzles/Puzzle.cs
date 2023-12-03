@@ -1320,7 +1320,7 @@ namespace RM_EM
             switch(puzzle)
             {
                 case puzzleType.keypad:
-                    mult = 1.0F;
+                    mult = 1.0F; // No mod since all values are available at all times.
                     break;
 
                 case puzzleType.sliding:
@@ -1338,7 +1338,7 @@ namespace RM_EM
 
             // Calculates the par time using the missing values, the base time, and the mechanic modifier.
             // By default, each value fill is 5 seconds at the least. The par time is at least 1 second.
-            parTime = 1.0F + missingValuesCountStart * 4.0F * mult;
+            parTime = 1.0F + missingValuesCountStart * 5.0F * mult;
 
             // Calculates how close the answer time is to the partime.
             float percent = 0.0F;
