@@ -51,12 +51,16 @@ namespace RM_EM
             if (Application.platform == RuntimePlatform.WebGLPlayer)
             {
                 // TODO: should I take this out?
-                quitButton.interactable = false; // Disable
-                quitButton.gameObject.SetActive(false); // Turn-Off
+                quitButton.interactable = false; // Disable               
             }
 
+            // If the LOLSDK has been initialized.
+            if(GameSettings.InitializedLOLSDK)
+            {
+                quitButton.gameObject.SetActive(false); // Turn-Off
+            }
             // If the LOLSDK isn't initialized, make the continue button non-interactable.
-            if (!GameSettings.InitializedLOLSDK)
+            else if (!GameSettings.InitializedLOLSDK)
             {
                 // Disable continue.
                 continueButton.interactable = false;

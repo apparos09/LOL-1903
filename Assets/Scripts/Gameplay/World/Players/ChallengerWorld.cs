@@ -50,7 +50,7 @@ namespace RM_EM
 
         // Sets if the challenger is available for a match.
         // Set to public for testing purposes.
-        private bool available = true;
+        public bool available = true;
 
         // Gets set to 'true' when the challenger has been defeated.
         // Set to public for testing purposes.

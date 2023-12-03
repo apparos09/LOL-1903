@@ -252,9 +252,6 @@ namespace RM_EM
                 }
             }
 
-            // Gets and saves the game progress (for LOL content).
-            gameProgress = GetGameProgress();
-
             // Called post start.
             calledPostStart = true;
         }
@@ -762,8 +759,9 @@ namespace RM_EM
         // Submits the current game progress.
         public void SubmitProgress()
         {
+            // If the LOLManager is instantiated.
             if (LOLManager.Instantiated)
-                LOLManager.Instance.SubmitProgress(gameScore, gameProgress);
+                LOLManager.Instance.SubmitProgress(gameScore, GetGameProgress());
         }
 
         // Submits the game progress complete.
