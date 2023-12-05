@@ -64,42 +64,42 @@ namespace RM_EM
                     break;
 
                 case 2: // Level 2
-                    waitTimeMax = 4.0F;
+                    waitTimeMax = 3.9F;
                     moveSpeed = 3.5F;
                     break;
 
                 case 3: // Level 3 (Normal)
-                    waitTimeMax = 3.5F;
+                    waitTimeMax = 3.8F;
                     moveSpeed = 3.0F;
                     break;
 
                 case 4: // Level 4
-                    waitTimeMax = 3.25F;
+                    waitTimeMax = 3.5F;
                     moveSpeed = 3.5F;
                     break;
 
                 case 5: // Level 5
-                    waitTimeMax = 3.25F;
+                    waitTimeMax = 3.5F;
                     moveSpeed = 5.0F;
                     break;
 
                 case 6: // Level 6
-                    waitTimeMax = 3.25F;
+                    waitTimeMax = 3.5F;
                     moveSpeed = 5.5F;
                     break;
 
                 case 7: // Level 7
-                    waitTimeMax = 3.0F;
+                    waitTimeMax = 3.25F;
                     moveSpeed = 6.0F;
                     break;
 
                 case 8: // Level 8
-                    waitTimeMax = 3.0F;
+                    waitTimeMax = 3.25F;
                     moveSpeed = 6.5F;
                     break;
 
                 case 9: // Level 9
-                    waitTimeMax = 3.0F;
+                    waitTimeMax = 3.25F;
                     moveSpeed = 7.0F;
                     break;
 

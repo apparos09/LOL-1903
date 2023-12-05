@@ -410,7 +410,10 @@ namespace RM_EM
             if(player.HasPower() && !player.IsPowerActive())
             {
                 // Increases the power energy by a set amount.
-                player.power.IncreasePowerEnergy();
+                // player.power.IncreasePowerEnergy(); // Old
+
+                // New - adds extra for rules used and missing values.
+                player.power.IncreasePowerEnergy(rulesUsed.Count, missingValuesCountStart);
             }
 
 

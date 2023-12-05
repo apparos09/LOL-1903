@@ -128,6 +128,35 @@ namespace RM_EM
             energy = Mathf.Clamp(energy, 0, energyMax);
         }
 
+        // Increases the power energy, and gives an extra boost based on the number of equation terms.
+        public void IncreasePowerEnergy(int ruleCount, int missingValues)
+        {
+            IncreasePowerEnergy();
+
+            // Extra power fill.
+            float extraFill = 0.0F;
+
+            // If there was more than 1 rule.
+            if(ruleCount > 1)
+            {
+                extraFill += 2.5F * ruleCount;
+            }
+
+            // If there was more than 1 missing value.
+            if(missingValues > 1)
+            {
+                extraFill += 2.5F * missingValues;
+            }
+
+            // No extra fill.
+            if (extraFill == 0)
+                return;
+
+            // Increases the energy by the extra fill and clamps it.
+            energy += extraFill;
+            energy = Mathf.Clamp(energy, 0, energyMax);
+        }
+
         // Called when the power is started.
         public virtual void OnPowerStarted()
         {

@@ -94,10 +94,6 @@ namespace RM_EM
         // Start is called before the first frame update
         protected override void Start()
         {
-
-            // Checks if the game info has been initialized already.
-            bool gameInfoInit = GameplayInfo.Instantiated;
-
             // Calls the base function.
             base.Start();
 
@@ -114,20 +110,6 @@ namespace RM_EM
 
             // Sets the current area.
             SetArea(currAreaIndex, true);
-
-            // Checks if the info object has been instantiated to load content from it.
-            if (gameInfoInit && GameplayInfo.Instantiated)
-            {
-                // Gets the instance.
-                GameplayInfo gameInfo = GameplayInfo.Instance;
-
-                // Load the world info.
-                gameInfo.LoadWorldInfo(this);
-
-                // Autosaves if the player won the last round.
-                if (gameInfo.pWinner == 1)
-                    SaveGame();
-            }
 
             // The power menu can only be accessed if the player has powers.
             // TODO: once the game is done, you can take out these null checks since this should always be present.
@@ -198,8 +180,48 @@ namespace RM_EM
                 {
                     // Loads the data.
                     bool success = LoadGame();
+
+                    // If the load was a sucess.
+                    if(success)
+                    {
+                        // Checks for gameplay info being instantiated.
+                        if(GameplayInfo.Instantiated)
+                        {
+                            GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                            // Says no data has been saved since new data has just been loaded.
+                            gameInfo.worldDataSaved = false;
+                            gameInfo.matchDataSaved = false;
+                        }
+                    }
                 }
             }
+
+            // Checks if the info object has been instantiated to load content from it.
+            if (GameplayInfo.Instantiated)
+            {
+                // Gets the instance.
+                GameplayInfo gameInfo = GameplayInfo.Instance;
+
+                // If there's saved world data, load it.
+                if(gameInfo.worldDataSaved)
+                {
+                    // Load the world info.
+                    gameInfo.LoadWorldInfo(this);
+                }
+
+                // Autosaves if the player won the last round.
+                if (gameInfo.pWinner == 1)
+                {
+                    // Saves the game.
+                    SaveGame();
+
+                    // Submits progress.
+                    SubmitProgress();
+                }
+                    
+            }
+
 
             // If the player has no powers, disable the power menu.
             if (worldUI.powersButton != null)
@@ -245,9 +267,6 @@ namespace RM_EM
                     }
                 }
             }
-
-            // Submits progress when entering the game world.
-            SubmitProgress();
 
             // Called post start.
             calledPostStart = true;

@@ -38,6 +38,11 @@ namespace RM_EM
         // WORLD
         [Header("World Info")]
 
+        // Gets set to 'true' when world data is saved.
+        // Maybe reset this if you ever want to reload data.
+        [Tooltip("Gets set to 'true' when world data has been saved.")]
+        public bool worldDataSaved = false;
+
         // The index of the current world area.
         public int currAreaIndex = 0;
 
@@ -47,6 +52,10 @@ namespace RM_EM
 
         // MATCH
         [Header("Match Info")]
+
+        // Gets set to 'true' when match data has been saved.
+        [Tooltip("Gets set to 'true' when match data has been saved.")]
+        public bool matchDataSaved = false;
 
         // The number of the match. This is calculated in the world area, and is copied to the match area.
         // Do not overwrite this with info from the match manager.
@@ -232,6 +241,17 @@ namespace RM_EM
 
             // Score
             gameScore = manager.gameScore;
+
+
+            // Checks what kind of data was just saved.
+            if(manager is WorldManager) // World
+            {
+                worldDataSaved = true;
+            }
+            else if(manager is MatchManager) // Match
+            {
+                matchDataSaved = true;
+            }
         }
 
         // Loads general game info.
