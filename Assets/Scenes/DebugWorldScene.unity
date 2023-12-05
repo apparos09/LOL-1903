@@ -302,9 +302,12 @@ MonoBehaviour:
   challengeSprite: {fileID: 0}
   challengerName: 
   nameKey: 
+  challengerSpecies: 
+  speciesKey: 
   challengerQuote: 
   quoteKey: 
   difficulty: 0
+  available: 1
   defeated: 0
   puzzle: 0
   power: 0
@@ -429,68 +432,6 @@ MonoBehaviour:
   challenger: {fileID: 616700689}
   reqChallengers:
   - {fileID: 1547001938}
---- !u!1001 &771691779
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1214403859485820408, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_Name
-      value: Collider Blocker
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456831874550740796, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
---- !u!1 &771691780 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1214403859485820408, guid: c30e21ef4adcd7347a222fb71e9f1a0f, type: 3}
-  m_PrefabInstance: {fileID: 771691779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &888863624
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,9 +885,12 @@ MonoBehaviour:
   challengeSprite: {fileID: 0}
   challengerName: 
   nameKey: 
+  challengerSpecies: 
+  speciesKey: 
   challengerQuote: 
   quoteKey: 
   difficulty: 0
+  available: 1
   defeated: 0
   puzzle: 0
   power: 0
@@ -1066,13 +1010,11 @@ MonoBehaviour:
   gameUI: {fileID: 1887377149}
   gameTime: 0
   gameScore: 0
-  gameProgress: 0
   mouseTouch: {fileID: 0}
   worldUI: {fileID: 1887377149}
   worldAudio: {fileID: 0}
   worldAnimation: {fileID: 0}
   worldCamera: {fileID: 322652622}
-  colliderBlocker: {fileID: 771691780}
   playerWorld: {fileID: 1618966077}
   areas:
   - {fileID: 1707077277}
@@ -1340,4 +1282,3 @@ SceneRoots:
   - {fileID: 1139977219}
   - {fileID: 1547001937}
   - {fileID: 616700692}
-  - {fileID: 771691779}

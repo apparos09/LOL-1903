@@ -36,9 +36,6 @@ namespace RM_EM
         // // The list for world events.
         // public List<GameEvent> worldEvents = new List<GameEvent>();
 
-        // An object that's used to block world colliders.
-        public GameObject colliderBlocker;
-
         // Used to pause the world.
         protected bool worldPaused = false;
 
@@ -114,9 +111,6 @@ namespace RM_EM
 
             // Hide the challenger UI.
             worldUI.HideChallengeUI();
-
-            // Turn off the blocker.
-            colliderBlocker.SetActive(false);
 
             // Sets the current area.
             SetArea(currAreaIndex, true);
@@ -252,6 +246,9 @@ namespace RM_EM
                 }
             }
 
+            // Submits progress when entering the game world.
+            SubmitProgress();
+
             // Called post start.
             calledPostStart = true;
         }
@@ -320,9 +317,6 @@ namespace RM_EM
             base.OnTutorialStart();
 
             PauseWorld();
-
-            // Turn on the blocker.
-            colliderBlocker.SetActive(true);
         }
 
         // Called when a tutorial is ended.
@@ -331,10 +325,6 @@ namespace RM_EM
             base.OnTutorialEnd();
 
             UnpauseWorld();
-
-            // Turn off the blocker, but only if a window isn't open.
-            if(!worldUI.IsWindowOpen())
-                colliderBlocker.SetActive(false);
         }
 
 
@@ -616,10 +606,6 @@ namespace RM_EM
 
             // Saves the game.
             bool result = saveSys.SaveGame();
-
-            // Submits the game's progress if the save was successful.
-            if(result)
-                SubmitProgress();
 
             // Return result.
             return result;

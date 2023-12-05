@@ -246,19 +246,12 @@ namespace RM_EM
             // Turn off the settings window.
             if(window != settingsUI.gameObject)
                 settingsUI.gameObject.SetActive(false);
-
-            // Turn on the collider blocker.
-            worldManager.colliderBlocker.SetActive(true);
         }
 
         // Called when a window is closed.
         public override void OnWindowClosed()
         {
             base.OnWindowClosed();
-
-            // Turn off the blocker. If the tutorial is running, then keep it on.
-            if(!tutorialTextBox.IsVisible())
-                worldManager.colliderBlocker.SetActive(false);
         }
 
         // Returns 'true' if a window is open.
