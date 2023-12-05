@@ -181,7 +181,7 @@ namespace RM_EM
                     // Loads the data.
                     bool success = LoadGame();
 
-                    // If the load was a sucess.
+                    // If the load was a success.
                     if(success)
                     {
                         // Checks for gameplay info being instantiated.
@@ -193,6 +193,10 @@ namespace RM_EM
                             gameInfo.worldDataSaved = false;
                             gameInfo.matchDataSaved = false;
                         }
+
+                        // Since the load was a success, clear out the loaded data.
+                        // This is to stop the data from being reloaded constantly.
+                        lolManager.saveSystem.ClearLoadedData();
                     }
                 }
             }
