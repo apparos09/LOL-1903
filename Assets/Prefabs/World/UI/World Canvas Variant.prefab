@@ -1914,6 +1914,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8161861437018105015}
+        m_TargetAssemblyTypeName: RM_EM.SpeakKeyUI, Assembly-CSharp
+        m_MethodName: SpeakText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kwd_settings
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8216051223924931930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2985,6 +2997,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8601369478531568281}
+  - component: {fileID: 3027623028181578201}
   m_Layer: 5
   m_Name: Save Window
   m_TagString: Untagged
@@ -3017,6 +3030,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3027623028181578201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8428248483204747744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eed30169b3f6764780e67b72e74c6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakKey: wrd_saveMsg
 --- !u!1 &8570514291141615981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3526,6 +3552,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4783790938777063761, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6528875386902229213}
+    - targetCorrespondingSourceObject: {fileID: 4783790938777063761, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8161861437018105015}
   m_SourcePrefab: {fileID: 100100000, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
 --- !u!224 &3945179723763194233 stripped
 RectTransform:
@@ -3565,6 +3594,18 @@ MonoBehaviour:
   prevAreaButton: {fileID: 8505405519638016527}
   nextAreaButton: {fileID: 5355399735398750902}
   saveText: {fileID: 3244993187228704368}
+--- !u!114 &8161861437018105015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6544196024472757478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0b4176333284c4c80a37c432e12c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4265186600155946061
 PrefabInstance:
   m_ObjectHideFlags: 0
