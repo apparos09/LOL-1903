@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   settingsUI: {fileID: 1163781433770973551}
-  tutorialTextBox: {fileID: 3372480172050405750}
+  tutorialTextBox: {fileID: 317865142148827454}
   worldManager: {fileID: 0}
   infoMenu: {fileID: 8453553538067008706}
   powerMenuUI: {fileID: 6939484547028947559}
@@ -3844,15 +3844,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46f0424a03673748a32971fed1973aa, type: 3}
---- !u!114 &3372480172050405750 stripped
+--- !u!114 &317865142148827454 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7655776494531425883, guid: c46f0424a03673748a32971fed1973aa, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4655301825431004691, guid: c46f0424a03673748a32971fed1973aa, type: 3}
   m_PrefabInstance: {fileID: 4968522560670560045}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b6dd306a54b0846bffb62077fbe07b, type: 3}
+  m_Script: {fileID: 11500000, guid: 82bf82af18530a441aef442f2a6bf412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &3435719806705425804 stripped

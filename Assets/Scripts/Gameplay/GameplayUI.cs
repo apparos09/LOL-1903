@@ -15,7 +15,7 @@ namespace RM_EM
         public GameSettingsUI settingsUI;
 
         // The tutorial text box.
-        public TextBox tutorialTextBox;
+        public TutorialTextBox tutorialTextBox;
 
         // Start is called before the first frame update
         protected virtual void Start()
@@ -28,9 +28,9 @@ namespace RM_EM
         public void StartTutorial(List<Page> pages)
         {
             // Sets the pages and opens the text box.
-            tutorialTextBox.pages = pages;
-            tutorialTextBox.CurrentPageIndex = 0;
-            tutorialTextBox.Open();
+            tutorialTextBox.textBox.pages = pages;
+            tutorialTextBox.textBox.CurrentPageIndex = 0;
+            tutorialTextBox.textBox.Open();
         }
 
         // On Tutorial Start
@@ -48,7 +48,7 @@ namespace RM_EM
         // Checks if the tutorial text box is open.
         public bool IsTutorialTextBoxOpen()
         {
-            return tutorialTextBox.IsVisible();
+            return tutorialTextBox.textBox.IsVisible();
         }
 
         // Returns 'true' if the tutorial can be started.
@@ -60,15 +60,15 @@ namespace RM_EM
         // Adds the tutorial text box open/close callbacks.
         public void AddTutorialTextBoxCallbacks(GameplayManager manager)
         {
-            tutorialTextBox.OnTextBoxOpenedAddCallback(manager.OnTutorialStart);
-            tutorialTextBox.OnTextBoxClosedAddCallback(manager.OnTutorialEnd);
+            tutorialTextBox.textBox.OnTextBoxOpenedAddCallback(manager.OnTutorialStart);
+            tutorialTextBox.textBox.OnTextBoxClosedAddCallback(manager.OnTutorialEnd);
         }
 
         // Removes the tutorial text box open/close callbacks.
         public void RemoveTutorialTextBoxCallbacks(GameplayManager manager)
         {
-            tutorialTextBox.OnTextBoxOpenedRemoveCallback(manager.OnTutorialStart);
-            tutorialTextBox.OnTextBoxClosedRemoveCallback(manager.OnTutorialEnd);
+            tutorialTextBox.textBox.OnTextBoxOpenedRemoveCallback(manager.OnTutorialStart);
+            tutorialTextBox.textBox.OnTextBoxClosedRemoveCallback(manager.OnTutorialEnd);
         }
 
         // WINDOWS //
@@ -132,7 +132,7 @@ namespace RM_EM
             if(tutorialTextBox != null)
             {
                 // Unpause the game only if the tutorial textbox is closed.
-                if(!tutorialTextBox.IsVisible())
+                if(!tutorialTextBox.textBox.IsVisible())
                     gameManager.UnpauseGame();
 
             }

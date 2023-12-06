@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   settingsUI: {fileID: 6731217750815704504}
-  tutorialTextBox: {fileID: 4706924084496804978}
+  tutorialTextBox: {fileID: 7779518607548480570}
   matchManager: {fileID: 0}
   timerText: {fileID: 5421663072222106697}
   matchEnd: {fileID: 544776795564043994}
@@ -1701,15 +1701,15 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7736511292214293153, guid: c46f0424a03673748a32971fed1973aa, type: 3}
   m_PrefabInstance: {fileID: 3129037112263645737}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4706924084496804978 stripped
+--- !u!114 &7779518607548480570 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7655776494531425883, guid: c46f0424a03673748a32971fed1973aa, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4655301825431004691, guid: c46f0424a03673748a32971fed1973aa, type: 3}
   m_PrefabInstance: {fileID: 3129037112263645737}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89b6dd306a54b0846bffb62077fbe07b, type: 3}
+  m_Script: {fileID: 11500000, guid: 82bf82af18530a441aef442f2a6bf412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4071785920117236501
