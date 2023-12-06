@@ -339,31 +339,31 @@ namespace RM_EM
                     break;
                 
                 case Power.powerType.pointsPlus:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases the user's points gained for correct answers for a time.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases the user’s points gained for correct answers for a time.";
                     break;
                 
                 case Power.powerType.pointsMinus:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Decreases the opponent's points gained answers for a time.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Decreases the opponent’s points gained for correct answers for a time.";
                     break;
 
                 case Power.powerType.equationShorten:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Shortens the user's questions, and increases the points they get for correct answers.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Shortens the user's questions and increases their number of points gained for correct answers for a time.";
                     break;
 
                 case Power.powerType.equationLengthen:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases the length of the opponent's questions, and decreases the points they get for correct answers";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases the length of the opponent's questions and decreases the points they get for correct answers for a time.";
                     break;
 
                 case Power.powerType.pointsTransfer:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Transfers some points to the user from the opponent for correct answers for a time.";
                     break;
 
                 case Power.powerType.pointsBlock:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Blocks the target from gaining more points until the obstruction is removed.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Removes some of the opponent's points for a time.";
                     break;
 
                 case Power.powerType.twist:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "A power that flips the opponent's view upside down.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "Flips the opponent's view upside down for a time.";
                     break;
             }
 

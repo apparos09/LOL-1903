@@ -269,6 +269,12 @@ namespace RM_EM
                         // Gets the first power tutorial and opens it.
                         StartTutorial(tutorial.GetFirstPowerTutorial());
                     }
+                    // If the player hasn't gotten the final match tutorial.
+                    else if(!tutorial.clearedFinalMatch && GetRemainingChallengersCount() == 1)
+                    {
+                        // Gets the final match tutorial and opens it.
+                        StartTutorial(tutorial.GetFinalMatchTutorial());
+                    }
                 }
             }
 
@@ -476,10 +482,35 @@ namespace RM_EM
             }
         }
 
+        // Is this the first challenger?
+        public bool IsFirstChallenger(ChallengerWorld challenger)
+        {
+            return challenger == firstChallenger;
+        }
+
         // Is this the final challenger?
         public bool IsFinalChallenger(ChallengerWorld challenger)
         {
             return challenger == finalChallenger;
+        }
+
+        // Gets the remaining challenger count.
+        public int GetRemainingChallengersCount()
+        {
+            // The sum.
+            int sum = 0;
+
+            // Goes through all challengers.
+            foreach(ChallengerWorld chal in challengers)
+            {
+                // If not defeated add to the sum.
+                if (!chal.IsChallengerDefeated())
+                    sum++;
+            }
+
+            // Return result.
+            return sum;
+
         }
 
         // Shows the challenger UI.

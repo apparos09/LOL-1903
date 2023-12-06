@@ -48,7 +48,7 @@ MonoBehaviour:
   playerMatch: {fileID: 0}
   power: 7
   powerName: Twist
-  powerDesc: Twists the opponent's view.
+  powerDesc: "Flips the opponent\u2019s view upside down for a time."
   energy: 0
   energyMax: 100
   powerActive: 0

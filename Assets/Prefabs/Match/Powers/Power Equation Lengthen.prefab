@@ -47,8 +47,9 @@ MonoBehaviour:
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
   power: 4
-  powerName: Equation Lengthen
-  powerDesc: Extends the opponent's questions.
+  powerName: Question Long
+  powerDesc: Increases the length of the opponent's questions and decreases the points
+    they get for correct answers for a time.
   energy: 0
   energyMax: 100
   powerActive: 0

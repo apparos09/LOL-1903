@@ -51,8 +51,8 @@ namespace RM_EM
             destPos = newPos;
             inTransition = false;
 
-            // Makes a tutorial check.
-            TryStartTutorial();
+            //// Makes a tutorial check.
+            //TryStartTutorial();
         }
 
         // Sets the position of the world camera (no transition).
@@ -83,23 +83,24 @@ namespace RM_EM
             Move(dest.transform.position, instant);
         }
 
-        // Tries to start the tutorial.
-        public void TryStartTutorial()
-        {
-            // Tutorial inactive, so do nothing.
-            if (!manager.IsUsingTutorial())
-                return;
+        //// Tries to start the tutorial.
+        //public void TryStartTutorial()
+        //{
+        //    // Tutorial inactive, so do nothing.
+        //    if (!manager.IsUsingTutorial())
+        //        return;
 
-            // Gets the instance.
-            Tutorial tutorial = Tutorial.Instance;
+        //    // Gets the instance.
+        //    Tutorial tutorial = Tutorial.Instance;
 
-            // Checks if the final match tutorial has been shown yet.
-            // This only happens once the transition to the final area has finished.
-            if (!tutorial.clearedFinalMatch && manager.IsTutorialAvailable() && manager.InFinalArea())
-            {
-                manager.StartTutorial(tutorial.GetFinalMatchTutorial());
-            }
-        }
+        //    // Moved.
+        //    //// Checks if the final match tutorial has been shown yet.
+        //    //// This only happens once the transition to the final area has finished.
+        //    //if (!tutorial.clearedFinalMatch && manager.IsTutorialAvailable() && manager.InFinalArea())
+        //    //{
+        //    //    manager.StartTutorial(tutorial.GetFinalMatchTutorial());
+        //    //}
+        //}
 
         // Update is called once per frame
         void Update()
@@ -120,8 +121,8 @@ namespace RM_EM
                 {
                     inTransition = false;
 
-                    // Tutorial check.
-                    TryStartTutorial();
+                    //// Tutorial check.
+                    //TryStartTutorial();
                 }
             }
         }

@@ -47,8 +47,9 @@ MonoBehaviour:
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
   power: 3
-  powerName: Equation Shorten
-  powerDesc: Shortens the user's questions without reducing points.
+  powerName: Question Short
+  powerDesc: Shortens the user's questions and increases their number of points gained
+    for correct answers for a time.
   energy: 0
   energyMax: 100
   powerActive: 0

@@ -47,8 +47,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   playerMatch: {fileID: 0}
   power: 1
-  powerName: Points Up
-  powerDesc: Increases the number of points the user gains for correct answers.
+  powerName: Points Plus
+  powerDesc: "Increases the user\u2019s points gained for correct answers for a time."
   energy: 0
   energyMax: 100
   powerActive: 0

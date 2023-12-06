@@ -130,7 +130,7 @@ namespace RM_EM
                     break;
 
                 case exponentRule.negative:
-                    ruleName = (defs != null) ? defs[GetRuleNameSpeakKey(rule)] : "Negative Exponent";
+                    ruleName = (defs != null) ? defs[GetRuleNameSpeakKey(rule)] : "Negative";
                     break;
             }
 
@@ -200,37 +200,37 @@ namespace RM_EM
                 default:
                 case exponentRule.none:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "No exponent rule.";
+                        "No exponent rule set.";
                     break;
 
                 case exponentRule.exponent:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "Multiplies a term (n) number of times.";
+                        "Multiplies a term by itself (n) number of times.";
                     break;
 
                 case exponentRule.product:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "Exponents with the same base are equal to said base to the sum of the exponents.";
+                        "If multiplying the same bases together, add their exponents together and apply the result to the base.";
                     break;
 
                 case exponentRule.powerOfAPower:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "A base and exponent to another exponent is equal to the base to the product of said exponents.";
+                        "If a base has two exponents, multiply the exponents together and apply the result to the base.";
                     break;
 
                 case exponentRule.powerOfAProduct:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.";
+                        "If multiplying different bases with the same exponents together, multiply the bases, then apply the exponent to the result.";
                     break;
 
                 case exponentRule.zero:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "A zero exponent always rules in a 1.";
+                        "Anything to the exponent 0 always equals 1.";
                     break;
 
                 case exponentRule.negative:
                     ruleDesc = (defs != null) ? defs[GetRuleDescriptionSpeakKey(rule)] :
-                        "A negative exponent becomes 1/x.";
+                        "If using a negative exponent, take the reciprocal of the base, and apply the exponent to the denominator.";
                     break;
             }
 

@@ -47,25 +47,25 @@
 
 
       "rle_none_nme": 24,
-      "rle_none_dsc": 105,
+      "rle_none_dsc": 150,
 
       "rle_exponent_nme": 24,
-      "rle_exponent_dsc": 105,
+      "rle_exponent_dsc": 150,
 
       "rle_product_nme": 24,
-      "rle_product_dsc": 105,
+      "rle_product_dsc": 150,
 
       "rle_powerOfAPower_nme": 24,
-      "rle_powerOfAPower_dsc": 105,
+      "rle_powerOfAPower_dsc": 150,
 
       "rle_powerOfAProduct_nme": 24,
-      "rle_powerOfAProduct_dsc": 105,
+      "rle_powerOfAProduct_dsc": 150,
 
       "rle_zero_nme": 24,
-      "rle_zero_dsc": 105,
+      "rle_zero_dsc": 150,
 
       "rle_negative_nme": 24,
-      "rle_negative_dsc": 105,
+      "rle_negative_dsc": 150,
 
 
       "pwr_none_nme": 22,
@@ -213,25 +213,25 @@
     "kwd_rules": "Rules",
 
     "rle_none_nme": "None",
-    "rle_none_dsc": "No exponent rule.",
+    "rle_none_dsc": "No exponent rule set.",
 
     "rle_exponent_nme": "Exponent",
-    "rle_exponent_dsc": "Multiplies a term (n) number of times.",
+    "rle_exponent_dsc": "Multiplies a term by itself (n) number of times.",
 
     "rle_product_nme": "Product",
-    "rle_product_dsc": "Exponents with the same base are equal to said base to the sum of the exponents.",
+    "rle_product_dsc": "If multiplying the same bases together, add their exponents together and apply the result to the base.",
 
     "rle_powerOfAPower_nme": "Power of a Power",
-    "rle_powerOfAPower_dsc": "A base and exponent to another exponent is equal to the base to the product of said exponents.",
+    "rle_powerOfAPower_dsc": "If a base has two exponents, multiply the exponents together and apply the result to the base.",
 
     "rle_powerOfAProduct_nme": "Power of a Product",
-    "rle_powerOfAProduct_dsc": "Two bases multiplied together with the same exponents is equal to the two bases multiplied together to the power of the exponent.",
+    "rle_powerOfAProduct_dsc": "If multiplying different bases with the same exponents together, multiply the bases, then apply the exponent to the result.",
 
     "rle_zero_nme": "Zero",
-    "rle_zero_dsc": "A zero exponent always rules in a 1.",
+    "rle_zero_dsc": "Anything to the exponent 0 always equals 1.",
 
     "rle_negative_nme": "Negative",
-    "rle_negative_dsc": "A negative exponent becomes 1/x.",
+    "rle_negative_dsc": "If using a negative exponent, take the reciprocal of the base, and apply the exponent to the denominator.",
 
 
 
@@ -239,25 +239,25 @@
     "pwr_none_dsc": "A power that does nothing.",
 
     "pwr_pointsPlus_nme": "Points Plus",
-    "pwr_pointsPlus_dsc": "Increases the user's points gained for correct answers for a time.",
+    "pwr_pointsPlus_dsc": "Increases the user’s points gained for correct answers for a time.",
 
     "pwr_pointsMinus_nme": "Points Minus",
-    "pwr_pointsMinus_dsc": "Decreases the opponent's points gained answers for a time.",
+    "pwr_pointsMinus_dsc": "Decreases the opponent’s points gained for correct answers for a time.",
 
     "pwr_equationShorten_nme": "Question Short",
-    "pwr_equationShorten_dsc": "Shortens the user's questions, and increases the points they get for correct answers.",
+    "pwr_equationShorten_dsc": "Shortens the user's questions and increases their number of points gained for correct answers for a time.",
 
     "pwr_eqautionLengthen_nme": "Question Long",
-    "pwr_eqautionLengthen_dsc": "Increases the length of the opponent's questions, and decreases the points they get for correct answers",
+    "pwr_eqautionLengthen_dsc": "Increases the length of the opponent's questions and decreases the points they get for correct answers for a time.",
 
     "pwr_pointsTransfer_nme": "Points Transfer",
-    "pwr_pointsTransfer_dsc": "Increases user's points, and reduces the opponent's points everytime the user gets a correct answer.",
+    "pwr_pointsTransfer_dsc": "Transfers some points to the user from the opponent for correct answers for a time.",
 
-    "pwr_pointsBlock_nme": "Point Block",
-    "pwr_pointsBlock_dsc": "Blocks the target from gaining more points until the obstruction is removed.",
+    "pwr_pointsBlock_nme": "Points Block",
+    "pwr_pointsBlock_dsc": "Removes some of the opponent’s points for a time.",
 
     "pwr_twist_nme": "Twist",
-    "pwr_twist_dsc": "A power that flips the opponent's view upside down.",
+    "pwr_twist_dsc": "Flips the opponent’s view upside down for a time.",
 
     "kwd_equip": "Equip",
     "kwd_unequip": "Unequip",
