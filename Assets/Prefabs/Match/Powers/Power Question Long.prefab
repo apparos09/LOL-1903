@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2852723869189961382}
   - component: {fileID: 8116139796157289246}
   m_Layer: 0
-  m_Name: Power Equation Lengthen
+  m_Name: Power Question Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,8 +59,8 @@ MonoBehaviour:
   depletionRate: 1.5
   target: {fileID: 0}
   autoSetTarget: 1
-  targetIsUser: 1
-  termCountInc: 2
+  targetIsUser: 0
+  termCountChange: 1
   origTermMax: 0
   origTermMin: 0
-  pointsMultiplier: 0.5
+  pointsMultiplier: 0.8

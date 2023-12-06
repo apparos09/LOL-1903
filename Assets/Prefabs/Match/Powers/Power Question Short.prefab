@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3758502496160370764}
   - component: {fileID: 7211099999973385128}
   m_Layer: 0
-  m_Name: Power Equation Shorten
+  m_Name: Power Question Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   target: {fileID: 0}
   autoSetTarget: 1
   targetIsUser: 1
-  termCountInc: -2
+  termCountChange: -2
   origTermMax: 0
   origTermMin: 0
-  pointsMultiplier: 1.5
+  pointsMultiplier: 1.2

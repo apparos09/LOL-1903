@@ -19,9 +19,10 @@ namespace RM_EM
         public bool targetIsUser = true;
 
         [Header("Equation/Terms")]
-        // Modifiers the term count by inc by the following amount.
+        // Modifiers the term count by 'change' by the following amount.
         // Set to negative if you want it to reduce the number of terms.
-        public int termCountInc = 2;
+        [Tooltip("The change to the term count. Positive to go up, negative to go down.")]
+        public int termCountChange = 2;
 
         // The original term counts (min, max) for the target when the power is active.
         public int origTermMax = 0;
@@ -62,8 +63,8 @@ namespace RM_EM
             origTermMin = target.puzzle.equationTermsMin;
 
             // Adjust the terms count max and min.
-            target.puzzle.equationTermsMax += termCountInc;
-            target.puzzle.equationTermsMin += termCountInc;
+            target.puzzle.equationTermsMax += termCountChange;
+            target.puzzle.equationTermsMin += termCountChange;
 
 
             // Bounds checking to make sure these values are above 0.
