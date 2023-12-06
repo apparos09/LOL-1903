@@ -316,10 +316,14 @@ namespace RM_EM
             if (WorldManager.Instantiated)
             {
                 // Gets the instance.
-                WorldManager manager = WorldManager.Instance;
+                WorldManager worldManager = WorldManager.Instance;
 
                 // Makes the info button interactable.
-                pages[0].OnPageClosedAddCallback(manager.worldUI.SetInfoButtonInteractable);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.SetInfoButtonInteractable);
+
+                // Show and Hide Diagram
+                pages[0].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowExponentDiagram);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
             }
 
 
@@ -345,6 +349,19 @@ namespace RM_EM
                 pages.Add(new Page("This match uses the product rule. When the same bases with different exponents are multiplied together, the exponents can be summed together and applied to said base to simplify the operation."));
             }
 
+
+            // If the world manager is instantiated.
+            if (WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager worldManager = WorldManager.Instance;
+
+                // Show and Hide Diagram
+                pages[0].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowProductDiagram);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
+            }
+
+            
             clearedProduct = true;
 
             return pages;
@@ -365,6 +382,19 @@ namespace RM_EM
             {
                 pages.Add(new Page("This match uses the power of a power rule. If a base is having two exponents applied to it, then said exponents can be multiplied together, with the base being raised to the product of that operation."));
             }
+
+
+            // If the world manager is instantiated.
+            if (WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager worldManager = WorldManager.Instance;
+
+                // Show and Hide Diagram
+                pages[0].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowPowerOfAPowerDiagram);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
+            }
+
 
             clearedPowerOfAPower = true;
 
@@ -387,6 +417,19 @@ namespace RM_EM
                 pages.Add(new Page("This match uses the power of a product rule. If two bases with the same exponents are multiplied together, it can be simplified to the multiplication of said bases, with the result being raised to the shared exponent."));
             }
 
+
+            // If the world manager is instantiated.
+            if (WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager worldManager = WorldManager.Instance;
+
+                // Show and Hide Diagram
+                pages[0].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowPowerOfAProductDiagram);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
+            }
+
+
             clearedPowerOfAProduct = true;
 
             return pages;
@@ -408,6 +451,19 @@ namespace RM_EM
                 pages.Add(new Page("This match uses the zero rule. Any number raised to the exponent 0 will return a result of 1."));
             }
 
+
+            // If the world manager is instantiated.
+            if (WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager worldManager = WorldManager.Instance;
+
+                // Show and Hide Diagram
+                pages[0].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowZeroDiagram);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
+            }
+
+
             clearedZero = true;
 
             return pages;
@@ -428,6 +484,19 @@ namespace RM_EM
             {
                 pages.Add(new Page("This match uses the negative rule. A number raised to a negative exponent will become its reciprocal, and have the exponent be applied to the denominator."));
             }
+
+
+            // If the world manager is instantiated.
+            if (WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager worldManager = WorldManager.Instance;
+
+                // Show and Hide Diagram
+                pages[0].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowNegativeDiagram);
+                pages[0].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
+            }
+
 
             clearedNegative = true;
 
