@@ -483,7 +483,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6528875386902229213}
         m_TargetAssemblyTypeName: RM_EM.WorldUI, Assembly-CSharp
-        m_MethodName: OpenInfoMenu
+        m_MethodName: ToggleInfoMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -632,7 +632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6528875386902229213}
         m_TargetAssemblyTypeName: RM_EM.WorldUI, Assembly-CSharp
-        m_MethodName: OpenSaveWindow
+        m_MethodName: ToggleSaveWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1904,7 +1904,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6528875386902229213}
         m_TargetAssemblyTypeName: RM_EM.GameplayUI, Assembly-CSharp
-        m_MethodName: OpenSettings
+        m_MethodName: ToggleSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2963,7 +2963,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6528875386902229213}
         m_TargetAssemblyTypeName: RM_EM.WorldUI, Assembly-CSharp
-        m_MethodName: OpenPowersMenu
+        m_MethodName: TogglePowersMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
