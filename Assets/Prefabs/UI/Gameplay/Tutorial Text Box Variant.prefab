@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5179028290898785361, guid: 667fcd8df2884f04ca5e50fdfc5a8914, type: 3}
+      propertyPath: autoDisablePrevButtonOnFirstPage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8866871738714525020, guid: 667fcd8df2884f04ca5e50fdfc5a8914, type: 3}
       propertyPath: m_Name
       value: Tutorial Text Box Variant
