@@ -258,7 +258,7 @@ namespace RM_EM
                     }
                     // Checks if the first match tutorial has happened yet.
                     // Also checks if the first challenger has been defeated.
-                    else if(!tutorial.clearedFirstMatchWin && firstChallenger.defeated)
+                    else if(!tutorial.clearedFirstMatchWin && firstChallenger.IsChallengerDefeated())
                     {
                         // Gets the first match win tutorial and opens it.
                         StartTutorial(tutorial.GetFirstMatchWinTutorial());
@@ -776,7 +776,7 @@ namespace RM_EM
         // Check if the game is complete.
         public bool IsGameComplete()
         {
-            return finalChallenger.defeated;
+            return finalChallenger.IsChallengerDefeated();
         }
 
         // Gets the game progress.
@@ -788,7 +788,7 @@ namespace RM_EM
             // Increases progress for every defeated challenger.
             for(int i = 0; i < challengers.Count; i++)
             {
-                if (challengers[i].defeated)
+                if (challengers[i].IsChallengerDefeated())
                     progress++;
             }
 

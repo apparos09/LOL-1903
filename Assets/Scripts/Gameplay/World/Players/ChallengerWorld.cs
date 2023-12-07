@@ -50,11 +50,11 @@ namespace RM_EM
 
         // Sets if the challenger is available for a match.
         // Set to public for testing purposes.
-        public bool available = true;
+        private bool available = true;
 
         // Gets set to 'true' when the challenger has been defeated.
         // Set to public for testing purposes.
-        public bool defeated = false;
+        private bool defeated = false;
 
         [Header("Puzzle")]
         // The puzzle type.

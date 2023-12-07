@@ -338,6 +338,19 @@ namespace RM_EM
             UpdateTimerText();
         }
 
+        // Called when a window is closed.
+        public override void OnWindowClosed()
+        {
+            // Base functions.
+            base.OnWindowClosed();
+
+            // If match end is active and enabled, keep the match paused.
+            if(matchEnd.isActiveAndEnabled)
+            {
+                matchManager.PauseMatch();
+            }
+        }
+
 
         // Return to the game world.
         public void ToWorldScene()
