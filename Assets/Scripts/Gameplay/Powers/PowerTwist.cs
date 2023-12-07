@@ -15,6 +15,9 @@ namespace RM_EM
         // The target's render.
         public PuzzleRender targetRender;
 
+        // The target's camera.
+        public Camera targetCamera;
+
         // Start is called before the first frame update
         protected override void Start()
         {
@@ -56,6 +59,11 @@ namespace RM_EM
                 targetRender = target.puzzle.puzzleRender;
             }
             
+            // Gets the render camera.
+            if(targetCamera == null)
+            {
+                targetCamera = targetRender.renderCamera;
+            }
            
         }
 
@@ -66,8 +74,13 @@ namespace RM_EM
         {
             base.OnPowerStarted();
 
-            // Rotates the opponent's render by 180 degrees.
-            targetRender.gameObject.transform.Rotate(Vector3.forward, 180.0F);
+            // Rotates the opponent's camera (formally render) by 180 degrees.
+            
+            // Render
+            // targetRender.gameObject.transform.Rotate(Vector3.forward, 180.0F);
+            
+            // Camera
+            targetCamera.gameObject.transform.Rotate(Vector3.forward, 180.0F);
         }
 
         // Called when the power is over.
@@ -75,8 +88,13 @@ namespace RM_EM
         {
             base.OnPowerFinished();
 
-            // Rotates the opponent's render by 180 degrees again.
-            targetRender.gameObject.transform.Rotate(Vector3.forward, -180.0F);
+            // Rotates the opponent's camera (formally render) by 180 degrees again.
+
+            // Render
+            // targetRender.gameObject.transform.Rotate(Vector3.forward, -180.0F);
+
+            // Camera
+            targetCamera.gameObject.transform.Rotate(Vector3.forward, -180.0F);
         }
 
         // Updates the power.
