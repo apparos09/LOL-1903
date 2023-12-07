@@ -122,7 +122,7 @@ namespace RM_EM
         }
 
 
-        // Tries to get a puzzle element from the provided object.
+        // Tries to get the correct puzzle element from the provided object.
         public bool TryGetPuzzleElement(GameObject hitObject)
         {
             PuzzleValue pv;
@@ -131,6 +131,14 @@ namespace RM_EM
             // Tries to get the component.
             if(hitObject.TryGetComponent<PuzzleValue>(out pv))
             {
+                // If the puzzle hasn no missing values, clear the target and return false.
+                if (puzzle.missingValues.Count == 0)
+                {
+                    targetValue = null;
+                    return false;
+                }
+                    
+                // Puzzle has missing values.
                 // If the element's value is the same as the next missing value.
                 if(pv.value == puzzle.missingValues.Peek().value)
                 {

@@ -229,7 +229,7 @@ namespace RM_EM
             credit.link1 = "https://freepd.com/scoring.php";
             credit.link2 = "";
             credit.copyright =
-                "\"Funky Energy Loop\"" +
+                "\"Funky Energy Loop\"\n" +
                 "Kevin Macleod (incompetech.com)\n" +
                 "Licensed under Creative Commons Zero: 1.0 Universal\n" +
                 "https://creativecommons.org/publicdomain/zero/1.0/deed.en";
@@ -249,7 +249,7 @@ namespace RM_EM
             credit.link1 = "https://soundbible.com/2158-Text-Message-Alert-5.html";
             credit.link2 = "";
             credit.copyright =
-                "\"Text Message Alert 5\"" +
+                "\"Text Message Alert 5\"\n" +
                 "Daniel Simon\n" +
                 "Licensed under Creative Commons: By Attribution 3.0\n" +
                 "https://creativecommons.org/licenses/by/3.0/";
@@ -265,7 +265,7 @@ namespace RM_EM
             credit.link1 = "https://soundbible.com/2067-Blop.html";
             credit.link2 = "";
             credit.copyright =
-                "\"Blop\"" +
+                "\"Blop\"\n" +
                 "Mark DiAngelo\n" +
                 "Licensed under Creative Commons: By Attribution 3.0\n" +
                 "https://creativecommons.org/licenses/by/3.0/";
