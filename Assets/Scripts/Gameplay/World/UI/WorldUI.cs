@@ -19,7 +19,7 @@ namespace RM_EM
         public InfoMenu infoMenu;
 
         // The power menu UI.
-        public PowerMenuUI powerMenuUI;
+        public PowerMenu powerMenu;
 
         // The save window.
         public GameObject saveWindow;
@@ -142,14 +142,14 @@ namespace RM_EM
         public void OpenPowersMenu()
         {
             CloseAllWindows();
-            powerMenuUI.gameObject.SetActive(true);
-            OnWindowOpened(powerMenuUI.gameObject);
+            powerMenu.gameObject.SetActive(true);
+            OnWindowOpened(powerMenu.gameObject);
         }
 
         // Closes the power menu.
         public void ClosePowersMenu()
         {
-            powerMenuUI.gameObject.SetActive(false);
+            powerMenu.gameObject.SetActive(false);
             OnWindowClosed();
         }
 
@@ -157,7 +157,7 @@ namespace RM_EM
         public void TogglePowersMenu()
         {
             // If the powers menu is active, close it.
-            if (powerMenuUI.gameObject.activeSelf)
+            if (powerMenu.gameObject.activeSelf)
             {
                 ClosePowersMenu();
             }
@@ -225,7 +225,7 @@ namespace RM_EM
             base.CloseAllWindows();
 
             infoMenu.gameObject.SetActive(false);
-            powerMenuUI.gameObject.SetActive(false);
+            powerMenu.gameObject.SetActive(false);
             saveWindow.gameObject.SetActive(false);
 
         }
@@ -235,9 +235,13 @@ namespace RM_EM
         {
             base.OnWindowOpened(window);
 
+            // Turn off the info window
+            if (window != infoMenu.gameObject)
+                infoMenu.gameObject.SetActive(false);
+
             // Turn off the powers window.
-            if (window != powerMenuUI.gameObject)
-                powerMenuUI.gameObject.SetActive(false);
+            if (window != powerMenu.gameObject)
+                powerMenu.gameObject.SetActive(false);
 
             // Turns off the save window.
             if (window != saveWindow)
@@ -272,8 +276,8 @@ namespace RM_EM
                 activeStatuses.Add(infoMenu.gameObject.activeSelf);
 
             // Power Menu
-            if (powerMenuUI != null)
-                activeStatuses.Add(powerMenuUI.gameObject.activeSelf);
+            if (powerMenu != null)
+                activeStatuses.Add(powerMenu.gameObject.activeSelf);
 
             // Save Window
             if (saveWindow != null)

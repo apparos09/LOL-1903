@@ -10,7 +10,7 @@ namespace RM_EM
     public class PowerMenuEntryUI : MonoBehaviour
     {
         // The power menu.
-        public PowerMenuUI powerMenu;
+        public PowerMenu powerMenu;
 
         // The power info.
         public PowerInfo powerInfo;
@@ -22,7 +22,7 @@ namespace RM_EM
         public TMP_Text powerNameText;
 
         // The power entry from the UI.
-        public PowerMenuUI.PowerEntry entry;
+        public PowerMenu.PowerEntry entry;
 
 
 
@@ -35,7 +35,7 @@ namespace RM_EM
         }
 
         // Loads the entry.
-        public void SetEntry(PowerMenuUI.PowerEntry newEntry)
+        public void SetEntry(PowerMenu.PowerEntry newEntry)
         {
             entry = newEntry;
 
@@ -48,7 +48,7 @@ namespace RM_EM
         public void ClearEntry()
         {
             // Empty.
-            entry = new PowerMenuUI.PowerEntry();
+            entry = new PowerMenu.PowerEntry();
 
             powerSymbolImage.sprite = powerInfo.defaultSymbol;
             powerNameText.text = "-";

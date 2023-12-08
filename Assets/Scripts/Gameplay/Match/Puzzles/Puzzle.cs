@@ -1070,7 +1070,7 @@ namespace RM_EM
             }
         }
 
-        // TODO: add select value function.
+        // Select the puzzle value for the player.
         public void SelectValue(PlayerMatch player, PuzzleValue value)
         {
             // If the player has been set.

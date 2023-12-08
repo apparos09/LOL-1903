@@ -3583,7 +3583,7 @@ MonoBehaviour:
   tutorialTextBox: {fileID: 317865142148827454}
   worldManager: {fileID: 0}
   infoMenu: {fileID: 8453553538067008706}
-  powerMenuUI: {fileID: 6939484547028947559}
+  powerMenu: {fileID: 6939484547028947559}
   saveWindow: {fileID: 8428248483204747744}
   challengeUI: {fileID: 1148369453905929827}
   playerPowerIcon: {fileID: 662393067891132783}

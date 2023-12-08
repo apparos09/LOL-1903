@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace RM_EM
 {
     // The UI for the power menu.
-    public class PowerMenuUI : MonoBehaviour
+    public class PowerMenu : MonoBehaviour
     {
         // The power entry.
         public struct PowerEntry
