@@ -205,20 +205,24 @@ namespace RM_EM
 
             audioCredits.audioCredits.Add(credit);
 
-            // Match - Boss
-            credit = new AudioCredits.AudioCredit();
-            credit.title = "Ghost Town";
-            credit.artist = "Rafael Krux";
-            credit.collection = "FreePD/Comedy";
-            credit.source = "FreePD";
-            credit.link1 = "https://freepd.com/comedy.php";
-            credit.link2 = "https://music.orchestralis.net/track/28566240";
-            credit.copyright =
-                "'Ghost Town' by Rafael Krux (orchestralis.net)\n" +
-                "Creative Commons 4.0 License.\n" +
-                "https://creativecommons.org/licenses/by/4.0/";
 
-            audioCredits.audioCredits.Add(credit);
+            // For size reasons, the final boss track has been removed.
+            // As such, the credit has also been removed.
+            //// Match - Boss
+            //credit = new AudioCredits.AudioCredit();
+            //credit.title = "Ghost Town";
+            //credit.artist = "Rafael Krux";
+            //credit.collection = "FreePD/Comedy";
+            //credit.source = "FreePD";
+            //credit.link1 = "https://freepd.com/comedy.php";
+            //credit.link2 = "https://music.orchestralis.net/track/28566240";
+            //credit.copyright =
+            //    "'Ghost Town' by Rafael Krux (orchestralis.net)\n" +
+            //    "Creative Commons 4.0 License.\n" +
+            //    "https://creativecommons.org/licenses/by/4.0/";
+
+            //audioCredits.audioCredits.Add(credit);
+
 
             // Match - Results
             credit = new AudioCredits.AudioCredit();

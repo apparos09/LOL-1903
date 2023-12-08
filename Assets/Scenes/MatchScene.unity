@@ -546,8 +546,8 @@ MonoBehaviour:
   sfxSource: {fileID: 703993266}
   normalMatchBgm: {fileID: 8300000, guid: afc69ac307d621c4d87fbf3160d62c1b, type: 3}
   normalMatchLoopPoints: {x: 10.1, y: 86.899}
-  bossMatchBgm: {fileID: 8300000, guid: d1bcad9436b06694cbeb6858fb420fbf, type: 3}
-  bossMatchLoopPoints: {x: 1.851, y: 90.473}
+  bossMatchBgm: {fileID: 8300000, guid: afc69ac307d621c4d87fbf3160d62c1b, type: 3}
+  bossMatchLoopPoints: {x: 10.1, y: 86.899}
   matchBgmNumber: 0
   resultsBgm: {fileID: 8300000, guid: 69bcade05878d4d4e8de465fe71d48fd, type: 3}
   resultsLoopPoints: {x: 2.139, y: 35.484}
