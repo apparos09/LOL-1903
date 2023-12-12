@@ -5990,7 +5990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 37149182645630213, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
       propertyPath: clipEnd
-      value: 41.347
+      value: 13.757
       objectReference: {fileID: 0}
     - target: {fileID: 37149182645630213, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
       propertyPath: m_Enabled

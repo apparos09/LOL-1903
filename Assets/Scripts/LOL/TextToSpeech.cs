@@ -77,6 +77,9 @@ namespace RM_EM
 
                     // Adds the audio source to the new object.
                     ttsAudioSource = newObject.AddComponent<AudioSource>();
+
+                    // Audio settings
+                    ttsAudioSource.playOnAwake = false;
                 }
 
                 // The audio soruce control.

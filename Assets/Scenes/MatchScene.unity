@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 37149182645630213, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
       propertyPath: clipEnd
-      value: 86.899
+      value: 52.95
       objectReference: {fileID: 0}
     - target: {fileID: 37149182645630213, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
       propertyPath: clipStart
-      value: 10.1
+      value: 4.902
       objectReference: {fileID: 0}
     - target: {fileID: 645056177624515696, guid: 77d20c29592071e46864ec27c02bcb95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -545,12 +545,12 @@ MonoBehaviour:
   bgmSourceLooper: {fileID: 38797213}
   sfxSource: {fileID: 703993266}
   normalMatchBgm: {fileID: 8300000, guid: afc69ac307d621c4d87fbf3160d62c1b, type: 3}
-  normalMatchLoopPoints: {x: 10.1, y: 86.899}
-  bossMatchBgm: {fileID: 8300000, guid: afc69ac307d621c4d87fbf3160d62c1b, type: 3}
-  bossMatchLoopPoints: {x: 10.1, y: 86.899}
+  normalMatchLoopPoints: {x: 4.902, y: 52.95}
+  bossMatchBgm: {fileID: 8300000, guid: 23997f0ad4c902048a4e16b450717029, type: 3}
+  bossMatchLoopPoints: {x: 0.501, y: 43.907}
   matchBgmNumber: 0
   resultsBgm: {fileID: 8300000, guid: 69bcade05878d4d4e8de465fe71d48fd, type: 3}
-  resultsLoopPoints: {x: 2.139, y: 35.484}
+  resultsLoopPoints: {x: 0, y: 33.345}
   puzzleValueSelectSfx: {fileID: 8300000, guid: 0e1ded10c922f0e4397fdd320852469d, type: 3}
   keyboardClickSfx: {fileID: 8300000, guid: f5e8c09d8e445824fa209957f6e43737, type: 3}
   ballHitSfx: {fileID: 8300000, guid: 831ecc44a5df4344e845e25c9ee23288, type: 3}
