@@ -17,9 +17,12 @@ namespace RM_EM
         // The button.
         public Button button;
 
-        public int buttonWidth = 1;
+        // The button rect.
+        public RectTransform buttonRect;
 
-        public int buttonHeight = 1;
+        public float buttonWidth = 1;
+
+        public float buttonHeight = 1;
 
         [Header("Text")]
         // The text.
@@ -33,7 +36,15 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
+            // If the button is not set.
+            if(button == null)
+                button = GetComponent<Button>();
 
+            // If the button rect is not set.
+            if(buttonRect == null)
+            {
+                buttonRect = GetComponent<RectTransform>();
+            }
         }
 
         // Scales the text (TODO: implement)
