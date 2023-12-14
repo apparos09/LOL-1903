@@ -47,9 +47,17 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
+            // Manager set.
             if (manager == null)
                 manager = WorldManager.Instance;
         }
+
+        // May not be needed.
+        //// This function is called when the object becomes enabled and active
+        //private void OnEnable()
+        //{
+        //    EnableButtons();
+        //}
 
         // Sets the challenger.
         public void SetChallenger(ChallengerWorld newChallenger, int index)
@@ -209,6 +217,20 @@ namespace RM_EM
         public void DeclineChallenge()
         {
             manager.DeclineChallenge();
+        }
+
+        // Enables the buttons for the challenger UI.
+        public void EnableButtons()
+        {
+            acceptButton.interactable = true;
+            declineButton.interactable = true;
+        }
+
+        // Disables the buttons for the challenger UI.
+        public void DisableButtons()
+        {
+            acceptButton.interactable = false;
+            declineButton.interactable = false;
         }
     }
 }

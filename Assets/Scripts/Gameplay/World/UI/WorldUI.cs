@@ -250,12 +250,27 @@ namespace RM_EM
             // Turn off the settings window.
             if(window != settingsUI.gameObject)
                 settingsUI.gameObject.SetActive(false);
+
+
+            // Checks if the challenge UI is active.
+            if(challengeUI.gameObject.activeSelf && !IsTutorialTextBoxOpen())
+            {
+                // Disables the buttons.
+                challengeUI.DisableButtons();
+            }
         }
 
         // Called when a window is closed.
         public override void OnWindowClosed()
         {
             base.OnWindowClosed();
+
+            // Checks if the challenge UI is active and the tutorial is not running.
+            if (challengeUI.gameObject.activeSelf && !IsTutorialTextBoxOpen())
+            {
+                // Disables the buttons.
+                challengeUI.EnableButtons();
+            }
         }
 
         // Returns 'true' if a window is open.
