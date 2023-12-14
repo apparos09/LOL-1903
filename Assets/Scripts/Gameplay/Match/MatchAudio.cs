@@ -19,7 +19,7 @@ namespace RM_EM
         // The SFX source.
         public AudioSource sfxSource;
 
-        [Header("Audio Clips/BGM")]
+        [Header("Audio Clips/BGMs")]
 
         // The normal BGM
         public AudioClip normalMatchBgm;
@@ -43,7 +43,7 @@ namespace RM_EM
         // Match Results loop
         public Vector2 resultsLoopPoints;
 
-        [Header("Audio Clips/SFX")]
+        [Header("Audio Clips/SFXs")]
 
         // The value select SFX.
         public AudioClip puzzleValueSelectSfx;
@@ -54,7 +54,10 @@ namespace RM_EM
         // The ball hit SFX.
         public AudioClip ballHitSfx;
 
-        // The sound effect for using powers.
+        // Wrong answer sfx.
+        public AudioClip wrongAnswerSfx;
+
+        // Power use SFX.
         public AudioClip powerUseSfx;
 
         // Start is called before the first frame update
@@ -159,6 +162,12 @@ namespace RM_EM
         public void PlayBallHitSfx()
         {
             sfxSource.PlayOneShot(ballHitSfx);
+        }
+
+        // Plays the wrong answer SFX.
+        public void PlayWrongAnswerSfx()
+        {
+            sfxSource.PlayOneShot(wrongAnswerSfx);
         }
 
         // Power Use SFX

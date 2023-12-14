@@ -1395,6 +1395,17 @@ namespace RM_EM
         }
 
 
+
+        // AUDIO //
+        // Plays the wrong answer SFX.
+        public void PlayWrongAnswerSfx()
+        {
+            // Plays the wrong answer SFX.
+            if (manager.matchAudio != null)
+                manager.matchAudio.PlayWrongAnswerSfx();
+        }
+
+
         // ANIMATION //
         // Plays the empty animation.
         public void PlayEmptyAnimation()
