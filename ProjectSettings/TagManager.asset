@@ -67,3 +67,6 @@ TagManager:
   - name: Reticle
     uniqueID: 1690071023
     locked: 0
+  - name: Overlay
+    uniqueID: 2427432375
+    locked: 0

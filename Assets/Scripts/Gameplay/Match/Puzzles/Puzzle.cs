@@ -160,6 +160,11 @@ namespace RM_EM
         // The maximum amount of random values available when asking for a random value.
         private const int RANDOM_VALUE_MAX = 3; // 1/3 Chance
 
+        [Header("Other")]
+
+        // The animator for the puzzle.
+        public Animator animator;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -1388,6 +1393,25 @@ namespace RM_EM
             // Resets the mechanic.
             puzzleMechanic.ResetMechanic();
         }
+
+
+        // ANIMATION //
+        // Plays the empty animation.
+        public void PlayEmptyAnimation()
+        {
+            // Plays the empty animation to reset the animation trigger.
+            if (animator != null)
+                animator.Play("Empty");
+        }
+
+        
+        // Plays the wrong answer animation.
+        public void PlayWrongAnswerAnimation()
+        {
+            if(animator != null)
+                animator.Play("Wrong Answer Animation");
+        }
+
 
         // Update is called once per frame
         void Update()
