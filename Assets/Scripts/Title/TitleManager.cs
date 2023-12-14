@@ -244,7 +244,7 @@ namespace RM_EM
 
             // SOUND EFFECTS
 
-            // POWER EQUIP (SFX)
+            // POWER USE (SFX) [Formally Power Equip]
             credit = new AudioCredits.AudioCredit();
             credit.title = "Text Message Alert 5";
             credit.artist = "Daniel Simon";

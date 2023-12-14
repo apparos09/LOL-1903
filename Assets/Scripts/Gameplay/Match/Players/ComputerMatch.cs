@@ -344,8 +344,14 @@ namespace RM_EM
 
                     // If the percent threshold has been passed, use the power.
                     if (opp.points / manager.pointGoal - points / manager.pointGoal >= percentThreshold)
+                    {
+                        // Use the power.
                         UsePower();
 
+                        // Plays the power use SFX.
+                        if (manager.matchAudio != null)
+                            manager.matchAudio.PlayPowerUseSfx();
+                    }
                 }
                 
             }

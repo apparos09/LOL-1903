@@ -66,13 +66,13 @@ https://creativecommons.org/publicdomain/zero/1.0/deed.en
 == SLIDER/TOGGLE (SFX) ==
 "Button 16" confirmed to be copyright free by GameSounds.xyz.
 
-== WORLD - POWER EQUIP (SFX) ==
+== MATCH - POWER USE (SFX) ==
 "Text Message Alert 5"
 Daniel Simon
 Licensed under Creative Commons: By Attribution 3.0
 https://creativecommons.org/licenses/by/3.0/
 
-== WORLD - PUZZLE VALUE SELECT (SFX) ==
+== MATCH - PUZZLE VALUE SELECT (SFX) ==
 "Blop"
 Mark DiAngelo
 Licensed under Creative Commons: By Attribution 3.0

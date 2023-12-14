@@ -54,6 +54,9 @@ namespace RM_EM
         // The ball hit SFX.
         public AudioClip ballHitSfx;
 
+        // The sound effect for using powers.
+        public AudioClip powerUseSfx;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -156,6 +159,12 @@ namespace RM_EM
         public void PlayBallHitSfx()
         {
             sfxSource.PlayOneShot(ballHitSfx);
+        }
+
+        // Power Use SFX
+        public void PlayPowerUseSfx()
+        {
+            sfxSource.PlayOneShot(powerUseSfx);
         }
 
     }

@@ -554,6 +554,7 @@ MonoBehaviour:
   puzzleValueSelectSfx: {fileID: 8300000, guid: 0e1ded10c922f0e4397fdd320852469d, type: 3}
   keyboardClickSfx: {fileID: 8300000, guid: f5e8c09d8e445824fa209957f6e43737, type: 3}
   ballHitSfx: {fileID: 8300000, guid: 831ecc44a5df4344e845e25c9ee23288, type: 3}
+  powerUseSfx: {fileID: 8300000, guid: c14b3fe87aade764bbfa29e4465b0aa7, type: 3}
 --- !u!1001 &703993264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,6 +670,8 @@ MonoBehaviour:
   useMouseTouch: 1
   reticle: {fileID: 0}
   puzzle: {fileID: 1125935906180993782}
+  useWrongAnswerDelay: 1
+  wrongAnswerDelayTimer: 0
   points: 0
   pointsMultiplier: 1
   power: {fileID: 0}
@@ -902,6 +905,8 @@ MonoBehaviour:
   useMouseTouch: 1
   reticle: {fileID: 2103324802}
   puzzle: {fileID: 963533803}
+  useWrongAnswerDelay: 1
+  wrongAnswerDelayTimer: 0
   points: 0
   pointsMultiplier: 1
   power: {fileID: 0}
