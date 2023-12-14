@@ -379,8 +379,14 @@ namespace RM_EM
         {
             base.Update();
 
-            // Run the computer's AI.
-            UpdateAI();
+            // Only run this update if the wrong answer delay isn't active.
+            // Note that the computer should never pick wrong answers anyway.
+            if(!IsWrongAnswerDelayActive())
+            {
+                // Run the computer's AI.
+                UpdateAI();
+            }
+            
         }
     }
 }

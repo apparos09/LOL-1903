@@ -96,12 +96,41 @@ namespace RM_EM
         // EQUATION //
 
         // WRONG ANSWER
+        // Checks if the delay is acive.
+        public bool IsWrongAnswerDelayActive()
+        {
+            // Checks if the delay should be used.
+            if(useWrongAnswerDelay)
+            {
+                // Returns 'true' if the delay timer is above 0, false if it's 0 or below.
+                return wrongAnswerDelayTimer > 0;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // Sets the wrong answer delay timer.
+        public void SetWrongAnswerDelayTimer(float maxTime)
+        {
+            // If the wrong answer delay should be used.
+            if (useWrongAnswerDelay)
+            {
+                wrongAnswerDelayTimer = maxTime;
+
+                // TODO: play animation.
+            }
+            else
+            {
+                wrongAnswerDelayTimer = 0;
+            }
+        }
+
         // Sets the wrong answer delay timer.
         public void SetWrongAnswerDelayTimer()
         {
-            // If the wrong answer delay should be used.
-            if(useWrongAnswerDelay)
-                wrongAnswerDelayTimer = WRONG_ANSWER_DELAY_MAX;
+            SetWrongAnswerDelayTimer(WRONG_ANSWER_DELAY_MAX);
         }
 
         // Updates the wrong answer delay timer.
@@ -424,52 +453,59 @@ namespace RM_EM
         // Update is called once per frame
         protected virtual void Update()
         {
-            // TODO: implement wrong answer delay.
+            // Updates the wrong answer delay timer.
+            UpdateWrongAnswerDelayTimer();
 
             // If the mouse touch should be used, and the mouse has been clicked.
             // Maybe split this conditional into 2? 
             if(useMouseTouch)
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+                // This checks if the wrong answer delay is being used, and if the timer is active.
+                if(!IsWrongAnswerDelayActive())
                 {
-                    // TODO: maybe use the callbacks?
-
-                    // OLD
-                    // This gives a delayed click.
-                    // // Grabs the mouse button.
-                    // util.MouseButton mb = manager.mouseTouch.MouseButton0;
-
-                    // NEW
-                    // Generates a mouse button, and sets both held and last clicked as the hovered object.
-                    // This is to make sure the hit is as updated (there was a delay using last clickedb efore).
-
-                    // The hit info for the mouse button isn't referenced.
-                    util.MouseButton mb = new util.MouseButton();
-
-                    // Held
-                    mb.held = manager.mouseTouch.mouseHoveredObject;
-                    mb.heldHit = manager.mouseTouch.mouseHoveredHit;
-                    mb.heldHit2D = manager.mouseTouch.mouseHoveredHit2D;
-
-                    // Last Clicked
-                    mb.lastClicked = manager.mouseTouch.mouseHoveredObject;
-                    mb.lastClickedHit = manager.mouseTouch.mouseHoveredHit;
-                    mb.lastClickedHit2D = manager.mouseTouch.mouseHoveredHit2D;
-
-
-                    // Checks last clicked object if it's from the user's puzzle render.
-                    if (mb.held != null && mb.held == puzzle.puzzleRender.gameObject)
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
-                        // Grabs the object.
-                        GameObject hit = puzzle.puzzleRender.TryHit(mb);
+                        // TODO: maybe use the callbacks?
 
-                        // Something was hit.
-                        if (hit != null)
+                        // OLD
+                        // This gives a delayed click.
+                        // // Grabs the mouse button.
+                        // util.MouseButton mb = manager.mouseTouch.MouseButton0;
+
+                        // NEW
+                        // Generates a mouse button, and sets both held and last clicked as the hovered object.
+                        // This is to make sure the hit is as updated (there was a delay using last clickedb efore).
+
+                        // The hit info for the mouse button isn't referenced.
+                        util.MouseButton mb = new util.MouseButton();
+
+                        // Held
+                        mb.held = manager.mouseTouch.mouseHoveredObject;
+                        mb.heldHit = manager.mouseTouch.mouseHoveredHit;
+                        mb.heldHit2D = manager.mouseTouch.mouseHoveredHit2D;
+
+                        // Last Clicked
+                        mb.lastClicked = manager.mouseTouch.mouseHoveredObject;
+                        mb.lastClickedHit = manager.mouseTouch.mouseHoveredHit;
+                        mb.lastClickedHit2D = manager.mouseTouch.mouseHoveredHit2D;
+
+
+                        // Checks last clicked object if it's from the user's puzzle render.
+                        if (mb.held != null && mb.held == puzzle.puzzleRender.gameObject)
                         {
-                            // Select the element.
-                            puzzle.SelectElement(this, hit);
+                            // Grabs the object.
+                            GameObject hit = puzzle.puzzleRender.TryHit(mb);
+
+                            // Something was hit.
+                            if (hit != null)
+                            {
+                                // Select the element.
+                                puzzle.SelectElement(this, hit);
+                            }
                         }
                     }
+
+                
                 }
             }
 
