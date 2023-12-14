@@ -1071,20 +1071,20 @@ namespace RM_EM
         }
 
         // Select the puzzle value for the player.
-        public void SelectValue(PlayerMatch player, PuzzleValue value)
+        public bool SelectValue(PlayerMatch player, PuzzleValue value)
         {
             // If the player has been set.
             if (playerMatch != null)
             {
                 // If the player that selected the element isn't the right player, do nothing.
                 if (playerMatch != player)
-                    return;
+                    return false;
             }
 
 
             // No mising values.
             if (missingValues.Count == 0)
-                return;
+                return false;
 
 
             // Checks if it was the correct value.
@@ -1142,6 +1142,19 @@ namespace RM_EM
             // Call the OnHit function for the value.
             value.OnHit(rightValue);
 
+            // If the answer was wrong, set the answer delay timer.
+            if (!rightValue)
+                SetWrongAnswerDelayTimer();
+
+            // Returns check to see if it's the right value.
+            return rightValue;
+
+        }
+
+        // Sets the wrong answer delay timer.
+        public void SetWrongAnswerDelayTimer()
+        {
+            playerMatch.SetWrongAnswerDelayTimer();
         }
 
         // TODO: not needed?

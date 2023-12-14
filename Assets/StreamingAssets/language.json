@@ -134,6 +134,10 @@
 
 
       "kwd_match": 15,
+      "kwd_player": 15,
+      "kwd_plyr": 15,
+      "kwd_computer": 15,
+      "kwd_com": 15,
       "kwd_usePower": 15,
       "kwd_skip": 15,
 
@@ -310,6 +314,10 @@
 
 
     "kwd_match": "Match",
+    "kwd_player": "Player",
+    "kwd_plyr": "PLYR",
+    "kwd_computer": "Computer",
+    "kwd_com": "COM",
     "kwd_usePower": "Use Power",
     "kwd_skip": "Skip",
 

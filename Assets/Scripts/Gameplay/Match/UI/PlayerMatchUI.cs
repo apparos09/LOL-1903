@@ -22,6 +22,9 @@ namespace RM_EM
 
         [Header("UI")]
 
+        // The header text for the view.
+        public TMP_Text headerText;
+
         // The player equation.
         public TMP_Text equationText;
 
@@ -58,9 +61,24 @@ namespace RM_EM
             if (matchUI == null)
                 matchUI = manager.matchUI;
 
-            // If player 2 is set.
-            if (manager.p2 == this)
+            // Checks what the player is.
+            if (manager.p1 == this)
             {
+                // Translates the text to show the player header.
+                if (LOLManager.IsLOLSDKInitialized())
+                {
+                    headerText.text = "-" + LOLManager.Instance.GetLanguageText("kwd_player") + "-";
+                }
+            }    
+            // If player 2 is set.
+            else if (manager.p2 == this)
+            {
+                // Translates the text to show the player header.
+                if (LOLManager.IsLOLSDKInitialized())
+                {
+                    headerText.text = "-" + LOLManager.Instance.GetLanguageText("kwd_com") + "-";
+                }
+
                 // If player 2 is a computer player.
                 if (manager.p2 is ComputerMatch)
                 {
@@ -71,6 +89,8 @@ namespace RM_EM
                     skipButton.gameObject.SetActive(false);
                 }
             }
+
+            
         }
 
         // Equation Display

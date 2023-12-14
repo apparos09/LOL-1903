@@ -1740,6 +1740,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5076928867434241514, guid: 1af32e264e0d0d94daa637d5b9af6cc9, type: 3}
+      propertyPath: m_text
+      value: -COM-
+      objectReference: {fileID: 0}
     - target: {fileID: 5861629947843818368, guid: 1af32e264e0d0d94daa637d5b9af6cc9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1830,7 +1834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7106057141725202708, guid: 1af32e264e0d0d94daa637d5b9af6cc9, type: 3}
       propertyPath: m_Name
-      value: P2 UI
+      value: P2/COM UI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

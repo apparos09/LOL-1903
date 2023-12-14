@@ -21,6 +21,15 @@ namespace RM_EM
         // The puzzle the player is answering.
         public Puzzle puzzle;
 
+        // Uses the wrong answer delay.
+        public bool useWrongAnswerDelay = true;
+
+        // The delay timer for the user making a wrong answer (delays the ability to select a new value).
+        public float wrongAnswerDelayTimer = 0.0F;
+
+        // The max for the wrong answer delay timer.
+        public const float WRONG_ANSWER_DELAY_MAX = 2.0F;
+
 
         [Header("Match/Points")]
         // The amount of match points the player has.
@@ -85,6 +94,29 @@ namespace RM_EM
         }
 
         // EQUATION //
+
+        // WRONG ANSWER
+        // Sets the wrong answer delay timer.
+        public void SetWrongAnswerDelayTimer()
+        {
+            // If the wrong answer delay should be used.
+            if(useWrongAnswerDelay)
+                wrongAnswerDelayTimer = WRONG_ANSWER_DELAY_MAX;
+        }
+
+        // Updates the wrong answer delay timer.
+        public void UpdateWrongAnswerDelayTimer()
+        {
+            // Timer is above 0.
+            if(wrongAnswerDelayTimer > 0)
+            {
+                wrongAnswerDelayTimer -= Time.deltaTime;
+
+                // Set to 0.
+                if (wrongAnswerDelayTimer <= 0)
+                    wrongAnswerDelayTimer = 0.0F;
+            }
+        }
 
         // POWER //
         // If the player has a power, return true.
@@ -392,6 +424,8 @@ namespace RM_EM
         // Update is called once per frame
         protected virtual void Update()
         {
+            // TODO: implement wrong answer delay.
+
             // If the mouse touch should be used, and the mouse has been clicked.
             // Maybe split this conditional into 2? 
             if(useMouseTouch)
