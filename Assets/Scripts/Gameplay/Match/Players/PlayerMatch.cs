@@ -28,7 +28,7 @@ namespace RM_EM
         public float wrongAnswerDelayTimer = 0.0F;
 
         // The max for the wrong answer delay timer.
-        public const float WRONG_ANSWER_DELAY_MAX = 1.0F;
+        public const float WRONG_ANSWER_DELAY_MAX = 0.90F;
 
 
         [Header("Match/Points")]
