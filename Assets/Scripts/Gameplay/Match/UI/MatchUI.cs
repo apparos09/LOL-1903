@@ -20,6 +20,12 @@ namespace RM_EM
         // The time for the match UI.
         public TMP_Text timerText;
 
+        /*
+         * Order (stack):
+         * 1. Menu Panel
+         * 2. Tutorial Panel
+         * 3. Match End Panel
+         */
         // The match end panel.
         public Image matchEndPanel;
 
@@ -62,18 +68,28 @@ namespace RM_EM
         {
             base.OnTutorialStart();
 
-            // P1
-            p1UI.powerButton.interactable = false;
-            p1UI.skipButton.interactable = false;
+            // No longer needed because of panel overlay.
+            //// P1
+            //p1UI.powerButton.interactable = false;
+            //p1UI.skipButton.interactable = false;
 
-            // P2
-            p2UI.powerButton.interactable = false;
-            p2UI.skipButton.interactable = false;
+            //// P2
+            //p2UI.powerButton.interactable = false;
+            //p2UI.skipButton.interactable = false;
 
-            // Match End
-            matchEnd.worldButton.interactable = false;
-            matchEnd.rematchButton.interactable = false;
-            matchEnd.quitButton.interactable = false;
+            //// Match End
+            //matchEnd.worldButton.interactable = false;
+            //matchEnd.rematchButton.interactable = false;
+            //matchEnd.quitButton.interactable = false;
+
+            // Turn off match end panel.
+            // This doesn't get triggered because the tutorial is started before the menu panel is activated.
+            // As such, this needs to be triggered elsewhere.
+            if(matchEnd.gameObject.activeSelf)
+            {
+                matchEndPanel.gameObject.SetActive(false);
+            }
+
         }
 
         // On Tutorial End
@@ -81,18 +97,25 @@ namespace RM_EM
         {
             base.OnTutorialEnd();
 
-            // P1
-            p1UI.powerButton.interactable = p1UI.playerMatch.IsPowerAvailable();
-            p1UI.skipButton.interactable = p1UI.playerMatch.CanSkipEquation();
+            // No lonegr needed thanks to menu panel overlay.
+            //// P1
+            //p1UI.powerButton.interactable = p1UI.playerMatch.IsPowerAvailable();
+            //p1UI.skipButton.interactable = p1UI.playerMatch.CanSkipEquation();
 
-            // P2
-            p2UI.powerButton.interactable = p2UI.playerMatch.IsPowerAvailable();
-            p2UI.skipButton.interactable = p2UI.playerMatch.CanSkipEquation();
+            //// P2
+            //p2UI.powerButton.interactable = p2UI.playerMatch.IsPowerAvailable();
+            //p2UI.skipButton.interactable = p2UI.playerMatch.CanSkipEquation();
 
-            // Match End
-            matchEnd.worldButton.interactable = true;
-            matchEnd.rematchButton.interactable = matchManager.HasPlayer2Won();
-            matchEnd.quitButton.interactable = true;
+            //// Match End
+            //matchEnd.worldButton.interactable = true;
+            //matchEnd.rematchButton.interactable = matchManager.HasPlayer2Won();
+            //matchEnd.quitButton.interactable = true;
+
+            // Turn on match end panel.
+            if (matchEnd.gameObject.activeSelf)
+            {
+                matchEndPanel.gameObject.SetActive(true);
+            }
         }
 
         // INTERFACE UPDATES //
@@ -312,6 +335,13 @@ namespace RM_EM
             // Turn on the match end panel.
             if (matchEndPanel != null)
                 matchEndPanel.gameObject.SetActive(true);
+
+            // If the tutorial text box is open, turn off the end panel.
+            // This is done here because the tutorial is started before the match end is activated.
+            if(IsTutorialTextBoxOpen())
+            {
+                matchEndPanel.gameObject.SetActive(false);
+            }
         }
 
         // Hides the match end.
@@ -349,6 +379,16 @@ namespace RM_EM
             UpdateTimerText();
         }
 
+        // Overrides the on window opened function.
+        public override void OnWindowOpened(GameObject window)
+        {
+            base.OnWindowOpened(window);
+
+            // Turns off the match end panel.
+            if (matchEndPanel != null && matchEnd.gameObject.activeSelf)
+                matchEndPanel.gameObject.SetActive(false);
+        }
+
         // Called when a window is closed.
         public override void OnWindowClosed()
         {
@@ -360,6 +400,14 @@ namespace RM_EM
             {
                 matchManager.PauseMatch();
             }
+
+            // Turns on the match panel if the tutorial isn't active.
+            // If the tutorial is active, then the tutorial will have turned it off already.
+            if (matchEndPanel != null && matchEnd.gameObject.activeSelf && !IsTutorialTextBoxOpen())
+            {
+                matchEndPanel.gameObject.SetActive(true);
+            }
+                
         }
 
 

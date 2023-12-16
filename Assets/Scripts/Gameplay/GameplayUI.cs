@@ -140,6 +140,14 @@ namespace RM_EM
             // Enables the menu panel to block the UI under it.
             if (menuPanel != null)
                 menuPanel.gameObject.SetActive(true);
+
+
+            // If the tutorial text box is open.
+            if(IsTutorialTextBoxOpen() && tutorialPanel.gameObject.activeSelf)
+            {
+                // Turns off the tutorial panel so that they aren't overlayed.
+                tutorialPanel.gameObject.SetActive(false);
+            }
         }
 
         // Called when a window is closed.
@@ -161,6 +169,13 @@ namespace RM_EM
             // Disables the tutorial panel.
             if(menuPanel != null)
                 menuPanel.gameObject.SetActive(false);
+
+            // If the tutorial text box is open.
+            if (IsTutorialTextBoxOpen())
+            {
+                // Turns on the tutorial panel since the menu panel isn't showing now.
+                tutorialPanel.gameObject.SetActive(true);
+            }
         }
 
         // Checks if a window is open.
