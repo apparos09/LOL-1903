@@ -20,6 +20,9 @@ namespace RM_EM
         // The time for the match UI.
         public TMP_Text timerText;
 
+        // The match end panel.
+        public Image matchEndPanel;
+
         // The UI content shown when the match ends.
         public MatchEnd matchEnd;
 
@@ -305,12 +308,20 @@ namespace RM_EM
 
             // If player 2 won, then a rematch is available. If playe 1 won, there is no rematch.
             matchEnd.rematchButton.interactable = matchManager.HasPlayer2Won();
+
+            // Turn on the match end panel.
+            if (matchEndPanel != null)
+                matchEndPanel.gameObject.SetActive(true);
         }
 
         // Hides the match end.
         public void HideMatchEnd()
         {
             matchEnd.gameObject.SetActive(false);
+
+            // Turn off the match end panel.
+            if (matchEndPanel != null)
+                matchEndPanel.gameObject.SetActive(false);
         }
 
         // Reset Match UI - only call this after related values have been reset.
