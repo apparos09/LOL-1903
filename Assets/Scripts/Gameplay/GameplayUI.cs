@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RM_EM
 {
@@ -10,9 +11,17 @@ namespace RM_EM
         // The gameplay manager.
         public GameplayManager gameManager;
 
+        [Header("Menu")]
+        // The text box panel.
+        public Image menuPanel;
+
         // The settings UI.
         // TODO: add quit button.
         public GameSettingsUI settingsUI;
+
+        [Header("Tutorial")]
+        // The text box panel.
+        public Image tutorialPanel;
 
         // The tutorial text box.
         public TutorialTextBox tutorialTextBox;
@@ -36,13 +45,17 @@ namespace RM_EM
         // On Tutorial Start
         public virtual void OnTutorialStart()
         {
-            // ...
+            // Turn on the tutorial panel.
+            if(tutorialPanel != null)
+                tutorialPanel.gameObject.SetActive(true);
         }
 
         // On Tutorial End
         public virtual void OnTutorialEnd()
         {
-            // ...
+            // Turns off the tutorial panel.
+            if(tutorialPanel != null)
+                tutorialPanel.gameObject.SetActive(false);
         }
 
         // Checks if the tutorial text box is open.
@@ -123,6 +136,10 @@ namespace RM_EM
             // Turns off the settings window if it wasn't the one that got turned on.
             if (window != settingsUI.gameObject)
                 settingsUI.gameObject.SetActive(false);
+
+            // Enables the menu panel to block the UI under it.
+            if (menuPanel != null)
+                menuPanel.gameObject.SetActive(true);
         }
 
         // Called when a window is closed.
@@ -140,7 +157,10 @@ namespace RM_EM
             {
                 gameManager.UnpauseGame();
             }
-            
+
+            // Disables the tutorial panel.
+            if(menuPanel != null)
+                menuPanel.gameObject.SetActive(false);
         }
 
         // Checks if a window is open.

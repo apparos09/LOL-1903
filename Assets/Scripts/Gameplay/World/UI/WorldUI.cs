@@ -52,6 +52,7 @@ namespace RM_EM
         public Button nextAreaButton;
 
         [Header("Other")]
+
         // The save text for the world.
         public TMP_Text saveText;
 
@@ -77,20 +78,12 @@ namespace RM_EM
         public override void OnTutorialStart()
         {
             base.OnTutorialStart();
-
-            // Disable the controls for the challenger UI.
-            challengeUI.acceptButton.interactable = false;
-            challengeUI.declineButton.interactable = false;
         }
 
         // On Tutorial End
         public override void OnTutorialEnd()
         {
             base.OnTutorialEnd();
-
-            // Enable the controls for the challenger UI.
-            challengeUI.acceptButton.interactable = true;
-            challengeUI.declineButton.interactable = true;
         }
 
         // SETTINGS (EXPANDED) //
@@ -249,28 +242,13 @@ namespace RM_EM
 
             // Turn off the settings window.
             if(window != settingsUI.gameObject)
-                settingsUI.gameObject.SetActive(false);
-
-
-            // Checks if the challenge UI is active.
-            if(challengeUI.gameObject.activeSelf && !IsTutorialTextBoxOpen())
-            {
-                // Disables the buttons.
-                challengeUI.DisableButtons();
-            }
+                settingsUI.gameObject.SetActive(false);      
         }
 
         // Called when a window is closed.
         public override void OnWindowClosed()
         {
             base.OnWindowClosed();
-
-            // Checks if the challenge UI is active and the tutorial is not running.
-            if (challengeUI.gameObject.activeSelf && !IsTutorialTextBoxOpen())
-            {
-                // Disables the buttons.
-                challengeUI.EnableButtons();
-            }
         }
 
         // Returns 'true' if a window is open.
