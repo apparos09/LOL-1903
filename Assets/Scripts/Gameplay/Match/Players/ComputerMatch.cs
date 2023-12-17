@@ -59,48 +59,48 @@ namespace RM_EM
                     break;
 
                 case 1: // Level 1
-                    waitTimeMax = 4.0F;
-                    moveSpeed = 3.0F;
+                    waitTimeMax = 4.25F;
+                    moveSpeed = 2.25F;
                     break;
 
                 case 2: // Level 2
-                    waitTimeMax = 3.9F;
-                    moveSpeed = 3.5F;
+                    waitTimeMax = 4.15F;
+                    moveSpeed = 2.50F;
                     break;
 
                 case 3: // Level 3 (Normal)
-                    waitTimeMax = 3.8F;
-                    moveSpeed = 3.0F;
+                    waitTimeMax = 4.05F;
+                    moveSpeed = 2.75F;
                     break;
 
                 case 4: // Level 4
-                    waitTimeMax = 3.5F;
-                    moveSpeed = 3.5F;
+                    waitTimeMax = 3.90F;
+                    moveSpeed = 3.00F;
                     break;
 
                 case 5: // Level 5
-                    waitTimeMax = 3.5F;
-                    moveSpeed = 5.0F;
+                    waitTimeMax = 3.75F;
+                    moveSpeed = 3.25F;
                     break;
 
                 case 6: // Level 6
-                    waitTimeMax = 3.5F;
-                    moveSpeed = 5.5F;
+                    waitTimeMax = 3.50F;
+                    moveSpeed = 3.50F;
                     break;
 
                 case 7: // Level 7
                     waitTimeMax = 3.25F;
-                    moveSpeed = 6.0F;
+                    moveSpeed = 3.75F;
                     break;
 
                 case 8: // Level 8
-                    waitTimeMax = 3.25F;
-                    moveSpeed = 6.5F;
+                    waitTimeMax = 3.20F;
+                    moveSpeed = 4.00F;
                     break;
 
                 case 9: // Level 9
-                    waitTimeMax = 3.25F;
-                    moveSpeed = 7.0F;
+                    waitTimeMax = 3.15F;
+                    moveSpeed = 4.10F;
                     break;
 
             }
@@ -326,7 +326,7 @@ namespace RM_EM
                         case 1: // L01
                         case 2: // L02
                         case 3: // L03
-                            percentThreshold = 0.25F;
+                            percentThreshold = 0.20F; // 0.25F
                             break;
 
                         case 4: // L04
@@ -338,7 +338,7 @@ namespace RM_EM
                         case 7: // L07
                         case 8: // L08
                         case 9: // L09
-                            percentThreshold = 0.05F;
+                            percentThreshold = 0.10F; // 0.05F
                             break;
                     }
 

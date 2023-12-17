@@ -73,8 +73,9 @@ namespace RM_EM
         // Called when the event is complete.
         public override void OnEventComplete()
         {
-            // Checks if the manager contains the area.
-            if(manager.areas.Contains(area))
+            // Checks if this is the current area.
+            // if(manager.areas.Contains(area))
+            if (manager.areas[manager.currAreaIndex] == area)
             {
                 // Turn on the next button if this isn't the last area.
                 if(manager.areas.IndexOf(area) != manager.areas.Count - 1)
