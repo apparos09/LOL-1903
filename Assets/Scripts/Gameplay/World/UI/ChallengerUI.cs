@@ -33,6 +33,9 @@ namespace RM_EM
         // The quote text.
         public TMP_Text quoteText;
 
+        // The versus challenger text.
+        public TMP_Text vsChallengerText;
+
         // The rules text for the UI.
         public TMP_Text rulesText;
 
@@ -65,11 +68,26 @@ namespace RM_EM
             challenger = newChallenger;
             challengerIndex = index;
 
+            // Original
             UpdateChallengerSprite();
             UpdateNameText();
             UpdateSpeciesText();
             UpdateQuoteText();
             UpdateRulesText();
+
+            // New
+            // Gets the versus text.
+            string versus = LOLManager.IsLOLSDKInitialized() ?
+                LOLManager.Instance.GetLanguageText("kwd_versus") :
+                "Vs.";
+
+            // Gets the challenger name.
+            string chalName = nameText.text;
+
+            // Sets the versus challenger text.
+            // This isn't efficient, but I'm not sure if I want to delete everything. I probably should.
+            // TODO: remove the old system to optimize how this is set.
+            vsChallengerText.text = versus + " " + chalName;
         }
 
         // Updates the Challenger Sprite
