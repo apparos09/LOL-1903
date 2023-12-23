@@ -19,8 +19,22 @@ namespace RM_EM
         // The index of the challenger.
         public int challengerIndex = -1;
 
+        [Header("Images")]
+
         // The renderer of the challenger art.
         public Image challengerRenderer;
+
+        // The background of the UI.
+        public Image background;
+
+        // The default colour.
+        public Color defaultBgClr = new Color(0.7009641F, 0.08330365F, 0.8490566F);
+
+        // If set to 'true', the default colour is autoset.
+        public bool autoSetDefaultBgClr = true;
+
+        // If set to 'true', the background's colour changes based on the challenger.
+        public bool useCustomBgClr = true;
 
         [Header("Text")]
 
@@ -47,6 +61,18 @@ namespace RM_EM
         // Decline Button
         public Button declineButton;
 
+
+        // Awake is called when the script instance is being loaded
+        private void Awake()
+        {
+            // If the default BG colour should be autoset...
+            if(autoSetDefaultBgClr && background != null)
+            {
+                // Sets the BG color.
+                defaultBgClr = background.color;
+            }
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -62,6 +88,7 @@ namespace RM_EM
         //    EnableButtons();
         //}
 
+        // TODO: add clear challenger option?
         // Sets the challenger.
         public void SetChallenger(ChallengerWorld newChallenger, int index)
         {
@@ -88,6 +115,17 @@ namespace RM_EM
             // This isn't efficient, but I'm not sure if I want to delete everything. I probably should.
             // TODO: remove the old system to optimize how this is set.
             vsChallengerText.text = versus + " " + chalName;
+
+            
+            // Should a custom colour be used, and are the assets set?
+            if(useCustomBgClr && background != null && challenger != null)
+            {
+                background.color = challenger.challengerColour;
+            }
+            else
+            {
+                background.color = defaultBgClr;
+            }
         }
 
         // Updates the Challenger Sprite

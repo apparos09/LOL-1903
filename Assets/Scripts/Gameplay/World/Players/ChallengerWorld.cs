@@ -22,6 +22,9 @@ namespace RM_EM
         [Tooltip("The sprite for the challenge prompt.")]
         public Sprite challengeSprite;
 
+        // The challenger's colour (defaults to challenger UI BG colour)
+        public Color challengerColour = new Color(0.7009641F, 0.08330365F, 0.8490566F);
+
         [Header("Info")]
 
         // The challenger's name.

@@ -1665,6 +1665,10 @@ MonoBehaviour:
   challenger: {fileID: 0}
   challengerIndex: -1
   challengerRenderer: {fileID: 7338803280665698879}
+  background: {fileID: 36570925947729024}
+  defaultBgClr: {r: 0.7019608, g: 0.08235294, b: 0.8509804, a: 1}
+  autoSetDefaultBgClr: 0
+  useCustomBgClr: 1
   nameText: {fileID: 5898694682062260535}
   speciesText: {fileID: 7055247515675826356}
   quoteText: {fileID: 1468446530111598850}
