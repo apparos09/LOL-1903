@@ -43,7 +43,11 @@ namespace RM_EM
             }
 
             // Plays the ball hit SFX.
-            PlayBallHitSfx();
+            if(mechanic.hitSoundsEnabled)
+            {
+                PlayBallHitSfx();
+            }
+                
         }
 
         // Collision Exit 2D

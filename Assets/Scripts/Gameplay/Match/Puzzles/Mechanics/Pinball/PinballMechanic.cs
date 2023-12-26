@@ -20,6 +20,9 @@ namespace RM_EM
         // The pinball gate.
         public PinballGate gate;
 
+        // Enables the hit sound for the pinball balls. Disabled because they're annoying.
+        public bool hitSoundsEnabled = true;
+
         [Header("Pinball/Balls")]
 
         // The ball pool.

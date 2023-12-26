@@ -19,11 +19,21 @@ namespace RM_EM
         // The sprite renderer.
         public SpriteRenderer spriteRenderer;
 
+        [Header("Gate")]
+
         // Gets set to 'true' if the gate is open.
         public bool openedGate = false;
 
         // The max weight that can be handled before the gate opens.
         public float maxWeight = 5.0F;
+
+        // The colour for the gate when the weight is at its minimum (0).
+        [Tooltip("The gate colour when the gate is at its minimum weight.")]
+        public Color weightMinClr = Color.green;
+
+        // The colour for the gate when the weight is at its maximum.
+        [Tooltip("The gate colour when the gate is at its maximum weight.")]
+        public Color weightMaxClr = Color.red;
 
         // The timer for how long the gate stays open for.
         public float openTimer = 0.0F;
@@ -105,6 +115,9 @@ namespace RM_EM
 
             // Set the timer to max.
             ResetOpenTimerToMax();
+
+            // Resets the colour.
+            spriteRenderer.color = weightMinClr;
         }
 
         // Closes the gate.
@@ -119,6 +132,9 @@ namespace RM_EM
 
             // Set timer to 0.
             openTimer = 0.0F;
+
+            // Resets the colour.
+            spriteRenderer.color = weightMinClr;
         }
 
         // Set the timer to max.
@@ -143,6 +159,7 @@ namespace RM_EM
                 ball.AddTouchingBalls(ref contactBalls);
             }
 
+            // OLD
             // // Goes through all touching balls.
             // for (int i = 0; i < touchingBalls.Count; i++)
             // {
@@ -166,6 +183,24 @@ namespace RM_EM
                 weightSum += ball.GetWeight();
             }
 
+
+            // GATE COLOUR
+            // Sets the gate colour
+            // The colour's T value.
+            float colorT = Mathf.Clamp01(weightSum / maxWeight);
+
+            // Gets the new color.
+            Color newColor = new Color(
+                Mathf.Lerp(weightMinClr.r, weightMaxClr.r, colorT),
+                Mathf.Lerp(weightMinClr.g, weightMaxClr.g, colorT),
+                Mathf.Lerp(weightMinClr.b, weightMaxClr.b, colorT)
+                );
+
+            // Set the new color.
+            spriteRenderer.color = newColor;
+
+
+            // Return the weight sum.
             return weightSum;
         }
 
