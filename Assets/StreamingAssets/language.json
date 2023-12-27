@@ -164,23 +164,24 @@
       "trl_firstPower_02": 240,
 
       "trl_finalMatch_00": 240,
-      
+
       "trl_gameOver_00": 240,
 
 
       "trl_exponent_00": 240,
-      
+
       "trl_product_00": 240,
-      
+
       "trl_powerOfAPower_00": 240,
-      
+
       "trl_powerOfAProduct_00": 240,
-      
+
       "trl_zero_00": 240,
-      
+
       "trl_negative_00": 240,
 
 
+      "rsl_winMsg": 80,
       "kwd_results": 15,
       "kwd_time": 25,
       "kwd_score": 25,
@@ -370,6 +371,7 @@
     "trl_negative_00": "This match uses the negative rule. A number raised to a negative exponent will become its reciprocal, and have the exponent be applied to the denominator.",
 
 
+    "rsl_winMsg": "You've cleared all the challenges! You are an Exponent Master!",
     "kwd_results": "Results",
     "kwd_time": "Time",
     "kwd_score": "Score",
