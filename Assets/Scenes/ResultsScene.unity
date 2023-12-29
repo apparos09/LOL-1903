@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 325403907}
   - component: {fileID: 325403906}
   - component: {fileID: 325403905}
+  - component: {fileID: 325403908}
   m_Layer: 5
   m_Name: Game Win Text (TMP)
   m_TagString: Untagged
@@ -631,6 +632,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325403903}
   m_CullTransparentMesh: 1
+--- !u!114 &325403908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325403903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eed30169b3f6764780e67b72e74c6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakKey: rsl_winMsg
 --- !u!1 &395291172
 GameObject:
   m_ObjectHideFlags: 0
