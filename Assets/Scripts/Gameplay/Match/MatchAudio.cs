@@ -45,6 +45,9 @@ namespace RM_EM
 
         [Header("Audio Clips/SFXs")]
 
+        // The match start sound effect.
+        public AudioClip matchStartSfx;
+
         // The value select SFX.
         public AudioClip puzzleValueSelectSfx;
 
@@ -146,6 +149,12 @@ namespace RM_EM
 
 
         // SOUND EFFECTS //
+        // Match Start SFX
+        public void PlayMatchStartSfx()
+        {
+            sfxSource.PlayOneShot(matchStartSfx);
+        }
+
         // Puzzle Value Select SFX
         public void PlayPuzzleValueSelectSfx()
         {

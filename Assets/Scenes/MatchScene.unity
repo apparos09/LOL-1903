@@ -511,6 +511,7 @@ MonoBehaviour:
   p1WrongAnswers: 0
   p2: {fileID: 1084210061}
   p2Puzzle: {fileID: 963533803}
+  useMatchStartAnim: 1
 --- !u!4 &335020969
 Transform:
   m_ObjectHideFlags: 0
@@ -551,6 +552,7 @@ MonoBehaviour:
   matchBgmNumber: 0
   resultsBgm: {fileID: 8300000, guid: 69bcade05878d4d4e8de465fe71d48fd, type: 3}
   resultsLoopPoints: {x: 0, y: 33.345}
+  matchStartSfx: {fileID: 8300000, guid: 4fa086293cd9a1742bebf4e341dfe683, type: 3}
   puzzleValueSelectSfx: {fileID: 8300000, guid: 0e1ded10c922f0e4397fdd320852469d, type: 3}
   keyboardClickSfx: {fileID: 8300000, guid: f5e8c09d8e445824fa209957f6e43737, type: 3}
   ballHitSfx: {fileID: 8300000, guid: 831ecc44a5df4344e845e25c9ee23288, type: 3}

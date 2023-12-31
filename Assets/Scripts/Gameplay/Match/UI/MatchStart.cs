@@ -50,6 +50,7 @@ namespace RM_EM
                 manager.matchAudio.bgmSource.Pause();
         }
 
+        // TEXT //
         // It should be noted that text takes a while to update.
 
         // Resets the text.
@@ -120,6 +121,17 @@ namespace RM_EM
             displayText.text = text;
         }
 
+        // AUDIO //
+        // Plays the match start sound effect.
+        public void PlayMatchStartSfx()
+        {
+            // Plays the sound effect.
+            if (manager.matchAudio != null)
+                manager.matchAudio.PlayMatchStartSfx();
+        }
+
+
+        // END //
         // Called when the start animation is ended.
         public void OnStartAnimationEnd()
         {
