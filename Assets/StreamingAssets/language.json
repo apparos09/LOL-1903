@@ -142,6 +142,10 @@
       "kwd_usePower": 15,
       "kwd_skip": 15,
 
+      "kwd_ready": 15,
+      "mth_ready": 15,
+      "mth_start": 15,
+
       "mth_matchOver": 22,
       "mth_userWins": 22,
       "mth_oppWins": 22,
@@ -331,6 +335,10 @@
     "kwd_com": "COM",
     "kwd_usePower": "Use Power",
     "kwd_skip": "Skip",
+
+    "kwd_ready": "Ready",
+    "mth_ready": "Ready...",
+    "mth_start": "Start!",
 
     "mth_matchOver": "The Match is Over!",
     "mth_userWins": "You Won!",

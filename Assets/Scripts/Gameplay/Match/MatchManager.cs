@@ -180,12 +180,12 @@ namespace RM_EM
             p2.OnEquationGenerated();
 
 
-            //// If the start animation should be played.
-            //if (useMatchStartAnim && matchUI.matchStart != null)
-            //{
-            //    // Plays the start animation.
-            //    matchUI.matchStart.PlayStartAnimation();
-            //}
+            // If the start animation should be played.
+            if (useMatchStartAnim && matchUI.matchStart != null)
+            {
+                // Plays the start animation.
+                matchUI.matchStart.PlayStartAnimation();
+            }
 
 
             //// TUTORIAL
@@ -607,6 +607,15 @@ namespace RM_EM
 
             // Unpause the match.
             UnpauseMatch();
+
+
+            // TODO: should the animation be played when you hit rematch?
+            // If the match start animation should be used.
+            if(useMatchStartAnim && matchUI.matchStart != null)
+            {
+                // Plays the start animation.
+                matchUI.matchStart.PlayStartAnimation();
+            }
         }
 
 
