@@ -299,6 +299,22 @@ namespace RM_EM
             SetPower(newPower, setPlayerAsParent);
         }
 
+        // Returns the power type of the player's power.
+        public Power.powerType GetPowerType()
+        {
+            // Checks if the player has a power.
+            if(HasPower()) // Has power.
+            {
+                // Returns the type.
+                return power.power;
+            }
+            else // Has no power.
+            {                
+                // Returns none type.
+                return Power.powerType.none;
+            }
+        }
+
         // Removes the power. If 'destroyPower' is true, the power component is destroyed.
         public void RemovePower(bool destroyPower = true)
         {

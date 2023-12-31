@@ -66,8 +66,14 @@ namespace RM_EM
             if (matchUI == null)
                 matchUI = manager.matchUI;
 
+
+            // Setting the power button icon.
+            // NOTE: this doesn't work because the player's power hasn't been saved yet.
+            UpdatePlayerPowerButton();
+
+
             // Checks what the player is.
-            if (manager.p1 == this)
+            if (manager.p1 == playerMatch)
             {
                 // Translates the text to show the player header.
                 if (LOLManager.IsLOLSDKInitialized())
@@ -76,7 +82,7 @@ namespace RM_EM
                 }
             }    
             // If player 2 is set.
-            else if (manager.p2 == this)
+            else if (manager.p2 == playerMatch)
             {
                 // Translates the text to show the player header.
                 if (LOLManager.IsLOLSDKInitialized())
@@ -238,6 +244,19 @@ namespace RM_EM
                 UpdatePlayerPowerBarColor(manager.p2, powerBar, powerBarFill);
             }
         }
+
+
+        // Updates the player power symbol.
+        public void UpdatePlayerPowerButton()
+        {
+            // If the image is set, update the image.
+            if (powerButtonImage != null)
+                powerButtonImage.sprite = PowerInfo.Instance.GetPowerSymbol(playerMatch.GetPowerType());
+
+            // Not needed. 
+            powerButton.interactable = playerMatch.IsPowerAvailable();
+        }
+
 
         // OPERATIONS //
         // Use Player's Power

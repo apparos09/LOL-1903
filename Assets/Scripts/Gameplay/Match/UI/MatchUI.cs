@@ -140,12 +140,14 @@ namespace RM_EM
             UpdatePlayer1PointsBar();
             UpdatePlayer1PowerBarFill();
             UpdatePlayer1PowerBarColor();
+            UpdatePlayer1PowerButton();
 
             // Player 2
             UpdatePlayer2EquationDisplay();
             UpdatePlayer2PointsBar();
             UpdatePlayer2PowerBarFill();
             UpdatePlayer2PowerBarColor();
+            UpdatePlayer2PowerButton();
         }
 
         // Updates UI that changes when an equation is compelted.
@@ -226,6 +228,20 @@ namespace RM_EM
         {
             p2UI.UpdatePlayerPowerBarColor();
         }
+
+        // Updates player 1's power button.
+        public void UpdatePlayer1PowerButton()
+        {
+            p1UI.UpdatePlayerPowerButton();
+        }
+
+        // Updates player 2's power button.
+        public void UpdatePlayer2PowerButton()
+        {
+            p2UI.UpdatePlayerPowerButton();
+        }
+
+
 
         // OPERATIONS
         // Use player 1's power.
