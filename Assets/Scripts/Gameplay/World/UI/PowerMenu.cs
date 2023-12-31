@@ -432,6 +432,7 @@ namespace RM_EM
         // Unequips the current power.
         public void UnequipPower()
         {
+            // Remove the power.
             playerWorld.RemovePower();
 
             // Sets to the 'none' power.
@@ -439,6 +440,10 @@ namespace RM_EM
             selectedPowerSymbol.sprite = powerEntryList[0].symbol;
             selectedPowerName.text = powerEntryList[0].name;
             selectedPowerDesc.text = powerEntryList[0].description;
+
+            // Set the power icon.
+            if (playerPowerIcon != null)
+                playerPowerIcon.SetPower(powerEntryList[0].power);
         }
 
         //// Update is called once per frame

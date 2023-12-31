@@ -11,7 +11,7 @@ namespace RM_EM
         public enum powerType { none, pointsPlus, pointsMinus, equationShorten, equationLengthen, pointsTransfer, pointsBlock, twist }
 
         // The total number of powers (including the 'none' type).
-        public const int POWER_TYPE_COUNT = 4;
+        public const int POWER_TYPE_COUNT = 8;
 
         // The match manager.
         public MatchManager manager;
@@ -42,7 +42,7 @@ namespace RM_EM
         [Header("Power/Speed")]
         // The increment for power filling.
         [Tooltip("The increment for power filling.")]
-        public float powerFillInc = 12.0F;
+        public float powerFillInc = 12.5F;
 
         // The rate that the power fills that.
         [Tooltip("The rate for power filling.")]

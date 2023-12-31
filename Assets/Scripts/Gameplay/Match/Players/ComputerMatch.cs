@@ -312,6 +312,8 @@ namespace RM_EM
                     PlayerMatch opp = (this == manager.p2) ? manager.p1 : manager.p2;
 
                     // The percent gap between the computer and the opponent (player).
+                    // Calculates how far the computer is to the goal compared to the opponent (percentage-wise)
+                    // If the percentage gap is above a certain amount, the opponent uses their power.
                     float percentThreshold = 0.0F;
 
                     // Uses a power based on how far ahead the opponent is compared to the computer.
@@ -326,19 +328,19 @@ namespace RM_EM
                         case 1: // L01
                         case 2: // L02
                         case 3: // L03
-                            percentThreshold = 0.20F; // 0.25F
+                            percentThreshold = 0.25F; // 0.25F
                             break;
 
                         case 4: // L04
                         case 5: // L05
                         case 6: // L06
-                            percentThreshold = 0.15F;
+                            percentThreshold = 0.20F;
                             break;
 
                         case 7: // L07
                         case 8: // L08
                         case 9: // L09
-                            percentThreshold = 0.10F; // 0.05F
+                            percentThreshold = 0.15F; // 0.05F
                             break;
                     }
 
