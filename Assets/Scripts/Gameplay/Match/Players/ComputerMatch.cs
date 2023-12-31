@@ -54,53 +54,53 @@ namespace RM_EM
             switch(difficulty)
             {
                 default: // 0
-                    waitTimeMax = 3.5F;
+                    waitTimeMax = 4.00F;
                     moveSpeed = 4.0F;
                     break;
 
                 case 1: // Level 1
-                    waitTimeMax = 4.25F;
-                    moveSpeed = 2.25F;
+                    waitTimeMax = 4.50F;
+                    moveSpeed = 2.00F;
                     break;
 
                 case 2: // Level 2
-                    waitTimeMax = 4.15F;
-                    moveSpeed = 2.50F;
+                    waitTimeMax = 4.40F;
+                    moveSpeed = 2.20F;
                     break;
 
                 case 3: // Level 3 (Normal)
-                    waitTimeMax = 4.05F;
-                    moveSpeed = 2.75F;
+                    waitTimeMax = 4.30F;
+                    moveSpeed = 2.40F;
                     break;
 
                 case 4: // Level 4
-                    waitTimeMax = 3.90F;
-                    moveSpeed = 3.00F;
+                    waitTimeMax = 4.20F;
+                    moveSpeed = 2.60F;
                     break;
 
                 case 5: // Level 5
-                    waitTimeMax = 3.75F;
-                    moveSpeed = 3.25F;
+                    waitTimeMax = 4.10F;
+                    moveSpeed = 2.80F;
                     break;
 
                 case 6: // Level 6
-                    waitTimeMax = 3.50F;
-                    moveSpeed = 3.50F;
+                    waitTimeMax = 4.00F;
+                    moveSpeed = 3.00F;
                     break;
 
                 case 7: // Level 7
-                    waitTimeMax = 3.25F;
-                    moveSpeed = 3.75F;
+                    waitTimeMax = 3.90F;
+                    moveSpeed = 3.20F;
                     break;
 
                 case 8: // Level 8
-                    waitTimeMax = 3.20F;
-                    moveSpeed = 4.00F;
+                    waitTimeMax = 3.80F;
+                    moveSpeed = 3.40F;
                     break;
 
                 case 9: // Level 9
-                    waitTimeMax = 3.15F;
-                    moveSpeed = 4.10F;
+                    waitTimeMax = 3.70F;
+                    moveSpeed = 3.60F;
                     break;
 
             }
