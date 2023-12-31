@@ -134,6 +134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7573426821344945344}
+        m_TargetAssemblyTypeName: RM_EM.SpeakKeyUI, Assembly-CSharp
+        m_MethodName: SpeakText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kwd_usedPower
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5113189977252072915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +293,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7573426821344945344}
+        m_TargetAssemblyTypeName: RM_EM.SpeakKeyUI, Assembly-CSharp
+        m_MethodName: SpeakText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: kwd_skip
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7721696615272933399
@@ -876,6 +900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5861629947843818368}
   - component: {fileID: 881018695688339594}
+  - component: {fileID: 7573426821344945344}
   m_Layer: 5
   m_Name: Player Match UI
   m_TagString: Untagged
@@ -933,6 +958,18 @@ MonoBehaviour:
   skipButton: {fileID: 6797911762149012895}
   hasPowerColor: {r: 1, g: 0, b: 0, a: 1}
   noPowerBarColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!114 &7573426821344945344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106057141725202708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0b4176333284c4c80a37c432e12c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &559843373026982240
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -310,6 +310,8 @@ MonoBehaviour:
   powerOfAProductDiagram: {fileID: 21300000, guid: 6ff1801fc782b99419d644c159f66a7b, type: 3}
   zeroDiagram: {fileID: 21300000, guid: bc9d49441d70cd348a07cdaca30a7980, type: 3}
   negativeDiagram: {fileID: 21300000, guid: a24c7c44f8be2b14ea03d27386f65227, type: 3}
+  powerDiagram: {fileID: 21300000, guid: cd130bf29d283b1448d1be2446dd7b16, type: 3}
+  skipDiagram: {fileID: 21300000, guid: dc12386b4752f96459565004e6bc9481, type: 3}
 --- !u!114 &7655776494531425883 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5179028290898785361, guid: 667fcd8df2884f04ca5e50fdfc5a8914, type: 3}

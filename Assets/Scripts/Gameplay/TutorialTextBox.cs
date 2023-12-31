@@ -14,10 +14,12 @@ namespace RM_EM
         // The speaker image.
         public Image speakerImage;
 
+        [Header("Diagrams")]
+
         // The diagram image.
         public Image diagramImage;
 
-        [Header("Diagram Sprites")]
+        [Header("Diagrams/Exponent Rules")]
         // The exponent diagram.
         public Sprite exponentDiagram;
 
@@ -36,6 +38,15 @@ namespace RM_EM
         // The negative diagram.
         public Sprite negativeDiagram;
 
+        [Header("Diagrams/Other")]
+
+        // The power diagram.
+        public Sprite powerDiagram;
+
+        // The skip diagram.
+        public Sprite skipDiagram;
+
+
 
         // SPEAKER //
         // Shows the speaker image.
@@ -52,7 +63,7 @@ namespace RM_EM
 
         // DIAGRAM //
         // Shows the diagram image.
-        public void ShowDiagram(exponentRule rule)
+        public void ShowExponentRuleDiagram(exponentRule rule)
         {
             // Shows the diagram.
             diagramImage.gameObject.SetActive(true);
@@ -91,37 +102,65 @@ namespace RM_EM
         // Shows the exponent diagram.
         public void ShowExponentDiagram()
         {
-            ShowDiagram(exponentRule.exponent);
+            ShowExponentRuleDiagram(exponentRule.exponent);
         }
         
         // Shows the product diagram.
         public void ShowProductDiagram()
         {
-            ShowDiagram(exponentRule.product);
+            ShowExponentRuleDiagram(exponentRule.product);
         }
 
         // Shows the power of a power diagram.
         public void ShowPowerOfAPowerDiagram()
         {
-            ShowDiagram(exponentRule.powerOfAPower);
+            ShowExponentRuleDiagram(exponentRule.powerOfAPower);
         }
 
         // Shows the power of a product diagram.
         public void ShowPowerOfAProductDiagram()
         {
-            ShowDiagram(exponentRule.powerOfAProduct);
+            ShowExponentRuleDiagram(exponentRule.powerOfAProduct);
         }
 
         // Shows the zero diagram.
         public void ShowZeroDiagram()
         {
-            ShowDiagram(exponentRule.zero);
+            ShowExponentRuleDiagram(exponentRule.zero);
         }
 
         // Shows the negative diagam.
         public void ShowNegativeDiagram()
         {
-            ShowDiagram(exponentRule.negative);
+            ShowExponentRuleDiagram(exponentRule.negative);
+        }
+
+
+        // OTHER DIAGRAMS
+        // Power Diagram
+        public void ShowPowerDiagram()
+        {
+            // Shows the diagram.
+            diagramImage.gameObject.SetActive(true);
+
+            // Sets the power diagram.
+            diagramImage.sprite = powerDiagram;
+
+            // Hides the speaker image.
+            HideSpeakerImage();
+        }
+
+        // Skip Diagram
+        public void ShowSkipDiagram()
+        {
+            // Shows the diagram.
+            diagramImage.gameObject.SetActive(true);
+
+            // Sets the power diagram.
+            diagramImage.sprite = skipDiagram;
+
+            // Hides the speaker image.
+            HideSpeakerImage();
         }
 
 

@@ -140,6 +140,7 @@
       "kwd_computer": 15,
       "kwd_com": 15,
       "kwd_usePower": 15,
+      "kwd_usedPower": 15,
       "kwd_skip": 15,
 
       "kwd_ready": 15,
@@ -334,6 +335,7 @@
     "kwd_computer": "Computer",
     "kwd_com": "COM",
     "kwd_usePower": "Use Power",
+    "kwd_usedPower": "Used Power",
     "kwd_skip": "Skip",
 
     "kwd_ready": "Ready",
@@ -362,20 +364,20 @@
     "trl_firstPower_02": "Unlocked powers can be viewed and equipped in the ‘powers menu’. Your opponents can use powers too, so keep that in mind. Good luck!",
 
     "trl_finalMatch_00": "You’ve learned all the exponent rules and defeated all the other club members, so now it’s time for your final match! A rematch against me! Select my icon in the next area to challenge me like before.",
-    
+
     "trl_gameOver_00": "You lost the match. You can rematch the opponent now or return to the world area. Every club member must be defeated for you to complete the challenge, but you can take as many tries as you like.",
 
 
     "trl_exponent_00": "This match only uses exponent basics. Exponents are math operations that multiply a base by itself a certain number of times. Check the info window if you ever want a refresh on the exponent rules.",
-    
+
     "trl_product_00": "This match uses the product rule. When the same bases with different exponents are multiplied together, the exponents can be summed together and applied to said base to simplify the operation.",
-    
+
     "trl_powerOfAPower_00": "This match uses the power of a power rule. If a base is having two exponents applied to it, then said exponents can be multiplied together, with the base being raised to the product of that operation.",
-    
+
     "trl_powerOfAProduct_00": "This match uses the power of a product rule. If two bases with the same exponents are multiplied together, it can be simplified to the multiplication of said bases, with the result being raised to the shared exponent.",
-    
+
     "trl_zero_00": "This match uses the zero rule. Any number raised to the exponent 0 will return a result of 1.",
-    
+
     "trl_negative_00": "This match uses the negative rule. A number raised to a negative exponent will become its reciprocal, and have the exponent be applied to the denominator.",
 
 

@@ -175,6 +175,19 @@ namespace RM_EM
             }
 
 
+            // If the world manager is instantiated.
+            if (WorldManager.Instantiated)
+            {
+                // Gets the instance.
+                WorldManager worldManager = WorldManager.Instance;
+
+                // Show and Hide Diagram
+                pages[3].OnPageOpenedAddCallback(worldManager.worldUI.tutorialTextBox.ShowSkipDiagram);
+                pages[3].OnPageClosedAddCallback(worldManager.worldUI.tutorialTextBox.HideDiagram);
+            }
+
+
+            // Cleared the opening.
             clearedOpening = true;
 
             return pages;
