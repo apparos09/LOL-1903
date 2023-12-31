@@ -929,6 +929,7 @@ MonoBehaviour:
   powerBar: {fileID: 4922010476229424569}
   powerBarFill: {fileID: 4922010477096192464}
   powerButton: {fileID: 3911833299618231827}
+  powerButtonImage: {fileID: 1101905905852667788}
   skipButton: {fileID: 6797911762149012895}
   hasPowerColor: {r: 1, g: 0, b: 0, a: 1}
   noPowerBarColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

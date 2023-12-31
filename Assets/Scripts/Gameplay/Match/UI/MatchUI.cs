@@ -20,6 +20,10 @@ namespace RM_EM
         // The time for the match UI.
         public TMP_Text timerText;
 
+
+        // The match start object.
+        public MatchStart matchStart;
+
         /*
          * Order (stack):
          * 1. Menu Panel

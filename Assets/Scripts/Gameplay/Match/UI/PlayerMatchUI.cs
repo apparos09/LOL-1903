@@ -37,8 +37,13 @@ namespace RM_EM
         // The fill image for the player power bar.
         public Image powerBarFill;
 
+        [Header("UI/Buttons")]
+
         // The power button for the player.
         public Button powerButton;
+
+        // The power button image.
+        public Image powerButtonImage;
 
         // The skip button for the player.
         public Button skipButton;

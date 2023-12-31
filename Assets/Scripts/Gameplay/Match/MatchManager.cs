@@ -75,6 +75,10 @@ namespace RM_EM
         // P2 Puzzle
         public Puzzle p2Puzzle;
 
+        [Header("Match/Other")]
+
+        // Uses the match start animation if set to true.
+        public bool useMatchStartAnim = true;
 
         // Constructor
         private MatchManager()
@@ -175,6 +179,15 @@ namespace RM_EM
             p1.OnEquationGenerated();
             p2.OnEquationGenerated();
 
+
+            //// If the start animation should be played.
+            //if (useMatchStartAnim && matchUI.matchStart != null)
+            //{
+            //    // Plays the start animation.
+            //    matchUI.matchStart.PlayStartAnimation();
+            //}
+
+
             //// TUTORIAL
             //bool useTutorial = true;
             //// if(GameSettings.Instance.UseTutorial)
@@ -191,6 +204,7 @@ namespace RM_EM
             //    }
             //}
 
+            // Post start has been called.
             calledPostStart = true;
         }
 
