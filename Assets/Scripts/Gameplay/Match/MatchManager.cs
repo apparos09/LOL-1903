@@ -420,7 +420,6 @@ namespace RM_EM
 
 
             // CALCULATING POWER ENERGY INCREASE //
-            // TODO: check if the player has a power.
             if(player.HasPower() && !player.IsPowerActive())
             {
                 // Increases the power energy by a set amount.
@@ -575,7 +574,7 @@ namespace RM_EM
                 matchAudio.PlayResultsBgm();
         }
 
-        // Resets the match. TODO: implement resets for puzzle mechanics, and test it.
+        // Resets the match.
         public void ResetMatch()
         {
             // Resets Player

@@ -88,7 +88,6 @@ namespace RM_EM
         // Opens the settings.
         public void OpenSettings()
         {
-            // TODO: pause game.
             settingsUI.gameObject.SetActive(true);
             OnWindowOpened(settingsUI.gameObject);
         }

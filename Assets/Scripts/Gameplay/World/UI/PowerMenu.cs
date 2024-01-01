@@ -247,8 +247,6 @@ namespace RM_EM
                 nextEntryButton.interactable = false;
             }
 
-            // TODO: disable the equip button if the player has no power equipped.
-            // It doesn't work when the player first opens the menu, so I need to fix that.
         }
 
         // Loads the entries into the UI.

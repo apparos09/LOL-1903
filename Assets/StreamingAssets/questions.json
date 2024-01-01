@@ -2,99 +2,141 @@
   "questions": [
     {
       "questionId": "q1",
-      "stem": "What is the meaning of life?",
-      "imageURL": "http://conversationagent.typepad.com/.a/6a00d8341c03bb53ef01bb0855b040970d-pi",
+      "stem": "What is true about the zero exponent rule?",
       "alternatives": [
         {
           "alternativeId": "a1",
-          "text": "Dunno"
+          "text": "The result is always 1."
         },
         {
           "alternativeId": "a2",
-          "text": "42"
+          "text": "The result is always 0."
         },
         {
           "alternativeId": "a3",
-          "text": "Life?"
+          "text": "Raising to the exponent 0 does not change the value."
         },
         {
           "alternativeId": "a4",
-          "text": "Sprinkles"
+          "text": "Raising to the exponent 0 is an invalid operation."
         }
       ],
-      "correctAlternativeId": "a2"
+      "correctAlternativeId": "a1"
     },
     {
       "questionId": "q2",
-      "stem": "A stitch in time saves nine what?",
-      "imageURL": "http://3.bp.blogspot.com/-QM6KFrHYfMQ/U4X92xgQ5WI/AAAAAAAACo0/KLVH0MJbSrc/s1600/Stitch+in+time+saves+nine+(1).gif",
+      "stem": "What is true about raising to the exponent 1?",
       "alternatives": [
         {
           "alternativeId": "a5",
-          "text": "Cats"
+          "text": "The value is multiplied by itself one time."
         },
         {
           "alternativeId": "a6",
-          "text": "Pineapples"
+          "text": "The value does not change."
         },
         {
           "alternativeId": "a7",
-          "text": "Clouds"
+          "text": "The result is always 1."
         },
         {
           "alternativeId": "a8",
-          "text": "Sprinkles"
+          "text": "The result is always 0."
         }
       ],
-      "correctAlternativeId": "a8"
+      "correctAlternativeId": "a6"
     },
     {
       "questionId": "q3",
-      "stem": "After eating, do amphibians have to wait one hour before getting out of the water?",
-      "imageURL": "https://cdn.meme.am/instances/250x250/23625193.jpg",
+      "stem": "What does raising to an exponent mean?",
       "alternatives": [
         {
           "alternativeId": "a9",
-          "text": "Yes"
+          "text": "A value is multiplied by itself (n) number of times."
         },
         {
           "alternativeId": "a10",
-          "text": "NO"
+          "text": "A value is multiplied by the exponent (x)."
         },
         {
           "alternativeId": "a11",
-          "text": "Sprinkles"
+          "text": "A value is added to by itself (n) number of times."
         },
         {
           "alternativeId": "a12",
-          "text": "Maybe?"
+          "text": "A value is added to by the exponent."
         }
       ],
       "correctAlternativeId": "a9"
     },
     {
       "questionId": "q4",
-      "stem": "After they make Styrofoam, what do they ship it in?",
-      "imageURL": "https://cdn.meme.am/instances/65111038.jpg",
+      "stem": "What is the difference between the product rule and the power of a product rule?",
       "alternatives": [
         {
           "alternativeId": "a13",
-          "text": "Styrofoam"
+          "text": "The product rule is another name for the power of a product rule."
         },
         {
           "alternativeId": "a14",
-          "text": "Sprinkles"
+          "text": "The product rule has different exponents and different bases, while the power of a product rule has different exponents with the same bases."
         },
         {
           "alternativeId": "a15",
-          "text": "Bubble Wrap"
+          "text": "The product rule multiplies two values with the same base (but different exponents), while the power of a product rule multiplies two values with different bases (but the same exponents)."
         },
         {
           "alternativeId": "a16",
-          "text": "Space Ships"
+          "text": "The product rule has the same exponents and the same bases, while the power of a product rule has the same bases with different exponents."
         }
       ],
       "correctAlternativeId": "a15"
+    },
+    {
+      "questionId": "q5",
+      "stem": "What does the negative exponent rule mean?",
+      "alternatives": [
+        {
+          "alternativeId": "a16",
+          "text": "Change the value into the fraction 1/x, with (x) being the original value."
+        },
+        {
+          "alternativeId": "a17",
+          "text": "Apply the exponent to the value, but always make the result negative."
+        },
+        {
+          "alternativeId": "a18",
+          "text": "Apply the exponent. The result will be positive if the original value was negative, and negative if the original value was positive."
+        },
+        {
+          "alternativeId": "a19",
+          "text": "Change the value into its reciprocal using a negative exponent."
+        }
+      ],
+      "correctAlternativeId": "a19"
+    },
+    {
+      "questionId": "q6",
+      "stem": "What does power of a power mean?",
+      "alternatives": [
+        {
+          "alternativeId": "a20",
+          "text": "Two bases with the same exponents that are multiplied together, then raised to their shared exponent."
+        },
+        {
+          "alternativeId": "a21",
+          "text": "A value raised to the multiplication of two exponents."
+        },
+        {
+          "alternativeId": "a22",
+          "text": "An value raised to an exponent, then raised again to a different exponent."
+        },
+        {
+          "alternativeId": "a23",
+          "text": "A value raised to the addition of two exponents."
+        }
+      ],
+      "correctAlternativeId": "a21"
     }
   ]
 }

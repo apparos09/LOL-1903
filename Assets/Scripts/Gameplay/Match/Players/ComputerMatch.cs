@@ -48,8 +48,6 @@ namespace RM_EM
             // Sets the difficulty.
             difficulty = newDiff;
 
-            // TODO: do more.
-            // TODO: change to using multiples instead of hard numbers?
             // Changes the difficulty settings.
             switch(difficulty)
             {
@@ -194,7 +192,6 @@ namespace RM_EM
                     
             }
 
-            // TODO: prioritize closest value.
             // Tries to find the value in the puzzle space so that the reticle can move towards it.
 
             // If there are no missing values, do nothing?

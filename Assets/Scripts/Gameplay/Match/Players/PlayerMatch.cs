@@ -218,7 +218,7 @@ namespace RM_EM
                 // Generates the power for the player.
                 default:
                 case Power.powerType.none:
-                    // TODO: set to null instead of using the nothing power.
+                    // Uses null instead of the nothing power.
                     // newPower = Instantiate(powerPrefabs.nothing);
                     newPower = null;
                     break;
