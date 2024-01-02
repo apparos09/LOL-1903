@@ -637,6 +637,8 @@ namespace RM_EM
             SceneManager.LoadScene("WorldScene");
         }
 
+        // GameComplete should not be called from the MatchManager. Only call it from the WorldManager.
+
         // Update is called once per frame
         protected override void Update()
         {

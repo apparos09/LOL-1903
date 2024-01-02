@@ -212,6 +212,19 @@ namespace RM_EM
                 {
                     // Load the world info.
                     gameInfo.LoadWorldInfo(this);
+
+                    // Hide the world scene since you're immediately jumping to the results scene.
+                    // This puts up a black screen, and turns off the BGM to hide the WorldScene.
+                    if (IsFinalChallengerDefeated())
+                    {
+                        // Enable the black image.
+                        worldUI.blackOverlay.gameObject.SetActive(true);
+
+                        // Pause the BGM.
+                        if (worldAudio != null)
+                            worldAudio.bgmSource.Pause();
+                    }
+                        
                 }
 
                 // Autosaves if the player won the last round.
@@ -492,6 +505,20 @@ namespace RM_EM
         public bool IsFinalChallenger(ChallengerWorld challenger)
         {
             return challenger == finalChallenger;
+        }
+
+        // Checks if the final challenger has been defeated.
+        public bool IsFinalChallengerDefeated()
+        {
+            // Final challenger check.
+            if(finalChallenger != null)
+            {
+                return finalChallenger.IsChallengerDefeated();
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // Gets the remaining challenger count.

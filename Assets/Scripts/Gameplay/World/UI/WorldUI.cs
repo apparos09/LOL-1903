@@ -56,6 +56,9 @@ namespace RM_EM
         // The save text for the world.
         public TMP_Text saveText;
 
+        // A black image.
+        public Image blackOverlay;
+
         // Start is called before the first frame update
         protected override void Start()
         {
