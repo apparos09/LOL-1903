@@ -220,9 +220,14 @@ namespace RM_EM
                         // Enable the black image.
                         worldUI.blackOverlay.gameObject.SetActive(true);
 
-                        // Pause the BGM.
+                        // Pause the BGM so that it doesn't play while waiting for the scene to switch.
                         if (worldAudio != null)
                             worldAudio.bgmSource.Pause();
+                    }
+                    else
+                    {
+                        // Make sure the black overlay is disabled.
+                        worldUI.blackOverlay.gameObject.SetActive(false);
                     }
                         
                 }
