@@ -35,6 +35,7 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
+            // Manager
             if (manager == null)
                 manager = ResultsManager.Instance;
 
@@ -42,7 +43,14 @@ namespace RM_EM
             if (Application.platform == RuntimePlatform.WebGLPlayer)
             {
                 titleButton.interactable = false; // Disable
-                titleButton.gameObject.SetActive(false); // Turn-Off
+                
+            }
+
+            // If the LOLSDK has been initialized.
+            if (GameSettings.InitializedLOLSDK)
+            {
+                // Turn off the title button.
+                titleButton.gameObject.SetActive(false);
             }
         }
 

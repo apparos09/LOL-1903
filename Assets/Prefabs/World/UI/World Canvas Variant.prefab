@@ -3762,10 +3762,10 @@ PrefabInstance:
       addedObject: {fileID: 4398872346132095051}
     - targetCorrespondingSourceObject: {fileID: 3346965147616308430, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6173659881173638549}
+      addedObject: {fileID: 3936199452062639156}
     - targetCorrespondingSourceObject: {fileID: 3346965147616308430, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3936199452062639156}
+      addedObject: {fileID: 6173659881173638549}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4783790938777063761, guid: 45a11d31ce632db4ebbf2a10b2f60863, type: 3}
       insertIndex: -1
