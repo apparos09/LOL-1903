@@ -1249,10 +1249,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 703993266}
+    - target: {fileID: 2935002751786594546, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2953548175686672739, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 703993266}
+    - target: {fileID: 3251200571119574359, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3302867470213268005, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

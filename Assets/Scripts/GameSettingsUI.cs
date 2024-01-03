@@ -91,14 +91,25 @@ namespace RM_EM
 
 
             // If the SDK isn't initialized, some functions may be unavailable.
+            // NOTE: the 'interactable' component of the tutorial toggle isn't changed because...
+            // The toggle can only be interacted with on the title screen. It's non-interactable otherwise.
+
             // These functions are disabled here.
             if (LOLSDK.Instance.IsInitialized)
             {
                 // Hides the tutorial toggle since it shoudn't be usable.
-                tutorialToggle.gameObject.SetActive(false);  
+                tutorialToggle.gameObject.SetActive(false);
+
+                // Enable the TTS volume slider and TTS toggle.
+                ttsVolumeSlider.interactable = true;
+                textToSpeechToggle.interactable = true;
             }
             else
             {
+                // Turn on the tutorial toggle since it should be accessible.
+                tutorialToggle.gameObject.SetActive(true);
+
+                // Disable the TTS volume slider and toggle.
                 ttsVolumeSlider.interactable = false;
                 textToSpeechToggle.interactable = false;
             }
