@@ -335,7 +335,7 @@ namespace RM_EM
             switch (power)
             {
                 case Power.powerType.none:
-                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "A power that does nothing.";
+                    powerDesc = (defs != null) ? defs[GetPowerTypeDescriptionSpeakKey(power)] : "A power that does nothing. This power cannot be charged or activated.";
                     break;
                 
                 case Power.powerType.pointsPlus:

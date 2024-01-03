@@ -325,19 +325,19 @@ namespace RM_EM
                         case 1: // L01
                         case 2: // L02
                         case 3: // L03
-                            percentThreshold = 0.25F; // 0.25F
+                            percentThreshold = 0.30F; // 0.25F
                             break;
 
                         case 4: // L04
                         case 5: // L05
                         case 6: // L06
-                            percentThreshold = 0.20F;
+                            percentThreshold = 0.25F; // 0.20F
                             break;
 
                         case 7: // L07
                         case 8: // L08
                         case 9: // L09
-                            percentThreshold = 0.15F; // 0.05F
+                            percentThreshold = 0.20F; // 0.05F
                             break;
                     }
 

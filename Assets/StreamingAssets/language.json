@@ -264,7 +264,7 @@
 
 
     "pwr_none_nme": "None",
-    "pwr_none_dsc": "A power that does nothing.",
+    "pwr_none_dsc": "A power that does nothing. This power cannot be charged or activated.",
 
     "pwr_pointsPlus_nme": "Points Plus",
     "pwr_pointsPlus_dsc": "Increases the user’s points gained for correct answers for a time.",
@@ -387,7 +387,6 @@
     "kwd_score": "Score",
     "rst_wrongAnswers": "Incorrect Answers",
     "kwd_finish": "Finish"
-
 
   }
 }
