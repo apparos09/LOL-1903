@@ -344,10 +344,43 @@ namespace RM_EM
                         calc.rule = rule;
 
                         // Expression: (a^n)*(b^n) = (a*b)^n
+
+                        // NOTE: num1 and num2 cannot be the same number. This needed a case added to account for this.
                         // Generates numbers 1-3.
                         int num1 = Random.Range(lowestValue, highestValue + 1); // a (base 1)
                         int num2 = Random.Range(lowestValue, highestValue + 1); // b (base 2)
                         int num3 = Random.Range(lowestValue, highestValue + 1); // n (exponent)
+
+                        // Num2 and Num1 cannot be equal.
+                        if(num2 == num1)
+                        {
+                            // If the lowest value is equal to the largest value...
+                            // Just set num2 to num1 + 1.
+                            if(lowestValue == highestValue)
+                            {
+                                num2 = num1 + 1;
+                            }
+                            else // Generate a new number.
+                            {
+                                // NOTE: this isn't efficient, but this should rarely happen either way.
+
+                                // List of potential numbers.
+                                List<int> numList = new List<int>();
+
+                                // Adds all numbers to the list.
+                                for (int v = lowestValue; v <= highestValue; v++)
+                                {
+                                    // If the value is not equal to num1, add it to the numList.
+                                    if (v != num1)
+                                        numList.Add(v);
+                                }
+
+                                // Sets num2 to a random number in the numList.
+                                num2 = numList[Random.Range(0, numList.Count)];
+                            }
+
+                        }
+
 
                         // Empty the string.
                         calc.question = "";
@@ -398,15 +431,14 @@ namespace RM_EM
                     // Goes through each term generation.
                     for (int n = 1; n <= termCount; n++)
                     {
-                        // TODO: prevent an exponent of 1 and a lowest value of 1?
-
+                        // Calculation
                         PuzzleCalculation calc = new PuzzleCalculation();
 
                         // Set the rule.
                         calc.rule = rule;
 
 
-                        // Limits what numbers can be used.
+                        // Limits what numbers can be used - 0 and 1 are not allowed.
                         // Dividing by 0 isn't possible, and doing a 1/1 fraction is unnecessary.
                         int lowVal = (lowestValue > 1) ? lowestValue : 2;
                         int highVal = (highestValue > 1) ? highestValue : 2;
