@@ -156,24 +156,8 @@ namespace RM_EM
 
             audioCredits.audioCredits.Add(credit);
 
-            // Game Results
-            credit = new AudioCredits.AudioCredit();
-            credit.title = "Beach Walk";
-            credit.artist = "Antti Luode";
-            credit.collection = "Anttis Instrumentals";
-            credit.source = "GameSounds.xyz";
-            credit.link1 = "https://gamesounds.xyz/?dir=Anttis%20instrumentals/Songs";
-            credit.link2 = "https://gamesounds.xyz/Anttis%20instrumentals/Songs/Anttis%20instrumentals%20-%20Beach%20walk.mp3";
-            credit.copyright =
-                "\"Beach Walk\"\n" +
-                "Antti Luode\n" +
-                "Licensed under Creative Commons: By Attribution 3.0\n" +
-                "https://creativecommons.org/licenses/by/3.0/";
-
-            audioCredits.audioCredits.Add(credit);
-
+            // World
             // Area
-            // Area 1
             credit = new AudioCredits.AudioCredit();
             credit.title = "Abracadabra";
             credit.artist = "Antti Luode";
@@ -208,20 +192,20 @@ namespace RM_EM
 
             // For size reasons, the final boss track has been removed.
             // As such, the credit has also been removed.
-            //// Match - Boss
-            //credit = new AudioCredits.AudioCredit();
-            //credit.title = "Ghost Town";
-            //credit.artist = "Rafael Krux";
-            //credit.collection = "FreePD/Comedy";
-            //credit.source = "FreePD";
-            //credit.link1 = "https://freepd.com/comedy.php";
-            //credit.link2 = "https://music.orchestralis.net/track/28566240";
-            //credit.copyright =
-            //    "'Ghost Town' by Rafael Krux (orchestralis.net)\n" +
-            //    "Creative Commons 4.0 License.\n" +
-            //    "https://creativecommons.org/licenses/by/4.0/";
+            // Match - Boss
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Ghost Town";
+            credit.artist = "Rafael Krux";
+            credit.collection = "FreePD/Comedy";
+            credit.source = "FreePD";
+            credit.link1 = "https://freepd.com/comedy.php";
+            credit.link2 = "https://music.orchestralis.net/track/28566240";
+            credit.copyright =
+                "'Ghost Town' by Rafael Krux (orchestralis.net)\n" +
+                "Creative Commons 4.0 License.\n" +
+                "https://creativecommons.org/licenses/by/4.0/";
 
-            //audioCredits.audioCredits.Add(credit);
+            audioCredits.audioCredits.Add(credit);
 
 
             // Match - Results
@@ -240,9 +224,41 @@ namespace RM_EM
 
             audioCredits.audioCredits.Add(credit);
 
+            // Game Results
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Beach Walk";
+            credit.artist = "Antti Luode";
+            credit.collection = "Anttis Instrumentals";
+            credit.source = "GameSounds.xyz";
+            credit.link1 = "https://gamesounds.xyz/?dir=Anttis%20instrumentals/Songs";
+            credit.link2 = "https://gamesounds.xyz/Anttis%20instrumentals/Songs/Anttis%20instrumentals%20-%20Beach%20walk.mp3";
+            credit.copyright =
+                "\"Beach Walk\"\n" +
+                "Antti Luode\n" +
+                "Licensed under Creative Commons: By Attribution 3.0\n" +
+                "https://creativecommons.org/licenses/by/3.0/";
+
+            audioCredits.audioCredits.Add(credit);
+
 
 
             // SOUND EFFECTS
+
+            // PUZZLE VALUE SELECT (SFX)
+            credit = new AudioCredits.AudioCredit();
+            credit.title = "Blop";
+            credit.artist = "Mark DiAngelo";
+            credit.collection = "-";
+            credit.source = "SoundBible";
+            credit.link1 = "https://soundbible.com/2067-Blop.html";
+            credit.link2 = "";
+            credit.copyright =
+                "\"Blop\"\n" +
+                "Mark DiAngelo\n" +
+                "Licensed under Creative Commons: By Attribution 3.0\n" +
+                "https://creativecommons.org/licenses/by/3.0/";
+
+            audioCredits.audioCredits.Add(credit);
 
             // POWER USE (SFX) [Formally Power Equip]
             credit = new AudioCredits.AudioCredit();
@@ -260,21 +276,6 @@ namespace RM_EM
 
             audioCredits.audioCredits.Add(credit);
 
-            // PUZZLE VALUE SELECT (SFX)
-            credit = new AudioCredits.AudioCredit();
-            credit.title = "Blop";
-            credit.artist = "Mark DiAngelo";
-            credit.collection = "-";
-            credit.source = "SoundBible";
-            credit.link1 = "https://soundbible.com/2067-Blop.html";
-            credit.link2 = "";
-            credit.copyright =
-                "\"Blop\"\n" +
-                "Mark DiAngelo\n" +
-                "Licensed under Creative Commons: By Attribution 3.0\n" +
-                "https://creativecommons.org/licenses/by/3.0/";
-
-            audioCredits.audioCredits.Add(credit);
 
         }
 

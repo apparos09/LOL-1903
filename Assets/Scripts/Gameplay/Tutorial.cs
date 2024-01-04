@@ -254,7 +254,7 @@ namespace RM_EM
             else
             {
                 pages.Add(new Page("You just got a <b>match power</b>! A match power is a power-up that can be used during a match, but only after you charge it up. Powers charge up when you answer questions correctly, so just playing the game like usual is enough."));
-                pages.Add(new Page("After a power is fully charged, you can activate it with the ‘<b>power button</b>’ at anytime. The power’s effects remain active until the power’s energy runs out, after-which you need to charge it up again."));
+                pages.Add(new Page("After a power is fully charged, you can activate it with the ‘<b>power button</b>’ at anytime. The power’s effects remain active until the power’s energy runs out, after which you need to charge it up again."));
                 pages.Add(new Page("Unlocked powers can be viewed and equipped in the ‘<b>powers menu</b>’. Your opponents can use powers too, so keep that in mind. Good luck!"));
             }
 
