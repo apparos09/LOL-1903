@@ -277,7 +277,9 @@ namespace RM_EM
             }
             else // No game data found.
             {
-                Debug.LogError("No game data found.");
+                // Changed from error to warning since starting a new game always triggers this.
+                // Debug.LogError("No game data found.");
+                Debug.Log("No game data found.");
                 loadedData = null;
                 return;
             }

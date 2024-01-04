@@ -738,7 +738,9 @@ namespace RM_EM
             // Game complete
             if(loadedData.complete)
             {
-                Debug.LogAssertion("The game was completed, so the data hasn't been loaded.");
+                // Changed from assertion to normal log.
+                // Debug.LogAssertion("The game was completed, so the data hasn't been loaded.");
+                Debug.Log("The game was completed, so the data hasn't been loaded.");
                 return false;
             }
 
