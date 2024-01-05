@@ -129,9 +129,6 @@ namespace RM_EM
         // Start is called before the first frame update
         void Start()
         {
-            // ...
-            // TODO: load audio credits.
-
             // AUDIO CREDITS
             AudioCredits.AudioCredit credit;
 
@@ -147,7 +144,7 @@ namespace RM_EM
             credit.collection = "FreePD/Comedy";
             credit.source = "FreePD";
             credit.link1 = "https://freepd.com/comedy.php";
-            credit.link2 = "";
+            credit.link2 = "-";
             credit.copyright = 
                 "\"Night in the Castle\"\n" +
                 "Kevin Macleod (incompetech.com)\n" +
@@ -215,7 +212,7 @@ namespace RM_EM
             credit.collection = "FreePD/Scoring";
             credit.source = "FreePD";
             credit.link1 = "https://freepd.com/scoring.php";
-            credit.link2 = "";
+            credit.link2 = "-";
             credit.copyright =
                 "\"Funky Energy Loop\"\n" +
                 "Kevin Macleod (incompetech.com)\n" +
@@ -251,7 +248,7 @@ namespace RM_EM
             credit.collection = "-";
             credit.source = "SoundBible";
             credit.link1 = "https://soundbible.com/2067-Blop.html";
-            credit.link2 = "";
+            credit.link2 = "-";
             credit.copyright =
                 "\"Blop\"\n" +
                 "Mark DiAngelo\n" +
@@ -267,7 +264,7 @@ namespace RM_EM
             credit.collection = "-";
             credit.source = "SoundBible";
             credit.link1 = "https://soundbible.com/2158-Text-Message-Alert-5.html";
-            credit.link2 = "";
+            credit.link2 = "-";
             credit.copyright =
                 "\"Text Message Alert 5\"\n" +
                 "Daniel Simon\n" +

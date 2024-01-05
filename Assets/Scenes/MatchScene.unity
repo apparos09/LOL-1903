@@ -1237,6 +1237,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2397341741523297383, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 2408148897690682297, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: audioSource
       value: 
@@ -1353,6 +1357,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4625905604180598729, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 4708343126440012555, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: audioSource
       value: 
@@ -1361,7 +1369,19 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4840845679129260165, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
+    - target: {fileID: 4990058318401215178, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
     - target: {fileID: 5441897531892283066, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
+    - target: {fileID: 5724886620262906922, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 703993266}
@@ -1394,6 +1414,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6575690561167610305, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 703993266}
+    - target: {fileID: 7047127845725265780, guid: f040a37b3ca0cd24daad1b02ffaa2d7e, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 703993266}
