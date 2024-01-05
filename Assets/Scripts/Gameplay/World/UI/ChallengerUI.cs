@@ -81,12 +81,21 @@ namespace RM_EM
                 manager = WorldManager.Instance;
         }
 
-        // May not be needed.
-        //// This function is called when the object becomes enabled and active
-        //private void OnEnable()
-        //{
-        //    EnableButtons();
-        //}
+        // This function is called when the object becomes enabled and active
+        private void OnEnable()
+        {
+            // May not be needed.
+            // EnableButtons();
+
+            // Grabs the instance.
+            if(manager == null)
+                manager = WorldManager.Instance;
+
+            // Plays the button SFX upon being activated.s
+            if (manager.worldAudio != null)
+                manager.worldAudio.PlayButtonSfx();
+
+        }
 
         // TODO: add clear challenger option?
         // Sets the challenger.

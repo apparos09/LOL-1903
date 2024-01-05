@@ -16,6 +16,11 @@ namespace RM_EM
         // The SFX audio source.
         public AudioSource sfxSource;
 
+        [Header("Audio Clips/SFXs")]
+
+        // The audio clip for buttons.
+        public AudioClip buttonSfx;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -23,6 +28,11 @@ namespace RM_EM
                 manager = WorldManager.Instance;
         }
 
+        // Plays the button sound effect.
+        public void PlayButtonSfx()
+        {
+            sfxSource.PlayOneShot(buttonSfx);
 
+        }
     }
 }

@@ -2516,6 +2516,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   bgmSource: {fileID: 1815120852}
   sfxSource: {fileID: 1828613573}
+  buttonSfx: {fileID: 8300000, guid: 472c175259151be4fbfcbc9f69caf100, type: 3}
 --- !u!1001 &8775225451939526735
 PrefabInstance:
   m_ObjectHideFlags: 0
