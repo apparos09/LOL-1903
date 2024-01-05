@@ -171,7 +171,7 @@ namespace RM_EM
                 pages.Add(new Page("In the exponent game, you answer exponent questions as fast as you can to gain points and reach the goal before your opponent. The questions all have missing values, which you need to fill in correctly and in the right order."));
                 pages.Add(new Page("The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they’re all self-explanatory. Outside of selecting values, you can also use <b>skips</b> and <b>powers</b>."));
                 pages.Add(new Page("<b>Skips</b> allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn’t finish the question. Skipping also has a cooldown to it, so it’s best not to use it constantly."));
-                pages.Add(new Page("As for <b>powers</b>, I’ll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by clicking on my icon in the world area."));
+                pages.Add(new Page("As for <b>powers</b>, I’ll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area."));
             }
 
 
