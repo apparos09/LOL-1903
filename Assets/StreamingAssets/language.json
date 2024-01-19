@@ -193,6 +193,7 @@
       "rst_wrongAnswers": 25,
       "kwd_finish": 15
 
+
     }
   },
   "en": {
@@ -348,37 +349,37 @@
     "kwd_rematch": "Rematch",
 
 
-    "trl_opening_00": "Welcome to the <b>Exponent Club</b>! I’m Minraul, and as you can guess, we play the <b>exponent game</b> here! Oh, you’ve never played the game before? Well, I guess I’ll just have to teach you then!",
+    "trl_opening_00": "Welcome to the <b >Exponent Club</b>! I’m Minraul, and as you can guess, we play the <b >exponent game</b> here! Oh, you’ve never played the game before? Well, I guess I’ll just have to teach you then!",
     "trl_opening_01": "In the exponent game, you answer exponent questions as fast as you can to gain points and reach the goal before your opponent. The questions all have missing values, which you need to fill in correctly and in the right order.",
-    "trl_opening_02": "The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they’re all self-explanatory. Outside of selecting values, you can also use <b>skips</b> and <b>powers</b>.",
-    "trl_opening_03": "<b>Skips</b> allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn’t finish the question. Skipping also has a cooldown to it, so it’s best not to use it constantly.",
-    "trl_opening_04": "As for <b>powers</b>, I’ll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area.",
+    "trl_opening_02": "The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they’re all self-explanatory. Outside of selecting values, you can also use <b >skips</b> and <b >powers</b>.",
+    "trl_opening_03": "<b >Skips</b> allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn’t finish the question. Skipping also has a cooldown to it, so it’s best not to use it constantly.",
+    "trl_opening_04": "As for <b >powers</b>, I’ll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area.",
 
     "trl_firstMatchLoss_00": "You lost the match. You need to learn the basics before you can take on the other club members, so please try again.",
 
     "trl_firstMatchWin_00": "You won your first match! Now that you’re familiar with the rules, you can take on the other club members. Some of them won’t accept your challenge until you become more experienced, so your options are restricted.",
     "trl_firstMatchWin_01": "Some club members utilize exponent rules that you haven’t learned yet. When you encounter a new rule, I’ll be there to explain it. Feel free to check the ‘info menu’ as well if you ever need a refresher. Good luck!",
 
-    "trl_firstPower_00": "You just got a <b>match power</b>! A match power is a power-up that can be used during a match, but only after you charge it up. Powers charge up when you answer questions correctly, so just playing the game like usual is enough.",
-    "trl_firstPower_01": "After a power is fully charged, you can activate it with the ‘<b>power button</b>’ at anytime. The power’s effects remain active until the power’s energy runs out, after which you need to charge it up again.",
-    "trl_firstPower_02": "Unlocked powers can be viewed and equipped in the ‘<b>powers menu</b>’. Your opponents can use powers too, so keep that in mind. Good luck!",
+    "trl_firstPower_00": "You just got a <b >match power</b>! A match power is a power-up that can be used during a match, but only after you charge it up. Powers charge up when you answer questions correctly, so just playing the game like usual is enough.",
+    "trl_firstPower_01": "After a power is fully charged, you can activate it with the ‘<b >power button</b>’ at anytime. The power’s effects remain active until the power’s energy runs out, after which you need to charge it up again.",
+    "trl_firstPower_02": "Unlocked powers can be viewed and equipped in the ‘<b >powers menu</b>’. Your opponents can use powers too, so keep that in mind. Good luck!",
 
-    "trl_finalMatch_00": "You’ve learned all the exponent rules and defeated all the other club members, so now it’s time for your <b>final match</b>! A rematch against me! Select my icon in the next area to challenge me like before.",
+    "trl_finalMatch_00": "You’ve learned all the exponent rules and defeated all the other club members, so now it’s time for your <b >final match</b>! A rematch against me! Select my icon in the next area to challenge me like before.",
 
     "trl_gameOver_00": "You lost the match. You can rematch the opponent now or return to the world area. Every club member must be defeated for you to complete the challenge, but you can take as many tries as you like.",
 
 
-    "trl_exponent_00": "This match only uses exponent basics. <b>Exponents</b> are math operations that multiply a base by itself a certain number of times. Check the info window if you ever want a refresh on the exponent rules.",
+    "trl_exponent_00": "This match only uses exponent basics. <b >Exponents</b> are math operations that multiply a base by itself a certain number of times. Check the info window if you ever want a refresh on the exponent rules.",
 
-    "trl_product_00": "This match uses the <b>product rule</b>. When the same bases with different exponents are multiplied together, the exponents can be summed together and applied to said base to simplify the operation.",
+    "trl_product_00": "This match uses the <b >product rule</b>. When the same bases with different exponents are multiplied together, the exponents can be summed together and applied to said base to simplify the operation.",
 
-    "trl_powerOfAPower_00": "This match uses the <b>power of a power rule</b>. If a base is having two exponents applied to it, then said exponents can be multiplied together, with the base being raised to the product of that operation.",
+    "trl_powerOfAPower_00": "This match uses the <b >power of a power rule</b>. If a base is having two exponents applied to it, then said exponents can be multiplied together, with the base being raised to the product of that operation.",
 
-    "trl_powerOfAProduct_00": "This match uses the <b>power of a product rule</b>. If two bases with the same exponents are multiplied together, it can be simplified to the multiplication of said bases, with the result being raised to the shared exponent.",
+    "trl_powerOfAProduct_00": "This match uses the <b >power of a product rule</b>. If two bases with the same exponents are multiplied together, it can be simplified to the multiplication of said bases, with the result being raised to the shared exponent.",
 
-    "trl_zero_00": "This match uses the <b>zero rule</b>. Any number raised to the exponent 0 will return a result of 1.",
+    "trl_zero_00": "This match uses the <b >zero rule</b>. Any number raised to the exponent 0 will return a result of 1.",
 
-    "trl_negative_00": "This match uses the <b>negative rule</b>. A number raised to a negative exponent will become its reciprocal, and have the exponent be applied to the denominator.",
+    "trl_negative_00": "This match uses the <b >negative rule</b>. A number raised to a negative exponent will become its reciprocal, and have the exponent be applied to the denominator.",
 
 
     "rsl_winMsg": "You've cleared all the challenges! You're an Exponent Master!",
@@ -387,6 +388,202 @@
     "kwd_score": "Score",
     "rst_wrongAnswers": "Incorrect Answers",
     "kwd_finish": "Finish"
+
+
+  },
+  "es": {
+    "_stop_": "",
+
+    "gameTitle": "Monstruos exponentes",
+
+    "kwd_title": "Título",
+    "kwd_start": "Comenzar",
+    "kwd_newGame": "Juego nuevo",
+    "kwd_continue": "Continuar",
+    "kwd_controls": "Controles",
+    "kwd_settings": "Ajustes",
+    "kwd_credits": "Créditos",
+    "kwd_licenses": "Licencias",
+    "kwd_quit": "Renunciar",
+
+
+    "ttl_controls_instruct": "Botón izquierdo del ratón/toque: Interactuar",
+    "ttl_controls_desc": "El juego se puede controlar con el ratón o la pantalla táctil. Usa el botón izquierdo del ratón o una entrada de pantalla táctil para interactuar con los elementos del mundo del juego.",
+    "kwd_back": "Atrás",
+
+
+    "kwd_volume": "Volumen",
+    "kwd_bgmVolume": "Volumen de música de fondo (BGM)",
+    "kwd_sfxVolume": "Volumen de efectos de sonido (SFX)",
+    "kwd_ttsVolume": "Volumen de conversión de texto a voz (TTS)",
+    "kwd_mute": "Silenciar",
+    "kwd_textToSpeech": "Conversión de texto a voz",
+    "kwd_tutorial": "Tutorial",
+
+
+    "kwd_save": "Guardar",
+    "kwd_saveQuit": "Guardar/salir",
+    "sve_msg_savingGame": "Guardando juego...",
+    "sve_msg_loadSuccess": "Guarde los datos cargados correctamente.",
+
+    "kwd_world": "Mundo",
+    "kwd_info": "Información",
+    "kwd_powers": "Poderes",
+
+    "kwd_power": "Potencia",
+    "wrd_powerUnlocked": "¡Nuevo poder desbloqueado!",
+
+    "wrd_exponentChallenge": "Desafío Exponente",
+    "kwd_rules": "Reglas",
+
+    "rle_none_nme": "Ninguna",
+    "rle_none_dsc": "No hay reglas de exponentes establecidas.",
+
+    "rle_exponent_nme": "Exponente",
+    "rle_exponent_dsc": "Multiplica un término por sí mismo (n) número de veces.",
+
+    "rle_product_nme": "Producto",
+    "rle_product_dsc": "Si multiplicas las mismas bases, suma sus exponentes y aplica el resultado a la base.",
+
+    "rle_powerOfAPower_nme": "El poder de un poder",
+    "rle_powerOfAPower_dsc": "Si una base tiene dos exponentes, multiplique los exponentes y aplique el resultado a la base.",
+
+    "rle_powerOfAProduct_nme": "El poder de un producto",
+    "rle_powerOfAProduct_dsc": "Si multiplicas bases diferentes con los mismos exponentes, multiplica las bases y luego aplica el exponente al resultado.",
+
+    "rle_zero_nme": "Cero",
+    "rle_zero_dsc": "Cualquier valor elevado al exponente 0 siempre es igual a 1.",
+
+    "rle_negative_nme": "Negativo",
+    "rle_negative_dsc": "Si usas un exponente negativo, toma el recíproco de la base y aplica el exponente al denominador.",
+
+
+
+    "pwr_none_nme": "Ninguna",
+    "pwr_none_dsc": "Un poder que no hace nada. Esta energía no se puede cargar ni activar.",
+
+    "pwr_pointsPlus_nme": "Puntos Plus",
+    "pwr_pointsPlus_dsc": "Aumenta durante un tiempo los puntos ganados por el usuario por las respuestas correctas.",
+
+    "pwr_pointsMinus_nme": "Puntos menos",
+    "pwr_pointsMinus_dsc": "Disminuye durante un tiempo los puntos ganados por las respuestas correctas del oponente.",
+
+    "pwr_equationShorten_nme": "Pregunta corta",
+    "pwr_equationShorten_dsc": "Reduce las preguntas del usuario y aumenta la cantidad de puntos ganados por las respuestas correctas durante un tiempo.",
+
+    "pwr_eqautionLengthen_nme": "Pregunta larga",
+    "pwr_eqautionLengthen_dsc": "Aumenta la longitud de las preguntas del oponente y reduce los puntos que obtienen por las respuestas correctas durante un tiempo.",
+
+    "pwr_pointsTransfer_nme": "Transferencia de puntos",
+    "pwr_pointsTransfer_dsc": "Transfiere algunos puntos del oponente al usuario por las respuestas correctas durante un tiempo.",
+
+    "pwr_pointsBlock_nme": "Bloque de puntos",
+    "pwr_pointsBlock_dsc": "Elimina algunos puntos del oponente durante un tiempo.",
+
+    "pwr_twist_nme": "Torsión",
+    "pwr_twist_dsc": "Invierte la vista del oponente boca abajo durante un tiempo.",
+
+
+    "kwd_equip": "Equipar",
+    "kwd_unequip": "Desequipar",
+
+
+    "wrd_saveMsg": "¿Te gustaría ahorrar? ¿Te gustaría dejar de fumar?",
+    "wrd_saveAndContinue": "Guardar y continuar",
+    "wrd_saveAndQuit": "Guardar y salir",
+    "wrd_quitNoSave": "Salir (sin guardar)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraúl",
+    "chr_statue_spc": "Estatua",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lagarto",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "momia",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Espíritu de fuego",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantasma",
+
+    "chr_vampire_nme": "Colmillo",
+    "chr_vampire_spc": "Vampiro",
+
+    "chr_werewolf_nme": "Aullido",
+    "chr_werewolf_spc": "Hombre lobo",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Espíritu del agua",
+
+    "kwd_all": "Todas",
+    "kwd_accept": "Aceptar",
+    "kwd_decline": "Declinación",
+
+
+    "kwd_match": "Coincidir",
+    "kwd_player": "Jugador",
+    "kwd_plyr": "PLYR",
+    "kwd_computer": "Computadora",
+    "kwd_com": "COM",
+    "kwd_usePower": "Usa la energía",
+    "kwd_usedPower": "Energía usada",
+    "kwd_skip": "Saltar",
+
+    "kwd_ready": "Listo",
+    "mth_ready": "Listo...",
+    "mth_start": "¡Empieza!",
+
+    "mth_matchOver": "¡Se acabó el partido!",
+    "mth_userWins": "¡Ganaste!",
+    "mth_oppWins": "¡El oponente ganó!",
+    "kwd_rematch": "Revancha",
+
+
+    "trl_opening_00": "¡Bienvenido al <b >Exponent Club!</b> Soy Minraul y, como puedes adivinar, ¡aquí jugamos al juego de los <b >exponentes!</b> Oh, ¿nunca has jugado al juego antes? Bueno, ¡supongo que tendré que enseñarte entonces!",
+    "trl_opening_01": "En el juego de exponentes, respondes a las preguntas de exponentes lo más rápido que puedas para ganar puntos y llegar a la meta antes que tu oponente. Todas las preguntas tienen valores faltantes, que debes completar correctamente y en el orden correcto.",
+    "trl_opening_02": "El juego te dará valores entre los que elegir para intentar llenar los espacios vacíos. La forma en que se maneja esto puede variar según la partida, pero todas se explican por sí mismas. <b >Además de seleccionar valores, también puedes usar <b >saltos</b> y <b > poderes.</b>",
+    "trl_opening_03": "<b >Los saltos</b> te permiten saltarte la pregunta actual y obtener una nueva. Naturalmente, esto significa que no obtendrás puntos por no haber terminado la pregunta. Saltar también tiene un tiempo de reutilización, por lo que es mejor no usarlo constantemente.",
+    "trl_opening_04": "En cuanto a <b >los poderes</b>, hablaré más sobre ellos más adelante. Con todo esto explicado, ¡desafíame para que comience tu primera partida! Puedes hacerlo seleccionando mi icono en el área del mundo.",
+
+    "trl_firstMatchLoss_00": "Perdiste el partido. Debes aprender lo básico antes de enfrentarte a los demás miembros del club, así que vuelve a intentarlo.",
+
+    "trl_firstMatchWin_00": "¡Ganaste tu primer partido! Ahora que estás familiarizado con las reglas, puedes enfrentarte a los demás miembros del club. Algunos de ellos no aceptarán tu desafío hasta que adquieras más experiencia, por lo que tus opciones son limitadas.",
+    "trl_firstMatchWin_01": "Algunos miembros del club utilizan reglas de exponentes que aún no has aprendido. Cuando encuentres una nueva regla, estaré ahí para explicártela. No dudes en consultar también el 'menú de información' si alguna vez necesitas refrescarte. ¡Buena suerte!",
+
+    "trl_firstPower_00": "¡Acabas de conseguir el <b >poder de un fósforo</b>! Un poder de partida es un potenciador que se puede usar durante una partida, pero solo después de cargarlo. Los poderes se cargan cuando respondes correctamente a las preguntas, así que basta con jugar como de costumbre.",
+    "trl_firstPower_01": "Una vez que la alimentación esté completamente cargada, puedes activarla con el ‘<b >botón de encendido<b >' en cualquier momento. Los efectos de la energía permanecen activos hasta que se agote la energía, tras lo cual tendrás que volver a cargarla.",
+    "trl_firstPower_02": "Los poderes desbloqueados se pueden ver y equipar en el ‘<b >menú de poderes</b>'. Tus oponentes también pueden usar poderes, así que tenlo en cuenta. ¡Buena suerte!",
+
+    "trl_finalMatch_00": "Has aprendido todas las reglas de los exponentes y has derrotado a todos los demás miembros del club, ¡así que ahora es el momento de tu <b >último partido!</b> ¡Una revancha contra mí! Selecciona mi icono en la siguiente área para desafiarme como antes.",
+
+    "trl_gameOver_00": "Perdiste el partido. Puedes revanchar al oponente ahora o regresar al área mundial. Debes derrotar a todos los miembros del club para completar el desafío, pero puedes hacer tantos intentos como quieras.",
+
+
+    "trl_exponent_00": "Esta coincidencia solo usa los conceptos básicos de los exponentes. <b >Los exponentes</b> son operaciones matemáticas que multiplican una base por sí misma un número determinado de veces. Consulta la ventana de información si alguna vez quieres actualizar las reglas de los exponentes.",
+
+    "trl_product_00": "Esta coincidencia usa la <b >regla del producto</b>. Cuando se multiplican las mismas bases con diferentes exponentes, los exponentes se pueden sumar y aplicar a dicha base para simplificar la operación.",
+
+    "trl_powerOfAPower_00": "Esta partida usa el <b >poder de una regla de poder</b>. Si a una base se le aplican dos exponentes, entonces dichos exponentes se pueden multiplicar entre sí, elevando la base al producto de esa operación.",
+
+    "trl_powerOfAProduct_00": "Esta coincidencia usa el <b >poder de una regla de producto</b>. Si se multiplican dos bases con los mismos exponentes, se puede simplificar a la multiplicación de dichas bases, elevando el resultado al exponente compartido.",
+
+    "trl_zero_00": "Esta coincidencia usa la <b >regla del cero</b>. Cualquier número elevado al exponente 0 devolverá un resultado de 1.",
+
+    "trl_negative_00": "Esta coincidencia usa la <b >regla negativa</b>. Un número elevado a un exponente negativo se convertirá en su recíproco y el exponente se aplicará al denominador.",
+
+
+    "rsl_winMsg": "¡Has superado todos los desafíos! ¡Eres un maestro exponente!",
+    "kwd_results": "Resultados",
+    "kwd_time": "Hora",
+    "kwd_score": "Puntuación",
+    "rst_wrongAnswers": "Respuestas incorrectas",
+    "kwd_finish": "Finalizar"
+
 
   }
 }
