@@ -268,10 +268,10 @@
     "pwr_none_dsc": "A power that does nothing. This power cannot be charged or activated.",
 
     "pwr_pointsPlus_nme": "Points Plus",
-    "pwr_pointsPlus_dsc": "Increases the user’s points gained for correct answers for a time.",
+    "pwr_pointsPlus_dsc": "Increases the user's points gained for correct answers for a time.",
 
     "pwr_pointsMinus_nme": "Points Minus",
-    "pwr_pointsMinus_dsc": "Decreases the opponent’s points gained for correct answers for a time.",
+    "pwr_pointsMinus_dsc": "Decreases the opponent's points gained for correct answers for a time.",
 
     "pwr_equationShorten_nme": "Question Short",
     "pwr_equationShorten_dsc": "Shortens the user's questions and increases their number of points gained for correct answers for a time.",
@@ -283,10 +283,10 @@
     "pwr_pointsTransfer_dsc": "Transfers some points to the user from the opponent for correct answers for a time.",
 
     "pwr_pointsBlock_nme": "Points Block",
-    "pwr_pointsBlock_dsc": "Removes some of the opponent’s points for a time.",
+    "pwr_pointsBlock_dsc": "Removes some of the opponent's points for a time.",
 
     "pwr_twist_nme": "Twist",
-    "pwr_twist_dsc": "Flips the opponent’s view upside down for a time.",
+    "pwr_twist_dsc": "Flips the opponent's view upside down for a time.",
 
 
     "kwd_equip": "Equip",
@@ -349,22 +349,22 @@
     "kwd_rematch": "Rematch",
 
 
-    "trl_opening_00": "Welcome to the <b >Exponent Club</b>! I’m Minraul, and as you can guess, we play the <b >exponent game</b> here! Oh, you’ve never played the game before? Well, I guess I’ll just have to teach you then!",
+    "trl_opening_00": "Welcome to the <b >Exponent Club</b>! I'm Minraul, and as you can guess, we play the <b >exponent game</b> here! Oh, you've never played the game before? Well, I guess I'll just have to teach you then!",
     "trl_opening_01": "In the exponent game, you answer exponent questions as fast as you can to gain points and reach the goal before your opponent. The questions all have missing values, which you need to fill in correctly and in the right order.",
-    "trl_opening_02": "The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they’re all self-explanatory. Outside of selecting values, you can also use <b >skips</b> and <b >powers</b>.",
-    "trl_opening_03": "<b >Skips</b> allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn’t finish the question. Skipping also has a cooldown to it, so it’s best not to use it constantly.",
-    "trl_opening_04": "As for <b >powers</b>, I’ll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area.",
+    "trl_opening_02": "The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they're all self-explanatory. Outside of selecting values, you can also use <b >skips</b> and <b >powers</b>.",
+    "trl_opening_03": "<b >Skips</b> allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn't finish the question. Skipping also has a cooldown to it, so it's best not to use it constantly.",
+    "trl_opening_04": "As for <b >powers</b>, I'll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area.",
 
     "trl_firstMatchLoss_00": "You lost the match. You need to learn the basics before you can take on the other club members, so please try again.",
 
-    "trl_firstMatchWin_00": "You won your first match! Now that you’re familiar with the rules, you can take on the other club members. Some of them won’t accept your challenge until you become more experienced, so your options are restricted.",
-    "trl_firstMatchWin_01": "Some club members utilize exponent rules that you haven’t learned yet. When you encounter a new rule, I’ll be there to explain it. Feel free to check the ‘info menu’ as well if you ever need a refresher. Good luck!",
+    "trl_firstMatchWin_00": "You won your first match! Now that you're familiar with the rules, you can take on the other club members. Some of them won't accept your challenge until you become more experienced, so your options are restricted.",
+    "trl_firstMatchWin_01": "Some club members utilize exponent rules that you haven't learned yet. When you encounter a new rule, I'll be there to explain it. Feel free to check the 'info menu' as well if you ever need a refresher. Good luck!",
 
     "trl_firstPower_00": "You just got a <b >match power</b>! A match power is a power-up that can be used during a match, but only after you charge it up. Powers charge up when you answer questions correctly, so just playing the game like usual is enough.",
-    "trl_firstPower_01": "After a power is fully charged, you can activate it with the ‘<b >power button</b>’ at anytime. The power’s effects remain active until the power’s energy runs out, after which you need to charge it up again.",
-    "trl_firstPower_02": "Unlocked powers can be viewed and equipped in the ‘<b >powers menu</b>’. Your opponents can use powers too, so keep that in mind. Good luck!",
+    "trl_firstPower_01": "After a power is fully charged, you can activate it with the '<b >power button</b>' at anytime. The power's effects remain active until the power's energy runs out, after which you need to charge it up again.",
+    "trl_firstPower_02": "Unlocked powers can be viewed and equipped in the '<b >powers menu</b>'. Your opponents can use powers too, so keep that in mind. Good luck!",
 
-    "trl_finalMatch_00": "You’ve learned all the exponent rules and defeated all the other club members, so now it’s time for your <b >final match</b>! A rematch against me! Select my icon in the next area to challenge me like before.",
+    "trl_finalMatch_00": "You've learned all the exponent rules and defeated all the other club members, so now it's time for your <b >final match</b>! A rematch against me! Select my icon in the next area to challenge me like before.",
 
     "trl_gameOver_00": "You lost the match. You can rematch the opponent now or return to the world area. Every club member must be defeated for you to complete the challenge, but you can take as many tries as you like.",
 
@@ -583,7 +583,7 @@
     "kwd_score": "Puntuación",
     "rst_wrongAnswers": "Respuestas incorrectas",
     "kwd_finish": "Finalizar"
-
+  
 
   }
 }
