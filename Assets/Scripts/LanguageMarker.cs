@@ -20,8 +20,7 @@ namespace RM_EM
         [HideInInspector]
         public Color noLoadColor = Color.red;
 
-        // If the text colour should be changed. This has been set to 'false' for the promo build.
-        // This should really have been a regular variable that could be edited.
+        // If the text colour should be changed.
         public const bool CHANGE_TEXT_COLOR = false;
 
         // The constructor
@@ -83,11 +82,8 @@ namespace RM_EM
         // Marks the provided text object.
         public void MarkText(TMP_Text text)
         {
-            // Added this to avoid triggering an unreachable code warning.
-            bool changeColor = CHANGE_TEXT_COLOR;
-
             // If the text color should be changed.
-            if (changeColor)
+            if(CHANGE_TEXT_COLOR)
                 text.color = noLoadColor;
         }
 
