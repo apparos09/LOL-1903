@@ -5,8 +5,10 @@ using util;
 
 namespace RM_EM
 {
-    public class MatchAudio : MonoBehaviour
+    public class MatchAudio : EM_GameAudio
     {
+        [Header("MatchAudio")]
+
         // The manager
         public MatchManager manager;
 
@@ -64,9 +66,11 @@ namespace RM_EM
         public AudioClip powerUseSfx;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
-            if(manager == null)
+            base.Start();
+
+            if (manager == null)
                 manager = MatchManager.Instance;
 
 
