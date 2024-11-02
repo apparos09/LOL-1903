@@ -694,14 +694,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioCredits: {fileID: 943433274}
-  audioTitleText: {fileID: 0}
+  audioTitleText: {fileID: 115672844}
   artistText: {fileID: 1655416769}
   collectionText: {fileID: 1657967973}
   sourceText: {fileID: 1499400818}
   link1Text: {fileID: 1279096848}
   link2Text: {fileID: 1153478381}
   copyrightText: {fileID: 2086693200}
-  creditNumberText: {fileID: 0}
+  creditNumberText: {fileID: 1152301792}
 --- !u!1001 &403048271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -820,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8170320487686391547, guid: 4614534228b58824999e5ec17a963236, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PreviousPage
+      value: PreviousCredit
       objectReference: {fileID: 0}
     - target: {fileID: 8170320487686391547, guid: 4614534228b58824999e5ec17a963236, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1250,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8170320487686391547, guid: 4614534228b58824999e5ec17a963236, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextPage
+      value: NextCredit
       objectReference: {fileID: 0}
     - target: {fileID: 8170320487686391547, guid: 4614534228b58824999e5ec17a963236, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

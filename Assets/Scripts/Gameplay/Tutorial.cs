@@ -167,11 +167,11 @@ namespace RM_EM
             }
             else
             {
-                pages.Add(new Page("Welcome to the Exponent Club! I’m Minraul, and as you can guess, we play the exponent game here! Oh, you’ve never played the game before? Well, I guess I’ll just have to teach you then!"));
+                pages.Add(new Page("Welcome to the Exponent Club! I'm Minraul, and as you can guess, we play the exponent game here! Oh, you've never played the game before? Well, I guess I'll just have to teach you then!"));
                 pages.Add(new Page("In the exponent game, you answer exponent questions as fast as you can to gain points and reach the goal before your opponent. The questions all have missing values, which you need to fill in correctly and in the right order."));
-                pages.Add(new Page("The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they’re all self-explanatory. Outside of selecting values, you can also use skips and powers."));
-                pages.Add(new Page("Skips allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn’t finish the question. Skipping also has a cooldown to it, so it’s best not to use it constantly."));
-                pages.Add(new Page("As for powers, I’ll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area."));
+                pages.Add(new Page("The game will give you values to choose from to try and fill in empty slots. The way this is handled can vary by match, but they're all self-explanatory. Outside of selecting values, you can also use skips and powers."));
+                pages.Add(new Page("Skips allow you to skip your current question and get a new one. Naturally, this means you get no points since you didn't finish the question. Skipping also has a cooldown to it, so it's best not to use it constantly."));
+                pages.Add(new Page("As for powers, I'll talk more about them later. With all that explained, issue a challenge to me to start your first match! You can do so by selecting my icon in the world area."));
             }
 
 
@@ -229,8 +229,8 @@ namespace RM_EM
             }
             else
             {
-                pages.Add(new Page("You won your first match! Now that you’re familiar with the rules, you can take on the other club members. Some of them won’t accept your challenge until you become more experienced, so your options are restricted."));
-                pages.Add(new Page("Some club members utilize exponent rules that you haven’t learned yet. When you encounter a new rule, I’ll be there to explain it. Feel free to check the ‘info menu’ as well if you ever need a refresher. Good luck!"));
+                pages.Add(new Page("You won your first match! Now that you're familiar with the rules, you can take on the other club members. Some of them won't accept your challenge until you become more experienced, so your options are restricted."));
+                pages.Add(new Page("Some club members utilize exponent rules that you haven't learned yet. When you encounter a new rule, I'll be there to explain it. Feel free to check the 'info menu' as well if you ever need a refresher. Good luck!"));
             }
 
             clearedFirstMatchWin = true;
@@ -254,8 +254,8 @@ namespace RM_EM
             else
             {
                 pages.Add(new Page("You just got a match power! A match power is a power-up that can be used during a match, but only after you charge it up. Powers charge up when you answer questions correctly, so just playing the game like usual is enough."));
-                pages.Add(new Page("After a power is fully charged, you can activate it with the ‘power button’ at anytime. The power’s effects remain active until the power’s energy runs out, after which you need to charge it up again."));
-                pages.Add(new Page("Unlocked powers can be viewed and equipped in the ‘powers menu’. Your opponents can use powers too, so keep that in mind. Good luck!"));
+                pages.Add(new Page("After a power is fully charged, you can activate it with the 'power button' at anytime. The power's effects remain active until the power's energy runs out, after which you need to charge it up again."));
+                pages.Add(new Page("Unlocked powers can be viewed and equipped in the 'powers menu'. Your opponents can use powers too, so keep that in mind. Good luck!"));
             }
 
             clearedFirstPower = true;
@@ -276,7 +276,7 @@ namespace RM_EM
             }
             else
             {
-                pages.Add(new Page("You’ve learned all the exponent rules and defeated all the other club members, so now it’s time for your final match! A rematch against me! Select my icon in the next area to challenge me like before."));
+                pages.Add(new Page("You've learned all the exponent rules and defeated all the other club members, so now it's time for your final match! A rematch against me! Select my icon in the next area to challenge me like before."));
             }
 
             clearedFinalMatch = true;
