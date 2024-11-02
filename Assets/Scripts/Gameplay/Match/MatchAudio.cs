@@ -166,7 +166,7 @@ namespace RM_EM
         }
 
         // Plays the keyboard click SFX
-        public void PlayKeyboardClickSfx()
+        public void PlayKeypadClickSfx()
         {
             sfxSource.PlayOneShot(keyboardClickSfx);
         }
