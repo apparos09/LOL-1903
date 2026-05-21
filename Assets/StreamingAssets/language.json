@@ -196,6 +196,199 @@
 
     }
   },
+  "de": {
+    "_stop_": "",
+
+    "gameTitle": "Exponenten-Monster",
+
+    "kwd_title": "Titel",
+    "kwd_start": "Start",
+    "kwd_newGame": "Neues Spiel",
+    "kwd_continue": "Weiter",
+    "kwd_controls": "Steuerung",
+    "kwd_settings": "Einstellungen",
+    "kwd_credits": "Credits",
+    "kwd_licenses": "Lizenzen",
+    "kwd_quit": "Beenden",
+
+
+    "ttl_controls_instruct": "Linke Maustaste/Berührung: Interagieren",
+    "ttl_controls_desc": "Das Spiel kann entweder mit der Maus oder dem Touchscreen gesteuert werden. Verwende die linke Maustaste oder eine Berührung auf dem Touchscreen, um mit Elementen in der Spielwelt zu interagieren.",
+    "kwd_back": "Zurück",
+
+
+    "kwd_volume": "Lautstärke",
+    "kwd_bgmVolume": "Lautstärke der Hintergrundmusik (BGM)",
+    "kwd_sfxVolume": "Lautstärke der Soundeffekte (SFX)",
+    "kwd_ttsVolume": "Vorlese- (TTS) Lautstärke",
+    "kwd_mute": "Stumm",
+    "kwd_textToSpeech": "Vorlesefunktion",
+    "kwd_tutorial": "Tutorial",
+
+
+    "kwd_save": "Speichern",
+    "kwd_saveQuit": "Speichern/Beenden",
+    "sve_msg_savingGame": "Spiel wird gespeichert...",
+    "sve_msg_loadSuccess": "Spieldaten erfolgreich geladen.",
+
+    "kwd_world": "Welt",
+    "kwd_info": "Info",
+    "kwd_powers": "Fähigkeiten",
+
+    "kwd_power": "Fähigkeit",
+    "wrd_powerUnlocked": "Neue Fähigkeit freigeschaltet!",
+
+    "wrd_exponentChallenge": "Exponenten-Herausforderung",
+    "kwd_rules": "Regeln",
+
+    "rle_none_nme": "Keine",
+    "rle_none_dsc": "Keine Exponentenregel gesetzt.",
+
+    "rle_exponent_nme": "Hochzahl",
+    "rle_exponent_dsc": "Multipliziert einen Term mit sich selbst n Mal.",
+
+    "rle_product_nme": "Produkt",
+    "rle_product_dsc": "Wenn gleiche Basen multipliziert werden, addiere ihre Exponenten und wende das Ergebnis auf die Basis an.",
+
+    "rle_powerOfAPower_nme": "Potenz einer Potenz",
+    "rle_powerOfAPower_dsc": "Wenn eine Basis zwei Exponenten hat, multipliziere die Exponenten und wende das Ergebnis auf die Basis an.",
+
+    "rle_powerOfAProduct_nme": "Potenz eines Produkts",
+    "rle_powerOfAProduct_dsc": "Wenn unterschiedliche Basen mit demselben Exponenten multipliziert werden, multipliziere die Basen zuerst und wende dann den gemeinsamen Exponenten auf das Ergebnis an.",
+
+    "rle_zero_nme": "Null",
+    "rle_zero_dsc": "Alles hoch 0 ist immer 1.",
+
+    "rle_negative_nme": "Negativ",
+    "rle_negative_dsc": "Bei negativem Exponenten nimm den Kehrwert der Basis und wende den Exponenten auf den Nenner an.",
+
+
+
+    "pwr_none_nme": "Keine",
+    "pwr_none_dsc": "Eine Fähigkeit, die nichts bewirkt. Diese Fähigkeit kann nicht aufgeladen oder aktiviert werden.",
+
+    "pwr_pointsPlus_nme": "Punkte Plus",
+    "pwr_pointsPlus_dsc": "Erhöht für eine Weile die Punkte, die der Nutzer für richtige Antworten bekommt.",
+
+    "pwr_pointsMinus_nme": "Punkte Abzug",
+    "pwr_pointsMinus_dsc": "Verringert für eine Weile die Punkte, die der Gegner für richtige Antworten erhält.",
+
+    "pwr_equationShorten_nme": "Frage Kurz",
+    "pwr_equationShorten_dsc": "Verkürzt die Fragen des Nutzers und erhöht für eine Weile die Punkte, die er für richtige Antworten bekommt.",
+
+    "pwr_eqautionLengthen_nme": "Frage Lang",
+    "pwr_eqautionLengthen_dsc": "Erhöht die Länge der Fragen des Gegners und verringert für eine Weile die Punkte, die er für richtige Antworten bekommt.",
+
+    "pwr_pointsTransfer_nme": "Punkte Übertragen",
+    "pwr_pointsTransfer_dsc": "Überträgt für eine Weile Punkte vom Gegner zum Benutzer, wenn er richtige Antworten gibt.",
+
+    "pwr_pointsBlock_nme": "Punkte Block",
+    "pwr_pointsBlock_dsc": "Entfernt für eine Weile einige Punkte des Gegners.",
+
+    "pwr_twist_nme": "Drehen",
+    "pwr_twist_dsc": "Dreht die Sicht des Gegners für eine Weile auf den Kopf.",
+
+
+    "kwd_equip": "Ausrüsten",
+    "kwd_unequip": "Ablegen",
+
+
+    "wrd_saveMsg": "Möchtest du speichern? Möchtest du beenden?",
+    "wrd_saveAndContinue": "Speichern und Fortfahren",
+    "wrd_saveAndQuit": "Speichern und Beenden",
+    "wrd_quitNoSave": "Beenden (Nicht speichern)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Statue",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Echse",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Mumie",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Feuergeist",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Geist",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampir",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Werwolf",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Wassergeist",
+
+    "kwd_all": "Alle",
+    "kwd_accept": "Akzeptieren",
+    "kwd_decline": "Ablehnen",
+
+
+    "kwd_match": "Duell",
+    "kwd_player": "Spieler",
+    "kwd_plyr": "SPIELER",
+    "kwd_computer": "Computer",
+    "kwd_com": "COM",
+    "kwd_usePower": "Fähigkeit nutzen",
+    "kwd_usedPower": "Genutzte Fähigkeit",
+    "kwd_skip": "Überspringen",
+
+    "kwd_ready": "Bereit",
+    "mth_ready": "Bereit...",
+    "mth_start": "Start!",
+
+    "mth_matchOver": "Das Duell ist vorbei!",
+    "mth_userWins": "Du hast gewonnen!",
+    "mth_oppWins": "Der Gegner hat gewonnen!",
+    "kwd_rematch": "Revanche",
+
+
+    "trl_opening_00": "Willkommen im Exponent Club! Ich bin Minraul, und wie du dir denken kannst, spielen wir hier das Exponenten-Spiel! Du hast das Spiel noch nie gespielt? Dann muss ich es dir wohl beibringen!",
+    "trl_opening_01": "Im Exponenten-Spiel beantwortest du so schnell wie möglich Fragen zu Exponenten, um Punkte zu sammeln und das Ziel vor deinem Gegner zu erreichen. Die Fragen haben immer fehlende Werte, die du in der richtigen Reihenfolge ausfüllen musst.",
+    "trl_opening_02": "Das Spiel gibt dir Werte zur Auswahl, mit denen du die leeren Felder füllen kannst. Wie das gehandhabt wird, kann je nach Duell variieren, ist aber immer selbsterklärend. Außer dem Auswählen von Werten kannst du auch Überspringen und Fähigkeiten verwenden.",
+    "trl_opening_03": "Überspringen lässt dich die aktuelle Frage überspringen und eine neue bekommen. Natürlich bekommst du dafür keine Punkte, weil du die Frage nicht beendet hast. Überspringen hat außerdem eine Abklingzeit, also solltest du es nicht ständig benutzen.",
+    "trl_opening_04": "Was Fähigkeiten angeht, spreche ich später noch mehr darüber. Wenn das alles erklärt ist, fordere mich zu deinem ersten Duell heraus! Wähle dazu mein Symbol im Weltgebiet aus.",
+
+    "trl_firstMatchLoss_00": "Du hast das Duell verloren. Du musst die Grundlagen lernen, bevor du gegen die anderen Clubmitglieder antreten kannst — versuche es bitte noch einmal.",
+
+    "trl_firstMatchWin_00": "Du hast dein erstes Duell gewonnen! Nun, da du die Regeln kennst, kannst du die anderen Clubmitglieder herausfordern. Manche von ihnen nehmen deine Herausforderung erst an, wenn du erfahrener bist, daher sind deine Optionen noch eingeschränkt.",
+    "trl_firstMatchWin_01": "Einige Clubmitglieder verwenden Exponentenregeln, die du noch nicht gelernt hast. Wenn du auf eine neue Regel stößt, erkläre ich sie dir. Du kannst auch das 'Info-Menü' nutzen, wenn du eine Auffrischung brauchst. Viel Glück!",
+
+    "trl_firstPower_00": "Du hast gerade eine Duell-Kraft bekommen! Eine Duell-Kraft ist ein Power-up, das während eines Duells eingesetzt werden kann, aber erst, nachdem du es aufgeladen hast. Kräfte laden sich auf, wenn du Fragen richtig beantwortest, also reicht normales Spielen völlig aus.",
+    "trl_firstPower_01": "Wenn eine Fähigkeit komplett geladen ist, kannst du sie jederzeit mit dem 'Power-Button' aktivieren. Die Effekte bleiben aktiv, bis die Energie der Fähigkeit aufgebraucht ist; dann musst du sie wieder aufladen.",
+    "trl_firstPower_02": "Freigeschaltete Fähigkeiten kannst du im 'Fähigkeiten-Menü' ansehen und ausrüsten. Auch deine Gegner können Fähigkeiten einsetzen — denk daran. Viel Glück!",
+
+    "trl_finalMatch_00": "Du hast alle Exponentenregeln gelernt und alle anderen Clubmitglieder besiegt — also ist jetzt dein letztes Duell dran! Ein Rückkampf gegen mich! Wähle mein Symbol im nächsten Bereich, um mich wie zuvor herauszufordern.",
+
+    "trl_gameOver_00": "Du hast das Duell verloren. Du kannst den Gegner jetzt in einem Rückkampf herausfordern oder ins Weltgebiet zurückkehren. Jedes Clubmitglied muss besiegt werden, damit du die Herausforderung abschließt, aber du kannst es so oft versuchen, wie du willst.",
+
+
+    "trl_exponent_00": "Dieses Duell verwendet nur die Grundlagen der Exponenten. Exponenten sind mathematische Operationen, bei denen eine Basis mehrmals mit sich selbst multipliziert wird. Schau ins Info-Fenster, wenn du die Regeln zu Exponenten noch einmal nachlesen willst.",
+
+    "trl_product_00": "Dieses Duell verwendet die Produktregel. Wenn gleiche Basen mit unterschiedlichen Exponenten multipliziert werden, können die Exponenten addiert und auf die Basis angewendet werden, um die Rechnung zu vereinfachen.",
+
+    "trl_powerOfAPower_00": "Dieses Duell verwendet die Potenz-einer-Potenz-Regel. Wenn auf eine Basis zwei Exponenten angewendet werden, kann man die Exponenten miteinander multiplizieren und die Basis mit dem Produkt potenzieren.",
+
+    "trl_powerOfAProduct_00": "Dieses Duell verwendet die Potenz-eines-Produkts-Regel. Wenn zwei Basen mit demselben Exponenten multipliziert werden, kann man das zu einer Multiplikation der Basen vereinfachen, wobei das Ergebnis mit dem gemeinsamen Exponenten potenziert wird.",
+
+    "trl_zero_00": "Dieses Duell verwendet die Null-Regel. Jede Zahl mit dem Exponenten 0 ergibt immer 1.",
+
+    "trl_negative_00": "Dieses Duell verwendet die Negativregel. Eine Zahl mit negativem Exponenten wird zu ihrem Kehrwert, wobei der Exponent auf den Nenner angewendet wird.",
+
+
+    "rsl_winMsg": "Du hast alle Herausforderungen geschafft! Du bist ein Exponenten‑Meister!",
+    "kwd_results": "Ergebnisse",
+    "kwd_time": "Zeit",
+    "kwd_score": "Punkte",
+    "rst_wrongAnswers": "Falsche Antworten",
+    "kwd_finish": "Fertig"
+  },
   "en": {
     "_stop_": "",
 
@@ -388,8 +581,6 @@
     "kwd_score": "Score",
     "rst_wrongAnswers": "Incorrect Answers",
     "kwd_finish": "Finish"
-
-
   },
   "es": {
     "_stop_": "",
@@ -583,7 +774,2321 @@
     "kwd_score": "Puntuación",
     "rst_wrongAnswers": "Respuestas incorrectas",
     "kwd_finish": "Finalizar"
-  
+  },
+  "es-ES": {
+    "_stop_": "",
 
+    "gameTitle": "Monstruos de Exponentes",
+
+    "kwd_title": "Título",
+    "kwd_start": "Comenzar",
+    "kwd_newGame": "Nuevo juego",
+    "kwd_continue": "Continuar",
+    "kwd_controls": "Controles",
+    "kwd_settings": "Ajustes",
+    "kwd_credits": "Créditos",
+    "kwd_licenses": "Licencias",
+    "kwd_quit": "Salir",
+
+
+    "ttl_controls_instruct": "Botón izquierdo del ratón/Toque: Interactuar",
+    "ttl_controls_desc": "El juego se controla con el ratón o la pantalla táctil. Usa el clic izquierdo o la pantalla táctil para interactuar con elementos del mundo del juego.",
+    "kwd_back": "Atrás",
+
+
+    "kwd_volume": "Volumen",
+    "kwd_bgmVolume": "Volumen de la música de fondo (BGM)",
+    "kwd_sfxVolume": "Volumen de efectos de sonido (SFX)",
+    "kwd_ttsVolume": "Volumen de texto a voz (TTS)",
+    "kwd_mute": "Silenciar",
+    "kwd_textToSpeech": "Texto a voz",
+    "kwd_tutorial": "Tutorial",
+
+
+    "kwd_save": "Guardar",
+    "kwd_saveQuit": "Guardar/Salir",
+    "sve_msg_savingGame": "Guardando partida...",
+    "sve_msg_loadSuccess": "Datos guardados cargados con éxito.",
+
+    "kwd_world": "Mundo",
+    "kwd_info": "Info",
+    "kwd_powers": "Poderes",
+
+    "kwd_power": "Poder",
+    "wrd_powerUnlocked": "¡Nuevo poder desbloqueado!",
+
+    "wrd_exponentChallenge": "Desafío de Exponentes",
+    "kwd_rules": "Reglas",
+
+    "rle_none_nme": "Ninguna",
+    "rle_none_dsc": "No hay ninguna regla de exponentes aplicada.",
+
+    "rle_exponent_nme": "Exponente",
+    "rle_exponent_dsc": "Multiplica un término por sí mismo n veces.",
+
+    "rle_product_nme": "Producto",
+    "rle_product_dsc": "Si multiplicas las mismas bases, suma sus exponentes y aplica el resultado a la base.",
+
+    "rle_powerOfAPower_nme": "Potencia de una potencia",
+    "rle_powerOfAPower_dsc": "Si una base tiene dos exponentes, multiplícalos y aplica el resultado a la base.",
+
+    "rle_powerOfAProduct_nme": "Potencia de un producto",
+    "rle_powerOfAProduct_dsc": "Si multiplicas diferentes bases con el mismo exponente, multiplica las bases y eleva el resultado a ese exponente.",
+
+    "rle_zero_nme": "Cero",
+    "rle_zero_dsc": "Todo elevado a la potencia 0 es siempre 1.",
+
+    "rle_negative_nme": "Negativo",
+    "rle_negative_dsc": "Si usas un exponente negativo, toma el recíproco de la base y aplica el exponente al denominador.",
+
+
+
+    "pwr_none_nme": "Ninguno",
+    "pwr_none_dsc": "Un poder que no hace nada. No se puede cargar ni activar.",
+
+    "pwr_pointsPlus_nme": "Suma Puntos",
+    "pwr_pointsPlus_dsc": "Aumenta durante un tiempo los puntos que el usuario recibe por respuestas correctas.",
+
+    "pwr_pointsMinus_nme": "Restar Puntos",
+    "pwr_pointsMinus_dsc": "Disminuye durante un tiempo los puntos que el rival obtiene por respuestas correctas.",
+
+    "pwr_equationShorten_nme": "Pregunta Corta",
+    "pwr_equationShorten_dsc": "Acorta las preguntas del usuario y aumenta durante un tiempo los puntos que gana por respuestas correctas.",
+
+    "pwr_eqautionLengthen_nme": "Pregunta Larga",
+    "pwr_eqautionLengthen_dsc": "Aumenta la longitud de las preguntas del rival y reduce durante un tiempo los puntos que consigue por respuestas correctas.",
+
+    "pwr_pointsTransfer_nme": "Transferir Puntos",
+    "pwr_pointsTransfer_dsc": "Transfiere algunos puntos del oponente al usuario por respuestas correctas durante un tiempo.",
+
+    "pwr_pointsBlock_nme": "Bloqueo de Puntos",
+    "pwr_pointsBlock_dsc": "Elimina algunos puntos del rival durante un tiempo.",
+
+    "pwr_twist_nme": "Girar",
+    "pwr_twist_dsc": "Gira la vista del rival boca abajo durante un tiempo.",
+
+
+    "kwd_equip": "Equipar",
+    "kwd_unequip": "Desequipar",
+
+
+    "wrd_saveMsg": "¿Deseas guardar? ¿Deseas salir?",
+    "wrd_saveAndContinue": "Guardar y continuar",
+    "wrd_saveAndQuit": "Guardar y salir",
+    "wrd_quitNoSave": "Salir (sin guardar)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Estatua",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lagarto",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Momia",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Espíritu del Fuego",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantasma",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampiro",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Hombre Lobo",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Espíritu del Agua",
+
+    "kwd_all": "Todos",
+    "kwd_accept": "Aceptar",
+    "kwd_decline": "Rechazar",
+
+
+    "kwd_match": "Duelo",
+    "kwd_player": "Jugador",
+    "kwd_plyr": "JUG",
+    "kwd_computer": "Ordenador",
+    "kwd_com": "COM",
+    "kwd_usePower": "Usar poder",
+    "kwd_usedPower": "Poder usado",
+    "kwd_skip": "Saltar",
+
+    "kwd_ready": "Listo",
+    "mth_ready": "Listo...",
+    "mth_start": "¡Comenzar!",
+
+    "mth_matchOver": "¡El duelo ha terminado!",
+    "mth_userWins": "¡Has ganado!",
+    "mth_oppWins": "¡El rival ganó!",
+    "kwd_rematch": "Revancha",
+
+
+    "trl_opening_00": "¡Bienvenido al Club de Exponentes! Soy Minraul, y como imaginas, aquí jugamos al juego de exponentes. ¿Nunca has jugado antes? ¡Pues tendré que enseñarte!",
+    "trl_opening_01": "En el juego de exponentes debes responder preguntas sobre exponentes lo más rápido posible para ganar puntos y llegar a la meta antes que tu rival. Las preguntas tienen valores faltantes que debes completar en el orden correcto.",
+    "trl_opening_02": "El juego te dará valores para elegir y llenar los espacios vacíos. La forma puede variar según el duelo, pero es autoexplicativa. Además de seleccionar valores, puedes usar saltos y poderes.",
+    "trl_opening_03": "Saltar te permite omitir la pregunta actual y recibir una nueva. No consigues puntos por la pregunta omitida. Además, saltar tiene tiempo de recarga, así que no lo uses constantemente.",
+    "trl_opening_04": "Sobre los poderes hablaré más tarde. Con todo eso explicado, ¡desafíame para empezar tu primer duelo! Selecciona mi icono en la zona del mundo.",
+
+    "trl_firstMatchLoss_00": "Has perdido el duelo. Necesitas aprender lo básico antes de poder enfrentarte a los demás miembros del club, así que inténtalo otra vez.",
+
+    "trl_firstMatchWin_00": "¡Ganaste tu primer duelo! Ahora que conoces las reglas, puedes enfrentarte a los demás miembros del club. Algunos no aceptarán tu reto hasta que tengas más experiencia, así que tus opciones están limitadas.",
+    "trl_firstMatchWin_01": "Algunos miembros del club usan reglas de exponentes que aún no has aprendido. Si te encuentras una regla nueva, yo te la explicaré. También puedes mirar el 'menú de información' cuando necesites repasar. ¡Buena suerte!",
+
+    "trl_firstPower_00": "¡Has conseguido un poder de duelo! Es un potenciador que se usa en un duelo, pero sólo después de cargarlo. Los poderes se cargan respondiendo correctamente, así que simplemente juega como siempre.",
+    "trl_firstPower_01": "Una vez que un poder esté completamente cargado, puedes activarlo en cualquier momento con el botón de poder. Sus efectos duran hasta que se agota la energía del poder; después tendrás que cargarlo de nuevo.",
+    "trl_firstPower_02": "Los poderes desbloqueados pueden verse y equiparse en el 'menú de poderes'. Tus rivales también pueden usar poderes, tenlo en cuenta. ¡Buena suerte!",
+
+    "trl_finalMatch_00": "Has aprendido todas las reglas y vencido a todos los demás, así que llega tu duelo final. ¡Una revancha contra mí! Selecciona mi icono en la siguiente zona para retarme de nuevo.",
+
+    "trl_gameOver_00": "Perdiste el duelo. Ahora puedes volver a retar al rival o regresar al área del mundo. Debes vencer a todos los miembros del club para completar el desafío, pero puedes intentarlo todas las veces que quieras.",
+
+
+    "trl_exponent_00": "Este duelo solo usa lo básico sobre exponentes. Los exponentes son operaciones matemáticas que multiplican una base por sí misma un cierto número de veces. Consulta la ventana de información si alguna vez quieres repasar las reglas de los exponentes.",
+
+    "trl_product_00": "Este duelo usa la regla del producto. Cuando se multiplican bases iguales con exponentes diferentes, los exponentes se pueden sumar y aplicar a esa base para simplificar la operación.",
+
+    "trl_powerOfAPower_00": "Este duelo usa la regla de potencia de una potencia. Si a una base se le aplican dos exponentes, entonces esos exponentes se pueden multiplicar entre sí, con la base elevada al producto de esa operación.",
+
+    "trl_powerOfAProduct_00": "Este duelo usa la regla de la potencia de un producto. Si se multiplican dos bases con el mismo exponente, se puede simplificar multiplicando dichas bases, y el resultado se eleva al exponente compartido.",
+
+    "trl_zero_00": "Este duelo usa la regla del cero. Cualquier número elevado al exponente 0 da 1.",
+
+    "trl_negative_00": "Este duelo usa la regla de los negativos. Un número con exponente negativo se vuelve su recíproco y el exponente se aplica al denominador.",
+
+
+    "rsl_winMsg": "¡Has superado todos los desafíos! ¡Eres un Maestro de los Exponentes!",
+    "kwd_results": "Resultados",
+    "kwd_time": "Tiempo",
+    "kwd_score": "Puntuación",
+    "rst_wrongAnswers": "Respuestas incorrectas",
+    "kwd_finish": "Terminar"
+  },
+  "fr-CA": {
+    "_stop_": "",
+
+    "gameTitle": "Monstres des Exposants",
+
+    "kwd_title": "Titre",
+    "kwd_start": "Démarrer",
+    "kwd_newGame": "Nouvelle partie",
+    "kwd_continue": "Continuer",
+    "kwd_controls": "Contrôles",
+    "kwd_settings": "Paramètres",
+    "kwd_credits": "Crédits",
+    "kwd_licenses": "Licences",
+    "kwd_quit": "Quitter",
+
+
+    "ttl_controls_instruct": "Clic gauche/Tactile : Interagir",
+    "ttl_controls_desc": "Le jeu se contrôle avec la souris ou l'écran tactile. Utilise le clic gauche ou le toucher pour interagir avec les éléments du monde du jeu.",
+    "kwd_back": "Retour",
+
+
+    "kwd_volume": "Volume",
+    "kwd_bgmVolume": "Volume de la musique ambiante (BGM)",
+    "kwd_sfxVolume": "Volume des effets sonores (SFX)",
+    "kwd_ttsVolume": "Volume Texte‑par‑voix (TTS)",
+    "kwd_mute": "Muet",
+    "kwd_textToSpeech": "Texte‑par‑voix",
+    "kwd_tutorial": "Tutoriel",
+
+
+    "kwd_save": "Enregistrer",
+    "kwd_saveQuit": "Enregistrer/Quitter",
+    "sve_msg_savingGame": "Enregistrement en cours...",
+    "sve_msg_loadSuccess": "Sauvegarde chargée avec succès.",
+
+    "kwd_world": "Monde",
+    "kwd_info": "Info",
+    "kwd_powers": "Pouvoirs",
+
+    "kwd_power": "Pouvoir",
+    "wrd_powerUnlocked": "Nouveau pouvoir débloqué !",
+
+    "wrd_exponentChallenge": "Défi des exposants",
+    "kwd_rules": "Règles",
+
+    "rle_none_nme": "Aucune",
+    "rle_none_dsc": "Aucune règle d'exposants définie.",
+
+    "rle_exponent_nme": "Exposant",
+    "rle_exponent_dsc": "Multiplie un terme par lui‑même n fois.",
+
+    "rle_product_nme": "Produit",
+    "rle_product_dsc": "Si on multiplie les mêmes bases, ajoute leurs exposants et applique le résultat à la base.",
+
+    "rle_powerOfAPower_nme": "Puissance d’une puissance",
+    "rle_powerOfAPower_dsc": "Si une base a deux exposants, multiplie les exposants et applique le résultat à la base.",
+
+    "rle_powerOfAProduct_nme": "Puissance d'un produit",
+    "rle_powerOfAProduct_dsc": "Si on multiplie des bases différentes ayant le même exposant, multiplie d'abord les bases puis applique l'exposant au résultat.",
+
+    "rle_zero_nme": "Zéro",
+    "rle_zero_dsc": "Tout élevé à la puissance 0 vaut toujours 1.",
+
+    "rle_negative_nme": "Négatif",
+    "rle_negative_dsc": "Avec un exposant négatif, prends le réciproque de la base et applique l'exposant au dénominateur.",
+
+
+
+    "pwr_none_nme": "Aucun",
+    "pwr_none_dsc": "Un pouvoir qui ne fait rien. Ce pouvoir ne peut ni se charger ni s'activer.",
+
+    "pwr_pointsPlus_nme": "Plus de points",
+    "pwr_pointsPlus_dsc": "Augmente pendant un moment les points que l'utilisateur obtient pour les bonnes réponses.",
+
+    "pwr_pointsMinus_nme": "Moins de points",
+    "pwr_pointsMinus_dsc": "Diminue les points que l'adversaire gagne pour les bonnes réponses pendant un moment.",
+
+    "pwr_equationShorten_nme": "Raccourcissement des questions",
+    "pwr_equationShorten_dsc": "Raccourcit les questions de l'utilisateur et augmente pendant un moment les points qu'il obtient pour les bonnes réponses.",
+
+    "pwr_eqautionLengthen_nme": "Longueur des questions",
+    "pwr_eqautionLengthen_dsc": "Allonge les questions de l'adversaire et réduit pendant un moment les points qu'il gagne pour les bonnes réponses.",
+
+    "pwr_pointsTransfer_nme": "Transfert de points",
+    "pwr_pointsTransfer_dsc": "Transfère des points de l'adversaire à l'utilisateur pour les bonnes réponses pendant un certain temps.",
+
+    "pwr_pointsBlock_nme": "Blocage de points",
+    "pwr_pointsBlock_dsc": "Retire quelques points à l'adversaire pendant un moment.",
+
+    "pwr_twist_nme": "Renverser",
+    "pwr_twist_dsc": "Retourne la vue de l'adversaire pendant un moment.",
+
+
+    "kwd_equip": "Équiper",
+    "kwd_unequip": "Déséquiper",
+
+
+    "wrd_saveMsg": "Veux‑tu enregistrer ? Veux‑tu quitter ?",
+    "wrd_saveAndContinue": "Enregistrer et continuer",
+    "wrd_saveAndQuit": "Enregistrer et quitter",
+    "wrd_quitNoSave": "Quitter (sans enregistrer)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Statue",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lézard",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Momie",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Esprit du Feu",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantôme",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampire",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Loup‑Garou",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Esprit de l'Eau",
+
+    "kwd_all": "Tout",
+    "kwd_accept": "Accepter",
+    "kwd_decline": "Refuser",
+
+
+    "kwd_match": "Correspondre",
+    "kwd_player": "Joueur",
+    "kwd_plyr": "JOUE",
+    "kwd_computer": "Ordinateur",
+    "kwd_com": "COM",
+    "kwd_usePower": "Utiliser le pouvoir",
+    "kwd_usedPower": "Pouvoir utilisé",
+    "kwd_skip": "Sauter",
+
+    "kwd_ready": "Prêt",
+    "mth_ready": "Prêt...",
+    "mth_start": "C'est parti !",
+
+    "mth_matchOver": "Le duel est terminé !",
+    "mth_userWins": "Tu as gagné !",
+    "mth_oppWins": "L'adversaire a gagné !",
+    "kwd_rematch": "Revanche",
+
+
+    "trl_opening_00": "Bienvenue au Club des Exposants ! Je suis Minraul, et comme tu t'en doutes, on joue ici au jeu des exposants ! Tu n'as jamais joué ? Alors il va falloir que je t'apprenne.",
+    "trl_opening_01": "Dans le jeu des exposants, tu réponds le plus vite possible à des questions sur les exposants pour gagner des points et atteindre l'objectif avant ton adversaire. Les questions comportent des valeurs manquantes que tu dois remplir dans le bon ordre.",
+    "trl_opening_02": "Le jeu te proposera des valeurs à choisir pour remplir les emplacements vides. La façon de faire peut varier selon le duel, mais c'est toujours clair. En plus de choisir, tu peux aussi utiliser sauts et pouvoirs.",
+    "trl_opening_03": "Sauter te permet d'ignorer la question en cours et d'en obtenir une nouvelle. Évidemment, tu ne gagnes pas de points puisque tu n'as pas terminé la question. Sauter a aussi un temps de recharge, donc il ne faut pas l'utiliser sans arrêt.",
+    "trl_opening_04": "Je te parlerai des pouvoirs plus tard. Tout est expliqué ? Alors lance-moi un défi pour commencer ton premier duel ! Tu peux le faire en sélectionnant mon icône dans la zone du monde.",
+
+    "trl_firstMatchLoss_00": "Tu as perdu le duel. Tu dois apprendre les bases avant d'affronter les autres membres du club, alors réessaye s'il te plaît.",
+
+    "trl_firstMatchWin_00": "Tu as gagné ton premier duel ! Maintenant que tu connais les règles, tu peux défier les autres membres du club. Certains n'accepteront pas ton défi tant que tu n'auras pas plus d'expérience, donc tes choix sont pour l'instant limités.",
+    "trl_firstMatchWin_01": "Certains membres utilisent des règles d'exposants que tu n'as pas encore vues. Si tu rencontres une nouvelle règle, je te l'expliquerai. Tu peux aussi consulter le « menu info » si tu veux te rafraîchir la mémoire. Bonne chance !",
+
+    "trl_firstPower_00": "Tu viens d'obtenir un pouvoir de duel ! C'est un bonus utilisable pendant un duel, mais seulement après l'avoir chargé. Les pouvoirs se chargent quand tu réponds bien aux questions, donc jouer normalement suffit.",
+    "trl_firstPower_01": "Quand un pouvoir est entièrement chargé, tu peux l'activer à tout moment avec le bouton « pouvoir ». Les effets restent actifs jusqu'à ce que l'énergie du pouvoir soit épuisée ; il faudra ensuite le recharger.",
+    "trl_firstPower_02": "Les pouvoirs débloqués se consultent et s'équipent dans le « menu pouvoirs ». Tes adversaires peuvent aussi utiliser des pouvoirs, garde ça en tête. Bonne chance !",
+
+    "trl_finalMatch_00": "Tu as appris toutes les règles et battu tous les membres du club, il est temps pour ton dernier duel ! Une revanche contre moi ! Sélectionne mon icône dans la zone suivante pour me défier comme avant.",
+
+    "trl_gameOver_00": "Tu as perdu le duel. Tu peux maintenant refaire un duel contre le même adversaire ou retourner dans la zone du monde. Il faut battre tous les membres du club pour terminer le défi, mais tu peux réessayer autant que tu veux.",
+
+
+    "trl_exponent_00": "Ce duel n'utilise que les bases des exposants. Les exposants multiplient une base par elle‑même un certain nombre de fois. Consulte la fenêtre d'info si tu veux un rappel.",
+
+    "trl_product_00": "Ce duel utilise la règle du produit. Quand on multiplie des mêmes bases avec des exposants différents, on peut additionner les exposants et les appliquer à cette base pour simplifier.",
+
+    "trl_powerOfAPower_00": "Ce duel utilise la règle de la puissance d'une puissance. Si une base a deux exposants, on multiplie ces exposants entre eux, puis on élève la base au produit obtenu.",
+
+    "trl_powerOfAProduct_00": "Ce duel utilise la règle de la puissance d'un produit. Si deux bases avec le même exposant sont multipliées, on peut multiplier les bases puis élever le résultat à l'exposant commun.",
+
+    "trl_zero_00": "Ce duel utilise la règle du zéro. Tout nombre élevé à l'exposant 0 donne 1.",
+
+    "trl_negative_00": "Ce duel utilise la règle des négatifs. Un nombre à exposant négatif devient son réciproque et l'exposant s'applique au dénominateur.",
+
+
+    "rsl_winMsg": "Tu as réussi tous les défis ! Tu es un Maître des exposants !",
+    "kwd_results": "Résultats",
+    "kwd_time": "Temps",
+    "kwd_score": "Points",
+    "rst_wrongAnswers": "Réponses incorrectes",
+    "kwd_finish": "Terminer"
+  },
+  "fr-FR": {
+    "_stop_": "",
+
+    "gameTitle": "Monstres des Exposants",
+
+    "kwd_title": "Titre",
+    "kwd_start": "Démarrer",
+    "kwd_newGame": "Nouvelle partie",
+    "kwd_continue": "Continuer",
+    "kwd_controls": "Contrôles",
+    "kwd_settings": "Paramètres",
+    "kwd_credits": "Crédits",
+    "kwd_licenses": "Licences",
+    "kwd_quit": "Quitter",
+
+
+    "ttl_controls_instruct": "Clic gauche/Écran tactile : Interagir",
+    "ttl_controls_desc": "Le jeu se contrôle avec la souris ou l'écran tactile. Utilise le clic gauche ou le toucher pour interagir avec les éléments dans le monde du jeu.",
+    "kwd_back": "Retour",
+
+
+    "kwd_volume": "Volume",
+    "kwd_bgmVolume": "Volume de la musique de fond (BGM)",
+    "kwd_sfxVolume": "Volume des effets sonores (SFX)",
+    "kwd_ttsVolume": "Volume Texte‑par‑voix (TTS)",
+    "kwd_mute": "Muet",
+    "kwd_textToSpeech": "Texte‑par‑voix",
+    "kwd_tutorial": "Tutoriel",
+
+
+    "kwd_save": "Enregistrer",
+    "kwd_saveQuit": "Enregistrer/Quitter",
+    "sve_msg_savingGame": "Enregistrement en cours...",
+    "sve_msg_loadSuccess": "Données sauvegardées chargées avec succès.",
+
+    "kwd_world": "Monde",
+    "kwd_info": "Info",
+    "kwd_powers": "Pouvoirs",
+
+    "kwd_power": "Pouvoir",
+    "wrd_powerUnlocked": "Nouveau pouvoir débloqué !",
+
+    "wrd_exponentChallenge": "Défi des exposants",
+    "kwd_rules": "Règles",
+
+    "rle_none_nme": "Aucune",
+    "rle_none_dsc": "Aucune règle d'exposants définie.",
+
+    "rle_exponent_nme": "Exposant",
+    "rle_exponent_dsc": "Multiplie un terme par lui‑même n fois.",
+
+    "rle_product_nme": "Produit",
+    "rle_product_dsc": "Si on multiplie les mêmes bases, additionne leurs exposants et applique le résultat à la base.",
+
+    "rle_powerOfAPower_nme": "Puissance d'une puissance",
+    "rle_powerOfAPower_dsc": "Si une base a deux exposants, multiplie-les et applique le résultat à la base.",
+
+    "rle_powerOfAProduct_nme": "Puissance d'un produit",
+    "rle_powerOfAProduct_dsc": "Si on multiplie des bases différentes avec le même exposant, multiplie les bases, puis applique l'exposant au résultat.",
+
+    "rle_zero_nme": "Zéro",
+    "rle_zero_dsc": "Tout nombre à la puissance 0 vaut toujours 1.",
+
+    "rle_negative_nme": "Négatif",
+    "rle_negative_dsc": "Avec un exposant négatif, prends l'inverse de la base et applique l'exposant au numérateur.",
+
+
+
+    "pwr_none_nme": "Aucun",
+    "pwr_none_dsc": "Un pouvoir qui ne fait rien. Ce pouvoir ne peut pas être chargé ni activé.",
+
+    "pwr_pointsPlus_nme": "Plus de points",
+    "pwr_pointsPlus_dsc": "Augmente pendant un certain temps les points que l'utilisateur gagne pour les bonnes réponses.",
+
+    "pwr_pointsMinus_nme": "Moins de points",
+    "pwr_pointsMinus_dsc": "Diminue durant un certain temps les points que l'adversaire gagne pour les bonnes réponses.",
+
+    "pwr_equationShorten_nme": "Raccourcis-question",
+    "pwr_equationShorten_dsc": "Raccourcit les questions de l'utilisateur et augmente pendant un temps les points gagnés pour les bonnes réponses.",
+
+    "pwr_eqautionLengthen_nme": "Allonge-question",
+    "pwr_eqautionLengthen_dsc": "Allonge les questions de l'adversaire et réduit pendant un temps les points qu'il gagne pour les bonnes réponses.",
+
+    "pwr_pointsTransfer_nme": "Transfert de points",
+    "pwr_pointsTransfer_dsc": "Transfère des points de l'adversaire vers l'utilisateur pour les bonnes réponses pendant un temps.",
+
+    "pwr_pointsBlock_nme": "Blocage de points",
+    "pwr_pointsBlock_dsc": "Retire quelques points à l'adversaire pendant un certain temps.",
+
+    "pwr_twist_nme": "Torsion",
+    "pwr_twist_dsc": "Retourne la vue de l'adversaire pendant un certain temps.",
+
+
+    "kwd_equip": "Équiper",
+    "kwd_unequip": "Déséquiper",
+
+
+    "wrd_saveMsg": "Souhaites‑tu enregistrer ? Souhaites‑tu quitter ?",
+    "wrd_saveAndContinue": "Enregistrer et continuer",
+    "wrd_saveAndQuit": "Enregistrer et quitter",
+    "wrd_quitNoSave": "Quitter (sans enregistrer)",
+
+
+    "kwd_versus": "Contre",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Statue",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lézard",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Momie",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Esprit du Feu",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantôme",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampire",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Loup‑Garou",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Esprit de l'Eau",
+
+    "kwd_all": "Tout",
+    "kwd_accept": "Accepter",
+    "kwd_decline": "Refuser",
+
+
+    "kwd_match": "Match",
+    "kwd_player": "Joueur",
+    "kwd_plyr": "JOUE",
+    "kwd_computer": "Ordinateur",
+    "kwd_com": "COM",
+    "kwd_usePower": "Utiliser le pouvoir",
+    "kwd_usedPower": "Pouvoir utilisé",
+    "kwd_skip": "Sauter",
+
+    "kwd_ready": "Prêt",
+    "mth_ready": "Prêt...",
+    "mth_start": "C'est parti !",
+
+    "mth_matchOver": "Le duel est terminé !",
+    "mth_userWins": "Tu as gagné !",
+    "mth_oppWins": "L'adversaire a gagné !",
+    "kwd_rematch": "Revanche",
+
+
+    "trl_opening_00": "Bienvenue au Club des Exposants ! Je suis Minraul, et comme tu t'en doutes, on joue ici au jeu des exposants ! Tu n'as jamais joué ? Il va falloir que je t'apprenne alors.",
+    "trl_opening_01": "Dans le jeu des exposants, tu dois répondre aux questions sur les exposants le plus vite possible pour gagner des points et atteindre l'objectif avant ton adversaire. Les questions ont des valeurs manquantes à remplir dans le bon ordre.",
+    "trl_opening_02": "Le jeu te proposera des valeurs à choisir pour remplir les emplacements vides. Le format peut varier selon le duel, mais c'est toujours explicite. En dehors de la sélection, tu peux aussi utiliser les sauts et les pouvoirs.",
+    "trl_opening_03": "Sauter te permet d'ignorer la question en cours et d'en obtenir une nouvelle. Naturellement, cela signifie que tu ne gagnes aucun point puisque tu n'as pas terminé la question. Le saut a aussi un temps de recharge, donc évite de l'utiliser tout le temps.",
+    "trl_opening_04": "Je parlerai des pouvoirs plus tard. Maintenant que tout est expliqué, lance-moi un défi pour commencer ton premier duel ! Tu peux le faire en sélectionnant mon icône dans la zone du monde.",
+
+    "trl_firstMatchLoss_00": "Tu as perdu le duel. Tu dois apprendre les bases avant de pouvoir affronter les autres membres du club, alors réessaie.",
+
+    "trl_firstMatchWin_00": "Tu as gagné ton premier duel ! Maintenant que tu connais les règles, tu peux défier les autres membres du club. Certains n'accepteront pas ton défi tant que tu n'auras pas plus d'expérience, donc tes options sont restreintes.",
+    "trl_firstMatchWin_01": "Certains membres utilisent des règles d'exposants que tu n'as pas encore apprises. Si une règle nouvelle apparaît, je te l'expliquerai. Tu peux aussi consulter le menu d'info si tu as besoin d'un rappel. Bonne chance !",
+
+    "trl_firstPower_00": "Tu viens d'obtenir un pouvoir pour les duels ! C'est un bonus utilisable pendant un duel, mais seulement après l'avoir chargé. Les pouvoirs se chargent quand tu réponds correctement, donc jouer normalement suffit.",
+    "trl_firstPower_01": "Quand un pouvoir est entièrement chargé, tu peux l'activer à tout moment avec le bouton « pouvoir ». Les effets durent jusqu'à épuisement de l'énergie ; il faudra ensuite recharger le pouvoir.",
+    "trl_firstPower_02": "Les pouvoirs débloqués peuvent être vus et équipés dans le « menu pouvoirs ». Tes adversaires peuvent aussi utiliser des pouvoirs, garde ceci en tête. Bonne chance !",
+
+    "trl_finalMatch_00": "Tu as appris toutes les règles et vaincu tous les autres membres : c'est l'heure du dernier duel ! Une revanche contre moi ! Sélectionne mon icône dans la zone suivante pour me défier à nouveau.",
+
+    "trl_gameOver_00": "Tu as perdu le duel. Tu peux maintenant faire une revanche contre l'adversaire ou revenir dans la zone du monde. Il faut vaincre tous les membres du club pour terminer le défi, mais tu peux réessayer autant de fois que tu veux.",
+
+
+    "trl_exponent_00": "Ce duel n'utilise que les notions de base sur les exposants. Les exposants multiplient une base par elle‑même un certain nombre de fois. Consulte la fenêtre d'info si tu veux un rappel.",
+
+    "trl_product_00": "Ce duel utilise la règle du produit. Quand on multiplie des bases identiques avec des exposants différents, on peut additionner les exposants et les appliquer à la base pour simplifier l'expression.",
+
+    "trl_powerOfAPower_00": "Ce duel utilise la règle de la puissance d'une puissance. Si une base a deux exposants, multiplie-les et applique le résultat à la base.",
+
+    "trl_powerOfAProduct_00": "Ce duel utilise la règle de la puissance d'un produit. Si deux bases différentes ont le même exposant et sont multipliées, on peut multiplier les bases puis appliquer l'exposant au résultat.",
+
+    "trl_zero_00": "Ce duel utilise la règle du zéro. Tout nombre élevé à l'exposant 0 vaut 1.",
+
+    "trl_negative_00": "Ce duel utilise la règle des exposants négatifs. Un nombre à exposant négatif devient son inverse et l'exposant s'applique au dénominateur.",
+
+
+    "rsl_winMsg": "Tu as relevé tous les défis ! Tu es un Maître des exposants !",
+    "kwd_results": "Résultats",
+    "kwd_time": "Temps",
+    "kwd_score": "Score",
+    "rst_wrongAnswers": "Réponses incorrectes",
+    "kwd_finish": "Terminer"
+  },
+  "ht": {
+    "_stop_": "",
+
+    "gameTitle": "Monstè Eksponan",
+
+    "kwd_title": "Tit",
+    "kwd_start": "Kòmanse",
+    "kwd_newGame": "Nouvo jwèt",
+    "kwd_continue": "Kontinye",
+    "kwd_controls": "Kontwòl",
+    "kwd_settings": "Anviwònman",
+    "kwd_credits": "Kredi",
+    "kwd_licenses": "Lisans",
+    "kwd_quit": "Soti",
+
+
+    "ttl_controls_instruct": "Bouton gòch sourit/Touche: Entèaji",
+    "ttl_controls_desc": "Yo ka kontwole jwèt la swa avèk sourit la oswa ekran tactile a. Sèvi ak klik gòch sourit la oswa yon manyen sou ekran tactile a pou kominike ak eleman yo nan mond jwèt la.",
+    "kwd_back": "Tounen",
+
+
+    "kwd_volume": "Volim",
+    "kwd_bgmVolume": "Volim Mizik Anviwònman (BGM)",
+    "kwd_sfxVolume": "Volim Efè Son (SFX)",
+    "kwd_ttsVolume": "Volim TTS (Text-to-Speech)",
+    "kwd_mute": "Silans",
+    "kwd_textToSpeech": "Tèks-a-Vwa",
+    "kwd_tutorial": "Tutoryèl",
+
+
+    "kwd_save": "Sove",
+    "kwd_saveQuit": "Sove/Soti",
+    "sve_msg_savingGame": "Ap sove jwèt la...",
+    "sve_msg_loadSuccess": "Done sove yo chaje ak siksè.",
+
+    "kwd_world": "Mond",
+    "kwd_info": "Info",
+    "kwd_powers": "Pouvwa",
+
+    "kwd_power": "Pouvwa",
+    "wrd_powerUnlocked": "Nouvo pouvwa debloke!",
+
+    "wrd_exponentChallenge": "Defi Eksponan",
+    "kwd_rules": "Règ",
+
+    "rle_none_nme": "Okenn",
+    "rle_none_dsc": "Pa gen okenn règ eksponan.",
+
+    "rle_exponent_nme": "Eksponan",
+    "rle_exponent_dsc": "Miltipliye yon tèm pa tèt li (n) fwa.",
+
+    "rle_product_nme": "Pwodui",
+    "rle_product_dsc": "Si w ap miltipliye menm baz yo, ajoute eksponan yo epi aplike rezilta a sou baz la.",
+
+    "rle_powerOfAPower_nme": "Pouvwa yon pouvwa",
+    "rle_powerOfAPower_dsc": "Si yon baz gen de eksponan, miltipliye eksponan yo epi aplike rezilta a sou baz la.",
+
+    "rle_powerOfAProduct_nme": "Pouvwa yon pwodui",
+    "rle_powerOfAProduct_dsc": "Si w ap miltipliye diferan baz ki gen menm ekspòn, miltipliye baz yo epi aplike menm ekspòn lan sou rezilta a.",
+
+    "rle_zero_nme": "Zewo",
+    "rle_zero_dsc": "Nenpòt bagay a eksponan 0 toujou egal 1.",
+
+    "rle_negative_nme": "Negatif",
+    "rle_negative_dsc": "Si w ap itilize yon eksponan negatif, pran recipwok baz la epi aplike eksponan an sou denominateur la.",
+
+
+
+    "pwr_none_nme": "Okenn",
+    "pwr_none_dsc": "Yon pouvwa ki pa fè anyen. Pouvwa sa a pa ka chaje ni aktive.",
+
+    "pwr_pointsPlus_nme": "Ajoute Pwen",
+    "pwr_pointsPlus_dsc": "Ogante pwen itilizatè a jwenn pou repons kòrèk pou yon ti tan.",
+
+    "pwr_pointsMinus_nme": "Retire Pwen",
+    "pwr_pointsMinus_dsc": "Diminye pwen advèsè a jwenn pou repons kòrèk pou yon ti tan.",
+
+    "pwr_equationShorten_nme": "Kesyon Kout",
+    "pwr_equationShorten_dsc": "Koutwazi kesyon itilizatè a epi ogmante pwen li jwenn pou repons kòrèk yo pandan yon ti tan.",
+
+    "pwr_eqautionLengthen_nme": "Kesyon Long",
+    "pwr_eqautionLengthen_dsc": "Pwolonje kesyon advèsè a epi diminye pwen li jwenn pou repons kòrèk yo pandan yon ti tan.",
+
+    "pwr_pointsTransfer_nme": "Transfè Pwen",
+    "pwr_pointsTransfer_dsc": "Transfere kèk pwen soti nan advèsè a bay itilizatè a pou repons kòrèk pou yon ti tan.",
+
+    "pwr_pointsBlock_nme": "Bloke Pwen",
+    "pwr_pointsBlock_dsc": "Retire kèk pwen advèsè a pou yon ti tan.",
+
+    "pwr_twist_nme": "Tounen",
+    "pwr_twist_dsc": "Vire pèspektiv advèsè a tèt anba pou yon ti tan.",
+
+
+    "kwd_equip": "Ekipe",
+    "kwd_unequip": "Retire ekipman an",
+
+
+    "wrd_saveMsg": "Èske ou ta renmen sove? Èske ou ta renmen soti?",
+    "wrd_saveAndContinue": "Sove epi Kontinye",
+    "wrd_saveAndQuit": "Sove epi Soti",
+    "wrd_quitNoSave": "Soti (Pa Sove)",
+
+
+    "kwd_versus": "Vè.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Estati",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lèzad",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Momi",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Lespri Difé",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantom",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampir",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Goumen Loup",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Lespri Dlo",
+
+    "kwd_all": "Tout",
+    "kwd_accept": "Aksepte",
+    "kwd_decline": "Refize",
+
+
+    "kwd_match": "Match",
+    "kwd_player": "Jwè",
+    "kwd_plyr": "JWÈ",
+    "kwd_computer": "Òdinatè",
+    "kwd_com": "COM",
+    "kwd_usePower": "Sèvi ak pouvwa",
+    "kwd_usedPower": "Pouvwa itilize",
+    "kwd_skip": "Sote",
+
+    "kwd_ready": "Pare",
+    "mth_ready": "Pare...",
+    "mth_start": "Kòmanse!",
+
+    "mth_matchOver": "Match la fini!",
+    "mth_userWins": "Ou genyen!",
+    "mth_oppWins": "Advèsè a genyen!",
+    "kwd_rematch": "Revanj",
+
+
+    "trl_opening_00": "Byenveni nan Exponent Club! Mwen se Minraul, e jan ou ka devine, nou jwe jwèt eksponan an isit la! Ou pa janm jwe jwèt la anvan? Bon, mwen panse m ap oblije anseye ou alò!",
+    "trl_opening_01": "Nan jwèt eksponan an, ou reponn kesyon eksponan yo pi vit ou kapab pou jwenn pwen epi rive nan objektif la anvan advèsè ou a. Tout kesyon yo gen valè ki manke, ke ou bezwen ranpli kòrèkteman epi nan bon lòd la.",
+    "trl_opening_02": "Jwèt la ap ba ou valè pou chwazi pou eseye ranpli plas vid yo. Fason sa a mache ka varye selon match la, men yo tout fasil pou konprann. Anplis chwazi valè, ou ka itilize sote ak pouvwa tou.",
+    "trl_opening_03": "Sote yo pèmèt ou pase kesyon w ap fè a epi jwenn yon lòt. Natirèlman, sa vle di ou pa jwenn okenn pwen paske ou pa t fini kesyon an. Sote gen yon tan rekiperasyon tou, kidonk li pi bon pou pa sèvi avè l tout tan.",
+    "trl_opening_04": "M ap pale plis sou pouvwa yo pita. Avèk tout sa eksplike, lanse yon defi ban mwen pou kòmanse premye match ou! Ou ka fè sa lè w chwazi ikon mwen nan zòn mond lan.",
+
+    "trl_firstMatchLoss_00": "Ou pèdi match la. Ou bezwen aprann baz yo anvan ou pran lòt manm klib yo, kidonk souple eseye ankò.",
+
+    "trl_firstMatchWin_00": "Ou genyen premye match ou! Kounye a ke ou abitye ak règ yo, ou ka defye lòt manm klib yo. Gen kèk nan yo ki pap aksepte defi ou jiskaske ou vin pi eksperyanse, kidonk opsyon ou yo limite.",
+    "trl_firstMatchWin_01": "Gen kèk manm klib ki sèvi ak règ eksponan ou poko aprann. Lè ou rankontre yon nouvo règ, m ap la pou eksplike li. Ou ka tcheke 'menu info' a tou si ou janm bezwen revize. Bon chans!",
+
+    "trl_firstPower_00": "Ou fèk jwenn yon pouvwa match! Yon pouvwa match se yon 'power-up' ou ka itilize pandan yon match, men sèlman apre ou fin chaje l. Pouvwa yo chaje lè ou reponn kesyon yo kòrèkteman, kidonk jis jwe jwèt la nòmalman sifi.",
+    "trl_firstPower_01": "Aprè yon pouvwa fin chaje nèt, ou ka aktive l nenpòt lè ak 'bouton pouvwa' a. Efè pouvwa a rete jiskaske enèji li fini; apre sa ou bezwen rechaje li.",
+    "trl_firstPower_02": "Pouvwa ou debloke yo ka wè epi ekipe nan 'menu pouvwa' a. Advèsè ou yo ka itilize pouvwa tou, sonje sa. Bon chans!",
+
+    "trl_finalMatch_00": "Ou te aprann tout règ eksponan yo epi ou bat tout lòt manm klib yo, donk kounye a li lè pou dènye match ou! Yon rematch kont mwen! Chwazi ikòn mwen an nan pwochen zòn nan pou defye m tankou anvan.",
+
+    "trl_gameOver_00": "Ou pèdi match la. Ou ka fè yon rematch ak advèsè a kounye a oswa retounen nan zòn mond lan. Ou dwe bat tout manm klib yo pou fini defi a, men ou ka eseye otan fwa ou vle.",
+
+
+    "trl_exponent_00": "Match sa a sèvi ak baz eksponan yo sèlman. Eksponan yo se operasyon matematik ki miltipliye yon baz pa tèt li yon sèten kantite fwa. Tcheke fenèt enfòmasyon an si ou janm vle revize règ eksponan yo.",
+
+    "trl_product_00": "Match sa a sèvi ak règ pwodui a. Lè menm baz yo ak diferan eksponan yo miltipliye ansanm, ou ka ajoute eksponan yo epi aplike yo sou baz la pou senplifye operasyon an.",
+
+    "trl_powerOfAPower_00": "Match sa a sèvi ak règ pouvwa yon pouvwa a. Si yon baz gen de eksponan ki aplike sou li, eksponan sa yo ka miltipliye ansanm, epi baz la leve ak pwodui operasyon sa a.",
+
+    "trl_powerOfAProduct_00": "Match sa a sèvi ak règ pouvwa yon pwodui a. Si de baz ki gen menm eksponan yo miltipliye ansanm, ou ka senplifye sa an miltiplikasyon baz sa yo, epi rezilta a leve ak eksponan pataje a.",
+
+    "trl_zero_00": "Match sa a sèvi ak règ zewo a. Nenpòt nimewo leve a eksponan 0 bay rezilta 1.",
+
+    "trl_negative_00": "Match sa a sèvi ak règ negatif la. Yon nonm ki leve ak yon eksponan negatif ap vin recipwòk li, epi eksponan an aplike sou denominateur la.",
+
+
+    "rsl_winMsg": "Ou fin pase tout defi yo! Ou se yon Mèt Eksponan!",
+    "kwd_results": "Rezilta",
+    "kwd_time": "Tan",
+    "kwd_score": "Nòt",
+    "rst_wrongAnswers": "Repons ki pa kòrèk",
+    "kwd_finish": "Fini"
+  },
+  "it": {
+    "_stop_": "",
+
+    "gameTitle": "Mostri Esponenti",
+
+    "kwd_title": "Titolo",
+    "kwd_start": "Inizia",
+    "kwd_newGame": "Nuovo Gioco",
+    "kwd_continue": "Continua",
+    "kwd_controls": "Controlli",
+    "kwd_settings": "Impostazioni",
+    "kwd_credits": "Crediti",
+    "kwd_licenses": "Licenze",
+    "kwd_quit": "Esci",
+
+
+    "ttl_controls_instruct": "Tasto sinistro del mouse/Touch: Interagisci",
+    "ttl_controls_desc": "Il gioco può essere controllato con il mouse o con il touchscreen. Usa il clic sinistro del mouse o un tocco sul touchscreen per interagire con gli elementi del mondo di gioco.",
+    "kwd_back": "Indietro",
+
+
+    "kwd_volume": "Volume",
+    "kwd_bgmVolume": "Volume musica di sottofondo (BGM)",
+    "kwd_sfxVolume": "Volume effetti sonori (SFX)",
+    "kwd_ttsVolume": "Volume sintesi vocale (TTS)",
+    "kwd_mute": "Muto",
+    "kwd_textToSpeech": "Sintesi vocale",
+    "kwd_tutorial": "Tutorial",
+
+
+    "kwd_save": "Salva",
+    "kwd_saveQuit": "Salva/Esci",
+    "sve_msg_savingGame": "Salvataggio in corso...",
+    "sve_msg_loadSuccess": "Dati di salvataggio caricati con successo.",
+
+    "kwd_world": "Mondo",
+    "kwd_info": "Info",
+    "kwd_powers": "Poteri",
+
+    "kwd_power": "Potere",
+    "wrd_powerUnlocked": "Nuovo potere sbloccato!",
+
+    "wrd_exponentChallenge": "Sfida degli Esponenti",
+    "kwd_rules": "Regole",
+
+    "rle_none_nme": "Nessuna",
+    "rle_none_dsc": "Nessuna regola sugli esponenti impostata.",
+
+    "rle_exponent_nme": "Esponente",
+    "rle_exponent_dsc": "Moltiplica un termine per sé stesso n volte.",
+
+    "rle_product_nme": "Prodotto",
+    "rle_product_dsc": "Se moltiplichi le stesse basi, somma i loro esponenti e applica il risultato alla base.",
+
+    "rle_powerOfAPower_nme": "Potenza di una potenza",
+    "rle_powerOfAPower_dsc": "Se una base ha due esponenti, moltiplica gli esponenti tra loro e applica il risultato alla base.",
+
+    "rle_powerOfAProduct_nme": "Potenza di un prodotto",
+    "rle_powerOfAProduct_dsc": "Se moltiplichi basi diverse con lo stesso esponente, moltiplica le basi e poi applica l'esponente al risultato.",
+
+    "rle_zero_nme": "Zero",
+    "rle_zero_dsc": "Qualsiasi cosa elevata alla potenza 0 è sempre 1.",
+
+    "rle_negative_nme": "Negativo",
+    "rle_negative_dsc": "Se usi un esponente negativo, prendi il reciproco della base e applica l'esponente al denominatore.",
+
+
+
+    "pwr_none_nme": "Nessuno",
+    "pwr_none_dsc": "Un potere che non fa nulla. Questo potere non può essere caricato né attivato.",
+
+    "pwr_pointsPlus_nme": "Più punti",
+    "pwr_pointsPlus_dsc": "Aumenta per un po' i punti che l'utente riceve per le risposte giuste.",
+
+    "pwr_pointsMinus_nme": "Meno punti",
+    "pwr_pointsMinus_dsc": "Riduce per un po' i punti che l'avversario ottiene per le risposte giuste.",
+
+    "pwr_equationShorten_nme": "Domanda corta",
+    "pwr_equationShorten_dsc": "Accorcia le domande dell'utente e aumenta per un po' i punti guadagnati per le risposte giuste.",
+
+    "pwr_eqautionLengthen_nme": "Domanda lunga",
+    "pwr_eqautionLengthen_dsc": "Aumenta per un po' la lunghezza delle domande dell'avversario e riduce i punti che ottiene per le risposte giuste.",
+
+    "pwr_pointsTransfer_nme": "Trasferimento punti",
+    "pwr_pointsTransfer_dsc": "Trasferisce alcuni punti dall'avversario all'utente per le risposte giuste per un po'.",
+
+    "pwr_pointsBlock_nme": "Blocco punti",
+    "pwr_pointsBlock_dsc": "Rimuove per un po' alcuni punti dell'avversario.",
+
+    "pwr_twist_nme": "Capovolgi",
+    "pwr_twist_dsc": "Capovolge per un po' la visuale dell'avversario.",
+
+
+    "kwd_equip": "Equipaggia",
+    "kwd_unequip": "Rimuovi equipaggiamento",
+
+
+    "wrd_saveMsg": "Vuoi salvare? Vuoi uscire?",
+    "wrd_saveAndContinue": "Salva e continua",
+    "wrd_saveAndQuit": "Salva ed esci",
+    "wrd_quitNoSave": "Esci (senza salvare)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Statua",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lucertola",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Mummia",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Spirito del Fuoco",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantasma",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampiro",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Licantropo",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Spirito dell'Acqua",
+
+    "kwd_all": "Tutto",
+    "kwd_accept": "Accetta",
+    "kwd_decline": "Rifiuta",
+
+
+    "kwd_match": "Incontro",
+    "kwd_player": "Giocatore",
+    "kwd_plyr": "GIOC",
+    "kwd_computer": "Computer",
+    "kwd_com": "COM",
+    "kwd_usePower": "Usa potere",
+    "kwd_usedPower": "Potere usato",
+    "kwd_skip": "Salta",
+
+    "kwd_ready": "Pronto",
+    "mth_ready": "Pronti...",
+    "mth_start": "Inizia!",
+
+    "mth_matchOver": "La partita è finita!",
+    "mth_userWins": "Hai vinto!",
+    "mth_oppWins": "L'avversario ha vinto!",
+    "kwd_rematch": "Rivincita",
+
+
+    "trl_opening_00": "Benvenuto nel Club degli Esponenti! Sono Minraul e, come puoi immaginare, qui giochiamo al gioco degli esponenti! Oh, non hai mai giocato prima? Beh, allora dovrò insegnartelo!",
+    "trl_opening_01": "Nel gioco degli esponenti, rispondi alle domande sugli esponenti il più velocemente possibile per guadagnare punti e raggiungere l'obiettivo prima del tuo avversario. Le domande hanno valori mancanti, che devi inserire correttamente e nell'ordine giusto.",
+    "trl_opening_02": "Il gioco ti darà dei valori tra cui scegliere per riempire gli spazi vuoti. Il modo in cui questo avviene può variare da un match all'altro, ma è tutto abbastanza chiaro. Oltre a scegliere i valori, puoi anche usare salti e poteri.",
+    "trl_opening_03": "I salti ti permettono di saltare la domanda attuale e averne una nuova. Naturalmente, questo significa che non ottieni punti perché non hai finito la domanda. Anche il salto ha un tempo di ricarica, quindi è meglio non usarlo sempre.",
+    "trl_opening_04": "Per i poteri, ne parlerò meglio più tardi. Con tutto spiegato, sfidami per iniziare il tuo primo match! Puoi farlo selezionando la mia icona nell'area del mondo.",
+
+    "trl_firstMatchLoss_00": "Hai perso il match. Devi imparare le basi prima di affrontare gli altri membri del club, quindi riprova.",
+
+    "trl_firstMatchWin_00": "Hai vinto il tuo primo match! Ora che conosci le regole, puoi affrontare gli altri membri del club. Alcuni non accetteranno la tua sfida finché non avrai più esperienza, quindi le opzioni sono limitate.",
+    "trl_firstMatchWin_01": "Alcuni membri del club usano regole degli esponenti che non hai ancora imparato. Quando incontri una nuova regola, sarò lì per spiegarla. Puoi anche controllare il 'menu info' se hai bisogno di un ripasso. Buona fortuna!",
+
+    "trl_firstPower_00": "Hai appena ricevuto un potere di match! Un potere di match è un potenziamento che puoi usare durante un match, ma solo dopo averlo caricato. I poteri si caricano quando rispondi correttamente alle domande, quindi basta giocare normalmente.",
+    "trl_firstPower_01": "Dopo che un potere è completamente carico, puoi attivarlo in qualsiasi momento con il 'pulsante potere'. Gli effetti del potere restano attivi finché la sua energia non si esaurisce; poi devi caricarlo di nuovo.",
+    "trl_firstPower_02": "I poteri sbloccati possono essere visti e equipaggiati nel 'menu poteri'. Anche i tuoi avversari possono usare i poteri, quindi tienilo presente. Buona fortuna!",
+
+    "trl_finalMatch_00": "Hai imparato tutte le regole degli esponenti e hai sconfitto tutti gli altri membri del club, quindi è ora del tuo match finale! Una rivincita contro di me! Seleziona la mia icona nell'area successiva per sfidarmi come prima.",
+
+    "trl_gameOver_00": "Hai perso il match. Ora puoi rifare il match contro l'avversario o tornare all'area del mondo. Devi sconfiggere ogni membro del club per completare la sfida, ma puoi fare tutti i tentativi che vuoi.",
+
+
+    "trl_exponent_00": "Questo duello usa solo le basi degli esponenti. Gli esponenti sono operazioni matematiche che moltiplicano una base per se stessa un certo numero di volte. Controlla la finestra delle informazioni se vuoi ripassare le regole degli esponenti.",
+
+    "trl_product_00": "Questo match usa la regola del prodotto. Quando le stesse basi con esponenti diversi vengono moltiplicate, gli esponenti possono essere sommati e applicati a quella base per semplificare l'operazione.",
+
+    "trl_powerOfAPower_00": "Questo match usa la regola della potenza di una potenza. Se una base ha due esponenti applicati, allora questi esponenti possono essere moltiplicati tra loro, e la base viene elevata al prodotto.",
+
+    "trl_powerOfAProduct_00": "Questo match usa la regola della potenza di un prodotto. Se due basi con lo stesso esponente vengono moltiplicate, si possono semplificare moltiplicando le basi e applicando l'esponente condiviso al risultato.",
+
+    "trl_zero_00": "Questo match usa la regola dello zero. Qualsiasi numero elevato all'esponente 0 restituisce 1.",
+
+    "trl_negative_00": "Questo match usa la regola dei negativi. Un numero elevato a un esponente negativo diventa il suo reciproco, e l'esponente viene applicato al denominatore.",
+
+
+    "rsl_winMsg": "Hai superato tutte le sfide! Sei un Maestro degli esponenti!",
+    "kwd_results": "Risultati",
+    "kwd_time": "Tempo",
+    "kwd_score": "Punteggio",
+    "rst_wrongAnswers": "Risposte sbagliate",
+    "kwd_finish": "Finisci"
+  },
+  "lou": {
+    "_stop_": "",
+
+    "gameTitle": "Monstè Eksponan",
+
+    "kwd_title": "Tit",
+    "kwd_start": "Kòmanse",
+    "kwd_newGame": "Nouvo jwèt",
+    "kwd_continue": "Kontinye",
+    "kwd_controls": "Kontwol",
+    "kwd_settings": "Anviwònman",
+    "kwd_credits": "Kredits",
+    "kwd_licenses": "Lisans",
+    "kwd_quit": "Kite",
+
+
+    "ttl_controls_instruct": "Bouton gòch sourit/Touch: Entèaji",
+    "ttl_controls_desc": "Jwèt-la ka kontwolé èvè sourit osnon touch. Itilisé klike gòch sourit-la osnon touch ekran pou entèaji èvè eleman nan mond jwèt-la.",
+    "kwd_back": "Tounen",
+
+
+    "kwd_volume": "Volim",
+    "kwd_bgmVolume": "Volim Mizik Fond (BGM)",
+    "kwd_sfxVolume": "Volim Efè Son (SFX)",
+    "kwd_ttsVolume": "Volim Tèks-à-Vwa (TTS)",
+    "kwd_mute": "Mèt",
+    "kwd_textToSpeech": "Tèks-à-Vwa",
+    "kwd_tutorial": "Tutoryèl",
+
+
+    "kwd_save": "Sove",
+    "kwd_saveQuit": "Save/Kite",
+    "sve_msg_savingGame": "Ka sove jwèt-la...",
+    "sve_msg_loadSuccess": "Done sove yo chajé avè siksé.",
+
+    "kwd_world": "Mond",
+    "kwd_info": "Info",
+    "kwd_powers": "Pouvwa",
+
+    "kwd_power": "Pouvwa",
+    "wrd_powerUnlocked": "Nouvo pouvwa débloke!",
+
+    "wrd_exponentChallenge": "Defi Eksponan",
+    "kwd_rules": "Règ",
+
+    "rle_none_nme": "Anyen",
+    "rle_none_dsc": "Pa ni okenn règ eksponan.",
+
+    "rle_exponent_nme": "Eksponan",
+    "rle_exponent_dsc": "Miltipliyé on tèm pa tèt-li (n) fwa.",
+
+    "rle_product_nme": "Pwodui",
+    "rle_product_dsc": "Si ou miltipliyé menm baz yo, adisyonné eksponan yo é aplike rézilta-a sou baz la.",
+
+    "rle_powerOfAPower_nme": "Pouvwa on pouvwa",
+    "rle_powerOfAPower_dsc": "Si on baz ni dé eksponan, miltipliyé eksponan yo é aplike rézilta-a sou baz-la.",
+
+    "rle_powerOfAProduct_nme": "Pouvwa on pwodui",
+    "rle_powerOfAProduct_dsc": "Si ou miltipliyé diferan baz ki ni menm eksponan, miltipliyé baz yo epi aplike menm eksponan-an sou rézilta-a.",
+
+    "rle_zero_nme": "Zewo",
+    "rle_zero_dsc": "Nenpòt bagay lévé a eksponan 0 toujou bay 1.",
+
+    "rle_negative_nme": "Negatif",
+    "rle_negative_dsc": "Si w ka sèvi èvè on eksponan negatif, pran récipwok baz-la, é aplike eksponan-an sou dénominatè-a.",
+
+
+
+    "pwr_none_nme": "Anyen",
+    "pwr_none_dsc": "On pouvwa ki pa fè anyen. Pouvwa sa-a pa ka chajé ni aktive.",
+
+    "pwr_pointsPlus_nme": "Ajouté Pwen",
+    "pwr_pointsPlus_dsc": "Ogante pwen itilizatè-a jwenn pou repons kòrèk pou on tan.",
+
+    "pwr_pointsMinus_nme": "Retiré Pwen",
+    "pwr_pointsMinus_dsc": "Diminye pwen advèsè-a jwenn pou repons kòrèk pou on tan.",
+
+    "pwr_equationShorten_nme": "Kesyon Kout",
+    "pwr_equationShorten_dsc": "Rétri kesyon itilizatè-a é ogmante pwen li jwenn pou bon réponn pou on tan.",
+
+    "pwr_eqautionLengthen_nme": "Kesyon Long",
+    "pwr_eqautionLengthen_dsc": "Léz kestyon advèsè-a vin pli long é diminye pwen yo ka gannyé pou bon réponn pou on tan.",
+
+    "pwr_pointsTransfer_nme": "Transfè Pwen",
+    "pwr_pointsTransfer_dsc": "Transfè kèk pwen advèsè-a bay itilizatè-a lè li reponn byen pou on tan.",
+
+    "pwr_pointsBlock_nme": "Bloké Pwen",
+    "pwr_pointsBlock_dsc": "Retiré kèk pwen advèsè-a pou on tan.",
+
+    "pwr_twist_nme": "Tourné",
+    "pwr_twist_dsc": "Vire vizyon advèsè-a tèt anba pou on tan.",
+
+
+    "kwd_equip": "Ekipé",
+    "kwd_unequip": "Dé-ékipé",
+
+
+    "wrd_saveMsg": "Ou vlé sove? Ou vlé kité?",
+    "wrd_saveAndContinue": "Sove é Kontinyé",
+    "wrd_saveAndQuit": "Sove é Kité",
+    "wrd_quitNoSave": "Kité (Pa sove)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Estati",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lézà",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Momi",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Lespri Difé",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantom",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampir",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Loup-Garou",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Lespri Dlo",
+
+    "kwd_all": "Tout",
+    "kwd_accept": "Aksepte",
+    "kwd_decline": "Refize",
+
+
+    "kwd_match": "Match",
+    "kwd_player": "Jwè",
+    "kwd_plyr": "JWÈ",
+    "kwd_computer": "Òdinatè",
+    "kwd_com": "COM",
+    "kwd_usePower": "Sèvi èvè pouvwa",
+    "kwd_usedPower": "Pouvwa itilizé",
+    "kwd_skip": "Sote",
+
+    "kwd_ready": "Pare",
+    "mth_ready": "Paré...",
+    "mth_start": "Kòmanse!",
+
+    "mth_matchOver": "Match-la fini!",
+    "mth_userWins": "Ou genyen!",
+    "mth_oppWins": "Advèsè-a genyen!",
+    "kwd_rematch": "Repwèch",
+
+
+    "trl_opening_00": "Byenveni an Exponent Club! Mwen sé Minraul, é jan ou ka wè, nou jwé jwèt eksponan-la isi! Ou pa janm jwé anvan? Bon, fòk mwen moutwé-w!",
+    "trl_opening_01": "An jwèt eksponan-la, ou réponn kestyon eksponan osi vit ou pé pou gagné pwen é rivé bi anvan advèsè-ou. Tout kestyon yo ni valè ki mank, ou bizwen ranpli yo kòrèkman é nan bon lòd.",
+    "trl_opening_02": "Jwèt-la ba'w valè pou chwazi pou eséyé ranpli plas vid yo. Fason sa fèt pé varié selon match-la, mé yo tout fasil pou konprann. An plis chwazi valè, ou pé sèvi sote é pouvwa.",
+    "trl_opening_03": "Sote ka pèmèt ou pasé kestyon aktyèl-ou é jwenn on nouvo. Natirelman, sa vlé di ou pa gagné pwen paské ou pa fini kestyon-an. Sote ni on tan rékoulman, alòs pa sèvi-y twòp.",
+    "trl_opening_04": "Mwen ké palé plis dé pouvwa yo apré. Avèk tout sa esplike, défié-m pou komansé premye match-ou! Ou pé fè sa an chwazi ikon mwen an an zòn mond-la.",
+
+    "trl_firstMatchLoss_00": "Ou pèd match-la. Ou bizwen aprann baz yo avan ou ka fè fas èvè lòt manm klib-la, alò souple eseyé ankò.",
+
+    "trl_firstMatchWin_00": "Ou jwenn premye match-ou! Kounyé ou konn règ-la, ou pé défié lòt manm klib-la. Kèk pa ka aksepte défi-a jis ou vin plis eksperyans, alò opsyon-ou limit.",
+    "trl_firstMatchWin_01": "Kèk manm klib-la sèvi èvè règ eksponan ou poko aprann. Lè ou jwenn on nouvo règ, mwen ké esplike li. Ou pé gadé 'menu info' si ou bezwen rafrechisman. Bon chans!",
+
+    "trl_firstPower_00": "Ou fenk jwenn on pouvwa match! On pouvwa match sé on 'power-up' ou pé servi pandan on match, mé sèlman apré ou fin chajé-y. Pouvwa yo chajé lè ou répond kòrèkteman, donk jis jwé nòmal.",
+    "trl_firstPower_01": "Lè on pouvwa chajé nèt, ou pé aktive-y nenpòt lè ék bouton pouvwa-a. Efè pouvwa-la rété aktif jis lè enèji-a fini; apré sa ou bizwen rechajé-y ankò.",
+    "trl_firstPower_02": "Pouvwa ou débloke yo ka wè é ekipe nan 'menu pouvwa'. Advèsè ou yo kap sèvi pouvwa tou, sonjé sa. Bon chans!",
+
+    "trl_finalMatch_00": "Ou aprann tout règ eksponan yo é bat tout manm klib-la, alò kounyé sé tan pou dènye match-ou! On revanche kont mwen! Seleksiyonné ikon mwen an nan pwochen zon-la pou défié-m ankò.",
+
+    "trl_gameOver_00": "Ou pèd match-la. Ou pé fè on rückkampf avè advèsè-a osnon retourné nan zòn mond-la. Fòk ou bat tout manm klib-la pou fini defi-a, mé ou pé eseyé otan fwa ou vlé.",
+
+
+    "trl_exponent_00": "Sa match-la sèvi avè debaz eksponan sèlman. Eksponan sé on operasyon ki miltipliyé on baz pa tèt-li plizyè fwa. Gade fenèt enfòmasyon-an si ou bizwen rekap.",
+
+    "trl_product_00": "Sa match-la sèvi avè règ pwodui-a. Lè menm baz yo avè diferan eksponan miltipliyé ansanm, ou pé adisyonné eksponan yo é aplike yo a baz-la pou senplifyé operasyon-an.",
+
+    "trl_powerOfAPower_00": "Sa match-la sèvi avè règ pouvwa on pouvwa-a. Si on baz ni dé eksponan ki aplike a li, ou pé miltipliyé eksponan yo ansanm, é élévé baz-la a pwodui sa-a.",
+
+    "trl_powerOfAProduct_00": "Sa match-la sèvi avè règ pouvwa on pwodui-a. Si dé baz ki ni menm eksponan an miltipliyé ansanm, ou pé senplifyé sa an miltipliyé baz yo, é mété rézilta-a an menm eksponan-an.",
+
+    "trl_zero_00": "Sa match-la sèvi avè règ zewo-a. Nenpòt nimewo ki lévé an eksponan 0 bay 1.",
+
+    "trl_negative_00": "Sa match-la sèvi avè règ negatif-la. On nimewo ki ni on eksponan negatif vin récipwok li, é eksponan-an aplike sou denominateur-la.",
+
+
+    "rsl_winMsg": "Ou fini ranpli tout defi yo! Ou sé on Mètr Eksponan!",
+    "kwd_results": "Rezilta",
+    "kwd_time": "Tan",
+    "kwd_score": "Pwen",
+    "rst_wrongAnswers": "Repons pa kòrèk",
+    "kwd_finish": "Fini"
+  },
+  "pt-BR": {
+    "_stop_": "",
+
+    "gameTitle": "Monstros dos Expoentes",
+
+    "kwd_title": "Título",
+    "kwd_start": "Iniciar",
+    "kwd_newGame": "Novo Jogo",
+    "kwd_continue": "Continuar",
+    "kwd_controls": "Controles",
+    "kwd_settings": "Configurações",
+    "kwd_credits": "Créditos",
+    "kwd_licenses": "Licenças",
+    "kwd_quit": "Sair",
+
+
+    "ttl_controls_instruct": "Clique esquerdo/Toque: Interagir",
+    "ttl_controls_desc": "O jogo pode ser controlado com mouse ou tela sensível ao toque. Use o clique esquerdo ou toque para interagir com elementos do mundo do jogo.",
+    "kwd_back": "Voltar",
+
+
+    "kwd_volume": "Volume",
+    "kwd_bgmVolume": "Volume da música de fundo (BGM)",
+    "kwd_sfxVolume": "Volume dos efeitos sonoros (SFX)",
+    "kwd_ttsVolume": "Volume do texto para fala (TTS)",
+    "kwd_mute": "Mudo",
+    "kwd_textToSpeech": "Texto para fala",
+    "kwd_tutorial": "Tutorial",
+
+
+    "kwd_save": "Salvar",
+    "kwd_saveQuit": "Salvar/Sair",
+    "sve_msg_savingGame": "Salvando o jogo...",
+    "sve_msg_loadSuccess": "Dados salvos carregados com sucesso.",
+
+    "kwd_world": "Mundo",
+    "kwd_info": "Info",
+    "kwd_powers": "Poderes",
+
+    "kwd_power": "Poder",
+    "wrd_powerUnlocked": "Novo poder desbloqueado!",
+
+    "wrd_exponentChallenge": "Desafio de Expoentes",
+    "kwd_rules": "Regras",
+
+    "rle_none_nme": "Nenhum",
+    "rle_none_dsc": "Nenhuma regra de expoentes definida.",
+
+    "rle_exponent_nme": "Expoente",
+    "rle_exponent_dsc": "Multiplica um termo por ele mesmo n vezes.",
+
+    "rle_product_nme": "Produto",
+    "rle_product_dsc": "Se multiplicar as mesmas bases, some seus expoentes e aplique o resultado à base.",
+
+    "rle_powerOfAPower_nme": "Potência de uma potência",
+    "rle_powerOfAPower_dsc": "Se uma base tiver dois expoentes, multiplique os expoentes e aplique o resultado à base.",
+
+    "rle_powerOfAProduct_nme": "Potência de um produto",
+    "rle_powerOfAProduct_dsc": "Se multiplicar bases diferentes com o mesmo expoente, multiplique as bases e depois aplique o expoente ao resultado.",
+
+    "rle_zero_nme": "Zero",
+    "rle_zero_dsc": "Qualquer número com expoente 0 sempre é 1.",
+
+    "rle_negative_nme": "Negativo",
+    "rle_negative_dsc": "Se usar um expoente negativo, pegue o inverso da base e aplique o expoente ao denominador.",
+
+
+
+    "pwr_none_nme": "Nenhum",
+    "pwr_none_dsc": "Um poder que não faz nada. Este poder não pode ser carregado nem ativado.",
+
+    "pwr_pointsPlus_nme": "Mais pontos",
+    "pwr_pointsPlus_dsc": "Aumenta por um tempo os pontos que o usuário ganha por respostas corretas.",
+
+    "pwr_pointsMinus_nme": "Menos pontos",
+    "pwr_pointsMinus_dsc": "Diminui por um tempo os pontos que o oponente ganha por respostas corretas.",
+
+    "pwr_equationShorten_nme": "Questão curta",
+    "pwr_equationShorten_dsc": "Diminui por um tempo o tamanho das perguntas do usuário e aumenta os pontos que ele ganha por respostas corretas.",
+
+    "pwr_eqautionLengthen_nme": "Questão longa",
+    "pwr_eqautionLengthen_dsc": "Aumenta por um tempo o tamanho das perguntas do oponente e diminui os pontos que ele ganha por respostas corretas.",
+
+    "pwr_pointsTransfer_nme": "Transferência de pontos",
+    "pwr_pointsTransfer_dsc": "Transfere alguns pontos do oponente para o usuário pelas respostas corretas por um tempo.",
+
+    "pwr_pointsBlock_nme": "Bloqueio de pontos",
+    "pwr_pointsBlock_dsc": "Remove alguns pontos do oponente por um tempo.",
+
+    "pwr_twist_nme": "Giro",
+    "pwr_twist_dsc": "Vira a tela do oponente de cabeça para baixo por um tempo.",
+
+
+    "kwd_equip": "Equipar",
+    "kwd_unequip": "Desequipar",
+
+
+    "wrd_saveMsg": "Deseja salvar? Deseja sair?",
+    "wrd_saveAndContinue": "Salvar e Continuar",
+    "wrd_saveAndQuit": "Salvar e Sair",
+    "wrd_quitNoSave": "Sair (Sem salvar)",
+
+
+    "kwd_versus": "vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Estátua",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lagarto",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Múmia",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Espírito do Fogo",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantasma",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampiro",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Lobisomem",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Espírito da Água",
+
+    "kwd_all": "Tudo",
+    "kwd_accept": "Aceitar",
+    "kwd_decline": "Recusar",
+
+
+    "kwd_match": "Partida",
+    "kwd_player": "Jogador",
+    "kwd_plyr": "JOG",
+    "kwd_computer": "Computador",
+    "kwd_com": "COM",
+    "kwd_usePower": "Usar poder",
+    "kwd_usedPower": "Poder usado",
+    "kwd_skip": "Pular",
+
+    "kwd_ready": "Pronto",
+    "mth_ready": "Pronto...",
+    "mth_start": "Começar!",
+
+    "mth_matchOver": "A partida acabou!",
+    "mth_userWins": "Você venceu!",
+    "mth_oppWins": "O oponente venceu!",
+    "kwd_rematch": "Rematch",
+
+
+    "trl_opening_00": "Bem-vindo ao Clube dos Expoentes! Eu sou Minraul, e como você deve imaginar, jogamos o jogo dos expoentes aqui! Nunca jogou antes? Então vou ter que te ensinar!",
+    "trl_opening_01": "No jogo dos expoentes, você responde perguntas de expoentes o mais rápido que puder para ganhar pontos e chegar ao objetivo antes do oponente. As perguntas têm valores faltando que você deve preencher na ordem certa.",
+    "trl_opening_02": "O jogo dará valores para você escolher e preencher os espaços vazios. Isso pode variar por partida, mas é simples de entender. Além de selecionar, você pode usar pulos e poderes.",
+    "trl_opening_03": "Pular permite que você pule a pergunta atual e pegue outra. Claro que você não ganha pontos por essa pergunta, já que não a completou. Pular também tem tempo de recarga, então não use o tempo todo.",
+    "trl_opening_04": "Dos poderes eu falo mais depois. Com tudo explicado, me desafie para começar sua primeira partida! Escolha meu ícone na área do mundo.",
+
+    "trl_firstMatchLoss_00": "Você perdeu a partida. Precisa aprender o básico antes de enfrentar os outros membros do clube, então tente novamente.",
+
+    "trl_firstMatchWin_00": "Você venceu sua primeira partida! Agora que conhece as regras, pode desafiar os outros membros do clube. Alguns só aceitarão seu desafio quando você estiver mais experiente, então suas opções são limitadas.",
+    "trl_firstMatchWin_01": "Alguns membros do clube usam regras de expoentes que você ainda não aprendeu. Quando aparecer uma regra nova, eu vou explicá-la. Você também pode checar o 'menu de info' se precisar revisar. Boa sorte!",
+
+    "trl_firstPower_00": "Você acabou de ganhar um poder de partida! Um poder de partida é um power-up usado durante uma partida, mas só depois de carregado. Poderes carregam quando você responde corretamente, então jogar normalmente basta.",
+    "trl_firstPower_01": "Depois que um poder estiver totalmente carregado, você pode ativá-lo a qualquer momento com o botão de poder. O efeito dura até a energia acabar; depois você precisa recarregá-lo.",
+    "trl_firstPower_02": "Poderes desbloqueados podem ser vistos e equipados no 'menu de poderes'. Seus oponentes também podem usar poderes, fique atento. Boa sorte!",
+
+    "trl_finalMatch_00": "Você aprendeu todas as regras e derrotou todos os membros do clube, então agora é hora da sua partida final! Uma revanche contra mim! Selecione meu ícone na próxima área para me desafiar como antes.",
+
+    "trl_gameOver_00": "Você perdeu a partida. Agora pode tentar revanche contra o oponente ou voltar à área do mundo. É preciso derrotar todos os membros do clube para completar o desafio, mas pode tentar quantas vezes quiser.",
+
+
+    "trl_exponent_00": "Este duelo usa apenas o básico dos expoentes. Expoentes são operações matemáticas que multiplicam uma base por ela mesma um certo número de vezes. Confira a janela de informações se quiser relembrar as regras dos expoentes.",
+
+    "trl_product_00": "Esta partida usa a regra do produto. Quando mesmas bases com expoentes diferentes são multiplicadas, os expoentes podem ser somados e aplicados à base para simplificar.",
+
+    "trl_powerOfAPower_00": "Esta partida usa a regra potência de uma potência. Se uma base tem dois expoentes aplicados, multiplica os expoentes e aplica o resultado à base.",
+
+    "trl_powerOfAProduct_00": "Esta partida usa a regra da potência de um produto. Se duas bases com o mesmo expoente são multiplicadas, multiplica-se as bases e eleva-se o resultado ao expoente comum.",
+
+    "trl_zero_00": "Esta partida usa a regra do zero. Qualquer número com expoente 0 resulta em 1.",
+
+    "trl_negative_00": "Esta partida usa a regra do negativo. Um número com expoente negativo vira seu recíproco e o expoente fica no denominador.",
+
+
+    "rsl_winMsg": "Você completou todos os desafios! Você é um Mestre dos expoentes!",
+    "kwd_results": "Resultados",
+    "kwd_time": "Tempo",
+    "kwd_score": "Pontuação",
+    "rst_wrongAnswers": "Respostas incorretas",
+    "kwd_finish": "Finalizar"
+  },
+  "pt-PT": {
+    "_stop_": "",
+
+    "gameTitle": "Monstros dos Expoentes",
+
+    "kwd_title": "Título",
+    "kwd_start": "Iniciar",
+    "kwd_newGame": "Novo Jogo",
+    "kwd_continue": "Continuar",
+    "kwd_controls": "Controlo",
+    "kwd_settings": "Definições",
+    "kwd_credits": "Créditos",
+    "kwd_licenses": "Licenças",
+    "kwd_quit": "Sair",
+
+
+    "ttl_controls_instruct": "Botão esquerdo do rato/Toque: Interagir",
+    "ttl_controls_desc": "O jogo pode ser controlado com o rato ou com o ecrã tátil. Usa o clique esquerdo do rato ou o toque no ecrã para interagir com os elementos do mundo do jogo.",
+    "kwd_back": "Voltar",
+
+
+    "kwd_volume": "Volume",
+    "kwd_bgmVolume": "Volume da música de fundo (BGM)",
+    "kwd_sfxVolume": "Volume dos efeitos sonoros (SFX)",
+    "kwd_ttsVolume": "Volume do texto para fala (TTS)",
+    "kwd_mute": "Mudo",
+    "kwd_textToSpeech": "Texto para fala",
+    "kwd_tutorial": "Tutorial",
+
+
+    "kwd_save": "Gravar",
+    "kwd_saveQuit": "Gravar/Sair",
+    "sve_msg_savingGame": "A gravar o jogo...",
+    "sve_msg_loadSuccess": "Dados gravados carregados com sucesso.",
+
+    "kwd_world": "Mundo",
+    "kwd_info": "Info",
+    "kwd_powers": "Poderes",
+
+    "kwd_power": "Poder",
+    "wrd_powerUnlocked": "Novo poder desbloqueado!",
+
+    "wrd_exponentChallenge": "Desafio dos Expoentes",
+    "kwd_rules": "Regras",
+
+    "rle_none_nme": "Nenhuma",
+    "rle_none_dsc": "Nenhuma regra de expoentes definida.",
+
+    "rle_exponent_nme": "Expoente",
+    "rle_exponent_dsc": "Multiplica um termo por ele próprio n vezes.",
+
+    "rle_product_nme": "Produto",
+    "rle_product_dsc": "Se multiplicares as mesmas bases, soma os seus expoentes e aplica o resultado à base.",
+
+    "rle_powerOfAPower_nme": "Potência de uma potência",
+    "rle_powerOfAPower_dsc": "Se uma base tiver dois expoentes, multiplica os expoentes e aplica o resultado à base.",
+
+    "rle_powerOfAProduct_nme": "Potência de um produto",
+    "rle_powerOfAProduct_dsc": "Se multiplicares bases diferentes com o mesmo expoente, multiplica as bases e aplica o expoente ao resultado.",
+
+    "rle_zero_nme": "Zero",
+    "rle_zero_dsc": "Qualquer coisa elevada à potência 0 é sempre 1.",
+
+    "rle_negative_nme": "Negativo",
+    "rle_negative_dsc": "Se o expoente for negativo, toma o recíproco da base e aplica o expoente ao denominador.",
+
+
+
+    "pwr_none_nme": "Nenhum",
+    "pwr_none_dsc": "Um poder que não faz nada. Este poder não pode ser carregado nem ativado.",
+
+    "pwr_pointsPlus_nme": "Mais pontos",
+    "pwr_pointsPlus_dsc": "Aumenta durante algum tempo os pontos que o utilizador recebe por respostas certas.",
+
+    "pwr_pointsMinus_nme": "Pontos Menos",
+    "pwr_pointsMinus_dsc": "Diminui durante um tempo os pontos que o oponente ganha por respostas corretas.",
+
+    "pwr_equationShorten_nme": "Pergunta curta",
+    "pwr_equationShorten_dsc": "Encurta as perguntas do utilizador e aumenta durante um tempo os pontos ganhos por respostas certas.",
+
+    "pwr_eqautionLengthen_nme": "Pergunta longa",
+    "pwr_eqautionLengthen_dsc": "Aumenta a extensão das perguntas do oponente e diminui durante um tempo os pontos que ele recebe por respostas certas.",
+
+    "pwr_pointsTransfer_nme": "Transferência de Pontos",
+    "pwr_pointsTransfer_dsc": "Transfere alguns pontos do oponente para o utilizador por respostas certas durante algum tempo.",
+
+    "pwr_pointsBlock_nme": "Bloqueio de Pontos",
+    "pwr_pointsBlock_dsc": "Remove alguns pontos ao oponente durante um tempo.",
+
+    "pwr_twist_nme": "Virar",
+    "pwr_twist_dsc": "Vira a visão do adversário de cabeça para baixo durante algum tempo.",
+
+
+    "kwd_equip": "Equipar",
+    "kwd_unequip": "Desequipar",
+
+
+    "wrd_saveMsg": "Queres gravar? Queres sair?",
+    "wrd_saveAndContinue": "Gravar e Continuar",
+    "wrd_saveAndQuit": "Gravar e Sair",
+    "wrd_quitNoSave": "Sair (Sem gravar)",
+
+
+    "kwd_versus": "vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Estátua",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Lagarto",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Múmia",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Espírito do Fogo",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Fantasma",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampiro",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Lobisomem",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Espírito da Água",
+
+    "kwd_all": "Todos",
+    "kwd_accept": "Aceitar",
+    "kwd_decline": "Recusar",
+
+
+    "kwd_match": "Combate",
+    "kwd_player": "Jogador",
+    "kwd_plyr": "JOG",
+    "kwd_computer": "Computador",
+    "kwd_com": "COM",
+    "kwd_usePower": "Usar poder",
+    "kwd_usedPower": "Poder usado",
+    "kwd_skip": "Saltar",
+
+    "kwd_ready": "Pronto",
+    "mth_ready": "Pronto...",
+    "mth_start": "Iniciar!",
+
+    "mth_matchOver": "O duelo acabou!",
+    "mth_userWins": "Ganhaste!",
+    "mth_oppWins": "O adversário ganhou!",
+    "kwd_rematch": "Revanche",
+
+
+    "trl_opening_00": "Bem-vindo ao Clube dos Expoentes! Eu sou o Minraul e, como podes imaginar, aqui jogamos o jogo dos expoentes! Nunca jogaste antes? Então terei de te ensinar!",
+    "trl_opening_01": "No jogo dos expoentes, respondes às perguntas sobre expoentes o mais rápido possível para ganhar pontos e chegar ao objetivo antes do adversário. As perguntas têm valores em falta que tens de preencher pela ordem correta.",
+    "trl_opening_02": "O jogo dar-te-á valores para escolher e preencher os espaços vazios. A forma como isto é feito pode variar de duelo para duelo, mas é sempre fácil de perceber. Para além de selecionar valores, podes também usar saltos e poderes.",
+    "trl_opening_03": "O salto permite saltar a pergunta atual e obter uma nova. Naturalmente, não recebes pontos pois não terminaste a pergunta. O salto também tem um tempo de recarga, por isso não o uses constantemente.",
+    "trl_opening_04": "Falo sobre os poderes mais tarde. Com tudo explicado, desafia‑me para começares o teu primeiro duelo! Podes fazer isso selecionando o meu ícone na área do mundo.",
+
+    "trl_firstMatchLoss_00": "Perdeste o duelo. Tens de aprender o básico antes de enfrentares os outros membros do clube, por isso tenta outra vez.",
+
+    "trl_firstMatchWin_00": "Ganhaste o teu primeiro duelo! Agora que conheces as regras, podes desafiar os outros membros do clube. Alguns só aceitarão o teu desafio quando tiveres mais experiência, por isso as opções estão limitadas.",
+    "trl_firstMatchWin_01": "Alguns membros do clube utilizam regras de expoentes que ainda não aprendeste. Quando encontrares uma nova regra, eu estou aqui para a explicar. Podes também consultar o 'menu de info' se precisares de um resumo. Boa sorte!",
+
+    "trl_firstPower_00": "Acabas de receber um poder de duelo! Um poder de duelo é um power-up que podes usar durante um duelo, mas só depois de o carregares. Os poderes carregam quando respondes corretamente às perguntas, por isso jogar normalmente chega.",
+    "trl_firstPower_01": "Depois de um poder estar totalmente carregado, podes ativá-lo a qualquer momento com o botão do poder. Os efeitos mantêm-se até a energia acabar; depois terás de o carregar de novo.",
+    "trl_firstPower_02": "Os poderes desbloqueados podem ser vistos e equipados no 'menu de poderes'. Os teus adversários também podem usar poderes, tem isso em atenção. Boa sorte!",
+
+    "trl_finalMatch_00": "Aprendeste todas as regras e derrotaste todos os membros do clube — agora é o teu duelo final! Uma revanche contra mim! Selecciona o meu ícone na área seguinte para me desafiares novamente.",
+
+    "trl_gameOver_00": "Perdeste o duelo. Agora podes repetir o duelo contra o mesmo adversário ou voltar à área do mundo. Tens de derrotar todos os membros do clube para concluir o desafio, mas podes tentar quantas vezes quiseres.",
+
+
+    "trl_exponent_00": "Este duelo usa apenas o básico sobre expoentes. Os expoentes multiplicam uma base por ela própria várias vezes. Consulta a janela de informação se precisares de um resumo.",
+
+    "trl_product_00": "Este duelo usa a regra do produto. Quando as mesmas bases com expoentes diferentes são multiplicadas, os expoentes podem ser somados e aplicados à base para simplificar.",
+
+    "trl_powerOfAPower_00": "Este duelo usa a regra da potência de uma potência. Se uma base tiver dois expoentes, multiplica os expoentes e aplica o resultado à base.",
+
+    "trl_powerOfAProduct_00": "Este duelo usa a regra da potência de um produto. Se duas bases com o mesmo expoente são multiplicadas, multiplica‑se as bases e aplica‑se o expoente ao resultado.",
+
+    "trl_zero_00": "Este duelo usa a regra do zero. Qualquer número elevado ao expoente 0 dá 1.",
+
+    "trl_negative_00": "Este duelo usa a regra dos negativos. Um número elevado a um expoente negativo torna‑se o seu recíproco e o expoente aplica‑se ao denominador.",
+
+
+    "rsl_winMsg": "Superaste todos os desafios! És um Mestre dos Expoentes!",
+    "kwd_results": "Resultados",
+    "kwd_time": "Tempo",
+    "kwd_score": "Pontuação",
+    "rst_wrongAnswers": "Respostas incorretas",
+    "kwd_finish": "Terminar"
+  },
+  "ru": {
+    "_stop_": "",
+
+    "gameTitle": "Монстры-степени",
+
+    "kwd_title": "Заголовок",
+    "kwd_start": "Старт",
+    "kwd_newGame": "Новая игра",
+    "kwd_continue": "Продолжить",
+    "kwd_controls": "Управление",
+    "kwd_settings": "Настройки",
+    "kwd_credits": "Авторы",
+    "kwd_licenses": "Лицензии",
+    "kwd_quit": "Выйти",
+
+
+    "ttl_controls_instruct": "Левая кнопка мыши/Касание: Взаимодействие",
+    "ttl_controls_desc": "Игрой можно управлять мышью или сенсорным экраном. Используй левую кнопку мыши или касание, чтобы взаимодействовать с объектами в игровом мире.",
+    "kwd_back": "Назад",
+
+
+    "kwd_volume": "Громкость",
+    "kwd_bgmVolume": "Громкость фоновой музыки (BGM)",
+    "kwd_sfxVolume": "Громкость звуковых эффектов (SFX)",
+    "kwd_ttsVolume": "Громкость синтезатора речи (TTS)",
+    "kwd_mute": "Выключить звук",
+    "kwd_textToSpeech": "Текст в речь",
+    "kwd_tutorial": "Учебник",
+
+
+    "kwd_save": "Сохранить",
+    "kwd_saveQuit": "Сохранить/Выйти",
+    "sve_msg_savingGame": "Сохранение игры...",
+    "sve_msg_loadSuccess": "Данные сохранения успешно загружены.",
+
+    "kwd_world": "Мир",
+    "kwd_info": "Инфо",
+    "kwd_powers": "Силы",
+
+    "kwd_power": "Сила",
+    "wrd_powerUnlocked": "Новая сила разблокирована!",
+
+    "wrd_exponentChallenge": "Испытание показателей степени",
+    "kwd_rules": "Правила",
+
+    "rle_none_nme": "Нет",
+    "rle_none_dsc": "Нет заданного правила со степенями.",
+
+    "rle_exponent_nme": "Степень",
+    "rle_exponent_dsc": "Умножает число само на себя n раз.",
+
+    "rle_product_nme": "Произведение",
+    "rle_product_dsc": "Если умножаются одинаковые основания, сложи их показатели и используй сумму как показатель.",
+
+    "rle_powerOfAPower_nme": "Степень степени",
+    "rle_powerOfAPower_dsc": "Если у основания два показателя, перемножь показатели и используй результат как показатель основания.",
+
+    "rle_powerOfAProduct_nme": "Степень произведения",
+    "rle_powerOfAProduct_dsc": "Если умножаются разные основания с одинаковым показателем, сначала перемножь основания, а затем возведи результат в этот показатель.",
+
+    "rle_zero_nme": "Ноль",
+    "rle_zero_dsc": "Всё в степени 0 всегда равно 1.",
+
+    "rle_negative_nme": "Отрицательный",
+    "rle_negative_dsc": "При отрицательном показателе возьми обратное значение основания и примени показатель к знаменателю.",
+
+
+
+    "pwr_none_nme": "Нет",
+    "pwr_none_dsc": "Сила, которая ничего не делает. Эту силу нельзя зарядить или активировать.",
+
+    "pwr_pointsPlus_nme": "Плюс Очки",
+    "pwr_pointsPlus_dsc": "Временно увеличивает очки, которые пользователь получает за правильные ответы.",
+
+    "pwr_pointsMinus_nme": "Минус Очки",
+    "pwr_pointsMinus_dsc": "Временно снижает очки, которые соперник получает за правильные ответы.",
+
+    "pwr_equationShorten_nme": "Короткий вопрос",
+    "pwr_equationShorten_dsc": "Укорачивает вопросы пользователя и временно увеличивает очки за правильные ответы.",
+
+    "pwr_eqautionLengthen_nme": "Длинный вопрос",
+    "pwr_eqautionLengthen_dsc": "Увеличивает длину вопросов соперника и временно снижает очки, которые он получает за правильные ответы.",
+
+    "pwr_pointsTransfer_nme": "Передача очков",
+    "pwr_pointsTransfer_dsc": "Временно переводит часть очков соперника пользователю при правильных ответах.",
+
+    "pwr_pointsBlock_nme": "Блокировка Очков",
+    "pwr_pointsBlock_dsc": "Временно снимает часть очков соперника.",
+
+    "pwr_twist_nme": "Переворот",
+    "pwr_twist_dsc": "Переворачивает вид соперника вверх ногами на время.",
+
+
+    "kwd_equip": "Надеть",
+    "kwd_unequip": "Снять",
+
+
+    "wrd_saveMsg": "Хотите сохранить? Хотите выйти?",
+    "wrd_saveAndContinue": "Сохранить и продолжить",
+    "wrd_saveAndQuit": "Сохранить и выйти",
+    "wrd_quitNoSave": "Выйти (без сохранения)",
+
+
+    "kwd_versus": "Против",
+
+    "chr_statue_nme": "Минраул",
+    "chr_statue_spc": "Статуя",
+
+    "chr_lizard_nme": "Репток",
+    "chr_lizard_spc": "Ящер",
+
+    "chr_mummy_nme": "Мона",
+    "chr_mummy_spc": "Мумия",
+
+    "chr_fire_nme": "Форджертон",
+    "chr_fire_spc": "Огненный дух",
+
+    "chr_ghost_nme": "Экто",
+    "chr_ghost_spc": "Призрак",
+
+    "chr_vampire_nme": "Фанг",
+    "chr_vampire_spc": "Вампир",
+
+    "chr_werewolf_nme": "Хаулаф",
+    "chr_werewolf_spc": "Оборотень",
+
+    "chr_water_nme": "Дайвтайд",
+    "chr_water_spc": "Водный дух",
+
+    "kwd_all": "Все",
+    "kwd_accept": "Принять",
+    "kwd_decline": "Отказать",
+
+
+    "kwd_match": "Матч",
+    "kwd_player": "Игрок",
+    "kwd_plyr": "ИГР",
+    "kwd_computer": "Компьютер",
+    "kwd_com": "COM",
+    "kwd_usePower": "Использовать силу",
+    "kwd_usedPower": "Использованная сила",
+    "kwd_skip": "Пропуск",
+
+    "kwd_ready": "Готово",
+    "mth_ready": "Готово...",
+    "mth_start": "Старт!",
+
+    "mth_matchOver": "Матч окончен!",
+    "mth_userWins": "Ты выиграл!",
+    "mth_oppWins": "Противник победил!",
+    "kwd_rematch": "Реванш",
+
+
+    "trl_opening_00": "Добро пожаловать в Клуб Степеней! Я Минраул, и, как ты понимаешь, у нас игра про степени. Никогда не играл? Тогда придётся тебя учить!",
+    "trl_opening_01": "В игре со степенями нужно как можно быстрее отвечать на вопросы, чтобы набрать очки и первым дойти до цели. Вопросы содержат пропущенные значения, которые нужно заполнить в правильном порядке.",
+    "trl_opening_02": "Игра предложит варианты значений, чтобы заполнить пустые места. Формат может меняться в разных матчах, но всё интуитивно понятно. Кроме выбора значений, можно также использовать пропуски и силы.",
+    "trl_opening_03": "Пропуск позволяет пропустить текущий вопрос и получить новый. Естественно, очков за пропущенный вопрос не даётся, так как ты его не завершил. У пропуска также есть перезарядка, поэтому не используй его постоянно.",
+    "trl_opening_04": "О способностях расскажу позже. А пока — вызови меня на первый матч! Для этого выбери мой значок на карте мира.",
+
+    "trl_firstMatchLoss_00": "Ты проиграл матч. Тебе нужно выучить основы, прежде чем сражаться с остальными членами клуба. Попробуй ещё раз, пожалуйста.",
+
+    "trl_firstMatchWin_00": "Ты выиграл свой первый матч! Теперь, когда ты знаешь правила, можешь бросать вызов другим членам клуба. Некоторые примут твой вызов только после того, как ты наберёшь опыт, поэтому сейчас доступен не весь выбор.",
+    "trl_firstMatchWin_01": "Некоторые члены клуба используют правила со степенями, которым ты ещё не научился. Когда встретишь новое правило, я его объясню. Можешь также заглянуть в «меню информации», если понадобится повторить. Удачи!",
+
+    "trl_firstPower_00": "Ты только что получил силу для матча! Матч-сила — это бонус, который можно использовать во время матча, но только после зарядки. Силы заряжаются, когда ты правильно отвечаешь на вопросы — просто играй, как обычно.",
+    "trl_firstPower_01": "Когда сила полностью заряжена, ты можешь активировать её в любое время кнопкой «Сила». Эффект действует, пока не закончится энергия, после чего её нужно снова заряжать.",
+    "trl_firstPower_02": "Разблокированные силы можно посмотреть и экипировать в «меню сил». Помни, что и противники могут использовать силы. Удачи!",
+
+    "trl_finalMatch_00": "Ты изучил все правила со степенями и победил всех членов клуба — теперь пришло время для финального матча! Реванш со мной! Выбери мой значок в следующей области, чтобы снова бросить мне вызов.",
+
+    "trl_gameOver_00": "Ты проиграл матч. Теперь можешь сыграть реванш с этим соперником или вернуться в мир игры. Нужно победить всех членов клуба, чтобы завершить испытание, но ты можешь пробовать снова и снова.",
+
+
+    "trl_exponent_00": "В этом поединке используются только основы степеней. Степень — это умножение основания само на себя несколько раз. Открой окно справки, если хочешь повторить правила.",
+
+    "trl_product_00": "В этом поединке действует правило произведения. Если одинаковые основания с разными показателями умножаются, показатели можно сложить и применить к основанию для упрощения.",
+
+    "trl_powerOfAPower_00": "В этом поединке действует правило степени степени. Если к основанию применены два показателя, то их можно перемножить, а основание возвести в полученное произведение.",
+
+    "trl_powerOfAProduct_00": "В этом поединке действует правило степени произведения. Если перемножаются два основания с одинаковым показателем, можно умножить основания, а результат возвести в общий показатель.",
+
+    "trl_zero_00": "В этом поединке действует правило нуля. Любое число в степени 0 равно 1.",
+
+    "trl_negative_00": "В этом поединке действует правило отрицательных показателей. Число с отрицательной степенью становится обратной величиной, и показатель применяется к знаменателю.",
+
+
+    "rsl_winMsg": "Ты прошёл все испытания! Ты — Мастер степеней!",
+    "kwd_results": "Результаты",
+    "kwd_time": "Время",
+    "kwd_score": "Счёт",
+    "rst_wrongAnswers": "Неправильные ответы",
+    "kwd_finish": "Завершить"
+  },
+  "tr": {
+    "_stop_": "",
+
+    "gameTitle": "Üs Canavarları",
+
+    "kwd_title": "Başlık",
+    "kwd_start": "Başla",
+    "kwd_newGame": "Yeni Oyun",
+    "kwd_continue": "Devam",
+    "kwd_controls": "Kontroller",
+    "kwd_settings": "Ayarlar",
+    "kwd_credits": "Yapım",
+    "kwd_licenses": "Lisanslar",
+    "kwd_quit": "Çık",
+
+
+    "ttl_controls_instruct": "Sol Fare Düğmesi/Dokunma: Etkileşim",
+    "ttl_controls_desc": "Oyun fare veya dokunmatik ekranla kontrol edilebilir. Oyun dünyasındaki öğelerle etkileşim için sol fare tıklaması veya dokunmatik ekran girdisi kullan.",
+    "kwd_back": "Geri",
+
+
+    "kwd_volume": "Ses",
+    "kwd_bgmVolume": "Arka Plan Müziği (BGM) Ses Düzeyi",
+    "kwd_sfxVolume": "Ses Efektleri (SFX) Ses Düzeyi",
+    "kwd_ttsVolume": "Metin Okuma (TTS) Ses Düzeyi",
+    "kwd_mute": "Sessiz",
+    "kwd_textToSpeech": "Metinden Sese",
+    "kwd_tutorial": "Eğitim",
+
+
+    "kwd_save": "Kaydet",
+    "kwd_saveQuit": "Kaydet/Çık",
+    "sve_msg_savingGame": "Oyun kaydediliyor...",
+    "sve_msg_loadSuccess": "Kayıt verileri başarıyla yüklendi.",
+
+    "kwd_world": "Dünya",
+    "kwd_info": "Bilgi",
+    "kwd_powers": "Güçler",
+
+    "kwd_power": "Güç",
+    "wrd_powerUnlocked": "Yeni Güç Açıldı!",
+
+    "wrd_exponentChallenge": "Üs Meydan Okuması",
+    "kwd_rules": "Kurallar",
+
+    "rle_none_nme": "Yok",
+    "rle_none_dsc": "Herhangi bir üs kuralı yok.",
+
+    "rle_exponent_nme": "Üs",
+    "rle_exponent_dsc": "Bir terimi kendisiyle n kez çarpar.",
+
+    "rle_product_nme": "Çarpım",
+    "rle_product_dsc": "Aynı tabanları çarparsın, üslerini topla ve sonucu tabana uygula.",
+
+    "rle_powerOfAPower_nme": "Üssün Üssü",
+    "rle_powerOfAPower_dsc": "Bir tabana iki üs uygulanmışsa üsleri çarpıp sonucu tabana uygula.",
+
+    "rle_powerOfAProduct_nme": "Çarpımın Üssü",
+    "rle_powerOfAProduct_dsc": "Aynı üslere sahip farklı tabanları çarparsan önce tabanları çarp, sonra sonucu ortak üse yükselt.",
+
+    "rle_zero_nme": "Sıfır",
+    "rle_zero_dsc": "Herhangi bir şeyin üssü 0 ise sonucu her zaman 1'dir.",
+
+    "rle_negative_nme": "Negatif",
+    "rle_negative_dsc": "Negatif üs kullanılıyorsa, tabanın tersini al ve üssü paydanın üzerine uygula.",
+
+
+
+    "pwr_none_nme": "Yok",
+    "pwr_none_dsc": "Hiçbir işe yaramayan bir güç. Bu güç şarj edilemez veya etkinleştirilemez.",
+
+    "pwr_pointsPlus_nme": "Puan Ekle",
+    "pwr_pointsPlus_dsc": "Kullanıcının doğru cevaplardan aldığı puanı bir süre artırır.",
+
+    "pwr_pointsMinus_nme": "Puan Eksilt",
+    "pwr_pointsMinus_dsc": "Rakibin doğru cevaplardan kazandığı puanı bir süre azaltır.",
+
+    "pwr_equationShorten_nme": "Soru Kısa",
+    "pwr_equationShorten_dsc": "Kullanıcının sorularını kısaltır ve doğru cevaplardan aldığı puanı bir süre artırır.",
+
+    "pwr_eqautionLengthen_nme": "Soru Uzun",
+    "pwr_eqautionLengthen_dsc": "Rakibin sorularının uzunluğunu artırır ve doğru cevaplardan aldığı puanları bir süreliğine düşürür.",
+
+    "pwr_pointsTransfer_nme": "Puan Aktar",
+    "pwr_pointsTransfer_dsc": "Doğru cevaplarda rakibin bazı puanlarını kullanıcıya aktarır (bir süreliğine).",
+
+    "pwr_pointsBlock_nme": "Puan Blok",
+    "pwr_pointsBlock_dsc": "Rakibin bazı puanlarını bir süre kaldırır.",
+
+    "pwr_twist_nme": "Ters Çevir",
+    "pwr_twist_dsc": "Rakibin ekranını bir süre baş aşağı çevirir.",
+
+
+    "kwd_equip": "Donat",
+    "kwd_unequip": "Çıkart",
+
+
+    "wrd_saveMsg": "Kaydetmek ister misin? Çıkmak ister misin?",
+    "wrd_saveAndContinue": "Kaydet ve Devam Et",
+    "wrd_saveAndQuit": "Kaydet ve Çık",
+    "wrd_quitNoSave": "Çık (Kaydetme)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Heykel",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Kertenkele",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Mumya",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Ateş Ruhu",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Hayalet",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Vampir",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Kurtadam",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Su Ruhu",
+
+    "kwd_all": "Hepsi",
+    "kwd_accept": "Kabul Et",
+    "kwd_decline": "Reddet",
+
+
+    "kwd_match": "Eşleştir",
+    "kwd_player": "Oyuncu",
+    "kwd_plyr": "OYNC",
+    "kwd_computer": "Bilgisayar",
+    "kwd_com": "COM",
+    "kwd_usePower": "Güç Kullan",
+    "kwd_usedPower": "Kullanılan Güç",
+    "kwd_skip": "Atla",
+
+    "kwd_ready": "Hazır",
+    "mth_ready": "Hazır...",
+    "mth_start": "Başla!",
+
+    "mth_matchOver": "Maç Bitti!",
+    "mth_userWins": "Sen Kazandın!",
+    "mth_oppWins": "Rakip Kazandı!",
+    "kwd_rematch": "Tekrar",
+
+
+    "trl_opening_00": "Üss Kulübü'ne hoş geldin! Ben Minraul, ve tahmin edebileceğin gibi burada üs oyunu oynuyoruz! Daha önce hiç oynamadın mı? O zaman sana öğretmem gerekecek!",
+    "trl_opening_01": "Üs oyununda olabildiğince hızlı üs sorularını cevaplayıp puan kazanır ve rakibinden önce hedefe ulaşırsın. Soruların hep eksik değerleri var; bunları doğru sırayla doldurmalısın.",
+    "trl_opening_02": "Oyun, boş yerleri doldurmak için seçebileceğin değerler sunar. Bu, maça göre değişebilir ama genelde kendini açıklar. Değer seçmenin dışında atlama ve güçler de kullanabilirsin.",
+    "trl_opening_03": "Atlama, mevcut soruyu atlayıp yeni bir soru almanı sağlar. Tabii ki bitirmediğin soru için puan alamazsın. Atlama yeteneğinin bekleme süresi var, bu yüzden sürekli kullanmamalısın.",
+    "trl_opening_04": "Güçler hakkında daha sonra konuşacağım. Bunu da anlattığımıza göre ilk maçın için bana meydan oku! Bunu dünya alanındaki simgemi seçerek yapabilirsin.",
+
+    "trl_firstMatchLoss_00": "Maçı kaybettin. Diğer kulüp üyelerine karşı mücadele edebilmek için temel bilgileri öğrenmen gerekiyor, tekrar dene lütfen.",
+
+    "trl_firstMatchWin_00": "İlk maçını kazandın! Kuralları bildiğine göre kulüp üyelerinden diğerlerine meydan okuyabilirsin. Bazıları seni kabul etmeyecektir; daha deneyimli olana kadar seçeneklerin sınırlı.",
+    "trl_firstMatchWin_01": "Bazı kulüp üyeleri senin henüz öğrenmediğin üs kurallarını kullanıyor. Yeni bir kuralla karşılaşırsan ben açıklayacağım. Hatırlamak istersen 'bilgi menüsü'ne de bakabilirsin. İyi şanslar!",
+
+    "trl_firstPower_00": "Maçta kullanmak üzere yeni bir güç kazandın! Maç gücü, şarj edildikten sonra maç sırasında kullanılabilen bir güçtür. Güçler doğru cevap verdiğinde dolar; yani normal oynayarak da şarj olur.",
+    "trl_firstPower_01": "Bir yetenek tamamen dolduktan sonra istediğin zaman 'güç düğmesi' ile etkinleştirebilirsin. Yetenek, enerjisi bitene kadar etkili olur; sonra tekrar şarj etmen gerekir.",
+    "trl_firstPower_02": "Açtığın güçleri 'güç menüsü'nden görebilir ve donatabilirsin. Rakiplerin de güç kullanabilir, bunu unutma. İyi şanslar!",
+
+    "trl_finalMatch_00": "Tüm üs kurallarını öğrendin ve kulübün tüm üyelerini yendin—şimdi son maçın zamanı! Benimle bir rövanş! Beni tekrar meydan okumak için sonraki alandaki simgemi seç.",
+
+    "trl_gameOver_00": "Maçı kaybettin. Şimdi rakiple yeniden maç yapabilir veya dünya alanına dönebilirsin. Meydan okumayı tamamlamak için tüm kulüp üyelerini yenmen gerekiyor, ama istediğin kadar tekrar deneyebilirsin.",
+
+
+    "trl_exponent_00": "Bu maç sadece üslerin temelini kullanıyor. Üsler, bir tabanın kendisiyle belirli sayıda çarpılmasıdır. Yeniden göz atmak istersen bilgi penceresini kontrol et.",
+
+    "trl_product_00": "Bu maçta çarpım kuralı kullanılıyor. Aynı tabanlar farklı üslerle çarpıldığında üsleri toplayıp o tabana uygulayarak sadeleştirebilirsin.",
+
+    "trl_powerOfAPower_00": "Bu maçta bir üssün üssü kuralı var. Bir tabana iki üs uygulanmışsa üsleri çarpıp çıkan sonucu tabana uygula.",
+
+    "trl_powerOfAProduct_00": "Bu maçta çarpımın üssü kuralı var. Aynı üsse sahip iki farklı taban çarpılıyorsa önce tabanları çarpıp çıkan sonucu ortak üse yükseltebilirsin.",
+
+    "trl_zero_00": "Bu maç sıfır kuralını kullanıyor. 0 üssü alınan herhangi bir sayı 1 eder.",
+
+    "trl_negative_00": "Bu maç eksi kuralını kullanıyor. Negatif üs olan sayı, tersine dönüşür ve üs paydada uygulanır.",
+
+
+    "rsl_winMsg": "Tüm meydan okumaları geçtin! Sen bir Üs Ustasısın!",
+    "kwd_results": "Sonuçlar",
+    "kwd_time": "Süre",
+    "kwd_score": "Skor",
+    "rst_wrongAnswers": "Yanlış Cevaplar",
+    "kwd_finish": "Bitir"
+  },
+  "uk": {
+    "_stop_": "",
+
+    "gameTitle": "Монстри показників",
+
+    "kwd_title": "Заголовок",
+    "kwd_start": "Почати",
+    "kwd_newGame": "Нова гра",
+    "kwd_continue": "Продовжити",
+    "kwd_controls": "Управління",
+    "kwd_settings": "Налаштування",
+    "kwd_credits": "Підписи",
+    "kwd_licenses": "Ліцензії",
+    "kwd_quit": "Вийти",
+
+
+    "ttl_controls_instruct": "Ліва кнопка миші/Дотик: Взаємодія",
+    "ttl_controls_desc": "Грою можна керувати мишею або сенсорним екраном. Використовуй ліву кнопку миші або дотик для взаємодії з елементами світу гри.",
+    "kwd_back": "Назад",
+
+
+    "kwd_volume": "Гучність",
+    "kwd_bgmVolume": "Гучність фонового музичного супроводу (BGM)",
+    "kwd_sfxVolume": "Гучність звукових ефектів (SFX)",
+    "kwd_ttsVolume": "Гучність синтезу мовлення (TTS)",
+    "kwd_mute": "Вимкнути звук",
+    "kwd_textToSpeech": "Текст у мову",
+    "kwd_tutorial": "Підручник",
+
+
+    "kwd_save": "Зберегти",
+    "kwd_saveQuit": "Зберегти/Вийти",
+    "sve_msg_savingGame": "Збереження гри...",
+    "sve_msg_loadSuccess": "Дані збереження успішно завантажено.",
+
+    "kwd_world": "Світ",
+    "kwd_info": "Інфо",
+    "kwd_powers": "Сили",
+
+    "kwd_power": "Сила",
+    "wrd_powerUnlocked": "Нову силу розблоковано!",
+
+    "wrd_exponentChallenge": "Виклик степенів",
+    "kwd_rules": "Правила",
+
+    "rle_none_nme": "Немає",
+    "rle_none_dsc": "Правило степенів не задано.",
+
+    "rle_exponent_nme": "Показник",
+    "rle_exponent_dsc": "Множить вираз сам на себе n разів.",
+
+    "rle_product_nme": "Добуток",
+    "rle_product_dsc": "Якщо перемножуються однакові основи, додай їхні показники і застосуй результат до основи.",
+
+    "rle_powerOfAPower_nme": "Степінь степеня",
+    "rle_powerOfAPower_dsc": "Якщо основа має два показники, помнож їх і піднеси основу до отриманого показника.",
+
+    "rle_powerOfAProduct_nme": "Степінь добутку",
+    "rle_powerOfAProduct_dsc": "Якщо множаться різні основи з однаковим показником, помнож основи, а потім піднеси результат до спільного показника.",
+
+    "rle_zero_nme": "Нуль",
+    "rle_zero_dsc": "Усе в степені 0 завжди дорівнює 1.",
+
+    "rle_negative_nme": "Від'ємний",
+    "rle_negative_dsc": "Якщо показник степеня від'ємний, візьми обернене число основи і застосуй показник до знаменника.",
+
+
+
+    "pwr_none_nme": "Немає",
+    "pwr_none_dsc": "Сила, що нічого не робить. Її не можна зарядити чи активувати.",
+
+    "pwr_pointsPlus_nme": "Додавання балів",
+    "pwr_pointsPlus_dsc": "Тимчасово збільшує бали, які користувач отримує за правильні відповіді.",
+
+    "pwr_pointsMinus_nme": "Віднімання балів",
+    "pwr_pointsMinus_dsc": "Тимчасово зменшує бали, які суперник отримує за правильні відповіді.",
+
+    "pwr_equationShorten_nme": "Коротке Питання",
+    "pwr_equationShorten_dsc": "Скорочує питання користувача і тимчасово збільшує бали за правильні відповіді.",
+
+    "pwr_eqautionLengthen_nme": "Довге Питання",
+    "pwr_eqautionLengthen_dsc": "Збільшує довжину питань суперника і тимчасово зменшує бали, які він отримує за правильні відповіді.",
+
+    "pwr_pointsTransfer_nme": "Передача балів",
+    "pwr_pointsTransfer_dsc": "Тимчасово переводить кілька балів від супротивника до користувача за правильні відповіді.",
+
+    "pwr_pointsBlock_nme": "Блокування балів",
+    "pwr_pointsBlock_dsc": "Тимчасово прибирає декілька балів суперника.",
+
+    "pwr_twist_nme": "Перевернути",
+    "pwr_twist_dsc": "Перевертає вигляд суперника догори дриґом на деякий час.",
+
+
+    "kwd_equip": "Екіпірувати",
+    "kwd_unequip": "Зняти екіпіровку",
+
+
+    "wrd_saveMsg": "Бажаєш зберегти? Бажаєш вийти?",
+    "wrd_saveAndContinue": "Зберегти і продовжити",
+    "wrd_saveAndQuit": "Зберегти і вийти",
+    "wrd_quitNoSave": "Вийти (без збереження)",
+
+
+    "kwd_versus": "Проти",
+
+    "chr_statue_nme": "Мінраул",
+    "chr_statue_spc": "Статуя",
+
+    "chr_lizard_nme": "Репток",
+    "chr_lizard_spc": "Ящірка",
+
+    "chr_mummy_nme": "Мона",
+    "chr_mummy_spc": "Мумія",
+
+    "chr_fire_nme": "Форджертон",
+    "chr_fire_spc": "Вогняний дух",
+
+    "chr_ghost_nme": "Екто",
+    "chr_ghost_spc": "Привид",
+
+    "chr_vampire_nme": "Фанг",
+    "chr_vampire_spc": "Вампір",
+
+    "chr_werewolf_nme": "Хоулуф",
+    "chr_werewolf_spc": "Вовкулака",
+
+    "chr_water_nme": "Дайвтайд",
+    "chr_water_spc": "Водяний дух",
+
+    "kwd_all": "Усі",
+    "kwd_accept": "Прийняти",
+    "kwd_decline": "Відмовити",
+
+
+    "kwd_match": "Матч",
+    "kwd_player": "Гравець",
+    "kwd_plyr": "ГР",
+    "kwd_computer": "Комп'ютер",
+    "kwd_com": "COM",
+    "kwd_usePower": "Використати силу",
+    "kwd_usedPower": "Використана сила",
+    "kwd_skip": "Пропустити",
+
+    "kwd_ready": "Готово",
+    "mth_ready": "Готово...",
+    "mth_start": "Почати!",
+
+    "mth_matchOver": "Матч завершено!",
+    "mth_userWins": "Ти переміг!",
+    "mth_oppWins": "Супротивник виграв!",
+    "kwd_rematch": "Реванш",
+
+
+    "trl_opening_00": "Ласкаво просимо до Клубу Степенів! Я Мінраул, і, як ти зрозумів, у нас тут гра зі степенями! Ніколи не грав? Тоді доведеться навчити!",
+    "trl_opening_01": "У грі зі степенями відповідай на питання якнайшвидше, щоб набирати бали й дійти до мети раніше суперника. У питаннях є пропуски — їх треба правильно заповнити в потрібному порядку.",
+    "trl_opening_02": "Гра дає варіанти значень, щоб заповнити пропуски. Це може трохи відрізнятися від матчу до матчу, але завжди зрозуміло. Крім вибору, можна використовувати пропуски й сили.",
+    "trl_opening_03": "Пропуск дозволяє пропустити поточне питання й отримати інше. Звісно, за пропущене питання ти не отримуєш балів, бо не завершив його. У пропуску є час перезарядки, тож не користуйся ним постійно.",
+    "trl_opening_04": "Про сили я розкажу пізніше. А зараз — кинь мені виклик, щоб почати перший матч! Для цього вибери мій значок у світі гри.",
+
+    "trl_firstMatchLoss_00": "Ти програв матч. Потрібно вивчити основи, перш ніж змагатися з іншими членами клубу — будь ласка, спробуй ще раз.",
+
+    "trl_firstMatchWin_00": "Ти виграв перший матч! Тепер, коли ти знаєш правила, можеш кинути виклик іншим членам клубу. Дехто не прийме виклик, поки ти не здобудеш більше досвіду, тож твої варіанти обмежені.",
+    "trl_firstMatchWin_01": "Деякі члени клубу використовують правила зі степенями, яких ти ще не вивчав. Коли зустрінеш нове правило, я його поясню. Також можеш заглянути в «меню інформації», якщо хочеш повторити. Удачі!",
+
+    "trl_firstPower_00": "Ти щойно отримав силу для матчу! Сила для матчу — це бонус, який можна використовувати під час бою, але тільки після заряджання. Сили заряджаються, коли ти правильно відповідаєш на питання, тож просто грай як зазвичай.",
+    "trl_firstPower_01": "Коли сила повністю заряджена, ти можеш активувати її будь-коли кнопкою «сила». Ефект триває, доки не вичерпається енергія, після чого її треба зарядити знову.",
+    "trl_firstPower_02": "Розблоковані сили можна переглянути та екіпірувати в «меню сил». Твої супротивники теж можуть використовувати сили — пам'ятай це. Удачі!",
+
+    "trl_finalMatch_00": "Ти вивчив усі правила степенів і переміг усіх членів клубу — настав час фінального бою! Реванш проти мене! Обери мій значок у наступній зоні, щоб кинути мені виклик.",
+
+    "trl_gameOver_00": "Ти програв матч. Тепер можеш взяти реванш у супротивника або повернутися в світ гри. Щоб пройти виклик, потрібно перемогти всіх членів клубу, але спробувати можна скільки завгодно разів.",
+
+
+    "trl_exponent_00": "У цьому поєдинку — лише основи степенів. Степені множать основу на саму себе кілька разів. Заглянь у вікно інформації, якщо треба повторити.",
+
+    "trl_product_00": "У цьому поєдинку використовується правило добутку. Якщо однакові основи множаться з різними показниками, показники можна додати й застосувати до основи, щоб спростити.",
+
+    "trl_powerOfAPower_00": "У цьому поєдинку діє правило степеня степеня. Якщо до основи застосовано два показники степеня, їх можна перемножити, а основу піднести до отриманого добутку.",
+
+    "trl_powerOfAProduct_00": "У цьому поєдинку використовується правило степеня добутку. Якщо дві різні основи з одним і тим же показником перемножуються, можна перемножити основи, а потім піднести результат до цього показника.",
+
+    "trl_zero_00": "У цьому поєдинку діє правило нуля. Будь-яке число в степені 0 дорівнює 1.",
+
+    "trl_negative_00": "У цьому поєдинку діє правило від'ємних показників. Число в від'ємному степені стає оберненим, а показник переходить у знаменник.",
+
+
+    "rsl_winMsg": "Ти пройшов всі випробування! Ти — Майстер степенів!",
+    "kwd_results": "Результати",
+    "kwd_time": "Час",
+    "kwd_score": "Рахунок",
+    "rst_wrongAnswers": "Неправильні відповіді",
+    "kwd_finish": "Завершити"
+  },
+  "vi": {
+    "_stop_": "",
+
+    "gameTitle": "Quái vật số mũ",
+
+    "kwd_title": "Tiêu đề",
+    "kwd_start": "Bắt đầu",
+    "kwd_newGame": "Trò chơi mới",
+    "kwd_continue": "Tiếp tục",
+    "kwd_controls": "Điều khiển",
+    "kwd_settings": "Cài đặt",
+    "kwd_credits": "Tín dụng",
+    "kwd_licenses": "Giấy phép",
+    "kwd_quit": "Thoát",
+
+
+    "ttl_controls_instruct": "Nhấp trái/Chạm: Tương tác",
+    "ttl_controls_desc": "Trò chơi có thể điều khiển bằng chuột hoặc màn hình cảm ứng. Dùng nhấp trái/chạm để tương tác với các phần tử trong thế giới trò chơi.",
+    "kwd_back": "Quay lại",
+
+
+    "kwd_volume": "Âm lượng",
+    "kwd_bgmVolume": "Âm lượng nhạc nền (BGM)",
+    "kwd_sfxVolume": "Âm lượng hiệu ứng (SFX)",
+    "kwd_ttsVolume": "Âm lượng văn bản thành giọng nói (TTS)",
+    "kwd_mute": "Tắt tiếng",
+    "kwd_textToSpeech": "Văn bản thành giọng nói",
+    "kwd_tutorial": "Hướng dẫn",
+
+
+    "kwd_save": "Lưu",
+    "kwd_saveQuit": "Lưu/Thoát",
+    "sve_msg_savingGame": "Đang lưu trò chơi...",
+    "sve_msg_loadSuccess": "Dữ liệu đã lưu được tải thành công.",
+
+    "kwd_world": "Thế giới",
+    "kwd_info": "Thông tin",
+    "kwd_powers": "Năng lực",
+
+    "kwd_power": "Năng lực",
+    "wrd_powerUnlocked": "Đã mở khóa năng lực mới!",
+
+    "wrd_exponentChallenge": "Thử thách mũ số",
+    "kwd_rules": "Quy tắc",
+
+    "rle_none_nme": "Không có",
+    "rle_none_dsc": "Không có quy tắc mũ nào đặt.",
+
+    "rle_exponent_nme": "Số mũ",
+    "rle_exponent_dsc": "Nhân một biểu thức với chính nó (n) lần.",
+
+    "rle_product_nme": "Tích",
+    "rle_product_dsc": "Nếu nhân cùng cơ số, cộng các số mũ lại và áp lên cơ số.",
+
+    "rle_powerOfAPower_nme": "Lũy thừa của lũy thừa",
+    "rle_powerOfAPower_dsc": "Nếu một cơ số có hai mũ, nhân hai mũ rồi áp vào cơ số.",
+
+    "rle_powerOfAProduct_nme": "Lũy thừa của tích",
+    "rle_powerOfAProduct_dsc": "Nếu nhân các cơ số khác nhau cùng mũ, nhân các cơ số rồi lấy kết quả mũ chung.",
+
+    "rle_zero_nme": "Không",
+    "rle_zero_dsc": "Bất kỳ thứ gì mũ 0 đều bằng 1.",
+
+    "rle_negative_nme": "Âm",
+    "rle_negative_dsc": "Nếu mũ âm, lấy nghịch đảo của cơ số và áp dụng mũ vào mẫu.",
+
+
+
+    "pwr_none_nme": "Không có",
+    "pwr_none_dsc": "Một khả năng không làm gì cả. Khả năng này không thể nạp năng lượng hay kích hoạt.",
+
+    "pwr_pointsPlus_nme": "Cộng điểm",
+    "pwr_pointsPlus_dsc": "Tăng điểm người dùng nhận được cho câu trả lời đúng trong một thời gian.",
+
+    "pwr_pointsMinus_nme": "Trừ điểm",
+    "pwr_pointsMinus_dsc": "Giảm điểm đối phương nhận được cho câu trả lời đúng trong một thời gian.",
+
+    "pwr_equationShorten_nme": "Câu Hỏi Ngắn",
+    "pwr_equationShorten_dsc": "Rút ngắn câu hỏi của người dùng và tăng điểm nhận được cho câu trả lời đúng trong thời gian ngắn.",
+
+    "pwr_eqautionLengthen_nme": "Câu Hỏi Dài",
+    "pwr_eqautionLengthen_dsc": "Kéo dài câu hỏi đối phương và giảm điểm họ nhận được cho câu trả lời đúng trong một thời gian.",
+
+    "pwr_pointsTransfer_nme": "Chuyển điểm",
+    "pwr_pointsTransfer_dsc": "Chuyển một số điểm từ đối thủ sang người dùng khi trả lời đúng trong một thời gian.",
+
+    "pwr_pointsBlock_nme": "Khóa điểm",
+    "pwr_pointsBlock_dsc": "Trong thời gian ngắn làm mất vài điểm của đối thủ.",
+
+    "pwr_twist_nme": "Lật",
+    "pwr_twist_dsc": "Lật ngược màn hình đối thủ trong một thời gian.",
+
+
+    "kwd_equip": "Trang bị",
+    "kwd_unequip": "Gỡ trang bị",
+
+
+    "wrd_saveMsg": "Bạn muốn lưu không? Bạn muốn thoát không?",
+    "wrd_saveAndContinue": "Lưu và tiếp tục",
+    "wrd_saveAndQuit": "Lưu và Thoát",
+    "wrd_quitNoSave": "Thoát (không lưu)",
+
+
+    "kwd_versus": "Vs.",
+
+    "chr_statue_nme": "Minraul",
+    "chr_statue_spc": "Tượng",
+
+    "chr_lizard_nme": "Reptoc",
+    "chr_lizard_spc": "Thằn lằn",
+
+    "chr_mummy_nme": "Mona",
+    "chr_mummy_spc": "Xác ướp",
+
+    "chr_fire_nme": "Forgerton",
+    "chr_fire_spc": "Linh hồn lửa",
+
+    "chr_ghost_nme": "Ecto",
+    "chr_ghost_spc": "Bóng ma",
+
+    "chr_vampire_nme": "Fang",
+    "chr_vampire_spc": "Ma cà rồng",
+
+    "chr_werewolf_nme": "Howluf",
+    "chr_werewolf_spc": "Người sói",
+
+    "chr_water_nme": "Divytide",
+    "chr_water_spc": "Linh hồn nước",
+
+    "kwd_all": "Tất cả",
+    "kwd_accept": "Chấp nhận",
+    "kwd_decline": "Từ chối",
+
+
+    "kwd_match": "Trận đấu",
+    "kwd_player": "Người chơi",
+    "kwd_plyr": "NGƯỜI",
+    "kwd_computer": "Máy tính",
+    "kwd_com": "COM",
+    "kwd_usePower": "Dùng năng lực",
+    "kwd_usedPower": "Năng lực đã dùng",
+    "kwd_skip": "Bỏ qua",
+
+    "kwd_ready": "Sẵn sàng",
+    "mth_ready": "Sẵn sàng...",
+    "mth_start": "Bắt đầu!",
+
+    "mth_matchOver": "Trận đấu kết thúc!",
+    "mth_userWins": "Bạn thắng!",
+    "mth_oppWins": "Đối thủ đã thắng!",
+    "kwd_rematch": "Đấu lại",
+
+
+    "trl_opening_00": "Chào mừng đến Câu lạc bộ Mũ! Mình là Minraul, và như bạn đoán, ở đây chúng ta chơi trò mũ số! Chưa bao giờ chơi? Vậy để mình dạy nhé!",
+    "trl_opening_01": "Trong trò chơi mũ số, bạn trả lời các câu hỏi về số mũ nhanh nhất có thể để kiếm điểm và về đích trước đối thủ. Tất cả câu hỏi đều có chỗ trống, bạn cần điền đúng và theo đúng thứ tự.",
+    "trl_opening_02": "Trò chơi sẽ đưa các giá trị để bạn chọn và điền vào chỗ trống. Cách hiển thị có thể khác nhau theo trận nhưng đều dễ hiểu. Ngoài chọn giá trị, bạn có thể dùng bỏ qua và năng lực.",
+    "trl_opening_03": "Bỏ qua cho phép bạn bỏ câu hỏi hiện tại và nhận câu mới. Tất nhiên bạn không được điểm vì chưa hoàn thành câu hỏi. Bỏ qua còn có thời gian hồi, nên đừng dùng liên tục.",
+    "trl_opening_04": "Về năng lực mình sẽ nói sau. Giờ mọi thứ rõ rồi—thách đấu mình để bắt đầu trận đầu! Chọn biểu tượng của mình trên bản đồ thế giới.",
+
+    "trl_firstMatchLoss_00": "Bạn thua trận. Bạn cần học các kiến thức cơ bản trước khi đấu với các thành viên khác trong câu lạc bộ — hãy thử lại nhé.",
+
+    "trl_firstMatchWin_00": "Bạn đã thắng trận đầu tiên! Giờ bạn biết luật, có thể thách đấu các thành viên khác trong câu lạc bộ. Một số người sẽ chưa nhận lời thách đấu cho đến khi bạn có kinh nghiệm hơn, nên tùy chọn còn hạn chế.",
+    "trl_firstMatchWin_01": "Một số thành viên câu lạc bộ dùng quy tắc mũ mà bạn chưa học. Khi gặp quy tắc mới, mình sẽ giải thích. Bạn cũng có thể mở 'thông tin' nếu muốn ôn lại. Chúc may mắn!",
+
+    "trl_firstPower_00": "Bạn vừa nhận được một năng lực trận đấu! Một năng lực là power-up có thể dùng trong trận, nhưng chỉ sau khi bạn nạp đầy nó. Năng lực được nạp khi bạn trả lời đúng, nên chỉ cần chơi như bình thường là đủ.",
+    "trl_firstPower_01": "Khi một năng lực đã đầy, bạn có thể kích hoạt nó bất kỳ lúc nào bằng nút 'năng lực'. Hiệu ứng kéo dài cho đến khi năng lượng hết, sau đó bạn phải nạp lại.",
+    "trl_firstPower_02": "Năng lực mở khóa có thể xem và trang bị trong 'menu năng lực'. Đối thủ cũng có thể dùng năng lực, nhớ nhé. Chúc may mắn!",
+
+    "trl_finalMatch_00": "Bạn đã học hết các quy tắc mũ và đánh bại tất cả các thành viên câu lạc bộ, nên giờ là trận đấu cuối cùng của bạn! Một trận tái đấu với mình! Chọn biểu tượng của mình ở khu vực tiếp theo để thách đấu mình như trước.",
+
+    "trl_gameOver_00": "Bạn thua trận. Bạn có thể đấu lại với đối thủ hoặc về lại bản đồ thế giới. Để hoàn thành thử thách phải đánh bại mọi thành viên câu lạc bộ, nhưng bạn có thể thử bao nhiêu lần tùy thích.",
+
+
+    "trl_exponent_00": "Trận này chỉ dùng kiến thức cơ bản về mũ. Mũ là phép nhân cơ số với chính nó nhiều lần. Mở cửa sổ thông tin nếu bạn cần ôn lại.",
+
+    "trl_product_00": "Trận này dùng quy tắc tích. Khi cùng cơ số có các mũ khác nhau nhân với nhau, có thể cộng các mũ lại rồi áp dụng lên cơ số để đơn giản hóa.",
+
+    "trl_powerOfAPower_00": "Trận này dùng quy tắc lũy thừa của lũy thừa. Nếu một cơ số có hai số mũ áp lên nó, thì có thể nhân hai số mũ lại với nhau, rồi nâng cơ số lên tích đó.",
+
+    "trl_powerOfAProduct_00": "Trận này dùng quy tắc lũy thừa của một tích. Nếu hai cơ số có cùng số mũ được nhân với nhau, có thể rút gọn bằng cách nhân các cơ số rồi nâng kết quả lên số mũ chung.",
+
+    "trl_zero_00": "Trận này dùng quy tắc mũ 0. Bất kỳ số nào mũ 0 đều bằng 1.",
+
+    "trl_negative_00": "Trận này dùng quy tắc số mũ âm. Một số được nâng lên số mũ âm sẽ thành nghịch đảo của nó, và số mũ sẽ áp dụng cho mẫu số.",
+
+
+    "rsl_winMsg": "Bạn đã hoàn thành mọi thử thách! Bạn là Bậc thầy Mũ số!",
+    "kwd_results": "Kết quả",
+    "kwd_time": "Thời gian",
+    "kwd_score": "Điểm",
+    "rst_wrongAnswers": "Câu trả lời sai",
+    "kwd_finish": "Kết thúc"
   }
 }
